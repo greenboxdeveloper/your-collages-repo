@@ -3,46 +3,40 @@
     "lastUpdated": "2024-01-15T10:30:00Z",
     "svgs": [
         {
-            "name": "SVG1",
+            "name": "SVG8",
             "description": "Simple 2-photo layout",
             "category": "Classic",
-            "isPremium": false,
-            "frameCount": 2
+            "isPremium": false
         },
         {
-            "name": "SVG2", 
+            "name": "SVG9", 
             "description": "Classic 4-photo grid",
             "category": "Classic",
-            "isPremium": false,
-            "frameCount": 4
+            "isPremium": false
         },
         {
-            "name": "heart_collage",
+            "name": "SVG10",
             "description": "Heart-shaped romantic layout",
             "category": "Stylish",
-            "isPremium": true,
-            "frameCount": 8
+            "isPremium": true
         },
         {
-            "name": "grid_4x4",
+            "name": "SVG11",
             "description": "Large 16-photo grid layout",
             "category": "Classic",
-            "isPremium": true,
-            "frameCount": 16
+            "isPremium": true
         },
         {
-            "name": "stylish_hexagon",
+            "name": "SVG12",
             "description": "Modern hexagonal layout",
             "category": "Stylish",
-            "isPremium": false,
-            "frameCount": 6
+            "isPremium": false
         },
         {
-            "name": "premium_circle",
+            "name": "SVG13",
             "description": "Premium circular arrangement",
             "category": "Stylish",
-            "isPremium": true,
-            "frameCount": 12
+            "isPremium": true
         }
     ]
 }
