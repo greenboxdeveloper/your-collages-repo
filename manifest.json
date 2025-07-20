@@ -1,0 +1,38 @@
+{
+    "version": "1.0.0",
+    "lastUpdated": "2024-01-15T10:30:00Z",
+    "svgs": [
+        {
+            "name": "SVG1",
+            "description": "Simple 2-photo layout",
+            "category": "Basic",
+            "tags": ["simple", "duo"],
+            "size": "500x500",
+            "frameCount": 2
+        },
+        {
+            "name": "SVG2", 
+            "description": "Classic 4-photo grid",
+            "category": "Grid",
+            "tags": ["grid", "four", "square"],
+            "size": "500x500",
+            "frameCount": 4
+        },
+        {
+            "name": "heart_collage",
+            "description": "Heart-shaped romantic layout",
+            "category": "Romantic",
+            "tags": ["heart", "love", "valentine"],
+            "size": "600x600",
+            "frameCount": 8
+        },
+        {
+            "name": "grid_4x4",
+            "description": "Large 16-photo grid layout",
+            "category": "Grid",
+            "tags": ["grid", "large", "sixteen"],
+            "size": "800x800", 
+            "frameCount": 16
+        }
+    ]
+}
