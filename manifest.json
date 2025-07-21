@@ -33,13 +33,13 @@
             "isPremium": false
         },
         {
-            "name": "SVG13",
+            "name": "SVG14",
             "description": "Premium circular arrangement",
             "category": "Stylish",
             "isPremium": true
         },
         {
-            "name": "SVG14",
+            "name": "SVG13",
             "description": " rectancular arrangement",
             "category": "Stylish",
             "isPremium": true
