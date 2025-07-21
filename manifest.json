@@ -61,6 +61,12 @@
             "description": "left rect and right circle",
             "category": "Stylish",
             "isPremium": true
+        },
+        {
+            "name": "STY2",
+            "description": "leaf circle",
+            "category": "Stylish",
+            "isPremium": true
         }
     ]
 }
