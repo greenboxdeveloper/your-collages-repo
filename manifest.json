@@ -49,6 +49,12 @@
             "description": " rectancular arrangement diagonal",
             "category": "Classic",
             "isPremium": true
+        },
+        {
+            "name": "SVG16",
+            "description": "left linier2 and right square 2",
+            "category": "Classic",
+            "isPremium": true
         }
     ]
 }
