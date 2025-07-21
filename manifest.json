@@ -44,5 +44,11 @@
             "category": "Stylish",
             "isPremium": true
         },
+        {
+            "name": "SVG15",
+            "description": " rectancular arrangement diagonal",
+            "category": "Classic",
+            "isPremium": true
+        }
     ]
 }
