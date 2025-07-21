@@ -37,6 +37,12 @@
             "description": "Premium circular arrangement",
             "category": "Stylish",
             "isPremium": true
+        },
+        {
+            "name": "SVG14",
+            "description": "Premium circular arrangement",
+            "category": "Stylish",
+            "isPremium": true
         }
     ]
 }
