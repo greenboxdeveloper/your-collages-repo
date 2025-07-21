@@ -5,13 +5,13 @@
         {
             "name": "SVG8",
             "description": "Simple 2-photo layout",
-            "category": "Classic",
+            "category": "Stylish",
             "isPremium": false
         },
         {
             "name": "SVG9", 
             "description": "Classic 4-photo grid",
-            "category": "Classic",
+            "category": "Stylish",
             "isPremium": false
         },
         {
@@ -23,7 +23,7 @@
         {
             "name": "SVG11",
             "description": "Large 16-photo grid layout",
-            "category": "Classic",
+            "category": "Stylish",
             "isPremium": true
         },
         {
@@ -35,13 +35,13 @@
         {
             "name": "SVG14",
             "description": "Premium circular arrangement",
-            "category": "Stylish",
+            "category": "Classic",
             "isPremium": true
         },
         {
             "name": "SVG13",
             "description": " rectancular arrangement",
-            "category": "Stylish",
+            "category": "Classic",
             "isPremium": true
         },
         {
