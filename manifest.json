@@ -55,6 +55,12 @@
             "description": "left linier2 and right square 2",
             "category": "Classic",
             "isPremium": true
+        },
+        {
+            "name": "STY1",
+            "description": "left rect and right circle",
+            "category": "Stylish",
+            "isPremium": true
         }
     ]
 }
