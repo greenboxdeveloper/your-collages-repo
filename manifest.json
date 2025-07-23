@@ -67,6 +67,12 @@
             "description": "leaf circle",
             "category": "Stylish",
             "isPremium": true
+        },
+        {
+            "name": "HEARSSQ",
+            "description": "HEARTS WITH FOUR GRID",
+            "category": "Stylish",
+            "isPremium": true
         }
     ]
 }
