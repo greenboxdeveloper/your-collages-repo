@@ -73,6 +73,42 @@
             "description": "HEARTS WITH FOUR GRID",
             "category": "Stylish",
             "isPremium": true
+        },
+        {
+            "name": "CIRCLE",
+            "description": "CIRCLE only",
+            "category": "Stylish",
+            "isPremium": true
+        },
+        {
+            "name": "DEFORMEDCIRCLE",
+            "description": "DEFORMEDCIRCLE in bottom right",
+            "category": "Stylish",
+            "isPremium": true
+        },
+        {
+            "name": "DEFORMEDSTAR",
+            "description": "DEFORMEDSTAR WITH corner",
+            "category": "Stylish",
+            "isPremium": true
+        },
+        {
+            "name": "HEARTS",
+            "description": "HEARTS only",
+            "category": "Stylish",
+            "isPremium": true
+        },
+        {
+            "name": "STONE",
+            "description": "STONE only",
+            "category": "Stylish",
+            "isPremium": true
+        },
+        {
+            "name": "WAVE",
+            "description": "Wave upper and lower",
+            "category": "Stylish",
+            "isPremium": true
         }
     ]
 }
