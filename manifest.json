@@ -109,6 +109,12 @@
             "description": "Wave upper and lower",
             "category": "Stylish",
             "isPremium": true
+        },
+        {
+            "name": "PCM_Layout01",
+            "description": "Square Frame 01",
+            "category": "Stylish",
+            "isPremium": false
         }
     ]
 }
