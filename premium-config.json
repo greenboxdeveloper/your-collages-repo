@@ -1,0 +1,138 @@
+{
+  "version": "1.0.0",
+  "lastUpdated": "2024-01-15T10:30:00Z",
+  "classicCollages": {
+    "0": false,
+    "1": false,
+    "2": false,
+    "3": false,
+    "4": false,
+    "5": false,
+    "6": false,
+    "7": false,
+    "8": false,
+    "9": false,
+    "10": false,
+    "11": false,
+    "12": false,
+    "13": false,
+    "14": false,
+    "15": false,
+    "16": true,
+    "17": true,
+    "18": true,
+    "19": true,
+    "20": true,
+    "21": true,
+    "22": true,
+    "23": true,
+    "24": true,
+    "25": true,
+    "26": true,
+    "27": true,
+    "28": true,
+    "29": true,
+    "30": true,
+    "31": true,
+    "32": true,
+    "33": true,
+    "34": true,
+    "35": true,
+    "36": true,
+    "37": true,
+    "38": true,
+    "39": true,
+    "40": true,
+    "41": true,
+    "42": true,
+    "43": true,
+    "44": true,
+    "45": true,
+    "46": true,
+    "47": true,
+    "48": true,
+    "49": true,
+    "50": true,
+    "51": true,
+    "52": true,
+    "53": true,
+    "54": true,
+    "55": true,
+    "56": true,
+    "57": true,
+    "58": true,
+    "59": true
+  },
+  "specialCollages": [
+    {
+      "className": "Collage2_1",
+      "isPremium": true,
+      "isSpecial": true
+    },
+    {
+      "className": "Collage2_2",
+      "isPremium": true,
+      "isSpecial": true
+    },
+    {
+      "className": "Collage2_3",
+      "isPremium": true,
+      "isSpecial": true
+    },
+    {
+      "className": "Collage2_4",
+      "isPremium": true,
+      "isSpecial": true
+    },
+    {
+      "className": "Collage2_5",
+      "isPremium": true,
+      "isSpecial": true
+    },
+    {
+      "className": "Collage2_6",
+      "isPremium": true,
+      "isSpecial": true
+    },
+    {
+      "className": "Collage2_7",
+      "isPremium": true,
+      "isSpecial": true
+    },
+    {
+      "className": "Collage2_8",
+      "isPremium": true,
+      "isSpecial": true
+    },
+    {
+      "className": "Collage2_9",
+      "isPremium": true,
+      "isSpecial": true
+    },
+    {
+      "className": "Collage3_1",
+      "isPremium": true,
+      "isSpecial": true
+    },
+    {
+      "className": "Collage3_2",
+      "isPremium": true,
+      "isSpecial": true
+    },
+    {
+      "className": "Collage3_3",
+      "isPremium": true,
+      "isSpecial": true
+    },
+    {
+      "className": "Collage4_1",
+      "isPremium": true,
+      "isSpecial": true
+    },
+    {
+      "className": "Collage4_2",
+      "isPremium": true,
+      "isSpecial": true
+    }
+  ]
+}
