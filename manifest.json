@@ -3,6 +3,168 @@
     "lastUpdated": "2024-01-15T10:30:00Z",
     "svgs": [
         {
+            "name": "SVG14",
+            "description": "Premium circular arrangement",
+            "category": "Classic",
+            "isPremium": true
+        },
+        {
+            "name": "SVG13",
+            "description": " rectancular arrangement",
+            "category": "Classic",
+            "isPremium": true
+        },
+        {
+            "name": "SVG15",
+            "description": " rectancular arrangement diagonal",
+            "category": "Classic",
+            "isPremium": true
+        },
+        {
+            "name": "SVG16",
+            "description": "left linier2 and right square 2",
+            "category": "Classic",
+            "isPremium": true
+        },
+        {
+            "name": "PCM_CL01",
+            "description": "PCM_CL01",
+            "category": "Classic",
+            "isPremium": true
+        },
+        {
+            "name": "PCM_CL01",
+            "description": "PCM_CL01",
+            "category": "Classic",
+            "isPremium": true
+        },
+        {
+            "name": "PCM_CL02",
+            "description": "PCM_CL02",
+            "category": "Classic",
+            "isPremium": true
+        },
+        {
+            "name": "PCM_CL03",
+            "description": "PCM_CL03",
+            "category": "Classic",
+            "isPremium": true
+        },
+        {
+            "name": "PCM_CL04",
+            "description": "PCM_CL04",
+            "category": "Classic",
+            "isPremium": true
+        },
+        {
+            "name": "PCM_CL05",
+            "description": "PCM_CL05",
+            "category": "Classic",
+            "isPremium": true
+        },
+        {
+            "name": "PCM_CL06",
+            "description": "PCM_CL06",
+            "category": "Classic",
+            "isPremium": true
+        },
+        {
+            "name": "PCM_CL07",
+            "description": "PCM_CL07",
+            "category": "Classic",
+            "isPremium": true
+        },
+        {
+            "name": "PCM_CL08",
+            "description": "PCM_CL08",
+            "category": "Classic",
+            "isPremium": true
+        },
+        {
+            "name": "PCM_CL09",
+            "description": "PCM_CL09",
+            "category": "Classic",
+            "isPremium": true
+        },
+        {
+            "name": "PCM_CL10",
+            "description": "PCM_CL10",
+            "category": "Classic",
+            "isPremium": true
+        },
+        {
+            "name": "PCM_CL11",
+            "description": "PCM_CL11",
+            "category": "Classic",
+            "isPremium": true
+        },
+        {
+            "name": "PCM_CL12",
+            "description": "PCM_CL12",
+            "category": "Classic",
+            "isPremium": true
+        },
+        {
+            "name": "PCM_CL13",
+            "description": "PCM_CL13",
+            "category": "Classic",
+            "isPremium": true
+        },
+        {
+            "name": "PCM_CL14",
+            "description": "PCM_CL14",
+            "category": "Classic",
+            "isPremium": true
+        },
+        {
+            "name": "PCM_CL15",
+            "description": "PCM_CL15",
+            "category": "Classic",
+            "isPremium": true
+        },
+        {
+            "name": "PCM_CL16",
+            "description": "PCM_CL16",
+            "category": "Classic",
+            "isPremium": true
+        },
+        {
+            "name": "PCM_CL17",
+            "description": "PCM_CL17",
+            "category": "Classic",
+            "isPremium": true
+        },
+        {
+            "name": "PCM_CL18",
+            "description": "PCM_CL18",
+            "category": "Classic",
+            "isPremium": true
+        },
+        {
+            "name": "PCM_CL19",
+            "description": "PCM_CL19",
+            "category": "Classic",
+            "isPremium": true
+        },
+        {
+            "name": "PCM_CL20",
+            "description": "PCM_CL20",
+            "category": "Classic",
+            "isPremium": true
+        },
+        {
+            "name": "PCM_CL21",
+            "description": "PCM_CL21",
+            "category": "Classic",
+            "isPremium": true
+        },
+        {
+            "name": "PCM_CL22",
+            "description": "PCM_CL22",
+            "category": "Classic",
+            "isPremium": true
+        },
+        {
             "name": "SVG8",
             "description": "Simple 2-photo layout",
             "category": "Stylish",
@@ -31,30 +193,6 @@
             "description": "Modern hexagonal layout",
             "category": "Stylish",
             "isPremium": false
-        },
-        {
-            "name": "SVG14",
-            "description": "Premium circular arrangement",
-            "category": "Classic",
-            "isPremium": true
-        },
-        {
-            "name": "SVG13",
-            "description": " rectancular arrangement",
-            "category": "Classic",
-            "isPremium": true
-        },
-        {
-            "name": "SVG15",
-            "description": " rectancular arrangement diagonal",
-            "category": "Classic",
-            "isPremium": true
-        },
-        {
-            "name": "SVG16",
-            "description": "left linier2 and right square 2",
-            "category": "Classic",
-            "isPremium": true
         },
         {
             "name": "STY1",
