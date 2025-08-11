@@ -147,7 +147,7 @@
             "isPremium": true
         },
         {
-            "name": "PCM_CL20",
+            "name": "PCM_CL20_IS",
             "description": "PCM_CL20",
             "category": "Classic",
             "isPremium": true
