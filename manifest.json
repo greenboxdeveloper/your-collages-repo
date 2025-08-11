@@ -1,6 +1,6 @@
 {
-    "version": "1.0.4",
-    "lastUpdated": "2024-01-15T10:30:00Z",
+    "version": "1.0.5",
+    "lastUpdated": "2025-08-11",
     "svgs": [
         {
             "name": "SVG14",
@@ -164,6 +164,130 @@
             "category": "Classic",
             "isPremium": true
         },
+
+
+
+        
+        {
+            "name": "PCM_SL01",
+            "description": "PCM_SL01",
+            "category": "Stylish",
+            "isPremium": true
+        },
+        {
+            "name": "PCM_SL02",
+            "description": "PCM_SL02",
+            "category": "Stylish",
+            "isPremium": true
+        },
+        {
+            "name": "PCM_SL03",
+            "description": "PCM_SL03",
+            "category": "Stylish",
+            "isPremium": true
+        },
+        {
+            "name": "PCM_SL04",
+            "description": "PCM_SL04",
+            "category": "Stylish",
+            "isPremium": true
+        },
+        {
+            "name": "PCM_SL05",
+            "description": "PCM_SL05",
+            "category": "Stylish",
+            "isPremium": true
+        },
+        {
+            "name": "PCM_SL06",
+            "description": "PCM_SL06",
+            "category": "Stylish",
+            "isPremium": true
+        },
+        {
+            "name": "PCM_SL07",
+            "description": "PCM_SL07",
+            "category": "Stylish",
+            "isPremium": true
+        },
+        {
+            "name": "PCM_SL08",
+            "description": "PCM_SL08",
+            "category": "Stylish",
+            "isPremium": true
+        },
+        {
+            "name": "PCM_SL09",
+            "description": "PCM_SL09",
+            "category": "Stylish",
+            "isPremium": true
+        },
+        {
+            "name": "PCM_SL10",
+            "description": "PCM_SL10",
+            "category": "Stylish",
+            "isPremium": true
+        },
+        {
+            "name": "PCM_SL11",
+            "description": "PCM_SL11",
+            "category": "Stylish",
+            "isPremium": true
+        },
+        {
+            "name": "PCM_SL12",
+            "description": "PCM_SL12",
+            "category": "Stylish",
+            "isPremium": true
+        },
+        {
+            "name": "PCM_SL13",
+            "description": "PCM_SL13",
+            "category": "Stylish",
+            "isPremium": true
+        },
+        {
+            "name": "PCM_SL14",
+            "description": "PCM_SL14",
+            "category": "Stylish",
+            "isPremium": true
+        },
+        {
+            "name": "PCM_SL15",
+            "description": "PCM_SL15",
+            "category": "Stylish",
+            "isPremium": true
+        },
+        {
+            "name": "PCM_SL16",
+            "description": "PCM_SL16",
+            "category": "Stylish",
+            "isPremium": true
+        },
+        {
+            "name": "PCM_SL17",
+            "description": "PCM_SL17",
+            "category": "Stylish",
+            "isPremium": true
+        },
+        {
+            "name": "PCM_SL18",
+            "description": "PCM_SL18",
+            "category": "Stylish",
+            "isPremium": true
+        },
+        {
+            "name": "PCM_SL19",
+            "description": "PCM_SL19",
+            "category": "Stylish",
+            "isPremium": true
+        },
+        {
+            "name": "PCM_SL20",
+            "description": "PCM_SL20",
+            "category": "Stylish",
+            "isPremium": true
+        },
         {
             "name": "SVG8",
             "description": "Simple 2-photo layout",
@@ -245,66 +369,6 @@
         {
             "name": "WAVE",
             "description": "Wave upper and lower",
-            "category": "Stylish",
-            "isPremium": true
-        },
-        {
-            "name": "PCM_Layout01",
-            "description": "Square Frame 01",
-            "category": "Stylish",
-            "isPremium": true
-        },
-        {
-            "name": "PCM_Layout02",
-            "description": "Square Frame 02",
-            "category": "Stylish",
-            "isPremium": true
-        },
-        {
-            "name": "PCM_Layout03",
-            "description": "Square Frame 03",
-            "category": "Stylish",
-            "isPremium": true
-        },
-        {
-            "name": "PCM_Layout04",
-            "description": "Square Frame 04",
-            "category": "Stylish",
-            "isPremium": true
-        },
-        {
-            "name": "PCM_Layout05",
-            "description": "Circuler Frame 01",
-            "category": "Stylish",
-            "isPremium": true
-        },
-        {
-            "name": "PCM_Layout06",
-            "description": "Circuler Frame 02",
-            "category": "Stylish",
-            "isPremium": true
-        },
-        {
-            "name": "PCM_Layout07",
-            "description": "Circuler Frame 03",
-            "category": "Stylish",
-            "isPremium": true
-        },
-        {
-            "name": "PCM_Layout08",
-            "description": "Circuler Frame 04",
-            "category": "Stylish",
-            "isPremium": true
-        },
-        {
-            "name": "PCM_Layout09",
-            "description": "Frame 09",
-            "category": "Stylish",
-            "isPremium": true
-        },
-        {
-            "name": "PCM_Layout10",
-            "description": "Cloud Frame 01",
             "category": "Stylish",
             "isPremium": true
         }
