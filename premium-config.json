@@ -2,8 +2,8 @@
   "version": "1.0.0",
   "lastUpdated": "2024-01-15T10:30:00Z",
   "classicCollages": {
-    "0": true,
-    "1": true,
+    "0": false,
+    "1": false,
     "2": false,
     "3": false,
     "4": false,
