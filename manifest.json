@@ -165,6 +165,18 @@
             "isPremium": true
         },
         {
+            "name": "PCM_CL23",
+            "description": "PCM_CL23",
+            "category": "Classic",
+            "isPremium": true
+        },
+        {
+            "name": "PCM_CL24",
+            "description": "PCM_CL24",
+            "category": "Classic",
+            "isPremium": true
+        },
+        {
             "name": "PCM_CL25",
             "description": "PCM_CL25",
             "category": "Classic",
