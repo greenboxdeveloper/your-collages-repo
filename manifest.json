@@ -182,6 +182,24 @@
             "category": "Classic",
             "isPremium": true
         },
+        {
+            "name": "PCM_CL34",
+            "description": "PCM_CL34_Comic01",
+            "category": "Classic",
+            "isPremium": true
+        },
+        {
+            "name": "PCM_CL35",
+            "description": "PCM_CL35_Comic01",
+            "category": "Classic",
+            "isPremium": true
+        },
+        {
+            "name": "PCM_CL36",
+            "description": "PCM_CL36_Comic01",
+            "category": "Classic",
+            "isPremium": true
+        },
 
 
 
