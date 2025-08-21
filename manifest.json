@@ -177,26 +177,32 @@
             "isPremium": true
         },
         {
+            "name": "PCM_CL25",
+            "description": "PCM_CL25",
+            "category": "Classic",
+            "isPremium": true
+        },
+        {
             "name": "PCM_CL33",
-            "description": "PCM_CL33_Comic01",
+            "description": "PCM_CL33_Comic",
             "category": "Classic",
             "isPremium": true
         },
         {
             "name": "PCM_CL34",
-            "description": "PCM_CL34_Comic01",
+            "description": "PCM_CL34_Comic",
             "category": "Classic",
             "isPremium": true
         },
         {
             "name": "PCM_CL35",
-            "description": "PCM_CL35_Comic01",
+            "description": "PCM_CL35_Comic",
             "category": "Classic",
             "isPremium": true
         },
         {
             "name": "PCM_CL36",
-            "description": "PCM_CL36_Comic01",
+            "description": "PCM_CL36_Comic",
             "category": "Classic",
             "isPremium": true
         },
