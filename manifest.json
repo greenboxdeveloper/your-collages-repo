@@ -177,12 +177,6 @@
             "isPremium": true
         },
         {
-            "name": "PCM_CL25",
-            "description": "PCM_CL25",
-            "category": "Classic",
-            "isPremium": true
-        },
-        {
             "name": "PCM_CL33",
             "description": "PCM_CL33_Comic",
             "category": "Classic",
