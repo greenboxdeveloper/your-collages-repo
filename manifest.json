@@ -178,49 +178,49 @@
         },
         {
             "name": "PCM_CL25",
-            "description": "PCM_CL24",
+            "description": "PCM_CL25",
             "category": "Classic",
             "isPremium": true
         },
         {
             "name": "PCM_CL26",
-            "description": "PCM_CL24",
+            "description": "PCM_CL26",
             "category": "Classic",
             "isPremium": true
         },
         {
             "name": "PCM_CL27",
-            "description": "PCM_CL24",
+            "description": "PCM_CL27",
             "category": "Classic",
             "isPremium": true
         },
         {
             "name": "PCM_CL28",
-            "description": "PCM_CL24",
+            "description": "PCM_CL28",
             "category": "Classic",
             "isPremium": true
         },
         {
             "name": "PCM_CL29",
-            "description": "PCM_CL24",
+            "description": "PCM_CL29",
             "category": "Classic",
             "isPremium": true
         },
         {
             "name": "PCM_CL30",
-            "description": "PCM_CL24",
+            "description": "PCM_CL30",
             "category": "Classic",
             "isPremium": true
         },
         {
             "name": "PCM_CL31",
-            "description": "PCM_CL24",
+            "description": "PCM_CL31",
             "category": "Classic",
             "isPremium": true
         },
         {
             "name": "PCM_CL32",
-            "description": "PCM_CL24",
+            "description": "PCM_CL32",
             "category": "Classic",
             "isPremium": true
         },
@@ -369,6 +369,78 @@
         {
             "name": "PCM_SL20",
             "description": "PCM_SL20",
+            "category": "Stylish",
+            "isPremium": true
+        },
+        {
+            "name": "PCM_SL21",
+            "description": "PCM_SL21",
+            "category": "Stylish",
+            "isPremium": true
+        },
+        {
+            "name": "PCM_SL22",
+            "description": "PCM_SL22",
+            "category": "Stylish",
+            "isPremium": true
+        },
+        {
+            "name": "PCM_SL23",
+            "description": "PCM_SL23",
+            "category": "Stylish",
+            "isPremium": true
+        },
+        {
+            "name": "PCM_SL24",
+            "description": "PCM_SL24",
+            "category": "Stylish",
+            "isPremium": true
+        },
+        {
+            "name": "PCM_SL25",
+            "description": "PCM_SL25",
+            "category": "Stylish",
+            "isPremium": true
+        },
+        {
+            "name": "PCM_SL26",
+            "description": "PCM_SL26",
+            "category": "Stylish",
+            "isPremium": true
+        },
+        {
+            "name": "PCM_SL27",
+            "description": "PCM_SL27",
+            "category": "Stylish",
+            "isPremium": true
+        },
+        {
+            "name": "PCM_SL28",
+            "description": "PCM_SL28",
+            "category": "Stylish",
+            "isPremium": true
+        },
+        {
+            "name": "PCM_SL29",
+            "description": "PCM_SL29",
+            "category": "Stylish",
+            "isPremium": true
+        },
+        {
+            "name": "PCM_SL30",
+            "description": "PCM_SL30",
+            "category": "Stylish",
+            "isPremium": true
+        },
+        {
+            "name": "PCM_SL31",
+            "description": "PCM_SL31",
+            "category": "Stylish",
+            "isPremium": true
+        },
+        {
+            "name": "PCM_SL32",
+            "description": "PCM_SL32",
             "category": "Stylish",
             "isPremium": true
         },
