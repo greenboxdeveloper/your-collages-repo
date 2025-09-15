@@ -1,5 +1,5 @@
 {
-    "version": "1.0.5",
+    "version": "1.0.6",
     "lastUpdated": "2025-08-11",
     "svgs": [
         {
@@ -172,6 +172,54 @@
         },
         {
             "name": "PCM_CL24",
+            "description": "PCM_CL24",
+            "category": "Classic",
+            "isPremium": true
+        },
+        {
+            "name": "PCM_CL25",
+            "description": "PCM_CL24",
+            "category": "Classic",
+            "isPremium": true
+        },
+        {
+            "name": "PCM_CL26",
+            "description": "PCM_CL24",
+            "category": "Classic",
+            "isPremium": true
+        },
+        {
+            "name": "PCM_CL27",
+            "description": "PCM_CL24",
+            "category": "Classic",
+            "isPremium": true
+        },
+        {
+            "name": "PCM_CL28",
+            "description": "PCM_CL24",
+            "category": "Classic",
+            "isPremium": true
+        },
+        {
+            "name": "PCM_CL29",
+            "description": "PCM_CL24",
+            "category": "Classic",
+            "isPremium": true
+        },
+        {
+            "name": "PCM_CL30",
+            "description": "PCM_CL24",
+            "category": "Classic",
+            "isPremium": true
+        },
+        {
+            "name": "PCM_CL31",
+            "description": "PCM_CL24",
+            "category": "Classic",
+            "isPremium": true
+        },
+        {
+            "name": "PCM_CL32",
             "description": "PCM_CL24",
             "category": "Classic",
             "isPremium": true
