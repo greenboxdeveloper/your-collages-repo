@@ -14,6 +14,7 @@ import argparse
 import json
 import os
 import sys
+from io import BytesIO
 from pathlib import Path
 
 # Optional: svgelements for SVG parsing
@@ -27,6 +28,11 @@ try:
 except ImportError:
     Image = None
     ImageDraw = None
+
+try:
+    import cairosvg
+except ImportError:
+    cairosvg = None
 
 
 # -----------------------------------------------------------------------------
@@ -144,7 +150,7 @@ def parse_svg_file(svg_path: Path, base_url: str, id_prefix: str = "svg_") -> di
         print(f"  No slots extracted from {svg_path}", file=sys.stderr)
         return None
 
-    return {
+    result = {
         "id": layout_id,
         "name": name,
         "category": "Stylish",
@@ -153,6 +159,9 @@ def parse_svg_file(svg_path: Path, base_url: str, id_prefix: str = "svg_") -> di
         "thumbnailURL": f"{base_url}/thumbnails/{layout_id}.jpg",
         "slots": slots,
     }
+    # Store viewbox for thumbnail rendering (path_data is in SVG coords); stripped before writing manifest
+    result["__viewbox"] = (0, 0, vw, vh)
+    return result
 
 
 def parse_svg_folder(svg_dir: Path, base_url: str, id_prefix: str = "svg_") -> list:
@@ -169,7 +178,7 @@ def parse_svg_folder(svg_dir: Path, base_url: str, id_prefix: str = "svg_") -> l
 
 
 # -----------------------------------------------------------------------------
-# Thumbnails (Pillow)
+# Thumbnails (Pillow + cairosvg for organic paths)
 # -----------------------------------------------------------------------------
 
 # Distinct colors per slot index (for grid preview)
@@ -185,8 +194,35 @@ THUMB_COLORS = [
 ]
 
 
+def _render_path_to_image(
+    path_data: str, width: int, height: int, color_rgb: tuple,
+    viewbox: tuple[float, float, float, float] | None = None,
+) -> Image.Image | None:
+    """Render SVG path to a PIL Image. viewbox=(minx, miny, vbw, vbh); if None, assumes 0 0 1 1 (normalized coords)."""
+    if cairosvg is None or Image is None:
+        return None
+    # Escape for XML attribute
+    d_escaped = path_data.replace("&", "&amp;").replace('"', "&quot;").replace("<", "&lt;").replace(">", "&gt;")
+    r, g, b = color_rgb
+    hex_color = f"#{r:02x}{g:02x}{b:02x}"
+    if viewbox is not None:
+        vbx, vby, vbw, vbh = viewbox
+        vb = f"{vbx} {vby} {vbw} {vbh}"
+    else:
+        vb = "0 0 1 1"
+    svg = f'''<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="{vb}" width="{width}" height="{height}">
+  <path d="{d_escaped}" fill="{hex_color}" stroke="#505050" stroke-width="0.01"/>
+</svg>'''
+    try:
+        png_bytes = cairosvg.svg2png(bytestring=svg.encode("utf-8"), output_width=width, output_height=height)
+        return Image.open(BytesIO(png_bytes)).convert("RGB")
+    except Exception:
+        return None
+
+
 def draw_thumbnail(layout: dict, out_path: Path, size: int = 300) -> None:
-    """Draw a 300x300 thumbnail with one colored rect per slot (n_rect)."""
+    """Draw a 300x300 thumbnail. Uses path_data for organic slots; falls back to rect for grid or if cairosvg unavailable."""
     if Image is None or ImageDraw is None:
         return
     img = Image.new("RGB", (size, size), (240, 240, 240))
@@ -196,11 +232,20 @@ def draw_thumbnail(layout: dict, out_path: Path, size: int = 300) -> None:
         nr = slot.get("n_rect", [0, 0, 1, 1])
         if len(nr) < 4:
             continue
-        x = nr[0] * size
-        y = nr[1] * size
-        w = nr[2] * size
-        h = nr[3] * size
+        x = int(nr[0] * size)
+        y = int(nr[1] * size)
+        w = max(1, int(nr[2] * size))
+        h = max(1, int(nr[3] * size))
         color = THUMB_COLORS[i % len(THUMB_COLORS)]
+
+        path_data = slot.get("path_data")
+        if path_data and cairosvg is not None:
+            viewbox = layout.get("__viewbox")  # SVG-derived layouts have path in file coords
+            slot_img = _render_path_to_image(path_data, w, h, color, viewbox=viewbox)
+            if slot_img is not None:
+                img.paste(slot_img, (x, y))
+                continue
+        # Grid slot or fallback: draw rectangle
         draw.rectangle([x, y, x + w, y + h], fill=color, outline=(80, 80, 80), width=1)
     out_path.parent.mkdir(parents=True, exist_ok=True)
     img.save(out_path, "JPEG", quality=85)
@@ -248,8 +293,11 @@ def main() -> int:
         draw_thumbnail(layout, thumb_dir / f"{lid}.jpg")
     print(f"Wrote {len(layouts)} thumbnails to {thumb_dir}")
 
-    # 4) Write manifest
-    manifest = {"version": "2.0", "layouts": layouts}
+    # 4) Write manifest (strip internal keys like __viewbox)
+    def strip_internal_keys(layout: dict) -> dict:
+        return {k: v for k, v in layout.items() if not k.startswith("__")}
+    layouts_clean = [strip_internal_keys(l) for l in layouts]
+    manifest = {"version": "2.0", "layouts": layouts_clean}
     with open(output_path, "w", encoding="utf-8") as f:
         json.dump(manifest, f, indent=2, ensure_ascii=False)
     print(f"Wrote {output_path}")
