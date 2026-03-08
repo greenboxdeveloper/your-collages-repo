@@ -28,10 +28,22 @@ except ImportError:
     ImageDraw = None
 
 try:
-    from svgelements import SVG, Path as SVGPath, Rect, Polygon, Circle, Ellipse
+    from svgelements import (
+        SVG,
+        Path as SVGPath,
+        Rect,
+        Polygon,
+        Circle,
+        Ellipse,
+        Matrix,
+        Move,
+        Line,
+        Curve,
+        Close,
+    )
 except ImportError:
-    SVG = None
-    SVGPath = Rect = Polygon = Circle = Ellipse = None
+    SVG = SVGPath = Rect = Polygon = Circle = Ellipse = None
+    Matrix = Move = Line = Curve = Close = None
 
 try:
     import cairosvg
@@ -476,35 +488,93 @@ def _render_path_cairo(
         return None
 
 
+def _path_segments_to_polygons(scaled_path) -> list[list[tuple[float, float]]]:
+    """
+    Convert svgelements Path segments to list of polygons (list of (x,y) points).
+    Move = start new subpath; Line = add end point; Curve = sample Bezier; Close = close to first.
+    """
+    polygons = []
+    current = []
+    n_curve_steps = 12  # sample Bezier curves for smooth outline
+
+    for segment in scaled_path:
+        if isinstance(segment, Move):
+            if current:
+                polygons.append(current)
+            end = segment.end
+            current = [(end.x, end.y)] if end is not None else []
+        elif isinstance(segment, Line):
+            end = segment.end
+            if end is not None:
+                current.append((end.x, end.y))
+        elif isinstance(segment, Curve):
+            # Sample points along the Bezier (t=0 is segment.start, t=1 is segment.end)
+            for k in range(1, n_curve_steps + 1):
+                t = k / n_curve_steps
+                try:
+                    p = segment.point(t)
+                    if p is not None:
+                        current.append((p.x, p.y))
+                except Exception:
+                    pass
+        elif isinstance(segment, Close):
+            if current:
+                current.append(current[0])
+                polygons.append(current)
+            current = []
+
+    if current:
+        polygons.append(current)
+    return polygons
+
+
 def _draw_stylish_thumbnail(img: Image.Image, draw, slots: list, size: int) -> None:
     """
-    Stylish layouts (from classic_and_stylish_layouts.json):
-    - Each slot has n_rect [x, y, w, h] and path_data in normalized 0-1 (full canvas).
-    - path_data coordinates are 0 = left/top, 1 = right/bottom. Draw them 1:1 onto the image.
+    Stylish layouts (classic_and_stylish_layouts.json):
+    - path_data is normalized 0-1. Scale by (size, size) and draw via svgelements Path segments.
+    - Uses Path(path_data), scale transform, then Move/Line/Curve/Close to get polygon points.
     """
-    # Map 0-1 to 0..size-1 so we don't clip on the last pixel (use size-1 for 1.0)
-    def to_px(x: float, y: float) -> tuple[int, int]:
-        return (round(x * (size - 1)), round(y * (size - 1)))
-
     for i, slot in enumerate(slots):
         path_data = slot.get("path_data")
         if not path_data:
             nr = slot.get("n_rect", [0, 0, 1, 1])
             if len(nr) >= 4:
-                x, y = round(nr[0] * (size - 1)), round(nr[1] * (size - 1))
-                w, h = max(1, round(nr[2] * (size - 1))), max(1, round(nr[3] * (size - 1)))
+                x = round(nr[0] * (size - 1))
+                y = round(nr[1] * (size - 1))
+                w = max(1, round(nr[2] * (size - 1)))
+                h = max(1, round(nr[3] * (size - 1)))
                 color = (*THUMB_COLORS[i % len(THUMB_COLORS)], 255)
                 draw.rectangle([x, y, x + w, y + h], fill=color, outline=(80, 80, 80, 255), width=1)
             continue
 
         color = (*THUMB_COLORS[i % len(THUMB_COLORS)], 255)
-        # path_data is in 0-1; viewbox (0,0,1,1) means no normalization
-        polygons = _flatten_path_to_polygons(path_data, viewbox=(0.0, 0.0, 1.0, 1.0))
-        for poly in polygons:
-            if len(poly) < 2:
-                continue
-            pts = [to_px(p[0], p[1]) for p in poly]
-            draw.polygon(pts, fill=color, outline=(80, 80, 80, 255))
+
+        if SVGPath is not None and Matrix is not None and Move is not None:
+            try:
+                path = SVGPath(path_data)
+                # path_data is 0-1 normalized → scale to image size
+                scaled = path * Matrix.scale(size, size)
+                polygons = _path_segments_to_polygons(scaled)
+                for poly in polygons:
+                    if len(poly) < 2:
+                        continue
+                    pts = [(round(p[0]), round(p[1])) for p in poly]
+                    draw.polygon(pts, fill=color, outline=(80, 80, 80, 255))
+            except Exception:
+                # Fallback: Pillow path flattening
+                polygons = _flatten_path_to_polygons(path_data, viewbox=(0.0, 0.0, 1.0, 1.0))
+                for poly in polygons:
+                    if len(poly) < 2:
+                        continue
+                    pts = [(round(p[0] * (size - 1)), round(p[1] * (size - 1))) for p in poly]
+                    draw.polygon(pts, fill=color, outline=(80, 80, 80, 255))
+        else:
+            polygons = _flatten_path_to_polygons(path_data, viewbox=(0.0, 0.0, 1.0, 1.0))
+            for poly in polygons:
+                if len(poly) < 2:
+                    continue
+                pts = [(round(p[0] * (size - 1)), round(p[1] * (size - 1))) for p in poly]
+                draw.polygon(pts, fill=color, outline=(80, 80, 80, 255))
 
 
 def draw_thumbnail(layout: dict, out_path: Path, size: int = 300) -> None:
