@@ -4,9 +4,9 @@ from __future__ import annotations
 """
 Generate enhanced_manifest.json (version 2.0) by merging:
   1. classic_and_stylish_layouts.json (classic + stylish from app export)
-  2. All .svg files in a folder (parsed like SVGLayoutParser: viewBox + path/polygon/rect/circle/ellipse)
+  2. All .svg files in a folder (parsed with svgelements)
 
-Also generates thumbnail images (one per layout) in thumbnails/.
+Generates JPG thumbnails (one per layout) in thumbnails/.
 
 Usage:
   python generate_enhanced_manifest.py --base-url "https://raw.githubusercontent.com/OWNER/REPO/main"
@@ -21,13 +21,17 @@ import sys
 from io import BytesIO
 from pathlib import Path
 
-# SVG parsing is string/regex-based (mirrors SVGLayoutParser); svgelements not required
-
 try:
     from PIL import Image, ImageDraw
 except ImportError:
     Image = None
     ImageDraw = None
+
+try:
+    from svgelements import SVG, Path as SVGPath, Rect, Polygon, Circle, Ellipse
+except ImportError:
+    SVG = None
+    SVGPath = Rect = Polygon = Circle = Ellipse = None
 
 try:
     import cairosvg
@@ -69,11 +73,11 @@ def load_classic_stylish_layouts(json_path: Path, base_url: str) -> list:
 
 
 # -----------------------------------------------------------------------------
-# SVG parsing (mirror SVGLayoutParser + SVGCollageLayout: viewBox, path, polygon, rect, circle, ellipse)
+# SVG parsing (svgelements – simple bbox + path_data)
 # -----------------------------------------------------------------------------
 
 def _ellipse_path_d(cx: float, cy: float, rx: float, ry: float, steps: int = 32) -> str:
-    """SVG path d for ellipse (polygon approximation) so thumbnails draw ovals; parser uses M/L/Z."""
+    """SVG path d for ellipse (polygon approximation) for thumbnails."""
     if rx <= 0 or ry <= 0:
         return ""
     pts = []
@@ -83,139 +87,115 @@ def _ellipse_path_d(cx: float, cy: float, rx: float, ry: float, steps: int = 32)
     return "M " + " ".join(f"{x} {y}" for x, y in pts) + " Z"
 
 
-def _parse_viewbox_from_svg_string(svg_string: str) -> tuple[float, float, float, float]:
-    """Mirror SVGLayoutParser.parseViewBox: viewBox=\"([^\"]+)\" then 4 components."""
-    m = re.search(r'viewBox=["\']([^"\']+)["\']', svg_string, re.IGNORECASE)
-    if not m:
-        return (0.0, 0.0, 500.0, 500.0)
-    parts = m.group(1).split()
-    if len(parts) < 4:
-        return (0.0, 0.0, 500.0, 500.0)
+def _get_viewbox_size(svg) -> tuple[float, float]:
+    """Return (width, height) from SVG viewbox or default 500,500."""
     try:
-        return (float(parts[0]), float(parts[1]), float(parts[2]), float(parts[3]))
-    except ValueError:
-        return (0.0, 0.0, 500.0, 500.0)
-
-
-def _path_bounds_from_d(path_d: str) -> tuple[float, float, float, float] | None:
-    """Compute bounding box of path d by flattening to points (same logic as app path.bounds)."""
-    polys = _flatten_path_to_polygons(path_d, viewbox=None)  # work in raw coords
-    if not polys or not polys[0]:
-        return None
-    all_x = [p[0] for poly in polys for p in poly]
-    all_y = [p[1] for poly in polys for p in poly]
-    if not all_x or not all_y:
-        return None
-    return (min(all_x), min(all_y), max(all_x) - min(all_x), max(all_y) - min(all_y))
-
-
-def _parse_layout_from_svg_string(svg_string: str) -> list[tuple[str, float, float, float, float, str | None]]:
-    """Mirror SVGLayoutParser.parseLayout order: path (id), path (no id), polygon, g rect, xml rect, xml circle, ellipse. Returns [(frame_id, x, y, w, h, path_d or None)]."""
-    frames: list[tuple[str, float, float, float, float, str | None]] = []
-    # 1) Path with id: <path ... id="..." ... d="...">
-    for m in re.finditer(r'<path[^>]*?id\s*=\s*["\']([^"\']+)["\'][^>]*?d\s*=\s*["\']([^"\']+)["\'][^>]*?/?>', svg_string, re.IGNORECASE | re.DOTALL):
-        fid, d = m.group(1), m.group(2)
-        b = _path_bounds_from_d(d)
-        if b:
-            frames.append((fid, b[0], b[1], b[2], b[3], d))
-    # 2) Path without id
-    for i, m in enumerate(re.finditer(r'<path(?![^>]*id)[^>]*d\s*=\s*["\']([^"\']+)["\'][^>]*?/?>', svg_string, re.IGNORECASE | re.DOTALL)):
-        d = m.group(1)
-        b = _path_bounds_from_d(d)
-        if b:
-            frames.append((f"path_noid_{i+1}", b[0], b[1], b[2], b[3], d))
-    # 3) Polygon
-    for i, m in enumerate(re.finditer(r'<polygon[^>]*?(?:id\s*=\s*["\']([^"\']*)["\'])?[^>]*?points\s*=\s*["\']([^"\']+)["\'][^>]*?/?>', svg_string, re.IGNORECASE | re.DOTALL)):
-        pid = m.group(1).strip() if m.group(1) else f"polygon_{i+1}"
-        points_str = m.group(2).strip()
-        # Convert points to path d "M x1 y1 L x2 y2 ... Z" for bounds and storage
-        coords = re.findall(r"[+-]?(?:\d+\.?\d*|\.\d+)(?:[eE][+-]?\d+)?", points_str)
-        if len(coords) >= 6 and len(coords) % 2 == 0:
-            pts = [(float(coords[j]), float(coords[j+1])) for j in range(0, len(coords), 2)]
-            if len(pts) >= 3:
-                path_d = "M " + " ".join(f"{x} {y}" for x, y in pts) + " Z"
-                b = _path_bounds_from_d(path_d)
-                if b:
-                    frames.append((pid, b[0], b[1], b[2], b[3], path_d))
-    # 4) Rect in <g id="..."> (group)
-    for m in re.finditer(r'<g\s+id="([^"]+)">(.*?)</g>', svg_string, re.DOTALL):
-        gid, content = m.group(1), m.group(2)
-        rm = re.search(r'<rect\s+(?:x="([^"]*)")?\s*(?:y="([^"]*)")?\s*(?:width="([^"]+)")\s*(?:height="([^"]+)")', content)
-        if rm:
-            x = float(rm.group(1) or 0)
-            y = float(rm.group(2) or 0)
-            w = float(rm.group(3))
-            h = float(rm.group(4))
-            frames.append((gid, x, y, w, h, None))
-    # 5) Rect via XML (mirror app RectXMLParser)
-    # 6) Circle via XML (mirror app CircleXMLParser)
-    # 7) Ellipse via regex (mirror app ellipseRegex)
-    try:
-        import xml.etree.ElementTree as ET
-        root = ET.fromstring(svg_string)
-
-        def _local_tag(tag: str) -> str:
-            return tag.split("}")[-1] if "}" in tag else tag
-
-        for i, el in enumerate(root.iter()):
-            local = _local_tag(el.tag)
-            if local == "rect":
-                x = float(el.get("x", 0))
-                y = float(el.get("y", 0))
-                w = float(el.get("width", 0))
-                h = float(el.get("height", 0))
-                frames.append((f"rect_xml_{i+1}", x, y, w, h, None))
-            elif local == "circle":
-                cx, cy = float(el.get("cx", 0)), float(el.get("cy", 0))
-                r = float(el.get("r", 0))
-                path_d = _ellipse_path_d(cx, cy, r, r) if r > 0 else None
-                frames.append((f"circle_xml_{i+1}", cx - r, cy - r, r * 2, r * 2, path_d))
+        vb = getattr(svg, "viewbox", None)
+        if vb is not None:
+            w = getattr(vb, "width", None)
+            h = getattr(vb, "height", None)
+            if w is not None and h is not None and float(w) > 0 and float(h) > 0:
+                return float(w), float(h)
+            if isinstance(vb, str):
+                parts = vb.strip().split()
+                if len(parts) >= 4:
+                    return float(parts[2]), float(parts[3])
+        if hasattr(svg, "width") and hasattr(svg, "height"):
+            w, h = float(svg.width), float(svg.height)
+            if w > 0 and h > 0:
+                return w, h
     except Exception:
         pass
-    # 7) Ellipse regex (app uses regex, not XML)
-    for i, m in enumerate(re.finditer(r'<ellipse[^>]*?cx\s*=\s*["\']?([^"\'\s>]*)["\']?[^>]*?cy\s*=\s*["\']?([^"\'\s>]*)["\']?[^>]*?rx\s*=\s*["\']?([^"\'\s>]*)["\']?[^>]*?ry\s*=\s*["\']?([^"\'\s>]*)["\']?[^>]*?/?>', svg_string, re.IGNORECASE | re.DOTALL)):
-        cx, cy = float(m.group(1) or 0), float(m.group(2) or 0)
-        rx, ry = float(m.group(3) or 0), float(m.group(4) or 0)
-        path_d = _ellipse_path_d(cx, cy, rx, ry) if rx > 0 and ry > 0 else None
-        frames.append((f"ellipse_{i+1}", cx - rx, cy - ry, rx * 2, ry * 2, path_d))
-    return frames
+    return 500.0, 500.0
+
+
+def _path_d_for_element(e) -> str | None:
+    """Return path_data string for organic elements (Path, Polygon, Circle, Ellipse), else None."""
+    if SVGPath is not None and isinstance(e, SVGPath):
+        try:
+            d = e.d()
+            return d if d else None
+        except Exception:
+            return None
+    if Polygon is not None and isinstance(e, Polygon):
+        try:
+            pts = getattr(e, "points", None)
+            if pts is None:
+                return None
+            # points can be list of (x,y) or Points object
+            if callable(pts):
+                pts = pts()
+            if hasattr(pts, "__iter__") and not isinstance(pts, str):
+                flat = []
+                for p in pts:
+                    if hasattr(p, "__len__") and len(p) >= 2:
+                        flat.append((float(p[0]), float(p[1])))
+                    else:
+                        break
+                if len(flat) >= 3:
+                    return "M " + " L ".join(f"{x} {y}" for x, y in flat) + " Z"
+            return None
+        except Exception:
+            return None
+    if Circle is not None and isinstance(e, Circle):
+        cx, cy = getattr(e, "cx", 0), getattr(e, "cy", 0)
+        r = getattr(e, "r", 0)
+        return _ellipse_path_d(float(cx), float(cy), float(r), float(r)) if r else None
+    if Ellipse is not None and isinstance(e, Ellipse):
+        cx, cy = getattr(e, "cx", 0), getattr(e, "cy", 0)
+        rx, ry = getattr(e, "rx", 0), getattr(e, "ry", 0)
+        return _ellipse_path_d(float(cx), float(cy), float(rx), float(ry)) if rx and ry else None
+    return None
 
 
 def parse_svg_file(svg_path: Path, base_url: str, id_prefix: str = "svg_") -> dict | None:
-    """Parse one SVG file (mirror app: viewBox + parseLayout order) and return layout dict."""
+    """Parse one SVG with svgelements: bbox → n_rect, path_data for organic shapes."""
+    if SVG is None:
+        print("Warning: svgelements not installed; run pip install svgelements", file=sys.stderr)
+        return None
     base_url = base_url.rstrip("/")
     stem = svg_path.stem
     layout_id = f"{id_prefix}{stem}" if id_prefix else stem
     name = stem.replace("_", " ").replace("-", " ").title()
-
     try:
-        svg_string = svg_path.read_text(encoding="utf-8", errors="replace")
+        svg = SVG.parse(str(svg_path))
     except Exception as e:
-        print(f"Error reading {svg_path}: {e}", file=sys.stderr)
+        print(f"Error parsing {svg_path}: {e}", file=sys.stderr)
         return None
 
-    vbx, vby, vbw, vbh = _parse_viewbox_from_svg_string(svg_string)
+    vbw, vbh = _get_viewbox_size(svg)
     if vbw <= 0 or vbh <= 0:
         vbw, vbh = 500.0, 500.0
 
-    raw_frames = _parse_layout_from_svg_string(svg_string)
-    if not raw_frames:
-        print(f"  No slots extracted from {svg_path}", file=sys.stderr)
+    element_types = (SVGPath, Rect, Polygon, Circle, Ellipse)
+    elements = [e for e in svg.elements() if isinstance(e, element_types)]
+    if not elements:
+        print(f"  No slots in {svg_path}", file=sys.stderr)
         return None
 
+    is_organic = any(isinstance(e, (SVGPath, Polygon, Circle, Ellipse)) for e in elements)
     slots = []
-    is_organic = False
-    for i, (fid, x, y, w, h, path_d) in enumerate(raw_frames):
-        n_x = round(x / vbw, 4)
-        n_y = round(y / vbh, 4)
-        n_w = round(w / vbw, 4)
-        n_h = round(h / vbh, 4)
-        slot = {"id": f"slot_{i}", "n_rect": [n_x, n_y, n_w, n_h]}
-        if path_d:
-            slot["path_data"] = path_d
-            is_organic = True
-        slots.append(slot)
+    for i, e in enumerate(elements):
+        try:
+            bbox = e.bbox()
+            if bbox is None:
+                continue
+            x1, y1 = float(bbox[0]), float(bbox[1])
+            x2, y2 = float(bbox[2]), float(bbox[3])
+            n_x = round(x1 / vbw, 4)
+            n_y = round(y1 / vbh, 4)
+            n_w = round((x2 - x1) / vbw, 4)
+            n_h = round((y2 - y1) / vbh, 4)
+            slot = {"id": f"slot_{i}", "n_rect": [n_x, n_y, n_w, n_h]}
+            path_d = _path_d_for_element(e)
+            if path_d:
+                slot["path_data"] = path_d
+            slots.append(slot)
+        except Exception as ex:
+            print(f"  Skip element {i} in {svg_path}: {ex}", file=sys.stderr)
 
+    if not slots:
+        return None
     result = {
         "id": layout_id,
         "name": name,
