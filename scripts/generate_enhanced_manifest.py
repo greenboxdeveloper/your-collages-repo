@@ -1,4 +1,6 @@
 #!/usr/bin/env python3
+from __future__ import annotations
+
 """
 Generate enhanced_manifest.json (version 2.0) by merging:
   1. classic_and_stylish_layouts.json (classic + stylish from app export)
@@ -13,6 +15,7 @@ Usage:
 import argparse
 import json
 import os
+import re
 import sys
 from io import BytesIO
 from pathlib import Path
@@ -178,7 +181,7 @@ def parse_svg_folder(svg_dir: Path, base_url: str, id_prefix: str = "svg_") -> l
 
 
 # -----------------------------------------------------------------------------
-# Thumbnails (Pillow + cairosvg for organic paths)
+# Thumbnails (Pillow: rects + path parsing for organic shapes)
 # -----------------------------------------------------------------------------
 
 # Distinct colors per slot index (for grid preview)
@@ -194,14 +197,132 @@ THUMB_COLORS = [
 ]
 
 
-def _render_path_to_image(
+def _tokenize_path(d: str) -> list[tuple[str, list[float]]]:
+    """Parse SVG path d string into list of (command, args). Handles M,L,H,V,C,S,Q,T,Z and lower."""
+    # Split on command letters (allow minus/plus after letter for relative coords)
+    parts = re.split(r"([MmLlHhVvCcSsQqTtZz])", d)
+    tokens = []
+    i = 1
+    while i < len(parts):
+        cmd = parts[i].strip()
+        i += 1
+        if i >= len(parts):
+            break
+        rest = parts[i].strip()
+        i += 1
+        if cmd.upper() == "Z":
+            tokens.append((cmd.upper(), []))
+            continue
+        # Parse numbers (allow comma or space separated, and e.g. -0.5 or .5)
+        nums = re.findall(r"[+-]?(?:\d+\.?\d*|\.\d+)(?:[eE][+-]?\d+)?", rest)
+        args = [float(n) for n in nums]
+        tokens.append((cmd.upper(), args))
+    return tokens
+
+
+def _flatten_path_to_polygons(d: str, viewbox: tuple[float, float, float, float] | None) -> list[list[tuple[float, float]]]:
+    """Convert path d to list of polygons (each polygon = list of (x,y) in 0-1)."""
+    vbx, vby, vbw, vbh = viewbox if viewbox else (0.0, 0.0, 1.0, 1.0)
+    if vbw <= 0 or vbh <= 0:
+        vbw, vbh = 1.0, 1.0
+
+    def norm(x: float, y: float) -> tuple[float, float]:
+        return ((x - vbx) / vbw, (y - vby) / vbh)
+
+    tokens = _tokenize_path(d)
+    polygons: list[list[tuple[float, float]]] = []
+    current: list[tuple[float, float]] = []
+    cur_x, cur_y = 0.0, 0.0
+    start_x, start_y = 0.0, 0.0
+    n_steps = 24  # curve segments
+
+    for cmd, args in tokens:
+        if cmd == "M":
+            for j in range(0, len(args), 2):
+                if j + 1 < len(args):
+                    cur_x, cur_y = args[j], args[j + 1]
+                    if current:
+                        polygons.append(current)
+                    current = [norm(cur_x, cur_y)]
+                    start_x, start_y = cur_x, cur_y
+        elif cmd == "L":
+            for j in range(0, len(args), 2):
+                if j + 1 < len(args):
+                    cur_x, cur_y = args[j], args[j + 1]
+                    current.append(norm(cur_x, cur_y))
+        elif cmd == "H":
+            for x in args:
+                cur_x = x
+                current.append(norm(cur_x, cur_y))
+        elif cmd == "V":
+            for y in args:
+                cur_y = y
+                current.append(norm(cur_x, cur_y))
+        elif cmd == "C":
+            for j in range(0, len(args), 6):
+                if j + 5 >= len(args):
+                    break
+                x1, y1, x2, y2, x, y = args[j], args[j+1], args[j+2], args[j+3], args[j+4], args[j+5]
+                px, py = cur_x, cur_y
+                for k in range(1, n_steps + 1):
+                    t = k / n_steps
+                    u = 1 - t
+                    bx = u*u*u*px + 3*u*u*t*x1 + 3*u*t*t*x2 + t*t*t*x
+                    by = u*u*u*py + 3*u*u*t*y1 + 3*u*t*t*y2 + t*t*t*y
+                    current.append(norm(bx, by))
+                cur_x, cur_y = x, y
+        elif cmd == "Q":
+            for j in range(0, len(args), 4):
+                if j + 3 >= len(args):
+                    break
+                x1, y1, x, y = args[j], args[j+1], args[j+2], args[j+3]
+                px, py = cur_x, cur_y
+                for k in range(1, n_steps + 1):
+                    t = k / n_steps
+                    u = 1 - t
+                    bx = u*u*px + 2*u*t*x1 + t*t*x
+                    by = u*u*py + 2*u*t*y1 + t*t*y
+                    current.append(norm(bx, by))
+                cur_x, cur_y = x, y
+        elif cmd == "Z":
+            if current:
+                current.append(current[0])
+                polygons.append(current)
+            current = []
+            cur_x, cur_y = start_x, start_y
+    if current:
+        polygons.append(current)
+    return polygons
+
+
+def _render_path_pillow(
     path_data: str, width: int, height: int, color_rgb: tuple,
     viewbox: tuple[float, float, float, float] | None = None,
 ) -> Image.Image | None:
-    """Render SVG path to a PIL Image. viewbox=(minx, miny, vbw, vbh); if None, assumes 0 0 1 1 (normalized coords)."""
+    """Render SVG path to PIL Image using path parsing + polygon draw (no cairosvg)."""
+    if Image is None or ImageDraw is None:
+        return None
+    polygons = _flatten_path_to_polygons(path_data, viewbox)
+    if not polygons:
+        return None
+    img = Image.new("RGB", (width, height), (240, 240, 240))
+    draw = ImageDraw.Draw(img)
+    for poly in polygons:
+        if len(poly) < 2:
+            continue
+        # Scale 0-1 to pixel coords
+        pts = [(int(p[0] * width), int(p[1] * height)) for p in poly]
+        draw.polygon(pts, fill=color_rgb, outline=(80, 80, 80))
+    return img
+
+
+def _render_path_cairo(
+    path_data: str, width: int, height: int, color_rgb: tuple,
+    viewbox: tuple[float, float, float, float] | None = None,
+) -> Image.Image | None:
+    """Render SVG path with cairosvg if available."""
     if cairosvg is None or Image is None:
         return None
-    # Escape for XML attribute
     d_escaped = path_data.replace("&", "&amp;").replace('"', "&quot;").replace("<", "&lt;").replace(">", "&gt;")
     r, g, b = color_rgb
     hex_color = f"#{r:02x}{g:02x}{b:02x}"
@@ -239,9 +360,12 @@ def draw_thumbnail(layout: dict, out_path: Path, size: int = 300) -> None:
         color = THUMB_COLORS[i % len(THUMB_COLORS)]
 
         path_data = slot.get("path_data")
-        if path_data and cairosvg is not None:
+        if path_data:
             viewbox = layout.get("__viewbox")  # SVG-derived layouts have path in file coords
-            slot_img = _render_path_to_image(path_data, w, h, color, viewbox=viewbox)
+            # Prefer Pillow path parsing (works everywhere); fall back to cairo then rect
+            slot_img = _render_path_pillow(path_data, w, h, color, viewbox=viewbox)
+            if slot_img is None and cairosvg is not None:
+                slot_img = _render_path_cairo(path_data, w, h, color, viewbox=viewbox)
             if slot_img is not None:
                 img.paste(slot_img, (x, y))
                 continue
