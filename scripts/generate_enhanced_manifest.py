@@ -481,13 +481,14 @@ def draw_thumbnail(layout: dict, out_path: Path, size: int = 300) -> None:
 
         path_data = slot.get("path_data")
         if path_data:
-            viewbox = layout.get("__viewbox")  # (vbx, vby, vbw, vbh) for SVG-derived
-            # Normalize path to slot rect in viewBox coords so shape fills the slot (matches app getFrames)
+            # Thumbnail only: normalize path so it fills this slot. (viewBox in app is for placing the real image.)
+            # SVG-derived: path is in file coords (e.g. 0–500); use layout __viewbox to get slot rect in those coords.
+            # Classic/stylish from JSON: path is already in 0–1 canvas; use n_rect as the “viewbox” for this slot.
+            viewbox = layout.get("__viewbox")
             if viewbox and len(nr) >= 4:
                 vbx, vby, vbw, vbh = viewbox[0], viewbox[1], viewbox[2], viewbox[3]
                 if vbw > 0 and vbh > 0:
-                    slot_vb = (vbx + nr[0] * vbw, vby + nr[1] * vbh, nr[2] * vbw, nr[3] * vbh)
-                    viewbox = slot_vb
+                    viewbox = (vbx + nr[0] * vbw, vby + nr[1] * vbh, nr[2] * vbw, nr[3] * vbh)
             # Prefer Pillow path parsing (works everywhere); fall back to cairo then rect
             slot_img = _render_path_pillow(path_data, w, h, color, viewbox=viewbox)
             if slot_img is None and cairosvg is not None:
