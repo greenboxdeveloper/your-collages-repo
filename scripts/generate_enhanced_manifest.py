@@ -289,257 +289,6 @@ THUMB_COLORS = [
 ]
 
 
-# -----------------------------------------------------------------------------
-# PathMaker-style paths (mirror PathMaker.swift for stylish collages)
-# Layout id → list of PathMaker viewIdentifier values (one per slot). Same as
-# Special/Collage*.swift: view1.viewIdentifier = X, view2.viewIdentifier = Y, ...
-# -----------------------------------------------------------------------------
-STYLISH_LAYOUT_TO_PATHMAKER_IDS: dict[str, list[int]] = {
-    "stylish_Collage2_1": [21, 212],
-    "stylish_Collage2_2": [221, 222],
-    "stylish_Collage2_3": [231, 232],
-    "stylish_Collage2_4": [241, 242],
-    "stylish_Collage2_5": [251, 252],
-    "stylish_Collage2_6": [261, 262],
-    "stylish_Collage2_7": [271, 272],
-    "stylish_Collage2_8": [281, 282],
-    "stylish_Collage2_9": [291, 292],
-    "stylish_Collage3_1": [311, 312, 313],
-    "stylish_Collage3_2": [321, 322, 323],
-    "stylish_Collage3_3": [331, 332, 333],
-    "stylish_Collage3_4": [341, 342, 343],
-    "stylish_Collage3_5": [351, 352, 353],
-    "stylish_Collage3_6": [361, 362, 363],
-    "stylish_Collage3_7": [371, 372, 373],
-    "stylish_Collage3_8": [381, 382, 383],
-    "stylish_Collage3_9": [391, 392, 393],
-    "stylish_Collage3_10": [3101, 3102, 3103],
-    "stylish_Collage3_11": [3111, 3112, 3113],
-    "stylish_Collage3_12": [3121, 3122, 3123],
-    "stylish_Collage3_13": [3131, 3132, 3133],
-    "stylish_Collage4_1": [411, 412, 413, 414],
-    "stylish_Collage4_2": [421, 422, 423, 424],
-    "stylish_Collage4_3": [431, 432, 433, 434],
-    "stylish_Collage4_4": [441, 442, 443, 444],
-}
-
-
-def _arc_tangent_points(
-    p0: tuple[float, float], p1: tuple[float, float], p2: tuple[float, float],
-    radius: float, steps: int = 12,
-) -> list[tuple[float, float]]:
-    """
-    Arc tangent to line p0-p1 and p1-p2 with given radius (mirror CGPath.addArc(tangent1End:tangent2End:radius:)).
-    Returns points along the arc (excluding p1); empty if radius <= 0 or degenerate.
-    When p0==p1 (first segment after move), arc goes from p1 to tangent on p1-p2 (quarter circle).
-    """
-    if radius <= 0 or steps < 2:
-        return []
-    ax, ay = p0[0] - p1[0], p0[1] - p1[1]
-    bx, by = p2[0] - p1[0], p2[1] - p1[1]
-    la = math.sqrt(ax * ax + ay * ay)
-    lb = math.sqrt(bx * bx + by * by)
-    if lb < 1e-10:
-        return []
-    bx, by = bx / lb, by / lb
-    # Degenerate: previous segment has zero length (e.g. first arc after move_to(p1))
-    if la < 1e-10:
-        # Arc from p1 to tangent point on p1-p2; center is at distance r from line p1-p2
-        nx, ny = -by, bx
-        cx = p1[0] + nx * radius
-        cy = p1[1] + ny * radius
-        t2x = p1[0] + bx * radius
-        t2y = p1[1] + by * radius
-        a1 = math.atan2(p1[1] - cy, p1[0] - cx)
-        a2 = math.atan2(t2y - cy, t2x - cx)
-        da = a2 - a1
-        while da > math.pi:
-            da -= 2 * math.pi
-        while da < -math.pi:
-            da += 2 * math.pi
-        return [
-            (cx + radius * math.cos(a1 + (k / steps) * da), cy + radius * math.sin(a1 + (k / steps) * da))
-            for k in range(1, steps)
-        ]
-    ax, ay = ax / la, ay / la
-    nax, nay = -ay, ax
-    nbx, nby = -by, bx
-    bix = nax + nbx
-    biy = nay + nby
-    bi_len = math.sqrt(bix * bix + biy * biy)
-    if bi_len < 1e-10:
-        return []
-    bix, biy = bix / bi_len, biy / bi_len
-    cos_angle = max(-1.0, min(1.0, -ax * bx - ay * by))
-    half_angle = math.acos(cos_angle) * 0.5
-    sin_half = math.sin(half_angle)
-    if sin_half < 1e-10:
-        return []
-    dist_center = radius / sin_half
-    cx = p1[0] + bix * dist_center
-    cy = p1[1] + biy * dist_center
-    tan_dist = radius / math.tan(half_angle) if half_angle >= 1e-6 else 0.0
-    t1x = p1[0] - ax * tan_dist
-    t1y = p1[1] - ay * tan_dist
-    t2x = p1[0] + bx * tan_dist
-    t2y = p1[1] + by * tan_dist
-    a1 = math.atan2(t1y - cy, t1x - cx)
-    a2 = math.atan2(t2y - cy, t2x - cx)
-    da = a2 - a1
-    while da > math.pi:
-        da -= 2 * math.pi
-    while da < -math.pi:
-        da += 2 * math.pi
-    return [
-        (cx + radius * math.cos(a1 + (k / steps) * da), cy + radius * math.sin(a1 + (k / steps) * da))
-        for k in range(1, steps)
-    ]
-
-
-def _path_maker_path(
-    identifier: int,
-    frame_w: float, frame_h: float,
-    main_w: float, main_h: float,
-    space: float, radius: float,
-) -> list[tuple[float, float]]:
-    """
-    Build path polygon for one slot (PathMaker.getPath(by:frame:...) in frame coords).
-    frame_origin is (0,0); frame size is (frame_w, frame_h). main = full canvas (main_w, main_h).
-    Returns list of (x,y) points forming a closed polygon.
-    """
-    ox, oy = 0.0, 0.0
-    pts: list[tuple[float, float]] = []
-
-    def move_to(x: float, y: float) -> None:
-        pts.append((x, y))
-
-    def add_arc(p0: tuple[float, float], p1: tuple[float, float], p2: tuple[float, float]) -> None:
-        for q in _arc_tangent_points(p0, p1, p2, radius):
-            pts.append(q)
-
-    # Angles and space-derived offsets (mirror PathMaker)
-    if identifier == 231:  # for_231_Left
-        Q = math.atan(main_w / 3 / main_h) if main_h > 0 else 0
-        x = space * math.tan(Q)
-        x1 = space / 2 / math.cos(Q) if math.cos(Q) > 1e-10 else 0
-        left_top = (ox + space, oy + space)
-        right_top = ((frame_w / 2) - (x1 - x), oy + space)
-        right_bottom = (frame_w - x1 - x, frame_h - space)
-        left_bottom = (ox + space, frame_h - space)
-        mid_left = ((left_top[0] + left_bottom[0]) / 2, (left_top[1] + left_bottom[1]) / 2)
-        move_to(*mid_left)
-        add_arc(mid_left, left_top, right_top)
-        add_arc(left_top, right_top, right_bottom)
-        add_arc(right_top, right_bottom, left_bottom)
-        add_arc(right_bottom, left_bottom, mid_left)
-    elif identifier == 232:  # for_232_Right
-        one_piece = frame_w / 2
-        Q = math.atan(main_w / 3 / main_h) if main_h > 0 else 0
-        x = space * math.tan(Q)
-        x1 = space / 2 / math.cos(Q) if math.cos(Q) > 1e-10 else 0
-        left_top = (ox + x1 + x, oy + space)
-        right_top = (frame_w - space, oy + space)
-        right_bottom = (frame_w - space, frame_h - space)
-        left_bottom = (ox + one_piece + (x1 - x), frame_h - space)
-        left_mid = ((left_top[0] + left_bottom[0]) / 2, (left_top[1] + left_bottom[1]) / 2)
-        move_to(*left_mid)
-        add_arc(left_mid, left_top, right_top)
-        add_arc(left_top, right_top, right_bottom)
-        add_arc(right_top, right_bottom, left_bottom)
-        add_arc(right_bottom, left_bottom, left_mid)
-    elif identifier == 221:  # for_221_Left
-        Q = math.atan(main_w / 3 / main_h) if main_h > 0 else 0
-        x = space * math.tan(Q)
-        x1 = space / 2 / math.cos(Q) if math.cos(Q) > 1e-10 else 0
-        left_top = (ox + space, oy + space)
-        right_top = (frame_w - x - x1, oy + space)
-        right_bottom = (frame_w / 3 - (x1 - x), frame_h - space)
-        left_bottom = (ox + space, frame_h - space)
-        mid_left = ((left_top[0] + left_bottom[0]) / 2, (left_top[1] + left_bottom[1]) / 2)
-        move_to(*mid_left)
-        add_arc(mid_left, left_top, right_top)
-        add_arc(left_top, right_top, right_bottom)
-        add_arc(right_top, right_bottom, left_bottom)
-        add_arc(right_bottom, left_bottom, mid_left)
-    elif identifier == 222:  # for_222_Right
-        Q = math.atan(main_w / 3 / main_h) if main_h > 0 else 0
-        x = space * math.tan(Q)
-        x1 = space / 2 / math.cos(Q) if math.cos(Q) > 1e-10 else 0
-        one_piece = frame_w / 3
-        left_top = (ox + (one_piece * 2) + (x1 - x), oy + space)
-        right_top = (frame_w - space, oy + space)
-        right_bottom = (frame_w - space, frame_h - space)
-        left_bottom = (ox + x1 + x, frame_h - space)
-        mid_left = ((left_top[0] + left_bottom[0]) / 2, (left_top[1] + left_bottom[1]) / 2)
-        move_to(*mid_left)
-        add_arc(mid_left, left_top, right_top)
-        add_arc(left_top, right_top, right_bottom)
-        add_arc(right_top, right_bottom, left_bottom)
-        add_arc(right_bottom, left_bottom, mid_left)
-    elif identifier == 21:  # for_211_Top
-        Q = math.atan(main_h / 3 / main_w) if main_w > 0 else 0
-        x = space * math.tan(Q)
-        x1 = space / 2 / math.cos(Q) if math.cos(Q) > 1e-10 else 0
-        left_top = (ox + space, oy + space)
-        right_top = (frame_w - space, oy + space)
-        right_bottom = (frame_w - space, frame_h / 3 - (x1 - x))
-        left_bottom = (ox + space, frame_h - x - x1)
-        mid = ((left_top[0] + left_bottom[0]) / 2, (left_top[1] + left_bottom[1]) / 2)
-        move_to(*mid)
-        add_arc(mid, left_top, right_top)
-        add_arc(left_top, right_top, right_bottom)
-        add_arc(right_top, right_bottom, left_bottom)
-        add_arc(right_bottom, left_bottom, mid)
-    elif identifier == 212:  # for_212_Bottom
-        one_piece = frame_h / 3
-        Q = math.atan(main_h / 3 / main_w) if main_w > 0 else 0
-        x = space * math.tan(Q)
-        x1 = space / 2 / math.cos(Q) if math.cos(Q) > 1e-10 else 0
-        left_top = (ox + space, frame_h - one_piece + (x1 - x))
-        right_top = (frame_w - space, oy + x + x1)
-        right_bottom = (frame_w - space, frame_h - space)
-        left_bottom = (ox + space, frame_h - space)
-        mid = ((left_top[0] + left_bottom[0]) / 2, (left_top[1] + left_bottom[1]) / 2)
-        move_to(*mid)
-        add_arc(mid, left_top, right_top)
-        add_arc(left_top, right_top, right_bottom)
-        add_arc(right_top, right_bottom, left_bottom)
-        add_arc(right_bottom, left_bottom, mid)
-    elif identifier == 271:  # for_271_Left
-        x = space / math.sin(math.pi / 4)
-        p1 = (frame_w / 2, space)
-        p2 = (frame_w - space - x / 2, space)
-        p3 = (space, frame_h - space - x / 2)
-        p4 = (space, space)
-        move_to(p1[0], p1[1])
-        add_arc(p1, p1, p2)
-        add_arc(p2, p2, p3)
-        add_arc(p3, p3, p4)
-        add_arc(p4, p4, p1)
-    elif identifier == 272:  # for_272_Right
-        x = space / math.sin(math.pi / 4)
-        p1 = (frame_w - space, frame_h / 2)
-        p2 = (frame_w - space, frame_h - space)
-        p3 = (space + x / 2, frame_h - space)
-        p4 = (frame_w - space, oy + space + x / 2)
-        move_to(p1[0], p1[1])
-        add_arc(p1, p1, p2)
-        add_arc(p2, p2, p3)
-        add_arc(p3, p3, p4)
-        add_arc(p4, p4, p1)
-    else:
-        # Not implemented: fall back to rectangle from frame
-        pts.extend([
-            (ox + space, oy + space),
-            (frame_w - space, oy + space),
-            (frame_w - space, frame_h - space),
-            (ox + space, frame_h - space),
-        ])
-    if pts and (pts[0][0] != pts[-1][0] or pts[0][1] != pts[-1][1]):
-        pts.append(pts[0])
-    return pts
-
-
 # Path tokenizer matching SVGLayoutParser: same regex (command letter OR number)
 _PATH_DATA_REGEX = re.compile(r"([MmLlHhVvCcSsQqTtAaZz])|(-?\d*\.?\d+(?:[eE][+-]?\d+)?)")
 
@@ -786,14 +535,12 @@ def _path_segments_to_polygons(scaled_path) -> list[list[tuple[float, float]]]:
 
 def _draw_stylish_thumbnail(img: Image.Image, draw, layout: dict, size: int) -> None:
     """
-    Stylish thumbnail from JSON only: each slot uses path_data (0-1) or n_rect.
-
-    path_data is parsed with _flatten_path_to_polygons (same logic as SVGLayoutParser.createBezierPath),
-    then scaled 0-1 → pixels. No PathMaker; stylish is drawn the same way as classic/SVG from JSON.
+    Stylish thumbnail using path_data from JSON (same SVG path method as elsewhere).
+    path_data is 0-1 normalized; we parse with _flatten_path_to_polygons (SVGLayoutParser-style)
+    and scale to pixels. Slots without path_data use n_rect as a rectangle.
     """
     slots = layout.get("slots", [])
     viewbox_01 = (0.0, 0.0, 1.0, 1.0)
-
     for i, slot in enumerate(slots):
         path_data = slot.get("path_data")
         if not path_data:
@@ -812,7 +559,6 @@ def _draw_stylish_thumbnail(img: Image.Image, draw, layout: dict, size: int) -> 
         for poly in polygons:
             if len(poly) < 2:
                 continue
-            # Scale 0-1 to 0..(size-1) for full canvas
             pts = [(round(p[0] * (size - 1)), round(p[1] * (size - 1))) for p in poly]
             draw.polygon(pts, fill=color, outline=(80, 80, 80, 255))
 
@@ -827,7 +573,7 @@ def draw_thumbnail(layout: dict, out_path: Path, size: int = 300) -> None:
     viewbox = layout.get("__viewbox")  # None = stylish (JSON), set = SVG-derived
 
     if viewbox is None:
-        # Stylish: path_data from JSON only (no PathMaker)
+        # Stylish: path_data from JSON (same SVG path method as SVG-derived)
         _draw_stylish_thumbnail(img, draw, layout, size)
     else:
         # SVG-derived or grid: per-slot rect or path with slot viewbox
