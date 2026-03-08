@@ -786,50 +786,14 @@ def _path_segments_to_polygons(scaled_path) -> list[list[tuple[float, float]]]:
 
 def _draw_stylish_thumbnail(img: Image.Image, draw, layout: dict, size: int) -> None:
     """
-    Stylish thumbnail: one slot = one shape, matching app collage generation.
+    Stylish thumbnail from JSON only: each slot uses path_data (0-1) or n_rect.
 
-    When the layout id is in STYLISH_LAYOUT_TO_PATHMAKER_IDS we use PathMaker-style paths
-    (mirror PathMaker.swift): each slot is drawn with _path_maker_path(identifier, frame, mainSize, space, radius)
-    so thumbnails match what MasterView displays via PathMaker.getPath(by:viewIdentifier, frame:...).
-
-    Otherwise we use path_data from JSON (SVGLayoutParser.createBezierPath style): parse with
-    _flatten_path_to_polygons and scale 0-1 to pixels.
+    path_data is parsed with _flatten_path_to_polygons (same logic as SVGLayoutParser.createBezierPath),
+    then scaled 0-1 → pixels. No PathMaker; stylish is drawn the same way as classic/SVG from JSON.
     """
     slots = layout.get("slots", [])
-    layout_id = layout.get("id", "")
-    path_maker_ids = STYLISH_LAYOUT_TO_PATHMAKER_IDS.get(layout_id) if layout_id else None
-
-    # PathMaker constants (match app: small gap and corner radius in points; scale to thumbnail)
-    space_pt = 4.0
-    radius_pt = 6.0
-    space = max(1.0, space_pt * size / 300.0)
-    radius = max(0.5, radius_pt * size / 300.0)
-
-    if path_maker_ids is not None and len(path_maker_ids) == len(slots):
-        # Draw using PathMaker-style paths (same as app)
-        main_w = main_h = float(size)
-        for i, slot in enumerate(slots):
-            nr = slot.get("n_rect", [0, 0, 1, 1])
-            if len(nr) < 4:
-                continue
-            # Slot frame in thumbnail: origin (nx, ny), size (nw, nh) in pixels
-            nx = nr[0] * size
-            ny = nr[1] * size
-            nw = max(1.0, nr[2] * size)
-            nh = max(1.0, nr[3] * size)
-            poly = _path_maker_path(
-                path_maker_ids[i], nw, nh, main_w, main_h, space, radius
-            )
-            if len(poly) < 2:
-                continue
-            # Path is in slot-local coords (0,0..nw,nh); translate to image
-            pts = [(round(p[0] + nx), round(p[1] + ny)) for p in poly]
-            color = (*THUMB_COLORS[i % len(THUMB_COLORS)], 255)
-            draw.polygon(pts, fill=color, outline=(80, 80, 80, 255))
-        return
-
-    # Fallback: path_data (0-1) parsed like SVGLayoutParser.createBezierPath
     viewbox_01 = (0.0, 0.0, 1.0, 1.0)
+
     for i, slot in enumerate(slots):
         path_data = slot.get("path_data")
         if not path_data:
@@ -848,6 +812,7 @@ def _draw_stylish_thumbnail(img: Image.Image, draw, layout: dict, size: int) -> 
         for poly in polygons:
             if len(poly) < 2:
                 continue
+            # Scale 0-1 to 0..(size-1) for full canvas
             pts = [(round(p[0] * (size - 1)), round(p[1] * (size - 1))) for p in poly]
             draw.polygon(pts, fill=color, outline=(80, 80, 80, 255))
 
@@ -862,7 +827,7 @@ def draw_thumbnail(layout: dict, out_path: Path, size: int = 300) -> None:
     viewbox = layout.get("__viewbox")  # None = stylish (JSON), set = SVG-derived
 
     if viewbox is None:
-        # Stylish: PathMaker-style paths when id mapped, else path_data
+        # Stylish: path_data from JSON only (no PathMaker)
         _draw_stylish_thumbnail(img, draw, layout, size)
     else:
         # SVG-derived or grid: per-slot rect or path with slot viewbox
