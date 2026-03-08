@@ -679,6 +679,11 @@ def main() -> int:
     print(f"Parsed {len(svg_layouts)} layouts from {svg_dir}")
     layouts.extend(svg_layouts)
 
+    # Mark Premium: all layouts after classic_10 get isPremium = True
+    classic_10_index = next((i for i, L in enumerate(layouts) if L.get("id") == "classic_10"), -1)
+    for i, layout in enumerate(layouts):
+        layout["isPremium"] = i > classic_10_index
+
     # 3) Thumbnails
     thumb_dir.mkdir(parents=True, exist_ok=True)
     for layout in layouts:
