@@ -20,9 +20,9 @@
     },
     {
       "category" : "Classic",
-      "id" : "classic_3",
+      "id" : "classic_2",
       "isPremium" : false,
-      "name" : "Collage 3",
+      "name" : "Collage 2",
       "slot_count" : 3,
       "slots" : [
         {
