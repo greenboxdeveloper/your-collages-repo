@@ -1,1 +1,39 @@
+name: Generate Enhanced Manifest
 
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'collages/**/*.svg'
+      - 'svgs/**/*.svg'
+      - 'classic_and_stylish_layouts.json'
+      - 'scripts/**'
+
+permissions:
+  contents: write
+
+jobs:
+  generate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install dependencies
+        run: pip install -r scripts/requirements.txt
+
+      - name: Generate manifest and thumbnails
+        run: |
+          python scripts/generate_enhanced_manifest.py \
+            --base-url "https://raw.githubusercontent.com/${{ github.repository }}/${{ github.ref_name }}"
+
+      - name: Commit and push if changed
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add enhanced_manifest.json thumbnails/
+          git diff --staged --quiet || (git commit -m "Update enhanced_manifest.json and thumbnails" && git push)
