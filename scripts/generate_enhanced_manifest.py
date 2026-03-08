@@ -476,78 +476,76 @@ def _render_path_cairo(
         return None
 
 
+def _draw_stylish_thumbnail(img: Image.Image, draw, slots: list, size: int) -> None:
+    """
+    Stylish layouts (from classic_and_stylish_layouts.json):
+    - Each slot has n_rect [x, y, w, h] and path_data in normalized 0-1 (full canvas).
+    - path_data coordinates are 0 = left/top, 1 = right/bottom. Draw them 1:1 onto the image.
+    """
+    # Map 0-1 to 0..size-1 so we don't clip on the last pixel (use size-1 for 1.0)
+    def to_px(x: float, y: float) -> tuple[int, int]:
+        return (round(x * (size - 1)), round(y * (size - 1)))
+
+    for i, slot in enumerate(slots):
+        path_data = slot.get("path_data")
+        if not path_data:
+            nr = slot.get("n_rect", [0, 0, 1, 1])
+            if len(nr) >= 4:
+                x, y = round(nr[0] * (size - 1)), round(nr[1] * (size - 1))
+                w, h = max(1, round(nr[2] * (size - 1))), max(1, round(nr[3] * (size - 1)))
+                color = (*THUMB_COLORS[i % len(THUMB_COLORS)], 255)
+                draw.rectangle([x, y, x + w, y + h], fill=color, outline=(80, 80, 80, 255), width=1)
+            continue
+
+        color = (*THUMB_COLORS[i % len(THUMB_COLORS)], 255)
+        # path_data is in 0-1; viewbox (0,0,1,1) means no normalization
+        polygons = _flatten_path_to_polygons(path_data, viewbox=(0.0, 0.0, 1.0, 1.0))
+        for poly in polygons:
+            if len(poly) < 2:
+                continue
+            pts = [to_px(p[0], p[1]) for p in poly]
+            draw.polygon(pts, fill=color, outline=(80, 80, 80, 255))
+
+
 def draw_thumbnail(layout: dict, out_path: Path, size: int = 300) -> None:
-    """Draw a 300x300 PNG thumbnail (RGBA, transparent background). Path_data for organic; rect for grid."""
+    """Draw a 300x300 PNG thumbnail. Stylish = 0-1 path_data direct map; SVG-derived = slot viewbox + paste; grid = rect."""
     if Image is None or ImageDraw is None:
         return
     img = Image.new("RGBA", (size, size), (255, 255, 255, 0))
     draw = ImageDraw.Draw(img)
     slots = layout.get("slots", [])
-    viewbox = layout.get("__viewbox")  # None for JSON (stylish); set for SVG-derived
-    is_full_canvas_paths = viewbox is None
+    viewbox = layout.get("__viewbox")  # None = stylish (JSON), set = SVG-derived
 
-    # Stylish: compute content bbox so we fit the full design (no clipped peaks)
-    map_pt = None
-    if is_full_canvas_paths:
-        all_pts = []
-        for slot in slots:
-            pd = slot.get("path_data")
-            if pd:
-                for poly in _flatten_path_to_polygons(pd, viewbox=(0.0, 0.0, 1.0, 1.0)):
-                    all_pts.extend(poly)
-        if all_pts:
-            min_x = min(p[0] for p in all_pts)
-            max_x = max(p[0] for p in all_pts)
-            min_y = min(p[1] for p in all_pts)
-            max_y = max(p[1] for p in all_pts)
-            rx = max_x - min_x or 1.0
-            ry = max_y - min_y or 1.0
-            pad = 4
-            scale = min((size - 2 * pad) / rx, (size - 2 * pad) / ry)
-            ox = (size - rx * scale) / 2 - min_x * scale
-            oy = (size - ry * scale) / 2 - min_y * scale
-
-            def map_pt(x: float, y: float) -> tuple[int, int]:
-                return (int(ox + x * scale), int(oy + y * scale))
-
-    for i, slot in enumerate(slots):
-        nr = slot.get("n_rect", [0, 0, 1, 1])
-        if len(nr) < 4:
-            continue
-        x = int(nr[0] * size)
-        y = int(nr[1] * size)
-        w = max(1, int(nr[2] * size))
-        h = max(1, int(nr[3] * size))
-        color = THUMB_COLORS[i % len(THUMB_COLORS)]
-        color_rgba = (*color, 255)
-
-        path_data = slot.get("path_data")
-        if path_data:
-            if is_full_canvas_paths:
-                # Stylish: draw paths with bbox fit so peaks/curves are not trimmed
-                polygons = _flatten_path_to_polygons(path_data, viewbox=(0.0, 0.0, 1.0, 1.0))
-                for poly in polygons:
-                    if len(poly) < 2:
-                        continue
-                    pts = [map_pt(p[0], p[1]) for p in poly] if map_pt else [(int(p[0] * size), int(p[1] * size)) for p in poly]
-                    draw.polygon(pts, fill=color_rgba, outline=(80, 80, 80, 255))
+    if viewbox is None:
+        # Stylish: path_data in 0-1 full canvas → draw directly
+        _draw_stylish_thumbnail(img, draw, slots, size)
+    else:
+        # SVG-derived or grid: per-slot rect or path with slot viewbox
+        for i, slot in enumerate(slots):
+            nr = slot.get("n_rect", [0, 0, 1, 1])
+            if len(nr) < 4:
                 continue
-            # SVG-derived: path in viewBox coords → slot image, paste
-            slot_vb = None
-            if viewbox and len(nr) >= 4:
-                vbx, vby, vbw, vbh = viewbox[0], viewbox[1], viewbox[2], viewbox[3]
-                if vbw > 0 and vbh > 0:
-                    slot_vb = (vbx + nr[0] * vbw, vby + nr[1] * vbh, nr[2] * vbw, nr[3] * vbh)
-            slot_img = _render_path_pillow(path_data, w, h, color, viewbox=slot_vb or viewbox)
-            if slot_img is None and cairosvg is not None:
-                slot_img = _render_path_cairo(path_data, w, h, color, viewbox=slot_vb or viewbox)
-            if slot_img is not None:
-                if slot_img.mode != "RGBA":
-                    slot_img = slot_img.convert("RGBA")
-                img.paste(slot_img, (x, y), slot_img)
-                continue
-        # Grid slot: draw rectangle
-        draw.rectangle([x, y, x + w, y + h], fill=color_rgba, outline=(80, 80, 80, 255), width=1)
+            vbx, vby, vbw, vbh = viewbox[0], viewbox[1], viewbox[2], viewbox[3]
+            x = int(nr[0] * size)
+            y = int(nr[1] * size)
+            w = max(1, int(nr[2] * size))
+            h = max(1, int(nr[3] * size))
+            color = (*THUMB_COLORS[i % len(THUMB_COLORS)], 255)
+            path_data = slot.get("path_data")
+            if path_data and vbw > 0 and vbh > 0:
+                slot_vb = (vbx + nr[0] * vbw, vby + nr[1] * vbh, nr[2] * vbw, nr[3] * vbh)
+                slot_img = _render_path_pillow(path_data, w, h, color[:3], viewbox=slot_vb)
+                if slot_img is None and cairosvg is not None:
+                    slot_img = _render_path_cairo(path_data, w, h, color[:3], viewbox=slot_vb)
+                if slot_img is not None:
+                    if slot_img.mode != "RGBA":
+                        slot_img = slot_img.convert("RGBA")
+                    img.paste(slot_img, (x, y), slot_img)
+                else:
+                    draw.rectangle([x, y, x + w, y + h], fill=color, outline=(80, 80, 80, 255), width=1)
+            else:
+                draw.rectangle([x, y, x + w, y + h], fill=color, outline=(80, 80, 80, 255), width=1)
+
     out_path.parent.mkdir(parents=True, exist_ok=True)
     img.save(out_path, "PNG")
 
