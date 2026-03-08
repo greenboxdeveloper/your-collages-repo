@@ -531,9 +531,13 @@ def _path_segments_to_polygons(scaled_path) -> list[list[tuple[float, float]]]:
 def _draw_stylish_thumbnail(img: Image.Image, draw, slots: list, size: int) -> None:
     """
     Stylish layouts (classic_and_stylish_layouts.json):
-    - path_data is normalized 0-1. Scale by (size, size) and draw via svgelements Path segments.
-    - Uses Path(path_data), scale transform, then Move/Line/Curve/Close to get polygon points.
+    - path_data is normalized 0-1, same format as SVGLayoutParser.createBezierPath in the app.
+    - We use the same tokenizer and command handling (_flatten_path_to_polygons) so thumbnails
+      match what the app draws. Scale 0-1 to pixel coords: x_px = x * (size - 1), y_px = y * (size - 1).
     """
+    # Viewbox for stylish is 0-1 (full canvas); norm in _flatten_path_to_polygons is identity
+    viewbox_01 = (0.0, 0.0, 1.0, 1.0)
+
     for i, slot in enumerate(slots):
         path_data = slot.get("path_data")
         if not path_data:
@@ -548,26 +552,13 @@ def _draw_stylish_thumbnail(img: Image.Image, draw, slots: list, size: int) -> N
             continue
 
         color = (*THUMB_COLORS[i % len(THUMB_COLORS)], 255)
-
-        use_scaled_coords = False  # True if polygons are in 0..size (from svgelements)
-        polygons = []
-        if SVGPath is not None and Matrix is not None and Move is not None:
-            try:
-                path = SVGPath(path_data)
-                scaled = path * Matrix.scale(size, size)
-                polygons = _path_segments_to_polygons(scaled.segments(transformed=True))
-                use_scaled_coords = bool(polygons)
-            except Exception:
-                pass
-        if not polygons:
-            polygons = _flatten_path_to_polygons(path_data, viewbox=(0.0, 0.0, 1.0, 1.0))
+        # Match app: SVGLayoutParser path_data regex + createBezierPath logic → polygons in 0-1
+        polygons = _flatten_path_to_polygons(path_data, viewbox=viewbox_01)
         for poly in polygons:
             if len(poly) < 2:
                 continue
-            if use_scaled_coords:
-                pts = [(round(p[0]), round(p[1])) for p in poly]
-            else:
-                pts = [(round(p[0] * (size - 1)), round(p[1] * (size - 1))) for p in poly]
+            # Scale 0-1 to 0..(size-1) to match full canvas
+            pts = [(round(p[0] * (size - 1)), round(p[1] * (size - 1))) for p in poly]
             draw.polygon(pts, fill=color, outline=(80, 80, 80, 255))
 
 
