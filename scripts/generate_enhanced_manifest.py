@@ -463,12 +463,16 @@ def _render_path_cairo(
 
 
 def draw_thumbnail(layout: dict, out_path: Path, size: int = 300) -> None:
-    """Draw a 300x300 thumbnail. Uses path_data for organic slots; falls back to rect for grid or if cairosvg unavailable."""
+    """Draw a 300x300 thumbnail. Uses path_data for organic slots; falls back to rect for grid."""
     if Image is None or ImageDraw is None:
         return
     img = Image.new("RGB", (size, size), (240, 240, 240))
     draw = ImageDraw.Draw(img)
     slots = layout.get("slots", [])
+    viewbox = layout.get("__viewbox")  # None for JSON (stylish); set for SVG-derived
+    # Stylish from JSON: path_data is in full canvas 0-1 → draw paths on full image
+    is_full_canvas_paths = viewbox is None
+
     for i, slot in enumerate(slots):
         nr = slot.get("n_rect", [0, 0, 1, 1])
         if len(nr) < 4:
@@ -481,18 +485,24 @@ def draw_thumbnail(layout: dict, out_path: Path, size: int = 300) -> None:
 
         path_data = slot.get("path_data")
         if path_data:
-            # Thumbnail only: normalize path so it fills this slot. (viewBox in app is for placing the real image.)
-            # SVG-derived: path is in file coords (e.g. 0–500); use layout __viewbox to get slot rect in those coords.
-            # Classic/stylish from JSON: path is already in 0–1 canvas; use n_rect as the “viewbox” for this slot.
-            viewbox = layout.get("__viewbox")
+            if is_full_canvas_paths:
+                # path_data in 0-1 full canvas: draw directly on full (size×size) image
+                polygons = _flatten_path_to_polygons(path_data, viewbox=(0.0, 0.0, 1.0, 1.0))
+                for poly in polygons:
+                    if len(poly) < 2:
+                        continue
+                    pts = [(int(p[0] * size), int(p[1] * size)) for p in poly]
+                    draw.polygon(pts, fill=color, outline=(80, 80, 80))
+                continue
+            # SVG-derived: path in viewBox coords → normalize to slot rect, render to slot image, paste
+            slot_vb = None
             if viewbox and len(nr) >= 4:
                 vbx, vby, vbw, vbh = viewbox[0], viewbox[1], viewbox[2], viewbox[3]
                 if vbw > 0 and vbh > 0:
-                    viewbox = (vbx + nr[0] * vbw, vby + nr[1] * vbh, nr[2] * vbw, nr[3] * vbh)
-            # Prefer Pillow path parsing (works everywhere); fall back to cairo then rect
-            slot_img = _render_path_pillow(path_data, w, h, color, viewbox=viewbox)
+                    slot_vb = (vbx + nr[0] * vbw, vby + nr[1] * vbh, nr[2] * vbw, nr[3] * vbh)
+            slot_img = _render_path_pillow(path_data, w, h, color, viewbox=slot_vb or viewbox)
             if slot_img is None and cairosvg is not None:
-                slot_img = _render_path_cairo(path_data, w, h, color, viewbox=viewbox)
+                slot_img = _render_path_cairo(path_data, w, h, color, viewbox=slot_vb or viewbox)
             if slot_img is not None:
                 img.paste(slot_img, (x, y))
                 continue
