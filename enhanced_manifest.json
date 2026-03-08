@@ -274,7 +274,7 @@
     {
       "category": "Classic",
       "id": "classic_11",
-      "isPremium": false,
+      "isPremium": true,
       "name": "Collage 11",
       "slots": [
         {
@@ -320,7 +320,7 @@
     {
       "category": "Classic",
       "id": "classic_12",
-      "isPremium": false,
+      "isPremium": true,
       "name": "Collage 12",
       "slots": [
         {
@@ -357,7 +357,7 @@
     {
       "category": "Classic",
       "id": "classic_13",
-      "isPremium": false,
+      "isPremium": true,
       "name": "Collage 13",
       "slots": [
         {
@@ -403,7 +403,7 @@
     {
       "category": "Classic",
       "id": "classic_14",
-      "isPremium": false,
+      "isPremium": true,
       "name": "Collage 14",
       "slots": [
         {
@@ -449,7 +449,7 @@
     {
       "category": "Classic",
       "id": "classic_16",
-      "isPremium": false,
+      "isPremium": true,
       "name": "Collage 16",
       "slots": [
         {
@@ -495,7 +495,7 @@
     {
       "category": "Classic",
       "id": "classic_17",
-      "isPremium": false,
+      "isPremium": true,
       "name": "Collage 17",
       "slots": [
         {
@@ -532,7 +532,7 @@
     {
       "category": "Classic",
       "id": "classic_18",
-      "isPremium": false,
+      "isPremium": true,
       "name": "Collage 18",
       "slots": [
         {
@@ -569,7 +569,7 @@
     {
       "category": "Classic",
       "id": "classic_19",
-      "isPremium": false,
+      "isPremium": true,
       "name": "Collage 19",
       "slots": [
         {
@@ -606,7 +606,7 @@
     {
       "category": "Classic",
       "id": "classic_20",
-      "isPremium": false,
+      "isPremium": true,
       "name": "Collage 20",
       "slots": [
         {
@@ -652,7 +652,7 @@
     {
       "category": "Classic",
       "id": "classic_21",
-      "isPremium": false,
+      "isPremium": true,
       "name": "Collage 21",
       "slots": [
         {
@@ -707,7 +707,7 @@
     {
       "category": "Classic",
       "id": "classic_22",
-      "isPremium": false,
+      "isPremium": true,
       "name": "Collage 22",
       "slots": [
         {
@@ -753,7 +753,7 @@
     {
       "category": "Classic",
       "id": "classic_23",
-      "isPremium": false,
+      "isPremium": true,
       "name": "Collage 23",
       "slots": [
         {
@@ -799,7 +799,7 @@
     {
       "category": "Classic",
       "id": "classic_24",
-      "isPremium": false,
+      "isPremium": true,
       "name": "Collage 24",
       "slots": [
         {
@@ -881,7 +881,7 @@
     {
       "category": "Classic",
       "id": "classic_25",
-      "isPremium": false,
+      "isPremium": true,
       "name": "Collage 25",
       "slots": [
         {
@@ -963,7 +963,7 @@
     {
       "category": "Classic",
       "id": "classic_26",
-      "isPremium": false,
+      "isPremium": true,
       "name": "Collage 26",
       "slots": [
         {
@@ -1027,7 +1027,7 @@
     {
       "category": "Classic",
       "id": "classic_27",
-      "isPremium": false,
+      "isPremium": true,
       "name": "Collage 27",
       "slots": [
         {
@@ -1082,7 +1082,7 @@
     {
       "category": "Classic",
       "id": "classic_28",
-      "isPremium": false,
+      "isPremium": true,
       "name": "Collage 28",
       "slots": [
         {
@@ -1137,7 +1137,7 @@
     {
       "category": "Classic",
       "id": "classic_29",
-      "isPremium": false,
+      "isPremium": true,
       "name": "Collage 29",
       "slots": [
         {
@@ -1219,7 +1219,7 @@
     {
       "category": "Classic",
       "id": "classic_30",
-      "isPremium": false,
+      "isPremium": true,
       "name": "Collage 30",
       "slots": [
         {
@@ -1301,7 +1301,7 @@
     {
       "category": "Classic",
       "id": "classic_31",
-      "isPremium": false,
+      "isPremium": true,
       "name": "Collage 31",
       "slots": [
         {
@@ -1455,7 +1455,7 @@
     {
       "category": "Classic",
       "id": "classic_32",
-      "isPremium": false,
+      "isPremium": true,
       "name": "Collage 32",
       "slots": [
         {
@@ -1546,7 +1546,7 @@
     {
       "category": "Classic",
       "id": "classic_33",
-      "isPremium": false,
+      "isPremium": true,
       "name": "Collage 33",
       "slots": [
         {
@@ -1637,7 +1637,7 @@
     {
       "category": "Classic",
       "id": "classic_34",
-      "isPremium": false,
+      "isPremium": true,
       "name": "Collage 34",
       "slots": [
         {
@@ -1692,7 +1692,7 @@
     {
       "category": "Classic",
       "id": "classic_35",
-      "isPremium": false,
+      "isPremium": true,
       "name": "Collage 35",
       "slots": [
         {
@@ -1756,7 +1756,7 @@
     {
       "category": "Classic",
       "id": "classic_36",
-      "isPremium": false,
+      "isPremium": true,
       "name": "Collage 36",
       "slots": [
         {
@@ -1820,7 +1820,7 @@
     {
       "category": "Classic",
       "id": "classic_37",
-      "isPremium": false,
+      "isPremium": true,
       "name": "Collage 37",
       "slots": [
         {
@@ -1902,7 +1902,7 @@
     {
       "category": "Classic",
       "id": "classic_38",
-      "isPremium": false,
+      "isPremium": true,
       "name": "Collage 38",
       "slots": [
         {
@@ -1984,7 +1984,7 @@
     {
       "category": "Classic",
       "id": "classic_40",
-      "isPremium": false,
+      "isPremium": true,
       "name": "Collage 40",
       "slots": [
         {
@@ -2066,7 +2066,7 @@
     {
       "category": "Classic",
       "id": "classic_41",
-      "isPremium": false,
+      "isPremium": true,
       "name": "Collage 41",
       "slots": [
         {
@@ -2148,7 +2148,7 @@
     {
       "category": "Classic",
       "id": "classic_42",
-      "isPremium": false,
+      "isPremium": true,
       "name": "Collage 42",
       "slots": [
         {
@@ -2230,7 +2230,7 @@
     {
       "category": "Classic",
       "id": "classic_43",
-      "isPremium": false,
+      "isPremium": true,
       "name": "Collage 43",
       "slots": [
         {
@@ -2312,7 +2312,7 @@
     {
       "category": "Classic",
       "id": "classic_44",
-      "isPremium": false,
+      "isPremium": true,
       "name": "Collage 44",
       "slots": [
         {
@@ -2394,7 +2394,7 @@
     {
       "category": "Classic",
       "id": "classic_45",
-      "isPremium": false,
+      "isPremium": true,
       "name": "Collage 45",
       "slots": [
         {
@@ -2476,7 +2476,7 @@
     {
       "category": "Classic",
       "id": "classic_46",
-      "isPremium": false,
+      "isPremium": true,
       "name": "Collage 46",
       "slots": [
         {
@@ -2558,7 +2558,7 @@
     {
       "category": "Classic",
       "id": "classic_47",
-      "isPremium": false,
+      "isPremium": true,
       "name": "Collage 47",
       "slots": [
         {
@@ -2640,7 +2640,7 @@
     {
       "category": "Classic",
       "id": "classic_48",
-      "isPremium": false,
+      "isPremium": true,
       "name": "Collage 48",
       "slots": [
         {
@@ -2722,7 +2722,7 @@
     {
       "category": "Classic",
       "id": "classic_49",
-      "isPremium": false,
+      "isPremium": true,
       "name": "Collage 49",
       "slots": [
         {
@@ -2804,7 +2804,7 @@
     {
       "category": "Classic",
       "id": "classic_50",
-      "isPremium": false,
+      "isPremium": true,
       "name": "Collage 50",
       "slots": [
         {
@@ -2886,7 +2886,7 @@
     {
       "category": "Classic",
       "id": "classic_51",
-      "isPremium": false,
+      "isPremium": true,
       "name": "Collage 51",
       "slots": [
         {
@@ -2968,7 +2968,7 @@
     {
       "category": "Classic",
       "id": "classic_52",
-      "isPremium": false,
+      "isPremium": true,
       "name": "Collage 52",
       "slots": [
         {
@@ -3050,7 +3050,7 @@
     {
       "category": "Classic",
       "id": "classic_53",
-      "isPremium": false,
+      "isPremium": true,
       "name": "Collage 53",
       "slots": [
         {
@@ -3187,7 +3187,7 @@
       "id": "svg_CIRCLE",
       "name": "Circle",
       "category": "Stylish",
-      "isPremium": false,
+      "isPremium": true,
       "type": "organic",
       "thumbnailURL": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/thumbnails/svg_CIRCLE.png",
       "slots": [
@@ -3207,7 +3207,7 @@
       "id": "svg_CIRCLE2",
       "name": "Circle2",
       "category": "Stylish",
-      "isPremium": false,
+      "isPremium": true,
       "type": "organic",
       "thumbnailURL": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/thumbnails/svg_CIRCLE2.png",
       "slots": [
@@ -3227,7 +3227,7 @@
       "id": "svg_DEFORMEDCIRCLE",
       "name": "Deformedcircle",
       "category": "Stylish",
-      "isPremium": false,
+      "isPremium": true,
       "type": "organic",
       "thumbnailURL": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/thumbnails/svg_DEFORMEDCIRCLE.png",
       "slots": [
@@ -3247,7 +3247,7 @@
       "id": "svg_DEFORMEDSTAR",
       "name": "Deformedstar",
       "category": "Stylish",
-      "isPremium": false,
+      "isPremium": true,
       "type": "organic",
       "thumbnailURL": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/thumbnails/svg_DEFORMEDSTAR.png",
       "slots": [
@@ -3267,7 +3267,7 @@
       "id": "svg_HEARSSQ",
       "name": "Hearssq",
       "category": "Stylish",
-      "isPremium": false,
+      "isPremium": true,
       "type": "organic",
       "thumbnailURL": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/thumbnails/svg_HEARSSQ.png",
       "slots": [
@@ -3327,7 +3327,7 @@
       "id": "svg_HEARTS",
       "name": "Hearts",
       "category": "Stylish",
-      "isPremium": false,
+      "isPremium": true,
       "type": "organic",
       "thumbnailURL": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/thumbnails/svg_HEARTS.png",
       "slots": [
@@ -3347,7 +3347,7 @@
       "id": "svg_PCM_CL01",
       "name": "Pcm Cl01",
       "category": "Stylish",
-      "isPremium": false,
+      "isPremium": true,
       "type": "grid",
       "thumbnailURL": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/thumbnails/svg_PCM_CL01.png",
       "slots": [
@@ -3384,7 +3384,7 @@
       "id": "svg_PCM_CL02",
       "name": "Pcm Cl02",
       "category": "Stylish",
-      "isPremium": false,
+      "isPremium": true,
       "type": "grid",
       "thumbnailURL": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/thumbnails/svg_PCM_CL02.png",
       "slots": [
@@ -3421,7 +3421,7 @@
       "id": "svg_PCM_CL03",
       "name": "Pcm Cl03",
       "category": "Stylish",
-      "isPremium": false,
+      "isPremium": true,
       "type": "grid",
       "thumbnailURL": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/thumbnails/svg_PCM_CL03.png",
       "slots": [
@@ -3458,7 +3458,7 @@
       "id": "svg_PCM_CL04",
       "name": "Pcm Cl04",
       "category": "Stylish",
-      "isPremium": false,
+      "isPremium": true,
       "type": "grid",
       "thumbnailURL": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/thumbnails/svg_PCM_CL04.png",
       "slots": [
@@ -3495,7 +3495,7 @@
       "id": "svg_PCM_CL05",
       "name": "Pcm Cl05",
       "category": "Stylish",
-      "isPremium": false,
+      "isPremium": true,
       "type": "grid",
       "thumbnailURL": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/thumbnails/svg_PCM_CL05.png",
       "slots": [
@@ -3559,7 +3559,7 @@
       "id": "svg_PCM_CL06",
       "name": "Pcm Cl06",
       "category": "Stylish",
-      "isPremium": false,
+      "isPremium": true,
       "type": "grid",
       "thumbnailURL": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/thumbnails/svg_PCM_CL06.png",
       "slots": [
@@ -3623,7 +3623,7 @@
       "id": "svg_PCM_CL07",
       "name": "Pcm Cl07",
       "category": "Stylish",
-      "isPremium": false,
+      "isPremium": true,
       "type": "grid",
       "thumbnailURL": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/thumbnails/svg_PCM_CL07.png",
       "slots": [
@@ -3687,7 +3687,7 @@
       "id": "svg_PCM_CL08",
       "name": "Pcm Cl08",
       "category": "Stylish",
-      "isPremium": false,
+      "isPremium": true,
       "type": "grid",
       "thumbnailURL": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/thumbnails/svg_PCM_CL08.png",
       "slots": [
@@ -3751,7 +3751,7 @@
       "id": "svg_PCM_CL09",
       "name": "Pcm Cl09",
       "category": "Stylish",
-      "isPremium": false,
+      "isPremium": true,
       "type": "organic",
       "thumbnailURL": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/thumbnails/svg_PCM_CL09.png",
       "slots": [
@@ -3801,7 +3801,7 @@
       "id": "svg_PCM_CL10",
       "name": "Pcm Cl10",
       "category": "Stylish",
-      "isPremium": false,
+      "isPremium": true,
       "type": "organic",
       "thumbnailURL": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/thumbnails/svg_PCM_CL10.png",
       "slots": [
@@ -3851,7 +3851,7 @@
       "id": "svg_PCM_CL11",
       "name": "Pcm Cl11",
       "category": "Stylish",
-      "isPremium": false,
+      "isPremium": true,
       "type": "organic",
       "thumbnailURL": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/thumbnails/svg_PCM_CL11.png",
       "slots": [
@@ -3901,7 +3901,7 @@
       "id": "svg_PCM_CL12",
       "name": "Pcm Cl12",
       "category": "Stylish",
-      "isPremium": false,
+      "isPremium": true,
       "type": "organic",
       "thumbnailURL": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/thumbnails/svg_PCM_CL12.png",
       "slots": [
@@ -3951,7 +3951,7 @@
       "id": "svg_PCM_CL13",
       "name": "Pcm Cl13",
       "category": "Stylish",
-      "isPremium": false,
+      "isPremium": true,
       "type": "organic",
       "thumbnailURL": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/thumbnails/svg_PCM_CL13.png",
       "slots": [
@@ -4001,7 +4001,7 @@
       "id": "svg_PCM_CL14",
       "name": "Pcm Cl14",
       "category": "Stylish",
-      "isPremium": false,
+      "isPremium": true,
       "type": "organic",
       "thumbnailURL": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/thumbnails/svg_PCM_CL14.png",
       "slots": [
@@ -4051,7 +4051,7 @@
       "id": "svg_PCM_CL15",
       "name": "Pcm Cl15",
       "category": "Stylish",
-      "isPremium": false,
+      "isPremium": true,
       "type": "organic",
       "thumbnailURL": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/thumbnails/svg_PCM_CL15.png",
       "slots": [
@@ -4081,7 +4081,7 @@
       "id": "svg_PCM_CL16",
       "name": "Pcm Cl16",
       "category": "Stylish",
-      "isPremium": false,
+      "isPremium": true,
       "type": "organic",
       "thumbnailURL": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/thumbnails/svg_PCM_CL16.png",
       "slots": [
@@ -4111,7 +4111,7 @@
       "id": "svg_PCM_CL17",
       "name": "Pcm Cl17",
       "category": "Stylish",
-      "isPremium": false,
+      "isPremium": true,
       "type": "organic",
       "thumbnailURL": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/thumbnails/svg_PCM_CL17.png",
       "slots": [
@@ -4151,7 +4151,7 @@
       "id": "svg_PCM_CL18",
       "name": "Pcm Cl18",
       "category": "Stylish",
-      "isPremium": false,
+      "isPremium": true,
       "type": "organic",
       "thumbnailURL": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/thumbnails/svg_PCM_CL18.png",
       "slots": [
@@ -4181,7 +4181,7 @@
       "id": "svg_PCM_CL19",
       "name": "Pcm Cl19",
       "category": "Stylish",
-      "isPremium": false,
+      "isPremium": true,
       "type": "organic",
       "thumbnailURL": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/thumbnails/svg_PCM_CL19.png",
       "slots": [
@@ -4221,7 +4221,7 @@
       "id": "svg_PCM_CL20",
       "name": "Pcm Cl20",
       "category": "Stylish",
-      "isPremium": false,
+      "isPremium": true,
       "type": "organic",
       "thumbnailURL": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/thumbnails/svg_PCM_CL20.png",
       "slots": [
@@ -4271,7 +4271,7 @@
       "id": "svg_PCM_CL20_IS",
       "name": "Pcm Cl20 Is",
       "category": "Stylish",
-      "isPremium": false,
+      "isPremium": true,
       "type": "organic",
       "thumbnailURL": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/thumbnails/svg_PCM_CL20_IS.png",
       "slots": [
@@ -4311,7 +4311,7 @@
       "id": "svg_PCM_CL21",
       "name": "Pcm Cl21",
       "category": "Stylish",
-      "isPremium": false,
+      "isPremium": true,
       "type": "organic",
       "thumbnailURL": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/thumbnails/svg_PCM_CL21.png",
       "slots": [
@@ -4341,7 +4341,7 @@
       "id": "svg_PCM_CL22",
       "name": "Pcm Cl22",
       "category": "Stylish",
-      "isPremium": false,
+      "isPremium": true,
       "type": "organic",
       "thumbnailURL": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/thumbnails/svg_PCM_CL22.png",
       "slots": [
@@ -4371,7 +4371,7 @@
       "id": "svg_PCM_CL23",
       "name": "Pcm Cl23",
       "category": "Stylish",
-      "isPremium": false,
+      "isPremium": true,
       "type": "grid",
       "thumbnailURL": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/thumbnails/svg_PCM_CL23.png",
       "slots": [
@@ -4399,7 +4399,7 @@
       "id": "svg_PCM_CL24",
       "name": "Pcm Cl24",
       "category": "Stylish",
-      "isPremium": false,
+      "isPremium": true,
       "type": "grid",
       "thumbnailURL": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/thumbnails/svg_PCM_CL24.png",
       "slots": [
@@ -4427,7 +4427,7 @@
       "id": "svg_PCM_CL25",
       "name": "Pcm Cl25",
       "category": "Stylish",
-      "isPremium": false,
+      "isPremium": true,
       "type": "organic",
       "thumbnailURL": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/thumbnails/svg_PCM_CL25.png",
       "slots": [
@@ -4467,7 +4467,7 @@
       "id": "svg_PCM_CL26",
       "name": "Pcm Cl26",
       "category": "Stylish",
-      "isPremium": false,
+      "isPremium": true,
       "type": "organic",
       "thumbnailURL": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/thumbnails/svg_PCM_CL26.png",
       "slots": [
@@ -4507,7 +4507,7 @@
       "id": "svg_PCM_CL27",
       "name": "Pcm Cl27",
       "category": "Stylish",
-      "isPremium": false,
+      "isPremium": true,
       "type": "organic",
       "thumbnailURL": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/thumbnails/svg_PCM_CL27.png",
       "slots": [
@@ -4547,7 +4547,7 @@
       "id": "svg_PCM_CL28",
       "name": "Pcm Cl28",
       "category": "Stylish",
-      "isPremium": false,
+      "isPremium": true,
       "type": "organic",
       "thumbnailURL": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/thumbnails/svg_PCM_CL28.png",
       "slots": [
@@ -4587,7 +4587,7 @@
       "id": "svg_PCM_CL29",
       "name": "Pcm Cl29",
       "category": "Stylish",
-      "isPremium": false,
+      "isPremium": true,
       "type": "organic",
       "thumbnailURL": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/thumbnails/svg_PCM_CL29.png",
       "slots": [
@@ -4627,7 +4627,7 @@
       "id": "svg_PCM_CL30",
       "name": "Pcm Cl30",
       "category": "Stylish",
-      "isPremium": false,
+      "isPremium": true,
       "type": "organic",
       "thumbnailURL": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/thumbnails/svg_PCM_CL30.png",
       "slots": [
@@ -4667,7 +4667,7 @@
       "id": "svg_PCM_CL31",
       "name": "Pcm Cl31",
       "category": "Stylish",
-      "isPremium": false,
+      "isPremium": true,
       "type": "organic",
       "thumbnailURL": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/thumbnails/svg_PCM_CL31.png",
       "slots": [
@@ -4707,7 +4707,7 @@
       "id": "svg_PCM_CL32",
       "name": "Pcm Cl32",
       "category": "Stylish",
-      "isPremium": false,
+      "isPremium": true,
       "type": "organic",
       "thumbnailURL": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/thumbnails/svg_PCM_CL32.png",
       "slots": [
@@ -4747,7 +4747,7 @@
       "id": "svg_PCM_CL33",
       "name": "Pcm Cl33",
       "category": "Stylish",
-      "isPremium": false,
+      "isPremium": true,
       "type": "organic",
       "thumbnailURL": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/thumbnails/svg_PCM_CL33.png",
       "slots": [
@@ -4797,7 +4797,7 @@
       "id": "svg_PCM_CL34",
       "name": "Pcm Cl34",
       "category": "Stylish",
-      "isPremium": false,
+      "isPremium": true,
       "type": "organic",
       "thumbnailURL": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/thumbnails/svg_PCM_CL34.png",
       "slots": [
@@ -4847,7 +4847,7 @@
       "id": "svg_PCM_CL35",
       "name": "Pcm Cl35",
       "category": "Stylish",
-      "isPremium": false,
+      "isPremium": true,
       "type": "organic",
       "thumbnailURL": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/thumbnails/svg_PCM_CL35.png",
       "slots": [
@@ -4937,7 +4937,7 @@
       "id": "svg_PCM_CL36",
       "name": "Pcm Cl36",
       "category": "Stylish",
-      "isPremium": false,
+      "isPremium": true,
       "type": "organic",
       "thumbnailURL": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/thumbnails/svg_PCM_CL36.png",
       "slots": [
@@ -5027,7 +5027,7 @@
       "id": "svg_PCM_SL01",
       "name": "Pcm Sl01",
       "category": "Stylish",
-      "isPremium": false,
+      "isPremium": true,
       "type": "organic",
       "thumbnailURL": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/thumbnails/svg_PCM_SL01.png",
       "slots": [
@@ -5047,7 +5047,7 @@
       "id": "svg_PCM_SL02",
       "name": "Pcm Sl02",
       "category": "Stylish",
-      "isPremium": false,
+      "isPremium": true,
       "type": "organic",
       "thumbnailURL": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/thumbnails/svg_PCM_SL02.png",
       "slots": [
@@ -5067,7 +5067,7 @@
       "id": "svg_PCM_SL03",
       "name": "Pcm Sl03",
       "category": "Stylish",
-      "isPremium": false,
+      "isPremium": true,
       "type": "organic",
       "thumbnailURL": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/thumbnails/svg_PCM_SL03.png",
       "slots": [
@@ -5087,7 +5087,7 @@
       "id": "svg_PCM_SL04",
       "name": "Pcm Sl04",
       "category": "Stylish",
-      "isPremium": false,
+      "isPremium": true,
       "type": "organic",
       "thumbnailURL": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/thumbnails/svg_PCM_SL04.png",
       "slots": [
@@ -5107,7 +5107,7 @@
       "id": "svg_PCM_SL05",
       "name": "Pcm Sl05",
       "category": "Stylish",
-      "isPremium": false,
+      "isPremium": true,
       "type": "organic",
       "thumbnailURL": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/thumbnails/svg_PCM_SL05.png",
       "slots": [
@@ -5127,7 +5127,7 @@
       "id": "svg_PCM_SL06",
       "name": "Pcm Sl06",
       "category": "Stylish",
-      "isPremium": false,
+      "isPremium": true,
       "type": "organic",
       "thumbnailURL": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/thumbnails/svg_PCM_SL06.png",
       "slots": [
@@ -5147,7 +5147,7 @@
       "id": "svg_PCM_SL07",
       "name": "Pcm Sl07",
       "category": "Stylish",
-      "isPremium": false,
+      "isPremium": true,
       "type": "organic",
       "thumbnailURL": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/thumbnails/svg_PCM_SL07.png",
       "slots": [
@@ -5167,7 +5167,7 @@
       "id": "svg_PCM_SL08",
       "name": "Pcm Sl08",
       "category": "Stylish",
-      "isPremium": false,
+      "isPremium": true,
       "type": "organic",
       "thumbnailURL": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/thumbnails/svg_PCM_SL08.png",
       "slots": [
@@ -5187,7 +5187,7 @@
       "id": "svg_PCM_SL09",
       "name": "Pcm Sl09",
       "category": "Stylish",
-      "isPremium": false,
+      "isPremium": true,
       "type": "organic",
       "thumbnailURL": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/thumbnails/svg_PCM_SL09.png",
       "slots": [
@@ -5207,7 +5207,7 @@
       "id": "svg_PCM_SL10",
       "name": "Pcm Sl10",
       "category": "Stylish",
-      "isPremium": false,
+      "isPremium": true,
       "type": "organic",
       "thumbnailURL": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/thumbnails/svg_PCM_SL10.png",
       "slots": [
@@ -5227,7 +5227,7 @@
       "id": "svg_PCM_SL11",
       "name": "Pcm Sl11",
       "category": "Stylish",
-      "isPremium": false,
+      "isPremium": true,
       "type": "organic",
       "thumbnailURL": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/thumbnails/svg_PCM_SL11.png",
       "slots": [
@@ -5257,7 +5257,7 @@
       "id": "svg_PCM_SL12",
       "name": "Pcm Sl12",
       "category": "Stylish",
-      "isPremium": false,
+      "isPremium": true,
       "type": "organic",
       "thumbnailURL": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/thumbnails/svg_PCM_SL12.png",
       "slots": [
@@ -5287,7 +5287,7 @@
       "id": "svg_PCM_SL13",
       "name": "Pcm Sl13",
       "category": "Stylish",
-      "isPremium": false,
+      "isPremium": true,
       "type": "organic",
       "thumbnailURL": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/thumbnails/svg_PCM_SL13.png",
       "slots": [
@@ -5307,7 +5307,7 @@
       "id": "svg_PCM_SL14",
       "name": "Pcm Sl14",
       "category": "Stylish",
-      "isPremium": false,
+      "isPremium": true,
       "type": "organic",
       "thumbnailURL": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/thumbnails/svg_PCM_SL14.png",
       "slots": [
@@ -5327,7 +5327,7 @@
       "id": "svg_PCM_SL15",
       "name": "Pcm Sl15",
       "category": "Stylish",
-      "isPremium": false,
+      "isPremium": true,
       "type": "organic",
       "thumbnailURL": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/thumbnails/svg_PCM_SL15.png",
       "slots": [
@@ -5347,7 +5347,7 @@
       "id": "svg_PCM_SL16",
       "name": "Pcm Sl16",
       "category": "Stylish",
-      "isPremium": false,
+      "isPremium": true,
       "type": "organic",
       "thumbnailURL": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/thumbnails/svg_PCM_SL16.png",
       "slots": [
@@ -5367,7 +5367,7 @@
       "id": "svg_PCM_SL17",
       "name": "Pcm Sl17",
       "category": "Stylish",
-      "isPremium": false,
+      "isPremium": true,
       "type": "organic",
       "thumbnailURL": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/thumbnails/svg_PCM_SL17.png",
       "slots": [
@@ -5397,7 +5397,7 @@
       "id": "svg_PCM_SL18",
       "name": "Pcm Sl18",
       "category": "Stylish",
-      "isPremium": false,
+      "isPremium": true,
       "type": "organic",
       "thumbnailURL": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/thumbnails/svg_PCM_SL18.png",
       "slots": [
@@ -5427,7 +5427,7 @@
       "id": "svg_PCM_SL19",
       "name": "Pcm Sl19",
       "category": "Stylish",
-      "isPremium": false,
+      "isPremium": true,
       "type": "organic",
       "thumbnailURL": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/thumbnails/svg_PCM_SL19.png",
       "slots": [
@@ -5457,7 +5457,7 @@
       "id": "svg_PCM_SL20",
       "name": "Pcm Sl20",
       "category": "Stylish",
-      "isPremium": false,
+      "isPremium": true,
       "type": "organic",
       "thumbnailURL": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/thumbnails/svg_PCM_SL20.png",
       "slots": [
@@ -5487,7 +5487,7 @@
       "id": "svg_PCM_SL21",
       "name": "Pcm Sl21",
       "category": "Stylish",
-      "isPremium": false,
+      "isPremium": true,
       "type": "organic",
       "thumbnailURL": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/thumbnails/svg_PCM_SL21.png",
       "slots": [
@@ -5517,7 +5517,7 @@
       "id": "svg_PCM_SL22",
       "name": "Pcm Sl22",
       "category": "Stylish",
-      "isPremium": false,
+      "isPremium": true,
       "type": "organic",
       "thumbnailURL": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/thumbnails/svg_PCM_SL22.png",
       "slots": [
@@ -5547,7 +5547,7 @@
       "id": "svg_PCM_SL23",
       "name": "Pcm Sl23",
       "category": "Stylish",
-      "isPremium": false,
+      "isPremium": true,
       "type": "organic",
       "thumbnailURL": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/thumbnails/svg_PCM_SL23.png",
       "slots": [
@@ -5567,7 +5567,7 @@
       "id": "svg_PCM_SL24",
       "name": "Pcm Sl24",
       "category": "Stylish",
-      "isPremium": false,
+      "isPremium": true,
       "type": "organic",
       "thumbnailURL": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/thumbnails/svg_PCM_SL24.png",
       "slots": [
@@ -5587,7 +5587,7 @@
       "id": "svg_PCM_SL25",
       "name": "Pcm Sl25",
       "category": "Stylish",
-      "isPremium": false,
+      "isPremium": true,
       "type": "organic",
       "thumbnailURL": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/thumbnails/svg_PCM_SL25.png",
       "slots": [
@@ -5607,7 +5607,7 @@
       "id": "svg_PCM_SL26",
       "name": "Pcm Sl26",
       "category": "Stylish",
-      "isPremium": false,
+      "isPremium": true,
       "type": "organic",
       "thumbnailURL": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/thumbnails/svg_PCM_SL26.png",
       "slots": [
@@ -5627,7 +5627,7 @@
       "id": "svg_PCM_SL27",
       "name": "Pcm Sl27",
       "category": "Stylish",
-      "isPremium": false,
+      "isPremium": true,
       "type": "organic",
       "thumbnailURL": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/thumbnails/svg_PCM_SL27.png",
       "slots": [
@@ -5647,7 +5647,7 @@
       "id": "svg_PCM_SL28",
       "name": "Pcm Sl28",
       "category": "Stylish",
-      "isPremium": false,
+      "isPremium": true,
       "type": "organic",
       "thumbnailURL": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/thumbnails/svg_PCM_SL28.png",
       "slots": [
@@ -5667,7 +5667,7 @@
       "id": "svg_PCM_SL29",
       "name": "Pcm Sl29",
       "category": "Stylish",
-      "isPremium": false,
+      "isPremium": true,
       "type": "organic",
       "thumbnailURL": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/thumbnails/svg_PCM_SL29.png",
       "slots": [
@@ -5687,7 +5687,7 @@
       "id": "svg_PCM_SL30",
       "name": "Pcm Sl30",
       "category": "Stylish",
-      "isPremium": false,
+      "isPremium": true,
       "type": "organic",
       "thumbnailURL": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/thumbnails/svg_PCM_SL30.png",
       "slots": [
@@ -5707,7 +5707,7 @@
       "id": "svg_PCM_SL31",
       "name": "Pcm Sl31",
       "category": "Stylish",
-      "isPremium": false,
+      "isPremium": true,
       "type": "organic",
       "thumbnailURL": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/thumbnails/svg_PCM_SL31.png",
       "slots": [
@@ -5727,7 +5727,7 @@
       "id": "svg_PCM_SL32",
       "name": "Pcm Sl32",
       "category": "Stylish",
-      "isPremium": false,
+      "isPremium": true,
       "type": "organic",
       "thumbnailURL": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/thumbnails/svg_PCM_SL32.png",
       "slots": [
@@ -5747,7 +5747,7 @@
       "id": "svg_STONE",
       "name": "Stone",
       "category": "Stylish",
-      "isPremium": false,
+      "isPremium": true,
       "type": "organic",
       "thumbnailURL": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/thumbnails/svg_STONE.png",
       "slots": [
@@ -5777,7 +5777,7 @@
       "id": "svg_STY1",
       "name": "Sty1",
       "category": "Stylish",
-      "isPremium": false,
+      "isPremium": true,
       "type": "organic",
       "thumbnailURL": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/thumbnails/svg_STY1.png",
       "slots": [
@@ -5806,7 +5806,7 @@
       "id": "svg_STY2",
       "name": "Sty2",
       "category": "Stylish",
-      "isPremium": false,
+      "isPremium": true,
       "type": "organic",
       "thumbnailURL": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/thumbnails/svg_STY2.png",
       "slots": [
@@ -5826,7 +5826,7 @@
       "id": "svg_SVG10",
       "name": "Svg10",
       "category": "Stylish",
-      "isPremium": false,
+      "isPremium": true,
       "type": "organic",
       "thumbnailURL": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/thumbnails/svg_SVG10.png",
       "slots": [
@@ -5846,7 +5846,7 @@
       "id": "svg_SVG11",
       "name": "Svg11",
       "category": "Stylish",
-      "isPremium": false,
+      "isPremium": true,
       "type": "organic",
       "thumbnailURL": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/thumbnails/svg_SVG11.png",
       "slots": [
@@ -5886,7 +5886,7 @@
       "id": "svg_SVG12",
       "name": "Svg12",
       "category": "Stylish",
-      "isPremium": false,
+      "isPremium": true,
       "type": "organic",
       "thumbnailURL": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/thumbnails/svg_SVG12.png",
       "slots": [
@@ -5926,7 +5926,7 @@
       "id": "svg_SVG13",
       "name": "Svg13",
       "category": "Stylish",
-      "isPremium": false,
+      "isPremium": true,
       "type": "grid",
       "thumbnailURL": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/thumbnails/svg_SVG13.png",
       "slots": [
@@ -5954,7 +5954,7 @@
       "id": "svg_SVG14",
       "name": "Svg14",
       "category": "Stylish",
-      "isPremium": false,
+      "isPremium": true,
       "type": "grid",
       "thumbnailURL": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/thumbnails/svg_SVG14.png",
       "slots": [
@@ -5991,7 +5991,7 @@
       "id": "svg_SVG15",
       "name": "Svg15",
       "category": "Stylish",
-      "isPremium": false,
+      "isPremium": true,
       "type": "grid",
       "thumbnailURL": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/thumbnails/svg_SVG15.png",
       "slots": [
@@ -6037,7 +6037,7 @@
       "id": "svg_SVG16",
       "name": "Svg16",
       "category": "Stylish",
-      "isPremium": false,
+      "isPremium": true,
       "type": "grid",
       "thumbnailURL": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/thumbnails/svg_SVG16.png",
       "slots": [
@@ -6083,7 +6083,7 @@
       "id": "svg_SVG8",
       "name": "Svg8",
       "category": "Stylish",
-      "isPremium": false,
+      "isPremium": true,
       "type": "organic",
       "thumbnailURL": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/thumbnails/svg_SVG8.png",
       "slots": [
@@ -6123,7 +6123,7 @@
       "id": "svg_SVG9",
       "name": "Svg9",
       "category": "Stylish",
-      "isPremium": false,
+      "isPremium": true,
       "type": "organic",
       "thumbnailURL": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/thumbnails/svg_SVG9.png",
       "slots": [
@@ -6153,7 +6153,7 @@
       "id": "svg_WAVE",
       "name": "Wave",
       "category": "Stylish",
-      "isPremium": false,
+      "isPremium": true,
       "type": "organic",
       "thumbnailURL": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/thumbnails/svg_WAVE.png",
       "slots": [
