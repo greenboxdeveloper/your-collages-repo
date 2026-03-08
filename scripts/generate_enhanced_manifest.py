@@ -14,6 +14,7 @@ Usage:
 
 import argparse
 import json
+import math
 import os
 import re
 import sys
@@ -70,6 +71,17 @@ def load_classic_stylish_layouts(json_path: Path, base_url: str) -> list:
 # -----------------------------------------------------------------------------
 # SVG parsing (mirror SVGLayoutParser + SVGCollageLayout: viewBox, path, polygon, rect, circle, ellipse)
 # -----------------------------------------------------------------------------
+
+def _ellipse_path_d(cx: float, cy: float, rx: float, ry: float, steps: int = 32) -> str:
+    """SVG path d for ellipse (polygon approximation) so thumbnails draw ovals; parser uses M/L/Z."""
+    if rx <= 0 or ry <= 0:
+        return ""
+    pts = []
+    for i in range(steps + 1):
+        t = 2 * math.pi * i / steps
+        pts.append((cx + rx * math.cos(t), cy + ry * math.sin(t)))
+    return "M " + " ".join(f"{x} {y}" for x, y in pts) + " Z"
+
 
 def _parse_viewbox_from_svg_string(svg_string: str) -> tuple[float, float, float, float]:
     """Mirror SVGLayoutParser.parseViewBox: viewBox=\"([^\"]+)\" then 4 components."""
@@ -156,14 +168,16 @@ def _parse_layout_from_svg_string(svg_string: str) -> list[tuple[str, float, flo
             elif local == "circle":
                 cx, cy = float(el.get("cx", 0)), float(el.get("cy", 0))
                 r = float(el.get("r", 0))
-                frames.append((f"circle_xml_{i+1}", cx - r, cy - r, r * 2, r * 2, None))
+                path_d = _ellipse_path_d(cx, cy, r, r) if r > 0 else None
+                frames.append((f"circle_xml_{i+1}", cx - r, cy - r, r * 2, r * 2, path_d))
     except Exception:
         pass
     # 7) Ellipse regex (app uses regex, not XML)
     for i, m in enumerate(re.finditer(r'<ellipse[^>]*?cx\s*=\s*["\']?([^"\'\s>]*)["\']?[^>]*?cy\s*=\s*["\']?([^"\'\s>]*)["\']?[^>]*?rx\s*=\s*["\']?([^"\'\s>]*)["\']?[^>]*?ry\s*=\s*["\']?([^"\'\s>]*)["\']?[^>]*?/?>', svg_string, re.IGNORECASE | re.DOTALL)):
         cx, cy = float(m.group(1) or 0), float(m.group(2) or 0)
         rx, ry = float(m.group(3) or 0), float(m.group(4) or 0)
-        frames.append((f"ellipse_{i+1}", cx - rx, cy - ry, rx * 2, ry * 2, None))
+        path_d = _ellipse_path_d(cx, cy, rx, ry) if rx > 0 and ry > 0 else None
+        frames.append((f"ellipse_{i+1}", cx - rx, cy - ry, rx * 2, ry * 2, path_d))
     return frames
 
 
@@ -467,7 +481,13 @@ def draw_thumbnail(layout: dict, out_path: Path, size: int = 300) -> None:
 
         path_data = slot.get("path_data")
         if path_data:
-            viewbox = layout.get("__viewbox")  # SVG-derived layouts have path in file coords
+            viewbox = layout.get("__viewbox")  # (vbx, vby, vbw, vbh) for SVG-derived
+            # Normalize path to slot rect in viewBox coords so shape fills the slot (matches app getFrames)
+            if viewbox and len(nr) >= 4:
+                vbx, vby, vbw, vbh = viewbox[0], viewbox[1], viewbox[2], viewbox[3]
+                if vbw > 0 and vbh > 0:
+                    slot_vb = (vbx + nr[0] * vbw, vby + nr[1] * vbh, nr[2] * vbw, nr[3] * vbh)
+                    viewbox = slot_vb
             # Prefer Pillow path parsing (works everywhere); fall back to cairo then rect
             slot_img = _render_path_pillow(path_data, w, h, color, viewbox=viewbox)
             if slot_img is None and cairosvg is not None:
