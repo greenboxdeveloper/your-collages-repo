@@ -4,7 +4,7 @@ from __future__ import annotations
 """
 Generate enhanced_manifest.json (version 2.0) by merging:
   1. classic_and_stylish_layouts.json (classic + stylish from app export)
-  2. All .svg files in a folder (parsed with svgelements)
+  2. All .svg files in a folder (parsed like SVGLayoutParser: viewBox + path/polygon/rect/circle/ellipse)
 
 Also generates thumbnail images (one per layout) in thumbnails/.
 
@@ -20,11 +20,7 @@ import sys
 from io import BytesIO
 from pathlib import Path
 
-# Optional: svgelements for SVG parsing
-try:
-    from svgelements import SVG, Path as SVGPath, Rect, Polygon, Circle, Ellipse
-except ImportError:
-    SVG = None
+# SVG parsing is string/regex-based (mirrors SVGLayoutParser); svgelements not required
 
 try:
     from PIL import Image, ImageDraw
@@ -72,86 +68,139 @@ def load_classic_stylish_layouts(json_path: Path, base_url: str) -> list:
 
 
 # -----------------------------------------------------------------------------
-# SVG parsing (svgelements)
+# SVG parsing (mirror SVGLayoutParser + SVGCollageLayout: viewBox, path, polygon, rect, circle, ellipse)
 # -----------------------------------------------------------------------------
 
-def _get_viewbox_size(svg) -> tuple:
-    """Return (width, height) from SVG viewbox or default 500,500."""
+def _parse_viewbox_from_svg_string(svg_string: str) -> tuple[float, float, float, float]:
+    """Mirror SVGLayoutParser.parseViewBox: viewBox=\"([^\"]+)\" then 4 components."""
+    m = re.search(r'viewBox=["\']([^"\']+)["\']', svg_string, re.IGNORECASE)
+    if not m:
+        return (0.0, 0.0, 500.0, 500.0)
+    parts = m.group(1).split()
+    if len(parts) < 4:
+        return (0.0, 0.0, 500.0, 500.0)
     try:
-        vb = getattr(svg, "viewbox", None)
-        if vb is not None:
-            w = getattr(vb, "width", None)
-            h = getattr(vb, "height", None)
-            if w is not None and h is not None and float(w) > 0 and float(h) > 0:
-                return float(w), float(h)
-            # viewbox can be a string "minX minY width height"
-            if isinstance(vb, str):
-                parts = vb.strip().split()
-                if len(parts) >= 4:
-                    return float(parts[2]), float(parts[3])
-        if hasattr(svg, "width") and hasattr(svg, "height"):
-            w, h = float(svg.width), float(svg.height)
-            if w > 0 and h > 0:
-                return w, h
+        return (float(parts[0]), float(parts[1]), float(parts[2]), float(parts[3]))
+    except ValueError:
+        return (0.0, 0.0, 500.0, 500.0)
+
+
+def _path_bounds_from_d(path_d: str) -> tuple[float, float, float, float] | None:
+    """Compute bounding box of path d by flattening to points (same logic as app path.bounds)."""
+    polys = _flatten_path_to_polygons(path_d, viewbox=None)  # work in raw coords
+    if not polys or not polys[0]:
+        return None
+    all_x = [p[0] for poly in polys for p in poly]
+    all_y = [p[1] for poly in polys for p in poly]
+    if not all_x or not all_y:
+        return None
+    return (min(all_x), min(all_y), max(all_x) - min(all_x), max(all_y) - min(all_y))
+
+
+def _parse_layout_from_svg_string(svg_string: str) -> list[tuple[str, float, float, float, float, str | None]]:
+    """Mirror SVGLayoutParser.parseLayout order: path (id), path (no id), polygon, g rect, xml rect, xml circle, ellipse. Returns [(frame_id, x, y, w, h, path_d or None)]."""
+    frames: list[tuple[str, float, float, float, float, str | None]] = []
+    # 1) Path with id: <path ... id="..." ... d="...">
+    for m in re.finditer(r'<path[^>]*?id\s*=\s*["\']([^"\']+)["\'][^>]*?d\s*=\s*["\']([^"\']+)["\'][^>]*?/?>', svg_string, re.IGNORECASE | re.DOTALL):
+        fid, d = m.group(1), m.group(2)
+        b = _path_bounds_from_d(d)
+        if b:
+            frames.append((fid, b[0], b[1], b[2], b[3], d))
+    # 2) Path without id
+    for i, m in enumerate(re.finditer(r'<path(?![^>]*id)[^>]*d\s*=\s*["\']([^"\']+)["\'][^>]*?/?>', svg_string, re.IGNORECASE | re.DOTALL)):
+        d = m.group(1)
+        b = _path_bounds_from_d(d)
+        if b:
+            frames.append((f"path_noid_{i+1}", b[0], b[1], b[2], b[3], d))
+    # 3) Polygon
+    for i, m in enumerate(re.finditer(r'<polygon[^>]*?(?:id\s*=\s*["\']([^"\']*)["\'])?[^>]*?points\s*=\s*["\']([^"\']+)["\'][^>]*?/?>', svg_string, re.IGNORECASE | re.DOTALL)):
+        pid = m.group(1).strip() if m.group(1) else f"polygon_{i+1}"
+        points_str = m.group(2).strip()
+        # Convert points to path d "M x1 y1 L x2 y2 ... Z" for bounds and storage
+        coords = re.findall(r"[+-]?(?:\d+\.?\d*|\.\d+)(?:[eE][+-]?\d+)?", points_str)
+        if len(coords) >= 6 and len(coords) % 2 == 0:
+            pts = [(float(coords[j]), float(coords[j+1])) for j in range(0, len(coords), 2)]
+            if len(pts) >= 3:
+                path_d = "M " + " ".join(f"{x} {y}" for x, y in pts) + " Z"
+                b = _path_bounds_from_d(path_d)
+                if b:
+                    frames.append((pid, b[0], b[1], b[2], b[3], path_d))
+    # 4) Rect in <g id="..."> (group)
+    for m in re.finditer(r'<g\s+id="([^"]+)">(.*?)</g>', svg_string, re.DOTALL):
+        gid, content = m.group(1), m.group(2)
+        rm = re.search(r'<rect\s+(?:x="([^"]*)")?\s*(?:y="([^"]*)")?\s*(?:width="([^"]+)")\s*(?:height="([^"]+)")', content)
+        if rm:
+            x = float(rm.group(1) or 0)
+            y = float(rm.group(2) or 0)
+            w = float(rm.group(3))
+            h = float(rm.group(4))
+            frames.append((gid, x, y, w, h, None))
+    # 5) Rect via XML (mirror app RectXMLParser)
+    # 6) Circle via XML (mirror app CircleXMLParser)
+    # 7) Ellipse via regex (mirror app ellipseRegex)
+    try:
+        import xml.etree.ElementTree as ET
+        root = ET.fromstring(svg_string)
+
+        def _local_tag(tag: str) -> str:
+            return tag.split("}")[-1] if "}" in tag else tag
+
+        for i, el in enumerate(root.iter()):
+            local = _local_tag(el.tag)
+            if local == "rect":
+                x = float(el.get("x", 0))
+                y = float(el.get("y", 0))
+                w = float(el.get("width", 0))
+                h = float(el.get("height", 0))
+                frames.append((f"rect_xml_{i+1}", x, y, w, h, None))
+            elif local == "circle":
+                cx, cy = float(el.get("cx", 0)), float(el.get("cy", 0))
+                r = float(el.get("r", 0))
+                frames.append((f"circle_xml_{i+1}", cx - r, cy - r, r * 2, r * 2, None))
     except Exception:
         pass
-    return 500.0, 500.0
+    # 7) Ellipse regex (app uses regex, not XML)
+    for i, m in enumerate(re.finditer(r'<ellipse[^>]*?cx\s*=\s*["\']?([^"\'\s>]*)["\']?[^>]*?cy\s*=\s*["\']?([^"\'\s>]*)["\']?[^>]*?rx\s*=\s*["\']?([^"\'\s>]*)["\']?[^>]*?ry\s*=\s*["\']?([^"\'\s>]*)["\']?[^>]*?/?>', svg_string, re.IGNORECASE | re.DOTALL)):
+        cx, cy = float(m.group(1) or 0), float(m.group(2) or 0)
+        rx, ry = float(m.group(3) or 0), float(m.group(4) or 0)
+        frames.append((f"ellipse_{i+1}", cx - rx, cy - ry, rx * 2, ry * 2, None))
+    return frames
 
 
 def parse_svg_file(svg_path: Path, base_url: str, id_prefix: str = "svg_") -> dict | None:
-    """Parse one SVG and return a layout dict, or None on error."""
-    if SVG is None:
-        print("Warning: svgelements not installed; skipping SVG parsing.", file=sys.stderr)
-        return None
-
+    """Parse one SVG file (mirror app: viewBox + parseLayout order) and return layout dict."""
     base_url = base_url.rstrip("/")
     stem = svg_path.stem
     layout_id = f"{id_prefix}{stem}" if id_prefix else stem
     name = stem.replace("_", " ").replace("-", " ").title()
 
     try:
-        svg = SVG.parse(str(svg_path))
+        svg_string = svg_path.read_text(encoding="utf-8", errors="replace")
     except Exception as e:
-        print(f"Error parsing {svg_path}: {e}", file=sys.stderr)
+        print(f"Error reading {svg_path}: {e}", file=sys.stderr)
         return None
 
-    vw, vh = _get_viewbox_size(svg)
-    if vw <= 0 or vh <= 0:
-        vw, vh = 500.0, 500.0
+    vbx, vby, vbw, vbh = _parse_viewbox_from_svg_string(svg_string)
+    if vbw <= 0 or vbh <= 0:
+        vbw, vbh = 500.0, 500.0
 
-    # Collect elements that define slots (path, rect, polygon, circle, ellipse)
-    element_types = (SVGPath, Rect, Polygon, Circle, Ellipse)
-    elements = [e for e in svg.elements() if isinstance(e, element_types)]
-    is_organic = any(isinstance(e, (SVGPath, Polygon, Circle, Ellipse)) for e in elements)
-
-    slots = []
-    for i, e in enumerate(elements):
-        try:
-            bbox = e.bbox()
-            if bbox is None:
-                continue
-            # bbox can be (x1,y1,x2,y2) or similar
-            x1, y1 = float(bbox[0]), float(bbox[1])
-            x2, y2 = float(bbox[2]), float(bbox[3])
-            n_x = round(x1 / vw, 4)
-            n_y = round(y1 / vh, 4)
-            n_w = round((x2 - x1) / vw, 4)
-            n_h = round((y2 - y1) / vh, 4)
-            slot = {"id": f"slot_{i}", "n_rect": [n_x, n_y, n_w, n_h]}
-            if is_organic and hasattr(e, "d") and callable(e.d):
-                try:
-                    d_val = e.d()
-                    if d_val:
-                        slot["path_data"] = d_val
-                except Exception:
-                    pass
-            slots.append(slot)
-        except Exception as ex:
-            print(f"  Skip element {i} in {svg_path}: {ex}", file=sys.stderr)
-
-    if not slots:
+    raw_frames = _parse_layout_from_svg_string(svg_string)
+    if not raw_frames:
         print(f"  No slots extracted from {svg_path}", file=sys.stderr)
         return None
+
+    slots = []
+    is_organic = False
+    for i, (fid, x, y, w, h, path_d) in enumerate(raw_frames):
+        n_x = round(x / vbw, 4)
+        n_y = round(y / vbh, 4)
+        n_w = round(w / vbw, 4)
+        n_h = round(h / vbh, 4)
+        slot = {"id": f"slot_{i}", "n_rect": [n_x, n_y, n_w, n_h]}
+        if path_d:
+            slot["path_data"] = path_d
+            is_organic = True
+        slots.append(slot)
 
     result = {
         "id": layout_id,
@@ -162,8 +211,7 @@ def parse_svg_file(svg_path: Path, base_url: str, id_prefix: str = "svg_") -> di
         "thumbnailURL": f"{base_url}/thumbnails/{layout_id}.jpg",
         "slots": slots,
     }
-    # Store viewbox for thumbnail rendering (path_data is in SVG coords); stripped before writing manifest
-    result["__viewbox"] = (0, 0, vw, vh)
+    result["__viewbox"] = (0, 0, vbw, vbh)
     return result
 
 
@@ -197,31 +245,22 @@ THUMB_COLORS = [
 ]
 
 
-def _tokenize_path(d: str) -> list[tuple[str, list[float]]]:
-    """Parse SVG path d string into list of (command, args). Handles M,L,H,V,C,S,Q,T,Z and lower."""
-    # Split on command letters (allow minus/plus after letter for relative coords)
-    parts = re.split(r"([MmLlHhVvCcSsQqTtZz])", d)
-    tokens = []
-    i = 1
-    while i < len(parts):
-        cmd = parts[i].strip()
-        i += 1
-        if i >= len(parts):
-            break
-        rest = parts[i].strip()
-        i += 1
-        if cmd.upper() == "Z":
-            tokens.append((cmd.upper(), []))
-            continue
-        # Parse numbers (allow comma or space separated, and e.g. -0.5 or .5)
-        nums = re.findall(r"[+-]?(?:\d+\.?\d*|\.\d+)(?:[eE][+-]?\d+)?", rest)
-        args = [float(n) for n in nums]
-        tokens.append((cmd.upper(), args))
-    return tokens
+# Path tokenizer matching SVGLayoutParser: same regex (command letter OR number)
+_PATH_DATA_REGEX = re.compile(r"([MmLlHhVvCcSsQqTtAaZz])|(-?\d*\.?\d+(?:[eE][+-]?\d+)?)")
+
+
+def _path_components(d: str) -> list[str]:
+    """Flat list of path tokens like Swift: command letters and numbers in order."""
+    components = []
+    for m in _PATH_DATA_REGEX.finditer(d):
+        comp = m.group(1) or m.group(2)
+        if comp and comp.strip():
+            components.append(comp.strip())
+    return components
 
 
 def _flatten_path_to_polygons(d: str, viewbox: tuple[float, float, float, float] | None) -> list[list[tuple[float, float]]]:
-    """Convert path d to list of polygons (each polygon = list of (x,y) in 0-1)."""
+    """Convert path d to polygons (0-1 coords). Mirrors SVGLayoutParser.createBezierPath + bounds in viewBox."""
     vbx, vby, vbw, vbh = viewbox if viewbox else (0.0, 0.0, 1.0, 1.0)
     if vbw <= 0 or vbh <= 0:
         vbw, vbh = 1.0, 1.0
@@ -229,67 +268,134 @@ def _flatten_path_to_polygons(d: str, viewbox: tuple[float, float, float, float]
     def norm(x: float, y: float) -> tuple[float, float]:
         return ((x - vbx) / vbw, (y - vby) / vbh)
 
-    tokens = _tokenize_path(d)
+    comps = _path_components(d)
     polygons: list[list[tuple[float, float]]] = []
     current: list[tuple[float, float]] = []
     cur_x, cur_y = 0.0, 0.0
     start_x, start_y = 0.0, 0.0
-    n_steps = 24  # curve segments
+    last_cp_x, last_cp_y = 0.0, 0.0  # for S/s
+    n_steps = 24
+    i = 0
+    last_command = ""  # original letter so we know relative (m/l/c etc) vs absolute (M/L/C)
 
-    for cmd, args in tokens:
-        if cmd == "M":
-            for j in range(0, len(args), 2):
-                if j + 1 < len(args):
-                    cur_x, cur_y = args[j], args[j + 1]
-                    if current:
-                        polygons.append(current)
-                    current = [norm(cur_x, cur_y)]
-                    start_x, start_y = cur_x, cur_y
-        elif cmd == "L":
-            for j in range(0, len(args), 2):
-                if j + 1 < len(args):
-                    cur_x, cur_y = args[j], args[j + 1]
-                    current.append(norm(cur_x, cur_y))
-        elif cmd == "H":
-            for x in args:
-                cur_x = x
-                current.append(norm(cur_x, cur_y))
-        elif cmd == "V":
-            for y in args:
-                cur_y = y
-                current.append(norm(cur_x, cur_y))
-        elif cmd == "C":
-            for j in range(0, len(args), 6):
-                if j + 5 >= len(args):
-                    break
-                x1, y1, x2, y2, x, y = args[j], args[j+1], args[j+2], args[j+3], args[j+4], args[j+5]
-                px, py = cur_x, cur_y
-                for k in range(1, n_steps + 1):
-                    t = k / n_steps
-                    u = 1 - t
-                    bx = u*u*u*px + 3*u*u*t*x1 + 3*u*t*t*x2 + t*t*t*x
-                    by = u*u*u*py + 3*u*u*t*y1 + 3*u*t*t*y2 + t*t*t*y
-                    current.append(norm(bx, by))
+    def read_float() -> float | None:
+        nonlocal i
+        if i < len(comps):
+            try:
+                v = float(comps[i])
+                i += 1
+                return v
+            except ValueError:
+                pass
+        return None
+
+    while i < len(comps):
+        c = comps[i]
+        if len(c) == 1 and c in "MmLlHhVvCcSsQqTtAaZz":
+            cmd_upper = c.upper()
+            if cmd_upper == "A":
+                pass  # keep last_command, skip arc
+            else:
+                last_command = c  # keep original for relative (m/l/c/s/q)
+            if cmd_upper == "Z":
+                if current:
+                    current.append(current[0])
+                    polygons.append(current)
+                current = []
+                cur_x, cur_y = start_x, start_y
+                i += 1
+                continue
+            i += 1
+            continue
+
+        # Consume numbers for last_command (mirror Swift switch; support relative m/l/h/v/c/s/q)
+        cmd = last_command.upper()
+        if last_command == "M" or last_command == "m":
+            x, y = read_float(), read_float()
+            if x is None or y is None:
+                break
+            if last_command == "m":
+                cur_x, cur_y = cur_x + x, cur_y + y
+            else:
                 cur_x, cur_y = x, y
-        elif cmd == "Q":
-            for j in range(0, len(args), 4):
-                if j + 3 >= len(args):
-                    break
-                x1, y1, x, y = args[j], args[j+1], args[j+2], args[j+3]
-                px, py = cur_x, cur_y
-                for k in range(1, n_steps + 1):
-                    t = k / n_steps
-                    u = 1 - t
-                    bx = u*u*px + 2*u*t*x1 + t*t*x
-                    by = u*u*py + 2*u*t*y1 + t*t*y
-                    current.append(norm(bx, by))
-                cur_x, cur_y = x, y
-        elif cmd == "Z":
+            start_x, start_y = cur_x, cur_y
             if current:
-                current.append(current[0])
                 polygons.append(current)
-            current = []
-            cur_x, cur_y = start_x, start_y
+            current = [norm(cur_x, cur_y)]
+        elif last_command == "L" or last_command == "l":
+            x, y = read_float(), read_float()
+            if x is None or y is None:
+                break
+            if last_command == "l":
+                cur_x, cur_y = cur_x + x, cur_y + y
+            else:
+                cur_x, cur_y = x, y
+            current.append(norm(cur_x, cur_y))
+        elif last_command == "H" or last_command == "h":
+            x = read_float()
+            if x is None:
+                break
+            cur_x = cur_x + x if last_command == "h" else x
+            current.append(norm(cur_x, cur_y))
+        elif last_command == "V" or last_command == "v":
+            y = read_float()
+            if y is None:
+                break
+            cur_y = cur_y + y if last_command == "v" else y
+            current.append(norm(cur_x, cur_y))
+        elif cmd == "C":
+            vals = [read_float() for _ in range(6)]
+            if any(v is None for v in vals):
+                break
+            if last_command == "c":
+                cp1x, cp1y = cur_x + vals[0], cur_y + vals[1]
+                cp2x, cp2y = cur_x + vals[2], cur_y + vals[3]
+                x, y = cur_x + vals[4], cur_y + vals[5]
+            else:
+                cp1x, cp1y, cp2x, cp2y, x, y = vals
+            last_cp_x, last_cp_y = cp2x, cp2y
+            px, py = cur_x, cur_y
+            for k in range(1, n_steps + 1):
+                t = k / n_steps
+                u = 1 - t
+                bx = u * u * u * px + 3 * u * u * t * cp1x + 3 * u * t * t * cp2x + t * t * t * x
+                by = u * u * u * py + 3 * u * u * t * cp1y + 3 * u * t * t * cp2y + t * t * t * y
+                current.append(norm(bx, by))
+            cur_x, cur_y = x, y
+        elif cmd == "S":
+            cp2x, cp2y, x, y = read_float(), read_float(), read_float(), read_float()
+            if cp2x is None or cp2y is None or x is None or y is None:
+                break
+            cp1x = 2 * cur_x - last_cp_x
+            cp1y = 2 * cur_y - last_cp_y
+            if last_command == "s":
+                cp2x, cp2y, x, y = cur_x + cp2x, cur_y + cp2y, cur_x + x, cur_y + y
+            last_cp_x, last_cp_y = cp2x, cp2y
+            px, py = cur_x, cur_y
+            for k in range(1, n_steps + 1):
+                t = k / n_steps
+                u = 1 - t
+                bx = u * u * u * px + 3 * u * u * t * cp1x + 3 * u * t * t * cp2x + t * t * t * x
+                by = u * u * u * py + 3 * u * u * t * cp1y + 3 * u * t * t * cp2y + t * t * t * y
+                current.append(norm(bx, by))
+            cur_x, cur_y = x, y
+        elif cmd == "Q":
+            cpx, cpy, x, y = read_float(), read_float(), read_float(), read_float()
+            if cpx is None or cpy is None or x is None or y is None:
+                break
+            if last_command == "q":
+                cpx, cpy, x, y = cur_x + cpx, cur_y + cpy, cur_x + x, cur_y + y
+            last_cp_x, last_cp_y = cpx, cpy
+            px, py = cur_x, cur_y
+            for k in range(1, n_steps + 1):
+                t = k / n_steps
+                u = 1 - t
+                bx = u * u * px + 2 * u * t * cpx + t * t * x
+                by = u * u * py + 2 * u * t * cpy + t * t * y
+                current.append(norm(bx, by))
+            cur_x, cur_y = x, y
+        else:
+            i += 1
     if current:
         polygons.append(current)
     return polygons
