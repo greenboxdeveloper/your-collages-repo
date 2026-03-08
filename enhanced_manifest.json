@@ -4094,26 +4094,6 @@
       ]
     },
     {
-      "id": "svg_CIRCLE2",
-      "name": "Circle2",
-      "category": "Stylish",
-      "isPremium": false,
-      "type": "organic",
-      "thumbnailURL": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/thumbnails/svg_CIRCLE2.jpg",
-      "slots": [
-        {
-          "id": "slot_0",
-          "n_rect": [
-            0.0528,
-            0.0528,
-            0.8944,
-            0.8944
-          ],
-          "path_data": "M 473.6,250 A 223.6,223.6 0 0,1 250,473.6 A 223.6,223.6 0 0,1 26.4,250 A 223.6,223.6 0 0,1 250,26.4 A 223.6,223.6 0 0,1 473.6,250 Z"
-        }
-      ]
-    },
-    {
       "id": "svg_DEFORMEDCIRCLE",
       "name": "Deformedcircle",
       "category": "Stylish",
