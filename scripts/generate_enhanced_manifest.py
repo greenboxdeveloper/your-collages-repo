@@ -549,32 +549,26 @@ def _draw_stylish_thumbnail(img: Image.Image, draw, slots: list, size: int) -> N
 
         color = (*THUMB_COLORS[i % len(THUMB_COLORS)], 255)
 
+        use_scaled_coords = False  # True if polygons are in 0..size (from svgelements)
+        polygons = []
         if SVGPath is not None and Matrix is not None and Move is not None:
             try:
                 path = SVGPath(path_data)
-                # path_data is 0-1 normalized → scale to image size
                 scaled = path * Matrix.scale(size, size)
-                polygons = _path_segments_to_polygons(scaled)
-                for poly in polygons:
-                    if len(poly) < 2:
-                        continue
-                    pts = [(round(p[0]), round(p[1])) for p in poly]
-                    draw.polygon(pts, fill=color, outline=(80, 80, 80, 255))
+                polygons = _path_segments_to_polygons(scaled.segments(transformed=True))
+                use_scaled_coords = bool(polygons)
             except Exception:
-                # Fallback: Pillow path flattening
-                polygons = _flatten_path_to_polygons(path_data, viewbox=(0.0, 0.0, 1.0, 1.0))
-                for poly in polygons:
-                    if len(poly) < 2:
-                        continue
-                    pts = [(round(p[0] * (size - 1)), round(p[1] * (size - 1))) for p in poly]
-                    draw.polygon(pts, fill=color, outline=(80, 80, 80, 255))
-        else:
+                pass
+        if not polygons:
             polygons = _flatten_path_to_polygons(path_data, viewbox=(0.0, 0.0, 1.0, 1.0))
-            for poly in polygons:
-                if len(poly) < 2:
-                    continue
+        for poly in polygons:
+            if len(poly) < 2:
+                continue
+            if use_scaled_coords:
+                pts = [(round(p[0]), round(p[1])) for p in poly]
+            else:
                 pts = [(round(p[0] * (size - 1)), round(p[1] * (size - 1))) for p in poly]
-                draw.polygon(pts, fill=color, outline=(80, 80, 80, 255))
+            draw.polygon(pts, fill=color, outline=(80, 80, 80, 255))
 
 
 def draw_thumbnail(layout: dict, out_path: Path, size: int = 300) -> None:
