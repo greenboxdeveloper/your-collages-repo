@@ -3,15 +3,8 @@ from __future__ import annotations
 
 """
 Generate enhanced_manifest.json (version 2.0) by merging:
-  1. classic_and_stylish_layouts.json (classic + stylish from app export)
-  2. All .svg files in a folder (parsed with svgelements)
-
-Generates PNG thumbnails (one per layout) in thumbnails/.
-
-Stylish layouts match app collage generation (CollageProtocol.swift, MasterView.swift):
-  - One layout = one MasterCollage; each slot = one MasterView.
-  - Slot shape comes from path_data (→ UIBezierPath → svgMaskPath) or n_rect (rectangle).
-  - Thumbnails use the same path_data parsing as SVGLayoutParser.createBezierPath so shapes match.
+  1. classic_and_stylish_layouts.json (classic_layouts only; stylish removed)
+  2. All .svg files in a folder (parsed with svgelements; circles/ellipses from raw SVG like app)
 
 Usage:
   python generate_enhanced_manifest.py --base-url "https://raw.githubusercontent.com/OWNER/REPO/main"
@@ -57,35 +50,31 @@ except ImportError:
 
 
 # -----------------------------------------------------------------------------
-# Classic + Stylish from JSON
+# Classic layouts from JSON (stylish removed; use SVG-derived layouts for organic)
 # -----------------------------------------------------------------------------
 
-def load_classic_stylish_layouts(json_path: Path, base_url: str) -> list:
-    """Load classic_and_stylish_layouts.json and add type + thumbnailURL."""
+def load_classic_layouts(json_path: Path, base_url: str) -> list:
+    """Load classic_and_stylish_layouts.json classic_layouts only; add type + thumbnailURL."""
     base_url = base_url.rstrip("/")
     with open(json_path, "r", encoding="utf-8") as f:
         data = json.load(f)
 
     layouts = []
-    for key in ("classic_layouts", "stylish_layouts"):
-        for layout in data.get(key, []):
-            layout = dict(layout)
-            # Ensure we only keep fields needed in enhanced manifest
-            slot_list = layout.get("slots", [])
-            has_path_data = any(s.get("path_data") for s in slot_list)
-            layout["type"] = "organic" if has_path_data else "grid"
-            layout["thumbnailURL"] = f"{base_url}/thumbnails/{layout['id']}.png"
-            # Drop slot_count if present (optional; app can use len(slots))
-            layout.pop("slot_count", None)
-            # Normalize slots: ensure id and n_rect; keep path_data if present
-            slots_out = []
-            for i, slot in enumerate(slot_list):
-                s = {"id": slot.get("id", f"slot_{i}"), "n_rect": slot["n_rect"]}
-                if slot.get("path_data"):
-                    s["path_data"] = slot["path_data"]
-                slots_out.append(s)
-            layout["slots"] = slots_out
-            layouts.append(layout)
+    for layout in data.get("classic_layouts", []):
+        layout = dict(layout)
+        slot_list = layout.get("slots", [])
+        has_path_data = any(s.get("path_data") for s in slot_list)
+        layout["type"] = "organic" if has_path_data else "grid"
+        layout["thumbnailURL"] = f"{base_url}/thumbnails/{layout['id']}.png"
+        layout.pop("slot_count", None)
+        slots_out = []
+        for i, slot in enumerate(slot_list):
+            s = {"id": slot.get("id", f"slot_{i}"), "n_rect": slot["n_rect"]}
+            if slot.get("path_data"):
+                s["path_data"] = slot["path_data"]
+            slots_out.append(s)
+        layout["slots"] = slots_out
+        layouts.append(layout)
     return layouts
 
 
@@ -217,15 +206,18 @@ def parse_svg_file(svg_path: Path, base_url: str, id_prefix: str = "svg_") -> di
     if vbw <= 0 or vbh <= 0:
         vbw, vbh = 500.0, 500.0
 
-    element_types = (SVGPath, Rect, Polygon, Circle, Ellipse)
+    # Path, Rect, Polygon from svgelements; Circle/Ellipse from raw SVG (app does the same)
+    element_types = (SVGPath, Rect, Polygon, Ellipse)
     elements = [e for e in svg.elements() if isinstance(e, element_types)]
-    if not elements:
+    raw_circles = _parse_raw_svg_circles(svg_path)
+    if not elements and not raw_circles:
         print(f"  No slots in {svg_path}", file=sys.stderr)
         return None
 
-    is_organic = any(isinstance(e, (SVGPath, Polygon, Circle, Ellipse)) for e in elements)
+    is_organic = any(isinstance(e, (SVGPath, Polygon, Ellipse)) for e in elements) or bool(raw_circles)
     slots = []
-    for i, e in enumerate(elements):
+    slot_index = 0
+    for e in elements:
         try:
             bbox = e.bbox()
             if bbox is None:
@@ -236,13 +228,28 @@ def parse_svg_file(svg_path: Path, base_url: str, id_prefix: str = "svg_") -> di
             n_y = round(y1 / vbh, 4)
             n_w = round((x2 - x1) / vbw, 4)
             n_h = round((y2 - y1) / vbh, 4)
-            slot = {"id": f"slot_{i}", "n_rect": [n_x, n_y, n_w, n_h]}
+            slot = {"id": f"slot_{slot_index}", "n_rect": [n_x, n_y, n_w, n_h]}
             path_d = _path_d_for_element(e)
             if path_d:
                 slot["path_data"] = path_d
             slots.append(slot)
+            slot_index += 1
         except Exception as ex:
-            print(f"  Skip element {i} in {svg_path}: {ex}", file=sys.stderr)
+            print(f"  Skip element in {svg_path}: {ex}", file=sys.stderr)
+
+    for cx, cy, r in raw_circles:
+        x1, y1 = cx - r, cy - r
+        n_x = round(x1 / vbw, 4)
+        n_y = round(y1 / vbh, 4)
+        n_w = round(2 * r / vbw, 4)
+        n_h = round(2 * r / vbh, 4)
+        path_d = "M " + " L ".join(f"{x} {y}" for x, y in _ellipse_points(cx, cy, r, r)) + " Z"
+        slots.append({
+            "id": f"slot_{slot_index}",
+            "n_rect": [n_x, n_y, n_w, n_h],
+            "path_data": path_d,
+        })
+        slot_index += 1
 
     if not slots:
         return None
@@ -257,6 +264,37 @@ def parse_svg_file(svg_path: Path, base_url: str, id_prefix: str = "svg_") -> di
     }
     result["__viewbox"] = (0, 0, vbw, vbh)
     return result
+
+
+# Regex to find <circle ...> and extract cx, cy, r (matches any attribute order; optional quotes)
+_CIRCLE_TAG_RE = re.compile(
+    r"<circle\s[^>]*?>",
+    re.IGNORECASE | re.DOTALL,
+)
+_ATTR_RE = re.compile(
+    r"\b(cx|cy|r)\s*=\s*['\"]?([^\"'\s>]+)['\"]?",
+    re.IGNORECASE,
+)
+
+
+def _parse_raw_svg_circles(svg_path: Path) -> list[tuple[float, float, float]]:
+    """Parse raw SVG file for <circle cx cy r> (like app's CircleXMLParser). Returns list of (cx, cy, r)."""
+    circles = []
+    try:
+        text = svg_path.read_text(encoding="utf-8", errors="replace")
+    except Exception:
+        return circles
+    for tag_match in _CIRCLE_TAG_RE.finditer(text):
+        tag = tag_match.group(0)
+        attrs = {}
+        for m in _ATTR_RE.finditer(tag):
+            attrs[m.group(1).lower()] = m.group(2)
+        cx = float(attrs.get("cx", 0))
+        cy = float(attrs.get("cy", 0))
+        r = float(attrs.get("r", 0))
+        if r > 0:
+            circles.append((cx, cy, r))
+    return circles
 
 
 def parse_svg_folder(svg_dir: Path, base_url: str, id_prefix: str = "svg_") -> list:
@@ -633,7 +671,7 @@ def main() -> int:
         return 1
 
     # 1) Load classic + stylish
-    layouts = load_classic_stylish_layouts(json_path, base_url)
+    layouts = load_classic_layouts(json_path, base_url)
     print(f"Loaded {len(layouts)} layouts from {json_path.name}")
 
     # 2) Parse SVGs
