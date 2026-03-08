@@ -6,7 +6,12 @@ Generate enhanced_manifest.json (version 2.0) by merging:
   1. classic_and_stylish_layouts.json (classic + stylish from app export)
   2. All .svg files in a folder (parsed with svgelements)
 
-Generates JPG thumbnails (one per layout) in thumbnails/.
+Generates PNG thumbnails (one per layout) in thumbnails/.
+
+Stylish layouts match app collage generation (CollageProtocol.swift, MasterView.swift):
+  - One layout = one MasterCollage; each slot = one MasterView.
+  - Slot shape comes from path_data (→ UIBezierPath → svgMaskPath) or n_rect (rectangle).
+  - Thumbnails use the same path_data parsing as SVGLayoutParser.createBezierPath so shapes match.
 
 Usage:
   python generate_enhanced_manifest.py --base-url "https://raw.githubusercontent.com/OWNER/REPO/main"
@@ -530,10 +535,17 @@ def _path_segments_to_polygons(scaled_path) -> list[list[tuple[float, float]]]:
 
 def _draw_stylish_thumbnail(img: Image.Image, draw, slots: list, size: int) -> None:
     """
-    Stylish layouts (classic_and_stylish_layouts.json):
-    - path_data is normalized 0-1, same format as SVGLayoutParser.createBezierPath in the app.
-    - We use the same tokenizer and command handling (_flatten_path_to_polygons) so thumbnails
-      match what the app draws. Scale 0-1 to pixel coords: x_px = x * (size - 1), y_px = y * (size - 1).
+    Stylish thumbnail: one slot = one shape, matching app collage generation.
+
+    App flow (MasterView.swift, CollageProtocol.swift):
+    - MasterCollage has allView: [MasterView]; each slot is a MasterView.
+    - When a slot has path_data, the app turns it into UIBezierPath (SVGLayoutParser.createBezierPath)
+      and sets MasterView.svgMaskPath; maskByPath() uses that as the layer mask (the visible shape).
+    - path_data in JSON is normalized 0-1 over the full canvas.
+
+    We mirror that: each slot's path_data is parsed with the same logic as the app
+    (_flatten_path_to_polygons ≈ createBezierPath), then drawn as a polygon scaled 0-1 → pixels.
+    Slots without path_data use n_rect as a rectangle (same as rect-only frames in the app).
     """
     # Viewbox for stylish is 0-1 (full canvas); norm in _flatten_path_to_polygons is identity
     viewbox_01 = (0.0, 0.0, 1.0, 1.0)
@@ -563,7 +575,7 @@ def _draw_stylish_thumbnail(img: Image.Image, draw, slots: list, size: int) -> N
 
 
 def draw_thumbnail(layout: dict, out_path: Path, size: int = 300) -> None:
-    """Draw a 300x300 PNG thumbnail. Stylish = 0-1 path_data direct map; SVG-derived = slot viewbox + paste; grid = rect."""
+    """Draw a 300x300 PNG thumbnail. Mirrors app: MasterCollage (layout) → one image; each slot = one MasterView (shape from path_data or n_rect). Stylish = 0-1 path_data; SVG-derived = slot viewbox + paste; grid = rect."""
     if Image is None or ImageDraw is None:
         return
     img = Image.new("RGBA", (size, size), (255, 255, 255, 0))
