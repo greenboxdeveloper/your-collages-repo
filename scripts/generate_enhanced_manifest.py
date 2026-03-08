@@ -76,15 +76,33 @@ def load_classic_stylish_layouts(json_path: Path, base_url: str) -> list:
 # SVG parsing (svgelements – simple bbox + path_data)
 # -----------------------------------------------------------------------------
 
+def _ellipse_points(cx: float, cy: float, rx: float, ry: float, steps: int = 32) -> list[tuple[float, float]]:
+    """Points along ellipse (for path_data or transform)."""
+    if rx <= 0 or ry <= 0:
+        return []
+    return [
+        (cx + rx * math.cos(2 * math.pi * i / steps), cy + ry * math.sin(2 * math.pi * i / steps))
+        for i in range(steps + 1)
+    ]
+
+
 def _ellipse_path_d(cx: float, cy: float, rx: float, ry: float, steps: int = 32) -> str:
     """SVG path d for ellipse (polygon approximation) for thumbnails."""
-    if rx <= 0 or ry <= 0:
-        return ""
-    pts = []
-    for i in range(steps + 1):
-        t = 2 * math.pi * i / steps
-        pts.append((cx + rx * math.cos(t), cy + ry * math.sin(t)))
-    return "M " + " ".join(f"{x} {y}" for x, y in pts) + " Z"
+    pts = _ellipse_points(cx, cy, rx, ry, steps)
+    return "M " + " ".join(f"{x} {y}" for x, y in pts) + " Z" if pts else ""
+
+
+def _apply_matrix_to_points(
+    points: list[tuple[float, float]], matrix,
+) -> list[tuple[float, float]]:
+    """Apply SVG transform matrix (a,b,c,d,e,f) to each point: x'=a*x+c*y+e, y'=b*x+d*y+f."""
+    a = getattr(matrix, "a", 1.0)
+    b = getattr(matrix, "b", 0.0)
+    c = getattr(matrix, "c", 0.0)
+    d = getattr(matrix, "d", 1.0)
+    e = getattr(matrix, "e", 0.0)
+    f = getattr(matrix, "f", 0.0)
+    return [(a * x + c * y + e, b * x + d * y + f) for x, y in points]
 
 
 def _get_viewbox_size(svg) -> tuple[float, float]:
@@ -137,14 +155,29 @@ def _path_d_for_element(e) -> str | None:
             return None
         except Exception:
             return None
+    def _path_from_ellipse_points(e, cx: float, cy: float, rx: float, ry: float):
+        pts = _ellipse_points(cx, cy, rx, ry)
+        if not pts:
+            return None
+        # Apply transform if present (e.g. transform="matrix(...)" on ellipse/circle)
+        transform = getattr(e, "transform", None)
+        apply_transform = getattr(e, "apply", True)
+        if transform is not None and apply_transform:
+            try:
+                if not transform.is_identity():
+                    pts = _apply_matrix_to_points(pts, transform)
+            except Exception:
+                pass
+        return "M " + " L ".join(f"{x} {y}" for x, y in pts) + " Z"
+
     if Circle is not None and isinstance(e, Circle):
-        cx, cy = getattr(e, "cx", 0), getattr(e, "cy", 0)
-        r = getattr(e, "r", 0)
-        return _ellipse_path_d(float(cx), float(cy), float(r), float(r)) if r else None
+        cx, cy = float(getattr(e, "cx", 0) or 0), float(getattr(e, "cy", 0) or 0)
+        r = float(getattr(e, "r", 0) or 0)
+        return _path_from_ellipse_points(e, cx, cy, r, r) if r > 0 else None
     if Ellipse is not None and isinstance(e, Ellipse):
-        cx, cy = getattr(e, "cx", 0), getattr(e, "cy", 0)
-        rx, ry = getattr(e, "rx", 0), getattr(e, "ry", 0)
-        return _ellipse_path_d(float(cx), float(cy), float(rx), float(ry)) if rx and ry else None
+        cx, cy = float(getattr(e, "cx", 0) or 0), float(getattr(e, "cy", 0) or 0)
+        rx, ry = float(getattr(e, "rx", 0) or 0), float(getattr(e, "ry", 0) or 0)
+        return _path_from_ellipse_points(e, cx, cy, rx, ry) if rx > 0 and ry > 0 else None
     return None
 
 
@@ -447,12 +480,35 @@ def draw_thumbnail(layout: dict, out_path: Path, size: int = 300) -> None:
     """Draw a 300x300 PNG thumbnail (RGBA, transparent background). Path_data for organic; rect for grid."""
     if Image is None or ImageDraw is None:
         return
-    # PNG with transparency so SVG blank areas stay transparent (no JPG artifacts)
     img = Image.new("RGBA", (size, size), (255, 255, 255, 0))
     draw = ImageDraw.Draw(img)
     slots = layout.get("slots", [])
     viewbox = layout.get("__viewbox")  # None for JSON (stylish); set for SVG-derived
     is_full_canvas_paths = viewbox is None
+
+    # Stylish: compute content bbox so we fit the full design (no clipped peaks)
+    map_pt = None
+    if is_full_canvas_paths:
+        all_pts = []
+        for slot in slots:
+            pd = slot.get("path_data")
+            if pd:
+                for poly in _flatten_path_to_polygons(pd, viewbox=(0.0, 0.0, 1.0, 1.0)):
+                    all_pts.extend(poly)
+        if all_pts:
+            min_x = min(p[0] for p in all_pts)
+            max_x = max(p[0] for p in all_pts)
+            min_y = min(p[1] for p in all_pts)
+            max_y = max(p[1] for p in all_pts)
+            rx = max_x - min_x or 1.0
+            ry = max_y - min_y or 1.0
+            pad = 4
+            scale = min((size - 2 * pad) / rx, (size - 2 * pad) / ry)
+            ox = (size - rx * scale) / 2 - min_x * scale
+            oy = (size - ry * scale) / 2 - min_y * scale
+
+            def map_pt(x: float, y: float) -> tuple[int, int]:
+                return (int(ox + x * scale), int(oy + y * scale))
 
     for i, slot in enumerate(slots):
         nr = slot.get("n_rect", [0, 0, 1, 1])
@@ -468,12 +524,12 @@ def draw_thumbnail(layout: dict, out_path: Path, size: int = 300) -> None:
         path_data = slot.get("path_data")
         if path_data:
             if is_full_canvas_paths:
-                # Stylish: path_data in 0-1 full canvas → draw on full image
+                # Stylish: draw paths with bbox fit so peaks/curves are not trimmed
                 polygons = _flatten_path_to_polygons(path_data, viewbox=(0.0, 0.0, 1.0, 1.0))
                 for poly in polygons:
                     if len(poly) < 2:
                         continue
-                    pts = [(int(p[0] * size), int(p[1] * size)) for p in poly]
+                    pts = [map_pt(p[0], p[1]) for p in poly] if map_pt else [(int(p[0] * size), int(p[1] * size)) for p in poly]
                     draw.polygon(pts, fill=color_rgba, outline=(80, 80, 80, 255))
                 continue
             # SVG-derived: path in viewBox coords → slot image, paste
