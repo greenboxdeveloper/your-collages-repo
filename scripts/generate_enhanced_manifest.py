@@ -57,7 +57,7 @@ def load_classic_stylish_layouts(json_path: Path, base_url: str) -> list:
             slot_list = layout.get("slots", [])
             has_path_data = any(s.get("path_data") for s in slot_list)
             layout["type"] = "organic" if has_path_data else "grid"
-            layout["thumbnailURL"] = f"{base_url}/thumbnails/{layout['id']}.jpg"
+            layout["thumbnailURL"] = f"{base_url}/thumbnails/{layout['id']}.png"
             # Drop slot_count if present (optional; app can use len(slots))
             layout.pop("slot_count", None)
             # Normalize slots: ensure id and n_rect; keep path_data if present
@@ -202,7 +202,7 @@ def parse_svg_file(svg_path: Path, base_url: str, id_prefix: str = "svg_") -> di
         "category": "Stylish",
         "isPremium": False,
         "type": "organic" if is_organic else "grid",
-        "thumbnailURL": f"{base_url}/thumbnails/{layout_id}.jpg",
+        "thumbnailURL": f"{base_url}/thumbnails/{layout_id}.png",
         "slots": slots,
     }
     result["__viewbox"] = (0, 0, vbw, vbh)
@@ -268,7 +268,7 @@ def _flatten_path_to_polygons(d: str, viewbox: tuple[float, float, float, float]
     cur_x, cur_y = 0.0, 0.0
     start_x, start_y = 0.0, 0.0
     last_cp_x, last_cp_y = 0.0, 0.0  # for S/s
-    n_steps = 24
+    n_steps = 48  # smoother Bezier curves for stylish paths
     i = 0
     last_command = ""  # original letter so we know relative (m/l/c etc) vs absolute (M/L/C)
 
@@ -316,6 +316,7 @@ def _flatten_path_to_polygons(d: str, viewbox: tuple[float, float, float, float]
             if current:
                 polygons.append(current)
             current = [norm(cur_x, cur_y)]
+            last_command = "L"  # SVG: after M, next coords are implicit L
         elif last_command == "L" or last_command == "l":
             x, y = read_float(), read_float()
             if x is None or y is None:
@@ -399,20 +400,20 @@ def _render_path_pillow(
     path_data: str, width: int, height: int, color_rgb: tuple,
     viewbox: tuple[float, float, float, float] | None = None,
 ) -> Image.Image | None:
-    """Render SVG path to PIL Image using path parsing + polygon draw (no cairosvg)."""
+    """Render SVG path to PIL Image (RGBA, transparent bg) for PNG thumbnails."""
     if Image is None or ImageDraw is None:
         return None
     polygons = _flatten_path_to_polygons(path_data, viewbox)
     if not polygons:
         return None
-    img = Image.new("RGB", (width, height), (240, 240, 240))
+    img = Image.new("RGBA", (width, height), (255, 255, 255, 0))
     draw = ImageDraw.Draw(img)
+    fill_rgba = (*color_rgb, 255)
     for poly in polygons:
         if len(poly) < 2:
             continue
-        # Scale 0-1 to pixel coords
         pts = [(int(p[0] * width), int(p[1] * height)) for p in poly]
-        draw.polygon(pts, fill=color_rgb, outline=(80, 80, 80))
+        draw.polygon(pts, fill=fill_rgba, outline=(80, 80, 80, 255))
     return img
 
 
@@ -443,14 +444,14 @@ def _render_path_cairo(
 
 
 def draw_thumbnail(layout: dict, out_path: Path, size: int = 300) -> None:
-    """Draw a 300x300 thumbnail. Uses path_data for organic slots; falls back to rect for grid."""
+    """Draw a 300x300 PNG thumbnail (RGBA, transparent background). Path_data for organic; rect for grid."""
     if Image is None or ImageDraw is None:
         return
-    img = Image.new("RGB", (size, size), (240, 240, 240))
+    # PNG with transparency so SVG blank areas stay transparent (no JPG artifacts)
+    img = Image.new("RGBA", (size, size), (255, 255, 255, 0))
     draw = ImageDraw.Draw(img)
     slots = layout.get("slots", [])
     viewbox = layout.get("__viewbox")  # None for JSON (stylish); set for SVG-derived
-    # Stylish from JSON: path_data is in full canvas 0-1 → draw paths on full image
     is_full_canvas_paths = viewbox is None
 
     for i, slot in enumerate(slots):
@@ -462,19 +463,20 @@ def draw_thumbnail(layout: dict, out_path: Path, size: int = 300) -> None:
         w = max(1, int(nr[2] * size))
         h = max(1, int(nr[3] * size))
         color = THUMB_COLORS[i % len(THUMB_COLORS)]
+        color_rgba = (*color, 255)
 
         path_data = slot.get("path_data")
         if path_data:
             if is_full_canvas_paths:
-                # path_data in 0-1 full canvas: draw directly on full (size×size) image
+                # Stylish: path_data in 0-1 full canvas → draw on full image
                 polygons = _flatten_path_to_polygons(path_data, viewbox=(0.0, 0.0, 1.0, 1.0))
                 for poly in polygons:
                     if len(poly) < 2:
                         continue
                     pts = [(int(p[0] * size), int(p[1] * size)) for p in poly]
-                    draw.polygon(pts, fill=color, outline=(80, 80, 80))
+                    draw.polygon(pts, fill=color_rgba, outline=(80, 80, 80, 255))
                 continue
-            # SVG-derived: path in viewBox coords → normalize to slot rect, render to slot image, paste
+            # SVG-derived: path in viewBox coords → slot image, paste
             slot_vb = None
             if viewbox and len(nr) >= 4:
                 vbx, vby, vbw, vbh = viewbox[0], viewbox[1], viewbox[2], viewbox[3]
@@ -484,12 +486,14 @@ def draw_thumbnail(layout: dict, out_path: Path, size: int = 300) -> None:
             if slot_img is None and cairosvg is not None:
                 slot_img = _render_path_cairo(path_data, w, h, color, viewbox=slot_vb or viewbox)
             if slot_img is not None:
-                img.paste(slot_img, (x, y))
+                if slot_img.mode != "RGBA":
+                    slot_img = slot_img.convert("RGBA")
+                img.paste(slot_img, (x, y), slot_img)
                 continue
-        # Grid slot or fallback: draw rectangle
-        draw.rectangle([x, y, x + w, y + h], fill=color, outline=(80, 80, 80), width=1)
+        # Grid slot: draw rectangle
+        draw.rectangle([x, y, x + w, y + h], fill=color_rgba, outline=(80, 80, 80, 255), width=1)
     out_path.parent.mkdir(parents=True, exist_ok=True)
-    img.save(out_path, "JPEG", quality=85)
+    img.save(out_path, "PNG")
 
 
 # -----------------------------------------------------------------------------
@@ -531,7 +535,7 @@ def main() -> int:
     thumb_dir.mkdir(parents=True, exist_ok=True)
     for layout in layouts:
         lid = layout["id"]
-        draw_thumbnail(layout, thumb_dir / f"{lid}.jpg")
+        draw_thumbnail(layout, thumb_dir / f"{lid}.png")
     print(f"Wrote {len(layouts)} thumbnails to {thumb_dir}")
 
     # 4) Write manifest (strip internal keys like __viewbox)
