@@ -6300,7 +6300,7 @@
       "id": "svg_drag test",
       "name": "Drag Test",
       "category": "Stylish",
-      "isPremium": true,
+      "isPremium": false,
       "type": "grid",
       "thumbnailURL": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/thumbnails/svg_drag test.png",
       "slots": [
