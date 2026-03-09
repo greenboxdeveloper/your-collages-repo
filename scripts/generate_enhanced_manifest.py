@@ -319,7 +319,8 @@ def parse_svg_file(svg_path: Path, base_url: str, id_prefix: str = "svg_") -> di
         "id": layout_id,
         "name": name,
         "category": "Stylish",
-        "isPremium": False,
+        # New SVG-derived layouts are premium by default; existing JSON layouts keep their own isPremium.
+        "isPremium": True,
         "type": "organic" if is_organic else "grid",
         "thumbnailURL": f"{base_url}/thumbnails/{layout_id}.png",
         "slots": slots,
@@ -778,6 +779,21 @@ def main() -> int:
     thumb_dir = repo_root / args.thumbnails_dir
     base_url = args.base_url.strip().rstrip("/")
 
+    # Load existing enhanced_manifest (if any) so we can auto-bump the version only when layouts change.
+    old_manifest = None
+    old_version: str | None = None
+    old_layouts: list | None = None
+    if output_path.exists():
+        try:
+            with open(output_path, "r", encoding="utf-8") as f:
+                old_manifest = json.load(f)
+            old_version = str(old_manifest.get("version", "") or "")
+            old_layouts = old_manifest.get("layouts")
+        except Exception:
+            old_manifest = None
+            old_version = None
+            old_layouts = None
+
     if not json_path.exists():
         print(f"Error: JSON not found: {json_path}", file=sys.stderr)
         return 1
@@ -786,15 +802,10 @@ def main() -> int:
     layouts = load_classic_layouts(json_path, base_url)
     print(f"Loaded {len(layouts)} layouts from {json_path.name}")
 
-    # 2) Parse SVGs
+    # 2) Parse SVGs (new layouts will be marked premium by parse_svg_file)
     svg_layouts = parse_svg_folder(svg_dir, base_url, id_prefix=args.svg_id_prefix)
     print(f"Parsed {len(svg_layouts)} layouts from {svg_dir}")
     layouts.extend(svg_layouts)
-
-    # Mark Premium: all layouts after classic_10 get isPremium = True
-    classic_10_index = next((i for i, L in enumerate(layouts) if L.get("id") == "classic_10"), -1)
-    for i, layout in enumerate(layouts):
-        layout["isPremium"] = i > classic_10_index
 
     # 3) Thumbnails
     thumb_dir.mkdir(parents=True, exist_ok=True)
@@ -807,7 +818,35 @@ def main() -> int:
     def strip_internal_keys(layout: dict) -> dict:
         return {k: v for k, v in layout.items() if not k.startswith("__")}
     layouts_clean = [strip_internal_keys(l) for l in layouts]
-    manifest = {"version": "2.0", "layouts": layouts_clean}
+
+    # Determine version: auto-bump minor when layouts differ from existing manifest (JSON or SVG changes).
+    def bump_version_string(v: str | None) -> str:
+        try:
+            if v and "." in v:
+                major_s, minor_s = v.split(".", 1)
+                major = int(major_s)
+                minor = int(minor_s)
+            elif v:
+                major = int(v)
+                minor = 0
+            else:
+                major, minor = 2, 0
+        except Exception:
+            major, minor = 2, 0
+        minor += 1
+        if minor > 9:
+            major += 1
+            minor = 0
+        return f"{major}.{minor}"
+
+    layouts_changed = old_layouts is None or old_layouts != layouts_clean
+    if layouts_changed:
+        new_version = bump_version_string(old_version)
+    else:
+        # No layout change: keep previous version if present, else default starting point.
+        new_version = old_version or "2.1"
+
+    manifest = {"version": new_version, "layouts": layouts_clean}
     with open(output_path, "w", encoding="utf-8") as f:
         json.dump(manifest, f, indent=2, ensure_ascii=False)
     print(f"Wrote {output_path}")
