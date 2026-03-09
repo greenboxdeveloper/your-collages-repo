@@ -315,10 +315,20 @@ def parse_svg_file(svg_path: Path, base_url: str, id_prefix: str = "svg_") -> di
     raw_handles = _parse_raw_svg_drag_handles(svg_path)
     dividers = _compute_dividers_from_handles(raw_handles, slots, vbw, vbh)
 
+    # Category from SVG file name:
+    # - If name contains "_CL" → "Classic"
+    # - If name contains "_SL" (or anything else) → "Stylish"
+    stem_upper = stem.upper()
+    if "_CL" in stem_upper:
+        category = "Classic"
+    else:
+        # Default / "_SL" / no marker → Stylish collages
+        category = "Stylish"
+
     result = {
         "id": layout_id,
         "name": name,
-        "category": "Stylish",
+        "category": category,
         # New SVG-derived layouts are premium by default; existing JSON layouts keep their own isPremium.
         "isPremium": True,
         "type": "organic" if is_organic else "grid",
