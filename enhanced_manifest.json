@@ -1724,7 +1724,7 @@
     {
       "category": "Classic",
       "id": "classic_35",
-      "isPremium": false,
+      "isPremium": true,
       "name": "Collage 35",
       "slots": [
         {
