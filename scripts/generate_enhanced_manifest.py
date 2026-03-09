@@ -315,9 +315,12 @@ def parse_svg_file(svg_path: Path, base_url: str, id_prefix: str = "svg_") -> di
     raw_handles = _parse_raw_svg_drag_handles(svg_path)
     dividers = _compute_dividers_from_handles(raw_handles, slots, vbw, vbh)
 
-    # Category from SVG file name:
-    # - If name contains "_CL" → "Classic"
-    # - If name contains "_SL" (or anything else) → "Stylish"
+    # Category and premium from SVG file name:
+    # - If name contains "_CL" → category = "Classic"
+    # - If name contains "_SL" (or anything else) → category = "Stylish"
+    # - If name contains "_PR" → isPremium = True
+    # - If name contains "_F"  → isPremium = False
+    # - If neither suffix present → keep current default behavior (premium for SVG-derived layouts)
     stem_upper = stem.upper()
     if "_CL" in stem_upper:
         category = "Classic"
@@ -325,12 +328,20 @@ def parse_svg_file(svg_path: Path, base_url: str, id_prefix: str = "svg_") -> di
         # Default / "_SL" / no marker → Stylish collages
         category = "Stylish"
 
+    if "_PR" in stem_upper:
+        is_premium = True
+    elif "_F" in stem_upper:
+        is_premium = False
+    else:
+        # Default behavior for SVG-derived layouts: premium
+        is_premium = True
+
     result = {
         "id": layout_id,
         "name": name,
         "category": category,
-        # New SVG-derived layouts are premium by default; existing JSON layouts keep their own isPremium.
-        "isPremium": True,
+        # SVG-derived layouts use filename suffixes to determine premium; existing JSON layouts keep their own isPremium.
+        "isPremium": is_premium,
         "type": "organic" if is_organic else "grid",
         "thumbnailURL": f"{base_url}/thumbnails/{layout_id}.png",
         "slots": slots,
