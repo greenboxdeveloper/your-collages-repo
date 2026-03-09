@@ -1,5 +1,5 @@
 {
-  "version": "2.6",
+  "version": "2.7",
   "layouts": [
     {
       "category": "Classic",
@@ -3255,12 +3255,12 @@
       "dividers": []
     },
     {
-      "id": "svg_CIRCLE2",
-      "name": "Circle2",
+      "id": "svg_CIRCLE2_PR",
+      "name": "Circle2 Pr",
       "category": "Stylish",
       "isPremium": true,
       "type": "organic",
-      "thumbnailURL": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/thumbnails/svg_CIRCLE2.png",
+      "thumbnailURL": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/thumbnails/svg_CIRCLE2_PR.png",
       "slots": [
         {
           "id": "slot_0",
