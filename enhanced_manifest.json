@@ -1,5 +1,5 @@
 {
-  "version": "2.8",
+  "version": "2.9",
   "layouts": [
     {
       "category": "Classic",
@@ -3747,12 +3747,12 @@
       "dividers": []
     },
     {
-      "id": "svg_PCM_CL08",
-      "name": "Pcm Cl08",
+      "id": "svg_PCM_CL08_F",
+      "name": "Pcm Cl08 F",
       "category": "Classic",
-      "isPremium": true,
+      "isPremium": false,
       "type": "grid",
-      "thumbnailURL": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/thumbnails/svg_PCM_CL08.png",
+      "thumbnailURL": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/thumbnails/svg_PCM_CL08_F.png",
       "slots": [
         {
           "id": "slot_0",
