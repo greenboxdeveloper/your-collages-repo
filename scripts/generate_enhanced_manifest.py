@@ -6,6 +6,10 @@ Generate enhanced_manifest.json (version 2.0) by merging:
   1. classic_and_stylish_layouts.json (classic_layouts only; stylish removed)
   2. All .svg files in a folder (parsed with svgelements; circles/ellipses from raw SVG like app)
 
+Drag handles: <line> elements with id starting with DRAG_H_ or DRAG_V_ are detected and emitted
+as dividers (not as photo slots). Position: DRAG_H_ → y1/viewBoxHeight; DRAG_V_ → x1/viewBoxWidth.
+Each divider has an "affects" list of slot ids whose rect edge matches the divider position.
+
 Usage:
   python generate_enhanced_manifest.py --base-url "https://raw.githubusercontent.com/OWNER/REPO/main"
 """
@@ -74,6 +78,7 @@ def load_classic_layouts(json_path: Path, base_url: str) -> list:
                 s["path_data"] = slot["path_data"]
             slots_out.append(s)
         layout["slots"] = slots_out
+        layout.setdefault("dividers", [])
         layouts.append(layout)
     return layouts
 
@@ -187,8 +192,57 @@ def _path_d_for_element(e) -> str | None:
     return None
 
 
+def _is_drag_handle_element(e) -> bool:
+    """Return True if element is a drag handle (id starts with DRAG_H_ or DRAG_V_)."""
+    eid = getattr(e, "id", None)
+    if eid is None:
+        return False
+    eid = str(eid).strip()
+    return eid.startswith("DRAG_H_") or eid.startswith("DRAG_V_")
+
+
+def _compute_dividers_from_handles(
+    handles: list[dict],
+    slots: list[dict],
+    vbw: float,
+    vbh: float,
+) -> list[dict]:
+    """
+    Build dividers array: for each handle, set position (0-1) and affects (slot ids).
+    - DRAG_H_: position = y1 / viewBoxHeight; affects slots where rect.minY == Y or rect.maxY == Y.
+    - DRAG_V_: position = x1 / viewBoxWidth; affects slots where rect.minX == X or rect.maxX == X.
+    """
+    dividers = []
+    for h in handles:
+        if h["type"] == "horizontal":
+            position = round(h["y1"] / vbh, 4) if vbh > 0 else 0.0
+        else:
+            position = round(h["x1"] / vbw, 4) if vbw > 0 else 0.0
+        affects = []
+        for slot in slots:
+            nr = slot.get("n_rect", [0, 0, 1, 1])
+            if len(nr) < 4:
+                continue
+            n_x, n_y, n_w, n_h = nr[0], nr[1], nr[2], nr[3]
+            min_x, max_x = n_x, n_x + n_w
+            min_y, max_y = n_y, n_y + n_h
+            if h["type"] == "horizontal":
+                if abs(min_y - position) <= _DIVIDER_EPS or abs(max_y - position) <= _DIVIDER_EPS:
+                    affects.append(slot["id"])
+            else:
+                if abs(min_x - position) <= _DIVIDER_EPS or abs(max_x - position) <= _DIVIDER_EPS:
+                    affects.append(slot["id"])
+        dividers.append({
+            "id": h["id"],
+            "type": h["type"],
+            "position": position,
+            "affects": affects,
+        })
+    return dividers
+
+
 def parse_svg_file(svg_path: Path, base_url: str, id_prefix: str = "svg_") -> dict | None:
-    """Parse one SVG with svgelements: bbox → n_rect, path_data for organic shapes."""
+    """Parse one SVG with svgelements: bbox → n_rect, path_data for organic shapes; drag handles → dividers."""
     if SVG is None:
         print("Warning: svgelements not installed; run pip install svgelements", file=sys.stderr)
         return None
@@ -206,9 +260,12 @@ def parse_svg_file(svg_path: Path, base_url: str, id_prefix: str = "svg_") -> di
     if vbw <= 0 or vbh <= 0:
         vbw, vbh = 500.0, 500.0
 
-    # Path, Rect, Polygon from svgelements; Circle/Ellipse from raw SVG (app does the same)
+    # Path, Rect, Polygon from svgelements; Circle/Ellipse from raw SVG. Exclude drag-handle <line> elements.
     element_types = (SVGPath, Rect, Polygon, Ellipse)
-    elements = [e for e in svg.elements() if isinstance(e, element_types)]
+    elements = [
+        e for e in svg.elements()
+        if isinstance(e, element_types) and not _is_drag_handle_element(e)
+    ]
     raw_circles = _parse_raw_svg_circles(svg_path)
     if not elements and not raw_circles:
         print(f"  No slots in {svg_path}", file=sys.stderr)
@@ -253,6 +310,11 @@ def parse_svg_file(svg_path: Path, base_url: str, id_prefix: str = "svg_") -> di
 
     if not slots:
         return None
+
+    # Drag handles from <line> elements (DRAG_H_*, DRAG_V_*) → dividers with position and affects
+    raw_handles = _parse_raw_svg_drag_handles(svg_path)
+    dividers = _compute_dividers_from_handles(raw_handles, slots, vbw, vbh)
+
     result = {
         "id": layout_id,
         "name": name,
@@ -261,6 +323,7 @@ def parse_svg_file(svg_path: Path, base_url: str, id_prefix: str = "svg_") -> di
         "type": "organic" if is_organic else "grid",
         "thumbnailURL": f"{base_url}/thumbnails/{layout_id}.png",
         "slots": slots,
+        "dividers": dividers,
     }
     result["__viewbox"] = (0, 0, vbw, vbh)
     return result
@@ -275,6 +338,55 @@ _ATTR_RE = re.compile(
     r"\b(cx|cy|r)\s*=\s*['\"]?([^\"'\s>]+)['\"]?",
     re.IGNORECASE,
 )
+
+# Regex to find <line ...> for drag handles (id starts with DRAG_H_ or DRAG_V_)
+_LINE_TAG_RE = re.compile(
+    r"<line\s[^>]*?>",
+    re.IGNORECASE | re.DOTALL,
+)
+_LINE_ATTR_RE = re.compile(
+    r"\b(id|x1|y1|x2|y2)\s*=\s*['\"]?([^\"'\s>]+)['\"]?",
+    re.IGNORECASE,
+)
+
+# Tolerance for matching divider position to slot edge (normalized 0-1).
+# 0.01 allows SVG coordinates off by a tiny fraction of a pixel to still match.
+_DIVIDER_EPS = 0.01
+
+
+def _parse_raw_svg_drag_handles(svg_path: Path) -> list[dict]:
+    """
+    Parse raw SVG for <line> elements with id starting with DRAG_H_ or DRAG_V_.
+    Returns list of {"id": str, "type": "horizontal"|"vertical", "x1": float, "y1": float}.
+    """
+    handles = []
+    try:
+        text = svg_path.read_text(encoding="utf-8", errors="replace")
+    except Exception:
+        return handles
+    for tag_match in _LINE_TAG_RE.finditer(text):
+        tag = tag_match.group(0)
+        attrs = {}
+        for m in _LINE_ATTR_RE.finditer(tag):
+            attrs[m.group(1).lower()] = m.group(2).strip()
+        elem_id = attrs.get("id", "")
+        if not elem_id:
+            continue
+        if elem_id.startswith("DRAG_H_"):
+            try:
+                x1 = float(attrs.get("x1", 0))
+                y1 = float(attrs.get("y1", 0))
+                handles.append({"id": elem_id, "type": "horizontal", "x1": x1, "y1": y1})
+            except (ValueError, TypeError):
+                pass
+        elif elem_id.startswith("DRAG_V_"):
+            try:
+                x1 = float(attrs.get("x1", 0))
+                y1 = float(attrs.get("y1", 0))
+                handles.append({"id": elem_id, "type": "vertical", "x1": x1, "y1": y1})
+            except (ValueError, TypeError):
+                pass
+    return handles
 
 
 def _parse_raw_svg_circles(svg_path: Path) -> list[tuple[float, float, float]]:
