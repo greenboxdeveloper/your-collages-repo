@@ -4,7 +4,7 @@
     {
       "category": "Classic",
       "id": "classic_1",
-      "isPremium": false,
+      "isPremium": true,
       "name": "Collage 1",
       "slots": [
         {
