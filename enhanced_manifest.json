@@ -1,5 +1,5 @@
 {
-  "version": "3.1",
+  "version": "3.2",
   "layouts": [
     {
       "category": "Classic",
@@ -5117,6 +5117,83 @@
       "dividers": []
     },
     {
+      "id": "svg_PCM_CL_DV",
+      "name": "Pcm Cl Dv",
+      "category": "Classic",
+      "isPremium": true,
+      "type": "grid",
+      "thumbnailURL": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/thumbnails/svg_PCM_CL_DV.png",
+      "slots": [
+        {
+          "id": "slot_0",
+          "n_rect": [
+            0.0,
+            0.0,
+            0.72,
+            0.5
+          ]
+        },
+        {
+          "id": "slot_1",
+          "n_rect": [
+            0.598,
+            0.5,
+            0.402,
+            0.5
+          ]
+        },
+        {
+          "id": "slot_2",
+          "n_rect": [
+            0.0,
+            0.5,
+            0.598,
+            0.5
+          ]
+        },
+        {
+          "id": "slot_3",
+          "n_rect": [
+            0.72,
+            0.0,
+            0.28,
+            0.5
+          ]
+        }
+      ],
+      "dividers": [
+        {
+          "id": "DRAG_H_1",
+          "type": "horizontal",
+          "position": 0.5,
+          "affects": [
+            "slot_0",
+            "slot_1",
+            "slot_2",
+            "slot_3"
+          ]
+        },
+        {
+          "id": "DRAG_V_2",
+          "type": "vertical",
+          "position": 0.72,
+          "affects": [
+            "slot_0",
+            "slot_3"
+          ]
+        },
+        {
+          "id": "DRAG_V_1",
+          "type": "vertical",
+          "position": 0.598,
+          "affects": [
+            "slot_1",
+            "slot_2"
+          ]
+        }
+      ]
+    },
+    {
       "id": "svg_PCM_SL01",
       "name": "Pcm Sl01",
       "category": "Stylish",
@@ -6321,7 +6398,7 @@
       "id": "svg_drag test",
       "name": "Drag Test",
       "category": "Stylish",
-      "isPremium": false,
+      "isPremium": true,
       "type": "grid",
       "thumbnailURL": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/thumbnails/svg_drag test.png",
       "slots": [
