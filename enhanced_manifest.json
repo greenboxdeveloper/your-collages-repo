@@ -1,5 +1,5 @@
 {
-  "version": "3.2",
+  "version": "3.3",
   "layouts": [
     {
       "category": "Classic",
@@ -5171,7 +5171,9 @@
             "slot_1",
             "slot_2",
             "slot_3"
-          ]
+          ],
+          "segment_start": 0.0,
+          "segment_end": 1.0
         },
         {
           "id": "DRAG_V_2",
@@ -5180,7 +5182,9 @@
           "affects": [
             "slot_0",
             "slot_3"
-          ]
+          ],
+          "segment_start": 0.0,
+          "segment_end": 0.5
         },
         {
           "id": "DRAG_V_1",
@@ -5189,7 +5193,9 @@
           "affects": [
             "slot_1",
             "slot_2"
-          ]
+          ],
+          "segment_start": 0.5,
+          "segment_end": 1.0
         }
       ]
     },
@@ -6429,7 +6435,9 @@
           "affects": [
             "slot_0",
             "slot_1"
-          ]
+          ],
+          "segment_start": 0.0,
+          "segment_end": 1.0
         },
         {
           "id": "DRAG_V_1",
@@ -6437,7 +6445,9 @@
           "position": 0.72,
           "affects": [
             "slot_0"
-          ]
+          ],
+          "segment_start": 0.0,
+          "segment_end": 0.5
         }
       ]
     }
