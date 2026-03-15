@@ -265,6 +265,137 @@ def _compute_dividers_from_handles(
     return dividers
 
 
+# Tolerance for "same boundary" when inferring dividers from slot edges (normalized 0-1).
+_BOUNDARY_EPS = 1e-5
+
+
+def _generate_dividers_from_slot_boundaries(layout: dict) -> list[dict]:
+    """
+    For a regular grid layout: compare n_rect boundaries of all slots and generate a divider
+    wherever two slots share a boundary. Only considers slots with n_rect [x, y, w, h].
+    Returns list of divider dicts (id, type, position, affects, segment_start, segment_end).
+    """
+    slots = layout.get("slots", [])
+    if len(slots) < 2:
+        return []
+
+    def nr(s: dict) -> tuple[float, float, float, float] | None:
+        r = s.get("n_rect", [])
+        if len(r) < 4:
+            return None
+        return float(r[0]), float(r[1]), float(r[2]), float(r[3])
+
+    # Collect unique vertical boundaries (x positions where two slots share a vertical edge).
+    v_positions: set[float] = set()
+    for i, a in enumerate(slots):
+        ra = nr(a)
+        if ra is None:
+            continue
+        ax1, ay1, aw, ah = ra
+        ax2, ay2 = ax1 + aw, ay1 + ah
+        for b in slots[i + 1 :]:
+            rb = nr(b)
+            if rb is None:
+                continue
+            bx1, by1, bw, bh = rb
+            bx2, by2 = bx1 + bw, by1 + bh
+            # Y ranges must overlap for slots to be adjacent along a vertical line
+            y_overlap = not (ay2 <= by1 + _BOUNDARY_EPS or by2 <= ay1 + _BOUNDARY_EPS)
+            if not y_overlap:
+                continue
+            if abs(ax2 - bx1) <= _BOUNDARY_EPS:
+                v_positions.add(round((ax2 + bx1) / 2, 6))
+            elif abs(bx2 - ax1) <= _BOUNDARY_EPS:
+                v_positions.add(round((bx2 + ax1) / 2, 6))
+
+    # Collect unique horizontal boundaries (y positions where two slots share a horizontal edge).
+    h_positions: set[float] = set()
+    for i, a in enumerate(slots):
+        ra = nr(a)
+        if ra is None:
+            continue
+        ax1, ay1, aw, ah = ra
+        ax2, ay2 = ax1 + aw, ay1 + ah
+        for b in slots[i + 1 :]:
+            rb = nr(b)
+            if rb is None:
+                continue
+            bx1, by1, bw, bh = rb
+            bx2, by2 = bx1 + bw, by1 + bh
+            x_overlap = not (ax2 <= bx1 + _BOUNDARY_EPS or bx2 <= ax1 + _BOUNDARY_EPS)
+            if not x_overlap:
+                continue
+            if abs(ay2 - by1) <= _BOUNDARY_EPS:
+                h_positions.add(round((ay2 + by1) / 2, 6))
+            elif abs(by2 - ay1) <= _BOUNDARY_EPS:
+                h_positions.add(round((by2 + ay1) / 2, 6))
+
+    dividers: list[dict] = []
+    idx = 0
+    for pos in sorted(v_positions):
+        affects = []
+        seg_min_x, seg_max_x = 1.0, 0.0
+        for s in slots:
+            r = nr(s)
+            if r is None:
+                continue
+            x1, y1, w, h = r
+            x2, y2 = x1 + w, y1 + h
+            if abs(x1 - pos) <= _BOUNDARY_EPS or abs(x2 - pos) <= _BOUNDARY_EPS:
+                affects.append(s["id"])
+                seg_min_x = min(seg_min_x, y1)
+                seg_max_x = max(seg_max_x, y2)
+        if affects:
+            dividers.append({
+                "id": f"grid_div_v_{idx}",
+                "type": "vertical",
+                "position": round(pos, 4),
+                "affects": affects,
+                "segment_start": round(seg_min_x, 4),
+                "segment_end": round(seg_max_x, 4),
+            })
+            idx += 1
+
+    for pos in sorted(h_positions):
+        affects = []
+        seg_min_y, seg_max_y = 1.0, 0.0
+        for s in slots:
+            r = nr(s)
+            if r is None:
+                continue
+            x1, y1, w, h = r
+            x2, y2 = x1 + w, y1 + h
+            if abs(y1 - pos) <= _BOUNDARY_EPS or abs(y2 - pos) <= _BOUNDARY_EPS:
+                affects.append(s["id"])
+                seg_min_y = min(seg_min_y, x1)
+                seg_max_y = max(seg_max_y, x2)
+        if affects:
+            dividers.append({
+                "id": f"grid_div_h_{idx}",
+                "type": "horizontal",
+                "position": round(pos, 4),
+                "affects": affects,
+                "segment_start": round(seg_min_y, 4),
+                "segment_end": round(seg_max_y, 4),
+            })
+            idx += 1
+
+    return dividers
+
+
+def _ensure_grid_dividers(layouts: list[dict]) -> None:
+    """For each regular grid layout with empty dividers, auto-generate dividers from slot boundaries."""
+    for layout in layouts:
+        if layout.get("type") != "grid":
+            continue
+        divs = layout.get("dividers") or []
+        if divs:
+            continue
+        generated = _generate_dividers_from_slot_boundaries(layout)
+        if generated:
+            layout["dividers"] = generated
+
+
 def parse_svg_file(svg_path: Path, base_url: str, id_prefix: str = "svg_") -> dict | None:
     """Parse one SVG with svgelements: bbox → n_rect, path_data for organic shapes; drag handles → dividers."""
     if SVG is None:
@@ -851,6 +982,10 @@ def main() -> int:
     svg_layouts = parse_svg_folder(svg_dir, base_url, id_prefix=args.svg_id_prefix)
     print(f"Parsed {len(svg_layouts)} layouts from {svg_dir}")
     layouts.extend(svg_layouts)
+
+    # 2b) For regular grid layouts with empty dividers, auto-generate dividers from slot boundaries
+    _ensure_grid_dividers(layouts)
+    print("Auto-generated dividers for grid layouts that had none.")
 
     # 3) Thumbnails
     thumb_dir.mkdir(parents=True, exist_ok=True)
