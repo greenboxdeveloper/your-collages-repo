@@ -347,7 +347,7 @@ def _generate_dividers_from_slot_boundaries(layout: dict) -> list[dict]:
                 seg_max_x = max(seg_max_x, y2)
         if affects:
             dividers.append({
-                "id": f"grid_div_v_{idx}",
+                "id": f"DRAG_V_{idx}",
                 "type": "vertical",
                 "position": round(pos, 4),
                 "affects": affects,
@@ -371,7 +371,7 @@ def _generate_dividers_from_slot_boundaries(layout: dict) -> list[dict]:
                 seg_max_y = max(seg_max_y, x2)
         if affects:
             dividers.append({
-                "id": f"grid_div_h_{idx}",
+                "id": f"DRAG_H_{idx}",
                 "type": "horizontal",
                 "position": round(pos, 4),
                 "affects": affects,
