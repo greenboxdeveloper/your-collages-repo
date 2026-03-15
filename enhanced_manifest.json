@@ -1,5 +1,5 @@
 {
-  "version": "3.4",
+  "version": "3.5",
   "layouts": [
     {
       "category": "Classic",
@@ -6378,6 +6378,47 @@
         }
       ],
       "dividers": []
+    },
+    {
+      "id": "svg_classic_1",
+      "name": "Classic 1",
+      "category": "Stylish",
+      "isPremium": true,
+      "type": "grid",
+      "thumbnailURL": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/thumbnails/svg_classic_1.png",
+      "slots": [
+        {
+          "id": "slot_0",
+          "n_rect": [
+            0.0,
+            0.0,
+            0.5,
+            1.0
+          ]
+        },
+        {
+          "id": "slot_1",
+          "n_rect": [
+            0.5,
+            0.0,
+            0.5,
+            1.0
+          ]
+        }
+      ],
+      "dividers": [
+        {
+          "id": "DRAG_V_1",
+          "type": "vertical",
+          "position": 0.5,
+          "affects": [
+            "slot_0",
+            "slot_1"
+          ],
+          "segment_start": 0.0,
+          "segment_end": 1.0
+        }
+      ]
     },
     {
       "id": "svg_drag test",
