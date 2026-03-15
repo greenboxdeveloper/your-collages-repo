@@ -208,9 +208,10 @@ def _compute_dividers_from_handles(
     vbh: float,
 ) -> list[dict]:
     """
-    Build dividers array: for each handle, set position (0-1) and affects (slot ids).
-    - DRAG_H_: position = y1 / viewBoxHeight; affects slots where rect.minY == Y or rect.maxY == Y.
-    - DRAG_V_: position = x1 / viewBoxWidth; affects slots where rect.minX == X or rect.maxX == X.
+    Build dividers array: for each handle, set position (0-1), affects (slot ids), and
+    segment_start/segment_end (0-1) so the Swift app knows exactly where to draw and hit-test the handle.
+    - DRAG_H_: position = y1/viewBoxHeight; segment = X range (min/max of affected slots' n_rect).
+    - DRAG_V_: position = x1/viewBoxWidth; segment = Y range (min/max of affected slots' n_rect).
     """
     dividers = []
     for h in handles:
@@ -232,11 +233,34 @@ def _compute_dividers_from_handles(
             else:
                 if abs(min_x - position) <= _DIVIDER_EPS or abs(max_x - position) <= _DIVIDER_EPS:
                     affects.append(slot["id"])
+
+        # Segment bounds: extent of affected slots along the axis perpendicular to the divider.
+        segment_start, segment_end = 0.0, 1.0
+        if affects:
+            affected_slots = [s for s in slots if s["id"] in affects]
+            if affected_slots:
+                if h["type"] == "horizontal":
+                    # Segment = X range (left–right) of affected slots
+                    min_xs = [s["n_rect"][0] for s in affected_slots if len(s.get("n_rect", [])) >= 4]
+                    max_xs = [s["n_rect"][0] + s["n_rect"][2] for s in affected_slots if len(s.get("n_rect", [])) >= 4]
+                    if min_xs and max_xs:
+                        segment_start = round(min(min_xs), 4)
+                        segment_end = round(max(max_xs), 4)
+                else:
+                    # Segment = Y range (top–bottom) of affected slots
+                    min_ys = [s["n_rect"][1] for s in affected_slots if len(s.get("n_rect", [])) >= 4]
+                    max_ys = [s["n_rect"][1] + s["n_rect"][3] for s in affected_slots if len(s.get("n_rect", [])) >= 4]
+                    if min_ys and max_ys:
+                        segment_start = round(min(min_ys), 4)
+                        segment_end = round(max(max_ys), 4)
+
         dividers.append({
             "id": h["id"],
             "type": h["type"],
             "position": position,
             "affects": affects,
+            "segment_start": segment_start,
+            "segment_end": segment_end,
         })
     return dividers
 
