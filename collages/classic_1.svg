@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 500">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #ee2a7b;
+      }
+
+      .cls-2 {
+        fill: #600;
+        stroke: #000;
+        stroke-miterlimit: 10;
+        stroke-width: .25px;
+      }
+    </style>
+  </defs>
+  <rect class="cls-1" width="250" height="500"/>
+  <rect class="cls-1" x="250" width="250" height="500"/>
+  <line id="DRAG_V_1" class="cls-2" x1="250" x2="250" y2="500"/>
+</svg>
