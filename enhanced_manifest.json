@@ -1,5 +1,5 @@
 {
-  "version": "3.8",
+  "version": "3.9",
   "layouts": [
     {
       "category": "Classic",
@@ -8631,47 +8631,6 @@
           "segment_end": 1.0
         }
       ]
-    },
-    {
-      "id": "svg_SVG8",
-      "name": "Svg8",
-      "category": "Stylish",
-      "isPremium": true,
-      "type": "organic",
-      "thumbnailURL": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/thumbnails/svg_SVG8.png",
-      "slots": [
-        {
-          "id": "slot_0",
-          "n_rect": [
-            0.0954,
-            0.057,
-            0.393,
-            0.3994
-          ],
-          "path_data": "M 220.6 198.7 L 122.3 228.2 L 47.7 157.8 L 71.3 58.0 L 169.6 28.5 L 244.2 98.9 Z"
-        },
-        {
-          "id": "slot_1",
-          "n_rect": [
-            0.0954,
-            0.5114,
-            0.393,
-            0.3994
-          ],
-          "path_data": "M 220.6 425.9 L 122.3 455.4 L 47.7 385.0 L 71.3 285.1 L 169.6 255.7 L 244.2 326.0 Z"
-        },
-        {
-          "id": "slot_2",
-          "n_rect": [
-            0.5,
-            0.2428,
-            0.3932,
-            0.3994
-          ],
-          "path_data": "M 423.0 291.6 L 324.7 321.1 L 250.0 250.7 L 273.6 150.8 L 371.9 121.4 L 446.6 191.7 Z"
-        }
-      ],
-      "dividers": []
     },
     {
       "id": "svg_SVG9",
