@@ -1036,3 +1036,275 @@ def main() -> int:
 
 if __name__ == "__main__":
     sys.exit(main())
+
+
+# =============================================================================
+# Filter manifest generation
+# =============================================================================
+#
+# Generates Filters/filter_manifest.json by scanning the Filters/ folder for
+# sub-folders (= filter categories) and PNG files inside them (= LUT filters).
+#
+# Naming convention for LUT PNG files (same _PR / _F suffix as layouts):
+#   FilterName_PR.png  →  isPremium = True
+#   FilterName_F.png   →  isPremium = False
+#   FilterName.png     →  isPremium = True (default, same as SVG layouts)
+#
+# The filter name is derived from the file stem with the suffix removed and
+# underscores/hyphens replaced with spaces and title-cased.
+#
+# Built-in "Basic" iOS CIFilter category is always prepended (hardcoded).
+# The manifest is rewritten whenever filters or their premium status change.
+# Version is bumped (minor) on any change.
+#
+# Usage (standalone):
+#   python generate_enhanced_manifest.py --generate-filter-manifest \
+#       --filters-dir Filters \
+#       --filter-output Filters/filter_manifest.json \
+#       --base-url "https://raw.githubusercontent.com/OWNER/REPO/main"
+
+
+# Built-in iOS CIFilters for the "Basic" category.
+_BASIC_CI_FILTERS = [
+    ("ci_vivid",    "Vivid",    "CIPhotoEffectVivid",    False),
+    ("ci_noir",     "Noir",     "CIPhotoEffectNoir",     False),
+    ("ci_chrome",   "Chrome",   "CIPhotoEffectChrome",   False),
+    ("ci_fade",     "Fade",     "CIPhotoEffectFade",     False),
+    ("ci_instant",  "Instant",  "CIPhotoEffectInstant",  False),
+    ("ci_process",  "Process",  "CIPhotoEffectProcess",  False),
+    ("ci_tonal",    "Tonal",    "CIPhotoEffectTonal",    False),
+    ("ci_transfer", "Transfer", "CIPhotoEffectTransfer", False),
+]
+
+
+def _filter_stem_to_name_and_premium(stem: str) -> tuple[str, bool]:
+    """
+    Extract display name and isPremium from a LUT file stem.
+    Strips _PR / _F suffix (case-insensitive), then title-cases the remainder.
+    Default (no suffix) → isPremium = True.
+    """
+    stem_up = stem.upper()
+    if stem_up.endswith("_PR"):
+        clean = stem[: -len("_PR")]
+        is_premium = True
+    elif stem_up.endswith("_F"):
+        clean = stem[: -len("_F")]
+        is_premium = False
+    else:
+        clean = stem
+        is_premium = True  # default: premium (matches SVG layout behaviour)
+
+    name = clean.replace("_", " ").replace("-", " ").strip().title()
+    return name, is_premium
+
+
+def _filter_id_from_category_and_stem(category_id: str, stem: str) -> str:
+    """Build a stable, URL-safe filter id like 'film__amber_vibe'."""
+    clean = stem.upper()
+    for suffix in ("_PR", "_F"):
+        if clean.endswith(suffix):
+            stem = stem[: -len(suffix)]
+            break
+    safe = re.sub(r"[^a-zA-Z0-9]+", "_", stem).strip("_").lower()
+    return f"{category_id}__{safe}"
+
+
+def _bump_filter_version(v: str | None) -> str:
+    """Bump minor version: 1.0 → 1.1, 1.9 → 2.0, etc."""
+    try:
+        if v and "." in v:
+            major_s, minor_s = v.split(".", 1)
+            major, minor = int(major_s), int(minor_s)
+        elif v:
+            major, minor = int(v), 0
+        else:
+            major, minor = 1, 0
+    except Exception:
+        major, minor = 1, 0
+    minor += 1
+    if minor > 9:
+        major += 1
+        minor = 0
+    return f"{major}.{minor}"
+
+
+def generate_filter_manifest(
+    filters_dir: Path,
+    output_path: Path,
+    base_url: str,
+) -> int:
+    """
+    Scan `filters_dir` for sub-folders (categories) and LUT PNG files.
+    Generate / update `output_path` (filter_manifest.json).
+
+    Returns 0 on success, 1 on error.
+    """
+    base_url = base_url.rstrip("/")
+
+    if not filters_dir.is_dir():
+        print(f"[filter-manifest] Filters dir not found: {filters_dir}", file=sys.stderr)
+        # Create an empty-category manifest so the file always exists.
+        filters_dir.mkdir(parents=True, exist_ok=True)
+
+    # ------------------------------------------------------------------
+    # Load existing manifest for version-bump comparison
+    # ------------------------------------------------------------------
+    old_manifest: dict | None = None
+    old_version: str | None = None
+    if output_path.exists():
+        try:
+            with open(output_path, "r", encoding="utf-8") as f:
+                old_manifest = json.load(f)
+            old_version = str(old_manifest.get("version", "") or "")
+        except Exception:
+            old_manifest = None
+            old_version = None
+
+    # ------------------------------------------------------------------
+    # 1) Built-in "Basic" category (iOS CIFilters, no LUT files needed)
+    # ------------------------------------------------------------------
+    basic_filters = [
+        {
+            "id": fid,
+            "name": fname,
+            "isPremium": is_pr,
+            "source": "ciFilter",
+            "ciFilterName": ci_name,
+            "lutFileName": None,
+        }
+        for fid, fname, ci_name, is_pr in _BASIC_CI_FILTERS
+    ]
+    categories: list[dict] = [
+        {"id": "basic", "name": "Basic", "filters": basic_filters}
+    ]
+
+    # ------------------------------------------------------------------
+    # 2) Scan sub-folders (one per OTA category)
+    # ------------------------------------------------------------------
+    for cat_dir in sorted(filters_dir.iterdir()):
+        if not cat_dir.is_dir():
+            continue  # skip files at root level (e.g. filter_manifest.json itself)
+
+        cat_id   = re.sub(r"[^a-zA-Z0-9]+", "_", cat_dir.name).strip("_").lower()
+        cat_name = cat_dir.name.replace("_", " ").replace("-", " ").title()
+
+        filters_in_cat: list[dict] = []
+        for png in sorted(cat_dir.glob("*.png")):
+            stem = png.stem
+            display_name, is_premium = _filter_stem_to_name_and_premium(stem)
+            filter_id = _filter_id_from_category_and_stem(cat_id, stem)
+
+            # lutFileName stored WITHOUT suffix so the app can build the
+            # remote URL as: Filters/{catId}/{lutFileName}.png
+            clean_stem = stem
+            for sfx in ("_PR", "_F"):
+                if clean_stem.upper().endswith(sfx):
+                    clean_stem = clean_stem[: -len(sfx)]
+                    break
+
+            filters_in_cat.append({
+                "id": filter_id,
+                "name": display_name,
+                "isPremium": is_premium,
+                "source": "ota",
+                "ciFilterName": None,
+                "lutFileName": clean_stem,
+            })
+
+        if filters_in_cat:
+            categories.append({"id": cat_id, "name": cat_name, "filters": filters_in_cat})
+
+    # ------------------------------------------------------------------
+    # 3) Version bump: only when categories / filters actually changed
+    # ------------------------------------------------------------------
+    new_categories_clean = categories  # already serialisation-ready
+
+    old_categories = old_manifest.get("categories") if old_manifest else None
+    changed = old_categories is None or old_categories != new_categories_clean
+
+    if changed:
+        new_version = _bump_filter_version(old_version)
+    else:
+        new_version = old_version or "1.1"
+
+    manifest = {"version": new_version, "categories": new_categories_clean}
+
+    output_path.parent.mkdir(parents=True, exist_ok=True)
+    with open(output_path, "w", encoding="utf-8") as f:
+        json.dump(manifest, f, indent=2, ensure_ascii=False)
+
+    total_filters = sum(len(c["filters"]) for c in new_categories_clean)
+    print(
+        f"[filter-manifest] v{new_version} — {len(new_categories_clean)} categories, "
+        f"{total_filters} filters → {output_path}"
+        + (" (bumped)" if changed else " (unchanged)")
+    )
+    return 0
+
+
+def _add_filter_manifest_args(parser: argparse.ArgumentParser) -> None:
+    parser.add_argument(
+        "--generate-filter-manifest",
+        action="store_true",
+        default=False,
+        help="Also generate Filters/filter_manifest.json from Filters/ sub-folders.",
+    )
+    parser.add_argument(
+        "--filters-dir",
+        default="Filters",
+        help="Folder containing LUT sub-folders (default: Filters).",
+    )
+    parser.add_argument(
+        "--filter-output",
+        default="Filters/filter_manifest.json",
+        help="Output path for filter_manifest.json (default: Filters/filter_manifest.json).",
+    )
+
+
+# Re-run main with filter manifest support (extended entry point).
+def main_with_filter_support() -> int:
+    """
+    Drop-in replacement for main() that also handles --generate-filter-manifest.
+    Called by GitHub Actions via the workflow.
+    """
+    parser = argparse.ArgumentParser(
+        description="Generate enhanced_manifest.json (and optionally filter_manifest.json)"
+    )
+    parser.add_argument("--base-url", required=True)
+    parser.add_argument("--repo-root", default=".")
+    parser.add_argument("--json-path", default="classic_and_stylish_layouts.json")
+    parser.add_argument("--svg-dir", default="collages")
+    parser.add_argument("--output", default="enhanced_manifest.json")
+    parser.add_argument("--thumbnails-dir", default="thumbnails")
+    parser.add_argument("--svg-id-prefix", default="svg_")
+    _add_filter_manifest_args(parser)
+    args = parser.parse_args()
+
+    repo_root = Path(args.repo_root).resolve()
+
+    # --- Run existing enhanced_manifest generation ---
+    # Temporarily override sys.argv so the inner main() parses cleanly.
+    orig_argv = sys.argv[:]
+    sys.argv = [
+        sys.argv[0],
+        "--base-url", args.base_url,
+        "--repo-root", str(repo_root),
+        "--json-path", args.json_path,
+        "--svg-dir", args.svg_dir,
+        "--output", args.output,
+        "--thumbnails-dir", args.thumbnails_dir,
+        "--svg-id-prefix", args.svg_id_prefix,
+    ]
+    result = main()
+    sys.argv = orig_argv
+
+    if result != 0:
+        return result
+
+    # --- Optionally generate filter_manifest ---
+    if args.generate_filter_manifest:
+        filters_dir   = repo_root / args.filters_dir
+        filter_output = repo_root / args.filter_output
+        result = generate_filter_manifest(filters_dir, filter_output, args.base_url)
+
+    return result
