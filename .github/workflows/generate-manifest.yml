@@ -4,10 +4,12 @@ on:
   push:
     branches: [main]
     paths:
-      - 'collages/**/*.svg'
-      - 'svgs/**/*.svg'
-      - 'classic_and_stylish_layouts.json'
-      - 'scripts/**'
+      - "collages/**/*.svg"
+      - "svgs/**/*.svg"
+      - "classic_and_stylish_layouts.json"
+      - "Filters/**"
+      - "scripts/**"
+  workflow_dispatch:
 
 permissions:
   contents: write
@@ -21,19 +23,39 @@ jobs:
       - name: Set up Python
         uses: actions/setup-python@v5
         with:
-          python-version: '3.11'
+          python-version: "3.11"
 
       - name: Install dependencies
-        run: pip install -r scripts/requirements.txt
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r scripts/requirements.txt
 
-      - name: Generate manifest and thumbnails
+      # Script reads one SVG folder (--svg-dir). Repo paths above also watch svgs/**;
+      # if your layouts live only under svgs/, set --svg-dir svgs (or symlink / duplicate into collages).
+      - name: Generate manifest, thumbnails, and filter manifest
+        env:
+          BASE_URL: "https://raw.githubusercontent.com/${{ github.repository }}/${{ github.ref_name }}"
         run: |
           python scripts/generate_enhanced_manifest.py \
-            --base-url "https://raw.githubusercontent.com/${{ github.repository }}/${{ github.ref_name }}"
+            --base-url "$BASE_URL" \
+            --repo-root . \
+            --json-path classic_and_stylish_layouts.json \
+            --svg-dir collages \
+            --output enhanced_manifest.json \
+            --thumbnails-dir thumbnails \
+            --svg-id-prefix svg_ \
+            --generate-filter-manifest \
+            --filters-dir Filters \
+            --filter-output Filters/filter_manifest.json
 
       - name: Commit and push if changed
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add enhanced_manifest.json thumbnails/
-          git diff --staged --quiet || (git commit -m "Update enhanced_manifest.json and thumbnails" && git push)
+          git add enhanced_manifest.json thumbnails/ Filters/filter_manifest.json || true
+          if git diff --staged --quiet; then
+            echo "No manifest changes to commit."
+          else
+            git commit -m "chore: update enhanced_manifest, thumbnails, filter_manifest [skip ci]"
+            git push
+          fi
