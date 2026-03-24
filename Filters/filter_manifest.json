@@ -1,5 +1,5 @@
 {
-  "version": "1.1",
+  "version": "1.2",
   "categories": [
     {
       "id": "basic",
@@ -68,84 +68,6 @@
           "source": "ciFilter",
           "ciFilterName": "CIPhotoEffectTransfer",
           "lutFileName": null
-        }
-      ]
-    },
-    {
-      "id": "black_white_f",
-      "name": "Black & White F",
-      "filters": [
-        {
-          "id": "black_white_f__bw10",
-          "name": "Bw10",
-          "isPremium": true,
-          "source": "ota",
-          "ciFilterName": null,
-          "lutFileName": "BW10.cube"
-        },
-        {
-          "id": "black_white_f__bw2",
-          "name": "Bw2",
-          "isPremium": true,
-          "source": "ota",
-          "ciFilterName": null,
-          "lutFileName": "BW2.cube"
-        },
-        {
-          "id": "black_white_f__bw3",
-          "name": "Bw3",
-          "isPremium": true,
-          "source": "ota",
-          "ciFilterName": null,
-          "lutFileName": "BW3.cube"
-        },
-        {
-          "id": "black_white_f__bw4",
-          "name": "Bw4",
-          "isPremium": true,
-          "source": "ota",
-          "ciFilterName": null,
-          "lutFileName": "BW4.cube"
-        },
-        {
-          "id": "black_white_f__bw5",
-          "name": "Bw5",
-          "isPremium": true,
-          "source": "ota",
-          "ciFilterName": null,
-          "lutFileName": "BW5.cube"
-        },
-        {
-          "id": "black_white_f__bw6",
-          "name": "Bw6",
-          "isPremium": true,
-          "source": "ota",
-          "ciFilterName": null,
-          "lutFileName": "BW6.cube"
-        },
-        {
-          "id": "black_white_f__bw7",
-          "name": "Bw7",
-          "isPremium": true,
-          "source": "ota",
-          "ciFilterName": null,
-          "lutFileName": "BW7.cube"
-        },
-        {
-          "id": "black_white_f__bw8",
-          "name": "Bw8",
-          "isPremium": true,
-          "source": "ota",
-          "ciFilterName": null,
-          "lutFileName": "BW8.cube"
-        },
-        {
-          "id": "black_white_f__bw9",
-          "name": "Bw9",
-          "isPremium": true,
-          "source": "ota",
-          "ciFilterName": null,
-          "lutFileName": "BW9.cube"
         }
       ]
     }
