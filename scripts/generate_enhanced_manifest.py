@@ -1034,21 +1034,22 @@ def main() -> int:
     return 0
 
 
-if __name__ == "__main__":
-    sys.exit(main())
-
-
 # =============================================================================
 # Filter manifest generation
 # =============================================================================
 #
 # Generates Filters/filter_manifest.json by scanning the Filters/ folder for
-# sub-folders (= filter categories) and PNG files inside them (= LUT filters).
+# sub-folders (= filter categories) and LUT assets: PNG (HALD-style) and/or
+# Adobe `.cube` text LUTs.
 #
-# Naming convention for LUT PNG files (same _PR / _F suffix as layouts):
-#   FilterName_PR.png  →  isPremium = True
-#   FilterName_F.png   →  isPremium = False
-#   FilterName.png     →  isPremium = True (default, same as SVG layouts)
+# Naming convention (same _PR / _F suffix as layouts):
+#   FilterName_PR.png / .cube  →  isPremium = True
+#   FilterName_F.png / .cube   →  isPremium = False
+#   FilterName.png / .cube     →  isPremium = True (default, same as SVG layouts)
+#
+# If both `FilterName.png` and `FilterName.cube` exist (same base after _PR/_F strip),
+# one manifest entry is emitted and the `.cube` asset is preferred (`lutFileName` ends
+# with `.cube`). The app downloads `Filters/{category}/{base}.cube` per FilterManifestLoader.
 #
 # The filter name is derived from the file stem with the suffix removed and
 # underscores/hyphens replaced with spaces and title-cased.
@@ -1075,6 +1076,64 @@ _BASIC_CI_FILTERS = [
     ("ci_tonal",    "Tonal",    "CIPhotoEffectTonal",    False),
     ("ci_transfer", "Transfer", "CIPhotoEffectTransfer", False),
 ]
+
+
+def _logical_lut_base(stem: str) -> str:
+    """File stem with _PR/_F removed — used to pair `Name.png` + `Name.cube` in one filter."""
+    s = stem
+    for sfx in ("_PR", "_F"):
+        if s.upper().endswith(sfx):
+            return s[: -len(sfx)]
+    return s
+
+
+def _clean_stem_premium_suffix(stem: str) -> str:
+    """Stem without trailing _PR / _F (for published lutFileName / URLs)."""
+    clean = stem
+    for sfx in ("_PR", "_F"):
+        if clean.upper().endswith(sfx):
+            clean = clean[: -len(sfx)]
+            break
+    return clean
+
+
+def _collect_lut_paths(cat_dir: Path) -> list[Path]:
+    """All LUT PNG / Adobe cube files in a category folder (case-insensitive extension)."""
+    out: list[Path] = []
+    for ext in ("png", "PNG", "cube", "CUBE"):
+        out.extend(cat_dir.glob(f"*.{ext}"))
+    return sorted(out, key=lambda p: (p.stem.lower(), p.suffix.lower()))
+
+
+def _choose_lut_path_per_logical_base(paths: list[Path]) -> list[Path]:
+    """
+    One path per logical base name: if both PNG and `.cube` exist for the same base
+    (after _PR/_F strip), prefer `.cube`.
+    """
+    groups: dict[str, list[Path]] = {}
+    for p in paths:
+        base = _logical_lut_base(p.stem)
+        groups.setdefault(base, []).append(p)
+
+    chosen: list[Path] = []
+    for base in sorted(groups.keys(), key=str.lower):
+        g = groups[base]
+        cubes = [p for p in g if p.suffix.lower() == ".cube"]
+        pngs = [p for p in g if p.suffix.lower() == ".png"]
+        if cubes:
+            pick = sorted(cubes, key=lambda p: p.name.lower())[0]
+            chosen.append(pick)
+            for q in pngs:
+                if q != pick:
+                    print(
+                        f"[filter-manifest] Note: using {pick.name} over {q.name} (same filter base “{base}”)",
+                        file=sys.stderr,
+                    )
+        elif pngs:
+            chosen.append(sorted(pngs, key=lambda p: p.name.lower())[0])
+        else:
+            chosen.extend(sorted(g, key=lambda p: p.name.lower()))
+    return sorted(chosen, key=lambda p: (p.stem.lower(), p.suffix.lower()))
 
 
 def _filter_stem_to_name_and_premium(stem: str) -> tuple[str, bool]:
@@ -1134,7 +1193,7 @@ def generate_filter_manifest(
     base_url: str,
 ) -> int:
     """
-    Scan `filters_dir` for sub-folders (categories) and LUT PNG files.
+    Scan `filters_dir` for sub-folders (categories) and LUT assets (PNG and/or Adobe `.cube`).
     Generate / update `output_path` (filter_manifest.json).
 
     Returns 0 on success, 1 on error.
@@ -1189,18 +1248,16 @@ def generate_filter_manifest(
         cat_name = cat_dir.name.replace("_", " ").replace("-", " ").title()
 
         filters_in_cat: list[dict] = []
-        for png in sorted(cat_dir.glob("*.png")):
-            stem = png.stem
+        lut_paths = _choose_lut_path_per_logical_base(_collect_lut_paths(cat_dir))
+        for lut_path in lut_paths:
+            stem = lut_path.stem
             display_name, is_premium = _filter_stem_to_name_and_premium(stem)
             filter_id = _filter_id_from_category_and_stem(cat_id, stem)
-
-            # lutFileName stored WITHOUT suffix so the app can build the
-            # remote URL as: Filters/{catId}/{lutFileName}.png
-            clean_stem = stem
-            for sfx in ("_PR", "_F"):
-                if clean_stem.upper().endswith(sfx):
-                    clean_stem = clean_stem[: -len(sfx)]
-                    break
+            clean_stem = _clean_stem_premium_suffix(stem)
+            is_cube = lut_path.suffix.lower() == ".cube"
+            # PNG: lutFileName without extension → app resolves Filters/{cat}/{name}.png
+            # Cube: lutFileName must end with .cube → app resolves Filters/{cat}/{name}.cube
+            lut_file_name = f"{clean_stem}.cube" if is_cube else clean_stem
 
             filters_in_cat.append({
                 "id": filter_id,
@@ -1208,7 +1265,7 @@ def generate_filter_manifest(
                 "isPremium": is_premium,
                 "source": "ota",
                 "ciFilterName": None,
-                "lutFileName": clean_stem,
+                "lutFileName": lut_file_name,
             })
 
         if filters_in_cat:
@@ -1308,3 +1365,7 @@ def main_with_filter_support() -> int:
         result = generate_filter_manifest(filters_dir, filter_output, args.base_url)
 
     return result
+
+
+if __name__ == "__main__":
+    sys.exit(main_with_filter_support())
