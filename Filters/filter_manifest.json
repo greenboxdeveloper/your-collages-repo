@@ -1,5 +1,5 @@
 {
-  "version": "1.3",
+  "version": "1.4",
   "categories": [
     {
       "id": "basic",
@@ -82,6 +82,14 @@
           "source": "ota",
           "ciFilterName": null,
           "lutFileName": "BW1"
+        },
+        {
+          "id": "b_w__bw2",
+          "name": "Bw2",
+          "isPremium": true,
+          "source": "ota",
+          "ciFilterName": null,
+          "lutFileName": "BW2"
         }
       ]
     }
