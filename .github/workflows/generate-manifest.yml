@@ -6,8 +6,15 @@ on:
     paths:
       - "collages/**/*.svg"
       - "svgs/**/*.svg"
+      - "PhotoCollageMaker/PhotoCollage/Collage/CollageLayouts/**/*.svg"
       - "classic_and_stylish_layouts.json"
+      - "PhotoCollageMaker/PhotoCollage/Collage/classic_and_stylish_layouts.json"
       - "Filters/**"
+      - "Frames/**"
+      - "Stickers/**"
+      - "Backgrounds/**"
+      - "Fonts/**"
+      - "Shapes/**"
       - "scripts/**"
   workflow_dispatch:
 
@@ -32,7 +39,7 @@ jobs:
 
       # Script reads one SVG folder (--svg-dir). Repo paths above also watch svgs/**;
       # if your layouts live only under svgs/, set --svg-dir svgs (or symlink / duplicate into collages).
-      - name: Generate manifest, thumbnails, and filter manifest
+      - name: Generate manifest, thumbnails, and all store manifests
         env:
           BASE_URL: "https://raw.githubusercontent.com/${{ github.repository }}/${{ github.ref_name }}"
         run: |
@@ -46,16 +53,33 @@ jobs:
             --svg-id-prefix svg_ \
             --generate-filter-manifest \
             --filters-dir Filters \
-            --filter-output Filters/filter_manifest.json
+            --filter-output Filters/filter_manifest.json \
+            --generate-store-manifests \
+            --frames-dir Frames \
+            --frames-output Frames/frame_manifest.json \
+            --stickers-dir Stickers \
+            --stickers-output Stickers/sticker_store_manifest.json \
+            --backgrounds-dir Backgrounds \
+            --backgrounds-output Backgrounds/background_store_manifest.json \
+            --fonts-dir Fonts \
+            --fonts-output Fonts/font_catalog.json \
+            --shapes-dir Shapes \
+            --shapes-output Shapes/shape_store_manifest.json
 
       - name: Commit and push if changed
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add enhanced_manifest.json thumbnails/ Filters/filter_manifest.json || true
+          git add enhanced_manifest.json thumbnails/ \
+            Filters/filter_manifest.json \
+            Frames/frame_manifest.json \
+            Stickers/sticker_store_manifest.json \
+            Backgrounds/background_store_manifest.json \
+            Fonts/font_catalog.json \
+            Shapes/shape_store_manifest.json || true
           if git diff --staged --quiet; then
             echo "No manifest changes to commit."
           else
-            git commit -m "chore: update enhanced_manifest, thumbnails, filter_manifest [skip ci]"
+            git commit -m "chore: regenerate enhanced and store manifests [skip ci]"
             git push
           fi
