@@ -1,20 +1,11 @@
 {
-  "version": "1.3",
+  "version": "1.4",
   "categories": [
     {
       "id": "en",
       "name": "English",
       "remoteFolder": null,
       "fonts": [
-        {
-          "id": "en__1",
-          "displayName": "1",
-          "postScriptName": "1",
-          "isPremium": false,
-          "source": "ota",
-          "fileName": "1.ttf",
-          "remoteDirectory": "English"
-        },
         {
           "id": "en__mbantul",
           "displayName": "Mbantul",
