@@ -1484,31 +1484,71 @@ def _extract_postscript_name(font_path: Path) -> str:
     return stem
 
 
+def _font_entry_dict(cat_id: str, font_path: Path) -> dict:
+    display_name, is_premium = _store_stem_to_name_and_premium(font_path.stem, default_premium=False)
+    clean_stem = _clean_stem_premium_suffix(font_path.stem)
+    ext = font_path.suffix.lower()
+    file_name = f"{clean_stem}{ext}"
+    entry_id = f"{cat_id}__{_slugify(clean_stem)}"
+    return {
+        "id": entry_id,
+        "displayName": display_name,
+        "postScriptName": _extract_postscript_name(font_path),
+        "isPremium": is_premium,
+        "source": "ota",
+        "fileName": file_name,
+    }
+
+
 def generate_font_catalog_manifest(fonts_dir: Path, output_path: Path) -> int:
+    """
+    Emit `font_catalog.json` with `categories` (like stickers):
+
+    - One subfolder under `Fonts/` = one category. Use `remoteFolder` = exact directory name
+      so iOS builds `Fonts/{remoteFolder}/{fileName}` on GitHub raw.
+    - `.ttf` / `.otf` directly under `Fonts/` (no subfolders) go into a single category
+      `id: default` with no `remoteFolder` (flat URLs `Fonts/{fileName}` — legacy).
+
+    Auto-toolbar `_a` naming applies to file stems; see filter manifest header in this file.
+    """
     if not fonts_dir.is_dir():
         fonts_dir.mkdir(parents=True, exist_ok=True)
-    font_paths = []
-    for ext in ("*.ttf", "*.otf", "*.TTF", "*.OTF"):
-        font_paths.extend(fonts_dir.glob(ext))
-    font_paths = sorted(set(font_paths), key=lambda p: p.name.lower())
 
-    fonts = []
-    for p in font_paths:
-        display_name, is_premium = _store_stem_to_name_and_premium(p.stem, default_premium=False)
-        clean_stem = _clean_stem_premium_suffix(p.stem)
-        ext = p.suffix.lower()
-        file_name = f"{clean_stem}{ext}"
-        entry_id = _slugify(clean_stem)
-        fonts.append({
-            "id": entry_id,
-            "displayName": display_name,
-            "postScriptName": _extract_postscript_name(p),
-            "isPremium": is_premium,
-            "source": "ota",
-            "fileName": file_name,
+    categories: list[dict] = []
+
+    for cat_dir in sorted([p for p in fonts_dir.iterdir() if p.is_dir()], key=lambda p: p.name.lower()):
+        if cat_dir.name.startswith("."):
+            continue
+        font_paths: list[Path] = []
+        for ext in ("*.ttf", "*.otf", "*.TTF", "*.OTF"):
+            font_paths.extend(cat_dir.glob(ext))
+        font_paths = sorted(set(font_paths), key=lambda p: p.name.lower())
+        if not font_paths:
+            continue
+        cat_id = _slugify(cat_dir.name)
+        cat_display = _title_from_stem(cat_dir.name)
+        categories.append({
+            "id": cat_id,
+            "name": cat_display,
+            "remoteFolder": cat_dir.name,
+            "fonts": [_font_entry_dict(cat_id, p) for p in font_paths],
         })
-    version = _write_versioned_manifest(output_path, "fonts", fonts)
-    print(f"[font-catalog] v{version} — {len(fonts)} fonts → {output_path}")
+
+    loose: list[Path] = []
+    for ext in ("*.ttf", "*.otf", "*.TTF", "*.OTF"):
+        loose.extend(fonts_dir.glob(ext))
+    loose = sorted(set(loose), key=lambda p: p.name.lower())
+    if loose:
+        cat_id = "default"
+        categories.insert(0, {
+            "id": cat_id,
+            "name": "Font library",
+            "fonts": [_font_entry_dict(cat_id, p) for p in loose],
+        })
+
+    version = _write_versioned_manifest(output_path, "categories", categories)
+    nfonts = sum(len(c.get("fonts") or []) for c in categories)
+    print(f"[font-catalog] v{version} — {len(categories)} categories, {nfonts} fonts → {output_path}")
     return 0
 
 
