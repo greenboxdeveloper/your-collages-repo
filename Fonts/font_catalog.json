@@ -1,5 +1,5 @@
 {
-  "version": "1.5",
+  "version": "1.6",
   "categories": [
     {
       "id": "en",
@@ -13,7 +13,8 @@
           "isPremium": false,
           "source": "ota",
           "fileName": "MBANTUL.otf",
-          "remoteDirectory": "English"
+          "remoteDirectory": "English",
+          "licenseUrl": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/Fonts/English/License%20MBANTUL%20Font.txt"
         },
         {
           "id": "en__perfograma",
