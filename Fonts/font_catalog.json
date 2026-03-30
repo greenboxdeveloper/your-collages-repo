@@ -1,37 +1,58 @@
 {
-  "version": "2.0",
-  "fonts": [
+  "version": "2.1",
+  "categories": [
     {
-      "id": "agamtoh",
-      "displayName": "Agamtoh",
-      "postScriptName": "Agamtoh",
-      "isPremium": false,
-      "source": "ota",
-      "fileName": "Agamtoh.ttf"
+      "id": "default",
+      "name": "Font library",
+      "fonts": [
+        {
+          "id": "default__agamtoh",
+          "displayName": "Agamtoh",
+          "postScriptName": "Agamtoh",
+          "isPremium": false,
+          "source": "ota",
+          "fileName": "Agamtoh.ttf"
+        },
+        {
+          "id": "default__brockscript",
+          "displayName": "Brockscript",
+          "postScriptName": "BrockScript",
+          "isPremium": false,
+          "source": "ota",
+          "fileName": "BrockScript.ttf"
+        },
+        {
+          "id": "default__chrisye",
+          "displayName": "Chrisye",
+          "postScriptName": "Chrisye",
+          "isPremium": false,
+          "source": "ota",
+          "fileName": "Chrisye.otf"
+        },
+        {
+          "id": "default__jastyka",
+          "displayName": "Jastyka",
+          "postScriptName": "Jastyka",
+          "isPremium": false,
+          "source": "ota",
+          "fileName": "Jastyka.ttf"
+        }
+      ]
     },
     {
-      "id": "brockscript",
-      "displayName": "Brockscript",
-      "postScriptName": "BrockScript",
-      "isPremium": false,
-      "source": "ota",
-      "fileName": "BrockScript.ttf"
-    },
-    {
-      "id": "chrisye",
-      "displayName": "Chrisye",
-      "postScriptName": "Chrisye",
-      "isPremium": false,
-      "source": "ota",
-      "fileName": "Chrisye.otf"
-    },
-    {
-      "id": "jastyka",
-      "displayName": "Jastyka",
-      "postScriptName": "Jastyka",
-      "isPremium": false,
-      "source": "ota",
-      "fileName": "Jastyka.ttf"
+      "id": "stylish",
+      "name": "Stylish",
+      "remoteFolder": "Stylish",
+      "fonts": [
+        {
+          "id": "stylish__flaemische_kanzleischrift_a",
+          "displayName": "Flaemische Kanzleischrift",
+          "postScriptName": "FlaemischeKanzleischrift_a",
+          "isPremium": false,
+          "source": "ota",
+          "fileName": "Flaemische Kanzleischrift_a.ttf"
+        }
+      ]
     }
   ]
 }
