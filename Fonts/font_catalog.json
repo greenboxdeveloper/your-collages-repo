@@ -1,5 +1,5 @@
 {
-  "version": "1.2",
+  "version": "1.3",
   "categories": [
     {
       "id": "en",
@@ -13,6 +13,33 @@
           "isPremium": false,
           "source": "ota",
           "fileName": "1.ttf",
+          "remoteDirectory": "English"
+        },
+        {
+          "id": "en__mbantul",
+          "displayName": "Mbantul",
+          "postScriptName": "MBANTUL",
+          "isPremium": false,
+          "source": "ota",
+          "fileName": "MBANTUL.otf",
+          "remoteDirectory": "English"
+        },
+        {
+          "id": "en__perfograma",
+          "displayName": "Perfograma",
+          "postScriptName": "Perfograma",
+          "isPremium": false,
+          "source": "ota",
+          "fileName": "Perfograma.otf",
+          "remoteDirectory": "English"
+        },
+        {
+          "id": "en__rhigen",
+          "displayName": "Rhigen",
+          "postScriptName": "Rhigen",
+          "isPremium": false,
+          "source": "ota",
+          "fileName": "Rhigen.otf",
           "remoteDirectory": "English"
         }
       ]
