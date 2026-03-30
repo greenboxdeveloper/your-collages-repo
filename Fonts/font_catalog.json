@@ -1,5 +1,5 @@
 {
-  "version": "2.3",
+  "version": "2.4",
   "categories": [
     {
       "id": "default",
@@ -44,14 +44,6 @@
       "name": "Magazine",
       "remoteFolder": "Magazine",
       "fonts": [
-        {
-          "id": "magazine__1",
-          "displayName": "1",
-          "postScriptName": "1",
-          "isPremium": false,
-          "source": "ota",
-          "fileName": "1.ttf"
-        },
         {
           "id": "magazine__mbantul",
           "displayName": "Mbantul",
