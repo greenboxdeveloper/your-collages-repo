@@ -1,5 +1,5 @@
 {
-  "version": "1.9",
+  "version": "2.0",
   "fonts": [
     {
       "id": "agamtoh",
@@ -24,14 +24,6 @@
       "isPremium": false,
       "source": "ota",
       "fileName": "Chrisye.otf"
-    },
-    {
-      "id": "embolism_spark",
-      "displayName": "Embolism Spark",
-      "postScriptName": "EmbolismSpark",
-      "isPremium": false,
-      "source": "ota",
-      "fileName": "Embolism Spark.ttf"
     },
     {
       "id": "jastyka",
