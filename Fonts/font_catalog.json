@@ -1,0 +1,13 @@
+{
+  "version": "1.1",
+  "fonts": [
+    {
+      "id": "test",
+      "displayName": "Test",
+      "postScriptName": "test",
+      "isPremium": false,
+      "source": "ota",
+      "fileName": "test.ttf"
+    }
+  ]
+}
