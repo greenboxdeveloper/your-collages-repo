@@ -1,5 +1,5 @@
 {
-  "version": "2.2",
+  "version": "2.3",
   "categories": [
     {
       "id": "default",
@@ -51,6 +51,30 @@
           "isPremium": false,
           "source": "ota",
           "fileName": "1.ttf"
+        },
+        {
+          "id": "magazine__mbantul",
+          "displayName": "Mbantul",
+          "postScriptName": "MBANTUL",
+          "isPremium": false,
+          "source": "ota",
+          "fileName": "MBANTUL.otf"
+        },
+        {
+          "id": "magazine__perfograma",
+          "displayName": "Perfograma",
+          "postScriptName": "Perfograma",
+          "isPremium": false,
+          "source": "ota",
+          "fileName": "Perfograma.otf"
+        },
+        {
+          "id": "magazine__rhigen",
+          "displayName": "Rhigen",
+          "postScriptName": "Rhigen",
+          "isPremium": false,
+          "source": "ota",
+          "fileName": "Rhigen.otf"
         }
       ]
     },
