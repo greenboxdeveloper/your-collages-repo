@@ -1061,6 +1061,12 @@ def main() -> int:
 #   FilterName_F.png / .cube   →  isPremium = False
 #   FilterName.png / .cube     →  isPremium = True (default, same as SVG layouts)
 #
+# Auto-download to editor toolbars (iOS store / quiet sync):
+#   Add `_a` after optional `_PR` / `_F`, e.g. `Vintage_PR_a.cube`, `Vintage_a.png`.
+#   The app downloads only manifest entries on sync unless the stem matches this rule (_a suffix);
+#   `_a` assets are pulled in the background so they appear in filter pickers without tapping GET.
+#   Omit `_a` for store-catalog-only items until the user downloads the pack.
+#
 # If both `FilterName.png` and `FilterName.cube` exist (same base after _PR/_F strip),
 # one manifest entry is emitted and the `.cube` asset is preferred (`lutFileName` ends
 # with `.cube`). The app downloads `Filters/{category}/{base}.cube` per FilterManifestLoader.
@@ -1402,6 +1408,8 @@ def generate_frame_store_manifest(frames_dir: Path, output_path: Path) -> int:
 
 
 def generate_sticker_store_manifest(stickers_dir: Path, output_path: Path) -> int:
+    # OTA file stems may end with `_a` (e.g. `cute_1_PR_a`) so iOS auto-downloads on manifest sync;
+    # see filter manifest header comment in this file.
     categories = []
     for cat_id, cat_name, pngs in _scan_category_pngs(stickers_dir):
         stickers = []
