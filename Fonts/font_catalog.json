@@ -1,11 +1,21 @@
 {
-  "version": "1.9",
+  "version": "2.0",
   "categories": [
     {
       "id": "en",
       "name": "English",
       "remoteFolder": null,
       "fonts": [
+        {
+          "id": "en__chrisye",
+          "displayName": "Chrisye",
+          "postScriptName": "Chrisye",
+          "isPremium": false,
+          "source": "ota",
+          "fileName": "Chrisye.otf",
+          "remoteDirectory": "English",
+          "licenseUrl": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/Fonts/English/1001fonts-chrisye-eula.txt"
+        },
         {
           "id": "en__embolism_spark",
           "displayName": "Embolism Spark",
