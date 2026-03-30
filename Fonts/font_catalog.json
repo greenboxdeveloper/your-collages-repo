@@ -1,5 +1,5 @@
 {
-  "version": "1.6",
+  "version": "1.7",
   "categories": [
     {
       "id": "en",
@@ -23,7 +23,8 @@
           "isPremium": false,
           "source": "ota",
           "fileName": "Perfograma.otf",
-          "remoteDirectory": "English"
+          "remoteDirectory": "English",
+          "licenseUrl": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/Fonts/English/Perfograma.pdf"
         },
         {
           "id": "en__rhigen",
