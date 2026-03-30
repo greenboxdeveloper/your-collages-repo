@@ -1,5 +1,5 @@
 {
-  "version": "1.4",
+  "version": "1.5",
   "fonts": [
     {
       "id": "agamtoh",
@@ -16,6 +16,14 @@
       "isPremium": false,
       "source": "ota",
       "fileName": "BrockScript.ttf"
+    },
+    {
+      "id": "chrisye",
+      "displayName": "Chrisye",
+      "postScriptName": "Chrisye",
+      "isPremium": false,
+      "source": "ota",
+      "fileName": "Chrisye.otf"
     }
   ]
 }
