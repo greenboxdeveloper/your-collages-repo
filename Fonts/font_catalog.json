@@ -1,5 +1,5 @@
 {
-  "version": "2.1",
+  "version": "2.2",
   "categories": [
     {
       "id": "default",
@@ -36,6 +36,21 @@
           "isPremium": false,
           "source": "ota",
           "fileName": "Jastyka.ttf"
+        }
+      ]
+    },
+    {
+      "id": "magazine",
+      "name": "Magazine",
+      "remoteFolder": "Magazine",
+      "fonts": [
+        {
+          "id": "magazine__1",
+          "displayName": "1",
+          "postScriptName": "1",
+          "isPremium": false,
+          "source": "ota",
+          "fileName": "1.ttf"
         }
       ]
     },
