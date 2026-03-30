@@ -1,5 +1,5 @@
 {
-  "version": "1.4",
+  "version": "1.5",
   "categories": [
     {
       "id": "en",
@@ -31,7 +31,8 @@
           "isPremium": false,
           "source": "ota",
           "fileName": "Rhigen.otf",
-          "remoteDirectory": "English"
+          "remoteDirectory": "English",
+          "licenseUrl": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/Fonts/English/1001fonts-rhigen-eula.txt"
         }
       ]
     }
