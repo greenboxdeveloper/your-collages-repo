@@ -1485,7 +1485,7 @@ def _extract_postscript_name(font_path: Path) -> str:
     return stem
 
 
-# --- Font EULA / license .txt files (anywhere under Fonts/, often beside .ttf/.otf) ----------
+# --- Font EULA / license documents (.txt, .pdf, … under Fonts/, often beside .ttf/.otf) -----
 
 _LICENSE_TOKEN_SKIP: frozenset[str] = frozenset(
     {
@@ -1508,6 +1508,7 @@ _LICENSE_TOKEN_SKIP: frozenset[str] = frozenset(
         "open",
         "readme",
         "txt",
+        "pdf",
         "the",
         "a",
         "an",
@@ -1551,7 +1552,7 @@ def _license_compact_signature(text: str) -> str:
     return "".join(parts)
 
 
-def _license_txt_parent_rel_posix(rel_posix: str) -> str:
+def _license_file_parent_rel_posix(rel_posix: str) -> str:
     """Directory of a license file relative to ``Fonts/`` (``\"\"`` if file is directly under Fonts/)."""
     p = Path(rel_posix).parent
     if p == Path(".") or str(p) in (".", ""):
@@ -1559,12 +1560,20 @@ def _license_txt_parent_rel_posix(rel_posix: str) -> str:
     return p.as_posix().replace("\\", "/")
 
 
-def _collect_license_txt_files_under_fonts(fonts_dir: Path) -> list[Path]:
-    """Every ``*.txt`` under ``fonts_dir`` (same folders as fonts or nested), skipping hidden path segments."""
+# Extensions for license / EULA assets co-located with store fonts (case-insensitive).
+_LICENSE_FILE_SUFFIXES: frozenset[str] = frozenset({".txt", ".pdf"})
+
+
+def _collect_license_document_files_under_fonts(fonts_dir: Path) -> list[Path]:
+    """Every ``.txt`` / ``.pdf`` (any case) under ``fonts_dir``, skipping hidden path segments."""
     if not fonts_dir.is_dir():
         return []
     out: list[Path] = []
-    for p in fonts_dir.rglob("*.txt"):
+    for p in fonts_dir.rglob("*"):
+        if not p.is_file():
+            continue
+        if p.suffix.lower() not in _LICENSE_FILE_SUFFIXES:
+            continue
         try:
             rel = p.relative_to(fonts_dir)
         except ValueError:
@@ -1632,8 +1641,8 @@ def _best_license_for_font(
     """
     :param font_compacts: normalized font signatures (longer first)
     :param license_rows: list of (relative_posix_path_from_fonts_dir, license_compact_signature)
-    :param same_folder_as: font's ``remoteDirectory`` (path under ``Fonts/``); boosts a co-located .txt
-    :return: relative path to chosen .txt or None
+    :param same_folder_as: font's ``remoteDirectory`` (path under ``Fonts/``); boosts a co-located file
+    :return: relative path to chosen license file or None
     """
     folder_norm = (same_folder_as or "").replace("\\", "/").strip("/")
     best_rel: str | None = None
@@ -1642,7 +1651,7 @@ def _best_license_for_font(
         if not lic_c:
             continue
         s = max(_license_match_score(fc, lic_c) for fc in font_compacts) if font_compacts else 0.0
-        lic_parent = _license_txt_parent_rel_posix(rel_posix).replace("\\", "/").strip("/")
+        lic_parent = _license_file_parent_rel_posix(rel_posix).replace("\\", "/").strip("/")
         if folder_norm == lic_parent:
             s = min(1.0, s + 0.22)
         if s < min_score:
@@ -1656,7 +1665,7 @@ def _best_license_for_font(
 
 
 def _raw_github_fonts_file_url(manifest_base_url: str, *path_under_fonts: str) -> str:
-    """e.g. base .../main + licenses/foo.txt → .../main/Fonts/licenses/foo.txt"""
+    """e.g. base .../main + English/Foo/eula.pdf → .../main/Fonts/English/Foo/eula.pdf"""
     base = manifest_base_url.rstrip("/")
     encoded = "/".join(quote(seg, safe="") for seg in path_under_fonts)
     return f"{base}/Fonts/{encoded}"
@@ -1667,14 +1676,14 @@ def _attach_font_license_urls(
     fonts_dir: Path,
     manifest_base_url: str | None,
 ) -> None:
-    """Match every ``Fonts/**/*.txt`` to catalog fonts (name fuzzy match) and set ``licenseUrl``."""
-    lic_paths = _collect_license_txt_files_under_fonts(fonts_dir)
+    """Match license docs (``.txt``, ``.pdf``) under ``Fonts/`` to catalog fonts and set ``licenseUrl``."""
+    lic_paths = _collect_license_document_files_under_fonts(fonts_dir)
     if not lic_paths:
         return
 
     if not (manifest_base_url and str(manifest_base_url).strip()):
         print(
-            "[font-catalog] license .txt file(s) found under "
+            "[font-catalog] license file(s) (.txt/.pdf) found under "
             f"{fonts_dir.as_posix()}/ but no --base-url; "
             "skipping licenseUrl (use --generate-store-manifests with --base-url).",
             file=sys.stderr,
@@ -1716,7 +1725,7 @@ def _attach_font_license_urls(
     if matched:
         print(
             f"[font-catalog] attached licenseUrl to {matched} font(s) "
-            f"({len(lic_paths)} .txt file(s) under {fonts_dir.as_posix()}/)",
+            f"({len(lic_paths)} license file(s) under {fonts_dir.as_posix()}/)",
             file=sys.stderr,
         )
 
@@ -1822,13 +1831,13 @@ def generate_font_catalog_manifest(
       = posix path from `Fonts/` to the file's parent (supports nested folders on GitHub).
     - Fonts placed **loose** in `Fonts/*.ttf` go into **English** (`en`) with `remoteDirectory` \"\"
       (flat `Fonts/{fileName}` URLs).
-    - Optional ``**/*.txt`` EULA files **anywhere under** ``Fonts/`` (often beside each ``.ttf``/``.otf``):
+    - Optional ``**/*.{txt,pdf}`` EULA files **anywhere under** ``Fonts/`` (often beside each ``.ttf``/``.otf``):
       matched to fonts by normalized name; co-located licenses (same folder as the font) get a score boost.
       Emits absolute ``licenseUrl`` when ``manifest_base_url`` is set (GitHub raw root).
 
     - ``licenses_subdir``: only the **name of a top-level folder under Fonts/** that must **not** become a
-      language tab (default ``licenses``), e.g. when you keep a central ``Fonts/licenses/*.txt`` tree
-      without font files.
+      language tab (default ``licenses``), e.g. when you keep a central ``Fonts/licenses/`` tree
+      without font files in that folder.
 
     Extend `_LANGUAGE_FOLDER_ALIASES` when adding a new language folder name.
     """
@@ -1847,7 +1856,7 @@ def generate_font_catalog_manifest(
         if lang_dir.name.startswith("."):
             continue
         if lang_dir.name.lower() == lic_root_low:
-            # e.g. Fonts/licenses/ holds EULA .txt only, not a UI language tab.
+            # e.g. Fonts/licenses/ holds EULA docs only, not a UI language tab.
             continue
         cat_id, cat_display = _language_category_for_folder(lang_dir.name)
         bucket = ensure_bucket(cat_id, cat_display)
@@ -1945,7 +1954,7 @@ def _add_store_manifest_args(parser: argparse.ArgumentParser) -> None:
         default="licenses",
         help=(
             "Top-level folder name under Fonts/ to exclude from language categories (default: licenses). "
-            "License .txt files are collected from all of Fonts/, not only this folder."
+            "License files (.txt, .pdf) are collected from all of Fonts/, not only this folder."
         ),
     )
     parser.add_argument("--shapes-dir", default="Shapes")
