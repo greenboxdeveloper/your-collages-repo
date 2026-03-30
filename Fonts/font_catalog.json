@@ -1,11 +1,89 @@
 {
-  "version": "1.8",
+  "version": "1.9",
   "categories": [
     {
       "id": "en",
       "name": "English",
       "remoteFolder": null,
       "fonts": [
+        {
+          "id": "en__embolism_spark",
+          "displayName": "Embolism Spark",
+          "postScriptName": "EmbolismSpark",
+          "isPremium": false,
+          "source": "ota",
+          "fileName": "Embolism Spark.ttf",
+          "remoteDirectory": "English",
+          "licenseUrl": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/Fonts/English/1001fonts-embolism-spark-eula.txt"
+        },
+        {
+          "id": "en__flaemische_kanzleischrift_a",
+          "displayName": "Flaemische Kanzleischrift",
+          "postScriptName": "FlaemischeKanzleischrift_a",
+          "isPremium": false,
+          "source": "ota",
+          "fileName": "Flaemische Kanzleischrift_a.ttf",
+          "remoteDirectory": "English",
+          "licenseUrl": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/Fonts/English/1001fonts-flaemische-kanzleischrift-eula.txt"
+        },
+        {
+          "id": "en__jastyka",
+          "displayName": "Jastyka",
+          "postScriptName": "Jastyka",
+          "isPremium": false,
+          "source": "ota",
+          "fileName": "Jastyka.ttf",
+          "remoteDirectory": "English",
+          "licenseUrl": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/Fonts/English/1001fonts-jastyka-eula.txt"
+        },
+        {
+          "id": "en__klandestin",
+          "displayName": "Klandestin",
+          "postScriptName": "Klandestin",
+          "isPremium": false,
+          "source": "ota",
+          "fileName": "Klandestin.ttf",
+          "remoteDirectory": "English",
+          "licenseUrl": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/Fonts/English/1001fonts-ls-klandestin-demo-eula.txt"
+        },
+        {
+          "id": "en__kleptocracy_titling_bd",
+          "displayName": "Kleptocracy Titling Bd",
+          "postScriptName": "kleptocracytitlingbd",
+          "isPremium": false,
+          "source": "ota",
+          "fileName": "kleptocracy titling bd.otf",
+          "remoteDirectory": "English",
+          "licenseUrl": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/Fonts/English/kleptocracy%20Desktop%20EULA%202023.pdf"
+        },
+        {
+          "id": "en__manbow_clear",
+          "displayName": "Manbow Clear",
+          "postScriptName": "ManbowClear",
+          "isPremium": false,
+          "source": "ota",
+          "fileName": "Manbow Clear.otf",
+          "remoteDirectory": "English"
+        },
+        {
+          "id": "en__manbow_solid",
+          "displayName": "Manbow Solid",
+          "postScriptName": "ManbowSolid",
+          "isPremium": false,
+          "source": "ota",
+          "fileName": "Manbow Solid.otf",
+          "remoteDirectory": "English",
+          "licenseUrl": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/Fonts/English/1001fonts-embolism-spark-eula.txt"
+        },
+        {
+          "id": "en__manbow_stripe",
+          "displayName": "Manbow Stripe",
+          "postScriptName": "ManbowStripe",
+          "isPremium": false,
+          "source": "ota",
+          "fileName": "Manbow Stripe.otf",
+          "remoteDirectory": "English"
+        },
         {
           "id": "en__mbantul",
           "displayName": "Mbantul",
