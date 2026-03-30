@@ -52,6 +52,11 @@ try:
 except ImportError:
     cairosvg = None
 
+try:
+    from fontTools.ttLib import TTFont
+except ImportError:
+    TTFont = None
+
 
 # -----------------------------------------------------------------------------
 # Classic layouts from JSON (stylish removed; use SVG-derived layouts for organic)
@@ -970,6 +975,15 @@ def main() -> int:
             old_version = None
             old_layouts = None
 
+    if not json_path.exists() and not os.path.isabs(args.json_path):
+        fallback_json = repo_root / "PhotoCollageMaker/PhotoCollage/Collage/classic_and_stylish_layouts.json"
+        if fallback_json.exists():
+            json_path = fallback_json
+    if not svg_dir.is_dir() and not os.path.isabs(args.svg_dir):
+        fallback_svg = repo_root / "PhotoCollageMaker/PhotoCollage/Collage/CollageLayouts"
+        if fallback_svg.is_dir():
+            svg_dir = fallback_svg
+
     if not json_path.exists():
         print(f"Error: JSON not found: {json_path}", file=sys.stderr)
         return 1
@@ -1299,6 +1313,213 @@ def generate_filter_manifest(
     return 0
 
 
+def _slugify(value: str) -> str:
+    return re.sub(r"[^a-zA-Z0-9]+", "_", value).strip("_").lower()
+
+
+def _title_from_stem(stem: str) -> str:
+    return stem.replace("_", " ").replace("-", " ").strip().title()
+
+
+def _store_stem_to_name_and_premium(stem: str, default_premium: bool = False) -> tuple[str, bool]:
+    stem_up = stem.upper()
+    if stem_up.endswith("_PR"):
+        clean = stem[: -len("_PR")]
+        is_premium = True
+    elif stem_up.endswith("_F"):
+        clean = stem[: -len("_F")]
+        is_premium = False
+    else:
+        clean = stem
+        is_premium = default_premium
+    return _title_from_stem(clean), is_premium
+
+
+def _load_json_if_exists(path: Path) -> dict | None:
+    if not path.exists():
+        return None
+    try:
+        with open(path, "r", encoding="utf-8") as f:
+            return json.load(f)
+    except Exception:
+        return None
+
+
+def _write_versioned_manifest(output_path: Path, payload_key: str, payload_value) -> str:
+    old_manifest = _load_json_if_exists(output_path)
+    old_version = str(old_manifest.get("version", "") or "") if old_manifest else None
+    old_payload = old_manifest.get(payload_key) if old_manifest else None
+    changed = old_payload is None or old_payload != payload_value
+    new_version = _bump_filter_version(old_version) if changed else (old_version or "1.1")
+    manifest = {"version": new_version, payload_key: payload_value}
+    output_path.parent.mkdir(parents=True, exist_ok=True)
+    with open(output_path, "w", encoding="utf-8") as f:
+        json.dump(manifest, f, indent=2, ensure_ascii=False)
+    return new_version
+
+
+def _scan_category_pngs(root_dir: Path) -> list[tuple[str, str, list[Path]]]:
+    categories: list[tuple[str, str, list[Path]]] = []
+    if not root_dir.is_dir():
+        root_dir.mkdir(parents=True, exist_ok=True)
+        return categories
+    for cat_dir in sorted(root_dir.iterdir()):
+        if not cat_dir.is_dir():
+            continue
+        pngs = sorted(cat_dir.glob("*.png"), key=lambda p: p.name.lower())
+        if not pngs:
+            continue
+        cat_id = _slugify(cat_dir.name)
+        cat_name = _title_from_stem(cat_dir.name)
+        categories.append((cat_id, cat_name, pngs))
+    return categories
+
+
+def generate_frame_store_manifest(frames_dir: Path, output_path: Path) -> int:
+    categories = []
+    for cat_id, cat_name, pngs in _scan_category_pngs(frames_dir):
+        frames = []
+        for p in pngs:
+            display_name, is_premium = _store_stem_to_name_and_premium(p.stem, default_premium=False)
+            clean_stem = _clean_stem_premium_suffix(p.stem)
+            item_id = f"{cat_id}__{_slugify(clean_stem)}"
+            frames.append({
+                "id": item_id,
+                "name": display_name,
+                "isPremium": is_premium,
+                "source": "ota",
+                "fileName": clean_stem,
+            })
+        categories.append({
+            "id": cat_id,
+            "name": cat_name,
+            "icon": "square.on.square",
+            "frames": frames,
+        })
+    version = _write_versioned_manifest(output_path, "categories", categories)
+    print(f"[frame-manifest] v{version} — {len(categories)} categories → {output_path}")
+    return 0
+
+
+def generate_sticker_store_manifest(stickers_dir: Path, output_path: Path) -> int:
+    categories = []
+    for cat_id, cat_name, pngs in _scan_category_pngs(stickers_dir):
+        stickers = []
+        for p in pngs:
+            display_name, is_premium = _store_stem_to_name_and_premium(p.stem, default_premium=False)
+            clean_stem = _clean_stem_premium_suffix(p.stem)
+            item_id = f"{cat_id}__{_slugify(clean_stem)}"
+            stickers.append({
+                "id": item_id,
+                "name": display_name,
+                "isPremium": is_premium,
+                "source": "ota",
+                "fileName": clean_stem,
+            })
+        categories.append({"id": cat_id, "name": cat_name, "stickers": stickers})
+    version = _write_versioned_manifest(output_path, "categories", categories)
+    print(f"[sticker-manifest] v{version} — {len(categories)} categories → {output_path}")
+    return 0
+
+
+def generate_background_store_manifest(backgrounds_dir: Path, output_path: Path) -> int:
+    categories = []
+    for cat_id, cat_name, pngs in _scan_category_pngs(backgrounds_dir):
+        backgrounds = []
+        for p in pngs:
+            display_name, is_premium = _store_stem_to_name_and_premium(p.stem, default_premium=False)
+            clean_stem = _clean_stem_premium_suffix(p.stem)
+            item_id = f"{cat_id}__{_slugify(clean_stem)}"
+            backgrounds.append({
+                "id": item_id,
+                "name": display_name,
+                "isPremium": is_premium,
+                "kind": "image",
+                "source": "ota",
+                "colorHex": None,
+                "fileName": clean_stem,
+            })
+        categories.append({"id": cat_id, "name": cat_name, "backgrounds": backgrounds})
+    version = _write_versioned_manifest(output_path, "categories", categories)
+    print(f"[background-manifest] v{version} — {len(categories)} categories → {output_path}")
+    return 0
+
+
+def _extract_postscript_name(font_path: Path) -> str:
+    stem = font_path.stem.replace(" ", "")
+    if TTFont is None:
+        return stem
+    try:
+        font = TTFont(str(font_path))
+        names = font["name"].names
+        for rec in names:
+            if rec.nameID != 6:
+                continue
+            text = rec.toUnicode().strip()
+            if text:
+                return text
+    except Exception:
+        pass
+    return stem
+
+
+def generate_font_catalog_manifest(fonts_dir: Path, output_path: Path) -> int:
+    if not fonts_dir.is_dir():
+        fonts_dir.mkdir(parents=True, exist_ok=True)
+    font_paths = []
+    for ext in ("*.ttf", "*.otf", "*.TTF", "*.OTF"):
+        font_paths.extend(fonts_dir.glob(ext))
+    font_paths = sorted(set(font_paths), key=lambda p: p.name.lower())
+
+    fonts = []
+    for p in font_paths:
+        display_name, is_premium = _store_stem_to_name_and_premium(p.stem, default_premium=False)
+        clean_stem = _clean_stem_premium_suffix(p.stem)
+        ext = p.suffix.lower()
+        file_name = f"{clean_stem}{ext}"
+        entry_id = _slugify(clean_stem)
+        fonts.append({
+            "id": entry_id,
+            "displayName": display_name,
+            "postScriptName": _extract_postscript_name(p),
+            "isPremium": is_premium,
+            "source": "ota",
+            "fileName": file_name,
+        })
+    version = _write_versioned_manifest(output_path, "fonts", fonts)
+    print(f"[font-catalog] v{version} — {len(fonts)} fonts → {output_path}")
+    return 0
+
+
+def generate_shape_store_manifest(shapes_dir: Path, output_path: Path) -> int:
+    categories = []
+    if not shapes_dir.is_dir():
+        shapes_dir.mkdir(parents=True, exist_ok=True)
+    for cat_dir in sorted(shapes_dir.iterdir()):
+        if not cat_dir.is_dir():
+            continue
+        files = sorted([p for p in cat_dir.iterdir() if p.is_file() and not p.name.startswith(".")], key=lambda p: p.name.lower())
+        if not files:
+            continue
+        cat_id = _slugify(cat_dir.name)
+        cat_name = _title_from_stem(cat_dir.name)
+        shapes = []
+        for p in files:
+            display_name, is_premium = _store_stem_to_name_and_premium(p.stem, default_premium=False)
+            clean_stem = _clean_stem_premium_suffix(p.stem)
+            shapes.append({
+                "id": f"{cat_id}__{_slugify(clean_stem)}",
+                "name": display_name,
+                "isPremium": is_premium,
+                "source": "bundle",
+                "kindId": _slugify(clean_stem),
+            })
+        categories.append({"id": cat_id, "name": cat_name, "shapes": shapes})
+    version = _write_versioned_manifest(output_path, "categories", categories)
+    print(f"[shape-manifest] v{version} — {len(categories)} categories → {output_path}")
+    return 0
+
+
 def _add_filter_manifest_args(parser: argparse.ArgumentParser) -> None:
     parser.add_argument(
         "--generate-filter-manifest",
@@ -1318,6 +1539,25 @@ def _add_filter_manifest_args(parser: argparse.ArgumentParser) -> None:
     )
 
 
+def _add_store_manifest_args(parser: argparse.ArgumentParser) -> None:
+    parser.add_argument(
+        "--generate-store-manifests",
+        action="store_true",
+        default=False,
+        help="Generate frame/sticker/background/font/shape manifests from repository folders.",
+    )
+    parser.add_argument("--frames-dir", default="Frames")
+    parser.add_argument("--frames-output", default="Frames/frame_manifest.json")
+    parser.add_argument("--stickers-dir", default="Stickers")
+    parser.add_argument("--stickers-output", default="Stickers/sticker_store_manifest.json")
+    parser.add_argument("--backgrounds-dir", default="Backgrounds")
+    parser.add_argument("--backgrounds-output", default="Backgrounds/background_store_manifest.json")
+    parser.add_argument("--fonts-dir", default="Fonts")
+    parser.add_argument("--fonts-output", default="Fonts/font_catalog.json")
+    parser.add_argument("--shapes-dir", default="Shapes")
+    parser.add_argument("--shapes-output", default="Shapes/shape_store_manifest.json")
+
+
 # Re-run main with filter manifest support (extended entry point).
 def main_with_filter_support() -> int:
     """
@@ -1335,6 +1575,7 @@ def main_with_filter_support() -> int:
     parser.add_argument("--thumbnails-dir", default="thumbnails")
     parser.add_argument("--svg-id-prefix", default="svg_")
     _add_filter_manifest_args(parser)
+    _add_store_manifest_args(parser)
     args = parser.parse_args()
 
     repo_root = Path(args.repo_root).resolve()
@@ -1363,6 +1604,23 @@ def main_with_filter_support() -> int:
         filters_dir   = repo_root / args.filters_dir
         filter_output = repo_root / args.filter_output
         result = generate_filter_manifest(filters_dir, filter_output, args.base_url)
+        if result != 0:
+            return result
+
+    if args.generate_store_manifests:
+        result = generate_frame_store_manifest(repo_root / args.frames_dir, repo_root / args.frames_output)
+        if result != 0:
+            return result
+        result = generate_sticker_store_manifest(repo_root / args.stickers_dir, repo_root / args.stickers_output)
+        if result != 0:
+            return result
+        result = generate_background_store_manifest(repo_root / args.backgrounds_dir, repo_root / args.backgrounds_output)
+        if result != 0:
+            return result
+        result = generate_font_catalog_manifest(repo_root / args.fonts_dir, repo_root / args.fonts_output)
+        if result != 0:
+            return result
+        result = generate_shape_store_manifest(repo_root / args.shapes_dir, repo_root / args.shapes_output)
 
     return result
 
