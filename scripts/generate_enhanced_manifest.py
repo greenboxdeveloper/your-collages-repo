@@ -1484,13 +1484,13 @@ def _extract_postscript_name(font_path: Path) -> str:
     return stem
 
 
-def _font_entry_dict(cat_id: str, font_path: Path) -> dict:
+def _font_entry_dict(cat_id: str, font_path: Path, *, remote_directory: str | None = None) -> dict:
     display_name, is_premium = _store_stem_to_name_and_premium(font_path.stem, default_premium=False)
     clean_stem = _clean_stem_premium_suffix(font_path.stem)
     ext = font_path.suffix.lower()
     file_name = f"{clean_stem}{ext}"
     entry_id = f"{cat_id}__{_slugify(clean_stem)}"
-    return {
+    d: dict = {
         "id": entry_id,
         "displayName": display_name,
         "postScriptName": _extract_postscript_name(font_path),
@@ -1498,57 +1498,126 @@ def _font_entry_dict(cat_id: str, font_path: Path) -> dict:
         "source": "ota",
         "fileName": file_name,
     }
+    if remote_directory is not None:
+        d["remoteDirectory"] = remote_directory.replace("\\", "/")
+    return d
+
+
+def _fonts_collect_under(root: Path) -> list[Path]:
+    out: list[Path] = []
+    for ext in ("*.ttf", "*.otf", "*.TTF", "*.OTF"):
+        out.extend(root.rglob(ext))
+    return sorted(set(out), key=lambda p: str(p).lower())
+
+
+def _fonts_loose_direct(fonts_dir: Path) -> list[Path]:
+    loose: list[Path] = []
+    for ext in ("*.ttf", "*.otf", "*.TTF", "*.OTF"):
+        loose.extend(fonts_dir.glob(ext))
+    return sorted(set(loose), key=lambda p: p.name.lower())
+
+
+# Top-level folder names (case-insensitive) → (stable id, App Store tab title).
+_LANGUAGE_FOLDER_ALIASES: dict[str, tuple[str, str]] = {
+    "english": ("en", "English"),
+    "en": ("en", "English"),
+    "default": ("en", "English"),
+    "font library": ("en", "English"),
+    "spanish": ("es", "Spanish"),
+    "es": ("es", "Spanish"),
+    "french": ("fr", "French"),
+    "fr": ("fr", "French"),
+    "german": ("de", "German"),
+    "de": ("de", "German"),
+    "italian": ("it", "Italian"),
+    "it": ("it", "Italian"),
+    "portuguese": ("pt", "Portuguese"),
+    "pt": ("pt", "Portuguese"),
+    "russian": ("ru", "Russian"),
+    "ru": ("ru", "Russian"),
+    "japanese": ("ja", "Japanese"),
+    "ja": ("ja", "Japanese"),
+    "korean": ("ko", "Korean"),
+    "ko": ("ko", "Korean"),
+    "chinese": ("zh", "Chinese"),
+    "zh": ("zh", "Chinese"),
+    "traditional chinese": ("zh-hant", "Traditional Chinese"),
+    "simplified chinese": ("zh-hans", "Simplified Chinese"),
+    "hindi": ("hi", "Hindi"),
+    "hi": ("hi", "Hindi"),
+    "bengali": ("bn", "Bengali"),
+    "bangla": ("bn", "Bengali"),
+    "arabic": ("ar", "Arabic"),
+    "ar": ("ar", "Arabic"),
+    "turkish": ("tr", "Turkish"),
+    "tr": ("tr", "Turkish"),
+    "vietnamese": ("vi", "Vietnamese"),
+    "vi": ("vi", "Vietnamese"),
+    "thai": ("th", "Thai"),
+    "th": ("th", "Thai"),
+    "greek": ("el", "Greek"),
+    "el": ("el", "Greek"),
+    "hebrew": ("he", "Hebrew"),
+    "he": ("he", "Hebrew"),
+}
+
+
+def _language_category_for_folder(folder_name: str) -> tuple[str, str]:
+    key = folder_name.strip().lower()
+    if key in _LANGUAGE_FOLDER_ALIASES:
+        return _LANGUAGE_FOLDER_ALIASES[key]
+    slug = _slugify(folder_name)
+    return slug, _title_from_stem(folder_name)
 
 
 def generate_font_catalog_manifest(fonts_dir: Path, output_path: Path) -> int:
     """
-    Emit `font_catalog.json` with `categories` (like stickers):
+    Emit `font_catalog.json` with **language** categories (not arbitrary style packs):
 
-    - One subfolder under `Fonts/` = one category. Use `remoteFolder` = exact directory name
-      so iOS builds `Fonts/{remoteFolder}/{fileName}` on GitHub raw.
-    - `.ttf` / `.otf` directly under `Fonts/` (no subfolders) go into a single category
-      `id: default` with no `remoteFolder` (flat URLs `Fonts/{fileName}` — legacy).
+    - Each immediate subfolder of `Fonts/` names a language (`English`, `ja`, `Japanese`, …).
+      All `.ttf`/`.otf` under that tree are listed; each entry includes `remoteDirectory`
+      = posix path from `Fonts/` to the file's parent (supports nested folders on GitHub).
+    - Fonts placed **loose** in `Fonts/*.ttf` go into **English** (`en`) with `remoteDirectory` \"\"
+      (flat `Fonts/{fileName}` URLs).
 
-    Auto-toolbar `_a` naming applies to file stems; see filter manifest header in this file.
+    Extend `_LANGUAGE_FOLDER_ALIASES` when adding a new language folder name.
     """
     if not fonts_dir.is_dir():
         fonts_dir.mkdir(parents=True, exist_ok=True)
 
-    categories: list[dict] = []
+    buckets: dict[str, dict] = {}
 
-    for cat_dir in sorted([p for p in fonts_dir.iterdir() if p.is_dir()], key=lambda p: p.name.lower()):
-        if cat_dir.name.startswith("."):
-            continue
-        font_paths: list[Path] = []
-        for ext in ("*.ttf", "*.otf", "*.TTF", "*.OTF"):
-            font_paths.extend(cat_dir.glob(ext))
-        font_paths = sorted(set(font_paths), key=lambda p: p.name.lower())
-        if not font_paths:
-            continue
-        cat_id = _slugify(cat_dir.name)
-        cat_display = _title_from_stem(cat_dir.name)
-        categories.append({
-            "id": cat_id,
-            "name": cat_display,
-            "remoteFolder": cat_dir.name,
-            "fonts": [_font_entry_dict(cat_id, p) for p in font_paths],
-        })
+    def ensure_bucket(cat_id: str, display: str) -> dict:
+        if cat_id not in buckets:
+            buckets[cat_id] = {"id": cat_id, "name": display, "remoteFolder": None, "fonts": []}
+        return buckets[cat_id]
 
-    loose: list[Path] = []
-    for ext in ("*.ttf", "*.otf", "*.TTF", "*.OTF"):
-        loose.extend(fonts_dir.glob(ext))
-    loose = sorted(set(loose), key=lambda p: p.name.lower())
-    if loose:
-        cat_id = "default"
-        categories.insert(0, {
-            "id": cat_id,
-            "name": "Font library",
-            "fonts": [_font_entry_dict(cat_id, p) for p in loose],
-        })
+    for lang_dir in sorted([p for p in fonts_dir.iterdir() if p.is_dir()], key=lambda p: p.name.lower()):
+        if lang_dir.name.startswith("."):
+            continue
+        cat_id, cat_display = _language_category_for_folder(lang_dir.name)
+        bucket = ensure_bucket(cat_id, cat_display)
+        for font_path in _fonts_collect_under(lang_dir):
+            rel_parent = font_path.parent.relative_to(fonts_dir)
+            remote_dir = str(rel_parent).replace("\\", "/")
+            entry = _font_entry_dict(cat_id, font_path, remote_directory=remote_dir)
+            bucket["fonts"].append(entry)
+
+    for font_path in _fonts_loose_direct(fonts_dir):
+        bucket = ensure_bucket("en", "English")
+        entry = _font_entry_dict("en", font_path, remote_directory="")
+        bucket["fonts"].append(entry)
+
+    def sort_key(cid: str) -> tuple:
+        name = buckets[cid]["name"]
+        return (0, "") if cid == "en" else (1, name.lower())
+
+    ordered = sorted(buckets.keys(), key=sort_key)
+    categories = [buckets[c] for c in ordered if buckets[c]["fonts"]]
 
     version = _write_versioned_manifest(output_path, "categories", categories)
     nfonts = sum(len(c.get("fonts") or []) for c in categories)
-    print(f"[font-catalog] v{version} — {len(categories)} categories, {nfonts} fonts → {output_path}")
+    print(f"[font-catalog] v{version} — {len(categories)} language categories, {nfonts} fonts → {output_path}")
     return 0
 
 
