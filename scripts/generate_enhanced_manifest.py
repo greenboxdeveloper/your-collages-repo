@@ -22,6 +22,7 @@ import re
 import sys
 from io import BytesIO
 from pathlib import Path
+from urllib.parse import quote
 
 try:
     from PIL import Image, ImageDraw
@@ -1484,6 +1485,223 @@ def _extract_postscript_name(font_path: Path) -> str:
     return stem
 
 
+# --- Font EULA / license .txt files (under Fonts/<licenses_subdir>/) --------------------------
+
+_LICENSE_TOKEN_SKIP: frozenset[str] = frozenset(
+    {
+        "",
+        "1001fonts",
+        "dafont",
+        "fontspace",
+        "fontsquirrel",
+        "font",
+        "fonts",
+        "eula",
+        "end",
+        "user",
+        "license",
+        "licence",
+        "licensing",
+        "agreement",
+        "ofl",
+        "sil",
+        "open",
+        "readme",
+        "txt",
+        "the",
+        "a",
+        "an",
+        "for",
+        "and",
+        "or",
+        "free",
+        "personal",
+        "commercial",
+        "use",
+        "public",
+        "domain",
+        "v1",
+        "v2",
+        "v3",
+        "ver",
+        "version",
+        "regular",
+        "bold",
+        "italic",
+        "light",
+        "medium",
+        "black",
+        "thin",
+    }
+)
+
+
+def _license_compact_signature(text: str) -> str:
+    """
+    Normalize font or license filenames / display names for fuzzy matching:
+    lowercase, split on non-alphanumeric, drop vendor/noise tokens and digits-only
+    pieces, concatenate remainder (e.g. "1001fonts-brock-script-eula" → "brockscript").
+    """
+    tokens = re.split(r"[^a-zA-Z0-9]+", text.lower())
+    parts: list[str] = []
+    for t in tokens:
+        if not t or t in _LICENSE_TOKEN_SKIP or t.isdigit():
+            continue
+        parts.append(t)
+    return "".join(parts)
+
+
+def _collect_license_txt_files(fonts_dir: Path, licenses_subdir: str) -> list[Path]:
+    """All ``.txt`` files under ``Fonts/<licenses_subdir>/`` (case-insensitive folder name)."""
+    lic_dir: Path | None = fonts_dir / licenses_subdir
+    if not lic_dir.is_dir():
+        lic_dir = None
+        for child in fonts_dir.iterdir():
+            if child.is_dir() and child.name.lower() == licenses_subdir.strip("/").lower():
+                lic_dir = child
+                break
+    if lic_dir is None or not lic_dir.is_dir():
+        return []
+    return sorted(lic_dir.rglob("*.txt"), key=lambda p: str(p).lower())
+
+
+def _font_match_compacts_for_entry(
+    font_path_stem: str, display_name: str, post_script: str, entry_id: str
+) -> list[str]:
+    """Several normalized signatures for one catalog font (longest-first for scoring)."""
+    id_tail = entry_id.split("__", 1)[-1] if "__" in entry_id else entry_id
+    raw_sources = [
+        _clean_stem_premium_suffix(font_path_stem),
+        display_name,
+        post_script,
+        id_tail.replace("_", " "),
+            id_tail.replace("_", "-"),
+    ]
+    out: set[str] = set()
+    for s in raw_sources:
+        c = _license_compact_signature(s)
+        if len(c) >= 3:
+            out.add(c)
+    return sorted(out, key=len, reverse=True)
+
+
+def _license_match_score(font_compact: str, license_compact: str) -> float:
+    if not font_compact or not license_compact:
+        return 0.0
+    if font_compact == license_compact:
+        return 1.0
+    shorter, longer = (
+        (font_compact, license_compact)
+        if len(font_compact) <= len(license_compact)
+        else (license_compact, font_compact)
+    )
+    if shorter in longer:
+        return len(shorter) / max(len(longer), 1)
+    # Longest common substring (simple O(n*m) for short strings)
+    best = 0
+    fc, lc = font_compact, license_compact
+    for i in range(len(fc)):
+        for j in range(len(lc)):
+            k = 0
+            while i + k < len(fc) and j + k < len(lc) and fc[i + k] == lc[j + k]:
+                k += 1
+            if k > best:
+                best = k
+    if best == 0:
+        return 0.0
+    return best / max(len(fc), len(lc))
+
+
+def _best_license_for_font(
+    font_compacts: list[str],
+    license_rows: list[tuple[str, str]],
+    *,
+    min_score: float = 0.45,
+) -> str | None:
+    """
+    :param font_compacts: normalized font signatures (longer first)
+    :param license_rows: list of (relative_posix_path_from_fonts_dir, license_compact_signature)
+    :return: relative path to chosen .txt or None
+    """
+    best_rel: str | None = None
+    best_score = -1.0
+    for rel_posix, lic_c in license_rows:
+        if not lic_c:
+            continue
+        s = max(_license_match_score(fc, lic_c) for fc in font_compacts) if font_compacts else 0.0
+        if s < min_score:
+            continue
+        if s > best_score + 1e-9 or (
+            abs(s - best_score) < 1e-9 and (best_rel is None or rel_posix < best_rel)
+        ):
+            best_score = s
+            best_rel = rel_posix
+    return best_rel
+
+
+def _raw_github_fonts_file_url(manifest_base_url: str, *path_under_fonts: str) -> str:
+    """e.g. base .../main + licenses/foo.txt → .../main/Fonts/licenses/foo.txt"""
+    base = manifest_base_url.rstrip("/")
+    encoded = "/".join(quote(seg, safe="") for seg in path_under_fonts)
+    return f"{base}/Fonts/{encoded}"
+
+
+def _attach_font_license_urls(
+    categories: list[dict],
+    fonts_dir: Path,
+    manifest_base_url: str | None,
+    licenses_subdir: str,
+) -> None:
+    """Match ``Fonts/<licenses_subdir>/**/*.txt`` to fonts and set ``licenseUrl`` on each entry dict."""
+    lic_paths = _collect_license_txt_files(fonts_dir, licenses_subdir)
+    if not lic_paths:
+        return
+
+    if not (manifest_base_url and str(manifest_base_url).strip()):
+        print(
+            "[font-catalog] license .txt files found under "
+            f"{fonts_dir.as_posix()}/{licenses_subdir}/ but no --base-url; "
+            "skipping licenseUrl (use --generate-store-manifests with --base-url).",
+            file=sys.stderr,
+        )
+        return
+
+    base = str(manifest_base_url).strip().rstrip("/")
+    try:
+        rel_and_sig: list[tuple[str, str]] = []
+        for p in lic_paths:
+            rel = p.relative_to(fonts_dir).as_posix()
+            stem_sig = _license_compact_signature(p.stem)
+            rel_and_sig.append((rel, stem_sig))
+    except ValueError:
+        return
+
+    matched = 0
+    for cat in categories:
+        for entry in cat.get("fonts") or []:
+            if not isinstance(entry, dict):
+                continue
+            file_name = str(entry.get("fileName") or "")
+            font_stem = Path(file_name).stem if file_name else ""
+            display = str(entry.get("displayName") or "")
+            ps = str(entry.get("postScriptName") or "")
+            eid = str(entry.get("id") or "")
+            compacts = _font_match_compacts_for_entry(font_stem, display, ps, eid)
+            rel_txt = _best_license_for_font(compacts, rel_and_sig)
+            if not rel_txt:
+                continue
+            segs = rel_txt.split("/")
+            entry["licenseUrl"] = _raw_github_fonts_file_url(base, *segs)
+            matched += 1
+
+    if matched:
+        print(
+            f"[font-catalog] attached licenseUrl to {matched} font(s) from "
+            f"{fonts_dir.as_posix()}/{licenses_subdir}/",
+            file=sys.stderr,
+        )
+
+
 def _font_entry_dict(cat_id: str, font_path: Path, *, remote_directory: str | None = None) -> dict:
     display_name, is_premium = _store_stem_to_name_and_premium(font_path.stem, default_premium=False)
     clean_stem = _clean_stem_premium_suffix(font_path.stem)
@@ -1570,7 +1788,13 @@ def _language_category_for_folder(folder_name: str) -> tuple[str, str]:
     return slug, _title_from_stem(folder_name)
 
 
-def generate_font_catalog_manifest(fonts_dir: Path, output_path: Path) -> int:
+def generate_font_catalog_manifest(
+    fonts_dir: Path,
+    output_path: Path,
+    *,
+    manifest_base_url: str | None = None,
+    licenses_subdir: str = "licenses",
+) -> int:
     """
     Emit `font_catalog.json` with **language** categories (not arbitrary style packs):
 
@@ -1579,6 +1803,9 @@ def generate_font_catalog_manifest(fonts_dir: Path, output_path: Path) -> int:
       = posix path from `Fonts/` to the file's parent (supports nested folders on GitHub).
     - Fonts placed **loose** in `Fonts/*.ttf` go into **English** (`en`) with `remoteDirectory` \"\"
       (flat `Fonts/{fileName}` URLs).
+    - Optional ``Fonts/<licenses_subdir>/**/*.txt`` EULA files: matched to fonts by normalized name
+      (handles ``1001fonts-brock-script-eula.txt``, ``1001fonts brock script eula.txt``, compressed stems,
+      etc.) and emits absolute ``licenseUrl`` when ``manifest_base_url`` is set (GitHub raw root).
 
     Extend `_LANGUAGE_FOLDER_ALIASES` when adding a new language folder name.
     """
@@ -1592,8 +1819,12 @@ def generate_font_catalog_manifest(fonts_dir: Path, output_path: Path) -> int:
             buckets[cat_id] = {"id": cat_id, "name": display, "remoteFolder": None, "fonts": []}
         return buckets[cat_id]
 
+    lic_root_low = licenses_subdir.strip("/").lower()
     for lang_dir in sorted([p for p in fonts_dir.iterdir() if p.is_dir()], key=lambda p: p.name.lower()):
         if lang_dir.name.startswith("."):
+            continue
+        if lang_dir.name.lower() == lic_root_low:
+            # e.g. Fonts/licenses/ holds EULA .txt only, not a UI language tab.
             continue
         cat_id, cat_display = _language_category_for_folder(lang_dir.name)
         bucket = ensure_bucket(cat_id, cat_display)
@@ -1614,6 +1845,8 @@ def generate_font_catalog_manifest(fonts_dir: Path, output_path: Path) -> int:
 
     ordered = sorted(buckets.keys(), key=sort_key)
     categories = [buckets[c] for c in ordered if buckets[c]["fonts"]]
+
+    _attach_font_license_urls(categories, fonts_dir, manifest_base_url, licenses_subdir)
 
     version = _write_versioned_manifest(output_path, "categories", categories)
     nfonts = sum(len(c.get("fonts") or []) for c in categories)
@@ -1684,6 +1917,11 @@ def _add_store_manifest_args(parser: argparse.ArgumentParser) -> None:
     parser.add_argument("--backgrounds-output", default="Backgrounds/background_store_manifest.json")
     parser.add_argument("--fonts-dir", default="Fonts")
     parser.add_argument("--fonts-output", default="Fonts/font_catalog.json")
+    parser.add_argument(
+        "--font-licenses-subdir",
+        default="licenses",
+        help="Subfolder under Fonts/ containing license .txt files (default: licenses).",
+    )
     parser.add_argument("--shapes-dir", default="Shapes")
     parser.add_argument("--shapes-output", default="Shapes/shape_store_manifest.json")
 
@@ -1747,7 +1985,12 @@ def main_with_filter_support() -> int:
         result = generate_background_store_manifest(repo_root / args.backgrounds_dir, repo_root / args.backgrounds_output)
         if result != 0:
             return result
-        result = generate_font_catalog_manifest(repo_root / args.fonts_dir, repo_root / args.fonts_output)
+        result = generate_font_catalog_manifest(
+            repo_root / args.fonts_dir,
+            repo_root / args.fonts_output,
+            manifest_base_url=args.base_url,
+            licenses_subdir=args.font_licenses_subdir,
+        )
         if result != 0:
             return result
         result = generate_shape_store_manifest(repo_root / args.shapes_dir, repo_root / args.shapes_output)
