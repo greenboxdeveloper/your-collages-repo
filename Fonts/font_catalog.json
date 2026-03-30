@@ -1,5 +1,5 @@
 {
-  "version": "1.6",
+  "version": "1.7",
   "fonts": [
     {
       "id": "agamtoh",
@@ -32,6 +32,14 @@
       "isPremium": false,
       "source": "ota",
       "fileName": "Embolism Spark.ttf"
+    },
+    {
+      "id": "flaemische_kanzleischrift_a",
+      "displayName": "Flaemische Kanzleischrift",
+      "postScriptName": "FlaemischeKanzleischrift_a",
+      "isPremium": false,
+      "source": "ota",
+      "fileName": "Flaemische Kanzleischrift_a.ttf"
     }
   ]
 }
