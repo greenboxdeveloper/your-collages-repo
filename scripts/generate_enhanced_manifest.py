@@ -1117,6 +1117,17 @@ def _clean_stem_premium_suffix(stem: str) -> str:
     return clean
 
 
+def _stem_without_auto_toolbar_marker(stem: str) -> str:
+    """
+    Remove only the trailing `_a` / `_A` auto-toolbar marker (iOS convention). Caller then strips
+    `_PR` / `_F` for premium flags and titles. Does not change published `fileName` stems.
+    """
+    s = stem
+    if s.upper().endswith("_A"):
+        s = s[:-2]
+    return s
+
+
 def _collect_lut_paths(cat_dir: Path) -> list[Path]:
     """All LUT PNG / Adobe cube files in a category folder (case-insensitive extension)."""
     out: list[Path] = []
@@ -1159,18 +1170,19 @@ def _choose_lut_path_per_logical_base(paths: list[Path]) -> list[Path]:
 def _filter_stem_to_name_and_premium(stem: str) -> tuple[str, bool]:
     """
     Extract display name and isPremium from a LUT file stem.
-    Strips _PR / _F suffix (case-insensitive), then title-cases the remainder.
-    Default (no suffix) → isPremium = True.
+    Strips optional trailing `_a` (auto-toolbar), then _PR / _F (case-insensitive), then title-cases.
+    Default (no premium suffix) → isPremium = True.
     """
-    stem_up = stem.upper()
+    s = _stem_without_auto_toolbar_marker(stem)
+    stem_up = s.upper()
     if stem_up.endswith("_PR"):
-        clean = stem[: -len("_PR")]
+        clean = s[: -len("_PR")]
         is_premium = True
     elif stem_up.endswith("_F"):
-        clean = stem[: -len("_F")]
+        clean = s[: -len("_F")]
         is_premium = False
     else:
-        clean = stem
+        clean = s
         is_premium = True  # default: premium (matches SVG layout behaviour)
 
     name = clean.replace("_", " ").replace("-", " ").strip().title()
@@ -1328,15 +1340,16 @@ def _title_from_stem(stem: str) -> str:
 
 
 def _store_stem_to_name_and_premium(stem: str, default_premium: bool = False) -> tuple[str, bool]:
-    stem_up = stem.upper()
+    s = _stem_without_auto_toolbar_marker(stem)
+    stem_up = s.upper()
     if stem_up.endswith("_PR"):
-        clean = stem[: -len("_PR")]
+        clean = s[: -len("_PR")]
         is_premium = True
     elif stem_up.endswith("_F"):
-        clean = stem[: -len("_F")]
+        clean = s[: -len("_F")]
         is_premium = False
     else:
-        clean = stem
+        clean = s
         is_premium = default_premium
     return _title_from_stem(clean), is_premium
 
