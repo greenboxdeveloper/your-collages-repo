@@ -1735,12 +1735,7 @@ def _font_entry_dict(cat_id: str, font_path: Path, *, remote_directory: str | No
     clean_stem = _clean_stem_premium_suffix(font_path.stem)
     ext = font_path.suffix.lower()
     file_name = f"{clean_stem}{ext}"
-    # IMPORTANT: ids must be stable *and* unique. We include the parent folder path and filename to
-    # avoid collisions when different fonts share the same stem (common across vendors / languages).
-    rd = (remote_directory or "").replace("\\", "/").strip("/")
-    rd_part = _slugify(rd) if rd else ""
-    fn_part = _slugify(file_name)
-    entry_id = f"{cat_id}__{rd_part}__{fn_part}" if rd_part else f"{cat_id}__{fn_part}"
+    entry_id = f"{cat_id}__{_slugify(clean_stem)}"
     d: dict = {
         "id": entry_id,
         "displayName": display_name,
@@ -1882,26 +1877,6 @@ def generate_font_catalog_manifest(
 
     ordered = sorted(buckets.keys(), key=sort_key)
     categories = [buckets[c] for c in ordered if buckets[c]["fonts"]]
-
-    # Detect id collisions early (collisions cause "download one → many appear installed" in-app).
-    seen: dict[str, str] = {}
-    dupes: list[tuple[str, str, str]] = []
-    for cat in categories:
-        for f in cat.get("fonts") or []:
-            fid = str(f.get("id") or "")
-            if not fid:
-                continue
-            desc = f"{cat.get('id','?')}/{f.get('remoteDirectory','')}/{f.get('fileName','')}"
-            if fid in seen:
-                dupes.append((fid, seen[fid], desc))
-            else:
-                seen[fid] = desc
-    if dupes:
-        print(f"[font-catalog] WARNING: {len(dupes)} duplicate font id(s) detected:", file=sys.stderr)
-        for fid, a, b in dupes[:30]:
-            print(f"  - {fid}: {a}  <->  {b}", file=sys.stderr)
-        if len(dupes) > 30:
-            print("  (truncated)", file=sys.stderr)
 
     _attach_font_license_urls(categories, fonts_dir, manifest_base_url)
 
