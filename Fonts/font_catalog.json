@@ -1,11 +1,21 @@
 {
-  "version": "2.1",
+  "version": "2.2",
   "categories": [
     {
       "id": "en",
       "name": "English",
       "remoteFolder": null,
       "fonts": [
+        {
+          "id": "en__english__agamtoh_ttf",
+          "displayName": "Agamtoh",
+          "postScriptName": "Agamtoh",
+          "isPremium": false,
+          "source": "ota",
+          "fileName": "Agamtoh.ttf",
+          "remoteDirectory": "English",
+          "licenseUrl": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/Fonts/English/1001fonts-agamtoh-eula.txt"
+        },
         {
           "id": "en__english__chrisye_otf",
           "displayName": "Chrisye",
