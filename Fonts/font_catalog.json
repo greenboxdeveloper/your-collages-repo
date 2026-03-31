@@ -1,5 +1,5 @@
 {
-  "version": "2.0",
+  "version": "2.1",
   "categories": [
     {
       "id": "en",
@@ -7,7 +7,7 @@
       "remoteFolder": null,
       "fonts": [
         {
-          "id": "en__chrisye",
+          "id": "en__english__chrisye_otf",
           "displayName": "Chrisye",
           "postScriptName": "Chrisye",
           "isPremium": false,
@@ -17,7 +17,7 @@
           "licenseUrl": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/Fonts/English/1001fonts-chrisye-eula.txt"
         },
         {
-          "id": "en__embolism_spark",
+          "id": "en__english__embolism_spark_ttf",
           "displayName": "Embolism Spark",
           "postScriptName": "EmbolismSpark",
           "isPremium": false,
@@ -27,7 +27,7 @@
           "licenseUrl": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/Fonts/English/1001fonts-embolism-spark-eula.txt"
         },
         {
-          "id": "en__flaemische_kanzleischrift_a",
+          "id": "en__english__flaemische_kanzleischrift_a_ttf",
           "displayName": "Flaemische Kanzleischrift",
           "postScriptName": "FlaemischeKanzleischrift_a",
           "isPremium": false,
@@ -37,7 +37,7 @@
           "licenseUrl": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/Fonts/English/1001fonts-flaemische-kanzleischrift-eula.txt"
         },
         {
-          "id": "en__jastyka",
+          "id": "en__english__jastyka_ttf",
           "displayName": "Jastyka",
           "postScriptName": "Jastyka",
           "isPremium": false,
@@ -47,7 +47,7 @@
           "licenseUrl": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/Fonts/English/1001fonts-jastyka-eula.txt"
         },
         {
-          "id": "en__klandestin",
+          "id": "en__english__klandestin_ttf",
           "displayName": "Klandestin",
           "postScriptName": "Klandestin",
           "isPremium": false,
@@ -57,7 +57,7 @@
           "licenseUrl": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/Fonts/English/1001fonts-ls-klandestin-demo-eula.txt"
         },
         {
-          "id": "en__kleptocracy_titling_bd",
+          "id": "en__english__kleptocracy_titling_bd_otf",
           "displayName": "Kleptocracy Titling Bd",
           "postScriptName": "kleptocracytitlingbd",
           "isPremium": false,
@@ -67,7 +67,7 @@
           "licenseUrl": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/Fonts/English/kleptocracy%20Desktop%20EULA%202023.pdf"
         },
         {
-          "id": "en__manbow_clear",
+          "id": "en__english__manbow_clear_otf",
           "displayName": "Manbow Clear",
           "postScriptName": "ManbowClear",
           "isPremium": false,
@@ -76,7 +76,7 @@
           "remoteDirectory": "English"
         },
         {
-          "id": "en__manbow_solid",
+          "id": "en__english__manbow_solid_otf",
           "displayName": "Manbow Solid",
           "postScriptName": "ManbowSolid",
           "isPremium": false,
@@ -86,7 +86,7 @@
           "licenseUrl": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/Fonts/English/1001fonts-embolism-spark-eula.txt"
         },
         {
-          "id": "en__manbow_stripe",
+          "id": "en__english__manbow_stripe_otf",
           "displayName": "Manbow Stripe",
           "postScriptName": "ManbowStripe",
           "isPremium": false,
@@ -95,7 +95,7 @@
           "remoteDirectory": "English"
         },
         {
-          "id": "en__mbantul",
+          "id": "en__english__mbantul_otf",
           "displayName": "Mbantul",
           "postScriptName": "MBANTUL",
           "isPremium": false,
@@ -105,7 +105,7 @@
           "licenseUrl": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/Fonts/English/License%20MBANTUL%20Font.txt"
         },
         {
-          "id": "en__perfograma",
+          "id": "en__english__perfograma_otf",
           "displayName": "Perfograma",
           "postScriptName": "Perfograma",
           "isPremium": false,
@@ -115,7 +115,7 @@
           "licenseUrl": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/Fonts/English/Perfograma.pdf"
         },
         {
-          "id": "en__rhigen",
+          "id": "en__english__rhigen_otf",
           "displayName": "Rhigen",
           "postScriptName": "Rhigen",
           "isPremium": false,
