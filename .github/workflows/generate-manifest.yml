@@ -74,6 +74,7 @@ jobs:
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git add enhanced_manifest.json thumbnails/ \
             Filters/filter_manifest.json \
+            Filters/**/StorePreviews/** \
             Frames/frame_manifest.json \
             Stickers/sticker_store_manifest.json \
             Backgrounds/background_store_manifest.json \
