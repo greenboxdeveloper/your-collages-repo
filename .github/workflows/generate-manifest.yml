@@ -52,8 +52,10 @@ jobs:
             --thumbnails-dir thumbnails \
             --svg-id-prefix svg_ \
             --generate-filter-manifest \
+            --generate-filter-previews \
             --filters-dir Filters \
             --filter-output Filters/filter_manifest.json \
+            --filter-preview-max-edge 1080 \
             --generate-store-manifests \
             --frames-dir Frames \
             --frames-output Frames/frame_manifest.json \
