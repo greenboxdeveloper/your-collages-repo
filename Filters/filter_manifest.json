@@ -1,5 +1,5 @@
 {
-  "version": "1.6",
+  "version": "1.7",
   "categories": [
     {
       "id": "basic",
@@ -84,6 +84,14 @@
           "lutFileName": "BW1"
         },
         {
+          "id": "b_w__bw10",
+          "name": "Bw10",
+          "isPremium": true,
+          "source": "ota",
+          "ciFilterName": null,
+          "lutFileName": "BW10"
+        },
+        {
           "id": "b_w__bw2",
           "name": "Bw2",
           "isPremium": true,
@@ -98,6 +106,54 @@
           "source": "ota",
           "ciFilterName": null,
           "lutFileName": "BW3"
+        },
+        {
+          "id": "b_w__bw4",
+          "name": "Bw4",
+          "isPremium": true,
+          "source": "ota",
+          "ciFilterName": null,
+          "lutFileName": "BW4"
+        },
+        {
+          "id": "b_w__bw5",
+          "name": "Bw5",
+          "isPremium": true,
+          "source": "ota",
+          "ciFilterName": null,
+          "lutFileName": "BW5"
+        },
+        {
+          "id": "b_w__bw6",
+          "name": "Bw6",
+          "isPremium": true,
+          "source": "ota",
+          "ciFilterName": null,
+          "lutFileName": "BW6"
+        },
+        {
+          "id": "b_w__bw7",
+          "name": "Bw7",
+          "isPremium": true,
+          "source": "ota",
+          "ciFilterName": null,
+          "lutFileName": "BW7"
+        },
+        {
+          "id": "b_w__bw8",
+          "name": "Bw8",
+          "isPremium": true,
+          "source": "ota",
+          "ciFilterName": null,
+          "lutFileName": "BW8"
+        },
+        {
+          "id": "b_w__bw9",
+          "name": "Bw9",
+          "isPremium": true,
+          "source": "ota",
+          "ciFilterName": null,
+          "lutFileName": "BW9"
         }
       ]
     },
