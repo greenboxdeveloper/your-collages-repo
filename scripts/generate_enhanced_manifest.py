@@ -1287,7 +1287,9 @@ def generate_filter_manifest(
             continue
 
         cat_id   = re.sub(r"[^a-zA-Z0-9]+", "_", cat_dir.name).strip("_").lower()
-        cat_name = cat_dir.name.replace("_", " ").replace("-", " ").title()
+        # IMPORTANT: category.name is used by the iOS app as the remote GitHub folder name.
+        # So it must match the folder name under Filters/ exactly (case-sensitive on GitHub URLs).
+        cat_name = cat_dir.name
 
         filters_in_cat: list[dict] = []
         lut_paths = _choose_lut_path_per_logical_base(_collect_lut_paths(cat_dir))
