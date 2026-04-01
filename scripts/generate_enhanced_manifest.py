@@ -31,6 +31,11 @@ except ImportError:
     ImageDraw = None
 
 try:
+    import numpy as np
+except ImportError:
+    np = None
+
+try:
     from svgelements import (
         SVG,
         Path as SVGPath,
@@ -1276,6 +1281,9 @@ def generate_filter_manifest(
     for cat_dir in sorted(filters_dir.iterdir()):
         if not cat_dir.is_dir():
             continue  # skip files at root level (e.g. filter_manifest.json itself)
+        # Reserved folders under Filters/ that are not categories.
+        if cat_dir.name in ("StockImage", "StorePreviews"):
+            continue
 
         cat_id   = re.sub(r"[^a-zA-Z0-9]+", "_", cat_dir.name).strip("_").lower()
         cat_name = cat_dir.name.replace("_", " ").replace("-", " ").title()
@@ -1329,6 +1337,241 @@ def generate_filter_manifest(
         f"{total_filters} filters → {output_path}"
         + (" (bumped)" if changed else " (unchanged)")
     )
+    return 0
+
+
+# -----------------------------------------------------------------------------
+# Filter store previews (offline LUT application; eye-blink images)
+# -----------------------------------------------------------------------------
+
+def _is_stock_image(path: Path) -> bool:
+    return path.suffix.lower() in (".jpg", ".jpeg", ".png", ".webp")
+
+
+def _list_stock_images(stock_dir: Path) -> list[Path]:
+    if not stock_dir.is_dir():
+        raise FileNotFoundError(f"[filter-previews] Stock dir not found: {stock_dir}")
+    imgs = [p for p in stock_dir.rglob("*") if p.is_file() and _is_stock_image(p)]
+    if not imgs:
+        raise RuntimeError(f"[filter-previews] No stock images found under: {stock_dir}")
+    return sorted(imgs, key=lambda p: p.as_posix().lower())
+
+
+def _cap_long_edge_pil(img, max_edge: int):
+    w, h = img.size
+    if max(w, h) <= max_edge:
+        return img
+    if w >= h:
+        new_w = max_edge
+        new_h = int(round(h * (max_edge / w)))
+    else:
+        new_h = max_edge
+        new_w = int(round(w * (max_edge / h)))
+    return img.resize((new_w, new_h), resample=Image.LANCZOS)
+
+
+def _infer_lut_layout_rgb(lut_img) -> tuple[str, int, int]:
+    """
+    Returns (kind, n, grid):
+      - kind='strip' : size (N*N, N)
+      - kind='square_tiles' : size (G*N, G*N) where N=G*G
+    """
+    w, h = lut_img.size
+    if h > 0 and w == h * h:
+        return ("strip", h, h)
+    if w == h:
+        for grid in range(2, 65):
+            if w % grid != 0:
+                continue
+            tile = w // grid
+            n = grid * grid
+            if tile == n:
+                return ("square_tiles", n, grid)
+    raise ValueError(f"Unsupported LUT layout: {w}x{h}px")
+
+
+def _lut_from_png(path: Path):
+    if Image is None or np is None:
+        raise RuntimeError("[filter-previews] Missing dependencies: pillow and numpy are required.")
+    lut_img = Image.open(path).convert("RGB")
+    kind, n, grid = _infer_lut_layout_rgb(lut_img)
+    arr = np.asarray(lut_img, dtype=np.float32) / 255.0
+    lut = np.zeros((n, n, n, 3), dtype=np.float32)
+
+    if kind == "strip":
+        for b in range(n):
+            x0 = b * n
+            lut[:, :, b, :] = arr[:, x0 : x0 + n, :]
+        lut = np.transpose(lut, (1, 0, 2, 3))
+        return lut
+
+    tile = n
+    for b in range(n):
+        tx = b % grid
+        ty = b // grid
+        x0 = tx * tile
+        y0 = ty * tile
+        tile_pixels = arr[y0 : y0 + tile, x0 : x0 + tile, :]
+        lut[:, :, b, :] = tile_pixels
+    lut = np.transpose(lut, (1, 0, 2, 3))
+    return lut
+
+
+def _apply_lut_trilinear(img, lut):
+    if Image is None or np is None:
+        raise RuntimeError("[filter-previews] Missing dependencies: pillow and numpy are required.")
+    n = lut.shape[0]
+    im = np.asarray(img.convert("RGB"), dtype=np.float32) / 255.0
+
+    r = im[..., 0] * (n - 1)
+    g = im[..., 1] * (n - 1)
+    b = im[..., 2] * (n - 1)
+
+    r0 = np.floor(r).astype(np.int32)
+    g0 = np.floor(g).astype(np.int32)
+    b0 = np.floor(b).astype(np.int32)
+    r1 = np.clip(r0 + 1, 0, n - 1)
+    g1 = np.clip(g0 + 1, 0, n - 1)
+    b1 = np.clip(b0 + 1, 0, n - 1)
+
+    dr = (r - r0)[..., None]
+    dg = (g - g0)[..., None]
+    db = (b - b0)[..., None]
+
+    c000 = lut[r0, g0, b0]
+    c100 = lut[r1, g0, b0]
+    c010 = lut[r0, g1, b0]
+    c110 = lut[r1, g1, b0]
+    c001 = lut[r0, g0, b1]
+    c101 = lut[r1, g0, b1]
+    c011 = lut[r0, g1, b1]
+    c111 = lut[r1, g1, b1]
+
+    c00 = c000 * (1 - dr) + c100 * dr
+    c10 = c010 * (1 - dr) + c110 * dr
+    c01 = c001 * (1 - dr) + c101 * dr
+    c11 = c011 * (1 - dr) + c111 * dr
+    c0 = c00 * (1 - dg) + c10 * dg
+    c1 = c01 * (1 - dg) + c11 * dg
+    out = c0 * (1 - db) + c1 * db
+
+    out8 = np.clip(out * 255.0, 0, 255).astype(np.uint8)
+    return Image.fromarray(out8, mode="RGB")
+
+
+def _preview_urls(base_url: str, category_folder: str, filter_id: str) -> tuple[str, str]:
+    base_url = base_url.rstrip("/")
+    # Previews live inside each category folder for easy management.
+    rel = f"Filters/{category_folder}/StorePreviews/{filter_id}"
+    rel = rel.replace("\\", "/")
+    return (
+        f"{base_url}/{quote(rel, safe='/')}/original.jpg",
+        f"{base_url}/{quote(rel, safe='/')}/filtered.jpg",
+    )
+
+
+def generate_filter_previews_and_attach_to_manifest(
+    repo_root: Path,
+    filter_manifest_path: Path,
+    filters_dir: Path,
+    stock_dir: Path,
+    previews_root: Path,
+    base_url: str,
+    max_edge: int = 1080,
+) -> int:
+    """
+    Generate one preview pair per OTA filter and inject preview URLs into filter_manifest.json.
+
+    Output images:
+      StorePreviews/Filters/<CategoryFolder>/<FilterId>/original.jpg
+      StorePreviews/Filters/<CategoryFolder>/<FilterId>/filtered.jpg
+    """
+    if Image is None or np is None:
+        print("[filter-previews] Missing pillow/numpy; install dependencies.", file=sys.stderr)
+        return 1
+
+    try:
+        stock_images = _list_stock_images(stock_dir)
+    except Exception as e:
+        print(str(e), file=sys.stderr)
+        return 1
+
+    if not filter_manifest_path.exists():
+        print(f"[filter-previews] filter_manifest.json not found: {filter_manifest_path}", file=sys.stderr)
+        return 1
+
+    try:
+        with open(filter_manifest_path, "r", encoding="utf-8") as f:
+            manifest = json.load(f)
+    except Exception as e:
+        print(f"[filter-previews] Failed to read manifest: {e}", file=sys.stderr)
+        return 1
+
+    categories = manifest.get("categories") or []
+    wrote = 0
+    updated = 0
+
+    for cat in categories:
+        cat_name = str(cat.get("name") or "").strip()
+        cat_id = str(cat.get("id") or "").strip()
+        if not cat_name or not cat_id:
+            continue
+
+        # Category folder on GitHub is the real folder name under Filters/.
+        # Our manifest generator currently uses a title-cased category name,
+        # but the LUT downloader uses category.name as remote folder.
+        category_folder = cat_name
+
+        for item in (cat.get("filters") or []):
+            if (item.get("source") or "") != "ota":
+                continue
+            filter_id = str(item.get("id") or "").strip()
+            lut_file_name = str(item.get("lutFileName") or "").strip()
+            if not filter_id or not lut_file_name:
+                continue
+
+            # Deterministic random stock selection per filter id.
+            rng = random.Random(filter_id)
+            stock_path = rng.choice(stock_images)
+
+            # LUT PNG path in repo: Filters/<CategoryFolder>/<LUTStem>.png
+            lut_stem = Path(lut_file_name).stem
+            lut_png_path = filters_dir / category_folder / f"{lut_stem}.png"
+            if not lut_png_path.exists():
+                print(f"[filter-previews] LUT png missing: {lut_png_path}", file=sys.stderr)
+                continue
+
+            try:
+                lut = _lut_from_png(lut_png_path)
+                original = _cap_long_edge_pil(Image.open(stock_path).convert("RGB"), max_edge)
+                filtered = _apply_lut_trilinear(original, lut)
+            except Exception as e:
+                print(f"[filter-previews] Failed for {category_folder}/{filter_id}: {e}", file=sys.stderr)
+                continue
+
+            # Store previews inside Filters/<CategoryFolder>/StorePreviews/<FilterId>/...
+            out_dir = filters_dir / category_folder / "StorePreviews" / filter_id
+            out_dir.mkdir(parents=True, exist_ok=True)
+            original_path = out_dir / "original.jpg"
+            filtered_path = out_dir / "filtered.jpg"
+            original.save(original_path, format="JPEG", quality=88, optimize=True, progressive=True)
+            filtered.save(filtered_path, format="JPEG", quality=88, optimize=True, progressive=True)
+            wrote += 2
+
+            o_url, f_url = _preview_urls(base_url, category_folder, filter_id)
+            if item.get("previewOriginalUrl") != o_url or item.get("previewFilteredUrl") != f_url:
+                item["previewOriginalUrl"] = o_url
+                item["previewFilteredUrl"] = f_url
+                updated += 1
+
+    try:
+        with open(filter_manifest_path, "w", encoding="utf-8") as f:
+            json.dump(manifest, f, indent=2, ensure_ascii=False)
+    except Exception as e:
+        print(f"[filter-previews] Failed to write manifest: {e}", file=sys.stderr)
+        return 1
+
+    print(f"[filter-previews] Wrote {wrote} images; updated {updated} filter rows → {filter_manifest_path}")
     return 0
 
 
@@ -1932,6 +2175,31 @@ def _add_filter_manifest_args(parser: argparse.ArgumentParser) -> None:
         default="Filters/filter_manifest.json",
         help="Output path for filter_manifest.json (default: Filters/filter_manifest.json).",
     )
+    parser.add_argument(
+        "--generate-filter-previews",
+        action="store_true",
+        default=False,
+        help="Generate StorePreviews/Filters/<Category>/<FilterId> preview images and inject preview URLs into filter_manifest.json.",
+    )
+    parser.add_argument(
+        "--filter-stock-dir",
+        default="Filters/StockImage",
+        help="Folder containing stock images used to render previews (default: Filters/StockImage).",
+    )
+    parser.add_argument(
+        "--filter-previews-dir",
+        default="(derived)",
+        help=(
+            "Deprecated: previews are written under Filters/<CategoryFolder>/StorePreviews/<FilterId>/ by default. "
+            "This flag is kept for backward compatibility and is ignored."
+        ),
+    )
+    parser.add_argument(
+        "--filter-preview-max-edge",
+        type=int,
+        default=1080,
+        help="Max long edge for generated preview JPGs (default: 1080).",
+    )
 
 
 def _add_store_manifest_args(parser: argparse.ArgumentParser) -> None:
@@ -2009,6 +2277,19 @@ def main_with_filter_support() -> int:
         result = generate_filter_manifest(filters_dir, filter_output, args.base_url)
         if result != 0:
             return result
+
+        if args.generate_filter_previews:
+            result = generate_filter_previews_and_attach_to_manifest(
+                repo_root=repo_root,
+                filter_manifest_path=filter_output,
+                filters_dir=filters_dir,
+                stock_dir=repo_root / args.filter_stock_dir,
+                previews_root=repo_root / args.filter_previews_dir,
+                base_url=args.base_url,
+                max_edge=int(args.filter_preview_max_edge),
+            )
+            if result != 0:
+                return result
 
     if args.generate_store_manifests:
         result = generate_frame_store_manifest(repo_root / args.frames_dir, repo_root / args.frames_output)
