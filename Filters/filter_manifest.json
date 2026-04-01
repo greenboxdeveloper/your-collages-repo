@@ -1,5 +1,5 @@
 {
-  "version": "1.5",
+  "version": "1.6",
   "categories": [
     {
       "id": "basic",
@@ -98,6 +98,694 @@
           "source": "ota",
           "ciFilterName": null,
           "lutFileName": "BW3"
+        }
+      ]
+    },
+    {
+      "id": "cinematic",
+      "name": "Cinematic",
+      "filters": [
+        {
+          "id": "cinematic__cinematic1",
+          "name": "Cinematic1",
+          "isPremium": true,
+          "source": "ota",
+          "ciFilterName": null,
+          "lutFileName": "Cinematic1"
+        },
+        {
+          "id": "cinematic__cinematic10",
+          "name": "Cinematic10",
+          "isPremium": true,
+          "source": "ota",
+          "ciFilterName": null,
+          "lutFileName": "Cinematic10"
+        },
+        {
+          "id": "cinematic__cinematic2",
+          "name": "Cinematic2",
+          "isPremium": true,
+          "source": "ota",
+          "ciFilterName": null,
+          "lutFileName": "Cinematic2"
+        },
+        {
+          "id": "cinematic__cinematic3",
+          "name": "Cinematic3",
+          "isPremium": true,
+          "source": "ota",
+          "ciFilterName": null,
+          "lutFileName": "Cinematic3"
+        },
+        {
+          "id": "cinematic__cinematic4",
+          "name": "Cinematic4",
+          "isPremium": true,
+          "source": "ota",
+          "ciFilterName": null,
+          "lutFileName": "Cinematic4"
+        },
+        {
+          "id": "cinematic__cinematic5",
+          "name": "Cinematic5",
+          "isPremium": true,
+          "source": "ota",
+          "ciFilterName": null,
+          "lutFileName": "Cinematic5"
+        },
+        {
+          "id": "cinematic__cinematic6",
+          "name": "Cinematic6",
+          "isPremium": true,
+          "source": "ota",
+          "ciFilterName": null,
+          "lutFileName": "Cinematic6"
+        },
+        {
+          "id": "cinematic__cinematic7",
+          "name": "Cinematic7",
+          "isPremium": true,
+          "source": "ota",
+          "ciFilterName": null,
+          "lutFileName": "Cinematic7"
+        },
+        {
+          "id": "cinematic__cinematic8",
+          "name": "Cinematic8",
+          "isPremium": true,
+          "source": "ota",
+          "ciFilterName": null,
+          "lutFileName": "Cinematic8"
+        },
+        {
+          "id": "cinematic__cinematic9",
+          "name": "Cinematic9",
+          "isPremium": true,
+          "source": "ota",
+          "ciFilterName": null,
+          "lutFileName": "Cinematic9"
+        }
+      ]
+    },
+    {
+      "id": "color_boost",
+      "name": "Color Boost",
+      "filters": [
+        {
+          "id": "color_boost__aqua",
+          "name": "Aqua",
+          "isPremium": true,
+          "source": "ota",
+          "ciFilterName": null,
+          "lutFileName": "Aqua"
+        },
+        {
+          "id": "color_boost__aqua_orange_dark",
+          "name": "Aqua & Orange Dark",
+          "isPremium": true,
+          "source": "ota",
+          "ciFilterName": null,
+          "lutFileName": "Aqua & Orange Dark"
+        },
+        {
+          "id": "color_boost__blues",
+          "name": "Blues",
+          "isPremium": true,
+          "source": "ota",
+          "ciFilterName": null,
+          "lutFileName": "Blues"
+        },
+        {
+          "id": "color_boost__earth_tone_boost",
+          "name": "Earth Tone Boost",
+          "isPremium": true,
+          "source": "ota",
+          "ciFilterName": null,
+          "lutFileName": "Earth Tone Boost"
+        },
+        {
+          "id": "color_boost__green_blues",
+          "name": "Green Blues",
+          "isPremium": true,
+          "source": "ota",
+          "ciFilterName": null,
+          "lutFileName": "Green Blues"
+        },
+        {
+          "id": "color_boost__green_yellow",
+          "name": "Green Yellow",
+          "isPremium": true,
+          "source": "ota",
+          "ciFilterName": null,
+          "lutFileName": "Green Yellow"
+        },
+        {
+          "id": "color_boost__oranges",
+          "name": "Oranges",
+          "isPremium": true,
+          "source": "ota",
+          "ciFilterName": null,
+          "lutFileName": "Oranges"
+        },
+        {
+          "id": "color_boost__purple",
+          "name": "Purple",
+          "isPremium": true,
+          "source": "ota",
+          "ciFilterName": null,
+          "lutFileName": "Purple"
+        },
+        {
+          "id": "color_boost__reds",
+          "name": "Reds",
+          "isPremium": true,
+          "source": "ota",
+          "ciFilterName": null,
+          "lutFileName": "Reds"
+        },
+        {
+          "id": "color_boost__reds_oranges_yellows",
+          "name": "Reds Oranges Yellows",
+          "isPremium": true,
+          "source": "ota",
+          "ciFilterName": null,
+          "lutFileName": "Reds Oranges Yellows"
+        }
+      ]
+    },
+    {
+      "id": "landscape",
+      "name": "Landscape",
+      "filters": [
+        {
+          "id": "landscape__landscape1",
+          "name": "Landscape1",
+          "isPremium": true,
+          "source": "ota",
+          "ciFilterName": null,
+          "lutFileName": "Landscape1"
+        },
+        {
+          "id": "landscape__landscape10",
+          "name": "Landscape10",
+          "isPremium": true,
+          "source": "ota",
+          "ciFilterName": null,
+          "lutFileName": "Landscape10"
+        },
+        {
+          "id": "landscape__landscape2",
+          "name": "Landscape2",
+          "isPremium": true,
+          "source": "ota",
+          "ciFilterName": null,
+          "lutFileName": "Landscape2"
+        },
+        {
+          "id": "landscape__landscape3",
+          "name": "Landscape3",
+          "isPremium": true,
+          "source": "ota",
+          "ciFilterName": null,
+          "lutFileName": "Landscape3"
+        },
+        {
+          "id": "landscape__landscape4",
+          "name": "Landscape4",
+          "isPremium": true,
+          "source": "ota",
+          "ciFilterName": null,
+          "lutFileName": "Landscape4"
+        },
+        {
+          "id": "landscape__landscape5",
+          "name": "Landscape5",
+          "isPremium": true,
+          "source": "ota",
+          "ciFilterName": null,
+          "lutFileName": "Landscape5"
+        },
+        {
+          "id": "landscape__landscape6",
+          "name": "Landscape6",
+          "isPremium": true,
+          "source": "ota",
+          "ciFilterName": null,
+          "lutFileName": "Landscape6"
+        },
+        {
+          "id": "landscape__landscape7",
+          "name": "Landscape7",
+          "isPremium": true,
+          "source": "ota",
+          "ciFilterName": null,
+          "lutFileName": "Landscape7"
+        },
+        {
+          "id": "landscape__landscape8",
+          "name": "Landscape8",
+          "isPremium": true,
+          "source": "ota",
+          "ciFilterName": null,
+          "lutFileName": "Landscape8"
+        },
+        {
+          "id": "landscape__landscape9",
+          "name": "Landscape9",
+          "isPremium": true,
+          "source": "ota",
+          "ciFilterName": null,
+          "lutFileName": "Landscape9"
+        }
+      ]
+    },
+    {
+      "id": "lifestyle_commercial",
+      "name": "Lifestyle & Commercial",
+      "filters": [
+        {
+          "id": "lifestyle_commercial__lc1",
+          "name": "Lc1",
+          "isPremium": true,
+          "source": "ota",
+          "ciFilterName": null,
+          "lutFileName": "LC1"
+        },
+        {
+          "id": "lifestyle_commercial__lc10",
+          "name": "Lc10",
+          "isPremium": true,
+          "source": "ota",
+          "ciFilterName": null,
+          "lutFileName": "LC10"
+        },
+        {
+          "id": "lifestyle_commercial__lc2",
+          "name": "Lc2",
+          "isPremium": true,
+          "source": "ota",
+          "ciFilterName": null,
+          "lutFileName": "LC2"
+        },
+        {
+          "id": "lifestyle_commercial__lc3",
+          "name": "Lc3",
+          "isPremium": true,
+          "source": "ota",
+          "ciFilterName": null,
+          "lutFileName": "LC3"
+        },
+        {
+          "id": "lifestyle_commercial__lc4",
+          "name": "Lc4",
+          "isPremium": true,
+          "source": "ota",
+          "ciFilterName": null,
+          "lutFileName": "LC4"
+        },
+        {
+          "id": "lifestyle_commercial__lc5",
+          "name": "Lc5",
+          "isPremium": true,
+          "source": "ota",
+          "ciFilterName": null,
+          "lutFileName": "LC5"
+        },
+        {
+          "id": "lifestyle_commercial__lc6",
+          "name": "Lc6",
+          "isPremium": true,
+          "source": "ota",
+          "ciFilterName": null,
+          "lutFileName": "LC6"
+        },
+        {
+          "id": "lifestyle_commercial__lc7",
+          "name": "Lc7",
+          "isPremium": true,
+          "source": "ota",
+          "ciFilterName": null,
+          "lutFileName": "LC7"
+        },
+        {
+          "id": "lifestyle_commercial__lc8",
+          "name": "Lc8",
+          "isPremium": true,
+          "source": "ota",
+          "ciFilterName": null,
+          "lutFileName": "LC8"
+        },
+        {
+          "id": "lifestyle_commercial__lc9",
+          "name": "Lc9",
+          "isPremium": true,
+          "source": "ota",
+          "ciFilterName": null,
+          "lutFileName": "LC9"
+        }
+      ]
+    },
+    {
+      "id": "lutify",
+      "name": "Lutify",
+      "filters": [
+        {
+          "id": "lutify__berlin_sky",
+          "name": "Berlin Sky",
+          "isPremium": true,
+          "source": "ota",
+          "ciFilterName": null,
+          "lutFileName": "Berlin Sky"
+        },
+        {
+          "id": "lutify__chrome1",
+          "name": "Chrome1",
+          "isPremium": true,
+          "source": "ota",
+          "ciFilterName": null,
+          "lutFileName": "Chrome1"
+        },
+        {
+          "id": "lutify__classic_teal_orange",
+          "name": "Classic Teal & Orange",
+          "isPremium": true,
+          "source": "ota",
+          "ciFilterName": null,
+          "lutFileName": "Classic Teal & Orange"
+        },
+        {
+          "id": "lutify__fade_to_green",
+          "name": "Fade To Green",
+          "isPremium": true,
+          "source": "ota",
+          "ciFilterName": null,
+          "lutFileName": "Fade to Green"
+        },
+        {
+          "id": "lutify__film_print1",
+          "name": "Film Print1",
+          "isPremium": true,
+          "source": "ota",
+          "ciFilterName": null,
+          "lutFileName": "Film Print1"
+        },
+        {
+          "id": "lutify__film_print2",
+          "name": "Film Print2",
+          "isPremium": true,
+          "source": "ota",
+          "ciFilterName": null,
+          "lutFileName": "Film Print2"
+        },
+        {
+          "id": "lutify__french_comedy",
+          "name": "French Comedy",
+          "isPremium": true,
+          "source": "ota",
+          "ciFilterName": null,
+          "lutFileName": "French Comedy"
+        },
+        {
+          "id": "lutify__strip_process",
+          "name": "Strip Process",
+          "isPremium": true,
+          "source": "ota",
+          "ciFilterName": null,
+          "lutFileName": "Strip Process"
+        },
+        {
+          "id": "lutify__studio_skin_tone_shaper",
+          "name": "Studio Skin Tone Shaper",
+          "isPremium": true,
+          "source": "ota",
+          "ciFilterName": null,
+          "lutFileName": "Studio Skin Tone Shaper"
+        },
+        {
+          "id": "lutify__vintage_chrome",
+          "name": "Vintage Chrome",
+          "isPremium": true,
+          "source": "ota",
+          "ciFilterName": null,
+          "lutFileName": "Vintage Chrome"
+        }
+      ]
+    },
+    {
+      "id": "moody",
+      "name": "Moody",
+      "filters": [
+        {
+          "id": "moody__moody1",
+          "name": "Moody1",
+          "isPremium": true,
+          "source": "ota",
+          "ciFilterName": null,
+          "lutFileName": "Moody1"
+        },
+        {
+          "id": "moody__moody10",
+          "name": "Moody10",
+          "isPremium": true,
+          "source": "ota",
+          "ciFilterName": null,
+          "lutFileName": "Moody10"
+        },
+        {
+          "id": "moody__moody2",
+          "name": "Moody2",
+          "isPremium": true,
+          "source": "ota",
+          "ciFilterName": null,
+          "lutFileName": "Moody2"
+        },
+        {
+          "id": "moody__moody3",
+          "name": "Moody3",
+          "isPremium": true,
+          "source": "ota",
+          "ciFilterName": null,
+          "lutFileName": "Moody3"
+        },
+        {
+          "id": "moody__moody4",
+          "name": "Moody4",
+          "isPremium": true,
+          "source": "ota",
+          "ciFilterName": null,
+          "lutFileName": "Moody4"
+        },
+        {
+          "id": "moody__moody5",
+          "name": "Moody5",
+          "isPremium": true,
+          "source": "ota",
+          "ciFilterName": null,
+          "lutFileName": "Moody5"
+        },
+        {
+          "id": "moody__moody6",
+          "name": "Moody6",
+          "isPremium": true,
+          "source": "ota",
+          "ciFilterName": null,
+          "lutFileName": "Moody6"
+        },
+        {
+          "id": "moody__moody7",
+          "name": "Moody7",
+          "isPremium": true,
+          "source": "ota",
+          "ciFilterName": null,
+          "lutFileName": "Moody7"
+        },
+        {
+          "id": "moody__moody8",
+          "name": "Moody8",
+          "isPremium": true,
+          "source": "ota",
+          "ciFilterName": null,
+          "lutFileName": "Moody8"
+        },
+        {
+          "id": "moody__moody9",
+          "name": "Moody9",
+          "isPremium": true,
+          "source": "ota",
+          "ciFilterName": null,
+          "lutFileName": "Moody9"
+        }
+      ]
+    },
+    {
+      "id": "nature_wildlife",
+      "name": "Nature & Wildlife",
+      "filters": [
+        {
+          "id": "nature_wildlife__nw1",
+          "name": "Nw1",
+          "isPremium": true,
+          "source": "ota",
+          "ciFilterName": null,
+          "lutFileName": "NW1"
+        },
+        {
+          "id": "nature_wildlife__nw10",
+          "name": "Nw10",
+          "isPremium": true,
+          "source": "ota",
+          "ciFilterName": null,
+          "lutFileName": "NW10"
+        },
+        {
+          "id": "nature_wildlife__nw2",
+          "name": "Nw2",
+          "isPremium": true,
+          "source": "ota",
+          "ciFilterName": null,
+          "lutFileName": "NW2"
+        },
+        {
+          "id": "nature_wildlife__nw3",
+          "name": "Nw3",
+          "isPremium": true,
+          "source": "ota",
+          "ciFilterName": null,
+          "lutFileName": "NW3"
+        },
+        {
+          "id": "nature_wildlife__nw4",
+          "name": "Nw4",
+          "isPremium": true,
+          "source": "ota",
+          "ciFilterName": null,
+          "lutFileName": "NW4"
+        },
+        {
+          "id": "nature_wildlife__nw5",
+          "name": "Nw5",
+          "isPremium": true,
+          "source": "ota",
+          "ciFilterName": null,
+          "lutFileName": "NW5"
+        },
+        {
+          "id": "nature_wildlife__nw6",
+          "name": "Nw6",
+          "isPremium": true,
+          "source": "ota",
+          "ciFilterName": null,
+          "lutFileName": "NW6"
+        },
+        {
+          "id": "nature_wildlife__nw7",
+          "name": "Nw7",
+          "isPremium": true,
+          "source": "ota",
+          "ciFilterName": null,
+          "lutFileName": "NW7"
+        },
+        {
+          "id": "nature_wildlife__nw8",
+          "name": "Nw8",
+          "isPremium": true,
+          "source": "ota",
+          "ciFilterName": null,
+          "lutFileName": "NW8"
+        },
+        {
+          "id": "nature_wildlife__nw9",
+          "name": "Nw9",
+          "isPremium": true,
+          "source": "ota",
+          "ciFilterName": null,
+          "lutFileName": "NW9"
+        }
+      ]
+    },
+    {
+      "id": "portrait",
+      "name": "Portrait",
+      "filters": [
+        {
+          "id": "portrait__portrait1",
+          "name": "Portrait1",
+          "isPremium": true,
+          "source": "ota",
+          "ciFilterName": null,
+          "lutFileName": "Portrait1"
+        },
+        {
+          "id": "portrait__portrait10",
+          "name": "Portrait10",
+          "isPremium": true,
+          "source": "ota",
+          "ciFilterName": null,
+          "lutFileName": "Portrait10"
+        },
+        {
+          "id": "portrait__portrait2",
+          "name": "Portrait2",
+          "isPremium": true,
+          "source": "ota",
+          "ciFilterName": null,
+          "lutFileName": "Portrait2"
+        },
+        {
+          "id": "portrait__portrait3",
+          "name": "Portrait3",
+          "isPremium": true,
+          "source": "ota",
+          "ciFilterName": null,
+          "lutFileName": "Portrait3"
+        },
+        {
+          "id": "portrait__portrait4",
+          "name": "Portrait4",
+          "isPremium": true,
+          "source": "ota",
+          "ciFilterName": null,
+          "lutFileName": "Portrait4"
+        },
+        {
+          "id": "portrait__portrait5",
+          "name": "Portrait5",
+          "isPremium": true,
+          "source": "ota",
+          "ciFilterName": null,
+          "lutFileName": "Portrait5"
+        },
+        {
+          "id": "portrait__portrait6",
+          "name": "Portrait6",
+          "isPremium": true,
+          "source": "ota",
+          "ciFilterName": null,
+          "lutFileName": "Portrait6"
+        },
+        {
+          "id": "portrait__portrait7",
+          "name": "Portrait7",
+          "isPremium": true,
+          "source": "ota",
+          "ciFilterName": null,
+          "lutFileName": "Portrait7"
+        },
+        {
+          "id": "portrait__portrait8",
+          "name": "Portrait8",
+          "isPremium": true,
+          "source": "ota",
+          "ciFilterName": null,
+          "lutFileName": "Portrait8"
+        },
+        {
+          "id": "portrait__portrait9",
+          "name": "Portrait9",
+          "isPremium": true,
+          "source": "ota",
+          "ciFilterName": null,
+          "lutFileName": "Portrait9"
         }
       ]
     }
