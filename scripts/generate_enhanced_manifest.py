@@ -1624,7 +1624,16 @@ def _write_versioned_manifest(output_path: Path, payload_key: str, payload_value
     return new_version
 
 
-def _scan_category_pngs(root_dir: Path) -> list[tuple[str, str, list[Path]]]:
+def _scan_category_pngs(
+    root_dir: Path, *, exact_folder_name_for_category: bool = False
+) -> list[tuple[str, str, list[Path]]]:
+    """Scan one-level category folders containing PNGs.
+
+    If ``exact_folder_name_for_category`` is True, ``name`` in the manifest is the
+    on-disk folder name (same as filter manifest). The iOS app builds OTA URLs as
+    ``.../Backgrounds/<category.name>/<file>.png``, so this must match GitHub case.
+    Otherwise ``name`` is title-cased for display (frames/stickers).
+    """
     categories: list[tuple[str, str, list[Path]]] = []
     if not root_dir.is_dir():
         root_dir.mkdir(parents=True, exist_ok=True)
@@ -1636,7 +1645,7 @@ def _scan_category_pngs(root_dir: Path) -> list[tuple[str, str, list[Path]]]:
         if not pngs:
             continue
         cat_id = _slugify(cat_dir.name)
-        cat_name = _title_from_stem(cat_dir.name)
+        cat_name = cat_dir.name if exact_folder_name_for_category else _title_from_stem(cat_dir.name)
         categories.append((cat_id, cat_name, pngs))
     return categories
 
@@ -1690,14 +1699,58 @@ def generate_sticker_store_manifest(stickers_dir: Path, output_path: Path) -> in
     return 0
 
 
+# Raster / common photo formats for Backgrounds store (iOS loads via UIImage).
+_BACKGROUND_IMAGE_EXTS = frozenset({
+    ".png",
+    ".jpg",
+    ".jpeg",
+    ".webp",
+    ".heic",
+    ".gif",
+    ".tiff",
+    ".tif",
+    ".bmp",
+    ".avif",
+})
+
+
+def _scan_category_background_images(root_dir: Path) -> list[tuple[str, str, list[Path]]]:
+    """Like ``_scan_category_pngs`` but includes multiple image types; category ``name`` is exact folder name.
+
+    ``fileName`` in the manifest is the full on-disk name (e.g. ``sunset.jpg``) so GitHub URLs and
+    the app cache extension match. Item ids include the extension to avoid stem collisions
+    (e.g. ``foo.png`` vs ``foo.jpg``).
+    """
+    categories: list[tuple[str, str, list[Path]]] = []
+    if not root_dir.is_dir():
+        root_dir.mkdir(parents=True, exist_ok=True)
+        return categories
+    for cat_dir in sorted(root_dir.iterdir()):
+        if not cat_dir.is_dir():
+            continue
+        images = sorted(
+            [p for p in cat_dir.iterdir() if p.is_file() and p.suffix.lower() in _BACKGROUND_IMAGE_EXTS],
+            key=lambda p: p.name.lower(),
+        )
+        if not images:
+            continue
+        cat_id = _slugify(cat_dir.name)
+        cat_name = cat_dir.name
+        categories.append((cat_id, cat_name, images))
+    return categories
+
+
 def generate_background_store_manifest(backgrounds_dir: Path, output_path: Path) -> int:
+    """Writes ``background_store_manifest.json`` matching ``BackgroundStoreManifest`` / ``BackgroundStoreItem`` in the app."""
     categories = []
-    for cat_id, cat_name, pngs in _scan_category_pngs(backgrounds_dir):
+    for cat_id, cat_name, image_paths in _scan_category_background_images(backgrounds_dir):
         backgrounds = []
-        for p in pngs:
+        for p in image_paths:
             display_name, is_premium = _store_stem_to_name_and_premium(p.stem, default_premium=False)
             clean_stem = _clean_stem_premium_suffix(p.stem)
-            item_id = f"{cat_id}__{_slugify(clean_stem)}"
+            ext = p.suffix.lower().lstrip(".") or "png"
+            item_id = f"{cat_id}__{_slugify(clean_stem)}_{ext}"
+            # fileName = full remote filename (with extension); iOS builds URL .../<category>/<fileName>
             backgrounds.append({
                 "id": item_id,
                 "name": display_name,
@@ -1705,7 +1758,7 @@ def generate_background_store_manifest(backgrounds_dir: Path, output_path: Path)
                 "kind": "image",
                 "source": "ota",
                 "colorHex": None,
-                "fileName": clean_stem,
+                "fileName": p.name,
             })
         categories.append({"id": cat_id, "name": cat_name, "backgrounds": backgrounds})
     version = _write_versioned_manifest(output_path, "categories", categories)
