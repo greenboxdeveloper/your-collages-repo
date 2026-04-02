@@ -1,4 +1,20 @@
 {
-  "version": "1.1",
-  "categories": []
+  "version": "1.2",
+  "categories": [
+    {
+      "id": "cute_animals",
+      "name": "Cute Animals",
+      "count": 1,
+      "remoteFolderName": "Cute Animals",
+      "stickers": [
+        {
+          "id": "cute_animals__1",
+          "name": "1",
+          "isPremium": false,
+          "source": "ota",
+          "fileName": "1"
+        }
+      ]
+    }
+  ]
 }
