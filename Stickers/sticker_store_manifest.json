@@ -1,19 +1,12 @@
 {
-  "version": "1.3",
+  "version": "1.4",
   "categories": [
     {
       "id": "cute_animals",
       "name": "Cute Animals",
-      "count": 19,
+      "count": 18,
       "remoteFolderName": "Cute Animals",
       "stickers": [
-        {
-          "id": "cute_animals__1",
-          "name": "1",
-          "isPremium": false,
-          "source": "ota",
-          "fileName": "1"
-        },
         {
           "id": "cute_animals__asset_1",
           "name": "Asset 1",
