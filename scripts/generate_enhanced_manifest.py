@@ -1020,7 +1020,9 @@ def main() -> int:
     def strip_internal_keys(layout: dict) -> dict:
         return {k: v for k, v in layout.items() if not k.startswith("__")}
     layouts_clean = [strip_internal_keys(l) for l in layouts]
-    layouts_clean = _canonicalize_layouts_list(layouts_clean)
+    # Compare using id-sorted copies only — do **not** write sorted layouts, or enhanced_manifest.json
+    # order changes every run and breaks collage serial / stable ordering from JSON + SVG scan.
+    layouts_norm = _canonicalize_layouts_list(layouts_clean)
 
     # Determine version: auto-bump minor when layouts differ from existing manifest (JSON or SVG changes).
     def bump_version_string(v: str | None) -> str:
@@ -1043,7 +1045,7 @@ def main() -> int:
         return f"{major}.{minor}"
 
     old_layouts_norm = _canonicalize_layouts_list(old_layouts) if old_layouts is not None else None
-    layouts_changed = old_layouts_norm is None or old_layouts_norm != layouts_clean
+    layouts_changed = old_layouts_norm is None or old_layouts_norm != layouts_norm
     if layouts_changed:
         new_version = bump_version_string(old_version)
     else:
@@ -1647,7 +1649,11 @@ def _canonicalize_categories_payload(categories: list) -> list:
 
 
 def _canonicalize_layouts_list(layouts: list) -> list:
-    """Sort layout dicts by ``id`` for stable output and comparison."""
+    """Sort layout dicts by ``id`` for **version-bump comparison only**.
+
+    ``enhanced_manifest.json`` must keep the build order (classic JSON + SVG scan); do not assign
+    this result to the written ``layouts`` array.
+    """
     L = copy.deepcopy(layouts)
     L.sort(key=lambda x: str(x.get("id") or ""))
     return L
