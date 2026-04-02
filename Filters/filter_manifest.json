@@ -1,80 +1,6 @@
 {
-<<<<<<< HEAD
   "version": "3.2",
-=======
-  "version": "2.9",
->>>>>>> parent of 7217eb7 (chore: regenerate enhanced and store manifests [skip ci])
   "categories": [
-    {
-      "id": "basic",
-      "name": "Basic",
-      "filters": [
-        {
-          "id": "ci_vivid",
-          "name": "Vivid",
-          "isPremium": false,
-          "source": "ciFilter",
-          "ciFilterName": "CIPhotoEffectVivid",
-          "lutFileName": null
-        },
-        {
-          "id": "ci_noir",
-          "name": "Noir",
-          "isPremium": false,
-          "source": "ciFilter",
-          "ciFilterName": "CIPhotoEffectNoir",
-          "lutFileName": null
-        },
-        {
-          "id": "ci_chrome",
-          "name": "Chrome",
-          "isPremium": false,
-          "source": "ciFilter",
-          "ciFilterName": "CIPhotoEffectChrome",
-          "lutFileName": null
-        },
-        {
-          "id": "ci_fade",
-          "name": "Fade",
-          "isPremium": false,
-          "source": "ciFilter",
-          "ciFilterName": "CIPhotoEffectFade",
-          "lutFileName": null
-        },
-        {
-          "id": "ci_instant",
-          "name": "Instant",
-          "isPremium": false,
-          "source": "ciFilter",
-          "ciFilterName": "CIPhotoEffectInstant",
-          "lutFileName": null
-        },
-        {
-          "id": "ci_process",
-          "name": "Process",
-          "isPremium": false,
-          "source": "ciFilter",
-          "ciFilterName": "CIPhotoEffectProcess",
-          "lutFileName": null
-        },
-        {
-          "id": "ci_tonal",
-          "name": "Tonal",
-          "isPremium": false,
-          "source": "ciFilter",
-          "ciFilterName": "CIPhotoEffectTonal",
-          "lutFileName": null
-        },
-        {
-          "id": "ci_transfer",
-          "name": "Transfer",
-          "isPremium": false,
-          "source": "ciFilter",
-          "ciFilterName": "CIPhotoEffectTransfer",
-          "lutFileName": null
-        }
-      ]
-    },
     {
       "id": "b_w",
       "name": "B & W",
@@ -178,6 +104,76 @@
           "lutFileName": "BW9",
           "previewOriginalUrl": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/Filters/B%20%26%20W/StorePreviews/b_w__bw9/original.jpg",
           "previewFilteredUrl": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/Filters/B%20%26%20W/StorePreviews/b_w__bw9/filtered.jpg"
+        }
+      ]
+    },
+    {
+      "id": "basic",
+      "name": "Basic",
+      "filters": [
+        {
+          "id": "ci_chrome",
+          "name": "Chrome",
+          "isPremium": false,
+          "source": "ciFilter",
+          "ciFilterName": "CIPhotoEffectChrome",
+          "lutFileName": null
+        },
+        {
+          "id": "ci_fade",
+          "name": "Fade",
+          "isPremium": false,
+          "source": "ciFilter",
+          "ciFilterName": "CIPhotoEffectFade",
+          "lutFileName": null
+        },
+        {
+          "id": "ci_instant",
+          "name": "Instant",
+          "isPremium": false,
+          "source": "ciFilter",
+          "ciFilterName": "CIPhotoEffectInstant",
+          "lutFileName": null
+        },
+        {
+          "id": "ci_noir",
+          "name": "Noir",
+          "isPremium": false,
+          "source": "ciFilter",
+          "ciFilterName": "CIPhotoEffectNoir",
+          "lutFileName": null
+        },
+        {
+          "id": "ci_process",
+          "name": "Process",
+          "isPremium": false,
+          "source": "ciFilter",
+          "ciFilterName": "CIPhotoEffectProcess",
+          "lutFileName": null
+        },
+        {
+          "id": "ci_tonal",
+          "name": "Tonal",
+          "isPremium": false,
+          "source": "ciFilter",
+          "ciFilterName": "CIPhotoEffectTonal",
+          "lutFileName": null
+        },
+        {
+          "id": "ci_transfer",
+          "name": "Transfer",
+          "isPremium": false,
+          "source": "ciFilter",
+          "ciFilterName": "CIPhotoEffectTransfer",
+          "lutFileName": null
+        },
+        {
+          "id": "ci_vivid",
+          "name": "Vivid",
+          "isPremium": false,
+          "source": "ciFilter",
+          "ciFilterName": "CIPhotoEffectVivid",
+          "lutFileName": null
         }
       ]
     },
