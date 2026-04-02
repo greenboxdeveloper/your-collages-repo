@@ -1,4 +1,5 @@
 {
+<<<<<<< HEAD
   "version": "1.8",
   "categories": [
     {
@@ -138,4 +139,8 @@
       "promoHeaderUrl": null
     }
   ]
+=======
+  "version": "1.5",
+  "categories": []
+>>>>>>> parent of 7217eb7 (chore: regenerate enhanced and store manifests [skip ci])
 }
