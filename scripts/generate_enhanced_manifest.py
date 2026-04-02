@@ -15,6 +15,7 @@ Usage:
 """
 
 import argparse
+import copy
 import json
 import math
 import os
@@ -1019,6 +1020,7 @@ def main() -> int:
     def strip_internal_keys(layout: dict) -> dict:
         return {k: v for k, v in layout.items() if not k.startswith("__")}
     layouts_clean = [strip_internal_keys(l) for l in layouts]
+    layouts_clean = _canonicalize_layouts_list(layouts_clean)
 
     # Determine version: auto-bump minor when layouts differ from existing manifest (JSON or SVG changes).
     def bump_version_string(v: str | None) -> str:
@@ -1040,7 +1042,8 @@ def main() -> int:
             minor = 0
         return f"{major}.{minor}"
 
-    layouts_changed = old_layouts is None or old_layouts != layouts_clean
+    old_layouts_norm = _canonicalize_layouts_list(old_layouts) if old_layouts is not None else None
+    layouts_changed = old_layouts_norm is None or old_layouts_norm != layouts_clean
     if layouts_changed:
         new_version = bump_version_string(old_version)
     else:
@@ -1318,9 +1321,11 @@ def generate_filter_manifest(
     # ------------------------------------------------------------------
     # 3) Version bump: only when categories / filters actually changed
     # ------------------------------------------------------------------
-    new_categories_clean = categories  # already serialisation-ready
+    new_categories_clean = _canonicalize_categories_payload(categories)
 
     old_categories = old_manifest.get("categories") if old_manifest else None
+    if isinstance(old_categories, list):
+        old_categories = _canonicalize_categories_payload(old_categories)
     changed = old_categories is None or old_categories != new_categories_clean
 
     if changed:
@@ -1568,6 +1573,9 @@ def generate_filter_previews_and_attach_to_manifest(
                 updated += 1
 
     try:
+        cats = manifest.get("categories")
+        if isinstance(cats, list):
+            manifest["categories"] = _canonicalize_categories_payload(cats)
         with open(filter_manifest_path, "w", encoding="utf-8") as f:
             json.dump(manifest, f, indent=2, ensure_ascii=False)
     except Exception as e:
@@ -1611,10 +1619,51 @@ def _load_json_if_exists(path: Path) -> dict | None:
         return None
 
 
+_STORE_CATEGORY_ITEM_KEYS = (
+    "stickers",
+    "frames",
+    "backgrounds",
+    "filters",
+    "shapes",
+    "fonts",
+)
+
+
+def _canonicalize_categories_payload(categories: list) -> list:
+    """Sort categories and nested store lists by ``id``.
+
+    Manifests are always **rebuilt from the repo** (scan); they do not merge with previous JSON.
+    Normalizing order makes deletes reliable in diffs and makes version bumps depend on content,
+    not iteration order.
+    """
+    cats = copy.deepcopy(categories)
+    for cat in cats:
+        for key in _STORE_CATEGORY_ITEM_KEYS:
+            arr = cat.get(key)
+            if isinstance(arr, list):
+                arr.sort(key=lambda x: str((x or {}).get("id") or ""))
+    cats.sort(key=lambda c: str(c.get("id") or ""))
+    return cats
+
+
+def _canonicalize_layouts_list(layouts: list) -> list:
+    """Sort layout dicts by ``id`` for stable output and comparison."""
+    L = copy.deepcopy(layouts)
+    L.sort(key=lambda x: str(x.get("id") or ""))
+    return L
+
+
 def _write_versioned_manifest(output_path: Path, payload_key: str, payload_value) -> str:
     old_manifest = _load_json_if_exists(output_path)
     old_version = str(old_manifest.get("version", "") or "") if old_manifest else None
+
+    if payload_key == "categories" and isinstance(payload_value, list):
+        payload_value = _canonicalize_categories_payload(payload_value)
+
     old_payload = old_manifest.get(payload_key) if old_manifest else None
+    if payload_key == "categories" and isinstance(old_payload, list):
+        old_payload = _canonicalize_categories_payload(old_payload)
+
     changed = old_payload is None or old_payload != payload_value
     new_version = _bump_filter_version(old_version) if changed else (old_version or "1.1")
     manifest = {"version": new_version, payload_key: payload_value}
