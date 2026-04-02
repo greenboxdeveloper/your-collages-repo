@@ -1626,15 +1626,18 @@ def _write_versioned_manifest(output_path: Path, payload_key: str, payload_value
 
 def _scan_category_pngs(
     root_dir: Path, *, exact_folder_name_for_category: bool = False
-) -> list[tuple[str, str, list[Path]]]:
+) -> list[tuple[str, str, list[Path], Path]]:
     """Scan one-level category folders containing PNGs.
 
     If ``exact_folder_name_for_category`` is True, ``name`` in the manifest is the
     on-disk folder name (same as filter manifest). The iOS app builds OTA URLs as
     ``.../Backgrounds/<category.name>/<file>.png``, so this must match GitHub case.
     Otherwise ``name`` is title-cased for display (frames/stickers).
+
+    Returns ``(cat_id, cat_name, pngs, cat_dir)`` so sticker manifests can emit
+    ``remoteFolderName`` / banner URLs from the real folder path.
     """
-    categories: list[tuple[str, str, list[Path]]] = []
+    categories: list[tuple[str, str, list[Path], Path]] = []
     if not root_dir.is_dir():
         root_dir.mkdir(parents=True, exist_ok=True)
         return categories
@@ -1646,13 +1649,13 @@ def _scan_category_pngs(
             continue
         cat_id = _slugify(cat_dir.name)
         cat_name = cat_dir.name if exact_folder_name_for_category else _title_from_stem(cat_dir.name)
-        categories.append((cat_id, cat_name, pngs))
+        categories.append((cat_id, cat_name, pngs, cat_dir))
     return categories
 
 
 def generate_frame_store_manifest(frames_dir: Path, output_path: Path) -> int:
     categories = []
-    for cat_id, cat_name, pngs in _scan_category_pngs(frames_dir):
+    for cat_id, cat_name, pngs, _cat_dir in _scan_category_pngs(frames_dir):
         frames = []
         for p in pngs:
             display_name, is_premium = _store_stem_to_name_and_premium(p.stem, default_premium=False)
@@ -1676,13 +1679,26 @@ def generate_frame_store_manifest(frames_dir: Path, output_path: Path) -> int:
     return 0
 
 
-def generate_sticker_store_manifest(stickers_dir: Path, output_path: Path) -> int:
-    # OTA file stems may end with `_a` (e.g. `cute_1_PR_a`) so iOS auto-downloads on manifest sync;
-    # see filter manifest header comment in this file.
+def _is_reserved_sticker_pack_asset_png(path: Path) -> bool:
+    """Category-folder PNGs used only for store UI (not sticker items)."""
+    return path.name.lower() in {"banner.png", "promo_header.png", "promo.png"}
+
+
+def generate_sticker_store_manifest(
+    stickers_dir: Path, output_path: Path, base_url: str | None = None
+) -> int:
+    """Emit sticker_store_manifest.json with optional ``bannerImageUrl`` / ``promoHeaderUrl`` when
+    ``banner.png`` / ``promo_header.png`` (etc.) exist under each category folder.
+
+    Sticker PNG stems use ``_PR`` / ``_F`` for premium/free (same as filters/frames). Optional ``_a``
+    marks auto-toolbar inclusion on iOS.
+    """
     categories = []
-    for cat_id, cat_name, pngs in _scan_category_pngs(stickers_dir):
+    for cat_id, cat_name, pngs, cat_dir in _scan_category_pngs(stickers_dir):
         stickers = []
         for p in pngs:
+            if _is_reserved_sticker_pack_asset_png(p):
+                continue
             display_name, is_premium = _store_stem_to_name_and_premium(p.stem, default_premium=False)
             clean_stem = _clean_stem_premium_suffix(p.stem)
             item_id = f"{cat_id}__{_slugify(clean_stem)}"
@@ -1693,7 +1709,27 @@ def generate_sticker_store_manifest(stickers_dir: Path, output_path: Path) -> in
                 "source": "ota",
                 "fileName": clean_stem,
             })
-        categories.append({"id": cat_id, "name": cat_name, "stickers": stickers})
+        cat_entry: dict = {
+            "id": cat_id,
+            "name": cat_name,
+            "count": len(stickers),
+            "remoteFolderName": cat_dir.name,
+            "stickers": stickers,
+        }
+        if base_url:
+            bu = base_url.rstrip("/")
+            seg = quote(cat_dir.name, safe="/")
+            for fname in ("banner.png", "banner.jpg", "Banner.png"):
+                banner_path = cat_dir / fname
+                if banner_path.is_file():
+                    cat_entry["bannerImageUrl"] = f"{bu}/Stickers/{seg}/{fname}"
+                    break
+            for fname in ("promo_header.png", "promo_header.jpg", "promo.jpg"):
+                promo_path = cat_dir / fname
+                if promo_path.is_file():
+                    cat_entry["promoHeaderUrl"] = f"{bu}/Stickers/{seg}/{fname}"
+                    break
+        categories.append(cat_entry)
     version = _write_versioned_manifest(output_path, "categories", categories)
     print(f"[sticker-manifest] v{version} — {len(categories)} categories → {output_path}")
     return 0
@@ -2351,7 +2387,11 @@ def main_with_filter_support() -> int:
         result = generate_frame_store_manifest(repo_root / args.frames_dir, repo_root / args.frames_output)
         if result != 0:
             return result
-        result = generate_sticker_store_manifest(repo_root / args.stickers_dir, repo_root / args.stickers_output)
+        result = generate_sticker_store_manifest(
+            repo_root / args.stickers_dir,
+            repo_root / args.stickers_output,
+            base_url=args.base_url,
+        )
         if result != 0:
             return result
         result = generate_background_store_manifest(repo_root / args.backgrounds_dir, repo_root / args.backgrounds_output)
