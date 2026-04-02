@@ -1,5 +1,5 @@
 {
-  "version": "1.7",
+  "version": "1.8",
   "categories": [
     {
       "id": "cute_animals",
@@ -133,7 +133,9 @@
           "source": "ota",
           "fileName": "Asset 9@4x"
         }
-      ]
+      ],
+      "bannerImageUrl": null,
+      "promoHeaderUrl": null
     }
   ]
 }
