@@ -1,10 +1,10 @@
 {
-  "version": "1.2",
+  "version": "1.3",
   "categories": [
     {
       "id": "cute_animals",
       "name": "Cute Animals",
-      "count": 1,
+      "count": 19,
       "remoteFolderName": "Cute Animals",
       "stickers": [
         {
@@ -13,6 +13,132 @@
           "isPremium": false,
           "source": "ota",
           "fileName": "1"
+        },
+        {
+          "id": "cute_animals__asset_1",
+          "name": "Asset 1",
+          "isPremium": false,
+          "source": "ota",
+          "fileName": "Asset 1"
+        },
+        {
+          "id": "cute_animals__asset_10",
+          "name": "Asset 10",
+          "isPremium": false,
+          "source": "ota",
+          "fileName": "Asset 10"
+        },
+        {
+          "id": "cute_animals__asset_11",
+          "name": "Asset 11",
+          "isPremium": false,
+          "source": "ota",
+          "fileName": "Asset 11"
+        },
+        {
+          "id": "cute_animals__asset_12",
+          "name": "Asset 12",
+          "isPremium": false,
+          "source": "ota",
+          "fileName": "Asset 12"
+        },
+        {
+          "id": "cute_animals__asset_13",
+          "name": "Asset 13",
+          "isPremium": false,
+          "source": "ota",
+          "fileName": "Asset 13"
+        },
+        {
+          "id": "cute_animals__asset_14",
+          "name": "Asset 14",
+          "isPremium": false,
+          "source": "ota",
+          "fileName": "Asset 14"
+        },
+        {
+          "id": "cute_animals__asset_15",
+          "name": "Asset 15",
+          "isPremium": false,
+          "source": "ota",
+          "fileName": "Asset 15"
+        },
+        {
+          "id": "cute_animals__asset_16",
+          "name": "Asset 16",
+          "isPremium": false,
+          "source": "ota",
+          "fileName": "Asset 16"
+        },
+        {
+          "id": "cute_animals__asset_17",
+          "name": "Asset 17",
+          "isPremium": false,
+          "source": "ota",
+          "fileName": "Asset 17"
+        },
+        {
+          "id": "cute_animals__asset_18",
+          "name": "Asset 18",
+          "isPremium": false,
+          "source": "ota",
+          "fileName": "Asset 18"
+        },
+        {
+          "id": "cute_animals__asset_2",
+          "name": "Asset 2",
+          "isPremium": false,
+          "source": "ota",
+          "fileName": "Asset 2"
+        },
+        {
+          "id": "cute_animals__asset_3",
+          "name": "Asset 3",
+          "isPremium": false,
+          "source": "ota",
+          "fileName": "Asset 3"
+        },
+        {
+          "id": "cute_animals__asset_4",
+          "name": "Asset 4",
+          "isPremium": false,
+          "source": "ota",
+          "fileName": "Asset 4"
+        },
+        {
+          "id": "cute_animals__asset_5",
+          "name": "Asset 5",
+          "isPremium": false,
+          "source": "ota",
+          "fileName": "Asset 5"
+        },
+        {
+          "id": "cute_animals__asset_6",
+          "name": "Asset 6",
+          "isPremium": false,
+          "source": "ota",
+          "fileName": "Asset 6"
+        },
+        {
+          "id": "cute_animals__asset_7",
+          "name": "Asset 7",
+          "isPremium": false,
+          "source": "ota",
+          "fileName": "Asset 7"
+        },
+        {
+          "id": "cute_animals__asset_8",
+          "name": "Asset 8",
+          "isPremium": false,
+          "source": "ota",
+          "fileName": "Asset 8"
+        },
+        {
+          "id": "cute_animals__asset_9",
+          "name": "Asset 9",
+          "isPremium": false,
+          "source": "ota",
+          "fileName": "Asset 9"
         }
       ]
     }
