@@ -1758,12 +1758,15 @@ def generate_sticker_store_manifest(
                 "source": "ota",
                 "fileName": clean_stem,
             })
+        # Optional store art: explicit nulls so editors can paste GitHub raw URLs later without reshaping JSON.
         cat_entry: dict = {
             "id": cat_id,
             "name": cat_name,
             "count": len(stickers),
             "remoteFolderName": cat_dir.name,
             "stickers": stickers,
+            "bannerImageUrl": None,
+            "promoHeaderUrl": None,
         }
         if base_url:
             bu = base_url.rstrip("/")
