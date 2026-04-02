@@ -1,4 +1,74 @@
 {
-  "version": "1.1",
-  "categories": []
+  "version": "1.2",
+  "categories": [
+    {
+      "id": "paper",
+      "name": "Paper",
+      "backgrounds": [
+        {
+          "id": "paper__1_jpg",
+          "name": "1",
+          "isPremium": false,
+          "kind": "image",
+          "source": "ota",
+          "colorHex": null,
+          "fileName": "1.jpg"
+        },
+        {
+          "id": "paper__2_jpg",
+          "name": "2",
+          "isPremium": false,
+          "kind": "image",
+          "source": "ota",
+          "colorHex": null,
+          "fileName": "2.jpg"
+        },
+        {
+          "id": "paper__3_jpg",
+          "name": "3",
+          "isPremium": false,
+          "kind": "image",
+          "source": "ota",
+          "colorHex": null,
+          "fileName": "3.jpg"
+        },
+        {
+          "id": "paper__4_jpg",
+          "name": "4",
+          "isPremium": false,
+          "kind": "image",
+          "source": "ota",
+          "colorHex": null,
+          "fileName": "4.jpg"
+        },
+        {
+          "id": "paper__5_jpg",
+          "name": "5",
+          "isPremium": false,
+          "kind": "image",
+          "source": "ota",
+          "colorHex": null,
+          "fileName": "5.jpg"
+        },
+        {
+          "id": "paper__6_jpg",
+          "name": "6",
+          "isPremium": false,
+          "kind": "image",
+          "source": "ota",
+          "colorHex": null,
+          "fileName": "6.jpg"
+        },
+        {
+          "id": "paper__7_jpg",
+          "name": "7",
+          "isPremium": false,
+          "kind": "image",
+          "source": "ota",
+          "colorHex": null,
+          "fileName": "7.jpg"
+        }
+      ]
+    }
+  ]
 }
