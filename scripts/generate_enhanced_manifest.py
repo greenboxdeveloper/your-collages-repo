@@ -1708,11 +1708,18 @@ def _scan_category_pngs(
     return categories
 
 
-def generate_frame_store_manifest(frames_dir: Path, output_path: Path) -> int:
+def generate_frame_store_manifest(
+    frames_dir: Path, output_path: Path, base_url: str | None = None
+) -> int:
+    """Emit ``frame_manifest.json`` with optional ``bannerImageUrl`` / ``promoHeaderUrl`` / ``remoteFolderName``
+    (same reserved assets pattern as stickers: ``banner.png``, ``promo_header.png`` are not frame items).
+    """
     categories = []
-    for cat_id, cat_name, pngs, _cat_dir in _scan_category_pngs(frames_dir):
+    for cat_id, cat_name, pngs, cat_dir in _scan_category_pngs(frames_dir):
         frames = []
         for p in pngs:
+            if _is_reserved_sticker_pack_asset_png(p):
+                continue
             display_name, is_premium = _store_stem_to_name_and_premium(p.stem, default_premium=False)
             clean_stem = _clean_stem_premium_suffix(p.stem)
             item_id = f"{cat_id}__{_slugify(clean_stem)}"
@@ -1723,12 +1730,29 @@ def generate_frame_store_manifest(frames_dir: Path, output_path: Path) -> int:
                 "source": "ota",
                 "fileName": clean_stem,
             })
-        categories.append({
+        cat_entry: dict = {
             "id": cat_id,
             "name": cat_name,
             "icon": "square.on.square",
+            "remoteFolderName": cat_dir.name,
             "frames": frames,
-        })
+            "bannerImageUrl": None,
+            "promoHeaderUrl": None,
+        }
+        if base_url:
+            bu = base_url.rstrip("/")
+            seg = quote(cat_dir.name, safe="/")
+            for fname in ("banner.png", "banner.jpg", "Banner.png"):
+                banner_path = cat_dir / fname
+                if banner_path.is_file():
+                    cat_entry["bannerImageUrl"] = f"{bu}/Frames/{seg}/{fname}"
+                    break
+            for fname in ("promo_header.png", "promo_header.jpg", "promo.jpg"):
+                promo_path = cat_dir / fname
+                if promo_path.is_file():
+                    cat_entry["promoHeaderUrl"] = f"{bu}/Frames/{seg}/{fname}"
+                    break
+        categories.append(cat_entry)
     version = _write_versioned_manifest(output_path, "categories", categories)
     print(f"[frame-manifest] v{version} — {len(categories)} categories → {output_path}")
     return 0
@@ -2442,7 +2466,11 @@ def main_with_filter_support() -> int:
                 return result
 
     if args.generate_store_manifests:
-        result = generate_frame_store_manifest(repo_root / args.frames_dir, repo_root / args.frames_output)
+        result = generate_frame_store_manifest(
+            repo_root / args.frames_dir,
+            repo_root / args.frames_output,
+            base_url=args.base_url,
+        )
         if result != 0:
             return result
         result = generate_sticker_store_manifest(
