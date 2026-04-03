@@ -1,4 +1,542 @@
 {
-  "version": "1.1",
-  "categories": []
+  "version": "1.2",
+  "categories": [
+    {
+      "id": "starbrust",
+      "name": "Starbrust",
+      "remoteFolderName": "Starbrust",
+      "shapes": [
+        {
+          "id": "starbrust__asset_10shape",
+          "name": "Asset 10Shape",
+          "isPremium": false,
+          "source": "ota",
+          "kindId": "asset_10shape",
+          "fileName": "Asset 10Shape.svg"
+        },
+        {
+          "id": "starbrust__asset_11shape",
+          "name": "Asset 11Shape",
+          "isPremium": false,
+          "source": "ota",
+          "kindId": "asset_11shape",
+          "fileName": "Asset 11Shape.svg"
+        },
+        {
+          "id": "starbrust__asset_12shape",
+          "name": "Asset 12Shape",
+          "isPremium": false,
+          "source": "ota",
+          "kindId": "asset_12shape",
+          "fileName": "Asset 12Shape.svg"
+        },
+        {
+          "id": "starbrust__asset_13shape",
+          "name": "Asset 13Shape",
+          "isPremium": false,
+          "source": "ota",
+          "kindId": "asset_13shape",
+          "fileName": "Asset 13Shape.svg"
+        },
+        {
+          "id": "starbrust__asset_14shape",
+          "name": "Asset 14Shape",
+          "isPremium": false,
+          "source": "ota",
+          "kindId": "asset_14shape",
+          "fileName": "Asset 14Shape.svg"
+        },
+        {
+          "id": "starbrust__asset_15shape",
+          "name": "Asset 15Shape",
+          "isPremium": false,
+          "source": "ota",
+          "kindId": "asset_15shape",
+          "fileName": "Asset 15Shape.svg"
+        },
+        {
+          "id": "starbrust__asset_16shape",
+          "name": "Asset 16Shape",
+          "isPremium": false,
+          "source": "ota",
+          "kindId": "asset_16shape",
+          "fileName": "Asset 16Shape.svg"
+        },
+        {
+          "id": "starbrust__asset_17shape",
+          "name": "Asset 17Shape",
+          "isPremium": false,
+          "source": "ota",
+          "kindId": "asset_17shape",
+          "fileName": "Asset 17Shape.svg"
+        },
+        {
+          "id": "starbrust__asset_18shape",
+          "name": "Asset 18Shape",
+          "isPremium": false,
+          "source": "ota",
+          "kindId": "asset_18shape",
+          "fileName": "Asset 18Shape.svg"
+        },
+        {
+          "id": "starbrust__asset_19shape",
+          "name": "Asset 19Shape",
+          "isPremium": false,
+          "source": "ota",
+          "kindId": "asset_19shape",
+          "fileName": "Asset 19Shape.svg"
+        },
+        {
+          "id": "starbrust__asset_1shape",
+          "name": "Asset 1Shape",
+          "isPremium": false,
+          "source": "ota",
+          "kindId": "asset_1shape",
+          "fileName": "Asset 1Shape.svg"
+        },
+        {
+          "id": "starbrust__asset_20shape",
+          "name": "Asset 20Shape",
+          "isPremium": false,
+          "source": "ota",
+          "kindId": "asset_20shape",
+          "fileName": "Asset 20Shape.svg"
+        },
+        {
+          "id": "starbrust__asset_21shape",
+          "name": "Asset 21Shape",
+          "isPremium": false,
+          "source": "ota",
+          "kindId": "asset_21shape",
+          "fileName": "Asset 21Shape.svg"
+        },
+        {
+          "id": "starbrust__asset_22shape",
+          "name": "Asset 22Shape",
+          "isPremium": false,
+          "source": "ota",
+          "kindId": "asset_22shape",
+          "fileName": "Asset 22Shape.svg"
+        },
+        {
+          "id": "starbrust__asset_23shape",
+          "name": "Asset 23Shape",
+          "isPremium": false,
+          "source": "ota",
+          "kindId": "asset_23shape",
+          "fileName": "Asset 23Shape.svg"
+        },
+        {
+          "id": "starbrust__asset_24shape",
+          "name": "Asset 24Shape",
+          "isPremium": false,
+          "source": "ota",
+          "kindId": "asset_24shape",
+          "fileName": "Asset 24Shape.svg"
+        },
+        {
+          "id": "starbrust__asset_25shape",
+          "name": "Asset 25Shape",
+          "isPremium": false,
+          "source": "ota",
+          "kindId": "asset_25shape",
+          "fileName": "Asset 25Shape.svg"
+        },
+        {
+          "id": "starbrust__asset_26shape",
+          "name": "Asset 26Shape",
+          "isPremium": false,
+          "source": "ota",
+          "kindId": "asset_26shape",
+          "fileName": "Asset 26Shape.svg"
+        },
+        {
+          "id": "starbrust__asset_27shape",
+          "name": "Asset 27Shape",
+          "isPremium": false,
+          "source": "ota",
+          "kindId": "asset_27shape",
+          "fileName": "Asset 27Shape.svg"
+        },
+        {
+          "id": "starbrust__asset_28shape",
+          "name": "Asset 28Shape",
+          "isPremium": false,
+          "source": "ota",
+          "kindId": "asset_28shape",
+          "fileName": "Asset 28Shape.svg"
+        },
+        {
+          "id": "starbrust__asset_29shape",
+          "name": "Asset 29Shape",
+          "isPremium": false,
+          "source": "ota",
+          "kindId": "asset_29shape",
+          "fileName": "Asset 29Shape.svg"
+        },
+        {
+          "id": "starbrust__asset_2shape",
+          "name": "Asset 2Shape",
+          "isPremium": false,
+          "source": "ota",
+          "kindId": "asset_2shape",
+          "fileName": "Asset 2Shape.svg"
+        },
+        {
+          "id": "starbrust__asset_30shape",
+          "name": "Asset 30Shape",
+          "isPremium": false,
+          "source": "ota",
+          "kindId": "asset_30shape",
+          "fileName": "Asset 30Shape.svg"
+        },
+        {
+          "id": "starbrust__asset_31shape",
+          "name": "Asset 31Shape",
+          "isPremium": false,
+          "source": "ota",
+          "kindId": "asset_31shape",
+          "fileName": "Asset 31Shape.svg"
+        },
+        {
+          "id": "starbrust__asset_32shape",
+          "name": "Asset 32Shape",
+          "isPremium": false,
+          "source": "ota",
+          "kindId": "asset_32shape",
+          "fileName": "Asset 32Shape.svg"
+        },
+        {
+          "id": "starbrust__asset_33shape",
+          "name": "Asset 33Shape",
+          "isPremium": false,
+          "source": "ota",
+          "kindId": "asset_33shape",
+          "fileName": "Asset 33Shape.svg"
+        },
+        {
+          "id": "starbrust__asset_34shape",
+          "name": "Asset 34Shape",
+          "isPremium": false,
+          "source": "ota",
+          "kindId": "asset_34shape",
+          "fileName": "Asset 34Shape.svg"
+        },
+        {
+          "id": "starbrust__asset_35shape",
+          "name": "Asset 35Shape",
+          "isPremium": false,
+          "source": "ota",
+          "kindId": "asset_35shape",
+          "fileName": "Asset 35Shape.svg"
+        },
+        {
+          "id": "starbrust__asset_36shape",
+          "name": "Asset 36Shape",
+          "isPremium": false,
+          "source": "ota",
+          "kindId": "asset_36shape",
+          "fileName": "Asset 36Shape.svg"
+        },
+        {
+          "id": "starbrust__asset_37shape",
+          "name": "Asset 37Shape",
+          "isPremium": false,
+          "source": "ota",
+          "kindId": "asset_37shape",
+          "fileName": "Asset 37Shape.svg"
+        },
+        {
+          "id": "starbrust__asset_38shape",
+          "name": "Asset 38Shape",
+          "isPremium": false,
+          "source": "ota",
+          "kindId": "asset_38shape",
+          "fileName": "Asset 38Shape.svg"
+        },
+        {
+          "id": "starbrust__asset_39shape",
+          "name": "Asset 39Shape",
+          "isPremium": false,
+          "source": "ota",
+          "kindId": "asset_39shape",
+          "fileName": "Asset 39Shape.svg"
+        },
+        {
+          "id": "starbrust__asset_3shape",
+          "name": "Asset 3Shape",
+          "isPremium": false,
+          "source": "ota",
+          "kindId": "asset_3shape",
+          "fileName": "Asset 3Shape.svg"
+        },
+        {
+          "id": "starbrust__asset_40shape",
+          "name": "Asset 40Shape",
+          "isPremium": false,
+          "source": "ota",
+          "kindId": "asset_40shape",
+          "fileName": "Asset 40Shape.svg"
+        },
+        {
+          "id": "starbrust__asset_41shape",
+          "name": "Asset 41Shape",
+          "isPremium": false,
+          "source": "ota",
+          "kindId": "asset_41shape",
+          "fileName": "Asset 41Shape.svg"
+        },
+        {
+          "id": "starbrust__asset_42shape",
+          "name": "Asset 42Shape",
+          "isPremium": false,
+          "source": "ota",
+          "kindId": "asset_42shape",
+          "fileName": "Asset 42Shape.svg"
+        },
+        {
+          "id": "starbrust__asset_43shape",
+          "name": "Asset 43Shape",
+          "isPremium": false,
+          "source": "ota",
+          "kindId": "asset_43shape",
+          "fileName": "Asset 43Shape.svg"
+        },
+        {
+          "id": "starbrust__asset_44shape",
+          "name": "Asset 44Shape",
+          "isPremium": false,
+          "source": "ota",
+          "kindId": "asset_44shape",
+          "fileName": "Asset 44Shape.svg"
+        },
+        {
+          "id": "starbrust__asset_45shape",
+          "name": "Asset 45Shape",
+          "isPremium": false,
+          "source": "ota",
+          "kindId": "asset_45shape",
+          "fileName": "Asset 45Shape.svg"
+        },
+        {
+          "id": "starbrust__asset_46shape",
+          "name": "Asset 46Shape",
+          "isPremium": false,
+          "source": "ota",
+          "kindId": "asset_46shape",
+          "fileName": "Asset 46Shape.svg"
+        },
+        {
+          "id": "starbrust__asset_47shape",
+          "name": "Asset 47Shape",
+          "isPremium": false,
+          "source": "ota",
+          "kindId": "asset_47shape",
+          "fileName": "Asset 47Shape.svg"
+        },
+        {
+          "id": "starbrust__asset_48shape",
+          "name": "Asset 48Shape",
+          "isPremium": false,
+          "source": "ota",
+          "kindId": "asset_48shape",
+          "fileName": "Asset 48Shape.svg"
+        },
+        {
+          "id": "starbrust__asset_49shape",
+          "name": "Asset 49Shape",
+          "isPremium": false,
+          "source": "ota",
+          "kindId": "asset_49shape",
+          "fileName": "Asset 49Shape.svg"
+        },
+        {
+          "id": "starbrust__asset_4shape",
+          "name": "Asset 4Shape",
+          "isPremium": false,
+          "source": "ota",
+          "kindId": "asset_4shape",
+          "fileName": "Asset 4Shape.svg"
+        },
+        {
+          "id": "starbrust__asset_50shape",
+          "name": "Asset 50Shape",
+          "isPremium": false,
+          "source": "ota",
+          "kindId": "asset_50shape",
+          "fileName": "Asset 50Shape.svg"
+        },
+        {
+          "id": "starbrust__asset_51shape",
+          "name": "Asset 51Shape",
+          "isPremium": false,
+          "source": "ota",
+          "kindId": "asset_51shape",
+          "fileName": "Asset 51Shape.svg"
+        },
+        {
+          "id": "starbrust__asset_52shape",
+          "name": "Asset 52Shape",
+          "isPremium": false,
+          "source": "ota",
+          "kindId": "asset_52shape",
+          "fileName": "Asset 52Shape.svg"
+        },
+        {
+          "id": "starbrust__asset_53shape",
+          "name": "Asset 53Shape",
+          "isPremium": false,
+          "source": "ota",
+          "kindId": "asset_53shape",
+          "fileName": "Asset 53Shape.svg"
+        },
+        {
+          "id": "starbrust__asset_54shape",
+          "name": "Asset 54Shape",
+          "isPremium": false,
+          "source": "ota",
+          "kindId": "asset_54shape",
+          "fileName": "Asset 54Shape.svg"
+        },
+        {
+          "id": "starbrust__asset_55shape",
+          "name": "Asset 55Shape",
+          "isPremium": false,
+          "source": "ota",
+          "kindId": "asset_55shape",
+          "fileName": "Asset 55Shape.svg"
+        },
+        {
+          "id": "starbrust__asset_56shape",
+          "name": "Asset 56Shape",
+          "isPremium": false,
+          "source": "ota",
+          "kindId": "asset_56shape",
+          "fileName": "Asset 56Shape.svg"
+        },
+        {
+          "id": "starbrust__asset_57shape",
+          "name": "Asset 57Shape",
+          "isPremium": false,
+          "source": "ota",
+          "kindId": "asset_57shape",
+          "fileName": "Asset 57Shape.svg"
+        },
+        {
+          "id": "starbrust__asset_58shape",
+          "name": "Asset 58Shape",
+          "isPremium": false,
+          "source": "ota",
+          "kindId": "asset_58shape",
+          "fileName": "Asset 58Shape.svg"
+        },
+        {
+          "id": "starbrust__asset_59shape",
+          "name": "Asset 59Shape",
+          "isPremium": false,
+          "source": "ota",
+          "kindId": "asset_59shape",
+          "fileName": "Asset 59Shape.svg"
+        },
+        {
+          "id": "starbrust__asset_5shape",
+          "name": "Asset 5Shape",
+          "isPremium": false,
+          "source": "ota",
+          "kindId": "asset_5shape",
+          "fileName": "Asset 5Shape.svg"
+        },
+        {
+          "id": "starbrust__asset_60shape",
+          "name": "Asset 60Shape",
+          "isPremium": false,
+          "source": "ota",
+          "kindId": "asset_60shape",
+          "fileName": "Asset 60Shape.svg"
+        },
+        {
+          "id": "starbrust__asset_61shape",
+          "name": "Asset 61Shape",
+          "isPremium": false,
+          "source": "ota",
+          "kindId": "asset_61shape",
+          "fileName": "Asset 61Shape.svg"
+        },
+        {
+          "id": "starbrust__asset_62shape",
+          "name": "Asset 62Shape",
+          "isPremium": false,
+          "source": "ota",
+          "kindId": "asset_62shape",
+          "fileName": "Asset 62Shape.svg"
+        },
+        {
+          "id": "starbrust__asset_63shape",
+          "name": "Asset 63Shape",
+          "isPremium": false,
+          "source": "ota",
+          "kindId": "asset_63shape",
+          "fileName": "Asset 63Shape.svg"
+        },
+        {
+          "id": "starbrust__asset_64shape",
+          "name": "Asset 64Shape",
+          "isPremium": false,
+          "source": "ota",
+          "kindId": "asset_64shape",
+          "fileName": "Asset 64Shape.svg"
+        },
+        {
+          "id": "starbrust__asset_65shape",
+          "name": "Asset 65Shape",
+          "isPremium": false,
+          "source": "ota",
+          "kindId": "asset_65shape",
+          "fileName": "Asset 65Shape.svg"
+        },
+        {
+          "id": "starbrust__asset_66shape",
+          "name": "Asset 66Shape",
+          "isPremium": false,
+          "source": "ota",
+          "kindId": "asset_66shape",
+          "fileName": "Asset 66Shape.svg"
+        },
+        {
+          "id": "starbrust__asset_6shape",
+          "name": "Asset 6Shape",
+          "isPremium": false,
+          "source": "ota",
+          "kindId": "asset_6shape",
+          "fileName": "Asset 6Shape.svg"
+        },
+        {
+          "id": "starbrust__asset_7shape",
+          "name": "Asset 7Shape",
+          "isPremium": false,
+          "source": "ota",
+          "kindId": "asset_7shape",
+          "fileName": "Asset 7Shape.svg"
+        },
+        {
+          "id": "starbrust__asset_8shape",
+          "name": "Asset 8Shape",
+          "isPremium": false,
+          "source": "ota",
+          "kindId": "asset_8shape",
+          "fileName": "Asset 8Shape.svg"
+        },
+        {
+          "id": "starbrust__asset_9shape",
+          "name": "Asset 9Shape",
+          "isPremium": false,
+          "source": "ota",
+          "kindId": "asset_9shape",
+          "fileName": "Asset 9Shape.svg"
+        }
+      ],
+      "bannerImageUrl": null,
+      "promoHeaderUrl": null
+    }
+  ]
 }
