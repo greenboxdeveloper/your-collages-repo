@@ -1,4 +1,50 @@
 {
-  "version": "1.3",
-  "categories": []
+  "version": "1.4",
+  "categories": [
+    {
+      "id": "vintage_frame",
+      "name": "Vintage Frame",
+      "icon": "square.on.square",
+      "remoteFolderName": "Vintage Frame",
+      "frames": [
+        {
+          "id": "vintage_frame__asset_1frame",
+          "name": "Asset 1Frame",
+          "isPremium": false,
+          "source": "ota",
+          "fileName": "Asset 1Frame"
+        },
+        {
+          "id": "vintage_frame__asset_2frame",
+          "name": "Asset 2Frame",
+          "isPremium": false,
+          "source": "ota",
+          "fileName": "Asset 2Frame"
+        },
+        {
+          "id": "vintage_frame__asset_3frame",
+          "name": "Asset 3Frame",
+          "isPremium": false,
+          "source": "ota",
+          "fileName": "Asset 3Frame"
+        },
+        {
+          "id": "vintage_frame__asset_4frame",
+          "name": "Asset 4Frame",
+          "isPremium": false,
+          "source": "ota",
+          "fileName": "Asset 4Frame"
+        },
+        {
+          "id": "vintage_frame__asset_5frame",
+          "name": "Asset 5Frame",
+          "isPremium": false,
+          "source": "ota",
+          "fileName": "Asset 5Frame"
+        }
+      ],
+      "bannerImageUrl": null,
+      "promoHeaderUrl": null
+    }
+  ]
 }
