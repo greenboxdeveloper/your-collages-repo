@@ -2303,30 +2303,79 @@ def generate_font_catalog_manifest(
     return 0
 
 
-def generate_shape_store_manifest(shapes_dir: Path, output_path: Path) -> int:
+_SHAPE_VECTOR_EXTS = frozenset({".svg", ".SVG"})
+# EPS is not parsed on iOS; convert offline to SVG before adding to the repo.
+_SHAPE_SKIP_EXTS = frozenset({".eps", ".EPS", ".ai", ".AI"})
+
+
+def _is_reserved_shape_pack_asset(path: Path) -> bool:
+    return path.name.lower() in {"banner.png", "promo_header.png", "promo.png"}
+
+
+def generate_shape_store_manifest(shapes_dir: Path, output_path: Path, base_url: str | None = None) -> int:
+    """Emit ``shape_store_manifest.json`` for SVG shape packs (same layout as stickers: category folders).
+
+    Each category folder contains ``.svg`` files (single ``<path>`` or ``<polygon>`` recommended).
+    ``banner.png`` / ``promo_header.png`` are store-only (omitted from ``shapes``). ``.eps`` files are skipped
+    with a log line — convert to SVG for GitHub + the app.
+    """
     categories = []
     if not shapes_dir.is_dir():
         shapes_dir.mkdir(parents=True, exist_ok=True)
     for cat_dir in sorted(shapes_dir.iterdir()):
         if not cat_dir.is_dir():
             continue
-        files = sorted([p for p in cat_dir.iterdir() if p.is_file() and not p.name.startswith(".")], key=lambda p: p.name.lower())
-        if not files:
+        files = sorted(
+            [p for p in cat_dir.iterdir() if p.is_file() and not p.name.startswith(".")],
+            key=lambda p: p.name.lower(),
+        )
+        vector_files = [p for p in files if p.suffix in _SHAPE_VECTOR_EXTS]
+        for p in files:
+            if p.suffix in _SHAPE_SKIP_EXTS:
+                print(f"[shape-manifest] skip (convert to SVG): {p}")
+        if not vector_files:
             continue
         cat_id = _slugify(cat_dir.name)
         cat_name = _title_from_stem(cat_dir.name)
         shapes = []
-        for p in files:
+        for p in vector_files:
+            if _is_reserved_shape_pack_asset(p):
+                continue
             display_name, is_premium = _store_stem_to_name_and_premium(p.stem, default_premium=False)
             clean_stem = _clean_stem_premium_suffix(p.stem)
+            item_id = f"{cat_id}__{_slugify(clean_stem)}"
             shapes.append({
-                "id": f"{cat_id}__{_slugify(clean_stem)}",
+                "id": item_id,
                 "name": display_name,
                 "isPremium": is_premium,
-                "source": "bundle",
+                "source": "ota",
                 "kindId": _slugify(clean_stem),
+                "fileName": p.name,
             })
-        categories.append({"id": cat_id, "name": cat_name, "shapes": shapes})
+        if not shapes:
+            continue
+        cat_entry: dict = {
+            "id": cat_id,
+            "name": cat_name,
+            "remoteFolderName": cat_dir.name,
+            "shapes": shapes,
+            "bannerImageUrl": None,
+            "promoHeaderUrl": None,
+        }
+        if base_url:
+            bu = base_url.rstrip("/")
+            seg = quote(cat_dir.name, safe="/")
+            for fname in ("banner.png", "banner.jpg", "Banner.png"):
+                banner_path = cat_dir / fname
+                if banner_path.is_file():
+                    cat_entry["bannerImageUrl"] = f"{bu}/Shapes/{seg}/{fname}"
+                    break
+            for fname in ("promo_header.png", "promo_header.jpg", "promo.jpg"):
+                promo_path = cat_dir / fname
+                if promo_path.is_file():
+                    cat_entry["promoHeaderUrl"] = f"{bu}/Shapes/{seg}/{fname}"
+                    break
+        categories.append(cat_entry)
     version = _write_versioned_manifest(output_path, "categories", categories)
     print(f"[shape-manifest] v{version} — {len(categories)} categories → {output_path}")
     return 0
@@ -2491,7 +2540,11 @@ def main_with_filter_support() -> int:
         )
         if result != 0:
             return result
-        result = generate_shape_store_manifest(repo_root / args.shapes_dir, repo_root / args.shapes_output)
+        result = generate_shape_store_manifest(
+            repo_root / args.shapes_dir,
+            repo_root / args.shapes_output,
+            base_url=args.base_url,
+        )
 
     return result
 
