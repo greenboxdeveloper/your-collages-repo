@@ -1,5 +1,5 @@
 {
-  "version": "1.1",
+  "version": "1.2",
   "categories": [
     {
       "id": "cute_animals",
@@ -132,6 +132,100 @@
           "isPremium": false,
           "source": "ota",
           "fileName": "Asset 9@4x"
+        }
+      ],
+      "bannerImageUrl": null,
+      "promoHeaderUrl": null
+    },
+    {
+      "id": "months_pr",
+      "name": "Months Pr",
+      "count": 12,
+      "remoteFolderName": "MONTHS_PR",
+      "stickers": [
+        {
+          "id": "months_pr__apr",
+          "name": "Apr",
+          "isPremium": false,
+          "source": "ota",
+          "fileName": "APR"
+        },
+        {
+          "id": "months_pr__aug",
+          "name": "Aug",
+          "isPremium": false,
+          "source": "ota",
+          "fileName": "AUG"
+        },
+        {
+          "id": "months_pr__dec",
+          "name": "Dec",
+          "isPremium": false,
+          "source": "ota",
+          "fileName": "DEC"
+        },
+        {
+          "id": "months_pr__feb",
+          "name": "Feb",
+          "isPremium": false,
+          "source": "ota",
+          "fileName": "FEB"
+        },
+        {
+          "id": "months_pr__jan",
+          "name": "Jan",
+          "isPremium": false,
+          "source": "ota",
+          "fileName": "JAN"
+        },
+        {
+          "id": "months_pr__jul",
+          "name": "Jul",
+          "isPremium": false,
+          "source": "ota",
+          "fileName": "JUL"
+        },
+        {
+          "id": "months_pr__jun",
+          "name": "Jun",
+          "isPremium": false,
+          "source": "ota",
+          "fileName": "JUN"
+        },
+        {
+          "id": "months_pr__mar",
+          "name": "Mar",
+          "isPremium": false,
+          "source": "ota",
+          "fileName": "MAR"
+        },
+        {
+          "id": "months_pr__may",
+          "name": "May",
+          "isPremium": false,
+          "source": "ota",
+          "fileName": "MAY"
+        },
+        {
+          "id": "months_pr__nov",
+          "name": "Nov",
+          "isPremium": false,
+          "source": "ota",
+          "fileName": "NOV"
+        },
+        {
+          "id": "months_pr__oct",
+          "name": "Oct",
+          "isPremium": false,
+          "source": "ota",
+          "fileName": "OCT"
+        },
+        {
+          "id": "months_pr__sept",
+          "name": "Sept",
+          "isPremium": false,
+          "source": "ota",
+          "fileName": "SEPT"
         }
       ],
       "bannerImageUrl": null,
