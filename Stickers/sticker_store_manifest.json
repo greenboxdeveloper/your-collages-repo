@@ -1,5 +1,5 @@
 {
-  "version": "1.2",
+  "version": "1.3",
   "categories": [
     {
       "id": "cute_animals",
@@ -226,6 +226,30 @@
           "isPremium": false,
           "source": "ota",
           "fileName": "SEPT"
+        }
+      ],
+      "bannerImageUrl": null,
+      "promoHeaderUrl": null
+    },
+    {
+      "id": "photo_frame",
+      "name": "Photo Frame",
+      "count": 2,
+      "remoteFolderName": "Photo Frame",
+      "stickers": [
+        {
+          "id": "photo_frame__frame_basic",
+          "name": "Frame Basic",
+          "isPremium": false,
+          "source": "ota",
+          "fileName": "Frame Basic"
+        },
+        {
+          "id": "photo_frame__tape",
+          "name": "Tape",
+          "isPremium": false,
+          "source": "ota",
+          "fileName": "Tape"
         }
       ],
       "bannerImageUrl": null,
