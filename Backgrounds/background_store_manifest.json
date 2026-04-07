@@ -1,5 +1,5 @@
 {
-  "version": "1.3",
+  "version": "1.4",
   "categories": [
     {
       "id": "paper",
@@ -67,93 +67,6 @@
           "source": "ota",
           "colorHex": null,
           "fileName": "7.jpg"
-        }
-      ]
-    },
-    {
-      "id": "spring_pr",
-      "name": "Spring_PR",
-      "backgrounds": [
-        {
-          "id": "spring_pr__spring01_jpg",
-          "name": "Spring01",
-          "isPremium": false,
-          "kind": "image",
-          "source": "ota",
-          "colorHex": null,
-          "fileName": "Spring01.jpg"
-        },
-        {
-          "id": "spring_pr__spring02_jpg",
-          "name": "Spring02",
-          "isPremium": false,
-          "kind": "image",
-          "source": "ota",
-          "colorHex": null,
-          "fileName": "Spring02.jpg"
-        },
-        {
-          "id": "spring_pr__spring03_jpg",
-          "name": "Spring03",
-          "isPremium": false,
-          "kind": "image",
-          "source": "ota",
-          "colorHex": null,
-          "fileName": "Spring03.jpg"
-        },
-        {
-          "id": "spring_pr__spring04_jpg",
-          "name": "Spring04",
-          "isPremium": true,
-          "kind": "image",
-          "source": "ota",
-          "colorHex": null,
-          "fileName": "Spring04_PR.jpg"
-        },
-        {
-          "id": "spring_pr__spring05_jpg",
-          "name": "Spring05",
-          "isPremium": true,
-          "kind": "image",
-          "source": "ota",
-          "colorHex": null,
-          "fileName": "Spring05_PR.jpg"
-        },
-        {
-          "id": "spring_pr__spring06_jpg",
-          "name": "Spring06",
-          "isPremium": true,
-          "kind": "image",
-          "source": "ota",
-          "colorHex": null,
-          "fileName": "Spring06_PR.jpg"
-        },
-        {
-          "id": "spring_pr__spring07_jpg",
-          "name": "Spring07",
-          "isPremium": true,
-          "kind": "image",
-          "source": "ota",
-          "colorHex": null,
-          "fileName": "Spring07_PR.jpg"
-        },
-        {
-          "id": "spring_pr__spring08_jpg",
-          "name": "Spring08",
-          "isPremium": true,
-          "kind": "image",
-          "source": "ota",
-          "colorHex": null,
-          "fileName": "Spring08_PR.jpg"
-        },
-        {
-          "id": "spring_pr__spring09_jpg",
-          "name": "Spring09",
-          "isPremium": true,
-          "kind": "image",
-          "source": "ota",
-          "colorHex": null,
-          "fileName": "Spring09_PR.jpg"
         }
       ]
     }
