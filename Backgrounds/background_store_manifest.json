@@ -1,6 +1,390 @@
 {
-  "version": "1.5",
+  "version": "1.6",
   "categories": [
+    {
+      "id": "dot_pack_01",
+      "name": "Dot Pack 01",
+      "backgrounds": [
+        {
+          "id": "dot_pack_01__dot1_10_jpg",
+          "name": "Dot1.10",
+          "isPremium": true,
+          "kind": "image",
+          "source": "ota",
+          "colorHex": null,
+          "fileName": "Dot1.10_PR.jpg"
+        },
+        {
+          "id": "dot_pack_01__dot1_1_jpg",
+          "name": "Dot1.1",
+          "isPremium": false,
+          "kind": "image",
+          "source": "ota",
+          "colorHex": null,
+          "fileName": "Dot1.1.jpg"
+        },
+        {
+          "id": "dot_pack_01__dot1_2_jpg",
+          "name": "Dot1.2",
+          "isPremium": true,
+          "kind": "image",
+          "source": "ota",
+          "colorHex": null,
+          "fileName": "Dot1.2_PR.jpg"
+        },
+        {
+          "id": "dot_pack_01__dot1_3_jpg",
+          "name": "Dot1.3",
+          "isPremium": true,
+          "kind": "image",
+          "source": "ota",
+          "colorHex": null,
+          "fileName": "Dot1.3_PR.jpg"
+        },
+        {
+          "id": "dot_pack_01__dot1_4_jpg",
+          "name": "Dot1.4",
+          "isPremium": true,
+          "kind": "image",
+          "source": "ota",
+          "colorHex": null,
+          "fileName": "Dot1.4_PR.jpg"
+        },
+        {
+          "id": "dot_pack_01__dot1_5_jpg",
+          "name": "Dot1.5",
+          "isPremium": true,
+          "kind": "image",
+          "source": "ota",
+          "colorHex": null,
+          "fileName": "Dot1.5_PR.jpg"
+        },
+        {
+          "id": "dot_pack_01__dot1_6_jpg",
+          "name": "Dot1.6",
+          "isPremium": true,
+          "kind": "image",
+          "source": "ota",
+          "colorHex": null,
+          "fileName": "Dot1.6_PR.jpg"
+        },
+        {
+          "id": "dot_pack_01__dot1_7_jpg",
+          "name": "Dot1.7",
+          "isPremium": true,
+          "kind": "image",
+          "source": "ota",
+          "colorHex": null,
+          "fileName": "Dot1.7_PR.jpg"
+        },
+        {
+          "id": "dot_pack_01__dot1_8_jpg",
+          "name": "Dot1.8",
+          "isPremium": true,
+          "kind": "image",
+          "source": "ota",
+          "colorHex": null,
+          "fileName": "Dot1.8_PR.jpg"
+        },
+        {
+          "id": "dot_pack_01__dot1_9_jpg",
+          "name": "Dot1.9",
+          "isPremium": true,
+          "kind": "image",
+          "source": "ota",
+          "colorHex": null,
+          "fileName": "Dot1.9_PR.jpg"
+        }
+      ]
+    },
+    {
+      "id": "dot_pack_02",
+      "name": "Dot Pack 02",
+      "backgrounds": [
+        {
+          "id": "dot_pack_02__dot2_10_jpg",
+          "name": "Dot2.10",
+          "isPremium": true,
+          "kind": "image",
+          "source": "ota",
+          "colorHex": null,
+          "fileName": "Dot2.10_PR.jpg"
+        },
+        {
+          "id": "dot_pack_02__dot2_1_jpg",
+          "name": "Dot2.1",
+          "isPremium": false,
+          "kind": "image",
+          "source": "ota",
+          "colorHex": null,
+          "fileName": "Dot2.1.jpg"
+        },
+        {
+          "id": "dot_pack_02__dot2_2_jpg",
+          "name": "Dot2.2",
+          "isPremium": true,
+          "kind": "image",
+          "source": "ota",
+          "colorHex": null,
+          "fileName": "Dot2.2_PR.jpg"
+        },
+        {
+          "id": "dot_pack_02__dot2_3_jpg",
+          "name": "Dot2.3",
+          "isPremium": true,
+          "kind": "image",
+          "source": "ota",
+          "colorHex": null,
+          "fileName": "Dot2.3_PR.jpg"
+        },
+        {
+          "id": "dot_pack_02__dot2_4_jpg",
+          "name": "Dot2.4",
+          "isPremium": true,
+          "kind": "image",
+          "source": "ota",
+          "colorHex": null,
+          "fileName": "Dot2.4_PR.jpg"
+        },
+        {
+          "id": "dot_pack_02__dot2_5_jpg",
+          "name": "Dot2.5",
+          "isPremium": true,
+          "kind": "image",
+          "source": "ota",
+          "colorHex": null,
+          "fileName": "Dot2.5_PR.jpg"
+        },
+        {
+          "id": "dot_pack_02__dot2_6_jpg",
+          "name": "Dot2.6",
+          "isPremium": true,
+          "kind": "image",
+          "source": "ota",
+          "colorHex": null,
+          "fileName": "Dot2.6_PR.jpg"
+        },
+        {
+          "id": "dot_pack_02__dot2_7_jpg",
+          "name": "Dot2.7",
+          "isPremium": true,
+          "kind": "image",
+          "source": "ota",
+          "colorHex": null,
+          "fileName": "Dot2.7_PR.jpg"
+        },
+        {
+          "id": "dot_pack_02__dot2_8_jpg",
+          "name": "Dot2.8",
+          "isPremium": true,
+          "kind": "image",
+          "source": "ota",
+          "colorHex": null,
+          "fileName": "Dot2.8_PR.jpg"
+        },
+        {
+          "id": "dot_pack_02__dot2_9_jpg",
+          "name": "Dot2.9",
+          "isPremium": true,
+          "kind": "image",
+          "source": "ota",
+          "colorHex": null,
+          "fileName": "Dot2.9_PR.jpg"
+        }
+      ]
+    },
+    {
+      "id": "dot_pack_03",
+      "name": "Dot Pack 03",
+      "backgrounds": [
+        {
+          "id": "dot_pack_03__dot3_10_jpg",
+          "name": "Dot3.10",
+          "isPremium": true,
+          "kind": "image",
+          "source": "ota",
+          "colorHex": null,
+          "fileName": "Dot3.10_PR.jpg"
+        },
+        {
+          "id": "dot_pack_03__dot3_1_jpg",
+          "name": "Dot3.1",
+          "isPremium": false,
+          "kind": "image",
+          "source": "ota",
+          "colorHex": null,
+          "fileName": "Dot3.1.jpg"
+        },
+        {
+          "id": "dot_pack_03__dot3_2_jpg",
+          "name": "Dot3.2",
+          "isPremium": true,
+          "kind": "image",
+          "source": "ota",
+          "colorHex": null,
+          "fileName": "Dot3.2_PR.jpg"
+        },
+        {
+          "id": "dot_pack_03__dot3_3_jpg",
+          "name": "Dot3.3",
+          "isPremium": true,
+          "kind": "image",
+          "source": "ota",
+          "colorHex": null,
+          "fileName": "Dot3.3_PR.jpg"
+        },
+        {
+          "id": "dot_pack_03__dot3_4_jpg",
+          "name": "Dot3.4",
+          "isPremium": true,
+          "kind": "image",
+          "source": "ota",
+          "colorHex": null,
+          "fileName": "Dot3.4_PR.jpg"
+        },
+        {
+          "id": "dot_pack_03__dot3_5_jpg",
+          "name": "Dot3.5",
+          "isPremium": true,
+          "kind": "image",
+          "source": "ota",
+          "colorHex": null,
+          "fileName": "Dot3.5_PR.jpg"
+        },
+        {
+          "id": "dot_pack_03__dot3_6_jpg",
+          "name": "Dot3.6",
+          "isPremium": true,
+          "kind": "image",
+          "source": "ota",
+          "colorHex": null,
+          "fileName": "Dot3.6_PR.jpg"
+        },
+        {
+          "id": "dot_pack_03__dot3_7_jpg",
+          "name": "Dot3.7",
+          "isPremium": true,
+          "kind": "image",
+          "source": "ota",
+          "colorHex": null,
+          "fileName": "Dot3.7_PR.jpg"
+        },
+        {
+          "id": "dot_pack_03__dot3_8_jpg",
+          "name": "Dot3.8",
+          "isPremium": true,
+          "kind": "image",
+          "source": "ota",
+          "colorHex": null,
+          "fileName": "Dot3.8_PR.jpg"
+        },
+        {
+          "id": "dot_pack_03__dot3_9_jpg",
+          "name": "Dot3.9",
+          "isPremium": true,
+          "kind": "image",
+          "source": "ota",
+          "colorHex": null,
+          "fileName": "Dot3.9_PR.jpg"
+        }
+      ]
+    },
+    {
+      "id": "dot_pack_04",
+      "name": "Dot Pack 04",
+      "backgrounds": [
+        {
+          "id": "dot_pack_04__dot4_10_jpg",
+          "name": "Dot4.10",
+          "isPremium": true,
+          "kind": "image",
+          "source": "ota",
+          "colorHex": null,
+          "fileName": "Dot4.10_PR.jpg"
+        },
+        {
+          "id": "dot_pack_04__dot4_1_jpg",
+          "name": "Dot4.1",
+          "isPremium": false,
+          "kind": "image",
+          "source": "ota",
+          "colorHex": null,
+          "fileName": "Dot4.1.jpg"
+        },
+        {
+          "id": "dot_pack_04__dot4_2_jpg",
+          "name": "Dot4.2",
+          "isPremium": true,
+          "kind": "image",
+          "source": "ota",
+          "colorHex": null,
+          "fileName": "Dot4.2_PR.jpg"
+        },
+        {
+          "id": "dot_pack_04__dot4_3_jpg",
+          "name": "Dot4.3",
+          "isPremium": true,
+          "kind": "image",
+          "source": "ota",
+          "colorHex": null,
+          "fileName": "Dot4.3_PR.jpg"
+        },
+        {
+          "id": "dot_pack_04__dot4_4_jpg",
+          "name": "Dot4.4",
+          "isPremium": true,
+          "kind": "image",
+          "source": "ota",
+          "colorHex": null,
+          "fileName": "Dot4.4_PR.jpg"
+        },
+        {
+          "id": "dot_pack_04__dot4_5_jpg",
+          "name": "Dot4.5",
+          "isPremium": true,
+          "kind": "image",
+          "source": "ota",
+          "colorHex": null,
+          "fileName": "Dot4.5_PR.jpg"
+        },
+        {
+          "id": "dot_pack_04__dot4_6_jpg",
+          "name": "Dot4.6",
+          "isPremium": true,
+          "kind": "image",
+          "source": "ota",
+          "colorHex": null,
+          "fileName": "Dot4.6_PR.jpg"
+        },
+        {
+          "id": "dot_pack_04__dot4_7_jpg",
+          "name": "Dot4.7",
+          "isPremium": true,
+          "kind": "image",
+          "source": "ota",
+          "colorHex": null,
+          "fileName": "Dot4.7_PR.jpg"
+        },
+        {
+          "id": "dot_pack_04__dot4_8_jpg",
+          "name": "Dot4.8",
+          "isPremium": true,
+          "kind": "image",
+          "source": "ota",
+          "colorHex": null,
+          "fileName": "Dot4.8_PR.jpg"
+        },
+        {
+          "id": "dot_pack_04__dot4_9_jpg",
+          "name": "Dot4.9",
+          "isPremium": true,
+          "kind": "image",
+          "source": "ota",
+          "colorHex": null,
+          "fileName": "Dot4.9_PR.jpg"
+        }
+      ]
+    },
     {
       "id": "paper",
       "name": "Paper",
