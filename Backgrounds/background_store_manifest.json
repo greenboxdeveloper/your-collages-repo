@@ -1,5 +1,5 @@
 {
-  "version": "1.6",
+  "version": "1.7",
   "categories": [
     {
       "id": "dot_pack_01",
@@ -538,6 +538,84 @@
           "source": "ota",
           "colorHex": null,
           "fileName": "Spring09_PR.jpg"
+        }
+      ]
+    },
+    {
+      "id": "vintage_pack_01",
+      "name": "Vintage Pack 01",
+      "backgrounds": [
+        {
+          "id": "vintage_pack_01__vintage1_1_jpg",
+          "name": "Vintage1.1",
+          "isPremium": false,
+          "kind": "image",
+          "source": "ota",
+          "colorHex": null,
+          "fileName": "Vintage1.1.jpg"
+        },
+        {
+          "id": "vintage_pack_01__vintage1_2_jpg",
+          "name": "Vintage1.2",
+          "isPremium": true,
+          "kind": "image",
+          "source": "ota",
+          "colorHex": null,
+          "fileName": "Vintage1.2_PR.jpg"
+        },
+        {
+          "id": "vintage_pack_01__vintage1_3_jpg",
+          "name": "Vintage1.3",
+          "isPremium": true,
+          "kind": "image",
+          "source": "ota",
+          "colorHex": null,
+          "fileName": "Vintage1.3_PR.jpg"
+        },
+        {
+          "id": "vintage_pack_01__vintage1_4_jpg",
+          "name": "Vintage1.4",
+          "isPremium": true,
+          "kind": "image",
+          "source": "ota",
+          "colorHex": null,
+          "fileName": "Vintage1.4_PR.jpg"
+        },
+        {
+          "id": "vintage_pack_01__vintage1_5_jpg",
+          "name": "Vintage1.5",
+          "isPremium": true,
+          "kind": "image",
+          "source": "ota",
+          "colorHex": null,
+          "fileName": "Vintage1.5_PR.jpg"
+        },
+        {
+          "id": "vintage_pack_01__vintage1_6_jpg",
+          "name": "Vintage1.6",
+          "isPremium": true,
+          "kind": "image",
+          "source": "ota",
+          "colorHex": null,
+          "fileName": "Vintage1.6_PR.jpg"
+        },
+        {
+          "id": "vintage_pack_01__vintage1_7_jpg",
+          "name": "Vintage1.7",
+          "isPremium": true,
+          "kind": "image",
+          "source": "ota",
+          "colorHex": null,
+          "fileName": "Vintage1.7_PR.jpg"
+        },
+        {
+          "id": "vintage_pack_01__vintage1_8_jpg",
+          "name": "Vintage1.8",
+          "isPremium": true,
+          "kind": "image",
+          "source": "ota",
+          "colorHex": null,
+          "fileName": "Vintage1.8_PR.jpg"
         }
       ]
     }
