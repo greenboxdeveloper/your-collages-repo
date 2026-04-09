@@ -1,5 +1,5 @@
 {
-  "version": "1.7",
+  "version": "1.8",
   "categories": [
     {
       "id": "dot_pack_01",
@@ -538,6 +538,21 @@
           "source": "ota",
           "colorHex": null,
           "fileName": "Spring09_PR.jpg"
+        }
+      ]
+    },
+    {
+      "id": "valentile_pack_01",
+      "name": "Valentile Pack 01",
+      "backgrounds": [
+        {
+          "id": "valentile_pack_01__valentine1_8_jpg",
+          "name": "Valentine1.8",
+          "isPremium": true,
+          "kind": "image",
+          "source": "ota",
+          "colorHex": null,
+          "fileName": "Valentine1.8_PR.jpg"
         }
       ]
     },
