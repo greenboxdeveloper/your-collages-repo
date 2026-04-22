@@ -15,6 +15,7 @@ on:
       - "Backgrounds/**"
       - "Fonts/**"
       - "Shapes/**"
+      - "PNGTemplates/**"
       - "scripts/**"
   workflow_dispatch:
 
@@ -67,6 +68,9 @@ jobs:
             --fonts-output Fonts/font_catalog.json \
             --shapes-dir Shapes \
             --shapes-output Shapes/shape_store_manifest.json
+            --generate-png-template-manifest \
+            --png-templates-dir PNGTemplates \  
+            --png-templates-output PNGTemplates/png_template_manifest.json
 
       - name: Commit and push if changed
         run: |
@@ -79,7 +83,8 @@ jobs:
             Stickers/sticker_store_manifest.json \
             Backgrounds/background_store_manifest.json \
             Fonts/font_catalog.json \
-            Shapes/shape_store_manifest.json || true
+            Shapes/shape_store_manifest.json \
+            PNGTemplates/png_template_manifest.json || true
           if git diff --staged --quiet; then
             echo "No manifest changes to commit."
           else
