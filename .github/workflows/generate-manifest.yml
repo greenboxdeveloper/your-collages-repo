@@ -40,7 +40,7 @@ jobs:
 
       # Script reads one SVG folder (--svg-dir). Repo paths above also watch svgs/**;
       # if your layouts live only under svgs/, set --svg-dir svgs (or symlink / duplicate into collages).
-            - name: Generate manifest, thumbnails, and all store manifests
+      - name: Generate manifest, thumbnails, and all store manifests
         env:
           BASE_URL: "https://raw.githubusercontent.com/${{ github.repository }}/${{ github.ref_name }}"
         run: |
@@ -71,7 +71,7 @@ jobs:
             --generate-png-template-manifest \
             --png-templates-dir PNGTemplates \
             --png-templates-output PNGTemplates/png_template_manifest.json
-            
+
       - name: Commit and push if changed
         run: |
           git config user.name "github-actions[bot]"
