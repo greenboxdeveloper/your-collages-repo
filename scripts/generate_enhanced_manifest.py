@@ -2381,6 +2381,63 @@ def generate_shape_store_manifest(shapes_dir: Path, output_path: Path, base_url:
     return 0
 
 
+def generate_png_template_manifest(
+    templates_dir: Path,
+    output_path: Path,
+) -> int:
+    """Emit ``png_template_manifest.json`` from ``PNGTemplates/<Category>/*.png``.
+
+    Rules:
+    - All PNG files in each category folder are included.
+    - Folder name under ``PNGTemplates/`` is preserved as ``remoteFolderName`` (GitHub URL segment).
+    - Item ``holeCount`` is informational only and defaults to ``0`` (runtime hole detection is authoritative).
+    - Version is bumped only when categories/items actually change.
+    """
+    categories: list[dict] = []
+    if not templates_dir.is_dir():
+        templates_dir.mkdir(parents=True, exist_ok=True)
+
+    for cat_dir in sorted([p for p in templates_dir.iterdir() if p.is_dir()], key=lambda p: p.name.lower()):
+        pngs = sorted(
+            [p for p in cat_dir.iterdir() if p.is_file() and p.suffix.lower() == ".png"],
+            key=lambda p: p.name.lower(),
+        )
+        if not pngs:
+            continue
+
+        cat_id = _slugify(cat_dir.name)
+        cat_name = _title_from_stem(cat_dir.name)
+        items: list[dict] = []
+        for p in pngs:
+            stem = p.stem
+            display_name, is_premium = _store_stem_to_name_and_premium(stem, default_premium=False)
+            clean_stem = _clean_stem_premium_suffix(stem)
+            item_id = f"{cat_id}__{_slugify(clean_stem)}"
+            items.append({
+                "id": item_id,
+                "name": display_name,
+                "fileName": clean_stem,
+                "isPremium": is_premium,
+                "holeCount": 0,
+            })
+
+        if not items:
+            continue
+
+        categories.append({
+            "id": cat_id,
+            "name": cat_name,
+            "icon": "square.grid.2x2",
+            "remoteFolderName": cat_dir.name,
+            "items": items,
+        })
+
+    version = _write_versioned_manifest(output_path, "categories", categories)
+    total_items = sum(len(c.get("items") or []) for c in categories)
+    print(f"[png-template-manifest] v{version} — {len(categories)} categories, {total_items} templates → {output_path}")
+    return 0
+
+
 def _add_filter_manifest_args(parser: argparse.ArgumentParser) -> None:
     parser.add_argument(
         "--generate-filter-manifest",
@@ -2450,6 +2507,14 @@ def _add_store_manifest_args(parser: argparse.ArgumentParser) -> None:
     )
     parser.add_argument("--shapes-dir", default="Shapes")
     parser.add_argument("--shapes-output", default="Shapes/shape_store_manifest.json")
+    parser.add_argument(
+        "--generate-png-template-manifest",
+        action="store_true",
+        default=False,
+        help="Generate PNGTemplates/png_template_manifest.json from PNGTemplates category folders.",
+    )
+    parser.add_argument("--png-templates-dir", default="PNGTemplates")
+    parser.add_argument("--png-templates-output", default="PNGTemplates/png_template_manifest.json")
 
 
 # Re-run main with filter manifest support (extended entry point).
@@ -2544,6 +2609,14 @@ def main_with_filter_support() -> int:
             repo_root / args.shapes_dir,
             repo_root / args.shapes_output,
             base_url=args.base_url,
+        )
+        if result != 0:
+            return result
+
+    if args.generate_png_template_manifest:
+        result = generate_png_template_manifest(
+            repo_root / args.png_templates_dir,
+            repo_root / args.png_templates_output,
         )
 
     return result
