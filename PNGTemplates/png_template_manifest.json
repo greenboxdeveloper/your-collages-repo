@@ -1,4 +1,27 @@
 {
-  "version": "1.1",
-  "categories": []
+  "version": "1.2",
+  "categories": [
+    {
+      "id": "testtemplates",
+      "name": "Testtemplates",
+      "icon": "square.grid.2x2",
+      "remoteFolderName": "TestTemplates",
+      "items": [
+        {
+          "id": "testtemplates__wp11",
+          "name": "Wp11",
+          "fileName": "wp11",
+          "isPremium": false,
+          "holeCount": 0
+        },
+        {
+          "id": "testtemplates__wp11764083",
+          "name": "Wp11764083",
+          "fileName": "wp11764083",
+          "isPremium": false,
+          "holeCount": 0
+        }
+      ]
+    }
+  ]
 }
