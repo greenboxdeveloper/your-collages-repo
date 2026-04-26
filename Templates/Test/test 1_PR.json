@@ -1,0 +1,194 @@
+{
+  "chrome" : {
+    "background_color_rgba" : [
+      1,
+      1,
+      1,
+      1
+    ],
+    "background_hazy_blur_radius" : 48,
+    "background_image_name" : "spring__spring02_jpg",
+    "border_color_rgba" : [
+      1,
+      1,
+      1,
+      1
+    ],
+    "border_corner_radius" : 0,
+    "border_width" : 20,
+    "canvas_aspect" : 0.6666666666666666,
+    "canvas_ratio_preset" : "2:3",
+    "has_background_image" : true
+  },
+  "dependencies" : [
+    {
+      "asset_ref" : "Spring02.jpg",
+      "id" : "spring__spring02_jpg",
+      "type" : "background",
+      "url" : "https:\/\/raw.githubusercontent.com\/greenboxdeveloper\/your-collages-repo\/main\/Backgrounds\/Spring\/Spring02.jpg"
+    },
+    {
+      "id" : "Polaroid 1",
+      "type" : "sticker"
+    },
+    {
+      "id" : "Sticker_School_04.png",
+      "type" : "sticker"
+    },
+    {
+      "id" : "Sticker_School_03.png",
+      "type" : "sticker"
+    },
+    {
+      "id" : "Sticker_School_07.png",
+      "type" : "sticker"
+    }
+  ],
+  "editor" : {
+    "divider_positions" : {
+
+    },
+    "shared_vertex_positions" : {
+
+    }
+  },
+  "layout" : {
+    "category" : "TemplateBuilder",
+    "dividers" : [
+
+    ],
+    "id" : "template-builder-48705ECC",
+    "isPremium" : false,
+    "name" : "Template builder",
+    "shared_vertices" : [
+
+    ],
+    "slots" : [
+
+    ],
+    "type" : "grid"
+  },
+  "stickers" : [
+    {
+      "hole_n_rect" : [
+        0.06818181818181818,
+        0.0546875,
+        0.8535353535353536,
+        0.728515625
+      ],
+      "id" : "75241F41-67BC-4DB4-A25B-1D627C027336",
+      "image_name" : "Polaroid 1",
+      "linked_canvas_photo_id" : "FF37AD79-1907-4007-922B-32AB4E7B7E47",
+      "offset_height" : -162.6666666666667,
+      "offset_width" : -64,
+      "placement_kind" : "sticker",
+      "rotation_radians" : 0.006830026820225784,
+      "scale" : 1.5305472073901452,
+      "z_index" : 11
+    },
+    {
+      "id" : "FF37AD79-1907-4007-922B-32AB4E7B7E47",
+      "inner_offset_height" : 0,
+      "inner_offset_width" : 0,
+      "inner_scale" : 1,
+      "offset_height" : -162.6666666666667,
+      "offset_width" : -64,
+      "parent_frame_sticker_id" : "75241F41-67BC-4DB4-A25B-1D627C027336",
+      "placement_kind" : "canvas_photo",
+      "rotation_radians" : 0.006830026820225784,
+      "scale" : 1.5305472073901452,
+      "z_index" : 11
+    },
+    {
+      "hole_n_rect" : [
+        0.06818181818181818,
+        0.0546875,
+        0.8535353535353536,
+        0.728515625
+      ],
+      "id" : "001FD599-8AC7-448F-A05F-73F6FEB8422F",
+      "image_name" : "Polaroid 1",
+      "linked_canvas_photo_id" : "23C4A27B-B913-49F2-95E3-E468D75D770A",
+      "offset_height" : 0.9999999999999716,
+      "offset_width" : 62.66666666666663,
+      "placement_kind" : "sticker",
+      "rotation_radians" : -0.20156015347001752,
+      "scale" : 1.5624011572193575,
+      "z_index" : 33
+    },
+    {
+      "id" : "23C4A27B-B913-49F2-95E3-E468D75D770A",
+      "inner_offset_height" : 0,
+      "inner_offset_width" : 0,
+      "inner_scale" : 1,
+      "offset_height" : 0.9999999999999716,
+      "offset_width" : 62.66666666666663,
+      "parent_frame_sticker_id" : "001FD599-8AC7-448F-A05F-73F6FEB8422F",
+      "placement_kind" : "canvas_photo",
+      "rotation_radians" : -0.20156015347001752,
+      "scale" : 1.5624011572193575,
+      "z_index" : 33
+    },
+    {
+      "hole_n_rect" : [
+        0.06818181818181818,
+        0.0546875,
+        0.8535353535353536,
+        0.728515625
+      ],
+      "id" : "CEAA0D9A-B7C3-4172-AE02-84C58A44C977",
+      "image_name" : "Polaroid 1",
+      "linked_canvas_photo_id" : "173BEE63-DC53-4A16-818D-95D8999E5F45",
+      "offset_height" : 169,
+      "offset_width" : -84,
+      "placement_kind" : "sticker",
+      "rotation_radians" : 0.1909854944783556,
+      "scale" : 1.39563379733907,
+      "z_index" : 34
+    },
+    {
+      "id" : "173BEE63-DC53-4A16-818D-95D8999E5F45",
+      "inner_offset_height" : 0,
+      "inner_offset_width" : 0,
+      "inner_scale" : 1,
+      "offset_height" : 169,
+      "offset_width" : -84,
+      "parent_frame_sticker_id" : "CEAA0D9A-B7C3-4172-AE02-84C58A44C977",
+      "placement_kind" : "canvas_photo",
+      "rotation_radians" : 0.1909854944783556,
+      "scale" : 1.39563379733907,
+      "z_index" : 34
+    },
+    {
+      "id" : "431168A4-3F99-4295-A3F4-24390FC69C90",
+      "image_name" : "Sticker_School_04.png",
+      "offset_height" : -7.333333333333371,
+      "offset_width" : -89.33333333333334,
+      "placement_kind" : "sticker",
+      "rotation_radians" : 0,
+      "scale" : 1,
+      "z_index" : 38
+    },
+    {
+      "id" : "39211A87-4FF1-4E95-A69C-3D28E851CD4D",
+      "image_name" : "Sticker_School_03.png",
+      "offset_height" : -177,
+      "offset_width" : 46.333333333333314,
+      "placement_kind" : "sticker",
+      "rotation_radians" : 0,
+      "scale" : 1,
+      "z_index" : 42
+    },
+    {
+      "id" : "8C1884D7-B17A-4E33-AF91-A72198D8B7D3",
+      "image_name" : "Sticker_School_07.png",
+      "offset_height" : 110,
+      "offset_width" : 96.33333333333331,
+      "placement_kind" : "sticker",
+      "rotation_radians" : 0,
+      "scale" : 1,
+      "z_index" : 46
+    }
+  ],
+  "version" : "1"
+}
