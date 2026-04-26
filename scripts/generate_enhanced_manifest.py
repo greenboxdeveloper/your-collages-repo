@@ -1659,6 +1659,13 @@ def _canonicalize_layouts_list(layouts: list) -> list:
     return L
 
 
+def _canonicalize_templates_index(templates: list) -> list:
+    """Sort template index entries by ``id`` for stable diffs and version bumps."""
+    T = copy.deepcopy(templates)
+    T.sort(key=lambda x: str((x or {}).get("id") or ""))
+    return T
+
+
 def _write_versioned_manifest(output_path: Path, payload_key: str, payload_value) -> str:
     old_manifest = _load_json_if_exists(output_path)
     old_version = str(old_manifest.get("version", "") or "") if old_manifest else None
@@ -1669,6 +1676,11 @@ def _write_versioned_manifest(output_path: Path, payload_key: str, payload_value
     old_payload = old_manifest.get(payload_key) if old_manifest else None
     if payload_key == "categories" and isinstance(old_payload, list):
         old_payload = _canonicalize_categories_payload(old_payload)
+    elif payload_key == "templates" and isinstance(old_payload, list):
+        old_payload = _canonicalize_templates_index(old_payload)
+
+    if payload_key == "templates" and isinstance(payload_value, list):
+        payload_value = _canonicalize_templates_index(payload_value)
 
     changed = old_payload is None or old_payload != payload_value
     new_version = _bump_filter_version(old_version) if changed else (old_version or "1.1")
@@ -2438,6 +2450,78 @@ def generate_png_template_manifest(
     return 0
 
 
+# Legacy flat layout under ``Templates/Recipes`` and ``Templates/Previews`` (still supported in the app;
+# this generator only emits the **category-folder** layout: ``Templates/<CategoryFolder>/*.json`` + preview.)
+_JSON_TEMPLATE_INDEX_SKIP_DIRS = frozenset({"Recipes", "Previews"})
+_JSON_TEMPLATE_PREVIEW_EXTS = (".png", ".jpg", ".jpeg", ".webp")
+
+
+def generate_json_template_index(templates_dir: Path, output_path: Path) -> int:
+    """Emit ``Templates/templates_index.json`` for iOS ``TemplateStoreCatalog`` / ``TemplateManifestLoader``.
+
+    Scans one level of subfolders under ``templates_dir`` (e.g. repo ``Templates/``). Each subfolder is a
+    **category folder** (``category_folder`` in JSON, same as PNG/Frames/Stickers store scans).
+
+    Per folder, every ``*.json`` except ``templates_index.json`` is a recipe. The preview is the first
+    existing file with the same stem: ``.png`` → ``.jpg`` → ``.jpeg`` → ``.webp``.
+
+    Skips ``Recipes`` and ``Previews`` (old split layout). Premium follows the same ``_PR`` / ``_F`` stem
+    rules as other store manifests.
+    """
+    entries: list[dict] = []
+    if not templates_dir.is_dir():
+        templates_dir.mkdir(parents=True, exist_ok=True)
+
+    for cat_dir in sorted([p for p in templates_dir.iterdir() if p.is_dir()], key=lambda p: p.name.lower()):
+        if cat_dir.name in _JSON_TEMPLATE_INDEX_SKIP_DIRS or cat_dir.name.startswith("."):
+            continue
+
+        json_files = [
+            p
+            for p in cat_dir.iterdir()
+            if p.is_file() and p.suffix.lower() == ".json" and p.name != "templates_index.json"
+        ]
+        json_files.sort(key=lambda p: p.name.lower())
+
+        for jf in json_files:
+            stem = jf.stem
+            preview_name: str | None = None
+            for ext in _JSON_TEMPLATE_PREVIEW_EXTS:
+                cand = cat_dir / f"{stem}{ext}"
+                if cand.is_file():
+                    preview_name = cand.name
+                    break
+            if preview_name is None:
+                print(
+                    f"[template-index] skip (no preview for stem “{stem}”): {jf} — "
+                    f"add same-stem {list(_JSON_TEMPLATE_PREVIEW_EXTS)} in {cat_dir.name}/",
+                    file=sys.stderr,
+                )
+                continue
+
+            display_name, is_premium = _store_stem_to_name_and_premium(stem, default_premium=True)
+            clean = _clean_stem_premium_suffix(stem)
+            entry_id = f"{_slugify(cat_dir.name)}__{_slugify(clean)}"
+            category_label = _title_from_stem(cat_dir.name)
+
+            entries.append(
+                {
+                    "id": entry_id,
+                    "title": display_name,
+                    "category": category_label,
+                    "category_folder": cat_dir.name,
+                    "recipe": jf.name,
+                    "preview": preview_name,
+                    "is_premium": is_premium,
+                    "neutral_empty_slots": True,
+                }
+            )
+
+    version = _write_versioned_manifest(output_path, "templates", entries)
+    print(f"[template-index] v{version} — {len(entries)} template(s) → {output_path}")
+    return 0
+
+
 def _add_filter_manifest_args(parser: argparse.ArgumentParser) -> None:
     parser.add_argument(
         "--generate-filter-manifest",
@@ -2515,6 +2599,22 @@ def _add_store_manifest_args(parser: argparse.ArgumentParser) -> None:
     )
     parser.add_argument("--png-templates-dir", default="PNGTemplates")
     parser.add_argument("--png-templates-output", default="PNGTemplates/png_template_manifest.json")
+    parser.add_argument(
+        "--generate-templates-index",
+        action="store_true",
+        default=False,
+        help="Generate templates_index.json by scanning Templates/<CategoryFolder> for *.json + same-stem preview.",
+    )
+    parser.add_argument(
+        "--templates-index-dir",
+        default="Templates",
+        help="Root folder to scan (default: Templates; each subfolder is a category).",
+    )
+    parser.add_argument(
+        "--templates-index-output",
+        default="Templates/templates_index.json",
+        help="Output path (default: Templates/templates_index.json).",
+    )
 
 
 # Re-run main with filter manifest support (extended entry point).
@@ -2618,6 +2718,16 @@ def main_with_filter_support() -> int:
             repo_root / args.png_templates_dir,
             repo_root / args.png_templates_output,
         )
+        if result != 0:
+            return result
+
+    if args.generate_templates_index:
+        result = generate_json_template_index(
+            repo_root / args.templates_index_dir,
+            repo_root / args.templates_index_output,
+        )
+        if result != 0:
+            return result
 
     return result
 
