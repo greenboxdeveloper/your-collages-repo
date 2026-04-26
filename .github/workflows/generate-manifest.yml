@@ -16,11 +16,17 @@ on:
       - "Fonts/**"
       - "Shapes/**"
       - "PNGTemplates/**"
+      - "Templates/**"
       - "scripts/**"
   workflow_dispatch:
 
 permissions:
   contents: write
+
+# Avoid overlapping runs when several paths change in quick succession.
+concurrency:
+  group: generate-manifests-${{ github.ref }}
+  cancel-in-progress: true
 
 jobs:
   generate:
@@ -40,6 +46,9 @@ jobs:
 
       # Script reads one SVG folder (--svg-dir). Repo paths above also watch svgs/**;
       # if your layouts live only under svgs/, set --svg-dir svgs (or symlink / duplicate into collages).
+      #
+      # Filter previews: requires Pillow + numpy in scripts/requirements.txt; stock images under Filters/StockImage/.
+      # Generated JPGs live under Filters/<Category>/StorePreviews/<FilterId>/ — must be git-added below.
       - name: Generate manifest, thumbnails, and all store manifests
         env:
           BASE_URL: "https://raw.githubusercontent.com/${{ github.repository }}/${{ github.ref_name }}"
@@ -56,6 +65,7 @@ jobs:
             --generate-filter-previews \
             --filters-dir Filters \
             --filter-output Filters/filter_manifest.json \
+            --filter-stock-dir Filters/StockImage \
             --filter-preview-max-edge 1080 \
             --generate-store-manifests \
             --frames-dir Frames \
@@ -70,7 +80,10 @@ jobs:
             --shapes-output Shapes/shape_store_manifest.json \
             --generate-png-template-manifest \
             --png-templates-dir PNGTemplates \
-            --png-templates-output PNGTemplates/png_template_manifest.json
+            --png-templates-output PNGTemplates/png_template_manifest.json \
+            --generate-templates-index \
+            --templates-index-dir Templates \
+            --templates-index-output Templates/templates_index.json
 
       - name: Commit and push if changed
         run: |
@@ -84,7 +97,8 @@ jobs:
             Backgrounds/background_store_manifest.json \
             Fonts/font_catalog.json \
             Shapes/shape_store_manifest.json \
-            PNGTemplates/png_template_manifest.json || true
+            PNGTemplates/png_template_manifest.json \
+            Templates/templates_index.json || true
           if git diff --staged --quiet; then
             echo "No manifest changes to commit."
           else
