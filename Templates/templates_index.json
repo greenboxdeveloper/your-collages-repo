@@ -1,4 +1,25 @@
 {
-  "version": "1.1",
-  "templates": []
+  "version": "1.2",
+  "templates": [
+    {
+      "id": "test__test_1",
+      "title": "Test 1",
+      "category": "Test",
+      "category_folder": "Test",
+      "recipe": "test 1_PR.json",
+      "preview": "test 1_PR.jpg",
+      "is_premium": true,
+      "neutral_empty_slots": true
+    },
+    {
+      "id": "test__test_4",
+      "title": "Test 4",
+      "category": "Test",
+      "category_folder": "Test",
+      "recipe": "Test 4.json",
+      "preview": "Test 4.jpg",
+      "is_premium": true,
+      "neutral_empty_slots": true
+    }
+  ]
 }
