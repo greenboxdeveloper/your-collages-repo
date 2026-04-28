@@ -1,0 +1,187 @@
+{
+  "chrome" : {
+    "background_color_rgba" : [
+      1,
+      1,
+      1,
+      1
+    ],
+    "background_hazy_blur_radius" : 48,
+    "background_image_name" : "spring__spring03_jpg",
+    "border_color_rgba" : [
+      1,
+      1,
+      1,
+      1
+    ],
+    "border_corner_radius" : 0,
+    "border_width" : 20,
+    "canvas_aspect" : 0.6666666666666666,
+    "canvas_ratio_preset" : "2:3",
+    "has_background_image" : true
+  },
+  "dependencies" : [
+    {
+      "asset_ref" : "Spring03.jpg",
+      "id" : "spring__spring03_jpg",
+      "type" : "background",
+      "url" : "https:\/\/raw.githubusercontent.com\/greenboxdeveloper\/your-collages-repo\/main\/Backgrounds\/Spring\/Spring03.jpg"
+    },
+    {
+      "id" : "Polaroid 1",
+      "type" : "sticker"
+    },
+    {
+      "asset_ref" : "Agamtoh.ttf",
+      "id" : "Agamtoh",
+      "type" : "font",
+      "url" : "https:\/\/raw.githubusercontent.com\/greenboxdeveloper\/your-collages-repo\/main\/Fonts\/English\/Agamtoh.ttf"
+    }
+  ],
+  "editor" : {
+    "divider_positions" : {
+
+    },
+    "shared_vertex_positions" : {
+
+    }
+  },
+  "layout" : {
+    "category" : "TemplateBuilder",
+    "dividers" : [
+
+    ],
+    "id" : "template-builder-99EA24D4",
+    "isPremium" : false,
+    "name" : "Template builder",
+    "shared_vertices" : [
+
+    ],
+    "slots" : [
+
+    ],
+    "type" : "grid"
+  },
+  "stickers" : [
+    {
+      "hole_n_rect" : [
+        0.06818181818181818,
+        0.0546875,
+        0.8535353535353536,
+        0.728515625
+      ],
+      "id" : "B5F50458-5B51-468F-A1E5-B43F78D09AAD",
+      "image_name" : "Polaroid 1",
+      "linked_canvas_photo_id" : "F3261B9B-DFD1-4FA6-A0AA-497650098356",
+      "offset_height" : 85,
+      "offset_width" : -57.33333333333334,
+      "placement_kind" : "sticker",
+      "rotation_radians" : 0.0028494884824246114,
+      "scale" : 1.6730778129767936,
+      "z_index" : 14
+    },
+    {
+      "id" : "F3261B9B-DFD1-4FA6-A0AA-497650098356",
+      "inner_offset_height" : 0,
+      "inner_offset_width" : 0,
+      "inner_scale" : 1,
+      "offset_height" : 85,
+      "offset_width" : -57.33333333333334,
+      "parent_frame_sticker_id" : "B5F50458-5B51-468F-A1E5-B43F78D09AAD",
+      "placement_kind" : "canvas_photo",
+      "rotation_radians" : 0.0028494884824246114,
+      "scale" : 1.6730778129767936,
+      "z_index" : 14
+    },
+    {
+      "hole_n_rect" : [
+        0.06818181818181818,
+        0.0546875,
+        0.8535353535353536,
+        0.728515625
+      ],
+      "id" : "2789364C-55B3-4106-8F1D-DB8FCF4A55A5",
+      "image_name" : "Polaroid 1",
+      "linked_canvas_photo_id" : "987A69CC-43B5-4CEB-AAE7-8AB7CBC463E3",
+      "offset_height" : -148.00000000000009,
+      "offset_width" : 72.33333333333331,
+      "placement_kind" : "sticker",
+      "rotation_radians" : 0,
+      "scale" : 1,
+      "z_index" : 18
+    },
+    {
+      "id" : "987A69CC-43B5-4CEB-AAE7-8AB7CBC463E3",
+      "inner_offset_height" : 0,
+      "inner_offset_width" : 0,
+      "inner_scale" : 1,
+      "offset_height" : -148.00000000000009,
+      "offset_width" : 72.33333333333331,
+      "parent_frame_sticker_id" : "2789364C-55B3-4106-8F1D-DB8FCF4A55A5",
+      "placement_kind" : "canvas_photo",
+      "rotation_radians" : 0,
+      "scale" : 1,
+      "z_index" : 18
+    },
+    {
+      "hole_n_rect" : [
+        0.06818181818181818,
+        0.0546875,
+        0.8535353535353536,
+        0.728515625
+      ],
+      "id" : "7D88827A-AEE8-4433-AA70-38A913D40129",
+      "image_name" : "Polaroid 1",
+      "linked_canvas_photo_id" : "DA6E39AD-9478-4012-9D67-810761886DB0",
+      "offset_height" : -168.33333333333334,
+      "offset_width" : -85,
+      "placement_kind" : "sticker",
+      "rotation_radians" : 0,
+      "scale" : 1,
+      "z_index" : 6
+    },
+    {
+      "id" : "DA6E39AD-9478-4012-9D67-810761886DB0",
+      "inner_offset_height" : 0,
+      "inner_offset_width" : 0,
+      "inner_scale" : 1,
+      "offset_height" : -168.33333333333334,
+      "offset_width" : -85,
+      "parent_frame_sticker_id" : "7D88827A-AEE8-4433-AA70-38A913D40129",
+      "placement_kind" : "canvas_photo",
+      "rotation_radians" : 0,
+      "scale" : 1,
+      "z_index" : 6
+    }
+  ],
+  "text_items" : [
+    {
+      "alignment" : "center",
+      "backgroundColorHex" : "#00000000",
+      "backgroundOpacity" : 1,
+      "cornerRadius" : 8,
+      "fontName" : "Agamtoh",
+      "fontSize" : 30,
+      "id" : "54BEFDF0-BA28-40D1-9FBC-C5301EAB1A31",
+      "letterSpacing" : 0,
+      "lineSpacing" : 0,
+      "nPosition" : [
+        0.4958123953098827,
+        0.4022892238972641
+      ],
+      "outlineColorHex" : "#000000",
+      "outlineOpacity" : 1,
+      "outlineWidth" : 0.3,
+      "rotation" : 0,
+      "scale" : 1,
+      "shadowColorHex" : "#00000000",
+      "shadowRadius" : 0,
+      "text" : "The first thing you",
+      "textCase" : "none",
+      "textColorHex" : "#FF3B30",
+      "textOpacity" : 1,
+      "zIndex" : 21
+    }
+  ],
+  "version" : "1"
+}
