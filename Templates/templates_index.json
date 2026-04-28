@@ -1,5 +1,5 @@
 {
-  "version": "1.7",
+  "version": "1.8",
   "templates": [
     {
       "id": "holiday__holiday",
@@ -28,6 +28,16 @@
       "category_folder": "Holiday",
       "recipe": "Holiday Season 2.json",
       "preview": "Holiday Season 2.jpg",
+      "is_premium": true,
+      "neutral_empty_slots": true
+    },
+    {
+      "id": "test__font_test_6",
+      "title": "Font Test 6",
+      "category": "Test",
+      "category_folder": "Test",
+      "recipe": "Font Test 6.json",
+      "preview": "Font Test 6.jpg",
       "is_premium": true,
       "neutral_empty_slots": true
     },
