@@ -1,0 +1,257 @@
+{
+  "chrome" : {
+    "background_color_rgba" : [
+      1,
+      1,
+      1,
+      1
+    ],
+    "background_hazy_blur_radius" : 48,
+    "background_image_name" : "candy_pack_01__candy1_7_jpg",
+    "border_color_rgba" : [
+      1,
+      1,
+      1,
+      1
+    ],
+    "border_corner_radius" : 0,
+    "border_width" : 20,
+    "canvas_aspect" : 0.6666666666666666,
+    "canvas_ratio_preset" : "2:3",
+    "has_background_image" : true
+  },
+  "dependencies" : [
+    {
+      "asset_ref" : "Candy1.7_PR.jpg",
+      "id" : "candy_pack_01__candy1_7_jpg",
+      "type" : "background",
+      "url" : "https:\/\/raw.githubusercontent.com\/greenboxdeveloper\/your-collages-repo\/main\/Backgrounds\/Candy%20Pack%2001\/Candy1.7_PR.jpg"
+    },
+    {
+      "id" : "Polaroid 1",
+      "type" : "sticker"
+    },
+    {
+      "id" : "Sticker_Party_38.png",
+      "type" : "sticker"
+    },
+    {
+      "asset_ref" : "Tape.png",
+      "id" : "photo_frame__tape",
+      "type" : "sticker",
+      "url" : "https:\/\/raw.githubusercontent.com\/greenboxdeveloper\/your-collages-repo\/main\/Stickers\/Photo%20Frame\/Tape.png"
+    },
+    {
+      "asset_ref" : "Manbow Solid.otf",
+      "id" : "ManbowSolid-Regular",
+      "type" : "font",
+      "url" : "https:\/\/raw.githubusercontent.com\/greenboxdeveloper\/your-collages-repo\/main\/Fonts\/English\/Manbow%20Solid.otf"
+    },
+    {
+      "asset_ref" : "kleptocracy titling bd.otf",
+      "id" : "KleptocracyTitlingRg-Bold",
+      "type" : "font",
+      "url" : "https:\/\/raw.githubusercontent.com\/greenboxdeveloper\/your-collages-repo\/main\/Fonts\/English\/kleptocracy%20titling%20bd.otf"
+    }
+  ],
+  "editor" : {
+    "divider_positions" : {
+
+    },
+    "shared_vertex_positions" : {
+
+    }
+  },
+  "layout" : {
+    "category" : "TemplateBuilder",
+    "dividers" : [
+
+    ],
+    "id" : "template-builder-400C12AA",
+    "isPremium" : false,
+    "name" : "Template builder",
+    "shared_vertices" : [
+
+    ],
+    "slots" : [
+
+    ],
+    "type" : "grid"
+  },
+  "shapes" : [
+    {
+      "fill_color_rgba" : [
+        0.8588235294117647,
+        0.20392156862745098,
+        0.9490196078431372,
+        1
+      ],
+      "id" : "D383665D-BE2C-493B-8A9E-EC0C5403DC56",
+      "kind" : "hexagon",
+      "offset_height" : 121,
+      "offset_width" : -99.66666666666666,
+      "opacity" : 0.7038916945457458,
+      "rotation_radians" : 0.12666240105265703,
+      "scale" : 1.8249873717323901,
+      "stroke_color_rgba" : [
+        1,
+        1,
+        1,
+        1
+      ],
+      "stroke_width" : 4.5,
+      "z_index" : 175
+    }
+  ],
+  "stickers" : [
+    {
+      "hole_n_rect" : [
+        0.06818181818181818,
+        0.0546875,
+        0.8535353535353536,
+        0.728515625
+      ],
+      "id" : "F42DD1E9-695E-44EC-8FEF-DD141A381177",
+      "image_name" : "Polaroid 1",
+      "is_transform_locked" : true,
+      "linked_canvas_photo_id" : "D20E596D-F7C5-438D-A6D4-060A916DBE93",
+      "offset_height" : -90.33333333333331,
+      "offset_width" : -54.66666666666666,
+      "placement_kind" : "sticker",
+      "rotation_radians" : -0.18291018056676567,
+      "scale" : 1.8400782234251,
+      "z_index" : 17
+    },
+    {
+      "id" : "D20E596D-F7C5-438D-A6D4-060A916DBE93",
+      "inner_offset_height" : 0,
+      "inner_offset_width" : 0,
+      "inner_scale" : 1,
+      "offset_height" : -90.33333333333331,
+      "offset_width" : -54.66666666666666,
+      "parent_frame_sticker_id" : "F42DD1E9-695E-44EC-8FEF-DD141A381177",
+      "placement_kind" : "canvas_photo",
+      "rotation_radians" : -0.18291018056676567,
+      "scale" : 1.8400782234251,
+      "z_index" : 17
+    },
+    {
+      "hole_n_rect" : [
+        0.06818181818181818,
+        0.0546875,
+        0.8535353535353536,
+        0.728515625
+      ],
+      "id" : "D3460BC3-5037-4E6E-B41A-A36056CF5C54",
+      "image_name" : "Polaroid 1",
+      "is_transform_locked" : true,
+      "linked_canvas_photo_id" : "45765323-43C5-4AA1-9443-CB900B8C46BB",
+      "offset_height" : 132.33333333333337,
+      "offset_width" : 40.333333333333314,
+      "placement_kind" : "sticker",
+      "rotation_radians" : 0.34499441847217416,
+      "scale" : 1.8521850418953067,
+      "z_index" : 18
+    },
+    {
+      "id" : "45765323-43C5-4AA1-9443-CB900B8C46BB",
+      "inner_offset_height" : 0,
+      "inner_offset_width" : 0,
+      "inner_scale" : 1,
+      "offset_height" : 132.33333333333337,
+      "offset_width" : 40.333333333333314,
+      "parent_frame_sticker_id" : "D3460BC3-5037-4E6E-B41A-A36056CF5C54",
+      "placement_kind" : "canvas_photo",
+      "rotation_radians" : 0.34499441847217416,
+      "scale" : 1.8521850418953067,
+      "z_index" : 18
+    },
+    {
+      "id" : "9142F502-E7BB-454C-A2EE-6FF0933D228A",
+      "image_name" : "Sticker_Party_38.png",
+      "offset_height" : -117,
+      "offset_width" : 94.33333333333334,
+      "placement_kind" : "sticker",
+      "rotation_radians" : -0.22084091937995443,
+      "scale" : 2.2428385244962734,
+      "z_index" : 129
+    },
+    {
+      "id" : "7AC88602-4E89-4851-91F1-B6769152FD47",
+      "image_name" : "photo_frame__tape",
+      "offset_height" : -211.66666666666663,
+      "offset_width" : -80.66666666666666,
+      "placement_kind" : "sticker",
+      "rotation_radians" : -0.3280441155931082,
+      "scale" : 0.9275440943423595,
+      "z_index" : 36
+    },
+    {
+      "id" : "8E26139B-7431-437C-A65D-822A8FDF2040",
+      "image_name" : "photo_frame__tape",
+      "offset_height" : 15.333333333333371,
+      "offset_width" : 88.33333333333331,
+      "placement_kind" : "sticker",
+      "rotation_radians" : 0,
+      "scale" : 1,
+      "z_index" : 128
+    }
+  ],
+  "text_items" : [
+    {
+      "alignment" : "center",
+      "backgroundColorHex" : "#00000000",
+      "backgroundOpacity" : 1,
+      "cornerRadius" : 8,
+      "fontName" : "ManbowSolid-Regular",
+      "fontSize" : 30,
+      "id" : "75D370E0-562C-4C81-87C1-5843598ED7D8",
+      "letterSpacing" : 0,
+      "lineSpacing" : 0,
+      "nPosition" : [
+        0.3525963149078727,
+        0.5117252931323283
+      ],
+      "outlineColorHex" : "#FF3B30",
+      "outlineOpacity" : 1,
+      "outlineWidth" : 0,
+      "rotation" : -10.67349179451114,
+      "scale" : 1.3058971932247203,
+      "shadowColorHex" : "#00000000",
+      "shadowRadius" : 0,
+      "text" : "Him",
+      "textCase" : "none",
+      "textColorHex" : "#FF9500",
+      "textOpacity" : 1,
+      "zIndex" : 45
+    },
+    {
+      "alignment" : "center",
+      "backgroundColorHex" : "#00000000",
+      "backgroundOpacity" : 1,
+      "cornerRadius" : 8,
+      "fontName" : "KleptocracyTitlingRg-Bold",
+      "fontSize" : 30,
+      "id" : "0A89A4D4-61BE-444F-87ED-F164F2B62194",
+      "letterSpacing" : 0,
+      "lineSpacing" : 0,
+      "nPosition" : [
+        0.5108877721943049,
+        0.8724176437744277
+      ],
+      "outlineColorHex" : "#000000",
+      "outlineOpacity" : 1,
+      "outlineWidth" : 0,
+      "rotation" : 20.420610227510057,
+      "scale" : 1.3653450800771543,
+      "shadowColorHex" : "#00000000",
+      "shadowRadius" : 0,
+      "text" : "HER",
+      "textCase" : "none",
+      "textColorHex" : "#FF3B30",
+      "textOpacity" : 1,
+      "zIndex" : 54
+    }
+  ],
+  "version" : "1"
+}
