@@ -1,5 +1,5 @@
 {
-  "version": "1.3",
+  "version": "1.4",
   "templates": [
     {
       "id": "holiday__holiday",
@@ -9,6 +9,16 @@
       "recipe": "Holiday_F.json",
       "preview": "Holiday_F.jpg",
       "is_premium": false,
+      "neutral_empty_slots": true
+    },
+    {
+      "id": "test__font_troubleshooting",
+      "title": "Font Troubleshooting",
+      "category": "Test",
+      "category_folder": "Test",
+      "recipe": "Font Troubleshooting.json",
+      "preview": "Font Troubleshooting.jpg",
+      "is_premium": true,
       "neutral_empty_slots": true
     },
     {
