@@ -1,6 +1,102 @@
 {
-  "version": "1.8",
+  "version": "1.9",
   "categories": [
+    {
+      "id": "candy_pack_01",
+      "name": "Candy Pack 01",
+      "backgrounds": [
+        {
+          "id": "candy_pack_01__candy1_10_jpg",
+          "name": "Candy1.10",
+          "isPremium": true,
+          "kind": "image",
+          "source": "ota",
+          "colorHex": null,
+          "fileName": "Candy1.10_PR.jpg"
+        },
+        {
+          "id": "candy_pack_01__candy1_1_jpg",
+          "name": "Candy1.1",
+          "isPremium": false,
+          "kind": "image",
+          "source": "ota",
+          "colorHex": null,
+          "fileName": "Candy1.1.jpg"
+        },
+        {
+          "id": "candy_pack_01__candy1_2_jpg",
+          "name": "Candy1.2",
+          "isPremium": true,
+          "kind": "image",
+          "source": "ota",
+          "colorHex": null,
+          "fileName": "Candy1.2_PR.jpg"
+        },
+        {
+          "id": "candy_pack_01__candy1_3_jpg",
+          "name": "Candy1.3",
+          "isPremium": true,
+          "kind": "image",
+          "source": "ota",
+          "colorHex": null,
+          "fileName": "Candy1.3_PR.jpg"
+        },
+        {
+          "id": "candy_pack_01__candy1_4_jpg",
+          "name": "Candy1.4",
+          "isPremium": true,
+          "kind": "image",
+          "source": "ota",
+          "colorHex": null,
+          "fileName": "Candy1.4_PR.jpg"
+        },
+        {
+          "id": "candy_pack_01__candy1_5_jpg",
+          "name": "Candy1.5",
+          "isPremium": true,
+          "kind": "image",
+          "source": "ota",
+          "colorHex": null,
+          "fileName": "Candy1.5_PR.jpg"
+        },
+        {
+          "id": "candy_pack_01__candy1_6_jpg",
+          "name": "Candy1.6",
+          "isPremium": true,
+          "kind": "image",
+          "source": "ota",
+          "colorHex": null,
+          "fileName": "Candy1.6_PR.jpg"
+        },
+        {
+          "id": "candy_pack_01__candy1_7_jpg",
+          "name": "Candy1.7",
+          "isPremium": true,
+          "kind": "image",
+          "source": "ota",
+          "colorHex": null,
+          "fileName": "Candy1.7_PR.jpg"
+        },
+        {
+          "id": "candy_pack_01__candy1_8_jpg",
+          "name": "Candy1.8",
+          "isPremium": true,
+          "kind": "image",
+          "source": "ota",
+          "colorHex": null,
+          "fileName": "Candy1.8_PR.jpg"
+        },
+        {
+          "id": "candy_pack_01__candy1_9_jpg",
+          "name": "Candy1.9",
+          "isPremium": true,
+          "kind": "image",
+          "source": "ota",
+          "colorHex": null,
+          "fileName": "Candy1.9_PR.jpg"
+        }
+      ]
+    },
     {
       "id": "dot_pack_01",
       "name": "Dot Pack 01",
