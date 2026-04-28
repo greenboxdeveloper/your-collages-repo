@@ -1,5 +1,5 @@
 {
-  "version": "1.4",
+  "version": "1.5",
   "templates": [
     {
       "id": "holiday__holiday",
@@ -9,6 +9,16 @@
       "recipe": "Holiday_F.json",
       "preview": "Holiday_F.jpg",
       "is_premium": false,
+      "neutral_empty_slots": true
+    },
+    {
+      "id": "holiday__holiday_season_2",
+      "title": "Holiday Season 2",
+      "category": "Holiday",
+      "category_folder": "Holiday",
+      "recipe": "Holiday Season 2.json",
+      "preview": "Holiday Season 2.jpg",
+      "is_premium": true,
       "neutral_empty_slots": true
     },
     {
