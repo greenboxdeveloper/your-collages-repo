@@ -1,5 +1,5 @@
 {
-  "version": "1.6",
+  "version": "1.7",
   "templates": [
     {
       "id": "holiday__holiday",
@@ -58,6 +58,16 @@
       "category_folder": "Test",
       "recipe": "Test 4.json",
       "preview": "Test 4.jpg",
+      "is_premium": true,
+      "neutral_empty_slots": true
+    },
+    {
+      "id": "test__test_font_5",
+      "title": "Test Font 5",
+      "category": "Test",
+      "category_folder": "Test",
+      "recipe": "Test Font 5.json",
+      "preview": "Test Font 5.jpg",
       "is_premium": true,
       "neutral_empty_slots": true
     }
