@@ -1,0 +1,185 @@
+{
+  "chrome" : {
+    "background_color_rgba" : [
+      1,
+      1,
+      1,
+      1
+    ],
+    "background_hazy_blur_radius" : 48,
+    "background_image_name" : "candy_pack_01__candy1_10_jpg",
+    "border_color_rgba" : [
+      1,
+      1,
+      1,
+      1
+    ],
+    "border_corner_radius" : 0,
+    "border_width" : 20,
+    "canvas_aspect" : 0.5625,
+    "canvas_ratio_preset" : "9:16",
+    "has_background_image" : true
+  },
+  "dependencies" : [
+    {
+      "asset_ref" : "Candy1.10_PR.jpg",
+      "id" : "candy_pack_01__candy1_10_jpg",
+      "type" : "background",
+      "url" : "https:\/\/raw.githubusercontent.com\/greenboxdeveloper\/your-collages-repo\/main\/Backgrounds\/Candy%20Pack%2001\/Candy1.10_PR.jpg"
+    },
+    {
+      "id" : "Polaroid 1",
+      "type" : "sticker"
+    },
+    {
+      "id" : "FlaemischeKanzleischrift",
+      "type" : "font"
+    }
+  ],
+  "editor" : {
+    "divider_positions" : {
+
+    },
+    "shared_vertex_positions" : {
+
+    }
+  },
+  "layout" : {
+    "category" : "TemplateBuilder",
+    "dividers" : [
+
+    ],
+    "id" : "template-builder-8642A43A",
+    "isPremium" : false,
+    "name" : "Template builder",
+    "shared_vertices" : [
+
+    ],
+    "slots" : [
+
+    ],
+    "type" : "grid"
+  },
+  "stickers" : [
+    {
+      "hole_n_rect" : [
+        0.06818181818181818,
+        0.0546875,
+        0.8535353535353536,
+        0.728515625
+      ],
+      "id" : "48CB79B5-6444-4735-8721-E195E520D9B6",
+      "image_name" : "Polaroid 1",
+      "linked_canvas_photo_id" : "799A727E-60C6-4924-B347-F138E2A68F78",
+      "offset_height" : 71,
+      "offset_width" : -84,
+      "placement_kind" : "sticker",
+      "rotation_radians" : 0,
+      "scale" : 1,
+      "z_index" : 12
+    },
+    {
+      "id" : "799A727E-60C6-4924-B347-F138E2A68F78",
+      "inner_offset_height" : 0,
+      "inner_offset_width" : 0,
+      "inner_scale" : 1,
+      "offset_height" : 71,
+      "offset_width" : -84,
+      "parent_frame_sticker_id" : "48CB79B5-6444-4735-8721-E195E520D9B6",
+      "placement_kind" : "canvas_photo",
+      "rotation_radians" : 0,
+      "scale" : 1,
+      "z_index" : 12
+    },
+    {
+      "hole_n_rect" : [
+        0.06818181818181818,
+        0.0546875,
+        0.8535353535353536,
+        0.728515625
+      ],
+      "id" : "994DD321-67FD-4B8C-9C9A-B6E4A9339215",
+      "image_name" : "Polaroid 1",
+      "linked_canvas_photo_id" : "465D3C17-A232-4CE1-A0B4-BBE3965B189B",
+      "offset_height" : -120.66666666666663,
+      "offset_width" : 92.33333333333334,
+      "placement_kind" : "sticker",
+      "rotation_radians" : 0,
+      "scale" : 1,
+      "z_index" : 9
+    },
+    {
+      "id" : "465D3C17-A232-4CE1-A0B4-BBE3965B189B",
+      "inner_offset_height" : 0,
+      "inner_offset_width" : 0,
+      "inner_scale" : 1,
+      "offset_height" : -120.66666666666663,
+      "offset_width" : 92.33333333333334,
+      "parent_frame_sticker_id" : "994DD321-67FD-4B8C-9C9A-B6E4A9339215",
+      "placement_kind" : "canvas_photo",
+      "rotation_radians" : 0,
+      "scale" : 1,
+      "z_index" : 9
+    },
+    {
+      "hole_n_rect" : [
+        0.06818181818181818,
+        0.0546875,
+        0.8535353535353536,
+        0.728515625
+      ],
+      "id" : "2C25C622-BCB0-42B1-900F-77980047538E",
+      "image_name" : "Polaroid 1",
+      "linked_canvas_photo_id" : "81A35650-C546-45E0-898D-6294E29B6450",
+      "offset_height" : -204.33333333333337,
+      "offset_width" : -29.333333333333314,
+      "placement_kind" : "sticker",
+      "rotation_radians" : 0,
+      "scale" : 1,
+      "z_index" : 6
+    },
+    {
+      "id" : "81A35650-C546-45E0-898D-6294E29B6450",
+      "inner_offset_height" : 0,
+      "inner_offset_width" : 0,
+      "inner_scale" : 1,
+      "offset_height" : -204.33333333333337,
+      "offset_width" : -29.333333333333314,
+      "parent_frame_sticker_id" : "2C25C622-BCB0-42B1-900F-77980047538E",
+      "placement_kind" : "canvas_photo",
+      "rotation_radians" : 0,
+      "scale" : 1,
+      "z_index" : 6
+    }
+  ],
+  "text_items" : [
+    {
+      "alignment" : "center",
+      "backgroundColorHex" : "#00000000",
+      "backgroundOpacity" : 1,
+      "cornerRadius" : 8,
+      "fontName" : "FlaemischeKanzleischrift",
+      "fontSize" : 30,
+      "id" : "83250FE2-73D8-473B-9B67-E97C705F3560",
+      "letterSpacing" : 0,
+      "lineSpacing" : 0,
+      "nPosition" : [
+        0.49789448612626247,
+        0.4764210829407641
+      ],
+      "outlineColorHex" : "#000000",
+      "outlineOpacity" : 1,
+      "outlineWidth" : 0.3,
+      "rotation" : 0,
+      "scale" : 1,
+      "shadowColorHex" : "#00000000",
+      "shadowRadius" : 0,
+      "text" : "The The The The the New",
+      "textCase" : "none",
+      "textColorHex" : "#FFFFFF",
+      "textOpacity" : 1,
+      "zIndex" : 14
+    }
+  ],
+  "version" : "1"
+}
