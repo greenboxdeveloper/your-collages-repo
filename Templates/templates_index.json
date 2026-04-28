@@ -1,5 +1,5 @@
 {
-  "version": "1.5",
+  "version": "1.6",
   "templates": [
     {
       "id": "holiday__holiday",
@@ -9,6 +9,16 @@
       "recipe": "Holiday_F.json",
       "preview": "Holiday_F.jpg",
       "is_premium": false,
+      "neutral_empty_slots": true
+    },
+    {
+      "id": "holiday__holiday_3",
+      "title": "Holiday 3",
+      "category": "Holiday",
+      "category_folder": "Holiday",
+      "recipe": "Holiday 3.json",
+      "preview": "Holiday 3.jpg",
+      "is_premium": true,
       "neutral_empty_slots": true
     },
     {
