@@ -1,5 +1,5 @@
 {
-  "version": "1.9",
+  "version": "2.0",
   "categories": [
     {
       "id": "candy_pack_01",
@@ -638,17 +638,176 @@
       ]
     },
     {
-      "id": "valentile_pack_01",
-      "name": "Valentile Pack 01",
+      "id": "valentine_pack_01",
+      "name": "Valentine Pack 01",
       "backgrounds": [
         {
-          "id": "valentile_pack_01__valentine1_8_jpg",
+          "id": "valentine_pack_01__valentine1_1_jpg",
+          "name": "Valentine1.1",
+          "isPremium": true,
+          "kind": "image",
+          "source": "ota",
+          "colorHex": null,
+          "fileName": "Valentine1.1_PR.jpg"
+        },
+        {
+          "id": "valentine_pack_01__valentine1_2_jpg",
+          "name": "Valentine1.2",
+          "isPremium": true,
+          "kind": "image",
+          "source": "ota",
+          "colorHex": null,
+          "fileName": "Valentine1.2_PR.jpg"
+        },
+        {
+          "id": "valentine_pack_01__valentine1_3_jpg",
+          "name": "Valentine1.3",
+          "isPremium": true,
+          "kind": "image",
+          "source": "ota",
+          "colorHex": null,
+          "fileName": "Valentine1.3_PR.jpg"
+        },
+        {
+          "id": "valentine_pack_01__valentine1_4_jpg",
+          "name": "Valentine1.4",
+          "isPremium": true,
+          "kind": "image",
+          "source": "ota",
+          "colorHex": null,
+          "fileName": "Valentine1.4_PR.jpg"
+        },
+        {
+          "id": "valentine_pack_01__valentine1_5_jpg",
+          "name": "Valentine1.5",
+          "isPremium": true,
+          "kind": "image",
+          "source": "ota",
+          "colorHex": null,
+          "fileName": "Valentine1.5_PR.jpg"
+        },
+        {
+          "id": "valentine_pack_01__valentine1_6_jpg",
+          "name": "Valentine1.6",
+          "isPremium": true,
+          "kind": "image",
+          "source": "ota",
+          "colorHex": null,
+          "fileName": "Valentine1.6_PR.jpg"
+        },
+        {
+          "id": "valentine_pack_01__valentine1_7_jpg",
+          "name": "Valentine1.7",
+          "isPremium": true,
+          "kind": "image",
+          "source": "ota",
+          "colorHex": null,
+          "fileName": "Valentine1.7_PR.jpg"
+        },
+        {
+          "id": "valentine_pack_01__valentine1_8_jpg",
           "name": "Valentine1.8",
           "isPremium": true,
           "kind": "image",
           "source": "ota",
           "colorHex": null,
           "fileName": "Valentine1.8_PR.jpg"
+        },
+        {
+          "id": "valentine_pack_01__valentine1_9_jpg",
+          "name": "Valentine1.9",
+          "isPremium": true,
+          "kind": "image",
+          "source": "ota",
+          "colorHex": null,
+          "fileName": "Valentine1.9_PR.jpg"
+        }
+      ]
+    },
+    {
+      "id": "valentine_pack_02",
+      "name": "Valentine Pack 02",
+      "backgrounds": [
+        {
+          "id": "valentine_pack_02__valentine2_1_jpg",
+          "name": "Valentine2.1",
+          "isPremium": true,
+          "kind": "image",
+          "source": "ota",
+          "colorHex": null,
+          "fileName": "Valentine2.1_PR.jpg"
+        },
+        {
+          "id": "valentine_pack_02__valentine2_2_jpg",
+          "name": "Valentine2.2",
+          "isPremium": true,
+          "kind": "image",
+          "source": "ota",
+          "colorHex": null,
+          "fileName": "Valentine2.2_PR.jpg"
+        },
+        {
+          "id": "valentine_pack_02__valentine2_3_jpg",
+          "name": "Valentine2.3",
+          "isPremium": true,
+          "kind": "image",
+          "source": "ota",
+          "colorHex": null,
+          "fileName": "Valentine2.3_PR.jpg"
+        },
+        {
+          "id": "valentine_pack_02__valentine2_4_jpg",
+          "name": "Valentine2.4",
+          "isPremium": true,
+          "kind": "image",
+          "source": "ota",
+          "colorHex": null,
+          "fileName": "Valentine2.4_PR.jpg"
+        },
+        {
+          "id": "valentine_pack_02__valentine2_5_jpg",
+          "name": "Valentine2.5",
+          "isPremium": true,
+          "kind": "image",
+          "source": "ota",
+          "colorHex": null,
+          "fileName": "Valentine2.5_PR.jpg"
+        },
+        {
+          "id": "valentine_pack_02__valentine2_6_jpg",
+          "name": "Valentine2.6",
+          "isPremium": true,
+          "kind": "image",
+          "source": "ota",
+          "colorHex": null,
+          "fileName": "Valentine2.6_PR.jpg"
+        },
+        {
+          "id": "valentine_pack_02__valentine2_7_jpg",
+          "name": "Valentine2.7",
+          "isPremium": true,
+          "kind": "image",
+          "source": "ota",
+          "colorHex": null,
+          "fileName": "Valentine2.7_PR.jpg"
+        },
+        {
+          "id": "valentine_pack_02__valentine2_8_jpg",
+          "name": "Valentine2.8",
+          "isPremium": true,
+          "kind": "image",
+          "source": "ota",
+          "colorHex": null,
+          "fileName": "Valentine2.8_PR.jpg"
+        },
+        {
+          "id": "valentine_pack_02__valentine2_9_jpg",
+          "name": "Valentine2.9",
+          "isPremium": true,
+          "kind": "image",
+          "source": "ota",
+          "colorHex": null,
+          "fileName": "Valentine2.9_PR.jpg"
         }
       ]
     },
