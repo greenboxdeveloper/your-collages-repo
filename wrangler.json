@@ -3,6 +3,9 @@
   "name": "photocollagemaker",
   "compatibility_date": "2026-04-30",
   "assets": {
-    "directory": "."
+    "directory": ".",
+    "exclude": [
+      ".git/**/*"
+    ]
   }
 }
