@@ -1,5 +1,5 @@
 {
-  "version": "1.6",
+  "version": "1.7",
   "categories": [
     {
       "id": "cute_animals_pr",
@@ -232,22 +232,22 @@
       "promoHeaderUrl": null
     },
     {
-      "id": "photo_frame",
+      "id": "photo_frame_pr",
       "name": "Photo Frame",
       "count": 2,
-      "remoteFolderName": "Photo Frame",
+      "remoteFolderName": "Photo Frame_PR",
       "stickers": [
         {
-          "id": "photo_frame__frame_basic",
+          "id": "photo_frame_pr__frame_basic",
           "name": "Frame Basic",
-          "isPremium": false,
+          "isPremium": true,
           "source": "ota",
           "fileName": "Frame Basic"
         },
         {
-          "id": "photo_frame__tape",
+          "id": "photo_frame_pr__tape",
           "name": "Tape",
-          "isPremium": false,
+          "isPremium": true,
           "source": "ota",
           "fileName": "Tape"
         }
