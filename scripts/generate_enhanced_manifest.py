@@ -10,6 +10,10 @@ Drag handles: <line> elements with id starting with DRAG_H_ or DRAG_V_ are detec
 as dividers (not as photo slots). Position: DRAG_H_ → y1/viewBoxHeight; DRAG_V_ → x1/viewBoxWidth.
 Each divider has an "affects" list of slot ids whose rect edge matches the divider position.
 
+Store manifests (stickers, frames, filters, …): a category folder whose name ends with ``_PR`` or ``_F``
+sets the default premium flag for every asset in that folder when the file stem has no ``_PR``/``_F``.
+Per-file suffixes always override the folder default.
+
 Usage:
   python generate_enhanced_manifest.py --base-url "https://raw.githubusercontent.com/OWNER/REPO/main"
 """
@@ -409,7 +413,12 @@ def _ensure_grid_dividers(layouts: list[dict]) -> None:
             layout["dividers"] = generated
 
 
-def parse_svg_file(svg_path: Path, base_url: str, id_prefix: str = "svg_") -> dict | None:
+def parse_svg_file(
+    svg_path: Path,
+    base_url: str,
+    id_prefix: str = "svg_",
+    folder_premium_default: bool | None = None,
+) -> dict | None:
     """Parse one SVG with svgelements: bbox → n_rect, path_data for organic shapes; drag handles → dividers."""
     if SVG is None:
         print("Warning: svgelements not installed; run pip install svgelements", file=sys.stderr)
@@ -417,7 +426,6 @@ def parse_svg_file(svg_path: Path, base_url: str, id_prefix: str = "svg_") -> di
     base_url = base_url.rstrip("/")
     stem = svg_path.stem
     layout_id = f"{id_prefix}{stem}" if id_prefix else stem
-    name = stem.replace("_", " ").replace("-", " ").title()
     try:
         svg = SVG.parse(str(svg_path))
     except Exception as e:
@@ -501,8 +509,12 @@ def parse_svg_file(svg_path: Path, base_url: str, id_prefix: str = "svg_") -> di
     elif "_F" in stem_upper:
         is_premium = False
     else:
-        # Default behavior for SVG-derived layouts: premium
-        is_premium = True
+        is_premium = (
+            folder_premium_default if folder_premium_default is not None else True
+        )
+
+    display_stem = _clean_stem_premium_suffix(stem)
+    name = display_stem.replace("_", " ").replace("-", " ").title()
 
     result = {
         "id": layout_id,
@@ -605,8 +617,11 @@ def parse_svg_folder(svg_dir: Path, base_url: str, id_prefix: str = "svg_") -> l
     if not svg_dir.is_dir():
         print(f"SVG dir not found: {svg_dir}", file=sys.stderr)
         return layouts
+    _, folder_fd = _folder_display_base_and_premium_default(svg_dir.name)
     for path in sorted(svg_dir.glob("*.svg")):
-        layout = parse_svg_file(path, base_url, id_prefix=id_prefix)
+        layout = parse_svg_file(
+            path, base_url, id_prefix=id_prefix, folder_premium_default=folder_fd
+        )
         if layout:
             layouts.append(layout)
     return layouts
@@ -1073,6 +1088,9 @@ def main() -> int:
 #   FilterName_F.png / .cube   →  isPremium = False
 #   FilterName.png / .cube     →  isPremium = True (default, same as SVG layouts)
 #
+# Category **folder** trailing ``_PR`` / ``_F`` applies the same default to every LUT in that folder
+# when the file stem has no ``_PR``/``_F``. Per-file suffixes override the folder default.
+#
 # Auto-download to editor toolbars (iOS store / quiet sync):
 #   Add `_a` after optional `_PR` / `_F`, e.g. `Vintage_PR_a.cube`, `Vintage_a.png`.
 #   The app downloads only manifest entries on sync unless the stem matches this rule (_a suffix);
@@ -1179,11 +1197,13 @@ def _choose_lut_path_per_logical_base(paths: list[Path]) -> list[Path]:
     return sorted(chosen, key=lambda p: (p.stem.lower(), p.suffix.lower()))
 
 
-def _filter_stem_to_name_and_premium(stem: str) -> tuple[str, bool]:
+def _filter_stem_to_name_and_premium(
+    stem: str, folder_premium_default: bool | None = None
+) -> tuple[str, bool]:
     """
     Extract display name and isPremium from a LUT file stem.
     Strips optional trailing `_a` (auto-toolbar), then _PR / _F (case-insensitive), then title-cases.
-    Default (no premium suffix) → isPremium = True.
+    Default (no premium suffix) → folder_premium_default if set, else isPremium = True.
     """
     s = _stem_without_auto_toolbar_marker(stem)
     stem_up = s.upper()
@@ -1195,7 +1215,10 @@ def _filter_stem_to_name_and_premium(stem: str) -> tuple[str, bool]:
         is_premium = False
     else:
         clean = s
-        is_premium = True  # default: premium (matches SVG layout behaviour)
+        if folder_premium_default is not None:
+            is_premium = folder_premium_default
+        else:
+            is_premium = True  # default: premium (matches SVG layout behaviour)
 
     name = clean.replace("_", " ").replace("-", " ").strip().title()
     return name, is_premium
@@ -1291,16 +1314,17 @@ def generate_filter_manifest(
         if cat_dir.name in ("StockImage", "StorePreviews"):
             continue
 
-        cat_id   = re.sub(r"[^a-zA-Z0-9]+", "_", cat_dir.name).strip("_").lower()
-        # IMPORTANT: category.name is used by the iOS app as the remote GitHub folder name.
-        # So it must match the folder name under Filters/ exactly (case-sensitive on GitHub URLs).
-        cat_name = cat_dir.name
+        cat_id = re.sub(r"[^a-zA-Z0-9]+", "_", cat_dir.name).strip("_").lower()
+        folder_base, folder_fd = _folder_display_base_and_premium_default(cat_dir.name)
+        cat_name = _title_from_stem(folder_base)
 
         filters_in_cat: list[dict] = []
         lut_paths = _choose_lut_path_per_logical_base(_collect_lut_paths(cat_dir))
         for lut_path in lut_paths:
             stem = lut_path.stem
-            display_name, is_premium = _filter_stem_to_name_and_premium(stem)
+            display_name, is_premium = _filter_stem_to_name_and_premium(
+                stem, folder_premium_default=folder_fd
+            )
             filter_id = _filter_id_from_category_and_stem(cat_id, stem)
             clean_stem = _clean_stem_premium_suffix(stem)
             is_cube = lut_path.suffix.lower() == ".cube"
@@ -1317,8 +1341,15 @@ def generate_filter_manifest(
                 "lutFileName": lut_file_name,
             })
 
+        cat_block = {
+            "id": cat_id,
+            "name": cat_name,
+            "remoteFolderName": cat_dir.name,
+            "filters": filters_in_cat,
+        }
+
         if filters_in_cat:
-            categories.append({"id": cat_id, "name": cat_name, "filters": filters_in_cat})
+            categories.append(cat_block)
 
     # ------------------------------------------------------------------
     # 3) Version bump: only when categories / filters actually changed
@@ -1522,15 +1553,13 @@ def generate_filter_previews_and_attach_to_manifest(
     updated = 0
 
     for cat in categories:
-        cat_name = str(cat.get("name") or "").strip()
+        cat_display = str(cat.get("name") or "").strip()
         cat_id = str(cat.get("id") or "").strip()
-        if not cat_name or not cat_id:
+        if not cat_display or not cat_id:
             continue
 
-        # Category folder on GitHub is the real folder name under Filters/.
-        # Our manifest generator currently uses a title-cased category name,
-        # but the LUT downloader uses category.name as remote folder.
-        category_folder = cat_name
+        # On-disk / GitHub folder under Filters/ (see ``remoteFolderName`` in filter_manifest.json).
+        category_folder = str(cat.get("remoteFolderName") or "").strip() or cat_display
 
         for item in (cat.get("filters") or []):
             if (item.get("source") or "") != "ota":
@@ -1596,7 +1625,26 @@ def _title_from_stem(stem: str) -> str:
     return stem.replace("_", " ").replace("-", " ").strip().title()
 
 
-def _store_stem_to_name_and_premium(stem: str, default_premium: bool = False) -> tuple[str, bool]:
+def _folder_display_base_and_premium_default(folder_name: str) -> tuple[str, bool | None]:
+    """
+    Trailing ``_PR`` / ``_F`` on a **category folder** name sets the default ``isPremium`` for every
+    asset in that folder when the file stem omits its own ``_PR``/``_F``. Individual file suffixes
+    always win. Returns ``(base_name_without_suffix, premium_default_or_None)``.
+    """
+    base = folder_name
+    up = base.upper()
+    if up.endswith("_PR"):
+        return base[: -len("_PR")], True
+    if up.endswith("_F"):
+        return base[: -len("_F")], False
+    return folder_name, None
+
+
+def _store_stem_to_name_and_premium(
+    stem: str,
+    default_premium: bool = False,
+    folder_premium_default: bool | None = None,
+) -> tuple[str, bool]:
     s = _stem_without_auto_toolbar_marker(stem)
     stem_up = s.upper()
     if stem_up.endswith("_PR"):
@@ -1607,7 +1655,10 @@ def _store_stem_to_name_and_premium(stem: str, default_premium: bool = False) ->
         is_premium = False
     else:
         clean = s
-        is_premium = default_premium
+        if folder_premium_default is not None:
+            is_premium = folder_premium_default
+        else:
+            is_premium = default_premium
     return _title_from_stem(clean), is_premium
 
 
@@ -1714,8 +1765,13 @@ def _scan_category_pngs(
         pngs = sorted(cat_dir.glob("*.png"), key=lambda p: p.name.lower())
         if not pngs:
             continue
+        folder_base, _ = _folder_display_base_and_premium_default(cat_dir.name)
         cat_id = _slugify(cat_dir.name)
-        cat_name = cat_dir.name if exact_folder_name_for_category else _title_from_stem(cat_dir.name)
+        cat_name = (
+            cat_dir.name
+            if exact_folder_name_for_category
+            else _title_from_stem(folder_base)
+        )
         categories.append((cat_id, cat_name, pngs, cat_dir))
     return categories
 
@@ -1728,11 +1784,14 @@ def generate_frame_store_manifest(
     """
     categories = []
     for cat_id, cat_name, pngs, cat_dir in _scan_category_pngs(frames_dir):
+        _, folder_fd = _folder_display_base_and_premium_default(cat_dir.name)
         frames = []
         for p in pngs:
             if _is_reserved_sticker_pack_asset_png(p):
                 continue
-            display_name, is_premium = _store_stem_to_name_and_premium(p.stem, default_premium=False)
+            display_name, is_premium = _store_stem_to_name_and_premium(
+                p.stem, default_premium=False, folder_premium_default=folder_fd
+            )
             clean_stem = _clean_stem_premium_suffix(p.stem)
             item_id = f"{cat_id}__{_slugify(clean_stem)}"
             frames.append({
@@ -1786,11 +1845,14 @@ def generate_sticker_store_manifest(
     """
     categories = []
     for cat_id, cat_name, pngs, cat_dir in _scan_category_pngs(stickers_dir):
+        _, folder_fd = _folder_display_base_and_premium_default(cat_dir.name)
         stickers = []
         for p in pngs:
             if _is_reserved_sticker_pack_asset_png(p):
                 continue
-            display_name, is_premium = _store_stem_to_name_and_premium(p.stem, default_premium=False)
+            display_name, is_premium = _store_stem_to_name_and_premium(
+                p.stem, default_premium=False, folder_premium_default=folder_fd
+            )
             clean_stem = _clean_stem_premium_suffix(p.stem)
             item_id = f"{cat_id}__{_slugify(clean_stem)}"
             stickers.append({
@@ -1844,14 +1906,17 @@ _BACKGROUND_IMAGE_EXTS = frozenset({
 })
 
 
-def _scan_category_background_images(root_dir: Path) -> list[tuple[str, str, list[Path]]]:
-    """Like ``_scan_category_pngs`` but includes multiple image types; category ``name`` is exact folder name.
+def _scan_category_background_images(root_dir: Path) -> list[tuple[str, str, str, bool | None, list[Path]]]:
+    """Like ``_scan_category_pngs`` but includes multiple image types.
+
+    Returns ``(cat_id, display_name, remote_folder_name, folder_premium_default, images)``.
+    ``remote_folder_name`` is the real GitHub folder segment; ``display_name`` omits trailing ``_PR``/``_F``.
 
     ``fileName`` in the manifest is the full on-disk name (e.g. ``sunset.jpg``) so GitHub URLs and
     the app cache extension match. Item ids include the extension to avoid stem collisions
     (e.g. ``foo.png`` vs ``foo.jpg``).
     """
-    categories: list[tuple[str, str, list[Path]]] = []
+    categories: list[tuple[str, str, str, bool | None, list[Path]]] = []
     if not root_dir.is_dir():
         root_dir.mkdir(parents=True, exist_ok=True)
         return categories
@@ -1865,18 +1930,23 @@ def _scan_category_background_images(root_dir: Path) -> list[tuple[str, str, lis
         if not images:
             continue
         cat_id = _slugify(cat_dir.name)
-        cat_name = cat_dir.name
-        categories.append((cat_id, cat_name, images))
+        folder_base, folder_fd = _folder_display_base_and_premium_default(cat_dir.name)
+        cat_name = _title_from_stem(folder_base)
+        categories.append((cat_id, cat_name, cat_dir.name, folder_fd, images))
     return categories
 
 
 def generate_background_store_manifest(backgrounds_dir: Path, output_path: Path) -> int:
     """Writes ``background_store_manifest.json`` matching ``BackgroundStoreManifest`` / ``BackgroundStoreItem`` in the app."""
     categories = []
-    for cat_id, cat_name, image_paths in _scan_category_background_images(backgrounds_dir):
+    for cat_id, cat_name, remote_folder, folder_fd, image_paths in _scan_category_background_images(
+        backgrounds_dir
+    ):
         backgrounds = []
         for p in image_paths:
-            display_name, is_premium = _store_stem_to_name_and_premium(p.stem, default_premium=False)
+            display_name, is_premium = _store_stem_to_name_and_premium(
+                p.stem, default_premium=False, folder_premium_default=folder_fd
+            )
             clean_stem = _clean_stem_premium_suffix(p.stem)
             ext = p.suffix.lower().lstrip(".") or "png"
             item_id = f"{cat_id}__{_slugify(clean_stem)}_{ext}"
@@ -1890,7 +1960,14 @@ def generate_background_store_manifest(backgrounds_dir: Path, output_path: Path)
                 "colorHex": None,
                 "fileName": p.name,
             })
-        categories.append({"id": cat_id, "name": cat_name, "backgrounds": backgrounds})
+        categories.append(
+            {
+                "id": cat_id,
+                "name": cat_name,
+                "remoteFolderName": remote_folder,
+                "backgrounds": backgrounds,
+            }
+        )
     version = _write_versioned_manifest(output_path, "categories", categories)
     print(f"[background-manifest] v{version} — {len(categories)} categories → {output_path}")
     return 0
@@ -2159,8 +2236,16 @@ def _attach_font_license_urls(
         )
 
 
-def _font_entry_dict(cat_id: str, font_path: Path, *, remote_directory: str | None = None) -> dict:
-    display_name, is_premium = _store_stem_to_name_and_premium(font_path.stem, default_premium=False)
+def _font_entry_dict(
+    cat_id: str,
+    font_path: Path,
+    *,
+    remote_directory: str | None = None,
+    folder_premium_default: bool | None = None,
+) -> dict:
+    display_name, is_premium = _store_stem_to_name_and_premium(
+        font_path.stem, default_premium=False, folder_premium_default=folder_premium_default
+    )
     clean_stem = _clean_stem_premium_suffix(font_path.stem)
     ext = font_path.suffix.lower()
     file_name = f"{clean_stem}{ext}"
@@ -2238,11 +2323,12 @@ _LANGUAGE_FOLDER_ALIASES: dict[str, tuple[str, str]] = {
 
 
 def _language_category_for_folder(folder_name: str) -> tuple[str, str]:
-    key = folder_name.strip().lower()
+    base, _pm = _folder_display_base_and_premium_default(folder_name)
+    key = base.strip().lower()
     if key in _LANGUAGE_FOLDER_ALIASES:
         return _LANGUAGE_FOLDER_ALIASES[key]
-    slug = _slugify(folder_name)
-    return slug, _title_from_stem(folder_name)
+    slug = _slugify(base)
+    return slug, _title_from_stem(base)
 
 
 def generate_font_catalog_manifest(
@@ -2288,11 +2374,14 @@ def generate_font_catalog_manifest(
             # e.g. Fonts/licenses/ holds EULA docs only, not a UI language tab.
             continue
         cat_id, cat_display = _language_category_for_folder(lang_dir.name)
+        _, folder_fd = _folder_display_base_and_premium_default(lang_dir.name)
         bucket = ensure_bucket(cat_id, cat_display)
         for font_path in _fonts_collect_under(lang_dir):
             rel_parent = font_path.parent.relative_to(fonts_dir)
             remote_dir = str(rel_parent).replace("\\", "/")
-            entry = _font_entry_dict(cat_id, font_path, remote_directory=remote_dir)
+            entry = _font_entry_dict(
+                cat_id, font_path, remote_directory=remote_dir, folder_premium_default=folder_fd
+            )
             bucket["fonts"].append(entry)
 
     for font_path in _fonts_loose_direct(fonts_dir):
@@ -2348,12 +2437,15 @@ def generate_shape_store_manifest(shapes_dir: Path, output_path: Path, base_url:
         if not vector_files:
             continue
         cat_id = _slugify(cat_dir.name)
-        cat_name = _title_from_stem(cat_dir.name)
+        folder_base, folder_fd = _folder_display_base_and_premium_default(cat_dir.name)
+        cat_name = _title_from_stem(folder_base)
         shapes = []
         for p in vector_files:
             if _is_reserved_shape_pack_asset(p):
                 continue
-            display_name, is_premium = _store_stem_to_name_and_premium(p.stem, default_premium=False)
+            display_name, is_premium = _store_stem_to_name_and_premium(
+                p.stem, default_premium=False, folder_premium_default=folder_fd
+            )
             clean_stem = _clean_stem_premium_suffix(p.stem)
             item_id = f"{cat_id}__{_slugify(clean_stem)}"
             shapes.append({
@@ -2418,11 +2510,14 @@ def generate_png_template_manifest(
             continue
 
         cat_id = _slugify(cat_dir.name)
-        cat_name = _title_from_stem(cat_dir.name)
+        folder_base, folder_fd = _folder_display_base_and_premium_default(cat_dir.name)
+        cat_name = _title_from_stem(folder_base)
         items: list[dict] = []
         for p in pngs:
             stem = p.stem
-            display_name, is_premium = _store_stem_to_name_and_premium(stem, default_premium=False)
+            display_name, is_premium = _store_stem_to_name_and_premium(
+                stem, default_premium=False, folder_premium_default=folder_fd
+            )
             clean_stem = _clean_stem_premium_suffix(stem)
             item_id = f"{cat_id}__{_slugify(clean_stem)}"
             items.append({
@@ -2483,6 +2578,7 @@ def generate_json_template_index(templates_dir: Path, output_path: Path) -> int:
         ]
         json_files.sort(key=lambda p: p.name.lower())
 
+        folder_base, folder_fd = _folder_display_base_and_premium_default(cat_dir.name)
         for jf in json_files:
             stem = jf.stem
             preview_name: str | None = None
@@ -2499,10 +2595,12 @@ def generate_json_template_index(templates_dir: Path, output_path: Path) -> int:
                 )
                 continue
 
-            display_name, is_premium = _store_stem_to_name_and_premium(stem, default_premium=True)
+            display_name, is_premium = _store_stem_to_name_and_premium(
+                stem, default_premium=True, folder_premium_default=folder_fd
+            )
             clean = _clean_stem_premium_suffix(stem)
             entry_id = f"{_slugify(cat_dir.name)}__{_slugify(clean)}"
-            category_label = _title_from_stem(cat_dir.name)
+            category_label = _title_from_stem(folder_base)
 
             entries.append(
                 {
