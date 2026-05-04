@@ -1,5 +1,5 @@
 {
-  "version": "1.3",
+  "version": "1.4",
   "categories": [
     {
       "id": "cute_animals",
@@ -139,91 +139,91 @@
     },
     {
       "id": "months_pr",
-      "name": "Months Pr",
+      "name": "Months",
       "count": 12,
       "remoteFolderName": "MONTHS_PR",
       "stickers": [
         {
           "id": "months_pr__apr",
           "name": "Apr",
-          "isPremium": false,
+          "isPremium": true,
           "source": "ota",
           "fileName": "APR"
         },
         {
           "id": "months_pr__aug",
           "name": "Aug",
-          "isPremium": false,
+          "isPremium": true,
           "source": "ota",
           "fileName": "AUG"
         },
         {
           "id": "months_pr__dec",
           "name": "Dec",
-          "isPremium": false,
+          "isPremium": true,
           "source": "ota",
           "fileName": "DEC"
         },
         {
           "id": "months_pr__feb",
           "name": "Feb",
-          "isPremium": false,
+          "isPremium": true,
           "source": "ota",
           "fileName": "FEB"
         },
         {
           "id": "months_pr__jan",
           "name": "Jan",
-          "isPremium": false,
+          "isPremium": true,
           "source": "ota",
           "fileName": "JAN"
         },
         {
           "id": "months_pr__jul",
           "name": "Jul",
-          "isPremium": false,
+          "isPremium": true,
           "source": "ota",
           "fileName": "JUL"
         },
         {
           "id": "months_pr__jun",
           "name": "Jun",
-          "isPremium": false,
+          "isPremium": true,
           "source": "ota",
           "fileName": "JUN"
         },
         {
           "id": "months_pr__mar",
           "name": "Mar",
-          "isPremium": false,
+          "isPremium": true,
           "source": "ota",
           "fileName": "MAR"
         },
         {
           "id": "months_pr__may",
           "name": "May",
-          "isPremium": false,
+          "isPremium": true,
           "source": "ota",
           "fileName": "MAY"
         },
         {
           "id": "months_pr__nov",
           "name": "Nov",
-          "isPremium": false,
+          "isPremium": true,
           "source": "ota",
           "fileName": "NOV"
         },
         {
           "id": "months_pr__oct",
           "name": "Oct",
-          "isPremium": false,
+          "isPremium": true,
           "source": "ota",
           "fileName": "OCT"
         },
         {
           "id": "months_pr__sept",
           "name": "Sept",
-          "isPremium": false,
+          "isPremium": true,
           "source": "ota",
           "fileName": "SEPT"
         }

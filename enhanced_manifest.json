@@ -1,5 +1,5 @@
 {
-  "version": "4.1",
+  "version": "4.2",
   "layouts": [
     {
       "category": "Classic",
@@ -6024,7 +6024,7 @@
     },
     {
       "id": "svg_PCM_CL08_F",
-      "name": "Pcm Cl08 F",
+      "name": "Pcm Cl08",
       "category": "Classic",
       "isPremium": false,
       "type": "grid",

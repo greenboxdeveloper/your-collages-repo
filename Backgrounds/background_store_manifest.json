@@ -1,9 +1,10 @@
 {
-  "version": "2.0",
+  "version": "2.1",
   "categories": [
     {
       "id": "candy_pack_01",
       "name": "Candy Pack 01",
+      "remoteFolderName": "Candy Pack 01",
       "backgrounds": [
         {
           "id": "candy_pack_01__candy1_10_jpg",
@@ -100,6 +101,7 @@
     {
       "id": "dot_pack_01",
       "name": "Dot Pack 01",
+      "remoteFolderName": "Dot Pack 01",
       "backgrounds": [
         {
           "id": "dot_pack_01__dot1_10_jpg",
@@ -196,6 +198,7 @@
     {
       "id": "dot_pack_02",
       "name": "Dot Pack 02",
+      "remoteFolderName": "Dot Pack 02",
       "backgrounds": [
         {
           "id": "dot_pack_02__dot2_10_jpg",
@@ -292,6 +295,7 @@
     {
       "id": "dot_pack_03",
       "name": "Dot Pack 03",
+      "remoteFolderName": "Dot Pack 03",
       "backgrounds": [
         {
           "id": "dot_pack_03__dot3_10_jpg",
@@ -388,6 +392,7 @@
     {
       "id": "dot_pack_04",
       "name": "Dot Pack 04",
+      "remoteFolderName": "Dot Pack 04",
       "backgrounds": [
         {
           "id": "dot_pack_04__dot4_10_jpg",
@@ -484,6 +489,7 @@
     {
       "id": "paper",
       "name": "Paper",
+      "remoteFolderName": "Paper",
       "backgrounds": [
         {
           "id": "paper__1_jpg",
@@ -553,6 +559,7 @@
     {
       "id": "spring",
       "name": "Spring",
+      "remoteFolderName": "Spring",
       "backgrounds": [
         {
           "id": "spring__spring01_jpg",
@@ -640,6 +647,7 @@
     {
       "id": "valentine_pack_01",
       "name": "Valentine Pack 01",
+      "remoteFolderName": "Valentine Pack 01",
       "backgrounds": [
         {
           "id": "valentine_pack_01__valentine1_1_jpg",
@@ -727,6 +735,7 @@
     {
       "id": "valentine_pack_02",
       "name": "Valentine Pack 02",
+      "remoteFolderName": "Valentine Pack 02",
       "backgrounds": [
         {
           "id": "valentine_pack_02__valentine2_1_jpg",
@@ -814,6 +823,7 @@
     {
       "id": "vintage_pack_01",
       "name": "Vintage Pack 01",
+      "remoteFolderName": "Vintage Pack 01",
       "backgrounds": [
         {
           "id": "vintage_pack_01__vintage1_1_jpg",
