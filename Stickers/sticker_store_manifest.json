@@ -1,135 +1,135 @@
 {
-  "version": "1.4",
+  "version": "1.5",
   "categories": [
     {
-      "id": "cute_animals",
+      "id": "cute_animals_pr",
       "name": "Cute Animals",
       "count": 18,
-      "remoteFolderName": "Cute Animals",
+      "remoteFolderName": "Cute Animals_PR",
       "stickers": [
         {
-          "id": "cute_animals__asset_10_4x",
+          "id": "cute_animals_pr__asset_10_4x",
           "name": "Asset 10@4X",
-          "isPremium": false,
+          "isPremium": true,
           "source": "ota",
           "fileName": "Asset 10@4x"
         },
         {
-          "id": "cute_animals__asset_11_4x",
+          "id": "cute_animals_pr__asset_11_4x",
           "name": "Asset 11@4X",
-          "isPremium": false,
+          "isPremium": true,
           "source": "ota",
           "fileName": "Asset 11@4x"
         },
         {
-          "id": "cute_animals__asset_12_4x",
+          "id": "cute_animals_pr__asset_12_4x",
           "name": "Asset 12@4X",
-          "isPremium": false,
+          "isPremium": true,
           "source": "ota",
           "fileName": "Asset 12@4x"
         },
         {
-          "id": "cute_animals__asset_13_4x",
+          "id": "cute_animals_pr__asset_13_4x",
           "name": "Asset 13@4X",
-          "isPremium": false,
+          "isPremium": true,
           "source": "ota",
           "fileName": "Asset 13@4x"
         },
         {
-          "id": "cute_animals__asset_14_4x",
+          "id": "cute_animals_pr__asset_14_4x",
           "name": "Asset 14@4X",
-          "isPremium": false,
+          "isPremium": true,
           "source": "ota",
           "fileName": "Asset 14@4x"
         },
         {
-          "id": "cute_animals__asset_15_4x",
+          "id": "cute_animals_pr__asset_15_4x",
           "name": "Asset 15@4X",
-          "isPremium": false,
+          "isPremium": true,
           "source": "ota",
           "fileName": "Asset 15@4x"
         },
         {
-          "id": "cute_animals__asset_16_4x",
+          "id": "cute_animals_pr__asset_16_4x",
           "name": "Asset 16@4X",
-          "isPremium": false,
+          "isPremium": true,
           "source": "ota",
           "fileName": "Asset 16@4x"
         },
         {
-          "id": "cute_animals__asset_17_4x",
+          "id": "cute_animals_pr__asset_17_4x",
           "name": "Asset 17@4X",
-          "isPremium": false,
+          "isPremium": true,
           "source": "ota",
           "fileName": "Asset 17@4x"
         },
         {
-          "id": "cute_animals__asset_18_4x",
+          "id": "cute_animals_pr__asset_18_4x",
           "name": "Asset 18@4X",
-          "isPremium": false,
+          "isPremium": true,
           "source": "ota",
           "fileName": "Asset 18@4x"
         },
         {
-          "id": "cute_animals__asset_1_4x",
+          "id": "cute_animals_pr__asset_1_4x",
           "name": "Asset 1@4X",
-          "isPremium": false,
+          "isPremium": true,
           "source": "ota",
           "fileName": "Asset 1@4x"
         },
         {
-          "id": "cute_animals__asset_2_4x",
+          "id": "cute_animals_pr__asset_2_4x",
           "name": "Asset 2@4X",
-          "isPremium": false,
+          "isPremium": true,
           "source": "ota",
           "fileName": "Asset 2@4x"
         },
         {
-          "id": "cute_animals__asset_3_4x",
+          "id": "cute_animals_pr__asset_3_4x",
           "name": "Asset 3@4X",
-          "isPremium": false,
+          "isPremium": true,
           "source": "ota",
           "fileName": "Asset 3@4x"
         },
         {
-          "id": "cute_animals__asset_4_4x",
+          "id": "cute_animals_pr__asset_4_4x",
           "name": "Asset 4@4X",
-          "isPremium": false,
+          "isPremium": true,
           "source": "ota",
           "fileName": "Asset 4@4x"
         },
         {
-          "id": "cute_animals__asset_5_4x",
+          "id": "cute_animals_pr__asset_5_4x",
           "name": "Asset 5@4X",
-          "isPremium": false,
+          "isPremium": true,
           "source": "ota",
           "fileName": "Asset 5@4x"
         },
         {
-          "id": "cute_animals__asset_6_4x",
+          "id": "cute_animals_pr__asset_6_4x",
           "name": "Asset 6@4X",
-          "isPremium": false,
+          "isPremium": true,
           "source": "ota",
           "fileName": "Asset 6@4x"
         },
         {
-          "id": "cute_animals__asset_7_4x",
+          "id": "cute_animals_pr__asset_7_4x",
           "name": "Asset 7@4X",
-          "isPremium": false,
+          "isPremium": true,
           "source": "ota",
           "fileName": "Asset 7@4x"
         },
         {
-          "id": "cute_animals__asset_8_4x",
+          "id": "cute_animals_pr__asset_8_4x",
           "name": "Asset 8@4X",
-          "isPremium": false,
+          "isPremium": true,
           "source": "ota",
           "fileName": "Asset 8@4x"
         },
         {
-          "id": "cute_animals__asset_9_4x",
+          "id": "cute_animals_pr__asset_9_4x",
           "name": "Asset 9@4X",
-          "isPremium": false,
+          "isPremium": true,
           "source": "ota",
           "fileName": "Asset 9@4x"
         }
