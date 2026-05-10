@@ -46,12 +46,13 @@
       "category": "made_for_you",
       "count": 10
     },
+    
     {
       "id": "featured_templates",
       "title": "Featured Templates",
       "subtitle": "",
       "display_size": "hero",
-      "category": "Templates",
+      "category": "templates",
       "sub_category": "Holiday 3",
       "count": 1
     },
@@ -62,6 +63,15 @@
         "display_size": "small",
         "category": "filters",
         "sub_category": "Color Boost",
+        "count": 10
+    },
+    {
+        "id": "Stylish_fonts",
+        "title": "Your Stylish Fonts",
+        "subtitle": "Create memorable holiday",
+        "display_size": "small",
+        "category": "Fonts",
+        "sub_category": "",
         "count": 10
     }
   ],
