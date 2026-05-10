@@ -1,0 +1,87 @@
+{
+  "version": "1.0",
+  "sections": [
+    {
+      "id": "slideshow",
+      "title": "Welcome",
+      "subtitle": "",
+      "display_size": "hero",
+      "category": "slideshow"
+    },
+    {
+      "id": "tools",
+      "title": "Your Collage",
+      "subtitle": "Pick a style and start",
+      "display_size": "medium",
+      "category": "tools_grid"
+    },
+    {
+      "id": "template_store",
+      "title": "Template Store",
+      "subtitle": "Browse curated templates",
+      "display_size": "medium",
+      "category": "template_store_row"
+    },
+    {
+      "id": "trending_layouts",
+      "title": "Trending Layouts",
+      "subtitle": "",
+      "display_size": "small",
+      "category": "popular_layouts",
+      "count": 10
+    },
+    {
+      "id": "continue_projects",
+      "title": "Continue Projects",
+      "subtitle": "Pick up where you left off",
+      "display_size": "small",
+      "category": "continue_projects",
+      "count": 10
+    },
+    {
+      "id": "curated_for_you",
+      "title": "Curated For You",
+      "subtitle": "",
+      "display_size": "small",
+      "category": "made_for_you",
+      "count": 10
+    },
+    
+    {
+      "id": "featured_templates",
+      "title": "Featured Templates",
+      "subtitle": "",
+      "display_size": "hero",
+      "category": "templates",
+      "sub_category": "Holiday 3",
+      "count": 1
+    },
+    {
+        "id": "Cinematic_templates",
+        "title": "Your Cine Templates",
+        "subtitle": "Create memorable holiday",
+        "display_size": "small",
+        "category": "filters",
+        "sub_category": "Color Boost",
+        "count": 10
+    },
+    {
+        "id": "Stylish_fonts",
+        "title": "Your Stylish Fonts",
+        "subtitle": "Create memorable holiday",
+        "display_size": "small",
+        "category": "Fonts",
+        "sub_category": "",
+        "count": 10
+    }
+  ],
+  "randomize": {
+    "enabled": true,
+    "title": "Discover More",
+    "subtitle": "",
+    "display_size": "small",
+    "template_count": 6,
+    "store_count": 6
+  }
+}
+
