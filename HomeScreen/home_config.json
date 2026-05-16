@@ -72,6 +72,22 @@
         "category": "Fonts",
         "sub_category": "",
         "count": 1
+    },
+    {
+      "id": "classic_layouts",
+      "title": "Classic Collage",
+      "subtitle": "Grid layouts from the catalog",
+      "display_size": "small",
+      "category": "classic_layouts",
+      "count": 12
+    },
+    {
+      "id": "stylish_layouts",
+      "title": "Stylish Collage",
+      "subtitle": "Creative shapes and styles",
+      "display_size": "small",
+      "category": "stylish_layouts",
+      "count": 12
     }
   ],
   "randomize": {
