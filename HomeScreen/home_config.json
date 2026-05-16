@@ -1,5 +1,5 @@
 {
-  "version": "1.0",
+  "version": "1.2",
   "sections": [
     {
       "id": "slideshow",
@@ -63,6 +63,15 @@
         "display_size": "small",
         "category": "filters",
         "sub_category": "Color Boost",
+        "count": 10
+    },
+    {
+        "id": "Stylish_fonts",
+        "title": "Your Stylish Fonts",
+        "subtitle": "Create memorable holiday",
+        "display_size": "small",
+        "category": "Fonts",
+        "sub_category": "",
         "count": 10
     }
   ],

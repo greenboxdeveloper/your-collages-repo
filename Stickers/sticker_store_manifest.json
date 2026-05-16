@@ -1,137 +1,760 @@
 {
-  "version": "2.0",
+  "version": "2.3",
   "categories": [
     {
-      "id": "cute_animals",
-      "name": "Cute Animals",
+      "id": "animal_pack_01",
+      "name": "Animal Pack 01",
       "count": 18,
-      "remoteFolderName": "Cute Animals",
+      "remoteFolderName": "Animal Pack 01",
       "stickers": [
         {
-          "id": "cute_animals__asset_10_4x",
+          "id": "animal_pack_01__asset_10_4x",
           "name": "Asset 10@4X",
           "isPremium": false,
           "source": "ota",
           "fileName": "Asset 10@4x"
         },
         {
-          "id": "cute_animals__asset_11_4x",
+          "id": "animal_pack_01__asset_11_4x",
           "name": "Asset 11@4X",
           "isPremium": false,
           "source": "ota",
           "fileName": "Asset 11@4x"
         },
         {
-          "id": "cute_animals__asset_12_4x",
+          "id": "animal_pack_01__asset_12_4x",
           "name": "Asset 12@4X",
           "isPremium": false,
           "source": "ota",
           "fileName": "Asset 12@4x"
         },
         {
-          "id": "cute_animals__asset_13_4x",
+          "id": "animal_pack_01__asset_13_4x",
           "name": "Asset 13@4X",
           "isPremium": false,
           "source": "ota",
           "fileName": "Asset 13@4x"
         },
         {
-          "id": "cute_animals__asset_14_4x",
+          "id": "animal_pack_01__asset_14_4x",
           "name": "Asset 14@4X",
           "isPremium": false,
           "source": "ota",
           "fileName": "Asset 14@4x"
         },
         {
-          "id": "cute_animals__asset_15_4x",
+          "id": "animal_pack_01__asset_15_4x",
           "name": "Asset 15@4X",
           "isPremium": false,
           "source": "ota",
           "fileName": "Asset 15@4x"
         },
         {
-          "id": "cute_animals__asset_16_4x",
+          "id": "animal_pack_01__asset_16_4x",
           "name": "Asset 16@4X",
           "isPremium": false,
           "source": "ota",
           "fileName": "Asset 16@4x"
         },
         {
-          "id": "cute_animals__asset_17_4x",
+          "id": "animal_pack_01__asset_17_4x",
           "name": "Asset 17@4X",
           "isPremium": false,
           "source": "ota",
           "fileName": "Asset 17@4x"
         },
         {
-          "id": "cute_animals__asset_18_4x",
+          "id": "animal_pack_01__asset_18_4x",
           "name": "Asset 18@4X",
           "isPremium": false,
           "source": "ota",
           "fileName": "Asset 18@4x"
         },
         {
-          "id": "cute_animals__asset_1_4x",
+          "id": "animal_pack_01__asset_1_4x",
           "name": "Asset 1@4X",
           "isPremium": false,
           "source": "ota",
           "fileName": "Asset 1@4x"
         },
         {
-          "id": "cute_animals__asset_2_4x",
+          "id": "animal_pack_01__asset_2_4x",
           "name": "Asset 2@4X",
           "isPremium": false,
           "source": "ota",
           "fileName": "Asset 2@4x"
         },
         {
-          "id": "cute_animals__asset_3_4x",
+          "id": "animal_pack_01__asset_3_4x",
           "name": "Asset 3@4X",
           "isPremium": false,
           "source": "ota",
           "fileName": "Asset 3@4x"
         },
         {
-          "id": "cute_animals__asset_4_4x",
+          "id": "animal_pack_01__asset_4_4x",
           "name": "Asset 4@4X",
           "isPremium": false,
           "source": "ota",
           "fileName": "Asset 4@4x"
         },
         {
-          "id": "cute_animals__asset_5_4x",
+          "id": "animal_pack_01__asset_5_4x",
           "name": "Asset 5@4X",
           "isPremium": false,
           "source": "ota",
           "fileName": "Asset 5@4x"
         },
         {
-          "id": "cute_animals__asset_6_4x",
+          "id": "animal_pack_01__asset_6_4x",
           "name": "Asset 6@4X",
           "isPremium": false,
           "source": "ota",
           "fileName": "Asset 6@4x"
         },
         {
-          "id": "cute_animals__asset_7_4x",
+          "id": "animal_pack_01__asset_7_4x",
           "name": "Asset 7@4X",
           "isPremium": false,
           "source": "ota",
           "fileName": "Asset 7@4x"
         },
         {
-          "id": "cute_animals__asset_8_4x",
+          "id": "animal_pack_01__asset_8_4x",
           "name": "Asset 8@4X",
           "isPremium": false,
           "source": "ota",
           "fileName": "Asset 8@4x"
         },
         {
-          "id": "cute_animals__asset_9_4x",
+          "id": "animal_pack_01__asset_9_4x",
           "name": "Asset 9@4X",
           "isPremium": false,
           "source": "ota",
           "fileName": "Asset 9@4x"
+        }
+      ],
+      "bannerImageUrl": null,
+      "promoHeaderUrl": null
+    },
+    {
+      "id": "chatbox_pack_01_pr",
+      "name": "Chatbox Pack 01",
+      "count": 10,
+      "remoteFolderName": "Chatbox Pack 01_PR",
+      "stickers": [
+        {
+          "id": "chatbox_pack_01_pr__chatbox1_1",
+          "name": "Chatbox1.1",
+          "isPremium": true,
+          "source": "ota",
+          "fileName": "Chatbox1.1"
+        },
+        {
+          "id": "chatbox_pack_01_pr__chatbox1_10",
+          "name": "Chatbox1.10",
+          "isPremium": true,
+          "source": "ota",
+          "fileName": "Chatbox1.10"
+        },
+        {
+          "id": "chatbox_pack_01_pr__chatbox1_2",
+          "name": "Chatbox1.2",
+          "isPremium": true,
+          "source": "ota",
+          "fileName": "Chatbox1.2"
+        },
+        {
+          "id": "chatbox_pack_01_pr__chatbox1_3",
+          "name": "Chatbox1.3",
+          "isPremium": true,
+          "source": "ota",
+          "fileName": "Chatbox1.3"
+        },
+        {
+          "id": "chatbox_pack_01_pr__chatbox1_4",
+          "name": "Chatbox1.4",
+          "isPremium": true,
+          "source": "ota",
+          "fileName": "Chatbox1.4"
+        },
+        {
+          "id": "chatbox_pack_01_pr__chatbox1_5",
+          "name": "Chatbox1.5",
+          "isPremium": true,
+          "source": "ota",
+          "fileName": "Chatbox1.5"
+        },
+        {
+          "id": "chatbox_pack_01_pr__chatbox1_6",
+          "name": "Chatbox1.6",
+          "isPremium": true,
+          "source": "ota",
+          "fileName": "Chatbox1.6"
+        },
+        {
+          "id": "chatbox_pack_01_pr__chatbox1_7",
+          "name": "Chatbox1.7",
+          "isPremium": true,
+          "source": "ota",
+          "fileName": "Chatbox1.7"
+        },
+        {
+          "id": "chatbox_pack_01_pr__chatbox1_8",
+          "name": "Chatbox1.8",
+          "isPremium": true,
+          "source": "ota",
+          "fileName": "Chatbox1.8"
+        },
+        {
+          "id": "chatbox_pack_01_pr__chatbox1_9",
+          "name": "Chatbox1.9",
+          "isPremium": true,
+          "source": "ota",
+          "fileName": "Chatbox1.9"
+        }
+      ],
+      "bannerImageUrl": null,
+      "promoHeaderUrl": null
+    },
+    {
+      "id": "coffee_pack_01_pr",
+      "name": "Coffee Pack 01",
+      "count": 10,
+      "remoteFolderName": "Coffee Pack 01_PR",
+      "stickers": [
+        {
+          "id": "coffee_pack_01_pr__coffee1_1",
+          "name": "Coffee1.1",
+          "isPremium": true,
+          "source": "ota",
+          "fileName": "Coffee1.1"
+        },
+        {
+          "id": "coffee_pack_01_pr__coffee1_10",
+          "name": "Coffee1.10",
+          "isPremium": true,
+          "source": "ota",
+          "fileName": "Coffee1.10"
+        },
+        {
+          "id": "coffee_pack_01_pr__coffee1_2",
+          "name": "Coffee1.2",
+          "isPremium": true,
+          "source": "ota",
+          "fileName": "Coffee1.2"
+        },
+        {
+          "id": "coffee_pack_01_pr__coffee1_3",
+          "name": "Coffee1.3",
+          "isPremium": true,
+          "source": "ota",
+          "fileName": "Coffee1.3"
+        },
+        {
+          "id": "coffee_pack_01_pr__coffee1_4",
+          "name": "Coffee1.4",
+          "isPremium": true,
+          "source": "ota",
+          "fileName": "Coffee1.4"
+        },
+        {
+          "id": "coffee_pack_01_pr__coffee1_5",
+          "name": "Coffee1.5",
+          "isPremium": true,
+          "source": "ota",
+          "fileName": "Coffee1.5"
+        },
+        {
+          "id": "coffee_pack_01_pr__coffee1_6",
+          "name": "Coffee1.6",
+          "isPremium": true,
+          "source": "ota",
+          "fileName": "Coffee1.6"
+        },
+        {
+          "id": "coffee_pack_01_pr__coffee1_7",
+          "name": "Coffee1.7",
+          "isPremium": true,
+          "source": "ota",
+          "fileName": "Coffee1.7"
+        },
+        {
+          "id": "coffee_pack_01_pr__coffee1_8",
+          "name": "Coffee1.8",
+          "isPremium": true,
+          "source": "ota",
+          "fileName": "Coffee1.8"
+        },
+        {
+          "id": "coffee_pack_01_pr__coffee1_9",
+          "name": "Coffee1.9",
+          "isPremium": true,
+          "source": "ota",
+          "fileName": "Coffee1.9"
+        }
+      ],
+      "bannerImageUrl": null,
+      "promoHeaderUrl": null
+    },
+    {
+      "id": "coffee_pack_02_pr",
+      "name": "Coffee Pack 02",
+      "count": 10,
+      "remoteFolderName": "Coffee Pack 02_PR",
+      "stickers": [
+        {
+          "id": "coffee_pack_02_pr__coffee2_1",
+          "name": "Coffee2.1",
+          "isPremium": true,
+          "source": "ota",
+          "fileName": "Coffee2.1"
+        },
+        {
+          "id": "coffee_pack_02_pr__coffee2_10",
+          "name": "Coffee2.10",
+          "isPremium": true,
+          "source": "ota",
+          "fileName": "Coffee2.10"
+        },
+        {
+          "id": "coffee_pack_02_pr__coffee2_2",
+          "name": "Coffee2.2",
+          "isPremium": true,
+          "source": "ota",
+          "fileName": "Coffee2.2"
+        },
+        {
+          "id": "coffee_pack_02_pr__coffee2_3",
+          "name": "Coffee2.3",
+          "isPremium": true,
+          "source": "ota",
+          "fileName": "Coffee2.3"
+        },
+        {
+          "id": "coffee_pack_02_pr__coffee2_4",
+          "name": "Coffee2.4",
+          "isPremium": true,
+          "source": "ota",
+          "fileName": "Coffee2.4"
+        },
+        {
+          "id": "coffee_pack_02_pr__coffee2_5",
+          "name": "Coffee2.5",
+          "isPremium": true,
+          "source": "ota",
+          "fileName": "Coffee2.5"
+        },
+        {
+          "id": "coffee_pack_02_pr__coffee2_6",
+          "name": "Coffee2.6",
+          "isPremium": true,
+          "source": "ota",
+          "fileName": "Coffee2.6"
+        },
+        {
+          "id": "coffee_pack_02_pr__coffee2_7",
+          "name": "Coffee2.7",
+          "isPremium": true,
+          "source": "ota",
+          "fileName": "Coffee2.7"
+        },
+        {
+          "id": "coffee_pack_02_pr__coffee2_8",
+          "name": "Coffee2.8",
+          "isPremium": true,
+          "source": "ota",
+          "fileName": "Coffee2.8"
+        },
+        {
+          "id": "coffee_pack_02_pr__coffee2_9",
+          "name": "Coffee2.9",
+          "isPremium": true,
+          "source": "ota",
+          "fileName": "Coffee2.9"
+        }
+      ],
+      "bannerImageUrl": null,
+      "promoHeaderUrl": null
+    },
+    {
+      "id": "coffee_pack_03_pr",
+      "name": "Coffee Pack 03",
+      "count": 20,
+      "remoteFolderName": "Coffee Pack 03_PR",
+      "stickers": [
+        {
+          "id": "coffee_pack_03_pr__coffee3_1",
+          "name": "Coffee3.1",
+          "isPremium": true,
+          "source": "ota",
+          "fileName": "Coffee3.1"
+        },
+        {
+          "id": "coffee_pack_03_pr__coffee3_10",
+          "name": "Coffee3.10",
+          "isPremium": true,
+          "source": "ota",
+          "fileName": "Coffee3.10"
+        },
+        {
+          "id": "coffee_pack_03_pr__coffee3_11",
+          "name": "Coffee3.11",
+          "isPremium": true,
+          "source": "ota",
+          "fileName": "Coffee3.11"
+        },
+        {
+          "id": "coffee_pack_03_pr__coffee3_12",
+          "name": "Coffee3.12",
+          "isPremium": true,
+          "source": "ota",
+          "fileName": "Coffee3.12"
+        },
+        {
+          "id": "coffee_pack_03_pr__coffee3_13",
+          "name": "Coffee3.13",
+          "isPremium": true,
+          "source": "ota",
+          "fileName": "Coffee3.13"
+        },
+        {
+          "id": "coffee_pack_03_pr__coffee3_14",
+          "name": "Coffee3.14",
+          "isPremium": true,
+          "source": "ota",
+          "fileName": "Coffee3.14"
+        },
+        {
+          "id": "coffee_pack_03_pr__coffee3_15",
+          "name": "Coffee3.15",
+          "isPremium": true,
+          "source": "ota",
+          "fileName": "Coffee3.15"
+        },
+        {
+          "id": "coffee_pack_03_pr__coffee3_16",
+          "name": "Coffee3.16",
+          "isPremium": true,
+          "source": "ota",
+          "fileName": "Coffee3.16"
+        },
+        {
+          "id": "coffee_pack_03_pr__coffee3_17",
+          "name": "Coffee3.17",
+          "isPremium": true,
+          "source": "ota",
+          "fileName": "Coffee3.17"
+        },
+        {
+          "id": "coffee_pack_03_pr__coffee3_18",
+          "name": "Coffee3.18",
+          "isPremium": true,
+          "source": "ota",
+          "fileName": "Coffee3.18"
+        },
+        {
+          "id": "coffee_pack_03_pr__coffee3_19",
+          "name": "Coffee3.19",
+          "isPremium": true,
+          "source": "ota",
+          "fileName": "Coffee3.19"
+        },
+        {
+          "id": "coffee_pack_03_pr__coffee3_2",
+          "name": "Coffee3.2",
+          "isPremium": true,
+          "source": "ota",
+          "fileName": "Coffee3.2"
+        },
+        {
+          "id": "coffee_pack_03_pr__coffee3_20",
+          "name": "Coffee3.20",
+          "isPremium": true,
+          "source": "ota",
+          "fileName": "Coffee3.20"
+        },
+        {
+          "id": "coffee_pack_03_pr__coffee3_3",
+          "name": "Coffee3.3",
+          "isPremium": true,
+          "source": "ota",
+          "fileName": "Coffee3.3"
+        },
+        {
+          "id": "coffee_pack_03_pr__coffee3_4",
+          "name": "Coffee3.4",
+          "isPremium": true,
+          "source": "ota",
+          "fileName": "Coffee3.4"
+        },
+        {
+          "id": "coffee_pack_03_pr__coffee3_5",
+          "name": "Coffee3.5",
+          "isPremium": true,
+          "source": "ota",
+          "fileName": "Coffee3.5"
+        },
+        {
+          "id": "coffee_pack_03_pr__coffee3_6",
+          "name": "Coffee3.6",
+          "isPremium": true,
+          "source": "ota",
+          "fileName": "Coffee3.6"
+        },
+        {
+          "id": "coffee_pack_03_pr__coffee3_7",
+          "name": "Coffee3.7",
+          "isPremium": true,
+          "source": "ota",
+          "fileName": "Coffee3.7"
+        },
+        {
+          "id": "coffee_pack_03_pr__coffee3_8",
+          "name": "Coffee3.8",
+          "isPremium": true,
+          "source": "ota",
+          "fileName": "Coffee3.8"
+        },
+        {
+          "id": "coffee_pack_03_pr__coffee3_9",
+          "name": "Coffee3.9",
+          "isPremium": true,
+          "source": "ota",
+          "fileName": "Coffee3.9"
+        }
+      ],
+      "bannerImageUrl": null,
+      "promoHeaderUrl": null
+    },
+    {
+      "id": "coffee_pack_04_pr",
+      "name": "Coffee Pack 04",
+      "count": 10,
+      "remoteFolderName": "Coffee Pack 04_PR",
+      "stickers": [
+        {
+          "id": "coffee_pack_04_pr__coffee4_1",
+          "name": "Coffee4.1",
+          "isPremium": true,
+          "source": "ota",
+          "fileName": "Coffee4.1"
+        },
+        {
+          "id": "coffee_pack_04_pr__coffee4_10",
+          "name": "Coffee4.10",
+          "isPremium": true,
+          "source": "ota",
+          "fileName": "Coffee4.10"
+        },
+        {
+          "id": "coffee_pack_04_pr__coffee4_2",
+          "name": "Coffee4.2",
+          "isPremium": true,
+          "source": "ota",
+          "fileName": "Coffee4.2"
+        },
+        {
+          "id": "coffee_pack_04_pr__coffee4_3",
+          "name": "Coffee4.3",
+          "isPremium": true,
+          "source": "ota",
+          "fileName": "Coffee4.3"
+        },
+        {
+          "id": "coffee_pack_04_pr__coffee4_4",
+          "name": "Coffee4.4",
+          "isPremium": true,
+          "source": "ota",
+          "fileName": "Coffee4.4"
+        },
+        {
+          "id": "coffee_pack_04_pr__coffee4_5",
+          "name": "Coffee4.5",
+          "isPremium": true,
+          "source": "ota",
+          "fileName": "Coffee4.5"
+        },
+        {
+          "id": "coffee_pack_04_pr__coffee4_6",
+          "name": "Coffee4.6",
+          "isPremium": true,
+          "source": "ota",
+          "fileName": "Coffee4.6"
+        },
+        {
+          "id": "coffee_pack_04_pr__coffee4_7",
+          "name": "Coffee4.7",
+          "isPremium": true,
+          "source": "ota",
+          "fileName": "Coffee4.7"
+        },
+        {
+          "id": "coffee_pack_04_pr__coffee4_8",
+          "name": "Coffee4.8",
+          "isPremium": true,
+          "source": "ota",
+          "fileName": "Coffee4.8"
+        },
+        {
+          "id": "coffee_pack_04_pr__coffee4_9",
+          "name": "Coffee4.9",
+          "isPremium": true,
+          "source": "ota",
+          "fileName": "Coffee4.9"
+        }
+      ],
+      "bannerImageUrl": null,
+      "promoHeaderUrl": null
+    },
+    {
+      "id": "coffee_pack_05_pr",
+      "name": "Coffee Pack 05",
+      "count": 9,
+      "remoteFolderName": "Coffee Pack 05_PR",
+      "stickers": [
+        {
+          "id": "coffee_pack_05_pr__coffee5_1",
+          "name": "Coffee5.1",
+          "isPremium": true,
+          "source": "ota",
+          "fileName": "Coffee5.1"
+        },
+        {
+          "id": "coffee_pack_05_pr__coffee5_2",
+          "name": "Coffee5.2",
+          "isPremium": true,
+          "source": "ota",
+          "fileName": "Coffee5.2"
+        },
+        {
+          "id": "coffee_pack_05_pr__coffee5_3",
+          "name": "Coffee5.3",
+          "isPremium": true,
+          "source": "ota",
+          "fileName": "Coffee5.3"
+        },
+        {
+          "id": "coffee_pack_05_pr__coffee5_4",
+          "name": "Coffee5.4",
+          "isPremium": true,
+          "source": "ota",
+          "fileName": "Coffee5.4"
+        },
+        {
+          "id": "coffee_pack_05_pr__coffee5_5",
+          "name": "Coffee5.5",
+          "isPremium": true,
+          "source": "ota",
+          "fileName": "Coffee5.5"
+        },
+        {
+          "id": "coffee_pack_05_pr__coffee5_6",
+          "name": "Coffee5.6",
+          "isPremium": true,
+          "source": "ota",
+          "fileName": "Coffee5.6"
+        },
+        {
+          "id": "coffee_pack_05_pr__coffee5_7",
+          "name": "Coffee5.7",
+          "isPremium": true,
+          "source": "ota",
+          "fileName": "Coffee5.7"
+        },
+        {
+          "id": "coffee_pack_05_pr__coffee5_8",
+          "name": "Coffee5.8",
+          "isPremium": true,
+          "source": "ota",
+          "fileName": "Coffee5.8"
+        },
+        {
+          "id": "coffee_pack_05_pr__coffee5_9",
+          "name": "Coffee5.9",
+          "isPremium": true,
+          "source": "ota",
+          "fileName": "Coffee5.9"
+        }
+      ],
+      "bannerImageUrl": null,
+      "promoHeaderUrl": null
+    },
+    {
+      "id": "drink_pack_01_pr",
+      "name": "Drink Pack 01",
+      "count": 10,
+      "remoteFolderName": "Drink Pack 01_PR",
+      "stickers": [
+        {
+          "id": "drink_pack_01_pr__drink1_1",
+          "name": "Drink1.1",
+          "isPremium": true,
+          "source": "ota",
+          "fileName": "Drink1.1"
+        },
+        {
+          "id": "drink_pack_01_pr__drink1_10",
+          "name": "Drink1.10",
+          "isPremium": true,
+          "source": "ota",
+          "fileName": "Drink1.10"
+        },
+        {
+          "id": "drink_pack_01_pr__drink1_2",
+          "name": "Drink1.2",
+          "isPremium": true,
+          "source": "ota",
+          "fileName": "Drink1.2"
+        },
+        {
+          "id": "drink_pack_01_pr__drink1_3",
+          "name": "Drink1.3",
+          "isPremium": true,
+          "source": "ota",
+          "fileName": "Drink1.3"
+        },
+        {
+          "id": "drink_pack_01_pr__drink1_4",
+          "name": "Drink1.4",
+          "isPremium": true,
+          "source": "ota",
+          "fileName": "Drink1.4"
+        },
+        {
+          "id": "drink_pack_01_pr__drink1_5",
+          "name": "Drink1.5",
+          "isPremium": true,
+          "source": "ota",
+          "fileName": "Drink1.5"
+        },
+        {
+          "id": "drink_pack_01_pr__drink1_6",
+          "name": "Drink1.6",
+          "isPremium": true,
+          "source": "ota",
+          "fileName": "Drink1.6"
+        },
+        {
+          "id": "drink_pack_01_pr__drink1_7",
+          "name": "Drink1.7",
+          "isPremium": true,
+          "source": "ota",
+          "fileName": "Drink1.7"
+        },
+        {
+          "id": "drink_pack_01_pr__drink1_8",
+          "name": "Drink1.8",
+          "isPremium": true,
+          "source": "ota",
+          "fileName": "Drink1.8"
+        },
+        {
+          "id": "drink_pack_01_pr__drink1_9",
+          "name": "Drink1.9",
+          "isPremium": true,
+          "source": "ota",
+          "fileName": "Drink1.9"
         }
       ],
       "bannerImageUrl": null,
