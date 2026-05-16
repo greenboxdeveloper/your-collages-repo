@@ -46,15 +46,14 @@
       "category": "made_for_you",
       "count": 10
     },
-    
     {
       "id": "featured_templates",
       "title": "Featured Templates",
-      "subtitle": "",
-      "display_size": "hero",
-      "category": "Templates",
+      "subtitle": "Holiday picks",
+      "display_size": "small",
+      "category": "templates",
       "sub_category": "Holiday 3",
-      "count": 1
+      "count": 6
     },
     {
         "id": "Cinematic_templates",
