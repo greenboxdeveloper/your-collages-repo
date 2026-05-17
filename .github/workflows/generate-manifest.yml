@@ -18,6 +18,7 @@ on:
       - "PNGTemplates/**"
       - "Templates/**"
       - "scripts/**"
+      - "HomeScreen/**"
   workflow_dispatch:
 
 permissions:
@@ -83,7 +84,11 @@ jobs:
             --png-templates-output PNGTemplates/png_template_manifest.json \
             --generate-templates-index \
             --templates-index-dir Templates \
-            --templates-index-output Templates/templates_index.json
+            --templates-index-output Templates/templates_index.json \
+            --generate-home-config \
+            --home-blueprint HomeScreen/home_screen_blueprint.json \
+            --home-output-ota HomeScreen/home_config.json \
+            --home-output-bundle PhotoCollageMaker/PhotoCollage/Resource/home_config.json
 
       - name: Commit and push if changed
         run: |
@@ -98,22 +103,12 @@ jobs:
             Fonts/font_catalog.json \
             Shapes/shape_store_manifest.json \
             PNGTemplates/png_template_manifest.json \
-            Templates/templates_index.json || true
+            Templates/templates_index.json \
+            HomeScreen/home_config.json \
+            PhotoCollageMaker/PhotoCollage/Resource/home_config.json || true
           if git diff --staged --quiet; then
             echo "No manifest changes to commit."
           else
             git commit -m "chore: regenerate enhanced and store manifests [skip ci]"
             git push
           fi
-      - name: Set up Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version: 20
-
-      - name: Deploy to Cloudflare
-        uses: cloudflare/wrangler-action@v3
-        with:
-          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
-          accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
-          wranglerVersion: '4'
-          command: deploy
