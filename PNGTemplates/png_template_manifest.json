@@ -1,5 +1,5 @@
 {
-  "version": "1.2",
+  "version": "1.3",
   "categories": [
     {
       "id": "testtemplates",
@@ -8,16 +8,16 @@
       "remoteFolderName": "TestTemplates",
       "items": [
         {
-          "id": "testtemplates__wp11",
-          "name": "Wp11",
-          "fileName": "wp11",
+          "id": "testtemplates__1hole",
+          "name": "1Hole",
+          "fileName": "1hole",
           "isPremium": false,
           "holeCount": 0
         },
         {
-          "id": "testtemplates__wp11764083",
-          "name": "Wp11764083",
-          "fileName": "wp11764083",
+          "id": "testtemplates__2hole",
+          "name": "2Hole",
+          "fileName": "2hole",
           "isPremium": false,
           "holeCount": 0
         }
