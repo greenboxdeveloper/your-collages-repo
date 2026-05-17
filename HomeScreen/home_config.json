@@ -1,5 +1,5 @@
 {
-  "version": "1.4",
+  "version": "1.5",
   "sections": [
     {
       "id": "slideshow",
@@ -47,12 +47,21 @@
       "count": 10
     },
     {
+      "id": "film_filters",
+      "title": "Film Looks",
+      "subtitle": "",
+      "display_size": "small",
+      "category": "filters",
+      "sub_category": "Moody",
+      "count": 10
+    },
+    {
       "id": "cinematic_filters",
       "title": "Your Cine filters",
       "subtitle": "Create memorable holiday",
       "display_size": "small",
       "category": "filters",
-      "sub_category": "Moody",
+      "sub_category": "Cinematic",
       "count": 10
     },
     {
