@@ -1,5 +1,5 @@
 {
-  "version": "1.2",
+  "version": "1.3",
   "sections": [
     {
       "id": "slideshow",
@@ -52,26 +52,35 @@
       "subtitle": "Holiday picks",
       "display_size": "small",
       "category": "templates",
-      "sub_category": "Holiday 3",
+      "sub_category": "Classic",
       "count": 6
     },
     {
-        "id": "Cinematic_templates",
-        "title": "Your Cine filters",
-        "subtitle": "Create memorable holiday",
-        "display_size": "small",
-        "category": "filters",
-        "sub_category": "Color Boost",
-        "count": 10
+      "id": "film_filters",
+      "title": "Film Looks",
+      "subtitle": "",
+      "display_size": "small",
+      "category": "filters",
+      "sub_category": "Film",
+      "count": 10
     },
     {
-        "id": "Stylish_fonts",
-        "title": "Your Stylish Fonts",
-        "subtitle": "Create memorable holiday",
-        "display_size": "medium",
-        "category": "Fonts",
-        "sub_category": "",
-        "count": 1
+      "id": "cinematic_filters",
+      "title": "Your Cine filters",
+      "subtitle": "Create memorable holiday",
+      "display_size": "small",
+      "category": "filters",
+      "sub_category": "Mood",
+      "count": 10
+    },
+    {
+      "id": "stylish_fonts",
+      "title": "Your Stylish Fonts",
+      "subtitle": "",
+      "display_size": "small",
+      "category": "fonts",
+      "sub_category": "Basic",
+      "count": 10
     },
     {
       "id": "classic_layouts",
@@ -88,6 +97,15 @@
       "display_size": "small",
       "category": "stylish_layouts",
       "count": 12
+    },
+    {
+      "id": "templates_general",
+      "title": "Classic",
+      "subtitle": "",
+      "display_size": "small",
+      "category": "templates",
+      "sub_category": "General",
+      "count": 8
     }
   ],
   "randomize": {
@@ -99,4 +117,3 @@
     "store_count": 6
   }
 }
-

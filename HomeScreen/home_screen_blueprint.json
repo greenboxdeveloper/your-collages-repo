@@ -1,0 +1,73 @@
+{
+  "version": "1.0",
+  "randomize": {
+    "enabled": true,
+    "title": "Discover More",
+    "subtitle": "",
+    "display_size": "small",
+    "template_count": 6,
+    "store_count": 6
+  },
+  "sections": [
+    {
+      "slot": "template_row",
+      "id": "featured_templates",
+      "title": "Featured Templates",
+      "subtitle": "Holiday picks",
+      "display_size": "small",
+      "sub_category": "Classic",
+      "count": 6
+    },
+    {
+      "slot": "filter_row",
+      "id": "film_filters",
+      "title": "Film Looks",
+      "subtitle": "",
+      "display_size": "small",
+      "sub_category": "film",
+      "count": 10
+    },
+    {
+      "slot": "filter_row",
+      "id": "cinematic_filters",
+      "title": "Your Cine filters",
+      "subtitle": "Create memorable holiday",
+      "display_size": "small",
+      "sub_category": "Mood",
+      "count": 10
+    },
+    {
+      "slot": "fonts_row",
+      "id": "stylish_fonts",
+      "title": "Your Stylish Fonts",
+      "subtitle": "",
+      "display_size": "small",
+      "pick": "first",
+      "count": 10
+    },
+    {
+      "slot": "classic_layouts",
+      "id": "classic_layouts",
+      "title": "Classic Collage",
+      "subtitle": "Grid layouts from the catalog",
+      "display_size": "small",
+      "count": 12
+    },
+    {
+      "slot": "stylish_layouts",
+      "id": "stylish_layouts",
+      "title": "Stylish Collage",
+      "subtitle": "Creative shapes and styles",
+      "display_size": "small",
+      "count": 12
+    },
+    {
+      "slot": "template_rows",
+      "max_rows": 3,
+      "count": 8,
+      "display_size": "small",
+      "title_template": "{name}",
+      "subtitle_template": ""
+    }
+  ]
+}
