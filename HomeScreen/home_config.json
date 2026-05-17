@@ -1,5 +1,5 @@
 {
-  "version": "1.5",
+  "version": "1.6",
   "sections": [
     {
       "id": "slideshow",
@@ -65,15 +65,6 @@
       "count": 10
     },
     {
-      "id": "stylish_fonts",
-      "title": "Your Stylish Fonts",
-      "subtitle": "",
-      "display_size": "small",
-      "category": "fonts",
-      "sub_category": "English",
-      "count": 10
-    },
-    {
       "id": "classic_layouts",
       "title": "Classic Collage",
       "subtitle": "Grid layouts from the catalog",
@@ -106,6 +97,24 @@
       "category": "templates",
       "sub_category": "Test",
       "count": 8
+    },
+    {
+      "id": "Artistic_filters",
+      "title": "Your art filters",
+      "subtitle": "Create social posts",
+      "display_size": "small",
+      "category": "filters",
+      "sub_category": "Color Boost",
+      "count": 10
+    },
+    {
+      "id": "stylish_fonts",
+      "title": "Your Stylish Fonts",
+      "subtitle": "",
+      "display_size": "small",
+      "category": "fonts",
+      "sub_category": "English",
+      "count": 10
     }
   ],
   "randomize": {
