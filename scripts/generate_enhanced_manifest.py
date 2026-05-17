@@ -20,6 +20,7 @@ Usage:
 
 import argparse
 import copy
+import difflib
 import json
 import math
 import os
@@ -2620,6 +2621,759 @@ def generate_json_template_index(templates_dir: Path, output_path: Path) -> int:
     return 0
 
 
+# -----------------------------------------------------------------------------
+# Home screen config (home_config.json) — blueprint + manifest catalog
+# -----------------------------------------------------------------------------
+
+_HOME_VALID_DISPLAY_SIZES = frozenset({"hero", "medium", "small"})
+_HOME_RESERVED_CATEGORIES = frozenset({
+    "slideshow",
+    "tools_grid",
+    "template_store_row",
+    "continue_projects",
+    "made_for_you",
+    "popular_layouts",
+    "classic_layouts",
+    "stylish_layouts",
+})
+_HOME_STORE_CATEGORIES_NEEDING_SUB = frozenset({
+    "templates",
+    "filters",
+    "stickers",
+    "backgrounds",
+    "frames",
+    "shapes",
+    "fonts",
+})
+_HOME_FIXED_PREFIX: list[dict] = [
+    {
+        "id": "slideshow",
+        "title": "Welcome",
+        "subtitle": "",
+        "display_size": "hero",
+        "category": "slideshow",
+    },
+    {
+        "id": "tools",
+        "title": "Your Collage",
+        "subtitle": "Pick a style and start",
+        "display_size": "medium",
+        "category": "tools_grid",
+    },
+    {
+        "id": "template_store",
+        "title": "Template Store",
+        "subtitle": "Browse curated templates",
+        "display_size": "medium",
+        "category": "template_store_row",
+    },
+    {
+        "id": "trending_layouts",
+        "title": "Trending Layouts",
+        "subtitle": "",
+        "display_size": "small",
+        "category": "popular_layouts",
+        "count": 10,
+    },
+    {
+        "id": "continue_projects",
+        "title": "Continue Projects",
+        "subtitle": "Pick up where you left off",
+        "display_size": "small",
+        "category": "continue_projects",
+        "count": 10,
+    },
+    {
+        "id": "curated_for_you",
+        "title": "Curated For You",
+        "subtitle": "",
+        "display_size": "small",
+        "category": "made_for_you",
+        "count": 10,
+    },
+]
+
+
+def _normalize_catalog_key(value: str) -> str:
+    s = (value or "").strip().lower()
+    for suffix in ("_pr", "_f"):
+        if s.endswith(suffix):
+            s = s[: -len(suffix)]
+    s = re.sub(r"[^a-z0-9]+", "_", s).strip("_")
+    return s
+
+
+def _home_catalog_entries_from_categories(categories: list | None) -> list[tuple[str, str, str]]:
+    """(id, display name, folder key) per store category."""
+    out: list[tuple[str, str, str]] = []
+    for cat in categories or []:
+        if not isinstance(cat, dict):
+            continue
+        cid = str(cat.get("id") or "").strip()
+        name = str(cat.get("name") or cid).strip()
+        folder = str(
+            cat.get("remoteFolderName")
+            or cat.get("remote_folder")
+            or cat.get("category_folder")
+            or name
+        ).strip()
+        if cid or name:
+            out.append((cid, name, folder or name))
+    return out
+
+
+def _home_template_categories(templates: list | None) -> list[tuple[str, str, str, int]]:
+    """(folder, display category, folder, template_count) sorted by folder name."""
+    buckets: dict[str, dict] = {}
+    for entry in templates or []:
+        if not isinstance(entry, dict):
+            continue
+        folder = str(entry.get("category_folder") or entry.get("category") or "").strip()
+        if not folder:
+            continue
+        label = str(entry.get("category") or folder).strip()
+        b = buckets.setdefault(
+            folder,
+            {"folder": folder, "label": label, "count": 0},
+        )
+        b["count"] += 1
+    rows = [(b["folder"], b["label"], b["folder"], b["count"]) for b in buckets.values()]
+    rows.sort(key=lambda r: r[0].lower())
+    return rows
+
+
+def _load_home_catalog_index(
+    *,
+    filter_manifest_path: Path,
+    sticker_manifest_path: Path,
+    background_manifest_path: Path,
+    font_manifest_path: Path,
+    templates_index_path: Path,
+) -> dict[str, list[tuple[str, str, str]]]:
+    filters_doc = _load_json_if_exists(filter_manifest_path) or {}
+    stickers_doc = _load_json_if_exists(sticker_manifest_path) or {}
+    backgrounds_doc = _load_json_if_exists(background_manifest_path) or {}
+    fonts_doc = _load_json_if_exists(font_manifest_path) or {}
+    templates_doc = _load_json_if_exists(templates_index_path) or {}
+
+    return {
+        "filters": _home_catalog_entries_from_categories(filters_doc.get("categories")),
+        "stickers": _home_catalog_entries_from_categories(stickers_doc.get("categories")),
+        "backgrounds": _home_catalog_entries_from_categories(backgrounds_doc.get("categories")),
+        "fonts": _home_catalog_entries_from_categories(fonts_doc.get("categories")),
+        "templates": [
+            (folder, label, folder)
+            for folder, label, _, _ in _home_template_categories(templates_doc.get("templates"))
+        ],
+        "template_rows_meta": _home_template_categories(templates_doc.get("templates")),
+    }
+
+
+def _resolve_catalog_match(
+    requested: str,
+    entries: list[tuple[str, str, str]],
+    *,
+    fuzzy_cutoff: float = 0.82,
+) -> tuple[str, str, str] | None:
+    """Return (id, name, folder) for sub_category field (prefer display name)."""
+    key = _normalize_catalog_key(requested)
+    if not key:
+        return None
+    for cid, name, folder in entries:
+        candidates = {_normalize_catalog_key(cid), _normalize_catalog_key(name), _normalize_catalog_key(folder)}
+        if key in candidates:
+            return cid, name, folder
+    keys = []
+    index: list[tuple[str, str, str]] = []
+    for cid, name, folder in entries:
+        for label in (name, folder, cid):
+            nk = _normalize_catalog_key(label)
+            if nk:
+                keys.append(nk)
+                index.append((cid, name, folder))
+    if not keys:
+        return None
+    matches = difflib.get_close_matches(key, keys, n=1, cutoff=fuzzy_cutoff)
+    if not matches:
+        return None
+    hit = matches[0]
+    for i, nk in enumerate(keys):
+        if nk == hit:
+            return index[i]
+    return None
+
+
+def _resolve_sub_category_value(
+    requested: str | None,
+    entries: list[tuple[str, str, str]],
+    *,
+    min_fuzzy_ratio: float = 0.72,
+) -> str | None:
+    if not requested or not str(requested).strip():
+        return None
+    raw = str(requested).strip()
+    match = _resolve_catalog_match(raw, entries)
+    if not match:
+        return None
+    _cid, name, folder = match
+    resolved = name or folder
+    req_n = _normalize_catalog_key(raw)
+    res_n = _normalize_catalog_key(resolved)
+    if req_n != res_n:
+        ratio = difflib.SequenceMatcher(None, req_n, res_n).ratio()
+        if ratio < min_fuzzy_ratio:
+            return None
+    return resolved
+
+
+def _section_dedup_key(section: dict) -> tuple[str, str]:
+    cat = str(section.get("category") or "").lower()
+    sub = str(section.get("sub_category") or "").strip()
+    return cat, sub
+
+
+def _merge_slot_into_section(base: dict, slot: dict) -> dict:
+    out = dict(base)
+    for key in ("id", "title", "subtitle", "display_size", "category", "sub_category", "count", "item"):
+        if key in slot and slot[key] is not None:
+            out[key] = slot[key]
+    if "subtitle" not in out:
+        out["subtitle"] = ""
+    return out
+
+
+def _fixed_prefix_sections(blueprint: dict) -> list[dict]:
+    overrides = {str(s.get("id")): s for s in blueprint.get("fixed_prefix") or [] if isinstance(s, dict)}
+    sections: list[dict] = []
+    for base in _HOME_FIXED_PREFIX:
+        merged = _merge_slot_into_section(base, overrides.get(base["id"], {}))
+        sections.append(merged)
+    return sections
+
+
+def _make_section(
+    *,
+    section_id: str,
+    title: str,
+    subtitle: str,
+    display_size: str,
+    category: str,
+    sub_category: str | None = None,
+    count: int | str | None = None,
+    item: str | None = None,
+) -> dict:
+    sec: dict = {
+        "id": section_id,
+        "title": title,
+        "subtitle": subtitle or "",
+        "display_size": display_size,
+        "category": category.lower() if category not in _HOME_RESERVED_CATEGORIES else category,
+    }
+    if sub_category is not None and str(sub_category).strip():
+        sec["sub_category"] = str(sub_category).strip()
+    if count is not None:
+        sec["count"] = count
+    if item is not None and str(item).strip():
+        sec["item"] = str(item).strip()
+    return sec
+
+
+def _ordered_filter_categories(filter_manifest_path: Path, *, exclude: set[str]) -> list[tuple[str, str, str]]:
+    doc = _load_json_if_exists(filter_manifest_path) or {}
+    rows: list[tuple[str, str, str]] = []
+    for cat in doc.get("categories") or []:
+        if not isinstance(cat, dict):
+            continue
+        cid = str(cat.get("id") or "").strip()
+        if not cid or cid.lower() in exclude:
+            continue
+        if not cat.get("filters"):
+            continue
+        name = str(cat.get("name") or cid)
+        folder = str(cat.get("remoteFolderName") or name)
+        rows.append((cid, name, folder))
+    return rows
+
+
+def _apply_priority_order(
+    rows: list[tuple],
+    priority_folders: list[str] | None,
+    *,
+    folder_index: int = 0,
+) -> list[tuple]:
+    if not priority_folders:
+        return rows
+    priority_keys = [_normalize_catalog_key(p) for p in priority_folders]
+    ranked: list[tuple[int, int, tuple]] = []
+    for i, row in enumerate(rows):
+        folder_key = _normalize_catalog_key(str(row[folder_index]))
+        rank = len(priority_keys) + 1
+        for pi, pk in enumerate(priority_keys):
+            if folder_key == pk or folder_key.startswith(pk) or pk.startswith(folder_key):
+                rank = pi
+                break
+        ranked.append((rank, i, row))
+    ranked.sort(key=lambda t: (t[0], t[1]))
+    return [t[2] for t in ranked]
+
+
+def _expand_tail_slots(
+    slot: dict,
+    catalog: dict,
+    emitted: set[tuple[str, str]],
+    *,
+    filter_manifest_path: Path,
+    default_display_size: str = "small",
+) -> list[dict]:
+    kind = str(slot.get("slot") or slot.get("category") or "").strip().lower()
+    if not kind:
+        return []
+
+    display_size = str(slot.get("display_size") or default_display_size)
+    count = slot.get("count", 10)
+    max_rows = int(slot.get("max_rows") or 99)
+    priority = slot.get("priority_folders") or slot.get("priority")
+    sections: list[dict] = []
+
+    def try_emit(sec: dict) -> None:
+        key = _section_dedup_key(sec)
+        if key in emitted:
+            return
+        cat = key[0]
+        if cat in _HOME_STORE_CATEGORIES_NEEDING_SUB and not sec.get("sub_category"):
+            print(f"[home-config] skip section '{sec.get('id')}': missing sub_category", file=sys.stderr)
+            return
+        emitted.add(key)
+        sections.append(sec)
+
+    if kind in _HOME_RESERVED_CATEGORIES or kind in {
+        "slideshow",
+        "tools_grid",
+        "template_store_row",
+        "popular_layouts",
+        "continue_projects",
+        "made_for_you",
+        "classic_layouts",
+        "stylish_layouts",
+    }:
+        cat = kind if kind in _HOME_RESERVED_CATEGORIES else {
+            "slideshow": "slideshow",
+            "tools": "tools_grid",
+            "tools_grid": "tools_grid",
+            "template_store": "template_store_row",
+            "template_store_row": "template_store_row",
+            "trending": "popular_layouts",
+            "popular_layouts": "popular_layouts",
+            "continue": "continue_projects",
+            "continue_projects": "continue_projects",
+            "curated": "made_for_you",
+            "made_for_you": "made_for_you",
+            "classic": "classic_layouts",
+            "classic_layouts": "classic_layouts",
+            "stylish": "stylish_layouts",
+            "stylish_layouts": "stylish_layouts",
+        }.get(kind, kind)
+        sec = _make_section(
+            section_id=str(slot.get("id") or cat),
+            title=str(slot.get("title") or cat),
+            subtitle=str(slot.get("subtitle") or ""),
+            display_size=display_size,
+            category=cat,
+            count=slot.get("count"),
+            item=slot.get("item"),
+        )
+        try_emit(sec)
+        return sections
+
+    if kind in ("hero_template", "template_row", "featured_template"):
+        entries = catalog.get("templates") or []
+        sub_raw = slot.get("sub_category")
+        if sub_raw:
+            resolved = _resolve_sub_category_value(sub_raw, entries)
+            if not resolved:
+                print(
+                    f"[home-config] skip template_row '{slot.get('id')}': unknown sub_category '{sub_raw}'",
+                    file=sys.stderr,
+                )
+                return sections
+        elif entries:
+            resolved = entries[0][1] or entries[0][2]
+        else:
+            return sections
+        if sub_raw and resolved != sub_raw:
+            print(f"[home-config] corrected template sub_category '{sub_raw}' → '{resolved}'")
+        sec = _make_section(
+            section_id=str(slot.get("id") or f"templates_{_slugify(resolved)}"),
+            title=str(slot.get("title") or resolved),
+            subtitle=str(slot.get("subtitle") or ""),
+            display_size=str(slot.get("display_size") or "hero"),
+            category="templates",
+            sub_category=resolved,
+            count=slot.get("count", 1),
+            item=slot.get("item"),
+        )
+        try_emit(sec)
+        return sections
+
+    if kind == "template_rows":
+        rows = list(catalog.get("template_rows_meta") or [])
+        rows = _apply_priority_order(rows, priority, folder_index=0)
+        for folder, label, _, tpl_count in rows[:max_rows]:
+            sec = _make_section(
+                section_id=str(slot.get("id_prefix") or "templates") + f"_{_slugify(folder)}",
+                title=str(slot.get("title_template") or "{name}").replace("{name}", label),
+                subtitle=str(slot.get("subtitle_template") or "").replace("{count}", str(tpl_count)),
+                display_size=display_size,
+                category="templates",
+                sub_category=folder,
+                count=count,
+            )
+            try_emit(sec)
+        return sections
+
+    if kind in ("filter_row", "filters_row"):
+        entries = catalog.get("filters") or []
+        sub_raw = slot.get("sub_category")
+        if sub_raw:
+            resolved = _resolve_sub_category_value(sub_raw, entries)
+            if not resolved:
+                print(
+                    f"[home-config] skip filter_row '{slot.get('id')}': unknown sub_category '{sub_raw}'",
+                    file=sys.stderr,
+                )
+                return sections
+        elif entries:
+            resolved = entries[0][1]
+        else:
+            return sections
+        if sub_raw and resolved != sub_raw:
+            print(f"[home-config] corrected filter sub_category '{sub_raw}' → '{resolved}'")
+        sec = _make_section(
+            section_id=str(slot.get("id") or f"filters_{_slugify(resolved)}"),
+            title=str(slot.get("title") or resolved),
+            subtitle=str(slot.get("subtitle") or ""),
+            display_size=display_size,
+            category="filters",
+            sub_category=resolved,
+            count=count,
+        )
+        try_emit(sec)
+        return sections
+
+    if kind == "filter_rows":
+        exclude = {_normalize_catalog_key(x) for x in (slot.get("exclude") or ["basic"])}
+        rows = _ordered_filter_categories(filter_manifest_path, exclude=exclude)
+        rows = _apply_priority_order(rows, priority, folder_index=2)
+        for cid, name, folder in rows[:max_rows]:
+            sec = _make_section(
+                section_id=f"filters_{_slugify(cid)}",
+                title=name,
+                subtitle=str(slot.get("subtitle") or ""),
+                display_size=display_size,
+                category="filters",
+                sub_category=name,
+                count=count,
+            )
+            try_emit(sec)
+        return sections
+
+    if kind in ("sticker_row", "stickers_row"):
+        entries = catalog.get("stickers") or []
+        sub_raw = slot.get("sub_category")
+        resolved = _resolve_sub_category_value(sub_raw, entries) if sub_raw else None
+        if not resolved and entries:
+            resolved = entries[0][1]
+        if not resolved:
+            return sections
+        sec = _make_section(
+            section_id=str(slot.get("id") or f"stickers_{_slugify(resolved)}"),
+            title=str(slot.get("title") or resolved),
+            subtitle=str(slot.get("subtitle") or ""),
+            display_size=display_size,
+            category="stickers",
+            sub_category=resolved,
+            count=count,
+        )
+        try_emit(sec)
+        return sections
+
+    if kind == "sticker_rows":
+        rows = list(catalog.get("stickers") or [])
+        rows = _apply_priority_order([(e[0], e[1], e[2]) for e in rows], priority, folder_index=2)
+        for cid, name, folder in rows[:max_rows]:
+            sec = _make_section(
+                section_id=f"stickers_{_slugify(cid)}",
+                title=name,
+                subtitle=str(slot.get("subtitle") or ""),
+                display_size=display_size,
+                category="stickers",
+                sub_category=name,
+                count=count,
+            )
+            try_emit(sec)
+        return sections
+
+    if kind in ("background_row", "backgrounds_row"):
+        entries = catalog.get("backgrounds") or []
+        sub_raw = slot.get("sub_category")
+        resolved = _resolve_sub_category_value(sub_raw, entries) if sub_raw else None
+        if not resolved and entries:
+            resolved = entries[0][1]
+        if not resolved:
+            return sections
+        sec = _make_section(
+            section_id=str(slot.get("id") or f"backgrounds_{_slugify(resolved)}"),
+            title=str(slot.get("title") or resolved),
+            subtitle=str(slot.get("subtitle") or ""),
+            display_size=display_size,
+            category="backgrounds",
+            sub_category=resolved,
+            count=count,
+        )
+        try_emit(sec)
+        return sections
+
+    if kind == "background_rows":
+        rows = list(catalog.get("backgrounds") or [])
+        rows = _apply_priority_order([(e[0], e[1], e[2]) for e in rows], priority, folder_index=2)
+        for cid, name, folder in rows[:max_rows]:
+            sec = _make_section(
+                section_id=f"backgrounds_{_slugify(cid)}",
+                title=name,
+                subtitle=str(slot.get("subtitle") or ""),
+                display_size=display_size,
+                category="backgrounds",
+                sub_category=name,
+                count=count,
+            )
+            try_emit(sec)
+        return sections
+
+    if kind in ("fonts_row", "font_row"):
+        entries = catalog.get("fonts") or []
+        sub_raw = slot.get("sub_category")
+        resolved = _resolve_sub_category_value(sub_raw, entries) if sub_raw else None
+        if not resolved and entries:
+            pick = slot.get("pick") or "first"
+            if str(pick).lower() == "first":
+                resolved = entries[0][1]
+        if not resolved:
+            print("[home-config] skip fonts_row: no font category in catalog", file=sys.stderr)
+            return sections
+        sec = _make_section(
+            section_id=str(slot.get("id") or f"fonts_{_slugify(resolved)}"),
+            title=str(slot.get("title") or resolved),
+            subtitle=str(slot.get("subtitle") or ""),
+            display_size=display_size,
+            category="fonts",
+            sub_category=resolved,
+            count=slot.get("count", 10),
+            item=slot.get("item"),
+        )
+        try_emit(sec)
+        return sections
+
+    print(f"[home-config] unknown slot '{kind}' — skipped", file=sys.stderr)
+    return sections
+
+
+def _build_home_config_payload(blueprint: dict, catalog: dict, *, filter_manifest_path: Path) -> dict:
+    emitted: set[tuple[str, str]] = set()
+    sections: list[dict] = []
+
+    for sec in _fixed_prefix_sections(blueprint):
+        key = _section_dedup_key(sec)
+        emitted.add(key)
+        sections.append(sec)
+
+    for slot in blueprint.get("sections") or []:
+        if not isinstance(slot, dict):
+            continue
+        sections.extend(
+            _expand_tail_slots(slot, catalog, emitted, filter_manifest_path=filter_manifest_path)
+        )
+
+    randomize = blueprint.get("randomize")
+    if randomize is False:
+        randomize_block = None
+    elif isinstance(randomize, dict):
+        randomize_block = copy.deepcopy(randomize)
+    else:
+        randomize_block = {
+            "enabled": True,
+            "title": "Discover More",
+            "subtitle": "",
+            "display_size": "small",
+            "template_count": 6,
+            "store_count": 6,
+        }
+
+    payload: dict = {"sections": sections}
+    if randomize_block is not None:
+        payload["randomize"] = randomize_block
+    return payload
+
+
+def _write_home_config_files(output_paths: list[Path], payload: dict) -> str:
+    """Write home_config.json to all paths; bump version on every generator run."""
+    old_version: str | None = None
+    for path in output_paths:
+        old = _load_json_if_exists(path)
+        if old and old.get("version"):
+            old_version = str(old["version"])
+            break
+    new_version = _bump_filter_version(old_version)
+    out = {"version": new_version, **payload}
+    text = json.dumps(out, indent=2, ensure_ascii=False) + "\n"
+    for path in output_paths:
+        path.parent.mkdir(parents=True, exist_ok=True)
+        path.write_text(text, encoding="utf-8")
+    return new_version
+
+
+def validate_home_config(path: Path) -> int:
+    """Validate home_config.json; return 0 on success, 1 on failure."""
+    if not path.exists():
+        print(f"[home-config] ERROR: file not found: {path}", file=sys.stderr)
+        return 1
+    try:
+        data = json.loads(path.read_text(encoding="utf-8"))
+    except Exception as exc:
+        print(f"[home-config] ERROR: invalid JSON: {exc}", file=sys.stderr)
+        return 1
+
+    sections = data.get("sections")
+    if not isinstance(sections, list) or not sections:
+        print("[home-config] ERROR: sections must be a non-empty array", file=sys.stderr)
+        return 1
+
+    seen_ids: set[str] = set()
+    for i, section in enumerate(sections):
+        if not isinstance(section, dict):
+            print(f"[home-config] ERROR: sections[{i}] must be an object", file=sys.stderr)
+            return 1
+        for key in ("id", "title", "subtitle", "display_size", "category"):
+            if key not in section:
+                print(f"[home-config] ERROR: sections[{i}] missing required key '{key}'", file=sys.stderr)
+                return 1
+        sec_id = str(section["id"])
+        if sec_id in seen_ids:
+            print(f"[home-config] ERROR: duplicate section id: {sec_id}", file=sys.stderr)
+            return 1
+        seen_ids.add(sec_id)
+        if section["display_size"] not in _HOME_VALID_DISPLAY_SIZES:
+            print(
+                f"[home-config] ERROR: sections[{i}].display_size must be one of {sorted(_HOME_VALID_DISPLAY_SIZES)}",
+                file=sys.stderr,
+            )
+            return 1
+        cat = str(section["category"]).lower()
+        if cat in {"classic_layouts", "stylish_layouts"}:
+            if section.get("sub_category"):
+                print(f"[home-config] ERROR: sections[{i}].sub_category is not used for {cat}", file=sys.stderr)
+                return 1
+            if section.get("item"):
+                print(f"[home-config] ERROR: sections[{i}].item is not used for {cat}", file=sys.stderr)
+                return 1
+        if cat in _HOME_STORE_CATEGORIES_NEEDING_SUB:
+            sub = str(section.get("sub_category") or "").strip()
+            if not sub:
+                print(
+                    f"[home-config] ERROR: sections[{i}] category '{cat}' requires non-empty sub_category",
+                    file=sys.stderr,
+                )
+                return 1
+        if "sub_category" in section and not isinstance(section["sub_category"], str):
+            print(f"[home-config] ERROR: sections[{i}].sub_category must be a string", file=sys.stderr)
+            return 1
+        if "count" in section:
+            c = section["count"]
+            if not isinstance(c, int) and not (isinstance(c, str) and c.lower() == "all"):
+                print("[home-config] ERROR: count must be an integer or 'all'", file=sys.stderr)
+                return 1
+        if "item" in section and section.get("count") != 1:
+            print(f"[home-config] ERROR: sections[{i}].item is only allowed with count=1", file=sys.stderr)
+            return 1
+
+    randomize = data.get("randomize")
+    if isinstance(randomize, dict):
+        if "display_size" in randomize and randomize["display_size"] not in _HOME_VALID_DISPLAY_SIZES:
+            print("[home-config] ERROR: randomize.display_size invalid", file=sys.stderr)
+            return 1
+        for key in ("template_count", "store_count"):
+            if key in randomize:
+                c = randomize[key]
+                if not isinstance(c, int) and not (isinstance(c, str) and c.lower() == "all"):
+                    print(f"[home-config] ERROR: randomize.{key} must be int or 'all'", file=sys.stderr)
+                    return 1
+
+    print(f"[home-config] OK: {path}")
+    return 0
+
+
+def generate_home_config(
+    *,
+    repo_root: Path,
+    blueprint_path: Path,
+    output_ota: Path,
+    output_bundle: Path,
+    filter_manifest_path: Path,
+    sticker_manifest_path: Path,
+    background_manifest_path: Path,
+    font_manifest_path: Path,
+    templates_index_path: Path,
+) -> int:
+    if not blueprint_path.is_file():
+        print(f"[home-config] blueprint not found: {blueprint_path}", file=sys.stderr)
+        return 1
+    try:
+        blueprint = json.loads(blueprint_path.read_text(encoding="utf-8"))
+    except Exception as exc:
+        print(f"[home-config] invalid blueprint JSON: {exc}", file=sys.stderr)
+        return 1
+
+    catalog = _load_home_catalog_index(
+        filter_manifest_path=filter_manifest_path,
+        sticker_manifest_path=sticker_manifest_path,
+        background_manifest_path=background_manifest_path,
+        font_manifest_path=font_manifest_path,
+        templates_index_path=templates_index_path,
+    )
+    payload = _build_home_config_payload(blueprint, catalog, filter_manifest_path=filter_manifest_path)
+    outputs = [output_ota.resolve(), output_bundle.resolve()]
+    version = _write_home_config_files(outputs, payload)
+    print(f"[home-config] v{version} — {len(payload['sections'])} section(s) → {output_ota}")
+    for out_path in outputs:
+        rc = validate_home_config(out_path)
+        if rc != 0:
+            return rc
+    return 0
+
+
+def _add_home_config_args(parser: argparse.ArgumentParser) -> None:
+    parser.add_argument(
+        "--generate-home-config",
+        action="store_true",
+        default=False,
+        help="Generate HomeScreen/home_config.json from blueprint + store manifests.",
+    )
+    parser.add_argument(
+        "--home-blueprint",
+        default="HomeScreen/home_screen_blueprint.json",
+        help="Blueprint JSON (fixed 6-row prefix + tail slots).",
+    )
+    parser.add_argument(
+        "--home-output-ota",
+        default="HomeScreen/home_config.json",
+        help="OTA home_config.json output path.",
+    )
+    parser.add_argument(
+        "--home-output-bundle",
+        default="PhotoCollageMaker/PhotoCollage/Resource/home_config.json",
+        help="Bundled fallback home_config.json path.",
+    )
+
+
 def _add_filter_manifest_args(parser: argparse.ArgumentParser) -> None:
     parser.add_argument(
         "--generate-filter-manifest",
@@ -2733,6 +3487,7 @@ def main_with_filter_support() -> int:
     parser.add_argument("--svg-id-prefix", default="svg_")
     _add_filter_manifest_args(parser)
     _add_store_manifest_args(parser)
+    _add_home_config_args(parser)
     args = parser.parse_args()
 
     repo_root = Path(args.repo_root).resolve()
@@ -2823,6 +3578,21 @@ def main_with_filter_support() -> int:
         result = generate_json_template_index(
             repo_root / args.templates_index_dir,
             repo_root / args.templates_index_output,
+        )
+        if result != 0:
+            return result
+
+    if args.generate_home_config:
+        result = generate_home_config(
+            repo_root=repo_root,
+            blueprint_path=repo_root / args.home_blueprint,
+            output_ota=repo_root / args.home_output_ota,
+            output_bundle=repo_root / args.home_output_bundle,
+            filter_manifest_path=repo_root / args.filter_output,
+            sticker_manifest_path=repo_root / args.stickers_output,
+            background_manifest_path=repo_root / args.backgrounds_output,
+            font_manifest_path=repo_root / args.fonts_output,
+            templates_index_path=repo_root / args.templates_index_output,
         )
         if result != 0:
             return result
