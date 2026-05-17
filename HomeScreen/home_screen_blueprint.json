@@ -37,15 +37,6 @@
       "count": 10
     },
     {
-      "slot": "fonts_row",
-      "id": "stylish_fonts",
-      "title": "Your Stylish Fonts",
-      "subtitle": "",
-      "display_size": "small",
-      "pick": "first",
-      "count": 10
-    },
-    {
       "slot": "classic_layouts",
       "id": "classic_layouts",
       "title": "Classic Collage",
@@ -68,6 +59,24 @@
       "display_size": "small",
       "title_template": "{name}",
       "subtitle_template": ""
+    },
+    {
+      "slot": "filter_row",
+      "id": "Artistic_filters",
+      "title": "Your art filters",
+      "subtitle": "Create social posts",
+      "display_size": "small",
+      "sub_category": "Color Boost",
+      "count": 10
+    },
+    {
+      "slot": "fonts_row",
+      "id": "stylish_fonts",
+      "title": "Your Stylish Fonts",
+      "subtitle": "",
+      "display_size": "small",
+      "pick": "first",
+      "count": 10
     }
   ]
 }
