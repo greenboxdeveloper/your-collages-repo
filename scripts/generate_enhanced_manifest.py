@@ -2257,8 +2257,8 @@ def _font_entry_dict(
         font_path.stem, default_premium=False, folder_premium_default=folder_premium_default
     )
     clean_stem = _clean_stem_premium_suffix(font_path.stem)
-    ext = font_path.suffix.lower()
-    file_name = f"{clean_stem}{ext}"
+    # Use the on-disk basename so CDN URLs match published files (e.g. Agamtoh_PR.ttf).
+    file_name = font_path.name
     entry_id = f"{cat_id}__{_slugify(clean_stem)}"
     d: dict = {
         "id": entry_id,
