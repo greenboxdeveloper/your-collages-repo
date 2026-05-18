@@ -87,7 +87,7 @@ def load_classic_layouts(json_path: Path, base_url: str) -> list:
         slot_list = layout.get("slots", [])
         has_path_data = any(s.get("path_data") for s in slot_list)
         layout["type"] = "organic" if has_path_data else "grid"
-        layout["thumbnailURL"] = f"{base_url}/thumbnails/{layout['id']}.png"
+        layout["thumbnailURL"] = None
         layout.pop("slot_count", None)
         slots_out = []
         for i, slot in enumerate(slot_list):
@@ -524,7 +524,7 @@ def parse_svg_file(
         # SVG-derived layouts use filename suffixes to determine premium; existing JSON layouts keep their own isPremium.
         "isPremium": is_premium,
         "type": "organic" if is_organic else "grid",
-        "thumbnailURL": f"{base_url}/thumbnails/{layout_id}.png",
+        "thumbnailURL": None,
         "slots": slots,
         "dividers": dividers,
     }
@@ -973,7 +973,13 @@ def main() -> int:
     parser.add_argument("--json-path", default="classic_and_stylish_layouts.json", help="Path to classic+stylish JSON")
     parser.add_argument("--svg-dir", default="collages", help="Folder containing .svg files")
     parser.add_argument("--output", default="enhanced_manifest.json", help="Output manifest path")
-    parser.add_argument("--thumbnails-dir", default="thumbnails", help="Output folder for thumbnails")
+    parser.add_argument("--thumbnails-dir", default="thumbnails", help="Output folder for PNG thumbnails (only with --generate-thumbnails)")
+    parser.add_argument(
+        "--generate-thumbnails",
+        action="store_true",
+        default=False,
+        help="Also render PNG thumbnails/ folder (off by default; app uses CollageThumbnailView).",
+    )
     parser.add_argument("--svg-id-prefix", default="svg_", help="Prefix for SVG-derived layout ids")
     args = parser.parse_args()
 
@@ -1025,12 +1031,15 @@ def main() -> int:
     _ensure_grid_dividers(layouts)
     print("Auto-generated dividers for grid layouts that had none.")
 
-    # 3) Thumbnails
-    thumb_dir.mkdir(parents=True, exist_ok=True)
-    for layout in layouts:
-        lid = layout["id"]
-        draw_thumbnail(layout, thumb_dir / f"{lid}.png")
-    print(f"Wrote {len(layouts)} thumbnails to {thumb_dir}")
+    # 3) Optional PNG thumbnails (app previews layouts via slot geometry, not CDN PNGs)
+    if args.generate_thumbnails:
+        thumb_dir.mkdir(parents=True, exist_ok=True)
+        for layout in layouts:
+            lid = layout["id"]
+            draw_thumbnail(layout, thumb_dir / f"{lid}.png")
+        print(f"Wrote {len(layouts)} thumbnails to {thumb_dir}")
+    else:
+        print("Skipped PNG thumbnail generation (use --generate-thumbnails to enable)")
 
     # 4) Write manifest (strip internal keys like __viewbox)
     def strip_internal_keys(layout: dict) -> dict:
@@ -2244,12 +2253,16 @@ def _font_entry_dict(
     remote_directory: str | None = None,
     folder_premium_default: bool | None = None,
 ) -> dict:
+    """
+    ``displayName`` / ``isPremium`` come from trailing ``_PR`` / ``_F`` on the file stem (and optional
+  folder default). ``fileName`` is the **full on-disk basename** (e.g. ``Roboto_PR.ttf``) so GitHub
+    raw URLs and ``FontCatalogLoader.remoteURLForOTAFont`` match the repo. Suffixes are stripped only
+    for UI labels and stable ``id`` slugs, not for download paths.
+    """
     display_name, is_premium = _store_stem_to_name_and_premium(
         font_path.stem, default_premium=False, folder_premium_default=folder_premium_default
     )
     clean_stem = _clean_stem_premium_suffix(font_path.stem)
-    ext = font_path.suffix.lower()
-    file_name = f"{clean_stem}{ext}"
     entry_id = f"{cat_id}__{_slugify(clean_stem)}"
     d: dict = {
         "id": entry_id,
@@ -2257,7 +2270,7 @@ def _font_entry_dict(
         "postScriptName": _extract_postscript_name(font_path),
         "isPremium": is_premium,
         "source": "ota",
-        "fileName": file_name,
+        "fileName": font_path.name,
     }
     if remote_directory is not None:
         d["remoteDirectory"] = remote_directory.replace("\\", "/")
