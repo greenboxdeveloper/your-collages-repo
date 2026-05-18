@@ -1,5 +1,5 @@
 {
-  "version": "3.0",
+  "version": "3.1",
   "categories": [
     {
       "id": "en",
@@ -12,7 +12,7 @@
           "postScriptName": "Agamtoh_PR",
           "isPremium": true,
           "source": "ota",
-          "fileName": "Agamtoh_PR.ttf",
+          "fileName": "Agamtoh.ttf",
           "remoteDirectory": "English",
           "licenseUrl": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/Fonts/English/1001fonts-agamtoh-eula.txt"
         },
@@ -22,7 +22,7 @@
           "postScriptName": "Chrisye_PR",
           "isPremium": true,
           "source": "ota",
-          "fileName": "Chrisye_PR.otf",
+          "fileName": "Chrisye.otf",
           "remoteDirectory": "English",
           "licenseUrl": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/Fonts/English/1001fonts-chrisye-eula.txt"
         },
@@ -62,15 +62,15 @@
           "postScriptName": "Klandestin_PR",
           "isPremium": true,
           "source": "ota",
-          "fileName": "Klandestin_PR.ttf",
+          "fileName": "Klandestin.ttf",
           "remoteDirectory": "English",
           "licenseUrl": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/Fonts/English/1001fonts-ls-klandestin-demo-eula.txt"
         },
         {
           "id": "en__kleptocracy_titling_bd",
           "displayName": "Kleptocracy Titling Bd",
-          "postScriptName": "kleptocracytitlingbd",
-          "isPremium": false,
+          "postScriptName": "kleptocracytitlingbd_PR",
+          "isPremium": true,
           "source": "ota",
           "fileName": "kleptocracy titling bd.otf",
           "remoteDirectory": "English",
