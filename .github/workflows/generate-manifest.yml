@@ -1,4 +1,4 @@
-name: Generate Enhanced Manifest
+name: Generate manifests and deploy to Cloudflare
 
 on:
   push:
@@ -50,7 +50,7 @@ jobs:
       #
       # Filter previews: requires Pillow + numpy in scripts/requirements.txt; stock images under Filters/StockImage/.
       # Generated JPGs live under Filters/<Category>/StorePreviews/<FilterId>/ — must be git-added below.
-      - name: Generate manifest, thumbnails, and all store manifests
+      - name: Generate manifest and all store manifests
         env:
           BASE_URL: "https://raw.githubusercontent.com/${{ github.repository }}/${{ github.ref_name }}"
         run: |
@@ -90,11 +90,25 @@ jobs:
             --home-output-ota HomeScreen/home_config.json \
             --home-output-bundle PhotoCollageMaker/PhotoCollage/Resource/home_config.json
 
+      # Deploy AFTER generate so CDN includes new *_manifest.json (not the pre-push snapshot).
+      # Disable Cloudflare dashboard "deploy on git push" so only this step publishes.
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Deploy to Cloudflare
+        uses: cloudflare/wrangler-action@v3
+        with:
+          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          command: deploy
+
       - name: Commit and push if changed
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add enhanced_manifest.json thumbnails/ \
+          git add enhanced_manifest.json \
             Filters/filter_manifest.json \
             Filters/**/StorePreviews/** \
             Frames/frame_manifest.json \
@@ -109,6 +123,7 @@ jobs:
           if git diff --staged --quiet; then
             echo "No manifest changes to commit."
           else
+            # [skip ci] avoids re-running this workflow on the bot commit; Cloudflare already deployed above.
             git commit -m "chore: regenerate enhanced and store manifests [skip ci]"
             git push
           fi
