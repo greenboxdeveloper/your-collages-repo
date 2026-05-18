@@ -1,5 +1,5 @@
 {
-  "version": "2.6",
+  "version": "2.7",
   "categories": [
     {
       "id": "en",
@@ -22,7 +22,7 @@
           "postScriptName": "Chrisye",
           "isPremium": true,
           "source": "ota",
-          "fileName": "Chrisye.otf",
+          "fileName": "Chrisye_PR.otf",
           "remoteDirectory": "English",
           "licenseUrl": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/Fonts/English/1001fonts-chrisye-eula.txt"
         },

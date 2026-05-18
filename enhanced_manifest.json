@@ -1,5 +1,5 @@
 {
-  "version": "4.2",
+  "version": "4.3",
   "layouts": [
     {
       "category": "Classic",
@@ -18,7 +18,7 @@
         }
       ],
       "type": "grid",
-      "thumbnailURL": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/thumbnails/classic_1.png",
+      "thumbnailURL": null,
       "dividers": []
     },
     {
@@ -56,7 +56,7 @@
         }
       ],
       "type": "grid",
-      "thumbnailURL": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/thumbnails/classic_3.png",
+      "thumbnailURL": null,
       "dividers": [
         {
           "id": "DRAG_V_0",
@@ -126,7 +126,7 @@
         }
       ],
       "type": "grid",
-      "thumbnailURL": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/thumbnails/classic_4.png",
+      "thumbnailURL": null,
       "dividers": [
         {
           "id": "DRAG_V_0",
@@ -182,7 +182,7 @@
         }
       ],
       "type": "grid",
-      "thumbnailURL": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/thumbnails/classic_5.png",
+      "thumbnailURL": null,
       "dividers": [
         {
           "id": "DRAG_H_0",
@@ -223,7 +223,7 @@
         }
       ],
       "type": "grid",
-      "thumbnailURL": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/thumbnails/classic_6.png",
+      "thumbnailURL": null,
       "dividers": [
         {
           "id": "DRAG_H_0",
@@ -264,7 +264,7 @@
         }
       ],
       "type": "grid",
-      "thumbnailURL": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/thumbnails/classic_7.png",
+      "thumbnailURL": null,
       "dividers": [
         {
           "id": "DRAG_H_0",
@@ -305,7 +305,7 @@
         }
       ],
       "type": "grid",
-      "thumbnailURL": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/thumbnails/classic_8.png",
+      "thumbnailURL": null,
       "dividers": [
         {
           "id": "DRAG_V_0",
@@ -346,7 +346,7 @@
         }
       ],
       "type": "grid",
-      "thumbnailURL": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/thumbnails/classic_9.png",
+      "thumbnailURL": null,
       "dividers": [
         {
           "id": "DRAG_V_0",
@@ -387,7 +387,7 @@
         }
       ],
       "type": "grid",
-      "thumbnailURL": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/thumbnails/classic_10.png",
+      "thumbnailURL": null,
       "dividers": [
         {
           "id": "DRAG_V_0",
@@ -446,7 +446,7 @@
         }
       ],
       "type": "grid",
-      "thumbnailURL": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/thumbnails/classic_11.png",
+      "thumbnailURL": null,
       "dividers": [
         {
           "id": "DRAG_H_0",
@@ -518,7 +518,7 @@
         }
       ],
       "type": "grid",
-      "thumbnailURL": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/thumbnails/classic_12.png",
+      "thumbnailURL": null,
       "dividers": [
         {
           "id": "DRAG_H_0",
@@ -588,7 +588,7 @@
         }
       ],
       "type": "grid",
-      "thumbnailURL": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/thumbnails/classic_13.png",
+      "thumbnailURL": null,
       "dividers": [
         {
           "id": "DRAG_V_0",
@@ -671,7 +671,7 @@
         }
       ],
       "type": "grid",
-      "thumbnailURL": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/thumbnails/classic_14.png",
+      "thumbnailURL": null,
       "dividers": [
         {
           "id": "DRAG_V_0",
@@ -754,7 +754,7 @@
         }
       ],
       "type": "grid",
-      "thumbnailURL": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/thumbnails/classic_16.png",
+      "thumbnailURL": null,
       "dividers": [
         {
           "id": "DRAG_V_0",
@@ -828,7 +828,7 @@
         }
       ],
       "type": "grid",
-      "thumbnailURL": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/thumbnails/classic_17.png",
+      "thumbnailURL": null,
       "dividers": [
         {
           "id": "DRAG_V_0",
@@ -890,7 +890,7 @@
         }
       ],
       "type": "grid",
-      "thumbnailURL": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/thumbnails/classic_18.png",
+      "thumbnailURL": null,
       "dividers": [
         {
           "id": "DRAG_V_0",
@@ -952,7 +952,7 @@
         }
       ],
       "type": "grid",
-      "thumbnailURL": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/thumbnails/classic_19.png",
+      "thumbnailURL": null,
       "dividers": [
         {
           "id": "DRAG_V_0",
@@ -1023,7 +1023,7 @@
         }
       ],
       "type": "grid",
-      "thumbnailURL": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/thumbnails/classic_20.png",
+      "thumbnailURL": null,
       "dividers": [
         {
           "id": "DRAG_V_0",
@@ -1115,7 +1115,7 @@
         }
       ],
       "type": "grid",
-      "thumbnailURL": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/thumbnails/classic_21.png",
+      "thumbnailURL": null,
       "dividers": [
         {
           "id": "DRAG_V_0",
@@ -1210,7 +1210,7 @@
         }
       ],
       "type": "grid",
-      "thumbnailURL": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/thumbnails/classic_22.png",
+      "thumbnailURL": null,
       "dividers": [
         {
           "id": "DRAG_V_0",
@@ -1293,7 +1293,7 @@
         }
       ],
       "type": "grid",
-      "thumbnailURL": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/thumbnails/classic_23.png",
+      "thumbnailURL": null,
       "dividers": [
         {
           "id": "DRAG_V_0",
@@ -1412,7 +1412,7 @@
         }
       ],
       "type": "grid",
-      "thumbnailURL": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/thumbnails/classic_24.png",
+      "thumbnailURL": null,
       "dividers": [
         {
           "id": "DRAG_V_0",
@@ -1552,7 +1552,7 @@
         }
       ],
       "type": "grid",
-      "thumbnailURL": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/thumbnails/classic_25.png",
+      "thumbnailURL": null,
       "dividers": [
         {
           "id": "DRAG_V_0",
@@ -1674,7 +1674,7 @@
         }
       ],
       "type": "grid",
-      "thumbnailURL": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/thumbnails/classic_26.png",
+      "thumbnailURL": null,
       "dividers": [
         {
           "id": "DRAG_V_0",
@@ -1772,7 +1772,7 @@
         }
       ],
       "type": "grid",
-      "thumbnailURL": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/thumbnails/classic_27.png",
+      "thumbnailURL": null,
       "dividers": [
         {
           "id": "DRAG_V_0",
@@ -1876,7 +1876,7 @@
         }
       ],
       "type": "grid",
-      "thumbnailURL": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/thumbnails/classic_28.png",
+      "thumbnailURL": null,
       "dividers": [
         {
           "id": "DRAG_V_0",
@@ -2007,7 +2007,7 @@
         }
       ],
       "type": "grid",
-      "thumbnailURL": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/thumbnails/classic_29.png",
+      "thumbnailURL": null,
       "dividers": [
         {
           "id": "DRAG_V_0",
@@ -2147,7 +2147,7 @@
         }
       ],
       "type": "grid",
-      "thumbnailURL": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/thumbnails/classic_30.png",
+      "thumbnailURL": null,
       "dividers": [
         {
           "id": "DRAG_V_0",
@@ -2359,7 +2359,7 @@
         }
       ],
       "type": "grid",
-      "thumbnailURL": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/thumbnails/classic_31.png",
+      "thumbnailURL": null,
       "dividers": [
         {
           "id": "DRAG_V_0",
@@ -2554,7 +2554,7 @@
         }
       ],
       "type": "grid",
-      "thumbnailURL": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/thumbnails/classic_32.png",
+      "thumbnailURL": null,
       "dividers": [
         {
           "id": "DRAG_V_0",
@@ -2717,7 +2717,7 @@
         }
       ],
       "type": "grid",
-      "thumbnailURL": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/thumbnails/classic_33.png",
+      "thumbnailURL": null,
       "dividers": [
         {
           "id": "DRAG_V_0",
@@ -2844,7 +2844,7 @@
         }
       ],
       "type": "grid",
-      "thumbnailURL": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/thumbnails/classic_34.png",
+      "thumbnailURL": null,
       "dividers": [
         {
           "id": "DRAG_V_0",
@@ -2957,7 +2957,7 @@
         }
       ],
       "type": "grid",
-      "thumbnailURL": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/thumbnails/classic_35.png",
+      "thumbnailURL": null,
       "dividers": [
         {
           "id": "DRAG_V_0",
@@ -3073,7 +3073,7 @@
         }
       ],
       "type": "grid",
-      "thumbnailURL": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/thumbnails/classic_36.png",
+      "thumbnailURL": null,
       "dividers": [
         {
           "id": "DRAG_V_0",
@@ -3207,7 +3207,7 @@
         }
       ],
       "type": "grid",
-      "thumbnailURL": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/thumbnails/classic_37.png",
+      "thumbnailURL": null,
       "dividers": [
         {
           "id": "DRAG_V_0",
@@ -3356,7 +3356,7 @@
         }
       ],
       "type": "grid",
-      "thumbnailURL": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/thumbnails/classic_38.png",
+      "thumbnailURL": null,
       "dividers": [
         {
           "id": "DRAG_V_0",
@@ -3523,7 +3523,7 @@
         }
       ],
       "type": "grid",
-      "thumbnailURL": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/thumbnails/classic_40.png",
+      "thumbnailURL": null,
       "dividers": [
         {
           "id": "DRAG_V_0",
@@ -3672,7 +3672,7 @@
         }
       ],
       "type": "grid",
-      "thumbnailURL": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/thumbnails/classic_41.png",
+      "thumbnailURL": null,
       "dividers": [
         {
           "id": "DRAG_V_0",
@@ -3819,7 +3819,7 @@
         }
       ],
       "type": "grid",
-      "thumbnailURL": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/thumbnails/classic_42.png",
+      "thumbnailURL": null,
       "dividers": [
         {
           "id": "DRAG_V_0",
@@ -3940,7 +3940,7 @@
         }
       ],
       "type": "grid",
-      "thumbnailURL": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/thumbnails/classic_43.png",
+      "thumbnailURL": null,
       "dividers": [
         {
           "id": "DRAG_V_0",
@@ -4061,7 +4061,7 @@
         }
       ],
       "type": "grid",
-      "thumbnailURL": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/thumbnails/classic_44.png",
+      "thumbnailURL": null,
       "dividers": [
         {
           "id": "DRAG_V_0",
@@ -4208,7 +4208,7 @@
         }
       ],
       "type": "grid",
-      "thumbnailURL": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/thumbnails/classic_45.png",
+      "thumbnailURL": null,
       "dividers": [
         {
           "id": "DRAG_V_0",
@@ -4351,7 +4351,7 @@
         }
       ],
       "type": "grid",
-      "thumbnailURL": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/thumbnails/classic_46.png",
+      "thumbnailURL": null,
       "dividers": [
         {
           "id": "DRAG_V_0",
@@ -4485,7 +4485,7 @@
         }
       ],
       "type": "grid",
-      "thumbnailURL": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/thumbnails/classic_47.png",
+      "thumbnailURL": null,
       "dividers": [
         {
           "id": "DRAG_V_0",
@@ -4616,7 +4616,7 @@
         }
       ],
       "type": "grid",
-      "thumbnailURL": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/thumbnails/classic_48.png",
+      "thumbnailURL": null,
       "dividers": [
         {
           "id": "DRAG_V_0",
@@ -4774,7 +4774,7 @@
         }
       ],
       "type": "grid",
-      "thumbnailURL": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/thumbnails/classic_49.png",
+      "thumbnailURL": null,
       "dividers": [
         {
           "id": "DRAG_V_0",
@@ -4932,7 +4932,7 @@
         }
       ],
       "type": "grid",
-      "thumbnailURL": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/thumbnails/classic_50.png",
+      "thumbnailURL": null,
       "dividers": [
         {
           "id": "DRAG_V_0",
@@ -5063,7 +5063,7 @@
         }
       ],
       "type": "grid",
-      "thumbnailURL": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/thumbnails/classic_51.png",
+      "thumbnailURL": null,
       "dividers": [
         {
           "id": "DRAG_V_0",
@@ -5221,7 +5221,7 @@
         }
       ],
       "type": "grid",
-      "thumbnailURL": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/thumbnails/classic_52.png",
+      "thumbnailURL": null,
       "dividers": [
         {
           "id": "DRAG_V_0",
@@ -5433,7 +5433,7 @@
         }
       ],
       "type": "grid",
-      "thumbnailURL": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/thumbnails/classic_53.png",
+      "thumbnailURL": null,
       "dividers": [
         {
           "id": "DRAG_V_0",
@@ -5536,7 +5536,7 @@
       "category": "Stylish",
       "isPremium": true,
       "type": "organic",
-      "thumbnailURL": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/thumbnails/svg_CIRCLE.png",
+      "thumbnailURL": null,
       "slots": [
         {
           "id": "slot_0",
@@ -5557,7 +5557,7 @@
       "category": "Stylish",
       "isPremium": true,
       "type": "organic",
-      "thumbnailURL": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/thumbnails/svg_DEFORMEDCIRCLE.png",
+      "thumbnailURL": null,
       "slots": [
         {
           "id": "slot_0",
@@ -5578,7 +5578,7 @@
       "category": "Stylish",
       "isPremium": true,
       "type": "organic",
-      "thumbnailURL": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/thumbnails/svg_DEFORMEDSTAR.png",
+      "thumbnailURL": null,
       "slots": [
         {
           "id": "slot_0",
@@ -5599,7 +5599,7 @@
       "category": "Stylish",
       "isPremium": true,
       "type": "organic",
-      "thumbnailURL": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/thumbnails/svg_HEARSSQ.png",
+      "thumbnailURL": null,
       "slots": [
         {
           "id": "slot_0",
@@ -5660,7 +5660,7 @@
       "category": "Stylish",
       "isPremium": true,
       "type": "organic",
-      "thumbnailURL": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/thumbnails/svg_HEARTS.png",
+      "thumbnailURL": null,
       "slots": [
         {
           "id": "slot_0",
@@ -5681,7 +5681,7 @@
       "category": "Classic",
       "isPremium": true,
       "type": "grid",
-      "thumbnailURL": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/thumbnails/svg_PCM_CL01.png",
+      "thumbnailURL": null,
       "slots": [
         {
           "id": "slot_0",
@@ -5719,7 +5719,7 @@
       "category": "Classic",
       "isPremium": true,
       "type": "grid",
-      "thumbnailURL": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/thumbnails/svg_PCM_CL02.png",
+      "thumbnailURL": null,
       "slots": [
         {
           "id": "slot_0",
@@ -5757,7 +5757,7 @@
       "category": "Classic",
       "isPremium": true,
       "type": "grid",
-      "thumbnailURL": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/thumbnails/svg_PCM_CL03.png",
+      "thumbnailURL": null,
       "slots": [
         {
           "id": "slot_0",
@@ -5795,7 +5795,7 @@
       "category": "Classic",
       "isPremium": true,
       "type": "grid",
-      "thumbnailURL": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/thumbnails/svg_PCM_CL04.png",
+      "thumbnailURL": null,
       "slots": [
         {
           "id": "slot_0",
@@ -5833,7 +5833,7 @@
       "category": "Classic",
       "isPremium": true,
       "type": "grid",
-      "thumbnailURL": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/thumbnails/svg_PCM_CL05.png",
+      "thumbnailURL": null,
       "slots": [
         {
           "id": "slot_0",
@@ -5898,7 +5898,7 @@
       "category": "Classic",
       "isPremium": true,
       "type": "grid",
-      "thumbnailURL": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/thumbnails/svg_PCM_CL06.png",
+      "thumbnailURL": null,
       "slots": [
         {
           "id": "slot_0",
@@ -5963,7 +5963,7 @@
       "category": "Classic",
       "isPremium": true,
       "type": "grid",
-      "thumbnailURL": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/thumbnails/svg_PCM_CL07.png",
+      "thumbnailURL": null,
       "slots": [
         {
           "id": "slot_0",
@@ -6028,7 +6028,7 @@
       "category": "Classic",
       "isPremium": false,
       "type": "grid",
-      "thumbnailURL": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/thumbnails/svg_PCM_CL08_F.png",
+      "thumbnailURL": null,
       "slots": [
         {
           "id": "slot_0",
@@ -6093,7 +6093,7 @@
       "category": "Classic",
       "isPremium": true,
       "type": "organic",
-      "thumbnailURL": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/thumbnails/svg_PCM_CL09.png",
+      "thumbnailURL": null,
       "slots": [
         {
           "id": "slot_0",
@@ -6144,7 +6144,7 @@
       "category": "Classic",
       "isPremium": true,
       "type": "organic",
-      "thumbnailURL": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/thumbnails/svg_PCM_CL10.png",
+      "thumbnailURL": null,
       "slots": [
         {
           "id": "slot_0",
@@ -6195,7 +6195,7 @@
       "category": "Classic",
       "isPremium": true,
       "type": "organic",
-      "thumbnailURL": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/thumbnails/svg_PCM_CL11.png",
+      "thumbnailURL": null,
       "slots": [
         {
           "id": "slot_0",
@@ -6246,7 +6246,7 @@
       "category": "Classic",
       "isPremium": true,
       "type": "organic",
-      "thumbnailURL": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/thumbnails/svg_PCM_CL12.png",
+      "thumbnailURL": null,
       "slots": [
         {
           "id": "slot_0",
@@ -6297,7 +6297,7 @@
       "category": "Classic",
       "isPremium": true,
       "type": "organic",
-      "thumbnailURL": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/thumbnails/svg_PCM_CL13.png",
+      "thumbnailURL": null,
       "slots": [
         {
           "id": "slot_0",
@@ -6348,7 +6348,7 @@
       "category": "Classic",
       "isPremium": true,
       "type": "organic",
-      "thumbnailURL": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/thumbnails/svg_PCM_CL14.png",
+      "thumbnailURL": null,
       "slots": [
         {
           "id": "slot_0",
@@ -6399,7 +6399,7 @@
       "category": "Classic",
       "isPremium": true,
       "type": "organic",
-      "thumbnailURL": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/thumbnails/svg_PCM_CL15.png",
+      "thumbnailURL": null,
       "slots": [
         {
           "id": "slot_0",
@@ -6430,7 +6430,7 @@
       "category": "Classic",
       "isPremium": true,
       "type": "organic",
-      "thumbnailURL": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/thumbnails/svg_PCM_CL16.png",
+      "thumbnailURL": null,
       "slots": [
         {
           "id": "slot_0",
@@ -6461,7 +6461,7 @@
       "category": "Classic",
       "isPremium": true,
       "type": "organic",
-      "thumbnailURL": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/thumbnails/svg_PCM_CL17.png",
+      "thumbnailURL": null,
       "slots": [
         {
           "id": "slot_0",
@@ -6502,7 +6502,7 @@
       "category": "Classic",
       "isPremium": true,
       "type": "organic",
-      "thumbnailURL": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/thumbnails/svg_PCM_CL18.png",
+      "thumbnailURL": null,
       "slots": [
         {
           "id": "slot_0",
@@ -6533,7 +6533,7 @@
       "category": "Classic",
       "isPremium": true,
       "type": "organic",
-      "thumbnailURL": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/thumbnails/svg_PCM_CL19.png",
+      "thumbnailURL": null,
       "slots": [
         {
           "id": "slot_0",
@@ -6574,7 +6574,7 @@
       "category": "Classic",
       "isPremium": true,
       "type": "organic",
-      "thumbnailURL": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/thumbnails/svg_PCM_CL20.png",
+      "thumbnailURL": null,
       "slots": [
         {
           "id": "slot_0",
@@ -6625,7 +6625,7 @@
       "category": "Classic",
       "isPremium": true,
       "type": "organic",
-      "thumbnailURL": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/thumbnails/svg_PCM_CL20_IS.png",
+      "thumbnailURL": null,
       "slots": [
         {
           "id": "slot_0",
@@ -6666,7 +6666,7 @@
       "category": "Classic",
       "isPremium": true,
       "type": "organic",
-      "thumbnailURL": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/thumbnails/svg_PCM_CL21.png",
+      "thumbnailURL": null,
       "slots": [
         {
           "id": "slot_0",
@@ -6697,7 +6697,7 @@
       "category": "Classic",
       "isPremium": true,
       "type": "organic",
-      "thumbnailURL": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/thumbnails/svg_PCM_CL22.png",
+      "thumbnailURL": null,
       "slots": [
         {
           "id": "slot_0",
@@ -6728,7 +6728,7 @@
       "category": "Classic",
       "isPremium": true,
       "type": "grid",
-      "thumbnailURL": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/thumbnails/svg_PCM_CL23.png",
+      "thumbnailURL": null,
       "slots": [
         {
           "id": "slot_0",
@@ -6757,7 +6757,7 @@
       "category": "Classic",
       "isPremium": true,
       "type": "grid",
-      "thumbnailURL": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/thumbnails/svg_PCM_CL24.png",
+      "thumbnailURL": null,
       "slots": [
         {
           "id": "slot_0",
@@ -6786,7 +6786,7 @@
       "category": "Classic",
       "isPremium": true,
       "type": "organic",
-      "thumbnailURL": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/thumbnails/svg_PCM_CL25.png",
+      "thumbnailURL": null,
       "slots": [
         {
           "id": "slot_0",
@@ -6827,7 +6827,7 @@
       "category": "Classic",
       "isPremium": true,
       "type": "organic",
-      "thumbnailURL": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/thumbnails/svg_PCM_CL26.png",
+      "thumbnailURL": null,
       "slots": [
         {
           "id": "slot_0",
@@ -6868,7 +6868,7 @@
       "category": "Classic",
       "isPremium": true,
       "type": "organic",
-      "thumbnailURL": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/thumbnails/svg_PCM_CL27.png",
+      "thumbnailURL": null,
       "slots": [
         {
           "id": "slot_0",
@@ -6909,7 +6909,7 @@
       "category": "Classic",
       "isPremium": true,
       "type": "organic",
-      "thumbnailURL": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/thumbnails/svg_PCM_CL28.png",
+      "thumbnailURL": null,
       "slots": [
         {
           "id": "slot_0",
@@ -6950,7 +6950,7 @@
       "category": "Classic",
       "isPremium": true,
       "type": "organic",
-      "thumbnailURL": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/thumbnails/svg_PCM_CL29.png",
+      "thumbnailURL": null,
       "slots": [
         {
           "id": "slot_0",
@@ -6991,7 +6991,7 @@
       "category": "Classic",
       "isPremium": true,
       "type": "organic",
-      "thumbnailURL": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/thumbnails/svg_PCM_CL30.png",
+      "thumbnailURL": null,
       "slots": [
         {
           "id": "slot_0",
@@ -7032,7 +7032,7 @@
       "category": "Classic",
       "isPremium": true,
       "type": "organic",
-      "thumbnailURL": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/thumbnails/svg_PCM_CL31.png",
+      "thumbnailURL": null,
       "slots": [
         {
           "id": "slot_0",
@@ -7073,7 +7073,7 @@
       "category": "Classic",
       "isPremium": true,
       "type": "organic",
-      "thumbnailURL": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/thumbnails/svg_PCM_CL32.png",
+      "thumbnailURL": null,
       "slots": [
         {
           "id": "slot_0",
@@ -7114,7 +7114,7 @@
       "category": "Classic",
       "isPremium": true,
       "type": "organic",
-      "thumbnailURL": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/thumbnails/svg_PCM_CL33.png",
+      "thumbnailURL": null,
       "slots": [
         {
           "id": "slot_0",
@@ -7165,7 +7165,7 @@
       "category": "Classic",
       "isPremium": true,
       "type": "organic",
-      "thumbnailURL": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/thumbnails/svg_PCM_CL34.png",
+      "thumbnailURL": null,
       "slots": [
         {
           "id": "slot_0",
@@ -7216,7 +7216,7 @@
       "category": "Classic",
       "isPremium": true,
       "type": "organic",
-      "thumbnailURL": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/thumbnails/svg_PCM_CL35.png",
+      "thumbnailURL": null,
       "slots": [
         {
           "id": "slot_0",
@@ -7307,7 +7307,7 @@
       "category": "Classic",
       "isPremium": true,
       "type": "organic",
-      "thumbnailURL": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/thumbnails/svg_PCM_CL36.png",
+      "thumbnailURL": null,
       "slots": [
         {
           "id": "slot_0",
@@ -7398,7 +7398,7 @@
       "category": "Classic",
       "isPremium": true,
       "type": "grid",
-      "thumbnailURL": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/thumbnails/svg_PCM_CL_DV.png",
+      "thumbnailURL": null,
       "slots": [
         {
           "id": "slot_0",
@@ -7481,7 +7481,7 @@
       "category": "Stylish",
       "isPremium": true,
       "type": "organic",
-      "thumbnailURL": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/thumbnails/svg_PCM_SL01.png",
+      "thumbnailURL": null,
       "slots": [
         {
           "id": "slot_0",
@@ -7502,7 +7502,7 @@
       "category": "Stylish",
       "isPremium": true,
       "type": "organic",
-      "thumbnailURL": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/thumbnails/svg_PCM_SL02.png",
+      "thumbnailURL": null,
       "slots": [
         {
           "id": "slot_0",
@@ -7523,7 +7523,7 @@
       "category": "Stylish",
       "isPremium": true,
       "type": "organic",
-      "thumbnailURL": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/thumbnails/svg_PCM_SL03.png",
+      "thumbnailURL": null,
       "slots": [
         {
           "id": "slot_0",
@@ -7544,7 +7544,7 @@
       "category": "Stylish",
       "isPremium": true,
       "type": "organic",
-      "thumbnailURL": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/thumbnails/svg_PCM_SL04.png",
+      "thumbnailURL": null,
       "slots": [
         {
           "id": "slot_0",
@@ -7565,7 +7565,7 @@
       "category": "Stylish",
       "isPremium": true,
       "type": "organic",
-      "thumbnailURL": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/thumbnails/svg_PCM_SL05.png",
+      "thumbnailURL": null,
       "slots": [
         {
           "id": "slot_0",
@@ -7586,7 +7586,7 @@
       "category": "Stylish",
       "isPremium": true,
       "type": "organic",
-      "thumbnailURL": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/thumbnails/svg_PCM_SL06.png",
+      "thumbnailURL": null,
       "slots": [
         {
           "id": "slot_0",
@@ -7607,7 +7607,7 @@
       "category": "Stylish",
       "isPremium": true,
       "type": "organic",
-      "thumbnailURL": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/thumbnails/svg_PCM_SL07.png",
+      "thumbnailURL": null,
       "slots": [
         {
           "id": "slot_0",
@@ -7628,7 +7628,7 @@
       "category": "Stylish",
       "isPremium": true,
       "type": "organic",
-      "thumbnailURL": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/thumbnails/svg_PCM_SL08.png",
+      "thumbnailURL": null,
       "slots": [
         {
           "id": "slot_0",
@@ -7649,7 +7649,7 @@
       "category": "Stylish",
       "isPremium": true,
       "type": "organic",
-      "thumbnailURL": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/thumbnails/svg_PCM_SL09.png",
+      "thumbnailURL": null,
       "slots": [
         {
           "id": "slot_0",
@@ -7670,7 +7670,7 @@
       "category": "Stylish",
       "isPremium": true,
       "type": "organic",
-      "thumbnailURL": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/thumbnails/svg_PCM_SL10.png",
+      "thumbnailURL": null,
       "slots": [
         {
           "id": "slot_0",
@@ -7691,7 +7691,7 @@
       "category": "Stylish",
       "isPremium": true,
       "type": "organic",
-      "thumbnailURL": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/thumbnails/svg_PCM_SL11.png",
+      "thumbnailURL": null,
       "slots": [
         {
           "id": "slot_0",
@@ -7722,7 +7722,7 @@
       "category": "Stylish",
       "isPremium": true,
       "type": "organic",
-      "thumbnailURL": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/thumbnails/svg_PCM_SL12.png",
+      "thumbnailURL": null,
       "slots": [
         {
           "id": "slot_0",
@@ -7753,7 +7753,7 @@
       "category": "Stylish",
       "isPremium": true,
       "type": "organic",
-      "thumbnailURL": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/thumbnails/svg_PCM_SL13.png",
+      "thumbnailURL": null,
       "slots": [
         {
           "id": "slot_0",
@@ -7774,7 +7774,7 @@
       "category": "Stylish",
       "isPremium": true,
       "type": "organic",
-      "thumbnailURL": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/thumbnails/svg_PCM_SL14.png",
+      "thumbnailURL": null,
       "slots": [
         {
           "id": "slot_0",
@@ -7795,7 +7795,7 @@
       "category": "Stylish",
       "isPremium": true,
       "type": "organic",
-      "thumbnailURL": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/thumbnails/svg_PCM_SL15.png",
+      "thumbnailURL": null,
       "slots": [
         {
           "id": "slot_0",
@@ -7816,7 +7816,7 @@
       "category": "Stylish",
       "isPremium": true,
       "type": "organic",
-      "thumbnailURL": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/thumbnails/svg_PCM_SL16.png",
+      "thumbnailURL": null,
       "slots": [
         {
           "id": "slot_0",
@@ -7837,7 +7837,7 @@
       "category": "Stylish",
       "isPremium": true,
       "type": "organic",
-      "thumbnailURL": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/thumbnails/svg_PCM_SL17.png",
+      "thumbnailURL": null,
       "slots": [
         {
           "id": "slot_0",
@@ -7868,7 +7868,7 @@
       "category": "Stylish",
       "isPremium": true,
       "type": "organic",
-      "thumbnailURL": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/thumbnails/svg_PCM_SL18.png",
+      "thumbnailURL": null,
       "slots": [
         {
           "id": "slot_0",
@@ -7899,7 +7899,7 @@
       "category": "Stylish",
       "isPremium": true,
       "type": "organic",
-      "thumbnailURL": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/thumbnails/svg_PCM_SL19.png",
+      "thumbnailURL": null,
       "slots": [
         {
           "id": "slot_0",
@@ -7930,7 +7930,7 @@
       "category": "Stylish",
       "isPremium": true,
       "type": "organic",
-      "thumbnailURL": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/thumbnails/svg_PCM_SL20.png",
+      "thumbnailURL": null,
       "slots": [
         {
           "id": "slot_0",
@@ -7961,7 +7961,7 @@
       "category": "Stylish",
       "isPremium": true,
       "type": "organic",
-      "thumbnailURL": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/thumbnails/svg_PCM_SL21.png",
+      "thumbnailURL": null,
       "slots": [
         {
           "id": "slot_0",
@@ -7992,7 +7992,7 @@
       "category": "Stylish",
       "isPremium": true,
       "type": "organic",
-      "thumbnailURL": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/thumbnails/svg_PCM_SL22.png",
+      "thumbnailURL": null,
       "slots": [
         {
           "id": "slot_0",
@@ -8023,7 +8023,7 @@
       "category": "Stylish",
       "isPremium": true,
       "type": "organic",
-      "thumbnailURL": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/thumbnails/svg_PCM_SL23.png",
+      "thumbnailURL": null,
       "slots": [
         {
           "id": "slot_0",
@@ -8044,7 +8044,7 @@
       "category": "Stylish",
       "isPremium": true,
       "type": "organic",
-      "thumbnailURL": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/thumbnails/svg_PCM_SL24.png",
+      "thumbnailURL": null,
       "slots": [
         {
           "id": "slot_0",
@@ -8065,7 +8065,7 @@
       "category": "Stylish",
       "isPremium": true,
       "type": "organic",
-      "thumbnailURL": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/thumbnails/svg_PCM_SL25.png",
+      "thumbnailURL": null,
       "slots": [
         {
           "id": "slot_0",
@@ -8086,7 +8086,7 @@
       "category": "Stylish",
       "isPremium": true,
       "type": "organic",
-      "thumbnailURL": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/thumbnails/svg_PCM_SL26.png",
+      "thumbnailURL": null,
       "slots": [
         {
           "id": "slot_0",
@@ -8107,7 +8107,7 @@
       "category": "Stylish",
       "isPremium": true,
       "type": "organic",
-      "thumbnailURL": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/thumbnails/svg_PCM_SL27.png",
+      "thumbnailURL": null,
       "slots": [
         {
           "id": "slot_0",
@@ -8128,7 +8128,7 @@
       "category": "Stylish",
       "isPremium": true,
       "type": "organic",
-      "thumbnailURL": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/thumbnails/svg_PCM_SL28.png",
+      "thumbnailURL": null,
       "slots": [
         {
           "id": "slot_0",
@@ -8149,7 +8149,7 @@
       "category": "Stylish",
       "isPremium": true,
       "type": "organic",
-      "thumbnailURL": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/thumbnails/svg_PCM_SL29.png",
+      "thumbnailURL": null,
       "slots": [
         {
           "id": "slot_0",
@@ -8170,7 +8170,7 @@
       "category": "Stylish",
       "isPremium": true,
       "type": "organic",
-      "thumbnailURL": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/thumbnails/svg_PCM_SL30.png",
+      "thumbnailURL": null,
       "slots": [
         {
           "id": "slot_0",
@@ -8191,7 +8191,7 @@
       "category": "Stylish",
       "isPremium": true,
       "type": "organic",
-      "thumbnailURL": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/thumbnails/svg_PCM_SL31.png",
+      "thumbnailURL": null,
       "slots": [
         {
           "id": "slot_0",
@@ -8212,7 +8212,7 @@
       "category": "Stylish",
       "isPremium": true,
       "type": "organic",
-      "thumbnailURL": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/thumbnails/svg_PCM_SL32.png",
+      "thumbnailURL": null,
       "slots": [
         {
           "id": "slot_0",
@@ -8233,7 +8233,7 @@
       "category": "Stylish",
       "isPremium": true,
       "type": "organic",
-      "thumbnailURL": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/thumbnails/svg_STONE.png",
+      "thumbnailURL": null,
       "slots": [
         {
           "id": "slot_0",
@@ -8264,7 +8264,7 @@
       "category": "Stylish",
       "isPremium": true,
       "type": "organic",
-      "thumbnailURL": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/thumbnails/svg_STY1.png",
+      "thumbnailURL": null,
       "slots": [
         {
           "id": "slot_0",
@@ -8294,7 +8294,7 @@
       "category": "Stylish",
       "isPremium": true,
       "type": "organic",
-      "thumbnailURL": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/thumbnails/svg_STY2.png",
+      "thumbnailURL": null,
       "slots": [
         {
           "id": "slot_0",
@@ -8315,7 +8315,7 @@
       "category": "Stylish",
       "isPremium": true,
       "type": "organic",
-      "thumbnailURL": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/thumbnails/svg_SVG10.png",
+      "thumbnailURL": null,
       "slots": [
         {
           "id": "slot_0",
@@ -8336,7 +8336,7 @@
       "category": "Stylish",
       "isPremium": true,
       "type": "organic",
-      "thumbnailURL": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/thumbnails/svg_SVG11.png",
+      "thumbnailURL": null,
       "slots": [
         {
           "id": "slot_0",
@@ -8377,7 +8377,7 @@
       "category": "Stylish",
       "isPremium": true,
       "type": "organic",
-      "thumbnailURL": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/thumbnails/svg_SVG12.png",
+      "thumbnailURL": null,
       "slots": [
         {
           "id": "slot_0",
@@ -8418,7 +8418,7 @@
       "category": "Stylish",
       "isPremium": true,
       "type": "grid",
-      "thumbnailURL": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/thumbnails/svg_SVG13.png",
+      "thumbnailURL": null,
       "slots": [
         {
           "id": "slot_0",
@@ -8459,7 +8459,7 @@
       "category": "Stylish",
       "isPremium": true,
       "type": "grid",
-      "thumbnailURL": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/thumbnails/svg_SVG14.png",
+      "thumbnailURL": null,
       "slots": [
         {
           "id": "slot_0",
@@ -8509,7 +8509,7 @@
       "category": "Stylish",
       "isPremium": true,
       "type": "grid",
-      "thumbnailURL": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/thumbnails/svg_SVG15.png",
+      "thumbnailURL": null,
       "slots": [
         {
           "id": "slot_0",
@@ -8556,7 +8556,7 @@
       "category": "Stylish",
       "isPremium": true,
       "type": "grid",
-      "thumbnailURL": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/thumbnails/svg_SVG16.png",
+      "thumbnailURL": null,
       "slots": [
         {
           "id": "slot_0",
@@ -8638,7 +8638,7 @@
       "category": "Stylish",
       "isPremium": true,
       "type": "organic",
-      "thumbnailURL": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/thumbnails/svg_SVG8.png",
+      "thumbnailURL": null,
       "slots": [
         {
           "id": "slot_0",
@@ -8679,7 +8679,7 @@
       "category": "Stylish",
       "isPremium": true,
       "type": "organic",
-      "thumbnailURL": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/thumbnails/svg_SVG9.png",
+      "thumbnailURL": null,
       "slots": [
         {
           "id": "slot_0",
@@ -8710,7 +8710,7 @@
       "category": "Stylish",
       "isPremium": true,
       "type": "organic",
-      "thumbnailURL": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/thumbnails/svg_WAVE.png",
+      "thumbnailURL": null,
       "slots": [
         {
           "id": "slot_0",
@@ -8741,7 +8741,7 @@
       "category": "Stylish",
       "isPremium": true,
       "type": "grid",
-      "thumbnailURL": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/thumbnails/svg_classic_1.png",
+      "thumbnailURL": null,
       "slots": [
         {
           "id": "slot_0",
@@ -8782,7 +8782,7 @@
       "category": "Stylish",
       "isPremium": true,
       "type": "grid",
-      "thumbnailURL": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/thumbnails/svg_drag test.png",
+      "thumbnailURL": null,
       "slots": [
         {
           "id": "slot_0",
