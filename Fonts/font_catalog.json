@@ -10,7 +10,7 @@
           "id": "en__agamtoh",
           "displayName": "Agamtoh",
           "postScriptName": "Agamtoh_PR",
-          "isPremium": true,
+          "isPremium": false,
           "source": "ota",
           "fileName": "Agamtoh.ttf",
           "remoteDirectory": "English",
