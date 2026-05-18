@@ -2253,16 +2253,12 @@ def _font_entry_dict(
     remote_directory: str | None = None,
     folder_premium_default: bool | None = None,
 ) -> dict:
-    """
-    ``displayName`` / ``isPremium`` come from trailing ``_PR`` / ``_F`` on the file stem (and optional
-  folder default). ``fileName`` is the **full on-disk basename** (e.g. ``Roboto_PR.ttf``) so GitHub
-    raw URLs and ``FontCatalogLoader.remoteURLForOTAFont`` match the repo. Suffixes are stripped only
-    for UI labels and stable ``id`` slugs, not for download paths.
-    """
     display_name, is_premium = _store_stem_to_name_and_premium(
         font_path.stem, default_premium=False, folder_premium_default=folder_premium_default
     )
     clean_stem = _clean_stem_premium_suffix(font_path.stem)
+    ext = font_path.suffix.lower()
+    file_name = f"{clean_stem}{ext}"
     entry_id = f"{cat_id}__{_slugify(clean_stem)}"
     d: dict = {
         "id": entry_id,
@@ -2270,7 +2266,7 @@ def _font_entry_dict(
         "postScriptName": _extract_postscript_name(font_path),
         "isPremium": is_premium,
         "source": "ota",
-        "fileName": font_path.name,
+        "fileName": file_name,
     }
     if remote_directory is not None:
         d["remoteDirectory"] = remote_directory.replace("\\", "/")
