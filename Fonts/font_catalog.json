@@ -1,5 +1,5 @@
 {
-  "version": "2.9",
+  "version": "3.0",
   "categories": [
     {
       "id": "en",
@@ -59,10 +59,10 @@
         {
           "id": "en__klandestin",
           "displayName": "Klandestin",
-          "postScriptName": "Klandestin",
-          "isPremium": false,
+          "postScriptName": "Klandestin_PR",
+          "isPremium": true,
           "source": "ota",
-          "fileName": "Klandestin.ttf",
+          "fileName": "Klandestin_PR.ttf",
           "remoteDirectory": "English",
           "licenseUrl": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/Fonts/English/1001fonts-ls-klandestin-demo-eula.txt"
         },
