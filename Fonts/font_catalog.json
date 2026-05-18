@@ -1,5 +1,5 @@
 {
-  "version": "2.8",
+  "version": "2.9",
   "categories": [
     {
       "id": "en",
@@ -9,10 +9,10 @@
         {
           "id": "en__agamtoh",
           "displayName": "Agamtoh",
-          "postScriptName": "Agamtoh",
-          "isPremium": false,
+          "postScriptName": "Agamtoh_PR",
+          "isPremium": true,
           "source": "ota",
-          "fileName": "Agamtoh.ttf",
+          "fileName": "Agamtoh_PR.ttf",
           "remoteDirectory": "English",
           "licenseUrl": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/Fonts/English/1001fonts-agamtoh-eula.txt"
         },
