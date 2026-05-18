@@ -1,5 +1,5 @@
 {
-  "version": "2.5",
+  "version": "2.6",
   "categories": [
     {
       "id": "en",
@@ -19,8 +19,8 @@
         {
           "id": "en__chrisye",
           "displayName": "Chrisye",
-          "postScriptName": "Chrisye",
-          "isPremium": false,
+          "postScriptName": "Chrisye_PR",
+          "isPremium": true,
           "source": "ota",
           "fileName": "Chrisye.otf",
           "remoteDirectory": "English",
