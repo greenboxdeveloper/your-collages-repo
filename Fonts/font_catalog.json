@@ -1,5 +1,5 @@
 {
-  "version": "2.4",
+  "version": "2.5",
   "categories": [
     {
       "id": "en",
@@ -9,8 +9,8 @@
         {
           "id": "en__agamtoh",
           "displayName": "Agamtoh",
-          "postScriptName": "Agamtoh_PR",
-          "isPremium": true,
+          "postScriptName": "Agamtoh",
+          "isPremium": false,
           "source": "ota",
           "fileName": "Agamtoh.ttf",
           "remoteDirectory": "English",
