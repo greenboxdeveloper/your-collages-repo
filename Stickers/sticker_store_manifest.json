@@ -1,5 +1,5 @@
 {
-  "version": "2.4",
+  "version": "2.5",
   "categories": [
     {
       "id": "animal_pack_01",
@@ -4602,6 +4602,226 @@
           "isPremium": true,
           "source": "ota",
           "fileName": "Sticker_School_40"
+        }
+      ],
+      "bannerImageUrl": null,
+      "promoHeaderUrl": null
+    },
+    {
+      "id": "summer_pack_01_pr",
+      "name": "Summer Pack 01",
+      "count": 30,
+      "remoteFolderName": "Summer Pack 01_PR",
+      "stickers": [
+        {
+          "id": "summer_pack_01_pr__summer1_1",
+          "name": "Summer1.1",
+          "isPremium": true,
+          "source": "ota",
+          "fileName": "Summer1.1"
+        },
+        {
+          "id": "summer_pack_01_pr__summer1_10",
+          "name": "Summer1.10",
+          "isPremium": true,
+          "source": "ota",
+          "fileName": "Summer1.10"
+        },
+        {
+          "id": "summer_pack_01_pr__summer1_2",
+          "name": "Summer1.2",
+          "isPremium": true,
+          "source": "ota",
+          "fileName": "Summer1.2"
+        },
+        {
+          "id": "summer_pack_01_pr__summer1_3",
+          "name": "Summer1.3",
+          "isPremium": true,
+          "source": "ota",
+          "fileName": "Summer1.3"
+        },
+        {
+          "id": "summer_pack_01_pr__summer1_4",
+          "name": "Summer1.4",
+          "isPremium": true,
+          "source": "ota",
+          "fileName": "Summer1.4"
+        },
+        {
+          "id": "summer_pack_01_pr__summer1_5",
+          "name": "Summer1.5",
+          "isPremium": true,
+          "source": "ota",
+          "fileName": "Summer1.5"
+        },
+        {
+          "id": "summer_pack_01_pr__summer1_6",
+          "name": "Summer1.6",
+          "isPremium": true,
+          "source": "ota",
+          "fileName": "Summer1.6"
+        },
+        {
+          "id": "summer_pack_01_pr__summer1_7",
+          "name": "Summer1.7",
+          "isPremium": true,
+          "source": "ota",
+          "fileName": "Summer1.7"
+        },
+        {
+          "id": "summer_pack_01_pr__summer1_8",
+          "name": "Summer1.8",
+          "isPremium": true,
+          "source": "ota",
+          "fileName": "Summer1.8"
+        },
+        {
+          "id": "summer_pack_01_pr__summer1_9",
+          "name": "Summer1.9",
+          "isPremium": true,
+          "source": "ota",
+          "fileName": "Summer1.9"
+        },
+        {
+          "id": "summer_pack_01_pr__summer2_1",
+          "name": "Summer2.1",
+          "isPremium": true,
+          "source": "ota",
+          "fileName": "Summer2.1"
+        },
+        {
+          "id": "summer_pack_01_pr__summer2_10",
+          "name": "Summer2.10",
+          "isPremium": true,
+          "source": "ota",
+          "fileName": "Summer2.10"
+        },
+        {
+          "id": "summer_pack_01_pr__summer2_2",
+          "name": "Summer2.2",
+          "isPremium": true,
+          "source": "ota",
+          "fileName": "Summer2.2"
+        },
+        {
+          "id": "summer_pack_01_pr__summer2_3",
+          "name": "Summer2.3",
+          "isPremium": true,
+          "source": "ota",
+          "fileName": "Summer2.3"
+        },
+        {
+          "id": "summer_pack_01_pr__summer2_4",
+          "name": "Summer2.4",
+          "isPremium": true,
+          "source": "ota",
+          "fileName": "Summer2.4"
+        },
+        {
+          "id": "summer_pack_01_pr__summer2_5",
+          "name": "Summer2.5",
+          "isPremium": true,
+          "source": "ota",
+          "fileName": "Summer2.5"
+        },
+        {
+          "id": "summer_pack_01_pr__summer2_6",
+          "name": "Summer2.6",
+          "isPremium": true,
+          "source": "ota",
+          "fileName": "Summer2.6"
+        },
+        {
+          "id": "summer_pack_01_pr__summer2_7",
+          "name": "Summer2.7",
+          "isPremium": true,
+          "source": "ota",
+          "fileName": "Summer2.7"
+        },
+        {
+          "id": "summer_pack_01_pr__summer2_8",
+          "name": "Summer2.8",
+          "isPremium": true,
+          "source": "ota",
+          "fileName": "Summer2.8"
+        },
+        {
+          "id": "summer_pack_01_pr__summer2_9",
+          "name": "Summer2.9",
+          "isPremium": true,
+          "source": "ota",
+          "fileName": "Summer2.9"
+        },
+        {
+          "id": "summer_pack_01_pr__summer3_1",
+          "name": "Summer3.1",
+          "isPremium": true,
+          "source": "ota",
+          "fileName": "Summer3.1"
+        },
+        {
+          "id": "summer_pack_01_pr__summer3_10",
+          "name": "Summer3.10",
+          "isPremium": true,
+          "source": "ota",
+          "fileName": "Summer3.10"
+        },
+        {
+          "id": "summer_pack_01_pr__summer3_2",
+          "name": "Summer3.2",
+          "isPremium": true,
+          "source": "ota",
+          "fileName": "Summer3.2"
+        },
+        {
+          "id": "summer_pack_01_pr__summer3_3",
+          "name": "Summer3.3",
+          "isPremium": true,
+          "source": "ota",
+          "fileName": "Summer3.3"
+        },
+        {
+          "id": "summer_pack_01_pr__summer3_4",
+          "name": "Summer3.4",
+          "isPremium": true,
+          "source": "ota",
+          "fileName": "Summer3.4"
+        },
+        {
+          "id": "summer_pack_01_pr__summer3_5",
+          "name": "Summer3.5",
+          "isPremium": true,
+          "source": "ota",
+          "fileName": "Summer3.5"
+        },
+        {
+          "id": "summer_pack_01_pr__summer3_6",
+          "name": "Summer3.6",
+          "isPremium": true,
+          "source": "ota",
+          "fileName": "Summer3.6"
+        },
+        {
+          "id": "summer_pack_01_pr__summer3_7",
+          "name": "Summer3.7",
+          "isPremium": true,
+          "source": "ota",
+          "fileName": "Summer3.7"
+        },
+        {
+          "id": "summer_pack_01_pr__summer3_8",
+          "name": "Summer3.8",
+          "isPremium": true,
+          "source": "ota",
+          "fileName": "Summer3.8"
+        },
+        {
+          "id": "summer_pack_01_pr__summer3_9",
+          "name": "Summer3.9",
+          "isPremium": true,
+          "source": "ota",
+          "fileName": "Summer3.9"
         }
       ],
       "bannerImageUrl": null,
