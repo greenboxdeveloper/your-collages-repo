@@ -27,6 +27,7 @@ import os
 import random
 import re
 import sys
+from concurrent.futures import ProcessPoolExecutor, as_completed
 from io import BytesIO
 from pathlib import Path
 from urllib.parse import quote
@@ -1852,18 +1853,24 @@ def _sticker_preview_webp_basename(clean_stem: str) -> str:
 def _generate_sticker_preview_webp(png_path: Path, webp_out: Path, max_edge: int) -> bool:
     """Write a small RGBA WebP preview next to the source PNG. Returns True on success."""
     if Image is None:
-        print("[sticker-manifest] skip preview WebP (install pillow)", file=sys.stderr)
         return False
     try:
         with Image.open(png_path) as src:
             img = src.convert("RGBA")
         img = _cap_long_edge_pil(img, max_edge)
         webp_out.parent.mkdir(parents=True, exist_ok=True)
-        img.save(webp_out, format="WEBP", quality=82, method=6)
+        # method=4 is much faster than 6; fine for small toolbar thumbs.
+        img.save(webp_out, format="WEBP", quality=80, method=4)
         return True
     except Exception as e:
         print(f"[sticker-manifest] preview WebP failed for {png_path}: {e}", file=sys.stderr)
         return False
+
+
+def _sticker_preview_webp_worker(job: tuple[str, str, int]) -> bool:
+    """Process-pool worker: (png_path, webp_out, max_edge) as strings."""
+    png_s, webp_s, max_edge = job
+    return _generate_sticker_preview_webp(Path(png_s), Path(webp_s), max_edge)
 
 
 def generate_sticker_store_manifest(
@@ -1873,6 +1880,7 @@ def generate_sticker_store_manifest(
     *,
     generate_preview_webp: bool = True,
     preview_max_edge: int = 128,
+    preview_workers: int = 0,
 ) -> int:
     """Emit sticker_store_manifest.json with optional ``bannerImageUrl`` / ``promoHeaderUrl`` when
     ``banner.png`` / ``promo_header.png`` (etc.) exist under each category folder.
@@ -1881,12 +1889,32 @@ def generate_sticker_store_manifest(
     marks auto-toolbar inclusion on iOS.
 
     When ``generate_preview_webp`` is true, writes ``{clean_stem}_preview.webp`` beside each sticker PNG
-    and sets ``previewWebpUrl`` on each OTA row (requires ``--base-url`` for the URL field).
+    under ``<stickers_dir>/<CategoryFolder>/``. With ``--base-url``, every OTA row gets ``previewWebpUrl``
+    pointing at that path on CDN (even if you skip local WebP generation).
     """
     preview_max_edge = max(32, int(preview_max_edge))
+    stickers_dir = stickers_dir.resolve()
+    scanned = _scan_category_pngs(stickers_dir)
+    sticker_png_count = sum(
+        len([p for p in pngs if not _is_reserved_sticker_pack_asset_png(p)])
+        for _, _, pngs, _ in scanned
+    )
+    if sticker_png_count == 0:
+        print(
+            f"[sticker-manifest] WARNING: no sticker PNGs under {stickers_dir} "
+            f"(expected e.g. {stickers_dir}/MyPack/foo.png)",
+            file=sys.stderr,
+        )
+    elif generate_preview_webp and Image is None:
+        print(
+            "[sticker-manifest] WARNING: Pillow not installed — skipping WebP files "
+            "(pip install -r scripts/requirements.txt). Manifest previewWebpUrl still emitted if --base-url set.",
+            file=sys.stderr,
+        )
+
     categories = []
-    preview_written = 0
-    for cat_id, cat_name, pngs, cat_dir in _scan_category_pngs(stickers_dir):
+    preview_jobs: list[tuple[str, str, int]] = []
+    for cat_id, cat_name, pngs, cat_dir in scanned:
         _, folder_fd = _folder_display_base_and_premium_default(cat_dir.name)
         stickers = []
         seg = quote(cat_dir.name, safe="/")
@@ -1901,13 +1929,13 @@ def generate_sticker_store_manifest(
             item_id = f"{cat_id}__{_slugify(clean_stem)}"
             preview_webp_name = _sticker_preview_webp_basename(clean_stem)
             preview_webp_path = p.parent / preview_webp_name
-            if generate_preview_webp:
+            if generate_preview_webp and Image is not None:
                 regen = (
                     not preview_webp_path.is_file()
                     or p.stat().st_mtime > preview_webp_path.stat().st_mtime
                 )
-                if regen and _generate_sticker_preview_webp(p, preview_webp_path, preview_max_edge):
-                    preview_written += 1
+                if regen:
+                    preview_jobs.append((str(p.resolve()), str(preview_webp_path.resolve()), preview_max_edge))
             row: dict = {
                 "id": item_id,
                 "name": display_name,
@@ -1915,7 +1943,8 @@ def generate_sticker_store_manifest(
                 "source": "ota",
                 "fileName": clean_stem,
             }
-            if bu and preview_webp_path.is_file():
+            # Always publish the CDN path when base_url is set (WebPs may be deployed without git commit).
+            if bu:
                 row["previewWebpUrl"] = f"{bu}/Stickers/{seg}/{preview_webp_name}"
             stickers.append(row)
         # Optional store art: explicit nulls so editors can paste GitHub raw URLs later without reshaping JSON.
@@ -1942,9 +1971,36 @@ def generate_sticker_store_manifest(
                     cat_entry["promoHeaderUrl"] = f"{bu}/Stickers/{seg}/{fname}"
                     break
         categories.append(cat_entry)
+
+    preview_written = 0
+    if preview_jobs:
+        workers = preview_workers if preview_workers > 0 else min(8, max(1, (os.cpu_count() or 4)))
+        print(
+            f"[sticker-manifest] writing {len(preview_jobs)} preview WebP(s) under {stickers_dir} "
+            f"({workers} workers)…",
+            flush=True,
+        )
+        if workers <= 1:
+            for job in preview_jobs:
+                if _sticker_preview_webp_worker(job):
+                    preview_written += 1
+        else:
+            with ProcessPoolExecutor(max_workers=workers) as pool:
+                futures = [pool.submit(_sticker_preview_webp_worker, job) for job in preview_jobs]
+                for fut in as_completed(futures):
+                    if fut.result():
+                        preview_written += 1
+        sample = Path(preview_jobs[0][1]) if preview_jobs else None
+        if sample is not None:
+            print(f"[sticker-manifest] example preview path: {sample}", flush=True)
+
     version = _write_versioned_manifest(output_path, "categories", categories)
-    extra = f", {preview_written} preview WebPs" if generate_preview_webp else ""
-    print(f"[sticker-manifest] v{version} — {len(categories)} categories{extra} → {output_path}")
+    extra = ""
+    if generate_preview_webp:
+        extra = f", {preview_written}/{len(preview_jobs)} preview WebPs written"
+    elif base_url:
+        extra = ", previewWebpUrl URLs only (use --skip-sticker-preview-webp or CI to generate files)"
+    print(f"[sticker-manifest] v{version} — {len(categories)} categories, {sticker_png_count} stickers{extra} → {output_path}")
     return 0
 
 
@@ -3494,7 +3550,16 @@ def _add_store_manifest_args(parser: argparse.ArgumentParser) -> None:
     parser.add_argument(
         "--skip-sticker-preview-webp",
         action="store_true",
-        help="Do not generate {stem}_preview.webp files when building sticker_store_manifest.json.",
+        help=(
+            "Only update sticker_store_manifest.json (fast). Still emits previewWebpUrl when --base-url is set. "
+            "Generate WebP files in CI or run without this flag before Cloudflare deploy."
+        ),
+    )
+    parser.add_argument(
+        "--sticker-preview-workers",
+        type=int,
+        default=0,
+        help="Parallel workers for WebP generation (0 = auto, default min(8, CPU count)).",
     )
     parser.add_argument("--backgrounds-dir", default="Backgrounds")
     parser.add_argument("--backgrounds-output", default="Backgrounds/background_store_manifest.json")
@@ -3613,6 +3678,7 @@ def main_with_filter_support() -> int:
             base_url=args.base_url,
             generate_preview_webp=not args.skip_sticker_preview_webp,
             preview_max_edge=int(args.sticker_preview_max_edge),
+            preview_workers=int(args.sticker_preview_workers),
         )
         if result != 0:
             return result
