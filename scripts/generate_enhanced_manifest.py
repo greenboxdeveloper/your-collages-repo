@@ -1844,19 +1844,53 @@ def _is_reserved_sticker_pack_asset_png(path: Path) -> bool:
     return path.name.lower() in {"banner.png", "promo_header.png", "promo.png"}
 
 
+def _sticker_preview_webp_basename(clean_stem: str) -> str:
+    """Lightweight toolbar preview beside ``{clean_stem}.png`` in the same category folder."""
+    return f"{clean_stem}_preview.webp"
+
+
+def _generate_sticker_preview_webp(png_path: Path, webp_out: Path, max_edge: int) -> bool:
+    """Write a small RGBA WebP preview next to the source PNG. Returns True on success."""
+    if Image is None:
+        print("[sticker-manifest] skip preview WebP (install pillow)", file=sys.stderr)
+        return False
+    try:
+        with Image.open(png_path) as src:
+            img = src.convert("RGBA")
+        img = _cap_long_edge_pil(img, max_edge)
+        webp_out.parent.mkdir(parents=True, exist_ok=True)
+        img.save(webp_out, format="WEBP", quality=82, method=6)
+        return True
+    except Exception as e:
+        print(f"[sticker-manifest] preview WebP failed for {png_path}: {e}", file=sys.stderr)
+        return False
+
+
 def generate_sticker_store_manifest(
-    stickers_dir: Path, output_path: Path, base_url: str | None = None
+    stickers_dir: Path,
+    output_path: Path,
+    base_url: str | None = None,
+    *,
+    generate_preview_webp: bool = True,
+    preview_max_edge: int = 128,
 ) -> int:
     """Emit sticker_store_manifest.json with optional ``bannerImageUrl`` / ``promoHeaderUrl`` when
     ``banner.png`` / ``promo_header.png`` (etc.) exist under each category folder.
 
     Sticker PNG stems use ``_PR`` / ``_F`` for premium/free (same as filters/frames). Optional ``_a``
     marks auto-toolbar inclusion on iOS.
+
+    When ``generate_preview_webp`` is true, writes ``{clean_stem}_preview.webp`` beside each sticker PNG
+    and sets ``previewWebpUrl`` on each OTA row (requires ``--base-url`` for the URL field).
     """
+    preview_max_edge = max(32, int(preview_max_edge))
     categories = []
+    preview_written = 0
     for cat_id, cat_name, pngs, cat_dir in _scan_category_pngs(stickers_dir):
         _, folder_fd = _folder_display_base_and_premium_default(cat_dir.name)
         stickers = []
+        seg = quote(cat_dir.name, safe="/")
+        bu = base_url.rstrip("/") if base_url else None
         for p in pngs:
             if _is_reserved_sticker_pack_asset_png(p):
                 continue
@@ -1865,13 +1899,25 @@ def generate_sticker_store_manifest(
             )
             clean_stem = _clean_stem_premium_suffix(p.stem)
             item_id = f"{cat_id}__{_slugify(clean_stem)}"
-            stickers.append({
+            preview_webp_name = _sticker_preview_webp_basename(clean_stem)
+            preview_webp_path = p.parent / preview_webp_name
+            if generate_preview_webp:
+                regen = (
+                    not preview_webp_path.is_file()
+                    or p.stat().st_mtime > preview_webp_path.stat().st_mtime
+                )
+                if regen and _generate_sticker_preview_webp(p, preview_webp_path, preview_max_edge):
+                    preview_written += 1
+            row: dict = {
                 "id": item_id,
                 "name": display_name,
                 "isPremium": is_premium,
                 "source": "ota",
                 "fileName": clean_stem,
-            })
+            }
+            if bu and preview_webp_path.is_file():
+                row["previewWebpUrl"] = f"{bu}/Stickers/{seg}/{preview_webp_name}"
+            stickers.append(row)
         # Optional store art: explicit nulls so editors can paste GitHub raw URLs later without reshaping JSON.
         cat_entry: dict = {
             "id": cat_id,
@@ -1897,7 +1943,8 @@ def generate_sticker_store_manifest(
                     break
         categories.append(cat_entry)
     version = _write_versioned_manifest(output_path, "categories", categories)
-    print(f"[sticker-manifest] v{version} — {len(categories)} categories → {output_path}")
+    extra = f", {preview_written} preview WebPs" if generate_preview_webp else ""
+    print(f"[sticker-manifest] v{version} — {len(categories)} categories{extra} → {output_path}")
     return 0
 
 
@@ -2670,6 +2717,13 @@ _HOME_FIXED_PREFIX: list[dict] = [
         "category": "tools_grid",
     },
     {
+        "id": "template_store",
+        "title": "Template Store",
+        "subtitle": "Browse curated templates",
+        "display_size": "medium",
+        "category": "template_store_row",
+    },
+    {
         "id": "trending_layouts",
         "title": "Trending Layouts",
         "subtitle": "",
@@ -3431,6 +3485,17 @@ def _add_store_manifest_args(parser: argparse.ArgumentParser) -> None:
     parser.add_argument("--frames-output", default="Frames/frame_manifest.json")
     parser.add_argument("--stickers-dir", default="Stickers")
     parser.add_argument("--stickers-output", default="Stickers/sticker_store_manifest.json")
+    parser.add_argument(
+        "--sticker-preview-max-edge",
+        type=int,
+        default=128,
+        help="Max long edge for sticker toolbar preview WebPs (default: 128).",
+    )
+    parser.add_argument(
+        "--skip-sticker-preview-webp",
+        action="store_true",
+        help="Do not generate {stem}_preview.webp files when building sticker_store_manifest.json.",
+    )
     parser.add_argument("--backgrounds-dir", default="Backgrounds")
     parser.add_argument("--backgrounds-output", default="Backgrounds/background_store_manifest.json")
     parser.add_argument("--fonts-dir", default="Fonts")
@@ -3546,6 +3611,8 @@ def main_with_filter_support() -> int:
             repo_root / args.stickers_dir,
             repo_root / args.stickers_output,
             base_url=args.base_url,
+            generate_preview_webp=not args.skip_sticker_preview_webp,
+            preview_max_edge=int(args.sticker_preview_max_edge),
         )
         if result != 0:
             return result
