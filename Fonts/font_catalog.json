@@ -1,5 +1,5 @@
 {
-  "version": "3.3",
+  "version": "3.4",
   "categories": [
     {
       "id": "en",
@@ -12,7 +12,7 @@
           "postScriptName": "Agamtoh_PR",
           "isPremium": true,
           "source": "ota",
-          "fileName": "Agamtoh.ttf",
+          "fileName": "Agamtoh_PR.ttf",
           "remoteDirectory": "English",
           "licenseUrl": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/Fonts/English/1001fonts-agamtoh-eula.txt"
         },
@@ -22,7 +22,7 @@
           "postScriptName": "Chrisye_PR",
           "isPremium": true,
           "source": "ota",
-          "fileName": "Chrisye.otf",
+          "fileName": "Chrisye_PR.otf",
           "remoteDirectory": "English",
           "licenseUrl": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/Fonts/English/1001fonts-chrisye-eula.txt"
         },
@@ -52,7 +52,7 @@
           "postScriptName": "Jastyka_PR",
           "isPremium": true,
           "source": "ota",
-          "fileName": "Jastyka.ttf",
+          "fileName": "Jastyka_PR.ttf",
           "remoteDirectory": "English",
           "licenseUrl": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/Fonts/English/1001fonts-jastyka-eula.txt"
         },
@@ -62,7 +62,7 @@
           "postScriptName": "Klandestin_PR",
           "isPremium": true,
           "source": "ota",
-          "fileName": "Klandestin.ttf",
+          "fileName": "Klandestin_PR.ttf",
           "remoteDirectory": "English",
           "licenseUrl": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/Fonts/English/1001fonts-ls-klandestin-demo-eula.txt"
         },
@@ -72,7 +72,7 @@
           "postScriptName": "kleptocracytitlingbd_PR",
           "isPremium": true,
           "source": "ota",
-          "fileName": "kleptocracy titling bd.otf",
+          "fileName": "kleptocracy titling bd_PR.otf",
           "remoteDirectory": "English",
           "licenseUrl": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/Fonts/English/kleptocracy%20Desktop%20EULA%202023.pdf"
         },
@@ -130,7 +130,7 @@
           "postScriptName": "Rhigen_PR",
           "isPremium": true,
           "source": "ota",
-          "fileName": "Rhigen.otf",
+          "fileName": "Rhigen_PR.otf",
           "remoteDirectory": "English",
           "licenseUrl": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/Fonts/English/1001fonts-rhigen-eula.txt"
         }

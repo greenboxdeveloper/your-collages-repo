@@ -1,5 +1,5 @@
 {
-  "version": "2.6",
+  "version": "2.9",
   "sections": [
     {
       "id": "slideshow",
@@ -87,6 +87,15 @@
       "display_size": "small",
       "category": "templates",
       "sub_category": "Holiday",
+      "count": 8
+    },
+    {
+      "id": "templates_summer",
+      "title": "Summer",
+      "subtitle": "",
+      "display_size": "small",
+      "category": "templates",
+      "sub_category": "Summer",
       "count": 8
     },
     {
