@@ -1850,6 +1850,13 @@ def _sticker_preview_webp_basename(clean_stem: str) -> str:
     return f"{clean_stem}_preview.webp"
 
 
+def _ota_asset_public_url(base_url: str, *path_parts: str) -> str:
+    """Join CDN/GitHub base + path segments with every segment percent-encoded (spaces, ``@``, etc.)."""
+    bu = base_url.rstrip("/")
+    encoded = "/".join(quote(str(p).strip("/"), safe="") for p in path_parts if str(p).strip("/"))
+    return f"{bu}/{encoded}"
+
+
 def _generate_sticker_preview_webp(png_path: Path, webp_out: Path, max_edge: int) -> bool:
     """Write a small RGBA WebP preview next to the source PNG. Returns True on success."""
     if Image is None:
@@ -1917,7 +1924,6 @@ def generate_sticker_store_manifest(
     for cat_id, cat_name, pngs, cat_dir in scanned:
         _, folder_fd = _folder_display_base_and_premium_default(cat_dir.name)
         stickers = []
-        seg = quote(cat_dir.name, safe="/")
         bu = base_url.rstrip("/") if base_url else None
         for p in pngs:
             if _is_reserved_sticker_pack_asset_png(p):
@@ -1945,7 +1951,7 @@ def generate_sticker_store_manifest(
             }
             # Always publish the CDN path when base_url is set (WebPs may be deployed without git commit).
             if bu:
-                row["previewWebpUrl"] = f"{bu}/Stickers/{seg}/{preview_webp_name}"
+                row["previewWebpUrl"] = _ota_asset_public_url(bu, "Stickers", cat_dir.name, preview_webp_name)
             stickers.append(row)
         # Optional store art: explicit nulls so editors can paste GitHub raw URLs later without reshaping JSON.
         cat_entry: dict = {
@@ -1959,16 +1965,15 @@ def generate_sticker_store_manifest(
         }
         if base_url:
             bu = base_url.rstrip("/")
-            seg = quote(cat_dir.name, safe="/")
             for fname in ("banner.png", "banner.jpg", "Banner.png"):
                 banner_path = cat_dir / fname
                 if banner_path.is_file():
-                    cat_entry["bannerImageUrl"] = f"{bu}/Stickers/{seg}/{fname}"
+                    cat_entry["bannerImageUrl"] = _ota_asset_public_url(bu, "Stickers", cat_dir.name, fname)
                     break
             for fname in ("promo_header.png", "promo_header.jpg", "promo.jpg"):
                 promo_path = cat_dir / fname
                 if promo_path.is_file():
-                    cat_entry["promoHeaderUrl"] = f"{bu}/Stickers/{seg}/{fname}"
+                    cat_entry["promoHeaderUrl"] = _ota_asset_public_url(bu, "Stickers", cat_dir.name, fname)
                     break
         categories.append(cat_entry)
 
