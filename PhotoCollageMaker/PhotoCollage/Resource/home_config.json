@@ -1,5 +1,5 @@
 {
-  "version": "2.9",
+  "version": "3.0",
   "sections": [
     {
       "id": "slideshow",
@@ -14,13 +14,6 @@
       "subtitle": "Pick a style and start",
       "display_size": "medium",
       "category": "tools_grid"
-    },
-    {
-      "id": "template_store",
-      "title": "Template Store",
-      "subtitle": "Browse curated templates",
-      "display_size": "medium",
-      "category": "template_store_row"
     },
     {
       "id": "trending_layouts",
