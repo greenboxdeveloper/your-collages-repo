@@ -2670,13 +2670,6 @@ _HOME_FIXED_PREFIX: list[dict] = [
         "category": "tools_grid",
     },
     {
-        "id": "template_store",
-        "title": "Template Store",
-        "subtitle": "Browse curated templates",
-        "display_size": "medium",
-        "category": "template_store_row",
-    },
-    {
         "id": "trending_layouts",
         "title": "Trending Layouts",
         "subtitle": "",
