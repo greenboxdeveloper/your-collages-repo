@@ -1,5 +1,5 @@
 {
-  "version": "2.8",
+  "version": "2.9",
   "categories": [
     {
       "id": "animal_pack_01",
@@ -13,7 +13,7 @@
           "isPremium": false,
           "source": "ota",
           "fileName": "Asset 10@4x",
-          "previewWebpUrl": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/Stickers/Animal%20Pack%2001/Asset 10@4x_preview.webp"
+          "previewWebpUrl": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/Stickers/Animal%20Pack%2001/Asset%2010%404x_preview.webp"
         },
         {
           "id": "animal_pack_01__asset_11_4x",
@@ -21,7 +21,7 @@
           "isPremium": false,
           "source": "ota",
           "fileName": "Asset 11@4x",
-          "previewWebpUrl": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/Stickers/Animal%20Pack%2001/Asset 11@4x_preview.webp"
+          "previewWebpUrl": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/Stickers/Animal%20Pack%2001/Asset%2011%404x_preview.webp"
         },
         {
           "id": "animal_pack_01__asset_12_4x",
@@ -29,7 +29,7 @@
           "isPremium": false,
           "source": "ota",
           "fileName": "Asset 12@4x",
-          "previewWebpUrl": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/Stickers/Animal%20Pack%2001/Asset 12@4x_preview.webp"
+          "previewWebpUrl": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/Stickers/Animal%20Pack%2001/Asset%2012%404x_preview.webp"
         },
         {
           "id": "animal_pack_01__asset_13_4x",
@@ -37,7 +37,7 @@
           "isPremium": false,
           "source": "ota",
           "fileName": "Asset 13@4x",
-          "previewWebpUrl": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/Stickers/Animal%20Pack%2001/Asset 13@4x_preview.webp"
+          "previewWebpUrl": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/Stickers/Animal%20Pack%2001/Asset%2013%404x_preview.webp"
         },
         {
           "id": "animal_pack_01__asset_14_4x",
@@ -45,7 +45,7 @@
           "isPremium": false,
           "source": "ota",
           "fileName": "Asset 14@4x",
-          "previewWebpUrl": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/Stickers/Animal%20Pack%2001/Asset 14@4x_preview.webp"
+          "previewWebpUrl": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/Stickers/Animal%20Pack%2001/Asset%2014%404x_preview.webp"
         },
         {
           "id": "animal_pack_01__asset_15_4x",
@@ -53,7 +53,7 @@
           "isPremium": false,
           "source": "ota",
           "fileName": "Asset 15@4x",
-          "previewWebpUrl": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/Stickers/Animal%20Pack%2001/Asset 15@4x_preview.webp"
+          "previewWebpUrl": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/Stickers/Animal%20Pack%2001/Asset%2015%404x_preview.webp"
         },
         {
           "id": "animal_pack_01__asset_16_4x",
@@ -61,7 +61,7 @@
           "isPremium": false,
           "source": "ota",
           "fileName": "Asset 16@4x",
-          "previewWebpUrl": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/Stickers/Animal%20Pack%2001/Asset 16@4x_preview.webp"
+          "previewWebpUrl": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/Stickers/Animal%20Pack%2001/Asset%2016%404x_preview.webp"
         },
         {
           "id": "animal_pack_01__asset_17_4x",
@@ -69,7 +69,7 @@
           "isPremium": false,
           "source": "ota",
           "fileName": "Asset 17@4x",
-          "previewWebpUrl": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/Stickers/Animal%20Pack%2001/Asset 17@4x_preview.webp"
+          "previewWebpUrl": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/Stickers/Animal%20Pack%2001/Asset%2017%404x_preview.webp"
         },
         {
           "id": "animal_pack_01__asset_18_4x",
@@ -77,7 +77,7 @@
           "isPremium": false,
           "source": "ota",
           "fileName": "Asset 18@4x",
-          "previewWebpUrl": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/Stickers/Animal%20Pack%2001/Asset 18@4x_preview.webp"
+          "previewWebpUrl": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/Stickers/Animal%20Pack%2001/Asset%2018%404x_preview.webp"
         },
         {
           "id": "animal_pack_01__asset_1_4x",
@@ -85,7 +85,7 @@
           "isPremium": false,
           "source": "ota",
           "fileName": "Asset 1@4x",
-          "previewWebpUrl": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/Stickers/Animal%20Pack%2001/Asset 1@4x_preview.webp"
+          "previewWebpUrl": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/Stickers/Animal%20Pack%2001/Asset%201%404x_preview.webp"
         },
         {
           "id": "animal_pack_01__asset_2_4x",
@@ -93,7 +93,7 @@
           "isPremium": false,
           "source": "ota",
           "fileName": "Asset 2@4x",
-          "previewWebpUrl": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/Stickers/Animal%20Pack%2001/Asset 2@4x_preview.webp"
+          "previewWebpUrl": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/Stickers/Animal%20Pack%2001/Asset%202%404x_preview.webp"
         },
         {
           "id": "animal_pack_01__asset_3_4x",
@@ -101,7 +101,7 @@
           "isPremium": false,
           "source": "ota",
           "fileName": "Asset 3@4x",
-          "previewWebpUrl": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/Stickers/Animal%20Pack%2001/Asset 3@4x_preview.webp"
+          "previewWebpUrl": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/Stickers/Animal%20Pack%2001/Asset%203%404x_preview.webp"
         },
         {
           "id": "animal_pack_01__asset_4_4x",
@@ -109,7 +109,7 @@
           "isPremium": false,
           "source": "ota",
           "fileName": "Asset 4@4x",
-          "previewWebpUrl": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/Stickers/Animal%20Pack%2001/Asset 4@4x_preview.webp"
+          "previewWebpUrl": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/Stickers/Animal%20Pack%2001/Asset%204%404x_preview.webp"
         },
         {
           "id": "animal_pack_01__asset_5_4x",
@@ -117,7 +117,7 @@
           "isPremium": false,
           "source": "ota",
           "fileName": "Asset 5@4x",
-          "previewWebpUrl": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/Stickers/Animal%20Pack%2001/Asset 5@4x_preview.webp"
+          "previewWebpUrl": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/Stickers/Animal%20Pack%2001/Asset%205%404x_preview.webp"
         },
         {
           "id": "animal_pack_01__asset_6_4x",
@@ -125,7 +125,7 @@
           "isPremium": false,
           "source": "ota",
           "fileName": "Asset 6@4x",
-          "previewWebpUrl": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/Stickers/Animal%20Pack%2001/Asset 6@4x_preview.webp"
+          "previewWebpUrl": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/Stickers/Animal%20Pack%2001/Asset%206%404x_preview.webp"
         },
         {
           "id": "animal_pack_01__asset_7_4x",
@@ -133,7 +133,7 @@
           "isPremium": false,
           "source": "ota",
           "fileName": "Asset 7@4x",
-          "previewWebpUrl": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/Stickers/Animal%20Pack%2001/Asset 7@4x_preview.webp"
+          "previewWebpUrl": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/Stickers/Animal%20Pack%2001/Asset%207%404x_preview.webp"
         },
         {
           "id": "animal_pack_01__asset_8_4x",
@@ -141,7 +141,7 @@
           "isPremium": false,
           "source": "ota",
           "fileName": "Asset 8@4x",
-          "previewWebpUrl": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/Stickers/Animal%20Pack%2001/Asset 8@4x_preview.webp"
+          "previewWebpUrl": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/Stickers/Animal%20Pack%2001/Asset%208%404x_preview.webp"
         },
         {
           "id": "animal_pack_01__asset_9_4x",
@@ -149,7 +149,7 @@
           "isPremium": false,
           "source": "ota",
           "fileName": "Asset 9@4x",
-          "previewWebpUrl": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/Stickers/Animal%20Pack%2001/Asset 9@4x_preview.webp"
+          "previewWebpUrl": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/Stickers/Animal%20Pack%2001/Asset%209%404x_preview.webp"
         }
       ],
       "bannerImageUrl": null,
@@ -4871,7 +4871,7 @@
           "isPremium": true,
           "source": "ota",
           "fileName": "Frame Basic",
-          "previewWebpUrl": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/Stickers/Photo%20Frame_PR/Frame Basic_preview.webp"
+          "previewWebpUrl": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/Stickers/Photo%20Frame_PR/Frame%20Basic_preview.webp"
         },
         {
           "id": "photo_frame_pr__tape",
@@ -5711,7 +5711,7 @@
           "isPremium": true,
           "source": "ota",
           "fileName": "Face Mask_Tiger_01",
-          "previewWebpUrl": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/Stickers/Tiger%20Pack%2001_PR/Face Mask_Tiger_01_preview.webp"
+          "previewWebpUrl": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/Stickers/Tiger%20Pack%2001_PR/Face%20Mask_Tiger_01_preview.webp"
         },
         {
           "id": "tiger_pack_01_pr__face_mask_tiger_02",
@@ -5719,7 +5719,7 @@
           "isPremium": true,
           "source": "ota",
           "fileName": "Face Mask_Tiger_02",
-          "previewWebpUrl": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/Stickers/Tiger%20Pack%2001_PR/Face Mask_Tiger_02_preview.webp"
+          "previewWebpUrl": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/Stickers/Tiger%20Pack%2001_PR/Face%20Mask_Tiger_02_preview.webp"
         },
         {
           "id": "tiger_pack_01_pr__face_mask_tiger_03",
@@ -5727,7 +5727,7 @@
           "isPremium": true,
           "source": "ota",
           "fileName": "Face Mask_Tiger_03",
-          "previewWebpUrl": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/Stickers/Tiger%20Pack%2001_PR/Face Mask_Tiger_03_preview.webp"
+          "previewWebpUrl": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/Stickers/Tiger%20Pack%2001_PR/Face%20Mask_Tiger_03_preview.webp"
         }
       ],
       "bannerImageUrl": null,
