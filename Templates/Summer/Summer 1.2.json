@@ -1,0 +1,201 @@
+{
+  "chrome" : {
+    "background_color_rgba" : [
+      1,
+      1,
+      1,
+      1
+    ],
+    "background_hazy_blur_radius" : 48,
+    "border_color_rgba" : [
+      1,
+      1,
+      1,
+      1
+    ],
+    "border_corner_radius" : 0,
+    "border_width" : 20,
+    "canvas_aspect" : 0.8,
+    "canvas_ratio_preset" : "4:5",
+    "has_background_image" : true
+  },
+  "dependencies" : [
+    {
+      "id" : "Polaroid4.2_W",
+      "type" : "sticker"
+    },
+    {
+      "asset_ref" : "Summer3.9.png",
+      "id" : "summer_pack_01_pr__summer3_9",
+      "type" : "sticker",
+      "url" : "https:\/\/photocollagemaker.john4shine.workers.dev\/Stickers\/Summer%20Pack%2001_PR\/Summer3.9.png"
+    },
+    {
+      "asset_ref" : "Summer1.5.png",
+      "id" : "summer_pack_01_pr__summer1_5",
+      "type" : "sticker",
+      "url" : "https:\/\/photocollagemaker.john4shine.workers.dev\/Stickers\/Summer%20Pack%2001_PR\/Summer1.5.png"
+    }
+  ],
+  "editor" : {
+    "divider_positions" : {
+
+    },
+    "shared_vertex_positions" : {
+
+    }
+  },
+  "layout" : {
+    "category" : "TemplateBuilder",
+    "dividers" : [
+
+    ],
+    "id" : "template-builder-84009A88",
+    "isPremium" : false,
+    "name" : "Template builder",
+    "shared_vertices" : [
+
+    ],
+    "slots" : [
+
+    ],
+    "type" : "grid"
+  },
+  "stickers" : [
+    {
+      "hole_n_rect" : [
+        0.04748603351955307,
+        0.123046875,
+        0.9050279329608939,
+        0.63671875
+      ],
+      "id" : "E583CEC2-A642-4FBF-AC2E-DC91D19D1BD7",
+      "image_name" : "Polaroid4.2_W",
+      "is_transform_locked" : true,
+      "linked_canvas_photo_id" : "AC1FF64F-EF7F-4847-A129-4BFC002F1D4D",
+      "offset_height" : -9.333333333333513,
+      "offset_width" : 2.333333333333343,
+      "placement_kind" : "sticker",
+      "rotation_radians" : 0.001283182873123124,
+      "scale" : 3.1202562050617124,
+      "z_index" : 35
+    },
+    {
+      "id" : "AC1FF64F-EF7F-4847-A129-4BFC002F1D4D",
+      "inner_offset_height" : 0,
+      "inner_offset_width" : 0,
+      "inner_scale" : 1,
+      "offset_height" : -9.333333333333513,
+      "offset_width" : 2.333333333333343,
+      "parent_frame_sticker_id" : "E583CEC2-A642-4FBF-AC2E-DC91D19D1BD7",
+      "placement_kind" : "canvas_photo",
+      "rotation_radians" : 0.001283182873123124,
+      "scale" : 3.1202562050617124,
+      "z_index" : 35
+    },
+    {
+      "id" : "95BACFD6-316C-48B1-A9A7-EED8D9FD6B35",
+      "image_name" : "summer_pack_01_pr__summer3_9",
+      "offset_height" : -114.00000000000003,
+      "offset_width" : -125.66666666666666,
+      "placement_kind" : "sticker",
+      "rotation_radians" : -0.2071258625247521,
+      "scale" : 1.1658473698452494,
+      "z_index" : 248
+    },
+    {
+      "id" : "00B830ED-F082-4660-86E4-227EB387FE89",
+      "image_name" : "summer_pack_01_pr__summer1_5",
+      "offset_height" : 188.22751295066774,
+      "offset_width" : 132.66666666666663,
+      "placement_kind" : "sticker",
+      "rotation_radians" : -0.5628257513291136,
+      "scale" : 1.287555940617182,
+      "z_index" : 249
+    }
+  ],
+  "text_items" : [
+    {
+      "alignment" : "left",
+      "backgroundColorHex" : "#00000000",
+      "backgroundOpacity" : 1,
+      "cornerRadius" : 8,
+      "fontName" : "System",
+      "fontSize" : 11.781021535396576,
+      "id" : "29B8365F-ABC6-4E58-85E3-D32E7A6B020D",
+      "letterSpacing" : 0,
+      "lineSpacing" : 0,
+      "nPosition" : [
+        0.25041876046901174,
+        0.7867671691792296
+      ],
+      "outlineColorHex" : "#000000",
+      "outlineOpacity" : 0,
+      "outlineWidth" : 0.3,
+      "rotation" : 0,
+      "scale" : 1,
+      "shadowColorHex" : "#00000000",
+      "shadowRadius" : 0,
+      "text" : "10.5M likes",
+      "textCase" : "none",
+      "textColorHex" : "#000000",
+      "textOpacity" : 1,
+      "zIndex" : 37
+    },
+    {
+      "alignment" : "center",
+      "backgroundColorHex" : "#00000000",
+      "backgroundOpacity" : 1,
+      "cornerRadius" : 8,
+      "fontName" : "System",
+      "fontSize" : 15.284671068191528,
+      "id" : "69E3F7F8-9B88-463B-B382-C66999603CC4",
+      "letterSpacing" : 0,
+      "lineSpacing" : 0,
+      "nPosition" : [
+        0.2780569514237856,
+        0.838358458961474
+      ],
+      "outlineColorHex" : "#000000",
+      "outlineOpacity" : 1,
+      "outlineWidth" : 0.12528736889362335,
+      "rotation" : 0,
+      "scale" : 1,
+      "shadowColorHex" : "#00000000",
+      "shadowRadius" : 0,
+      "text" : "Sun & Sand",
+      "textCase" : "none",
+      "textColorHex" : "#000000",
+      "textOpacity" : 1,
+      "zIndex" : 48
+    },
+    {
+      "alignment" : "left",
+      "backgroundColorHex" : "#00000000",
+      "backgroundOpacity" : 1,
+      "cornerRadius" : 8,
+      "fontName" : "System",
+      "fontSize" : 14.934305906295776,
+      "id" : "51C9C333-71EC-45D2-BC71-D3E0C3742B45",
+      "letterSpacing" : 0,
+      "lineSpacing" : 0,
+      "nPosition" : [
+        0.438860971524288,
+        0.8731993299832497
+      ],
+      "outlineColorHex" : "#007AFF",
+      "outlineOpacity" : 0,
+      "outlineWidth" : 0.056321851909160614,
+      "rotation" : 0,
+      "scale" : 1,
+      "shadowColorHex" : "#00000000",
+      "shadowRadius" : 0,
+      "text" : "#Sun #Sand #Beach #Summer",
+      "textCase" : "none",
+      "textColorHex" : "#007AFF",
+      "textOpacity" : 1,
+      "zIndex" : 45
+    }
+  ],
+  "version" : "1"
+}
