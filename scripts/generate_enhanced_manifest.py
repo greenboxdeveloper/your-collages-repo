@@ -2603,16 +2603,33 @@ def generate_shape_store_manifest(shapes_dir: Path, output_path: Path, base_url:
     return 0
 
 
+_PNG_TEMPLATE_IMAGE_EXTS = (".png", ".jpg", ".jpeg")
+
+
+def _load_png_template_sidecar(image_path: Path) -> dict:
+    """Optional ``<stem>.cues.json`` next to the template image for color-cue detection."""
+    sidecar = image_path.with_name(f"{image_path.stem}.cues.json")
+    if not sidecar.is_file():
+        return {}
+    try:
+        with open(sidecar, encoding="utf-8") as f:
+            data = json.load(f)
+        return data if isinstance(data, dict) else {}
+    except (OSError, json.JSONDecodeError):
+        return {}
+
+
 def generate_png_template_manifest(
     templates_dir: Path,
     output_path: Path,
 ) -> int:
-    """Emit ``png_template_manifest.json`` from ``PNGTemplates/<Category>/*.png``.
+    """Emit ``png_template_manifest.json`` from ``PNGTemplates/<Category>/*.{png,jpg,jpeg}``.
 
     Rules:
-    - All PNG files in each category folder are included.
+    - PNG and JPEG templates are included (JPG defaults to color-cue detection in the app).
     - Folder name under ``PNGTemplates/`` is preserved as ``remoteFolderName`` (GitHub URL segment).
-    - Item ``holeCount`` is informational only and defaults to ``0`` (runtime hole detection is authoritative).
+    - Optional sidecar ``<stem>.cues.json``: ``detectionMode``, ``slotCues`` (hex/shape/tolerance).
+    - Item ``holeCount`` is informational only (runtime ``SlotRegionAnalyzer`` is authoritative).
     - Version is bumped only when categories/items actually change.
     """
     categories: list[dict] = []
@@ -2620,31 +2637,47 @@ def generate_png_template_manifest(
         templates_dir.mkdir(parents=True, exist_ok=True)
 
     for cat_dir in sorted([p for p in templates_dir.iterdir() if p.is_dir()], key=lambda p: p.name.lower()):
-        pngs = sorted(
-            [p for p in cat_dir.iterdir() if p.is_file() and p.suffix.lower() == ".png"],
+        images = sorted(
+            [
+                p for p in cat_dir.iterdir()
+                if p.is_file() and p.suffix.lower() in _PNG_TEMPLATE_IMAGE_EXTS
+            ],
             key=lambda p: p.name.lower(),
         )
-        if not pngs:
+        if not images:
             continue
 
         cat_id = _slugify(cat_dir.name)
         folder_base, folder_fd = _folder_display_base_and_premium_default(cat_dir.name)
         cat_name = _title_from_stem(folder_base)
         items: list[dict] = []
-        for p in pngs:
+        for p in images:
             stem = p.stem
             display_name, is_premium = _store_stem_to_name_and_premium(
                 stem, default_premium=False, folder_premium_default=folder_fd
             )
             clean_stem = _clean_stem_premium_suffix(stem)
             item_id = f"{cat_id}__{_slugify(clean_stem)}"
-            items.append({
+            ext = p.suffix.lower().lstrip(".")
+            file_ext = "jpg" if ext == "jpeg" else ext
+            sidecar = _load_png_template_sidecar(p)
+            entry: dict = {
                 "id": item_id,
                 "name": display_name,
                 "fileName": clean_stem,
                 "isPremium": is_premium,
                 "holeCount": 0,
-            })
+                "fileExtension": file_ext,
+            }
+            detection_mode = sidecar.get("detectionMode") or sidecar.get("detection_mode")
+            if isinstance(detection_mode, str) and detection_mode.strip():
+                entry["detectionMode"] = detection_mode.strip()
+            elif file_ext == "jpg":
+                entry["detectionMode"] = "colorCue"
+            slot_cues = sidecar.get("slotCues") or sidecar.get("slot_cues")
+            if isinstance(slot_cues, list) and slot_cues:
+                entry["slotCues"] = slot_cues
+            items.append(entry)
 
         if not items:
             continue
