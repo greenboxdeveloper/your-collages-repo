@@ -2672,11 +2672,12 @@ def generate_png_template_manifest(
             detection_mode = sidecar.get("detectionMode") or sidecar.get("detection_mode")
             if isinstance(detection_mode, str) and detection_mode.strip():
                 entry["detectionMode"] = detection_mode.strip()
-            elif file_ext == "jpg":
-                entry["detectionMode"] = "colorCue"
             slot_cues = sidecar.get("slotCues") or sidecar.get("slot_cues")
             if isinstance(slot_cues, list) and slot_cues:
                 entry["slotCues"] = slot_cues
+            grey_range = sidecar.get("greyRange") or sidecar.get("grey_range")
+            if isinstance(grey_range, dict) and grey_range:
+                entry["greyRange"] = grey_range
             items.append(entry)
 
         if not items:
