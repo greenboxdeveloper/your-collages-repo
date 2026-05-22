@@ -1,5 +1,5 @@
 {
-  "version": "1.3",
+  "version": "1.4",
   "categories": [
     {
       "id": "testtemplates",
@@ -12,14 +12,25 @@
           "name": "1Hole",
           "fileName": "1hole",
           "isPremium": false,
-          "holeCount": 0
+          "holeCount": 0,
+          "fileExtension": "png"
         },
         {
           "id": "testtemplates__2hole",
           "name": "2Hole",
           "fileName": "2hole",
           "isPremium": false,
-          "holeCount": 0
+          "holeCount": 0,
+          "fileExtension": "png"
+        },
+        {
+          "id": "testtemplates__color_cure_test",
+          "name": "Color Cure Test",
+          "fileName": "color-cure-test",
+          "isPremium": false,
+          "holeCount": 0,
+          "fileExtension": "jpg",
+          "detectionMode": "colorCue"
         }
       ]
     }
