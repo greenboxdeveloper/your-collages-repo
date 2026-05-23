@@ -1,5 +1,5 @@
 {
-  "version": "1.6",
+  "version": "1.7",
   "categories": [
     {
       "id": "testtemplates",
@@ -32,9 +32,9 @@
           "fileExtension": "jpg"
         },
         {
-          "id": "testtemplates__valentines",
-          "name": "Valentines",
-          "fileName": "valentines",
+          "id": "testtemplates__valentine",
+          "name": "Valentine",
+          "fileName": "valentine",
           "isPremium": false,
           "holeCount": 0,
           "fileExtension": "jpg"
