@@ -1,5 +1,5 @@
 {
-  "version": "1.7",
+  "version": "1.8",
   "categories": [
     {
       "id": "testtemplates",
@@ -16,6 +16,14 @@
           "fileExtension": "png"
         },
         {
+          "id": "testtemplates__2",
+          "name": "2",
+          "fileName": "2",
+          "isPremium": false,
+          "holeCount": 0,
+          "fileExtension": "jpg"
+        },
+        {
           "id": "testtemplates__2hole",
           "name": "2Hole",
           "fileName": "2hole",
@@ -27,14 +35,6 @@
           "id": "testtemplates__color_cure_test",
           "name": "Color Cure Test",
           "fileName": "color-cure-test",
-          "isPremium": false,
-          "holeCount": 0,
-          "fileExtension": "jpg"
-        },
-        {
-          "id": "testtemplates__valentine",
-          "name": "Valentine",
-          "fileName": "valentine",
           "isPremium": false,
           "holeCount": 0,
           "fileExtension": "jpg"
