@@ -1,5 +1,5 @@
 {
-  "version": "2.2",
+  "version": "2.3",
   "categories": [
     {
       "id": "candy_pack_01",
@@ -650,6 +650,33 @@
       "remoteFolderName": "Summer Pack 01",
       "backgrounds": [
         {
+          "id": "summer_pack_01__summer_1_10_jpg",
+          "name": "Summer 1.10",
+          "isPremium": false,
+          "kind": "image",
+          "source": "ota",
+          "colorHex": null,
+          "fileName": "Summer 1.10.JPG"
+        },
+        {
+          "id": "summer_pack_01__summer_1_11_jpg",
+          "name": "Summer 1.11",
+          "isPremium": false,
+          "kind": "image",
+          "source": "ota",
+          "colorHex": null,
+          "fileName": "Summer 1.11.jpg"
+        },
+        {
+          "id": "summer_pack_01__summer_1_12_jpg",
+          "name": "Summer 1.12",
+          "isPremium": false,
+          "kind": "image",
+          "source": "ota",
+          "colorHex": null,
+          "fileName": "Summer 1.12.jpg"
+        },
+        {
           "id": "summer_pack_01__summer_1_1_jpg",
           "name": "Summer 1.1",
           "isPremium": false,
@@ -666,6 +693,42 @@
           "source": "ota",
           "colorHex": null,
           "fileName": "Summer 1.2.JPG"
+        },
+        {
+          "id": "summer_pack_01__summer_1_3_jpg",
+          "name": "Summer 1.3",
+          "isPremium": false,
+          "kind": "image",
+          "source": "ota",
+          "colorHex": null,
+          "fileName": "Summer 1.3.jpg"
+        },
+        {
+          "id": "summer_pack_01__summer_1_4_jpg",
+          "name": "Summer 1.4",
+          "isPremium": false,
+          "kind": "image",
+          "source": "ota",
+          "colorHex": null,
+          "fileName": "Summer 1.4.jpg"
+        },
+        {
+          "id": "summer_pack_01__summer_1_5_jpg",
+          "name": "Summer 1.5",
+          "isPremium": false,
+          "kind": "image",
+          "source": "ota",
+          "colorHex": null,
+          "fileName": "Summer 1.5.jpg"
+        },
+        {
+          "id": "summer_pack_01__summer_1_9_jpg",
+          "name": "Summer 1.9",
+          "isPremium": false,
+          "kind": "image",
+          "source": "ota",
+          "colorHex": null,
+          "fileName": "Summer 1.9.JPG"
         }
       ]
     },
