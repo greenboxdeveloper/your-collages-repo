@@ -1,5 +1,5 @@
 {
-  "version": "1.8",
+  "version": "1.9",
   "categories": [
     {
       "id": "testtemplates",
@@ -27,6 +27,14 @@
           "id": "testtemplates__2hole",
           "name": "2Hole",
           "fileName": "2hole",
+          "isPremium": false,
+          "holeCount": 0,
+          "fileExtension": "png"
+        },
+        {
+          "id": "testtemplates__adventure",
+          "name": "Adventure",
+          "fileName": "adventure",
           "isPremium": false,
           "holeCount": 0,
           "fileExtension": "png"
