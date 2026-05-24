@@ -1,5 +1,5 @@
 {
-  "version": "2.1",
+  "version": "2.2",
   "categories": [
     {
       "id": "candy_pack_01",
@@ -641,6 +641,31 @@
           "source": "ota",
           "colorHex": null,
           "fileName": "Spring09_PR.jpg"
+        }
+      ]
+    },
+    {
+      "id": "summer_pack_01",
+      "name": "Summer Pack 01",
+      "remoteFolderName": "Summer Pack 01",
+      "backgrounds": [
+        {
+          "id": "summer_pack_01__summer_1_1_jpg",
+          "name": "Summer 1.1",
+          "isPremium": false,
+          "kind": "image",
+          "source": "ota",
+          "colorHex": null,
+          "fileName": "Summer 1.1.jpg"
+        },
+        {
+          "id": "summer_pack_01__summer_1_2_jpg",
+          "name": "Summer 1.2",
+          "isPremium": false,
+          "kind": "image",
+          "source": "ota",
+          "colorHex": null,
+          "fileName": "Summer 1.2.JPG"
         }
       ]
     },
