@@ -1,0 +1,255 @@
+{
+  "chrome" : {
+    "background_color_rgba" : [
+      1,
+      1,
+      1,
+      1
+    ],
+    "background_hazy_blur_radius" : 48,
+    "background_image_name" : "summer_pack_01__summer_1_1_jpg",
+    "border_color_rgba" : [
+      1,
+      1,
+      1,
+      1
+    ],
+    "border_corner_radius" : 0,
+    "border_width" : 20,
+    "canvas_aspect" : 0.8,
+    "canvas_ratio_preset" : "4:5",
+    "has_background_image" : true
+  },
+  "dependencies" : [
+    {
+      "asset_ref" : "Summer 1.1.jpg",
+      "id" : "summer_pack_01__summer_1_1_jpg",
+      "type" : "background",
+      "url" : "https:\/\/photocollagemaker.john4shine.workers.dev\/Backgrounds\/Summer%20Pack%2001\/Summer%201.1.jpg"
+    },
+    {
+      "id" : "Polaroid4.1_B",
+      "type" : "sticker"
+    },
+    {
+      "id" : "file:\/\/\/var\/mobile\/Containers\/Data\/Application\/42C95E1B-EADC-450F-9D13-88D70AC08D58\/Documents\/MyCollageProjects\/53D509F3-E981-4C28-A6B0-C3052280980C_overlays\/sticker_canvas_9C64143C-DD11-44D3-B841-BC03974FFB77.jpg",
+      "type" : "sticker"
+    },
+    {
+      "id" : "file:\/\/\/var\/mobile\/Containers\/Data\/Application\/42C95E1B-EADC-450F-9D13-88D70AC08D58\/Documents\/MyCollageProjects\/53D509F3-E981-4C28-A6B0-C3052280980C_overlays\/sticker_canvas_441A50FA-183F-4195-8AB0-4B11D6BCA4E5.jpg",
+      "type" : "sticker"
+    },
+    {
+      "asset_ref" : "Doodle_SocialMedia_14.png",
+      "id" : "doodles_socialmedia_pr__doodle_socialmedia_14",
+      "type" : "sticker",
+      "url" : "https:\/\/photocollagemaker.john4shine.workers.dev\/Stickers\/Doodles_SocialMedia_PR\/Doodle_SocialMedia_14.png"
+    },
+    {
+      "asset_ref" : "Doodle_Arrow_08.png",
+      "id" : "Doodle_Arrow_08.png",
+      "type" : "sticker",
+      "url" : "https:\/\/photocollagemaker.john4shine.workers.dev\/Stickers\/Doodle_Arrow\/Doodle_Arrow_08.png"
+    },
+    {
+      "asset_ref" : "Chrisye_PR.otf",
+      "id" : "Chrisye",
+      "type" : "font",
+      "url" : "https:\/\/photocollagemaker.john4shine.workers.dev\/Fonts\/English\/Chrisye_PR.otf"
+    }
+  ],
+  "editor" : {
+    "divider_positions" : {
+
+    },
+    "shared_vertex_positions" : {
+
+    }
+  },
+  "layout" : {
+    "category" : "TemplateBuilder",
+    "dividers" : [
+
+    ],
+    "id" : "template-builder-54716B6F",
+    "isPremium" : false,
+    "name" : "Template builder",
+    "shared_vertices" : [
+
+    ],
+    "slots" : [
+
+    ],
+    "type" : "grid"
+  },
+  "stickers" : [
+    {
+      "hole_n_rect" : [
+        0.06424581005586592,
+        0.044921875,
+        0.8715083798882681,
+        0.7109375
+      ],
+      "id" : "10E48B81-56E2-4E06-A1ED-3E80414CF0F0",
+      "image_name" : "Polaroid4.1_B",
+      "is_transform_locked" : true,
+      "linked_canvas_photo_id" : "9C64143C-DD11-44D3-B841-BC03974FFB77",
+      "offset_height" : -86.28668120404714,
+      "offset_width" : 82.93401017616645,
+      "placement_kind" : "sticker",
+      "rotation_radians" : -0.3549331511268621,
+      "scale" : 2.38002660086106,
+      "z_index" : 4591
+    },
+    {
+      "id" : "9C64143C-DD11-44D3-B841-BC03974FFB77",
+      "image_name" : "file:\/\/\/var\/mobile\/Containers\/Data\/Application\/42C95E1B-EADC-450F-9D13-88D70AC08D58\/Documents\/MyCollageProjects\/53D509F3-E981-4C28-A6B0-C3052280980C_overlays\/sticker_canvas_9C64143C-DD11-44D3-B841-BC03974FFB77.jpg",
+      "inner_offset_height" : 0,
+      "inner_offset_width" : 0,
+      "inner_scale" : 1,
+      "offset_height" : -86.28668120404714,
+      "offset_width" : 82.93401017616645,
+      "parent_frame_sticker_id" : "10E48B81-56E2-4E06-A1ED-3E80414CF0F0",
+      "placement_kind" : "canvas_photo",
+      "rotation_radians" : -0.3549331511268621,
+      "scale" : 2.38002660086106,
+      "z_index" : 4591
+    },
+    {
+      "hole_n_rect" : [
+        0.06424581005586592,
+        0.044921875,
+        0.8715083798882681,
+        0.7109375
+      ],
+      "id" : "85661B7B-BFFF-4E8F-B139-9F5DF3276612",
+      "image_name" : "Polaroid4.1_B",
+      "is_transform_locked" : true,
+      "linked_canvas_photo_id" : "441A50FA-183F-4195-8AB0-4B11D6BCA4E5",
+      "offset_height" : 102.31104794088887,
+      "offset_width" : -94.38049952449322,
+      "placement_kind" : "sticker",
+      "rotation_radians" : -0.352755319491578,
+      "scale" : 2.2913307939252703,
+      "z_index" : 4984
+    },
+    {
+      "id" : "441A50FA-183F-4195-8AB0-4B11D6BCA4E5",
+      "image_name" : "file:\/\/\/var\/mobile\/Containers\/Data\/Application\/42C95E1B-EADC-450F-9D13-88D70AC08D58\/Documents\/MyCollageProjects\/53D509F3-E981-4C28-A6B0-C3052280980C_overlays\/sticker_canvas_441A50FA-183F-4195-8AB0-4B11D6BCA4E5.jpg",
+      "inner_offset_height" : 0,
+      "inner_offset_width" : 0,
+      "inner_scale" : 1,
+      "offset_height" : 102.31104794088887,
+      "offset_width" : -94.38049952449322,
+      "parent_frame_sticker_id" : "85661B7B-BFFF-4E8F-B139-9F5DF3276612",
+      "placement_kind" : "canvas_photo",
+      "rotation_radians" : -0.352755319491578,
+      "scale" : 2.2913307939252703,
+      "z_index" : 4984
+    },
+    {
+      "id" : "ABA31CC9-3BF8-440D-9ABF-C5DFD63A6238",
+      "image_name" : "doodles_socialmedia_pr__doodle_socialmedia_14",
+      "offset_height" : 153.6666666666667,
+      "offset_width" : 150.33333333333331,
+      "placement_kind" : "sticker",
+      "rotation_radians" : -0.29886620634746175,
+      "scale" : 0.7027735136198988,
+      "z_index" : 5204
+    },
+    {
+      "id" : "D4E938BD-4B32-45A7-8C13-9FB5D35CB95A",
+      "image_name" : "Doodle_Arrow_08.png",
+      "offset_height" : -122.33333333333337,
+      "offset_width" : -118.66666666666666,
+      "placement_kind" : "sticker",
+      "rotation_radians" : -1.93543341950825,
+      "scale" : 1.1091238021407108,
+      "z_index" : 4812
+    }
+  ],
+  "text_items" : [
+    {
+      "alignment" : "center",
+      "backgroundColorHex" : "#00000000",
+      "backgroundOpacity" : 1,
+      "cornerRadius" : 8,
+      "fontName" : "Chrisye",
+      "fontSize" : 30,
+      "id" : "36502E62-BA56-4F99-89E8-A677C778FA03",
+      "letterSpacing" : 0,
+      "lineSpacing" : 0,
+      "nPosition" : [
+        0.7948997107970599,
+        0.5482724165959381
+      ],
+      "outlineColorHex" : "#000000",
+      "outlineOpacity" : 0,
+      "outlineWidth" : 0.3,
+      "rotation" : -21.095214635121085,
+      "scale" : 1.645973725633147,
+      "shadowColorHex" : "#00000000",
+      "shadowRadius" : 0,
+      "text" : "Summer",
+      "textCase" : "none",
+      "textColorHex" : "#FFFFFF",
+      "textOpacity" : 1,
+      "zIndex" : 4987
+    },
+    {
+      "alignment" : "center",
+      "backgroundColorHex" : "#00000000",
+      "backgroundOpacity" : 1,
+      "cornerRadius" : 8,
+      "fontName" : "Chrisye",
+      "fontSize" : 30,
+      "id" : "4AB1D6D8-9170-4024-8CAE-FF8962D2E3E7",
+      "letterSpacing" : 0,
+      "lineSpacing" : 0,
+      "nPosition" : [
+        0.3753303086170676,
+        0.9232803210566618
+      ],
+      "outlineColorHex" : "#000000",
+      "outlineOpacity" : 0,
+      "outlineWidth" : 0.3,
+      "rotation" : -20.001167300279086,
+      "scale" : 2.1945382072417923,
+      "shadowColorHex" : "#00000000",
+      "shadowRadius" : 0,
+      "text" : "BEST",
+      "textCase" : "none",
+      "textColorHex" : "#FFFFFF",
+      "textOpacity" : 1,
+      "zIndex" : 4986
+    },
+    {
+      "alignment" : "center",
+      "backgroundColorHex" : "#00000000",
+      "backgroundOpacity" : 1,
+      "cornerRadius" : 8,
+      "fontName" : "Chrisye",
+      "fontSize" : 30,
+      "id" : "F7616B87-9E5F-4CE8-B593-0D773C854A1A",
+      "letterSpacing" : 0,
+      "lineSpacing" : 0,
+      "nPosition" : [
+        0.8393057220867519,
+        0.6997211257359184
+      ],
+      "outlineColorHex" : "#000000",
+      "outlineOpacity" : 0,
+      "outlineWidth" : 0.3,
+      "rotation" : -20.263322246779698,
+      "scale" : 1.8001211308448448,
+      "shadowColorHex" : "#00000000",
+      "shadowRadius" : 0,
+      "text" : "ever",
+      "textCase" : "none",
+      "textColorHex" : "#000000",
+      "textOpacity" : 1,
+      "zIndex" : 4985
+    }
+  ],
+  "version" : "1"
+}
