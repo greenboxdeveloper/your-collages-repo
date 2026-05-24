@@ -1,0 +1,86 @@
+{
+  "chrome" : {
+    "background_color_rgba" : [
+      1,
+      1,
+      1,
+      1
+    ],
+    "background_hazy_blur_radius" : 2,
+    "background_hazy_polaroid_frame_id" : "4C34B535-07DF-4CDD-AF00-FFB7E5B8870C",
+    "border_color_rgba" : [
+      1,
+      1,
+      1,
+      1
+    ],
+    "border_corner_radius" : 0,
+    "border_width" : 20,
+    "canvas_aspect" : 0.5625,
+    "canvas_ratio_preset" : "9:16",
+    "has_background_image" : true
+  },
+  "dependencies" : [
+    {
+      "id" : "Polaroid4.2_W",
+      "type" : "sticker"
+    }
+  ],
+  "editor" : {
+    "divider_positions" : {
+
+    },
+    "shared_vertex_positions" : {
+
+    }
+  },
+  "layout" : {
+    "category" : "TemplateBuilder",
+    "dividers" : [
+
+    ],
+    "id" : "template-builder-10C091AD",
+    "isPremium" : false,
+    "name" : "Template builder",
+    "shared_vertices" : [
+
+    ],
+    "slots" : [
+
+    ],
+    "type" : "grid"
+  },
+  "stickers" : [
+    {
+      "hole_n_rect" : [
+        0.04748603351955307,
+        0.123046875,
+        0.9050279329608939,
+        0.63671875
+      ],
+      "id" : "4C34B535-07DF-4CDD-AF00-FFB7E5B8870C",
+      "image_name" : "Polaroid4.2_W",
+      "linked_canvas_photo_id" : "C541CA62-2B2A-41D4-AA57-941D86A9D240",
+      "offset_height" : -23.000000000000057,
+      "offset_width" : -0,
+      "placement_kind" : "sticker",
+      "rotation_radians" : -3.051884935757553e-16,
+      "scale" : 3.032992923970892,
+      "z_index" : 555
+    },
+    {
+      "id" : "C541CA62-2B2A-41D4-AA57-941D86A9D240",
+      "inner_offset_height" : 0,
+      "inner_offset_width" : 0,
+      "inner_scale" : 1,
+      "offset_height" : -23.000000000000057,
+      "offset_width" : -0,
+      "parent_frame_sticker_id" : "4C34B535-07DF-4CDD-AF00-FFB7E5B8870C",
+      "placement_kind" : "canvas_photo",
+      "rotation_radians" : -3.051884935757553e-16,
+      "scale" : 3.032992923970892,
+      "z_index" : 555
+    }
+  ],
+  "version" : "1"
+}
