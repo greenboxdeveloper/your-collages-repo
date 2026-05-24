@@ -1,6 +1,16 @@
 {
-  "version": "2.0",
+  "version": "2.1",
   "templates": [
+    {
+      "id": "hazy_test__hazy_test",
+      "title": "Hazy Test",
+      "category": "Hazy Test",
+      "category_folder": "Hazy Test",
+      "recipe": "Hazy Test.json",
+      "preview": "Hazy Test.jpg",
+      "is_premium": true,
+      "neutral_empty_slots": true
+    },
     {
       "id": "holiday__holiday",
       "title": "Holiday",
