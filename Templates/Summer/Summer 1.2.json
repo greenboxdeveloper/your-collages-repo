@@ -6,7 +6,8 @@
       1,
       1
     ],
-    "background_hazy_blur_radius" : 48,
+    "background_hazy_blur_radius" : 1,
+    "background_hazy_polaroid_frame_id" : "E583CEC2-A642-4FBF-AC2E-DC91D19D1BD7",
     "border_color_rgba" : [
       1,
       1,
