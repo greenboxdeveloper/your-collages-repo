@@ -1,0 +1,152 @@
+{
+  "chrome" : {
+    "background_color_rgba" : [
+      1,
+      1,
+      1,
+      1
+    ],
+    "background_hazy_blur_radius" : 4,
+    "background_hazy_polaroid_frame_id" : "E4AADAB4-3ED2-44C8-9FF3-C099A792BF3E",
+    "border_color_rgba" : [
+      1,
+      1,
+      1,
+      1
+    ],
+    "border_corner_radius" : 0,
+    "border_width" : 20,
+    "canvas_aspect" : 0.8,
+    "canvas_ratio_preset" : "4:5",
+    "has_background_image" : true
+  },
+  "dependencies" : [
+    {
+      "id" : "Polaroid1.2_W",
+      "type" : "sticker"
+    },
+    {
+      "id" : "file:\/\/\/var\/mobile\/Containers\/Data\/Application\/42C95E1B-EADC-450F-9D13-88D70AC08D58\/Documents\/MyCollageProjects\/531DAF32-6FF8-4887-8001-99967C938EFC_overlays\/sticker_canvas_6E6359E2-37A1-4185-8B41-6584475967A2.jpg",
+      "type" : "sticker"
+    },
+    {
+      "id" : "BradleyHandITCTT-Bold",
+      "type" : "font"
+    }
+  ],
+  "editor" : {
+    "divider_positions" : {
+
+    },
+    "shared_vertex_positions" : {
+
+    }
+  },
+  "layout" : {
+    "category" : "TemplateBuilder",
+    "dividers" : [
+
+    ],
+    "id" : "template-builder-ACD59C32",
+    "isPremium" : false,
+    "name" : "Template builder",
+    "shared_vertices" : [
+
+    ],
+    "slots" : [
+
+    ],
+    "type" : "grid"
+  },
+  "stickers" : [
+    {
+      "hole_n_rect" : [
+        0.10546875,
+        0.10546875,
+        0.7890625,
+        0.7890625
+      ],
+      "id" : "E4AADAB4-3ED2-44C8-9FF3-C099A792BF3E",
+      "image_name" : "Polaroid1.2_W",
+      "is_transform_locked" : true,
+      "linked_canvas_photo_id" : "6E6359E2-37A1-4185-8B41-6584475967A2",
+      "offset_height" : 0,
+      "offset_width" : 0,
+      "placement_kind" : "sticker",
+      "rotation_radians" : -0.1760370148042838,
+      "scale" : 2.3373165833987155,
+      "z_index" : 496
+    },
+    {
+      "id" : "6E6359E2-37A1-4185-8B41-6584475967A2",
+      "image_name" : "file:\/\/\/var\/mobile\/Containers\/Data\/Application\/42C95E1B-EADC-450F-9D13-88D70AC08D58\/Documents\/MyCollageProjects\/531DAF32-6FF8-4887-8001-99967C938EFC_overlays\/sticker_canvas_6E6359E2-37A1-4185-8B41-6584475967A2.jpg",
+      "inner_offset_height" : 0,
+      "inner_offset_width" : 0,
+      "inner_scale" : 1,
+      "offset_height" : 0,
+      "offset_width" : 0,
+      "parent_frame_sticker_id" : "E4AADAB4-3ED2-44C8-9FF3-C099A792BF3E",
+      "placement_kind" : "canvas_photo",
+      "rotation_radians" : -0.1760370148042838,
+      "scale" : 2.3373165833987155,
+      "z_index" : 496
+    }
+  ],
+  "text_items" : [
+    {
+      "alignment" : "center",
+      "backgroundColorHex" : "#00000000",
+      "backgroundOpacity" : 1,
+      "cornerRadius" : 8,
+      "fontName" : "BradleyHandITCTT-Bold",
+      "fontSize" : 30,
+      "id" : "C4B5682D-92CA-4E0D-9296-AE8406206010",
+      "letterSpacing" : 0,
+      "lineSpacing" : 0,
+      "nPosition" : [
+        0.4170576407506702,
+        0.11058981233243975
+      ],
+      "outlineColorHex" : "#000000",
+      "outlineOpacity" : 0,
+      "outlineWidth" : 0.3,
+      "rotation" : -10.710173229058853,
+      "scale" : 3.5018644836373527,
+      "shadowColorHex" : "#00000000",
+      "shadowRadius" : 0,
+      "text" : "Hello",
+      "textCase" : "none",
+      "textColorHex" : "#FFFFFF",
+      "textOpacity" : 1,
+      "zIndex" : 497
+    },
+    {
+      "alignment" : "center",
+      "backgroundColorHex" : "#00000000",
+      "backgroundOpacity" : 1,
+      "cornerRadius" : 8,
+      "fontName" : "BradleyHandITCTT-Bold",
+      "fontSize" : 30,
+      "id" : "A34216D7-D809-4221-B858-CCD73F4C65CF",
+      "letterSpacing" : 0,
+      "lineSpacing" : 0,
+      "nPosition" : [
+        0.578753351206434,
+        0.8679624664879356
+      ],
+      "outlineColorHex" : "#000000",
+      "outlineOpacity" : 0,
+      "outlineWidth" : 0.3,
+      "rotation" : -10.111386935974755,
+      "scale" : 2.4228062321170167,
+      "shadowColorHex" : "#00000000",
+      "shadowRadius" : 0,
+      "text" : "Summer",
+      "textCase" : "none",
+      "textColorHex" : "#FFFFFF",
+      "textOpacity" : 1,
+      "zIndex" : 498
+    }
+  ],
+  "version" : "1"
+}
