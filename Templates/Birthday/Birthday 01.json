@@ -1,0 +1,229 @@
+{
+  "chrome" : {
+    "background_color_rgba" : [
+      1,
+      1,
+      1,
+      1
+    ],
+    "background_hazy_blur_radius" : 48,
+    "border_color_rgba" : [
+      1,
+      1,
+      1,
+      1
+    ],
+    "border_corner_radius" : 0,
+    "border_width" : 20,
+    "canvas_aspect" : 0.5625,
+    "canvas_ratio_preset" : "9:16",
+    "has_background_image" : false
+  },
+  "dependencies" : [
+    {
+      "id" : "Polaroid 1",
+      "type" : "sticker"
+    },
+    {
+      "asset_ref" : "Sticker_Party_09.png",
+      "id" : "Sticker_Party_09.png",
+      "type" : "sticker",
+      "url" : "https:\/\/photocollagemaker.john4shine.workers.dev\/Stickers\/Party%20Pack%2001_PR\/Sticker_Party_09.png"
+    },
+    {
+      "asset_ref" : "Sticker_Party_22.png",
+      "id" : "Sticker_Party_22.png",
+      "type" : "sticker",
+      "url" : "https:\/\/photocollagemaker.john4shine.workers.dev\/Stickers\/Party%20Pack%2001_PR\/Sticker_Party_22.png"
+    },
+    {
+      "asset_ref" : "Sticker_Party_32.png",
+      "id" : "Sticker_Party_32.png",
+      "type" : "sticker",
+      "url" : "https:\/\/photocollagemaker.john4shine.workers.dev\/Stickers\/Party%20Pack%2001_PR\/Sticker_Party_32.png"
+    },
+    {
+      "id" : "Zapfino",
+      "type" : "font"
+    }
+  ],
+  "editor" : {
+    "divider_positions" : {
+
+    },
+    "shared_vertex_positions" : {
+
+    }
+  },
+  "layout" : {
+    "category" : "TemplateBuilder",
+    "dividers" : [
+
+    ],
+    "id" : "template-builder-8DF110E1",
+    "isPremium" : false,
+    "name" : "Template builder",
+    "shared_vertices" : [
+
+    ],
+    "slots" : [
+
+    ],
+    "type" : "grid"
+  },
+  "stickers" : [
+    {
+      "hole_n_rect" : [
+        0.06818181818181818,
+        0.0546875,
+        0.8535353535353536,
+        0.728515625
+      ],
+      "id" : "D82433E8-2882-44FE-98FD-E9C88D7681E7",
+      "image_name" : "Polaroid 1",
+      "is_transform_locked" : true,
+      "linked_canvas_photo_id" : "197E69AA-AC50-4426-B448-0B455D4C6015",
+      "offset_height" : -26.999999999999943,
+      "offset_width" : 0,
+      "placement_kind" : "sticker",
+      "rotation_radians" : 0,
+      "scale" : 1.4716851235567991,
+      "z_index" : 617
+    },
+    {
+      "id" : "197E69AA-AC50-4426-B448-0B455D4C6015",
+      "inner_offset_height" : -4.529954512657255,
+      "inner_offset_width" : -0.22649772563285353,
+      "inner_scale" : 1,
+      "offset_height" : -26.999999999999943,
+      "offset_width" : 0,
+      "parent_frame_sticker_id" : "D82433E8-2882-44FE-98FD-E9C88D7681E7",
+      "placement_kind" : "canvas_photo",
+      "rotation_radians" : 0,
+      "scale" : 1.4716851235567991,
+      "z_index" : 617
+    },
+    {
+      "hole_n_rect" : [
+        0.06818181818181818,
+        0.0546875,
+        0.8535353535353536,
+        0.728515625
+      ],
+      "id" : "0E8337E7-4FC3-42AB-90DA-83B92F3B24F3",
+      "image_name" : "Polaroid 1",
+      "is_transform_locked" : true,
+      "linked_canvas_photo_id" : "00E5C99F-1195-46F7-93EC-ED83A12800DA",
+      "offset_height" : 92.66666666666663,
+      "offset_width" : -78.7083395664988,
+      "placement_kind" : "sticker",
+      "rotation_radians" : -0.21536584452676052,
+      "scale" : 1.5993369549659202,
+      "z_index" : 620
+    },
+    {
+      "id" : "00E5C99F-1195-46F7-93EC-ED83A12800DA",
+      "inner_offset_height" : 0,
+      "inner_offset_width" : 0,
+      "inner_scale" : 1,
+      "offset_height" : 92.66666666666663,
+      "offset_width" : -78.7083395664988,
+      "parent_frame_sticker_id" : "0E8337E7-4FC3-42AB-90DA-83B92F3B24F3",
+      "placement_kind" : "canvas_photo",
+      "rotation_radians" : -0.21536584452676052,
+      "scale" : 1.5993369549659202,
+      "z_index" : 620
+    },
+    {
+      "hole_n_rect" : [
+        0.06818181818181818,
+        0.0546875,
+        0.8535353535353536,
+        0.728515625
+      ],
+      "id" : "C173FBE0-5327-4565-9DBF-C2A54E473968",
+      "image_name" : "Polaroid 1",
+      "is_transform_locked" : true,
+      "linked_canvas_photo_id" : "52C38539-ED72-4F71-80DF-CB865226884C",
+      "offset_height" : 97.33333333333331,
+      "offset_width" : 81.33333333333334,
+      "placement_kind" : "sticker",
+      "rotation_radians" : 0.15642799165375654,
+      "scale" : 1.380086965327062,
+      "z_index" : 614
+    },
+    {
+      "id" : "52C38539-ED72-4F71-80DF-CB865226884C",
+      "inner_offset_height" : -0.17128996033295607,
+      "inner_offset_width" : 25.89170178672125,
+      "inner_scale" : 1,
+      "offset_height" : 97.33333333333331,
+      "offset_width" : 81.33333333333334,
+      "parent_frame_sticker_id" : "C173FBE0-5327-4565-9DBF-C2A54E473968",
+      "placement_kind" : "canvas_photo",
+      "rotation_radians" : 0.15642799165375654,
+      "scale" : 1.380086965327062,
+      "z_index" : 614
+    },
+    {
+      "id" : "D6FC8DCD-8A88-4182-AEFC-34320B442E50",
+      "image_name" : "Sticker_Party_09.png",
+      "offset_height" : -114.33333333333331,
+      "offset_width" : -132.66666666666669,
+      "placement_kind" : "sticker",
+      "rotation_radians" : 0,
+      "scale" : 1,
+      "z_index" : 742
+    },
+    {
+      "id" : "C3E02D82-B4E7-4042-882A-A8F6536DD8FB",
+      "image_name" : "Sticker_Party_22.png",
+      "offset_height" : 229.33333333333331,
+      "offset_width" : 114.66666666666663,
+      "placement_kind" : "sticker",
+      "rotation_radians" : 0,
+      "scale" : 1,
+      "z_index" : 814
+    },
+    {
+      "id" : "78FC1BF5-A858-40B5-822B-95B27B3C28DA",
+      "image_name" : "Sticker_Party_32.png",
+      "offset_height" : -203,
+      "offset_width" : 78.66666666666669,
+      "placement_kind" : "sticker",
+      "rotation_radians" : 0.3481379602612375,
+      "scale" : 1.8467613931800222,
+      "z_index" : 870
+    }
+  ],
+  "text_items" : [
+    {
+      "alignment" : "center",
+      "backgroundColorHex" : "#00000000",
+      "backgroundOpacity" : 1,
+      "cornerRadius" : 8,
+      "fontName" : "Zapfino",
+      "fontSize" : 33.73722290992737,
+      "id" : "64FDF7EC-7847-4E0C-822A-33AC2FEA9243",
+      "letterSpacing" : -1.2162163108587265,
+      "lineSpacing" : 0,
+      "nPosition" : [
+        0.3706422018348624,
+        0.8942660550458715
+      ],
+      "outlineColorHex" : "#000000",
+      "outlineOpacity" : 1,
+      "outlineWidth" : 0,
+      "rotation" : 0,
+      "scale" : 0.6938471991076516,
+      "shadowColorHex" : "#00000000",
+      "shadowRadius" : 0,
+      "text" : "Birthday Girl",
+      "textCase" : "none",
+      "textColorHex" : "#E53A79FF",
+      "textOpacity" : 1,
+      "zIndex" : 998
+    }
+  ],
+  "version" : "1"
+}
