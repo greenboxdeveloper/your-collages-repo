@@ -1,6 +1,16 @@
 {
-  "version": "2.3",
+  "version": "2.4",
   "templates": [
+    {
+      "id": "birthday__birthday_01",
+      "title": "Birthday 01",
+      "category": "Birthday",
+      "category_folder": "Birthday",
+      "recipe": "Birthday 01.json",
+      "preview": "Birthday 01.jpg",
+      "is_premium": true,
+      "neutral_empty_slots": true
+    },
     {
       "id": "hazy_test__hazy_test",
       "title": "Hazy Test",

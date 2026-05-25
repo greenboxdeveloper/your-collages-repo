@@ -1,5 +1,5 @@
 {
-  "version": "5.2",
+  "version": "5.3",
   "sections": [
     {
       "id": "slideshow",
@@ -81,6 +81,15 @@
       "count": 12
     },
     {
+      "id": "templates_birthday",
+      "title": "Birthday",
+      "subtitle": "",
+      "display_size": "small",
+      "category": "templates",
+      "sub_category": "Birthday",
+      "count": 8
+    },
+    {
       "id": "templates_hazy_test",
       "title": "Hazy Test",
       "subtitle": "",
@@ -96,15 +105,6 @@
       "display_size": "small",
       "category": "templates",
       "sub_category": "Holiday",
-      "count": 8
-    },
-    {
-      "id": "templates_summer",
-      "title": "Summer",
-      "subtitle": "",
-      "display_size": "small",
-      "category": "templates",
-      "sub_category": "Summer",
       "count": 8
     },
     {
