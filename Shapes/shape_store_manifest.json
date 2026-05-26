@@ -1,5 +1,5 @@
 {
-  "version": "1.2",
+  "version": "1.3",
   "categories": [
     {
       "id": "starbrust",
@@ -12,7 +12,8 @@
           "isPremium": false,
           "source": "ota",
           "kindId": "asset_10shape",
-          "fileName": "Asset 10Shape.svg"
+          "fileName": "Asset 10Shape.svg",
+          "previewWebpUrl": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/Shapes/Starbrust/Asset%2010Shape_preview.webp"
         },
         {
           "id": "starbrust__asset_11shape",
@@ -20,7 +21,8 @@
           "isPremium": false,
           "source": "ota",
           "kindId": "asset_11shape",
-          "fileName": "Asset 11Shape.svg"
+          "fileName": "Asset 11Shape.svg",
+          "previewWebpUrl": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/Shapes/Starbrust/Asset%2011Shape_preview.webp"
         },
         {
           "id": "starbrust__asset_12shape",
@@ -28,7 +30,8 @@
           "isPremium": false,
           "source": "ota",
           "kindId": "asset_12shape",
-          "fileName": "Asset 12Shape.svg"
+          "fileName": "Asset 12Shape.svg",
+          "previewWebpUrl": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/Shapes/Starbrust/Asset%2012Shape_preview.webp"
         },
         {
           "id": "starbrust__asset_13shape",
@@ -36,7 +39,8 @@
           "isPremium": false,
           "source": "ota",
           "kindId": "asset_13shape",
-          "fileName": "Asset 13Shape.svg"
+          "fileName": "Asset 13Shape.svg",
+          "previewWebpUrl": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/Shapes/Starbrust/Asset%2013Shape_preview.webp"
         },
         {
           "id": "starbrust__asset_14shape",
@@ -44,7 +48,8 @@
           "isPremium": false,
           "source": "ota",
           "kindId": "asset_14shape",
-          "fileName": "Asset 14Shape.svg"
+          "fileName": "Asset 14Shape.svg",
+          "previewWebpUrl": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/Shapes/Starbrust/Asset%2014Shape_preview.webp"
         },
         {
           "id": "starbrust__asset_15shape",
@@ -52,7 +57,8 @@
           "isPremium": false,
           "source": "ota",
           "kindId": "asset_15shape",
-          "fileName": "Asset 15Shape.svg"
+          "fileName": "Asset 15Shape.svg",
+          "previewWebpUrl": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/Shapes/Starbrust/Asset%2015Shape_preview.webp"
         },
         {
           "id": "starbrust__asset_16shape",
@@ -60,7 +66,8 @@
           "isPremium": false,
           "source": "ota",
           "kindId": "asset_16shape",
-          "fileName": "Asset 16Shape.svg"
+          "fileName": "Asset 16Shape.svg",
+          "previewWebpUrl": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/Shapes/Starbrust/Asset%2016Shape_preview.webp"
         },
         {
           "id": "starbrust__asset_17shape",
@@ -68,7 +75,8 @@
           "isPremium": false,
           "source": "ota",
           "kindId": "asset_17shape",
-          "fileName": "Asset 17Shape.svg"
+          "fileName": "Asset 17Shape.svg",
+          "previewWebpUrl": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/Shapes/Starbrust/Asset%2017Shape_preview.webp"
         },
         {
           "id": "starbrust__asset_18shape",
@@ -76,7 +84,8 @@
           "isPremium": false,
           "source": "ota",
           "kindId": "asset_18shape",
-          "fileName": "Asset 18Shape.svg"
+          "fileName": "Asset 18Shape.svg",
+          "previewWebpUrl": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/Shapes/Starbrust/Asset%2018Shape_preview.webp"
         },
         {
           "id": "starbrust__asset_19shape",
@@ -84,7 +93,8 @@
           "isPremium": false,
           "source": "ota",
           "kindId": "asset_19shape",
-          "fileName": "Asset 19Shape.svg"
+          "fileName": "Asset 19Shape.svg",
+          "previewWebpUrl": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/Shapes/Starbrust/Asset%2019Shape_preview.webp"
         },
         {
           "id": "starbrust__asset_1shape",
@@ -92,7 +102,8 @@
           "isPremium": false,
           "source": "ota",
           "kindId": "asset_1shape",
-          "fileName": "Asset 1Shape.svg"
+          "fileName": "Asset 1Shape.svg",
+          "previewWebpUrl": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/Shapes/Starbrust/Asset%201Shape_preview.webp"
         },
         {
           "id": "starbrust__asset_20shape",
@@ -100,7 +111,8 @@
           "isPremium": false,
           "source": "ota",
           "kindId": "asset_20shape",
-          "fileName": "Asset 20Shape.svg"
+          "fileName": "Asset 20Shape.svg",
+          "previewWebpUrl": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/Shapes/Starbrust/Asset%2020Shape_preview.webp"
         },
         {
           "id": "starbrust__asset_21shape",
@@ -108,7 +120,8 @@
           "isPremium": false,
           "source": "ota",
           "kindId": "asset_21shape",
-          "fileName": "Asset 21Shape.svg"
+          "fileName": "Asset 21Shape.svg",
+          "previewWebpUrl": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/Shapes/Starbrust/Asset%2021Shape_preview.webp"
         },
         {
           "id": "starbrust__asset_22shape",
@@ -116,7 +129,8 @@
           "isPremium": false,
           "source": "ota",
           "kindId": "asset_22shape",
-          "fileName": "Asset 22Shape.svg"
+          "fileName": "Asset 22Shape.svg",
+          "previewWebpUrl": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/Shapes/Starbrust/Asset%2022Shape_preview.webp"
         },
         {
           "id": "starbrust__asset_23shape",
@@ -124,7 +138,8 @@
           "isPremium": false,
           "source": "ota",
           "kindId": "asset_23shape",
-          "fileName": "Asset 23Shape.svg"
+          "fileName": "Asset 23Shape.svg",
+          "previewWebpUrl": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/Shapes/Starbrust/Asset%2023Shape_preview.webp"
         },
         {
           "id": "starbrust__asset_24shape",
@@ -132,7 +147,8 @@
           "isPremium": false,
           "source": "ota",
           "kindId": "asset_24shape",
-          "fileName": "Asset 24Shape.svg"
+          "fileName": "Asset 24Shape.svg",
+          "previewWebpUrl": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/Shapes/Starbrust/Asset%2024Shape_preview.webp"
         },
         {
           "id": "starbrust__asset_25shape",
@@ -140,7 +156,8 @@
           "isPremium": false,
           "source": "ota",
           "kindId": "asset_25shape",
-          "fileName": "Asset 25Shape.svg"
+          "fileName": "Asset 25Shape.svg",
+          "previewWebpUrl": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/Shapes/Starbrust/Asset%2025Shape_preview.webp"
         },
         {
           "id": "starbrust__asset_26shape",
@@ -148,7 +165,8 @@
           "isPremium": false,
           "source": "ota",
           "kindId": "asset_26shape",
-          "fileName": "Asset 26Shape.svg"
+          "fileName": "Asset 26Shape.svg",
+          "previewWebpUrl": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/Shapes/Starbrust/Asset%2026Shape_preview.webp"
         },
         {
           "id": "starbrust__asset_27shape",
@@ -156,7 +174,8 @@
           "isPremium": false,
           "source": "ota",
           "kindId": "asset_27shape",
-          "fileName": "Asset 27Shape.svg"
+          "fileName": "Asset 27Shape.svg",
+          "previewWebpUrl": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/Shapes/Starbrust/Asset%2027Shape_preview.webp"
         },
         {
           "id": "starbrust__asset_28shape",
@@ -164,7 +183,8 @@
           "isPremium": false,
           "source": "ota",
           "kindId": "asset_28shape",
-          "fileName": "Asset 28Shape.svg"
+          "fileName": "Asset 28Shape.svg",
+          "previewWebpUrl": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/Shapes/Starbrust/Asset%2028Shape_preview.webp"
         },
         {
           "id": "starbrust__asset_29shape",
@@ -172,7 +192,8 @@
           "isPremium": false,
           "source": "ota",
           "kindId": "asset_29shape",
-          "fileName": "Asset 29Shape.svg"
+          "fileName": "Asset 29Shape.svg",
+          "previewWebpUrl": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/Shapes/Starbrust/Asset%2029Shape_preview.webp"
         },
         {
           "id": "starbrust__asset_2shape",
@@ -180,7 +201,8 @@
           "isPremium": false,
           "source": "ota",
           "kindId": "asset_2shape",
-          "fileName": "Asset 2Shape.svg"
+          "fileName": "Asset 2Shape.svg",
+          "previewWebpUrl": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/Shapes/Starbrust/Asset%202Shape_preview.webp"
         },
         {
           "id": "starbrust__asset_30shape",
@@ -188,7 +210,8 @@
           "isPremium": false,
           "source": "ota",
           "kindId": "asset_30shape",
-          "fileName": "Asset 30Shape.svg"
+          "fileName": "Asset 30Shape.svg",
+          "previewWebpUrl": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/Shapes/Starbrust/Asset%2030Shape_preview.webp"
         },
         {
           "id": "starbrust__asset_31shape",
@@ -196,7 +219,8 @@
           "isPremium": false,
           "source": "ota",
           "kindId": "asset_31shape",
-          "fileName": "Asset 31Shape.svg"
+          "fileName": "Asset 31Shape.svg",
+          "previewWebpUrl": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/Shapes/Starbrust/Asset%2031Shape_preview.webp"
         },
         {
           "id": "starbrust__asset_32shape",
@@ -204,7 +228,8 @@
           "isPremium": false,
           "source": "ota",
           "kindId": "asset_32shape",
-          "fileName": "Asset 32Shape.svg"
+          "fileName": "Asset 32Shape.svg",
+          "previewWebpUrl": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/Shapes/Starbrust/Asset%2032Shape_preview.webp"
         },
         {
           "id": "starbrust__asset_33shape",
@@ -212,7 +237,8 @@
           "isPremium": false,
           "source": "ota",
           "kindId": "asset_33shape",
-          "fileName": "Asset 33Shape.svg"
+          "fileName": "Asset 33Shape.svg",
+          "previewWebpUrl": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/Shapes/Starbrust/Asset%2033Shape_preview.webp"
         },
         {
           "id": "starbrust__asset_34shape",
@@ -220,7 +246,8 @@
           "isPremium": false,
           "source": "ota",
           "kindId": "asset_34shape",
-          "fileName": "Asset 34Shape.svg"
+          "fileName": "Asset 34Shape.svg",
+          "previewWebpUrl": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/Shapes/Starbrust/Asset%2034Shape_preview.webp"
         },
         {
           "id": "starbrust__asset_35shape",
@@ -228,7 +255,8 @@
           "isPremium": false,
           "source": "ota",
           "kindId": "asset_35shape",
-          "fileName": "Asset 35Shape.svg"
+          "fileName": "Asset 35Shape.svg",
+          "previewWebpUrl": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/Shapes/Starbrust/Asset%2035Shape_preview.webp"
         },
         {
           "id": "starbrust__asset_36shape",
@@ -236,7 +264,8 @@
           "isPremium": false,
           "source": "ota",
           "kindId": "asset_36shape",
-          "fileName": "Asset 36Shape.svg"
+          "fileName": "Asset 36Shape.svg",
+          "previewWebpUrl": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/Shapes/Starbrust/Asset%2036Shape_preview.webp"
         },
         {
           "id": "starbrust__asset_37shape",
@@ -244,7 +273,8 @@
           "isPremium": false,
           "source": "ota",
           "kindId": "asset_37shape",
-          "fileName": "Asset 37Shape.svg"
+          "fileName": "Asset 37Shape.svg",
+          "previewWebpUrl": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/Shapes/Starbrust/Asset%2037Shape_preview.webp"
         },
         {
           "id": "starbrust__asset_38shape",
@@ -252,7 +282,8 @@
           "isPremium": false,
           "source": "ota",
           "kindId": "asset_38shape",
-          "fileName": "Asset 38Shape.svg"
+          "fileName": "Asset 38Shape.svg",
+          "previewWebpUrl": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/Shapes/Starbrust/Asset%2038Shape_preview.webp"
         },
         {
           "id": "starbrust__asset_39shape",
@@ -260,7 +291,8 @@
           "isPremium": false,
           "source": "ota",
           "kindId": "asset_39shape",
-          "fileName": "Asset 39Shape.svg"
+          "fileName": "Asset 39Shape.svg",
+          "previewWebpUrl": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/Shapes/Starbrust/Asset%2039Shape_preview.webp"
         },
         {
           "id": "starbrust__asset_3shape",
@@ -268,7 +300,8 @@
           "isPremium": false,
           "source": "ota",
           "kindId": "asset_3shape",
-          "fileName": "Asset 3Shape.svg"
+          "fileName": "Asset 3Shape.svg",
+          "previewWebpUrl": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/Shapes/Starbrust/Asset%203Shape_preview.webp"
         },
         {
           "id": "starbrust__asset_40shape",
@@ -276,7 +309,8 @@
           "isPremium": false,
           "source": "ota",
           "kindId": "asset_40shape",
-          "fileName": "Asset 40Shape.svg"
+          "fileName": "Asset 40Shape.svg",
+          "previewWebpUrl": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/Shapes/Starbrust/Asset%2040Shape_preview.webp"
         },
         {
           "id": "starbrust__asset_41shape",
@@ -284,7 +318,8 @@
           "isPremium": false,
           "source": "ota",
           "kindId": "asset_41shape",
-          "fileName": "Asset 41Shape.svg"
+          "fileName": "Asset 41Shape.svg",
+          "previewWebpUrl": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/Shapes/Starbrust/Asset%2041Shape_preview.webp"
         },
         {
           "id": "starbrust__asset_42shape",
@@ -292,7 +327,8 @@
           "isPremium": false,
           "source": "ota",
           "kindId": "asset_42shape",
-          "fileName": "Asset 42Shape.svg"
+          "fileName": "Asset 42Shape.svg",
+          "previewWebpUrl": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/Shapes/Starbrust/Asset%2042Shape_preview.webp"
         },
         {
           "id": "starbrust__asset_43shape",
@@ -300,7 +336,8 @@
           "isPremium": false,
           "source": "ota",
           "kindId": "asset_43shape",
-          "fileName": "Asset 43Shape.svg"
+          "fileName": "Asset 43Shape.svg",
+          "previewWebpUrl": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/Shapes/Starbrust/Asset%2043Shape_preview.webp"
         },
         {
           "id": "starbrust__asset_44shape",
@@ -308,7 +345,8 @@
           "isPremium": false,
           "source": "ota",
           "kindId": "asset_44shape",
-          "fileName": "Asset 44Shape.svg"
+          "fileName": "Asset 44Shape.svg",
+          "previewWebpUrl": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/Shapes/Starbrust/Asset%2044Shape_preview.webp"
         },
         {
           "id": "starbrust__asset_45shape",
@@ -316,7 +354,8 @@
           "isPremium": false,
           "source": "ota",
           "kindId": "asset_45shape",
-          "fileName": "Asset 45Shape.svg"
+          "fileName": "Asset 45Shape.svg",
+          "previewWebpUrl": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/Shapes/Starbrust/Asset%2045Shape_preview.webp"
         },
         {
           "id": "starbrust__asset_46shape",
@@ -324,7 +363,8 @@
           "isPremium": false,
           "source": "ota",
           "kindId": "asset_46shape",
-          "fileName": "Asset 46Shape.svg"
+          "fileName": "Asset 46Shape.svg",
+          "previewWebpUrl": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/Shapes/Starbrust/Asset%2046Shape_preview.webp"
         },
         {
           "id": "starbrust__asset_47shape",
@@ -332,7 +372,8 @@
           "isPremium": false,
           "source": "ota",
           "kindId": "asset_47shape",
-          "fileName": "Asset 47Shape.svg"
+          "fileName": "Asset 47Shape.svg",
+          "previewWebpUrl": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/Shapes/Starbrust/Asset%2047Shape_preview.webp"
         },
         {
           "id": "starbrust__asset_48shape",
@@ -340,7 +381,8 @@
           "isPremium": false,
           "source": "ota",
           "kindId": "asset_48shape",
-          "fileName": "Asset 48Shape.svg"
+          "fileName": "Asset 48Shape.svg",
+          "previewWebpUrl": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/Shapes/Starbrust/Asset%2048Shape_preview.webp"
         },
         {
           "id": "starbrust__asset_49shape",
@@ -348,7 +390,8 @@
           "isPremium": false,
           "source": "ota",
           "kindId": "asset_49shape",
-          "fileName": "Asset 49Shape.svg"
+          "fileName": "Asset 49Shape.svg",
+          "previewWebpUrl": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/Shapes/Starbrust/Asset%2049Shape_preview.webp"
         },
         {
           "id": "starbrust__asset_4shape",
@@ -356,7 +399,8 @@
           "isPremium": false,
           "source": "ota",
           "kindId": "asset_4shape",
-          "fileName": "Asset 4Shape.svg"
+          "fileName": "Asset 4Shape.svg",
+          "previewWebpUrl": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/Shapes/Starbrust/Asset%204Shape_preview.webp"
         },
         {
           "id": "starbrust__asset_50shape",
@@ -364,7 +408,8 @@
           "isPremium": false,
           "source": "ota",
           "kindId": "asset_50shape",
-          "fileName": "Asset 50Shape.svg"
+          "fileName": "Asset 50Shape.svg",
+          "previewWebpUrl": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/Shapes/Starbrust/Asset%2050Shape_preview.webp"
         },
         {
           "id": "starbrust__asset_51shape",
@@ -372,7 +417,8 @@
           "isPremium": false,
           "source": "ota",
           "kindId": "asset_51shape",
-          "fileName": "Asset 51Shape.svg"
+          "fileName": "Asset 51Shape.svg",
+          "previewWebpUrl": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/Shapes/Starbrust/Asset%2051Shape_preview.webp"
         },
         {
           "id": "starbrust__asset_52shape",
@@ -380,7 +426,8 @@
           "isPremium": false,
           "source": "ota",
           "kindId": "asset_52shape",
-          "fileName": "Asset 52Shape.svg"
+          "fileName": "Asset 52Shape.svg",
+          "previewWebpUrl": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/Shapes/Starbrust/Asset%2052Shape_preview.webp"
         },
         {
           "id": "starbrust__asset_53shape",
@@ -388,7 +435,8 @@
           "isPremium": false,
           "source": "ota",
           "kindId": "asset_53shape",
-          "fileName": "Asset 53Shape.svg"
+          "fileName": "Asset 53Shape.svg",
+          "previewWebpUrl": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/Shapes/Starbrust/Asset%2053Shape_preview.webp"
         },
         {
           "id": "starbrust__asset_54shape",
@@ -396,7 +444,8 @@
           "isPremium": false,
           "source": "ota",
           "kindId": "asset_54shape",
-          "fileName": "Asset 54Shape.svg"
+          "fileName": "Asset 54Shape.svg",
+          "previewWebpUrl": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/Shapes/Starbrust/Asset%2054Shape_preview.webp"
         },
         {
           "id": "starbrust__asset_55shape",
@@ -404,7 +453,8 @@
           "isPremium": false,
           "source": "ota",
           "kindId": "asset_55shape",
-          "fileName": "Asset 55Shape.svg"
+          "fileName": "Asset 55Shape.svg",
+          "previewWebpUrl": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/Shapes/Starbrust/Asset%2055Shape_preview.webp"
         },
         {
           "id": "starbrust__asset_56shape",
@@ -412,7 +462,8 @@
           "isPremium": false,
           "source": "ota",
           "kindId": "asset_56shape",
-          "fileName": "Asset 56Shape.svg"
+          "fileName": "Asset 56Shape.svg",
+          "previewWebpUrl": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/Shapes/Starbrust/Asset%2056Shape_preview.webp"
         },
         {
           "id": "starbrust__asset_57shape",
@@ -420,7 +471,8 @@
           "isPremium": false,
           "source": "ota",
           "kindId": "asset_57shape",
-          "fileName": "Asset 57Shape.svg"
+          "fileName": "Asset 57Shape.svg",
+          "previewWebpUrl": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/Shapes/Starbrust/Asset%2057Shape_preview.webp"
         },
         {
           "id": "starbrust__asset_58shape",
@@ -428,7 +480,8 @@
           "isPremium": false,
           "source": "ota",
           "kindId": "asset_58shape",
-          "fileName": "Asset 58Shape.svg"
+          "fileName": "Asset 58Shape.svg",
+          "previewWebpUrl": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/Shapes/Starbrust/Asset%2058Shape_preview.webp"
         },
         {
           "id": "starbrust__asset_59shape",
@@ -436,7 +489,8 @@
           "isPremium": false,
           "source": "ota",
           "kindId": "asset_59shape",
-          "fileName": "Asset 59Shape.svg"
+          "fileName": "Asset 59Shape.svg",
+          "previewWebpUrl": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/Shapes/Starbrust/Asset%2059Shape_preview.webp"
         },
         {
           "id": "starbrust__asset_5shape",
@@ -444,7 +498,8 @@
           "isPremium": false,
           "source": "ota",
           "kindId": "asset_5shape",
-          "fileName": "Asset 5Shape.svg"
+          "fileName": "Asset 5Shape.svg",
+          "previewWebpUrl": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/Shapes/Starbrust/Asset%205Shape_preview.webp"
         },
         {
           "id": "starbrust__asset_60shape",
@@ -452,7 +507,8 @@
           "isPremium": false,
           "source": "ota",
           "kindId": "asset_60shape",
-          "fileName": "Asset 60Shape.svg"
+          "fileName": "Asset 60Shape.svg",
+          "previewWebpUrl": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/Shapes/Starbrust/Asset%2060Shape_preview.webp"
         },
         {
           "id": "starbrust__asset_61shape",
@@ -460,7 +516,8 @@
           "isPremium": false,
           "source": "ota",
           "kindId": "asset_61shape",
-          "fileName": "Asset 61Shape.svg"
+          "fileName": "Asset 61Shape.svg",
+          "previewWebpUrl": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/Shapes/Starbrust/Asset%2061Shape_preview.webp"
         },
         {
           "id": "starbrust__asset_62shape",
@@ -468,7 +525,8 @@
           "isPremium": false,
           "source": "ota",
           "kindId": "asset_62shape",
-          "fileName": "Asset 62Shape.svg"
+          "fileName": "Asset 62Shape.svg",
+          "previewWebpUrl": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/Shapes/Starbrust/Asset%2062Shape_preview.webp"
         },
         {
           "id": "starbrust__asset_63shape",
@@ -476,7 +534,8 @@
           "isPremium": false,
           "source": "ota",
           "kindId": "asset_63shape",
-          "fileName": "Asset 63Shape.svg"
+          "fileName": "Asset 63Shape.svg",
+          "previewWebpUrl": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/Shapes/Starbrust/Asset%2063Shape_preview.webp"
         },
         {
           "id": "starbrust__asset_64shape",
@@ -484,7 +543,8 @@
           "isPremium": false,
           "source": "ota",
           "kindId": "asset_64shape",
-          "fileName": "Asset 64Shape.svg"
+          "fileName": "Asset 64Shape.svg",
+          "previewWebpUrl": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/Shapes/Starbrust/Asset%2064Shape_preview.webp"
         },
         {
           "id": "starbrust__asset_65shape",
@@ -492,15 +552,17 @@
           "isPremium": false,
           "source": "ota",
           "kindId": "asset_65shape",
-          "fileName": "Asset 65Shape.svg"
+          "fileName": "Asset 65Shape.svg",
+          "previewWebpUrl": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/Shapes/Starbrust/Asset%2065Shape_preview.webp"
         },
         {
-          "id": "starbrust__asset_66shape",
-          "name": "Asset 66Shape",
+          "id": "starbrust__asset_66shape1",
+          "name": "Asset 66Shape1",
           "isPremium": false,
           "source": "ota",
-          "kindId": "asset_66shape",
-          "fileName": "Asset 66Shape.svg"
+          "kindId": "asset_66shape1",
+          "fileName": "Asset 66Shape1.svg",
+          "previewWebpUrl": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/Shapes/Starbrust/Asset%2066Shape1_preview.webp"
         },
         {
           "id": "starbrust__asset_6shape",
@@ -508,7 +570,8 @@
           "isPremium": false,
           "source": "ota",
           "kindId": "asset_6shape",
-          "fileName": "Asset 6Shape.svg"
+          "fileName": "Asset 6Shape.svg",
+          "previewWebpUrl": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/Shapes/Starbrust/Asset%206Shape_preview.webp"
         },
         {
           "id": "starbrust__asset_7shape",
@@ -516,7 +579,8 @@
           "isPremium": false,
           "source": "ota",
           "kindId": "asset_7shape",
-          "fileName": "Asset 7Shape.svg"
+          "fileName": "Asset 7Shape.svg",
+          "previewWebpUrl": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/Shapes/Starbrust/Asset%207Shape_preview.webp"
         },
         {
           "id": "starbrust__asset_8shape",
@@ -524,7 +588,8 @@
           "isPremium": false,
           "source": "ota",
           "kindId": "asset_8shape",
-          "fileName": "Asset 8Shape.svg"
+          "fileName": "Asset 8Shape.svg",
+          "previewWebpUrl": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/Shapes/Starbrust/Asset%208Shape_preview.webp"
         },
         {
           "id": "starbrust__asset_9shape",
@@ -532,7 +597,8 @@
           "isPremium": false,
           "source": "ota",
           "kindId": "asset_9shape",
-          "fileName": "Asset 9Shape.svg"
+          "fileName": "Asset 9Shape.svg",
+          "previewWebpUrl": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/Shapes/Starbrust/Asset%209Shape_preview.webp"
         }
       ],
       "bannerImageUrl": null,
