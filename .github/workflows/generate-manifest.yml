@@ -50,7 +50,7 @@ jobs:
       #
       # Filter previews: requires Pillow + numpy in scripts/requirements.txt; stock images under Filters/StockImage/.
       # Generated JPGs live under Filters/<Category>/StorePreviews/<FilterId>/ — must be git-added below.
-      # Sticker/frame toolbar previews: {stem}_preview.webp beside each PNG under Stickers|Frames/<Pack>/ (parallel in script).
+      # Sticker/frame/shape toolbar previews: {stem}_preview.webp beside assets (parallel in script; shapes via cairosvg).
       # Cloudflare deploy (below) publishes WebPs even if you do not commit them locally; git add keeps CDN in sync.
       - name: Generate manifest and all store manifests
         env:
@@ -121,6 +121,7 @@ jobs:
             Backgrounds/background_store_manifest.json \
             Fonts/font_catalog.json \
             Shapes/shape_store_manifest.json \
+            Shapes/**/*_preview.webp \
             PNGTemplates/png_template_manifest.json \
             Templates/templates_index.json \
             HomeScreen/home_config.json \
