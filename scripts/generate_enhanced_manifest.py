@@ -1788,15 +1788,47 @@ def _scan_category_pngs(
 
 
 def generate_frame_store_manifest(
-    frames_dir: Path, output_path: Path, base_url: str | None = None
+    frames_dir: Path,
+    output_path: Path,
+    base_url: str | None = None,
+    *,
+    generate_preview_webp: bool = True,
+    preview_max_edge: int = 128,
+    preview_workers: int = 0,
 ) -> int:
     """Emit ``frame_manifest.json`` with optional ``bannerImageUrl`` / ``promoHeaderUrl`` / ``remoteFolderName``
     (same reserved assets pattern as stickers: ``banner.png``, ``promo_header.png`` are not frame items).
+
+    When ``generate_preview_webp`` is true, writes ``{clean_stem}_preview.webp`` beside each frame PNG
+    under ``<frames_dir>/<CategoryFolder>/``. With ``--base-url``, every OTA row gets ``previewWebpUrl``
+    pointing at that path on CDN (even if you skip local WebP generation).
     """
+    preview_max_edge = max(32, int(preview_max_edge))
+    frames_dir = frames_dir.resolve()
+    scanned = _scan_category_pngs(frames_dir)
+    frame_png_count = sum(
+        len([p for p in pngs if not _is_reserved_sticker_pack_asset_png(p)])
+        for _, _, pngs, _ in scanned
+    )
+    if frame_png_count == 0:
+        print(
+            f"[frame-manifest] WARNING: no frame PNGs under {frames_dir} "
+            f"(expected e.g. {frames_dir}/MyPack/foo.png)",
+            file=sys.stderr,
+        )
+    elif generate_preview_webp and Image is None:
+        print(
+            "[frame-manifest] WARNING: Pillow not installed — skipping WebP files "
+            "(pip install -r scripts/requirements.txt). Manifest previewWebpUrl still emitted if --base-url set.",
+            file=sys.stderr,
+        )
+
     categories = []
-    for cat_id, cat_name, pngs, cat_dir in _scan_category_pngs(frames_dir):
+    preview_jobs: list[tuple[str, str, int]] = []
+    for cat_id, cat_name, pngs, cat_dir in scanned:
         _, folder_fd = _folder_display_base_and_premium_default(cat_dir.name)
         frames = []
+        bu = base_url.rstrip("/") if base_url else None
         for p in pngs:
             if _is_reserved_sticker_pack_asset_png(p):
                 continue
@@ -1805,13 +1837,25 @@ def generate_frame_store_manifest(
             )
             clean_stem = _clean_stem_premium_suffix(p.stem)
             item_id = f"{cat_id}__{_slugify(clean_stem)}"
-            frames.append({
+            preview_webp_name = _ota_preview_webp_basename(clean_stem)
+            preview_webp_path = p.parent / preview_webp_name
+            if generate_preview_webp and Image is not None:
+                regen = (
+                    not preview_webp_path.is_file()
+                    or p.stat().st_mtime > preview_webp_path.stat().st_mtime
+                )
+                if regen:
+                    preview_jobs.append((str(p.resolve()), str(preview_webp_path.resolve()), preview_max_edge))
+            row: dict = {
                 "id": item_id,
                 "name": display_name,
                 "isPremium": is_premium,
                 "source": "ota",
                 "fileName": clean_stem,
-            })
+            }
+            if bu:
+                row["previewWebpUrl"] = _ota_asset_public_url(bu, "Frames", cat_dir.name, preview_webp_name)
+            frames.append(row)
         cat_entry: dict = {
             "id": cat_id,
             "name": cat_name,
@@ -1823,20 +1867,32 @@ def generate_frame_store_manifest(
         }
         if base_url:
             bu = base_url.rstrip("/")
-            seg = quote(cat_dir.name, safe="/")
             for fname in ("banner.png", "banner.jpg", "Banner.png"):
                 banner_path = cat_dir / fname
                 if banner_path.is_file():
-                    cat_entry["bannerImageUrl"] = f"{bu}/Frames/{seg}/{fname}"
+                    cat_entry["bannerImageUrl"] = _ota_asset_public_url(bu, "Frames", cat_dir.name, fname)
                     break
             for fname in ("promo_header.png", "promo_header.jpg", "promo.jpg"):
                 promo_path = cat_dir / fname
                 if promo_path.is_file():
-                    cat_entry["promoHeaderUrl"] = f"{bu}/Frames/{seg}/{fname}"
+                    cat_entry["promoHeaderUrl"] = _ota_asset_public_url(bu, "Frames", cat_dir.name, fname)
                     break
         categories.append(cat_entry)
+
+    preview_written = _run_ota_preview_webp_jobs(
+        preview_jobs,
+        preview_workers,
+        log_prefix="frame-manifest",
+        assets_root=frames_dir,
+    )
+
     version = _write_versioned_manifest(output_path, "categories", categories)
-    print(f"[frame-manifest] v{version} — {len(categories)} categories → {output_path}")
+    extra = ""
+    if generate_preview_webp:
+        extra = f", {preview_written}/{len(preview_jobs)} preview WebPs written"
+    elif base_url:
+        extra = ", previewWebpUrl URLs only (use --skip-frame-preview-webp or CI to generate files)"
+    print(f"[frame-manifest] v{version} — {len(categories)} categories, {frame_png_count} frames{extra} → {output_path}")
     return 0
 
 
@@ -1845,9 +1901,14 @@ def _is_reserved_sticker_pack_asset_png(path: Path) -> bool:
     return path.name.lower() in {"banner.png", "promo_header.png", "promo.png"}
 
 
-def _sticker_preview_webp_basename(clean_stem: str) -> str:
+def _ota_preview_webp_basename(clean_stem: str) -> str:
     """Lightweight toolbar preview beside ``{clean_stem}.png`` in the same category folder."""
     return f"{clean_stem}_preview.webp"
+
+
+def _sticker_preview_webp_basename(clean_stem: str) -> str:
+    """Alias for stickers; same naming as frames."""
+    return _ota_preview_webp_basename(clean_stem)
 
 
 def _ota_asset_public_url(base_url: str, *path_parts: str) -> str:
@@ -1857,7 +1918,7 @@ def _ota_asset_public_url(base_url: str, *path_parts: str) -> str:
     return f"{bu}/{encoded}"
 
 
-def _generate_sticker_preview_webp(png_path: Path, webp_out: Path, max_edge: int) -> bool:
+def _generate_ota_preview_webp(png_path: Path, webp_out: Path, max_edge: int) -> bool:
     """Write a small RGBA WebP preview next to the source PNG. Returns True on success."""
     if Image is None:
         return False
@@ -1870,14 +1931,51 @@ def _generate_sticker_preview_webp(png_path: Path, webp_out: Path, max_edge: int
         img.save(webp_out, format="WEBP", quality=80, method=4)
         return True
     except Exception as e:
-        print(f"[sticker-manifest] preview WebP failed for {png_path}: {e}", file=sys.stderr)
+        print(f"[ota-preview] WebP failed for {png_path}: {e}", file=sys.stderr)
         return False
 
 
-def _sticker_preview_webp_worker(job: tuple[str, str, int]) -> bool:
+def _ota_preview_webp_worker(job: tuple[str, str, int]) -> bool:
     """Process-pool worker: (png_path, webp_out, max_edge) as strings."""
     png_s, webp_s, max_edge = job
-    return _generate_sticker_preview_webp(Path(png_s), Path(webp_s), max_edge)
+    return _generate_ota_preview_webp(Path(png_s), Path(webp_s), max_edge)
+
+
+def _sticker_preview_webp_worker(job: tuple[str, str, int]) -> bool:
+    return _ota_preview_webp_worker(job)
+
+
+def _run_ota_preview_webp_jobs(
+    preview_jobs: list[tuple[str, str, int]],
+    preview_workers: int,
+    *,
+    log_prefix: str,
+    assets_root: Path,
+) -> int:
+    """Generate preview WebPs in parallel. Returns count written."""
+    if not preview_jobs:
+        return 0
+    workers = preview_workers if preview_workers > 0 else min(8, max(1, (os.cpu_count() or 4)))
+    print(
+        f"[{log_prefix}] writing {len(preview_jobs)} preview WebP(s) under {assets_root} "
+        f"({workers} workers)…",
+        flush=True,
+    )
+    preview_written = 0
+    if workers <= 1:
+        for job in preview_jobs:
+            if _ota_preview_webp_worker(job):
+                preview_written += 1
+    else:
+        with ProcessPoolExecutor(max_workers=workers) as pool:
+            futures = [pool.submit(_ota_preview_webp_worker, job) for job in preview_jobs]
+            for fut in as_completed(futures):
+                if fut.result():
+                    preview_written += 1
+    sample = Path(preview_jobs[0][1]) if preview_jobs else None
+    if sample is not None:
+        print(f"[{log_prefix}] example preview path: {sample}", flush=True)
+    return preview_written
 
 
 def generate_sticker_store_manifest(
@@ -1977,27 +2075,12 @@ def generate_sticker_store_manifest(
                     break
         categories.append(cat_entry)
 
-    preview_written = 0
-    if preview_jobs:
-        workers = preview_workers if preview_workers > 0 else min(8, max(1, (os.cpu_count() or 4)))
-        print(
-            f"[sticker-manifest] writing {len(preview_jobs)} preview WebP(s) under {stickers_dir} "
-            f"({workers} workers)…",
-            flush=True,
-        )
-        if workers <= 1:
-            for job in preview_jobs:
-                if _sticker_preview_webp_worker(job):
-                    preview_written += 1
-        else:
-            with ProcessPoolExecutor(max_workers=workers) as pool:
-                futures = [pool.submit(_sticker_preview_webp_worker, job) for job in preview_jobs]
-                for fut in as_completed(futures):
-                    if fut.result():
-                        preview_written += 1
-        sample = Path(preview_jobs[0][1]) if preview_jobs else None
-        if sample is not None:
-            print(f"[sticker-manifest] example preview path: {sample}", flush=True)
+    preview_written = _run_ota_preview_webp_jobs(
+        preview_jobs,
+        preview_workers,
+        log_prefix="sticker-manifest",
+        assets_root=stickers_dir,
+    )
 
     version = _write_versioned_manifest(output_path, "categories", categories)
     extra = ""
@@ -3578,6 +3661,26 @@ def _add_store_manifest_args(parser: argparse.ArgumentParser) -> None:
     )
     parser.add_argument("--frames-dir", default="Frames")
     parser.add_argument("--frames-output", default="Frames/frame_manifest.json")
+    parser.add_argument(
+        "--frame-preview-max-edge",
+        type=int,
+        default=128,
+        help="Max long edge for frame toolbar preview WebPs (default: 128).",
+    )
+    parser.add_argument(
+        "--skip-frame-preview-webp",
+        action="store_true",
+        help=(
+            "Only update frame_manifest.json (fast). Still emits previewWebpUrl when --base-url is set. "
+            "Generate WebP files in CI or run without this flag before Cloudflare deploy."
+        ),
+    )
+    parser.add_argument(
+        "--frame-preview-workers",
+        type=int,
+        default=0,
+        help="Parallel workers for frame WebP generation (0 = auto, default min(8, CPU count)).",
+    )
     parser.add_argument("--stickers-dir", default="Stickers")
     parser.add_argument("--stickers-output", default="Stickers/sticker_store_manifest.json")
     parser.add_argument(
@@ -3708,6 +3811,9 @@ def main_with_filter_support() -> int:
             repo_root / args.frames_dir,
             repo_root / args.frames_output,
             base_url=args.base_url,
+            generate_preview_webp=not args.skip_frame_preview_webp,
+            preview_max_edge=int(args.frame_preview_max_edge),
+            preview_workers=int(args.frame_preview_workers),
         )
         if result != 0:
             return result
