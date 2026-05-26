@@ -2676,9 +2676,16 @@ def generate_shape_store_manifest(
     if not shapes_dir.is_dir():
         shapes_dir.mkdir(parents=True, exist_ok=True)
     elif generate_preview_webp and (cairosvg is None or Image is None):
+        missing = []
+        if Image is None:
+            missing.append("Pillow (pip install Pillow)")
+        if cairosvg is None:
+            missing.append(
+                "cairosvg (pip install cairosvg plus system libs: libcairo2-dev libpango1.0-dev on Linux)"
+            )
         print(
-            "[shape-manifest] WARNING: cairosvg/Pillow not installed — skipping WebP previews "
-            "(pip install -r scripts/requirements.txt). previewWebpUrl still emitted if --base-url set.",
+            f"[shape-manifest] WARNING: {'; '.join(missing)} — skipping WebP previews. "
+            "previewWebpUrl still emitted if --base-url set.",
             file=sys.stderr,
         )
     for cat_dir in sorted(shapes_dir.iterdir()):
