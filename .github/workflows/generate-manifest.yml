@@ -53,8 +53,13 @@ jobs:
 
       - name: Install Python dependencies
         run: |
+          python -V
+          which python
           python -m pip install --upgrade pip
-          pip install -r scripts/requirements.txt
+          python -m pip install -r scripts/requirements.txt
+          # Belt-and-suspenders: shape WebP previews need cairosvg on the same interpreter as `python`.
+          python -m pip install 'cairosvg>=2.7.0'
+          python -m pip show Pillow cairosvg
 
       - name: Verify shape preview toolchain
         run: |
