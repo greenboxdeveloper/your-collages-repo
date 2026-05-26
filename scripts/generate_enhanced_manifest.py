@@ -1951,8 +1951,11 @@ def _run_ota_preview_webp_jobs(
     *,
     log_prefix: str,
     assets_root: Path,
+    worker_fn=None,
 ) -> int:
     """Generate preview WebPs in parallel. Returns count written."""
+    if worker_fn is None:
+        worker_fn = _ota_preview_webp_worker
     if not preview_jobs:
         return 0
     workers = preview_workers if preview_workers > 0 else min(8, max(1, (os.cpu_count() or 4)))
@@ -1964,11 +1967,11 @@ def _run_ota_preview_webp_jobs(
     preview_written = 0
     if workers <= 1:
         for job in preview_jobs:
-            if _ota_preview_webp_worker(job):
+            if worker_fn(job):
                 preview_written += 1
     else:
         with ProcessPoolExecutor(max_workers=workers) as pool:
-            futures = [pool.submit(_ota_preview_webp_worker, job) for job in preview_jobs]
+            futures = [pool.submit(worker_fn, job) for job in preview_jobs]
             for fut in as_completed(futures):
                 if fut.result():
                     preview_written += 1
@@ -2614,16 +2617,70 @@ def _is_reserved_shape_pack_asset(path: Path) -> bool:
     return path.name.lower() in {"banner.png", "promo_header.png", "promo.png"}
 
 
-def generate_shape_store_manifest(shapes_dir: Path, output_path: Path, base_url: str | None = None) -> int:
+def _is_shape_preview_webp_asset(path: Path) -> bool:
+    """``{stem}_preview.webp`` beside the SVG — not a catalog row."""
+    return path.suffix.lower() == ".webp" and path.stem.endswith("_preview")
+
+
+def _render_shape_svg_preview_webp(svg_path: Path, webp_out: Path, max_edge: int) -> bool:
+    """Rasterize one SVG to a small RGBA WebP for store / toolbar (requires cairosvg + Pillow)."""
+    if cairosvg is None or Image is None:
+        return False
+    try:
+        png_bytes = cairosvg.svg2png(url=str(svg_path.resolve()))
+        with Image.open(BytesIO(png_bytes)) as src:
+            img = src.convert("RGBA")
+        img = _cap_long_edge_pil(img, max_edge)
+        w, h = img.size
+        side = max(w, h, 1)
+        if w != h:
+            canvas = Image.new("RGBA", (side, side), (0, 0, 0, 0))
+            canvas.paste(img, ((side - w) // 2, (side - h) // 2))
+            img = canvas
+        webp_out.parent.mkdir(parents=True, exist_ok=True)
+        img.save(webp_out, format="WEBP", quality=80, method=4)
+        return True
+    except Exception as e:
+        print(f"[shape-manifest] SVG preview WebP failed for {svg_path}: {e}", file=sys.stderr)
+        return False
+
+
+def _shape_preview_webp_worker(job: tuple[str, str, int]) -> bool:
+    svg_s, webp_s, max_edge = job
+    return _render_shape_svg_preview_webp(Path(svg_s), Path(webp_s), max_edge)
+
+
+def generate_shape_store_manifest(
+    shapes_dir: Path,
+    output_path: Path,
+    base_url: str | None = None,
+    *,
+    generate_preview_webp: bool = True,
+    preview_max_edge: int = 128,
+    preview_workers: int = 0,
+) -> int:
     """Emit ``shape_store_manifest.json`` for SVG shape packs (same layout as stickers: category folders).
 
     Each category folder contains ``.svg`` files (single ``<path>`` or ``<polygon>`` recommended).
     ``banner.png`` / ``promo_header.png`` are store-only (omitted from ``shapes``). ``.eps`` files are skipped
     with a log line — convert to SVG for GitHub + the app.
+
+    When ``generate_preview_webp`` is true, writes ``{clean_stem}_preview.webp`` beside each SVG (cairosvg).
+    With ``--base-url``, every OTA row gets ``previewWebpUrl`` for lightweight CDN thumbnails.
     """
+    preview_max_edge = max(32, int(preview_max_edge))
+    shapes_dir = shapes_dir.resolve()
     categories = []
+    preview_jobs: list[tuple[str, str, int]] = []
+    shape_item_count = 0
     if not shapes_dir.is_dir():
         shapes_dir.mkdir(parents=True, exist_ok=True)
+    elif generate_preview_webp and (cairosvg is None or Image is None):
+        print(
+            "[shape-manifest] WARNING: cairosvg/Pillow not installed — skipping WebP previews "
+            "(pip install -r scripts/requirements.txt). previewWebpUrl still emitted if --base-url set.",
+            file=sys.stderr,
+        )
     for cat_dir in sorted(shapes_dir.iterdir()):
         if not cat_dir.is_dir():
             continue
@@ -2631,7 +2688,10 @@ def generate_shape_store_manifest(shapes_dir: Path, output_path: Path, base_url:
             [p for p in cat_dir.iterdir() if p.is_file() and not p.name.startswith(".")],
             key=lambda p: p.name.lower(),
         )
-        vector_files = [p for p in files if p.suffix in _SHAPE_VECTOR_EXTS]
+        vector_files = [
+            p for p in files
+            if p.suffix in _SHAPE_VECTOR_EXTS and not _is_shape_preview_webp_asset(p)
+        ]
         for p in files:
             if p.suffix in _SHAPE_SKIP_EXTS:
                 print(f"[shape-manifest] skip (convert to SVG): {p}")
@@ -2641,6 +2701,7 @@ def generate_shape_store_manifest(shapes_dir: Path, output_path: Path, base_url:
         folder_base, folder_fd = _folder_display_base_and_premium_default(cat_dir.name)
         cat_name = _title_from_stem(folder_base)
         shapes = []
+        bu = base_url.rstrip("/") if base_url else None
         for p in vector_files:
             if _is_reserved_shape_pack_asset(p):
                 continue
@@ -2649,14 +2710,27 @@ def generate_shape_store_manifest(shapes_dir: Path, output_path: Path, base_url:
             )
             clean_stem = _clean_stem_premium_suffix(p.stem)
             item_id = f"{cat_id}__{_slugify(clean_stem)}"
-            shapes.append({
+            preview_webp_name = _ota_preview_webp_basename(clean_stem)
+            preview_webp_path = p.parent / preview_webp_name
+            if generate_preview_webp and cairosvg is not None and Image is not None:
+                regen = (
+                    not preview_webp_path.is_file()
+                    or p.stat().st_mtime > preview_webp_path.stat().st_mtime
+                )
+                if regen:
+                    preview_jobs.append((str(p.resolve()), str(preview_webp_path.resolve()), preview_max_edge))
+            row: dict = {
                 "id": item_id,
                 "name": display_name,
                 "isPremium": is_premium,
                 "source": "ota",
                 "kindId": _slugify(clean_stem),
                 "fileName": p.name,
-            })
+            }
+            if bu:
+                row["previewWebpUrl"] = _ota_asset_public_url(bu, "Shapes", cat_dir.name, preview_webp_name)
+            shapes.append(row)
+            shape_item_count += 1
         if not shapes:
             continue
         cat_entry: dict = {
@@ -2669,20 +2743,33 @@ def generate_shape_store_manifest(shapes_dir: Path, output_path: Path, base_url:
         }
         if base_url:
             bu = base_url.rstrip("/")
-            seg = quote(cat_dir.name, safe="/")
             for fname in ("banner.png", "banner.jpg", "Banner.png"):
                 banner_path = cat_dir / fname
                 if banner_path.is_file():
-                    cat_entry["bannerImageUrl"] = f"{bu}/Shapes/{seg}/{fname}"
+                    cat_entry["bannerImageUrl"] = _ota_asset_public_url(bu, "Shapes", cat_dir.name, fname)
                     break
             for fname in ("promo_header.png", "promo_header.jpg", "promo.jpg"):
                 promo_path = cat_dir / fname
                 if promo_path.is_file():
-                    cat_entry["promoHeaderUrl"] = f"{bu}/Shapes/{seg}/{fname}"
+                    cat_entry["promoHeaderUrl"] = _ota_asset_public_url(bu, "Shapes", cat_dir.name, fname)
                     break
         categories.append(cat_entry)
+
+    preview_written = _run_ota_preview_webp_jobs(
+        preview_jobs,
+        preview_workers,
+        log_prefix="shape-manifest",
+        assets_root=shapes_dir,
+        worker_fn=_shape_preview_webp_worker,
+    )
+
     version = _write_versioned_manifest(output_path, "categories", categories)
-    print(f"[shape-manifest] v{version} — {len(categories)} categories → {output_path}")
+    extra = ""
+    if generate_preview_webp:
+        extra = f", {preview_written}/{len(preview_jobs)} preview WebPs written"
+    elif base_url:
+        extra = ", previewWebpUrl URLs only (use --skip-shape-preview-webp or CI to generate files)"
+    print(f"[shape-manifest] v{version} — {len(categories)} categories, {shape_item_count} shapes{extra} → {output_path}")
     return 0
 
 
@@ -3718,6 +3805,26 @@ def _add_store_manifest_args(parser: argparse.ArgumentParser) -> None:
     parser.add_argument("--shapes-dir", default="Shapes")
     parser.add_argument("--shapes-output", default="Shapes/shape_store_manifest.json")
     parser.add_argument(
+        "--shape-preview-max-edge",
+        type=int,
+        default=128,
+        help="Max long edge for shape toolbar/store preview WebPs rasterized from SVG (default: 128).",
+    )
+    parser.add_argument(
+        "--skip-shape-preview-webp",
+        action="store_true",
+        help=(
+            "Only update shape_store_manifest.json (fast). Still emits previewWebpUrl when --base-url is set. "
+            "Generate WebP files in CI or run without this flag before Cloudflare deploy."
+        ),
+    )
+    parser.add_argument(
+        "--shape-preview-workers",
+        type=int,
+        default=0,
+        help="Parallel workers for shape WebP generation (0 = auto, default min(8, CPU count)).",
+    )
+    parser.add_argument(
         "--generate-png-template-manifest",
         action="store_true",
         default=False,
@@ -3842,6 +3949,9 @@ def main_with_filter_support() -> int:
             repo_root / args.shapes_dir,
             repo_root / args.shapes_output,
             base_url=args.base_url,
+            generate_preview_webp=not args.skip_shape_preview_webp,
+            preview_max_edge=int(args.shape_preview_max_edge),
+            preview_workers=int(args.shape_preview_workers),
         )
         if result != 0:
             return result
