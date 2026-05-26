@@ -1,5 +1,5 @@
 {
-  "version": "1.5",
+  "version": "1.6",
   "categories": [
     {
       "id": "floral_pr",
@@ -12,63 +12,64 @@
           "name": "Floral1",
           "isPremium": true,
           "source": "ota",
-          "fileName": "floral1"
+          "fileName": "floral1",
+          "previewWebpUrl": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/Frames/Floral_PR/floral1_preview.webp"
         },
         {
           "id": "floral_pr__floral2",
           "name": "Floral2",
           "isPremium": true,
           "source": "ota",
-          "fileName": "floral2"
+          "fileName": "floral2",
+          "previewWebpUrl": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/Frames/Floral_PR/floral2_preview.webp"
         },
         {
           "id": "floral_pr__floral3",
           "name": "Floral3",
           "isPremium": true,
           "source": "ota",
-          "fileName": "floral3"
+          "fileName": "floral3",
+          "previewWebpUrl": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/Frames/Floral_PR/floral3_preview.webp"
         },
         {
           "id": "floral_pr__floral4",
           "name": "Floral4",
           "isPremium": true,
           "source": "ota",
-          "fileName": "floral4"
+          "fileName": "floral4",
+          "previewWebpUrl": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/Frames/Floral_PR/floral4_preview.webp"
         },
         {
           "id": "floral_pr__floral5",
           "name": "Floral5",
           "isPremium": true,
           "source": "ota",
-          "fileName": "floral5"
+          "fileName": "floral5",
+          "previewWebpUrl": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/Frames/Floral_PR/floral5_preview.webp"
         },
         {
           "id": "floral_pr__floral6",
           "name": "Floral6",
           "isPremium": true,
           "source": "ota",
-          "fileName": "floral6"
-        },
-        {
-          "id": "floral_pr__floral7",
-          "name": "Floral7",
-          "isPremium": true,
-          "source": "ota",
-          "fileName": "floral7"
+          "fileName": "floral6",
+          "previewWebpUrl": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/Frames/Floral_PR/floral6_preview.webp"
         },
         {
           "id": "floral_pr__floral8",
           "name": "Floral8",
           "isPremium": true,
           "source": "ota",
-          "fileName": "floral8"
+          "fileName": "floral8",
+          "previewWebpUrl": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/Frames/Floral_PR/floral8_preview.webp"
         },
         {
           "id": "floral_pr__floral9",
           "name": "Floral9",
           "isPremium": true,
           "source": "ota",
-          "fileName": "floral9"
+          "fileName": "floral9",
+          "previewWebpUrl": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/Frames/Floral_PR/floral9_preview.webp"
         }
       ],
       "bannerImageUrl": null,
@@ -85,35 +86,40 @@
           "name": "Asset 1Frame",
           "isPremium": false,
           "source": "ota",
-          "fileName": "Asset 1Frame"
+          "fileName": "Asset 1Frame",
+          "previewWebpUrl": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/Frames/Vintage%20Frame/Asset%201Frame_preview.webp"
         },
         {
           "id": "vintage_frame__asset_2frame",
           "name": "Asset 2Frame",
           "isPremium": false,
           "source": "ota",
-          "fileName": "Asset 2Frame"
+          "fileName": "Asset 2Frame",
+          "previewWebpUrl": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/Frames/Vintage%20Frame/Asset%202Frame_preview.webp"
         },
         {
           "id": "vintage_frame__asset_3frame",
           "name": "Asset 3Frame",
           "isPremium": false,
           "source": "ota",
-          "fileName": "Asset 3Frame"
+          "fileName": "Asset 3Frame",
+          "previewWebpUrl": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/Frames/Vintage%20Frame/Asset%203Frame_preview.webp"
         },
         {
           "id": "vintage_frame__asset_4frame",
           "name": "Asset 4Frame",
           "isPremium": false,
           "source": "ota",
-          "fileName": "Asset 4Frame"
+          "fileName": "Asset 4Frame",
+          "previewWebpUrl": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/Frames/Vintage%20Frame/Asset%204Frame_preview.webp"
         },
         {
           "id": "vintage_frame__asset_5frame",
           "name": "Asset 5Frame",
           "isPremium": false,
           "source": "ota",
-          "fileName": "Asset 5Frame"
+          "fileName": "Asset 5Frame",
+          "previewWebpUrl": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/Frames/Vintage%20Frame/Asset%205Frame_preview.webp"
         }
       ],
       "bannerImageUrl": null,
