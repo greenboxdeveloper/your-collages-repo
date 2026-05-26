@@ -40,10 +40,30 @@ jobs:
         with:
           python-version: "3.11"
 
-      - name: Install dependencies
+      # cairosvg needs native Cairo/Pango (pip alone is not enough on ubuntu-latest).
+      - name: Install system dependencies for cairosvg
         run: |
+          sudo apt-get update
+          sudo apt-get install -y --no-install-recommends \
+            libcairo2-dev \
+            libpango1.0-dev \
+            libgdk-pixbuf-2.0-dev \
+            libffi-dev \
+            shared-mime-info
+
+      - name: Install Python dependencies
+        run: |
+          python -V
+          which python
           python -m pip install --upgrade pip
-          pip install -r scripts/requirements.txt
+          python -m pip install -r scripts/requirements.txt
+          # Belt-and-suspenders: shape WebP previews need cairosvg on the same interpreter as `python`.
+          python -m pip install 'cairosvg>=2.7.0'
+          python -m pip show Pillow cairosvg
+
+      - name: Verify shape preview toolchain
+        run: |
+          python -c "from PIL import Image; import cairosvg; print('Pillow', Image.__version__); print('cairosvg', cairosvg.__version__)"
 
       # Script reads one SVG folder (--svg-dir). Repo paths above also watch svgs/**;
       # if your layouts live only under svgs/, set --svg-dir svgs (or symlink / duplicate into collages).
