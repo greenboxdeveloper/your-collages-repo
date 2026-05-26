@@ -1,5 +1,5 @@
 {
-  "version": "1.3",
+  "version": "1.4",
   "categories": [
     {
       "id": "starbrust",
@@ -556,13 +556,13 @@
           "previewWebpUrl": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/Shapes/Starbrust/Asset%2065Shape_preview.webp"
         },
         {
-          "id": "starbrust__asset_66shape1",
-          "name": "Asset 66Shape1",
+          "id": "starbrust__asset_66shape",
+          "name": "Asset 66Shape",
           "isPremium": false,
           "source": "ota",
-          "kindId": "asset_66shape1",
-          "fileName": "Asset 66Shape1.svg",
-          "previewWebpUrl": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/Shapes/Starbrust/Asset%2066Shape1_preview.webp"
+          "kindId": "asset_66shape",
+          "fileName": "Asset 66Shape.svg",
+          "previewWebpUrl": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/Shapes/Starbrust/Asset%2066Shape_preview.webp"
         },
         {
           "id": "starbrust__asset_6shape",
