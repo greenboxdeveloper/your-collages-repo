@@ -40,42 +40,22 @@ jobs:
         with:
           python-version: "3.11"
 
-      # cairosvg (shape *_preview.webp) needs libcairo at import/runtime — pip alone is not enough on Ubuntu.
-      - name: Install system libraries for cairosvg
+      - name: Install dependencies
         run: |
-          sudo apt-get update
-          sudo apt-get install -y --no-install-recommends \
-            libcairo2 \
-            libcairo2-dev \
-            libffi-dev \
-            pkg-config
-
-      - name: Install Python dependencies
-        run: |
-          set -euo pipefail
-          python --version
-          which python
           python -m pip install --upgrade pip
-          test -f scripts/requirements.txt
-          grep -qi '^cairosvg' scripts/requirements.txt
-          python -m pip install -r scripts/requirements.txt
-          # Ensure shape preview rasterizer is on the same interpreter as `python` below.
-          python -m pip install "cairosvg>=2.7.0"
-          python -m pip show Pillow cairosvg
-          python -c "from PIL import Image; import cairosvg; print('Pillow', Image.__version__, '| cairosvg', cairosvg.__version__)"
+          pip install -r scripts/requirements.txt
 
       # Script reads one SVG folder (--svg-dir). Repo paths above also watch svgs/**;
       # if your layouts live only under svgs/, set --svg-dir svgs (or symlink / duplicate into collages).
       #
       # Filter previews: requires Pillow + numpy in scripts/requirements.txt; stock images under Filters/StockImage/.
       # Generated JPGs live under Filters/<Category>/StorePreviews/<FilterId>/ — must be git-added below.
-      # Sticker/frame/shape toolbar previews: {stem}_preview.webp beside assets under Stickers|Frames|Shapes/<Pack>/.
+      # Sticker/frame toolbar previews: {stem}_preview.webp beside each PNG under Stickers|Frames/<Pack>/ (parallel in script).
       # Cloudflare deploy (below) publishes WebPs even if you do not commit them locally; git add keeps CDN in sync.
       - name: Generate manifest and all store manifests
         env:
           BASE_URL: "https://raw.githubusercontent.com/${{ github.repository }}/${{ github.ref_name }}"
         run: |
-          python -c "import cairosvg"  # fail fast before a long manifest run
           python scripts/generate_enhanced_manifest.py \
             --base-url "$BASE_URL" \
             --repo-root . \
@@ -141,7 +121,6 @@ jobs:
             Backgrounds/background_store_manifest.json \
             Fonts/font_catalog.json \
             Shapes/shape_store_manifest.json \
-            Shapes/**/*_preview.webp \
             PNGTemplates/png_template_manifest.json \
             Templates/templates_index.json \
             HomeScreen/home_config.json \
