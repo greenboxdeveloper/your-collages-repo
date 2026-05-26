@@ -634,6 +634,9 @@ def parse_svg_folder(svg_dir: Path, base_url: str, id_prefix: str = "svg_") -> l
 # -----------------------------------------------------------------------------
 
 # Distinct colors per slot index (for grid preview)
+# Toolbar / placed-shape default fill — PhotoCollage/Colors.xcassets/appTint.colorset
+SHAPE_TOOLBAR_PREVIEW_RGB = (255, 91, 138)
+
 THUMB_COLORS = [
     (255, 82, 126),   # pink
     (78, 205, 196),   # teal
@@ -2622,6 +2625,38 @@ def _is_shape_preview_webp_asset(path: Path) -> bool:
     return path.suffix.lower() == ".webp" and path.stem.endswith("_preview")
 
 
+def _recolor_rgba_silhouette(img, rgb: tuple[int, int, int]):
+    """Single fill color with preserved alpha (matches Swift ``.fill(Color.appTint)`` on path ``d``)."""
+    img = img.convert("RGBA")
+    r, g, b = rgb
+    px = img.load()
+    w, h = img.size
+    for y in range(h):
+        for x in range(w):
+            _, _, _, a = px[x, y]
+            if a:
+                px[x, y] = (r, g, b, a)
+    return img
+
+
+def _shape_preview_webp_needs_recolor(webp_path: Path, rgb: tuple[int, int, int], tolerance: int = 48) -> bool:
+    """True when an existing WebP still uses source SVG colors (e.g. black) instead of toolbar tint."""
+    if Image is None or not webp_path.is_file():
+        return True
+    try:
+        with Image.open(webp_path) as src:
+            im = src.convert("RGBA")
+        tr, tg, tb = rgb
+        for pr, pg, pb, a in im.getdata():
+            if a < 16:
+                continue
+            if abs(pr - tr) + abs(pg - tg) + abs(pb - tb) > tolerance:
+                return True
+        return False
+    except Exception:
+        return True
+
+
 def _render_shape_svg_preview_webp(svg_path: Path, webp_out: Path, max_edge: int) -> bool:
     """Rasterize one SVG to a small RGBA WebP for store / toolbar (requires cairosvg + Pillow)."""
     if cairosvg is None or Image is None:
@@ -2629,7 +2664,7 @@ def _render_shape_svg_preview_webp(svg_path: Path, webp_out: Path, max_edge: int
     try:
         png_bytes = cairosvg.svg2png(url=str(svg_path.resolve()))
         with Image.open(BytesIO(png_bytes)) as src:
-            img = src.convert("RGBA")
+            img = _recolor_rgba_silhouette(src, SHAPE_TOOLBAR_PREVIEW_RGB)
         img = _cap_long_edge_pil(img, max_edge)
         w, h = img.size
         side = max(w, h, 1)
@@ -2723,6 +2758,7 @@ def generate_shape_store_manifest(
                 regen = (
                     not preview_webp_path.is_file()
                     or p.stat().st_mtime > preview_webp_path.stat().st_mtime
+                    or _shape_preview_webp_needs_recolor(preview_webp_path, SHAPE_TOOLBAR_PREVIEW_RGB)
                 )
                 if regen:
                     preview_jobs.append((str(p.resolve()), str(preview_webp_path.resolve()), preview_max_edge))
