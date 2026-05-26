@@ -1,6 +1,79 @@
 {
-  "version": "1.4",
+  "version": "1.5",
   "categories": [
+    {
+      "id": "floral_pr",
+      "name": "Floral",
+      "icon": "square.on.square",
+      "remoteFolderName": "Floral_PR",
+      "frames": [
+        {
+          "id": "floral_pr__floral1",
+          "name": "Floral1",
+          "isPremium": true,
+          "source": "ota",
+          "fileName": "floral1"
+        },
+        {
+          "id": "floral_pr__floral2",
+          "name": "Floral2",
+          "isPremium": true,
+          "source": "ota",
+          "fileName": "floral2"
+        },
+        {
+          "id": "floral_pr__floral3",
+          "name": "Floral3",
+          "isPremium": true,
+          "source": "ota",
+          "fileName": "floral3"
+        },
+        {
+          "id": "floral_pr__floral4",
+          "name": "Floral4",
+          "isPremium": true,
+          "source": "ota",
+          "fileName": "floral4"
+        },
+        {
+          "id": "floral_pr__floral5",
+          "name": "Floral5",
+          "isPremium": true,
+          "source": "ota",
+          "fileName": "floral5"
+        },
+        {
+          "id": "floral_pr__floral6",
+          "name": "Floral6",
+          "isPremium": true,
+          "source": "ota",
+          "fileName": "floral6"
+        },
+        {
+          "id": "floral_pr__floral7",
+          "name": "Floral7",
+          "isPremium": true,
+          "source": "ota",
+          "fileName": "floral7"
+        },
+        {
+          "id": "floral_pr__floral8",
+          "name": "Floral8",
+          "isPremium": true,
+          "source": "ota",
+          "fileName": "floral8"
+        },
+        {
+          "id": "floral_pr__floral9",
+          "name": "Floral9",
+          "isPremium": true,
+          "source": "ota",
+          "fileName": "floral9"
+        }
+      ],
+      "bannerImageUrl": null,
+      "promoHeaderUrl": null
+    },
     {
       "id": "vintage_frame",
       "name": "Vintage Frame",
