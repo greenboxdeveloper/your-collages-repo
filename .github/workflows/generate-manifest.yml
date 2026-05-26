@@ -50,13 +50,18 @@ jobs:
             libffi-dev \
             pkg-config
 
-      - name: Install dependencies
+      - name: Install Python dependencies
         run: |
+          set -euo pipefail
+          python --version
+          which python
           python -m pip install --upgrade pip
-          pip install -r scripts/requirements.txt
-
-      - name: Verify store preview dependencies
-        run: |
+          test -f scripts/requirements.txt
+          grep -qi '^cairosvg' scripts/requirements.txt
+          python -m pip install -r scripts/requirements.txt
+          # Ensure shape preview rasterizer is on the same interpreter as `python` below.
+          python -m pip install "cairosvg>=2.7.0"
+          python -m pip show Pillow cairosvg
           python -c "from PIL import Image; import cairosvg; print('Pillow', Image.__version__, '| cairosvg', cairosvg.__version__)"
 
       # Script reads one SVG folder (--svg-dir). Repo paths above also watch svgs/**;
@@ -70,6 +75,7 @@ jobs:
         env:
           BASE_URL: "https://raw.githubusercontent.com/${{ github.repository }}/${{ github.ref_name }}"
         run: |
+          python -c "import cairosvg"  # fail fast before a long manifest run
           python scripts/generate_enhanced_manifest.py \
             --base-url "$BASE_URL" \
             --repo-root . \
