@@ -547,7 +547,7 @@
     {
       "category": "Classic",
       "id": "classic_13",
-      "isPremium": false,
+      "isPremium": true,
       "name": "Collage 13",
       "slots": [
         {
@@ -630,7 +630,7 @@
     {
       "category": "Classic",
       "id": "classic_14",
-      "isPremium": false,
+      "isPremium": true,
       "name": "Collage 14",
       "slots": [
         {
@@ -713,7 +713,7 @@
     {
       "category": "Classic",
       "id": "classic_16",
-      "isPremium": false,
+      "isPremium": true,
       "name": "Collage 16",
       "slots": [
         {
@@ -796,7 +796,7 @@
     {
       "category": "Classic",
       "id": "classic_17",
-      "isPremium": false,
+      "isPremium": true,
       "name": "Collage 17",
       "slots": [
         {
@@ -858,7 +858,7 @@
     {
       "category": "Classic",
       "id": "classic_18",
-      "isPremium": false,
+      "isPremium": true,
       "name": "Collage 18",
       "slots": [
         {
@@ -920,7 +920,7 @@
     {
       "category": "Classic",
       "id": "classic_19",
-      "isPremium": false,
+      "isPremium": true,
       "name": "Collage 19",
       "slots": [
         {
@@ -982,7 +982,7 @@
     {
       "category": "Classic",
       "id": "classic_20",
-      "isPremium": false,
+      "isPremium": true,
       "name": "Collage 20",
       "slots": [
         {
@@ -1065,7 +1065,7 @@
     {
       "category": "Classic",
       "id": "classic_21",
-      "isPremium": false,
+      "isPremium": true,
       "name": "Collage 21",
       "slots": [
         {
@@ -1169,7 +1169,7 @@
     {
       "category": "Classic",
       "id": "classic_22",
-      "isPremium": false,
+      "isPremium": true,
       "name": "Collage 22",
       "slots": [
         {
@@ -1252,7 +1252,7 @@
     {
       "category": "Classic",
       "id": "classic_23",
-      "isPremium": false,
+      "isPremium": true,
       "name": "Collage 23",
       "slots": [
         {
@@ -1335,7 +1335,7 @@
     {
       "category": "Classic",
       "id": "classic_24",
-      "isPremium": false,
+      "isPremium": true,
       "name": "Collage 24",
       "slots": [
         {
@@ -1475,7 +1475,7 @@
     {
       "category": "Classic",
       "id": "classic_25",
-      "isPremium": false,
+      "isPremium": true,
       "name": "Collage 25",
       "slots": [
         {
@@ -1615,7 +1615,7 @@
     {
       "category": "Classic",
       "id": "classic_26",
-      "isPremium": false,
+      "isPremium": true,
       "name": "Collage 26",
       "slots": [
         {
@@ -1722,7 +1722,7 @@
     {
       "category": "Classic",
       "id": "classic_27",
-      "isPremium": false,
+      "isPremium": true,
       "name": "Collage 27",
       "slots": [
         {
@@ -1826,7 +1826,7 @@
     {
       "category": "Classic",
       "id": "classic_28",
-      "isPremium": false,
+      "isPremium": true,
       "name": "Collage 28",
       "slots": [
         {
@@ -1930,7 +1930,7 @@
     {
       "category": "Classic",
       "id": "classic_29",
-      "isPremium": false,
+      "isPremium": true,
       "name": "Collage 29",
       "slots": [
         {
@@ -2070,7 +2070,7 @@
     {
       "category": "Classic",
       "id": "classic_30",
-      "isPremium": false,
+      "isPremium": true,
       "name": "Collage 30",
       "slots": [
         {
@@ -2210,7 +2210,7 @@
     {
       "category": "Classic",
       "id": "classic_31",
-      "isPremium": false,
+      "isPremium": true,
       "name": "Collage 31",
       "slots": [
         {
@@ -2468,7 +2468,7 @@
     {
       "category": "Classic",
       "id": "classic_32",
-      "isPremium": false,
+      "isPremium": true,
       "name": "Collage 32",
       "slots": [
         {
@@ -2631,7 +2631,7 @@
     {
       "category": "Classic",
       "id": "classic_33",
-      "isPremium": false,
+      "isPremium": true,
       "name": "Collage 33",
       "slots": [
         {
@@ -2794,7 +2794,7 @@
     {
       "category": "Classic",
       "id": "classic_34",
-      "isPremium": false,
+      "isPremium": true,
       "name": "Collage 34",
       "slots": [
         {
@@ -2898,7 +2898,7 @@
     {
       "category": "Classic",
       "id": "classic_35",
-      "isPremium": false,
+      "isPremium": true,
       "name": "Collage 35",
       "slots": [
         {
@@ -3014,7 +3014,7 @@
     {
       "category": "Classic",
       "id": "classic_36",
-      "isPremium": false,
+      "isPremium": true,
       "name": "Collage 36",
       "slots": [
         {
@@ -3130,7 +3130,7 @@
     {
       "category": "Classic",
       "id": "classic_37",
-      "isPremium": false,
+      "isPremium": true,
       "name": "Collage 37",
       "slots": [
         {
@@ -3279,7 +3279,7 @@
     {
       "category": "Classic",
       "id": "classic_38",
-      "isPremium": false,
+      "isPremium": true,
       "name": "Collage 38",
       "slots": [
         {
@@ -3446,7 +3446,7 @@
     {
       "category": "Classic",
       "id": "classic_40",
-      "isPremium": false,
+      "isPremium": true,
       "name": "Collage 40",
       "slots": [
         {
@@ -3595,7 +3595,7 @@
     {
       "category": "Classic",
       "id": "classic_41",
-      "isPremium": false,
+      "isPremium": true,
       "name": "Collage 41",
       "slots": [
         {
@@ -3742,7 +3742,7 @@
     {
       "category": "Classic",
       "id": "classic_42",
-      "isPremium": false,
+      "isPremium": true,
       "name": "Collage 42",
       "slots": [
         {
@@ -3863,7 +3863,7 @@
     {
       "category": "Classic",
       "id": "classic_43",
-      "isPremium": false,
+      "isPremium": true,
       "name": "Collage 43",
       "slots": [
         {
@@ -3984,7 +3984,7 @@
     {
       "category": "Classic",
       "id": "classic_44",
-      "isPremium": false,
+      "isPremium": true,
       "name": "Collage 44",
       "slots": [
         {
@@ -4131,7 +4131,7 @@
     {
       "category": "Classic",
       "id": "classic_45",
-      "isPremium": false,
+      "isPremium": true,
       "name": "Collage 45",
       "slots": [
         {
@@ -4274,7 +4274,7 @@
     {
       "category": "Classic",
       "id": "classic_46",
-      "isPremium": false,
+      "isPremium": true,
       "name": "Collage 46",
       "slots": [
         {
@@ -4408,7 +4408,7 @@
     {
       "category": "Classic",
       "id": "classic_47",
-      "isPremium": false,
+      "isPremium": true,
       "name": "Collage 47",
       "slots": [
         {
@@ -4539,7 +4539,7 @@
     {
       "category": "Classic",
       "id": "classic_48",
-      "isPremium": false,
+      "isPremium": true,
       "name": "Collage 48",
       "slots": [
         {
@@ -4697,7 +4697,7 @@
     {
       "category": "Classic",
       "id": "classic_49",
-      "isPremium": false,
+      "isPremium": true,
       "name": "Collage 49",
       "slots": [
         {
@@ -4855,7 +4855,7 @@
     {
       "category": "Classic",
       "id": "classic_50",
-      "isPremium": false,
+      "isPremium": true,
       "name": "Collage 50",
       "slots": [
         {
@@ -5144,7 +5144,7 @@
     {
       "category": "Classic",
       "id": "classic_52",
-      "isPremium": false,
+      "isPremium": true,
       "name": "Collage 52",
       "slots": [
         {
@@ -5302,7 +5302,7 @@
     {
       "category": "Classic",
       "id": "classic_53",
-      "isPremium": false,
+      "isPremium": true,
       "name": "Collage 53",
       "slots": [
         {
