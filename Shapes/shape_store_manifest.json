@@ -1,172 +1,172 @@
 {
-  "version": "2.1",
+  "version": "2.2",
   "categories": [
     {
-      "id": "old_design_shapes",
-      "name": "Old Design Shapes",
-      "remoteFolderName": "Old Design Shapes",
+      "id": "design_shapes_pr",
+      "name": "Design Shapes",
+      "remoteFolderName": "Design Shapes_PR",
       "shapes": [
         {
-          "id": "old_design_shapes__asset_1",
+          "id": "design_shapes_pr__asset_1",
           "name": "Asset 1",
-          "isPremium": false,
+          "isPremium": true,
           "source": "ota",
           "kindId": "asset_1",
           "fileName": "Asset 1.svg",
-          "previewWebpUrl": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/Shapes/Old%20Design%20Shapes/Asset%201_preview.webp"
+          "previewWebpUrl": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/Shapes/Design%20Shapes_PR/Asset%201_preview.webp"
         },
         {
-          "id": "old_design_shapes__asset_10",
+          "id": "design_shapes_pr__asset_10",
           "name": "Asset 10",
-          "isPremium": false,
+          "isPremium": true,
           "source": "ota",
           "kindId": "asset_10",
           "fileName": "Asset 10.svg",
-          "previewWebpUrl": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/Shapes/Old%20Design%20Shapes/Asset%2010_preview.webp"
+          "previewWebpUrl": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/Shapes/Design%20Shapes_PR/Asset%2010_preview.webp"
         },
         {
-          "id": "old_design_shapes__asset_11",
+          "id": "design_shapes_pr__asset_11",
           "name": "Asset 11",
-          "isPremium": false,
+          "isPremium": true,
           "source": "ota",
           "kindId": "asset_11",
           "fileName": "Asset 11.svg",
-          "previewWebpUrl": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/Shapes/Old%20Design%20Shapes/Asset%2011_preview.webp"
+          "previewWebpUrl": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/Shapes/Design%20Shapes_PR/Asset%2011_preview.webp"
         },
         {
-          "id": "old_design_shapes__asset_12",
+          "id": "design_shapes_pr__asset_12",
           "name": "Asset 12",
-          "isPremium": false,
+          "isPremium": true,
           "source": "ota",
           "kindId": "asset_12",
           "fileName": "Asset 12.svg",
-          "previewWebpUrl": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/Shapes/Old%20Design%20Shapes/Asset%2012_preview.webp"
+          "previewWebpUrl": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/Shapes/Design%20Shapes_PR/Asset%2012_preview.webp"
         },
         {
-          "id": "old_design_shapes__asset_13",
+          "id": "design_shapes_pr__asset_13",
           "name": "Asset 13",
-          "isPremium": false,
+          "isPremium": true,
           "source": "ota",
           "kindId": "asset_13",
           "fileName": "Asset 13.svg",
-          "previewWebpUrl": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/Shapes/Old%20Design%20Shapes/Asset%2013_preview.webp"
+          "previewWebpUrl": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/Shapes/Design%20Shapes_PR/Asset%2013_preview.webp"
         },
         {
-          "id": "old_design_shapes__asset_14",
+          "id": "design_shapes_pr__asset_14",
           "name": "Asset 14",
-          "isPremium": false,
+          "isPremium": true,
           "source": "ota",
           "kindId": "asset_14",
           "fileName": "Asset 14.svg",
-          "previewWebpUrl": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/Shapes/Old%20Design%20Shapes/Asset%2014_preview.webp"
+          "previewWebpUrl": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/Shapes/Design%20Shapes_PR/Asset%2014_preview.webp"
         },
         {
-          "id": "old_design_shapes__asset_15",
+          "id": "design_shapes_pr__asset_15",
           "name": "Asset 15",
-          "isPremium": false,
+          "isPremium": true,
           "source": "ota",
           "kindId": "asset_15",
           "fileName": "Asset 15.svg",
-          "previewWebpUrl": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/Shapes/Old%20Design%20Shapes/Asset%2015_preview.webp"
+          "previewWebpUrl": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/Shapes/Design%20Shapes_PR/Asset%2015_preview.webp"
         },
         {
-          "id": "old_design_shapes__asset_16",
+          "id": "design_shapes_pr__asset_16",
           "name": "Asset 16",
-          "isPremium": false,
+          "isPremium": true,
           "source": "ota",
           "kindId": "asset_16",
           "fileName": "Asset 16.svg",
-          "previewWebpUrl": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/Shapes/Old%20Design%20Shapes/Asset%2016_preview.webp"
+          "previewWebpUrl": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/Shapes/Design%20Shapes_PR/Asset%2016_preview.webp"
         },
         {
-          "id": "old_design_shapes__asset_17",
+          "id": "design_shapes_pr__asset_17",
           "name": "Asset 17",
-          "isPremium": false,
+          "isPremium": true,
           "source": "ota",
           "kindId": "asset_17",
           "fileName": "Asset 17.svg",
-          "previewWebpUrl": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/Shapes/Old%20Design%20Shapes/Asset%2017_preview.webp"
+          "previewWebpUrl": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/Shapes/Design%20Shapes_PR/Asset%2017_preview.webp"
         },
         {
-          "id": "old_design_shapes__asset_18",
+          "id": "design_shapes_pr__asset_18",
           "name": "Asset 18",
-          "isPremium": false,
+          "isPremium": true,
           "source": "ota",
           "kindId": "asset_18",
           "fileName": "Asset 18.svg",
-          "previewWebpUrl": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/Shapes/Old%20Design%20Shapes/Asset%2018_preview.webp"
+          "previewWebpUrl": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/Shapes/Design%20Shapes_PR/Asset%2018_preview.webp"
         },
         {
-          "id": "old_design_shapes__asset_2",
+          "id": "design_shapes_pr__asset_2",
           "name": "Asset 2",
-          "isPremium": false,
+          "isPremium": true,
           "source": "ota",
           "kindId": "asset_2",
           "fileName": "Asset 2.svg",
-          "previewWebpUrl": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/Shapes/Old%20Design%20Shapes/Asset%202_preview.webp"
+          "previewWebpUrl": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/Shapes/Design%20Shapes_PR/Asset%202_preview.webp"
         },
         {
-          "id": "old_design_shapes__asset_3",
+          "id": "design_shapes_pr__asset_3",
           "name": "Asset 3",
-          "isPremium": false,
+          "isPremium": true,
           "source": "ota",
           "kindId": "asset_3",
           "fileName": "Asset 3.svg",
-          "previewWebpUrl": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/Shapes/Old%20Design%20Shapes/Asset%203_preview.webp"
+          "previewWebpUrl": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/Shapes/Design%20Shapes_PR/Asset%203_preview.webp"
         },
         {
-          "id": "old_design_shapes__asset_4",
+          "id": "design_shapes_pr__asset_4",
           "name": "Asset 4",
-          "isPremium": false,
+          "isPremium": true,
           "source": "ota",
           "kindId": "asset_4",
           "fileName": "Asset 4.svg",
-          "previewWebpUrl": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/Shapes/Old%20Design%20Shapes/Asset%204_preview.webp"
+          "previewWebpUrl": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/Shapes/Design%20Shapes_PR/Asset%204_preview.webp"
         },
         {
-          "id": "old_design_shapes__asset_5",
+          "id": "design_shapes_pr__asset_5",
           "name": "Asset 5",
-          "isPremium": false,
+          "isPremium": true,
           "source": "ota",
           "kindId": "asset_5",
           "fileName": "Asset 5.svg",
-          "previewWebpUrl": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/Shapes/Old%20Design%20Shapes/Asset%205_preview.webp"
+          "previewWebpUrl": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/Shapes/Design%20Shapes_PR/Asset%205_preview.webp"
         },
         {
-          "id": "old_design_shapes__asset_6",
+          "id": "design_shapes_pr__asset_6",
           "name": "Asset 6",
-          "isPremium": false,
+          "isPremium": true,
           "source": "ota",
           "kindId": "asset_6",
           "fileName": "Asset 6.svg",
-          "previewWebpUrl": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/Shapes/Old%20Design%20Shapes/Asset%206_preview.webp"
+          "previewWebpUrl": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/Shapes/Design%20Shapes_PR/Asset%206_preview.webp"
         },
         {
-          "id": "old_design_shapes__asset_7",
+          "id": "design_shapes_pr__asset_7",
           "name": "Asset 7",
-          "isPremium": false,
+          "isPremium": true,
           "source": "ota",
           "kindId": "asset_7",
           "fileName": "Asset 7.svg",
-          "previewWebpUrl": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/Shapes/Old%20Design%20Shapes/Asset%207_preview.webp"
+          "previewWebpUrl": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/Shapes/Design%20Shapes_PR/Asset%207_preview.webp"
         },
         {
-          "id": "old_design_shapes__asset_8",
+          "id": "design_shapes_pr__asset_8",
           "name": "Asset 8",
-          "isPremium": false,
+          "isPremium": true,
           "source": "ota",
           "kindId": "asset_8",
           "fileName": "Asset 8.svg",
-          "previewWebpUrl": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/Shapes/Old%20Design%20Shapes/Asset%208_preview.webp"
+          "previewWebpUrl": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/Shapes/Design%20Shapes_PR/Asset%208_preview.webp"
         },
         {
-          "id": "old_design_shapes__asset_9",
+          "id": "design_shapes_pr__asset_9",
           "name": "Asset 9",
-          "isPremium": false,
+          "isPremium": true,
           "source": "ota",
           "kindId": "asset_9",
           "fileName": "Asset 9.svg",
-          "previewWebpUrl": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/Shapes/Old%20Design%20Shapes/Asset%209_preview.webp"
+          "previewWebpUrl": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/Shapes/Design%20Shapes_PR/Asset%209_preview.webp"
         }
       ],
       "bannerImageUrl": null,
