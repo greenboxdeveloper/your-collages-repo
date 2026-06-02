@@ -211,6 +211,7 @@ jobs:
           CI_SECRET_TOKEN: ${{ secrets.CI_SECRET_TOKEN }}
         run: |
           python - <<'PY'
+          import os
           import json
           import urllib.request
           from pathlib import Path
@@ -225,13 +226,19 @@ jobs:
               print("No new pack-level entries detected; skipping notification call.")
               raise SystemExit(0)
 
+          webhook_url = os.environ.get("PACK_NOTIFY_WEBHOOK_URL")
+          secret_token = os.environ.get("CI_SECRET_TOKEN")
+          if not webhook_url or not secret_token:
+              print("Missing PACK_NOTIFY_WEBHOOK_URL or CI_SECRET_TOKEN; skipping.")
+              raise SystemExit(0)
+
           req = urllib.request.Request(
-              url="${PACK_NOTIFY_WEBHOOK_URL}",
+              url=webhook_url,
               method="POST",
               data=json.dumps({"packs": packs}).encode("utf-8"),
               headers={
                   "Content-Type": "application/json",
-                  "X-CI-Secret": "${CI_SECRET_TOKEN}",
+                  "X-CI-Secret": secret_token,
               },
           )
           with urllib.request.urlopen(req, timeout=30) as response:
