@@ -1,5 +1,5 @@
 {
-  "version": "2.4",
+  "version": "2.5",
   "templates": [
     {
       "id": "birthday__birthday_01",
@@ -48,6 +48,96 @@
       "category_folder": "Holiday",
       "recipe": "Holiday Season 2.json",
       "preview": "Holiday Season 2.jpg",
+      "is_premium": true,
+      "neutral_empty_slots": true
+    },
+    {
+      "id": "polaroids__pol1",
+      "title": "Pol1",
+      "category": "Polaroids",
+      "category_folder": "Polaroids",
+      "recipe": "Pol1.json",
+      "preview": "Pol1.jpg",
+      "is_premium": true,
+      "neutral_empty_slots": true
+    },
+    {
+      "id": "polaroids__pol10",
+      "title": "Pol10",
+      "category": "Polaroids",
+      "category_folder": "Polaroids",
+      "recipe": "Pol10.json",
+      "preview": "Pol10.jpg",
+      "is_premium": true,
+      "neutral_empty_slots": true
+    },
+    {
+      "id": "polaroids__pol2",
+      "title": "Pol2",
+      "category": "Polaroids",
+      "category_folder": "Polaroids",
+      "recipe": "Pol2.json",
+      "preview": "Pol2.jpg",
+      "is_premium": true,
+      "neutral_empty_slots": true
+    },
+    {
+      "id": "polaroids__pol3",
+      "title": "Pol3",
+      "category": "Polaroids",
+      "category_folder": "Polaroids",
+      "recipe": "Pol3.json",
+      "preview": "Pol3.jpg",
+      "is_premium": true,
+      "neutral_empty_slots": true
+    },
+    {
+      "id": "polaroids__pol4",
+      "title": "Pol4",
+      "category": "Polaroids",
+      "category_folder": "Polaroids",
+      "recipe": "Pol4.json",
+      "preview": "Pol4.jpg",
+      "is_premium": true,
+      "neutral_empty_slots": true
+    },
+    {
+      "id": "polaroids__pol6",
+      "title": "Pol6",
+      "category": "Polaroids",
+      "category_folder": "Polaroids",
+      "recipe": "Pol6.json",
+      "preview": "Pol6.jpg",
+      "is_premium": true,
+      "neutral_empty_slots": true
+    },
+    {
+      "id": "polaroids__pol7",
+      "title": "Pol7",
+      "category": "Polaroids",
+      "category_folder": "Polaroids",
+      "recipe": "Pol7.json",
+      "preview": "Pol7.jpg",
+      "is_premium": true,
+      "neutral_empty_slots": true
+    },
+    {
+      "id": "polaroids__pol8",
+      "title": "Pol8",
+      "category": "Polaroids",
+      "category_folder": "Polaroids",
+      "recipe": "Pol8.json",
+      "preview": "Pol8.jpg",
+      "is_premium": true,
+      "neutral_empty_slots": true
+    },
+    {
+      "id": "polaroids__pol9",
+      "title": "Pol9",
+      "category": "Polaroids",
+      "category_folder": "Polaroids",
+      "recipe": "Pol9.json",
+      "preview": "Pol9.jpg",
       "is_premium": true,
       "neutral_empty_slots": true
     },
