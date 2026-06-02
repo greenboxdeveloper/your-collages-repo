@@ -4,6 +4,7 @@ on:
   push:
     branches: [main]
     paths:
+      - ".github/workflows/generate-manifests.yml"
       - "collages/**/*.svg"
       - "svgs/**/*.svg"
       - "PhotoCollageMaker/PhotoCollage/Collage/CollageLayouts/**/*.svg"
