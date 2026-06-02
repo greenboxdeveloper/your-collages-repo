@@ -127,6 +127,119 @@ jobs:
           wranglerVersion: '4'
           command: deploy
 
+      - name: Build pack-level notification payloads
+        run: |
+          python - <<'PY'
+          import json
+          import subprocess
+          from pathlib import Path
+
+          out = []
+
+          def load_prev(path: str):
+              try:
+                  raw = subprocess.check_output(["git", "show", f"HEAD:{path}"], text=True)
+                  return json.loads(raw)
+              except Exception:
+                  return None
+
+          def load_now(path: str):
+              p = Path(path)
+              if not p.is_file():
+                  return None
+              return json.loads(p.read_text(encoding="utf-8"))
+
+          def add_manifest_packs(path: str, kind: str):
+              prev = load_prev(path) or {}
+              now = load_now(path) or {}
+              prev_ids = {str(c.get("id", "")).strip() for c in prev.get("categories", []) if str(c.get("id", "")).strip()}
+              for category in now.get("categories", []):
+                  cid = str(category.get("id", "")).strip()
+                  if not cid or cid in prev_ids:
+                      continue
+                  out.append({
+                      "packKind": kind,
+                      "targetPackId": cid,
+                      "categoryName": str(category.get("name", "")).strip(),
+                      "contentVersion": str(now.get("version", "")).strip() or subprocess.check_output(["git", "rev-parse", "HEAD"], text=True).strip(),
+                  })
+
+          def add_template_packs(path: str):
+              prev = load_prev(path) or {}
+              now = load_now(path) or {}
+              prev_ids = set()
+              for entry in prev.get("templates", []):
+                  folder = str(entry.get("category_folder", "")).strip().lstrip("#")
+                  cat = str(entry.get("category", "")).strip()
+                  key = folder or cat
+                  if key:
+                      prev_ids.add(key.lower())
+              seen = set()
+              for entry in now.get("templates", []):
+                  folder = str(entry.get("category_folder", "")).strip().lstrip("#")
+                  cat = str(entry.get("category", "")).strip()
+                  key = folder or cat
+                  if not key:
+                      continue
+                  lowered = key.lower()
+                  if lowered in prev_ids or lowered in seen:
+                      continue
+                  seen.add(lowered)
+                  out.append({
+                      "packKind": "templates",
+                      "targetPackId": key,
+                      "categoryName": cat or key,
+                      "contentVersion": subprocess.check_output(["git", "rev-parse", "HEAD"], text=True).strip(),
+                  })
+
+          add_manifest_packs("Stickers/sticker_store_manifest.json", "stickers")
+          add_manifest_packs("Filters/filter_manifest.json", "filters")
+          add_manifest_packs("Frames/frame_manifest.json", "frames")
+          add_manifest_packs("Backgrounds/background_store_manifest.json", "backgrounds")
+          add_manifest_packs("Shapes/shape_store_manifest.json", "shapes")
+          add_manifest_packs("Fonts/font_catalog.json", "fonts")
+          add_template_packs("Templates/templates_index.json")
+
+          Path("ota_pack_payloads.json").write_text(json.dumps(out, indent=2), encoding="utf-8")
+          print(f"payload_count={len(out)}")
+          PY
+
+      - name: Trigger Firebase pack notifications
+        if: success() && secrets.PACK_NOTIFY_WEBHOOK_URL != '' && secrets.CI_SECRET_TOKEN != ''
+        env:
+          PACK_NOTIFY_WEBHOOK_URL: ${{ secrets.PACK_NOTIFY_WEBHOOK_URL }}
+          CI_SECRET_TOKEN: ${{ secrets.CI_SECRET_TOKEN }}
+        run: |
+          python - <<'PY'
+          import json
+          import urllib.request
+          from pathlib import Path
+
+          payload_path = Path("ota_pack_payloads.json")
+          if not payload_path.exists():
+              print("No payload file generated.")
+              raise SystemExit(0)
+
+          packs = json.loads(payload_path.read_text(encoding="utf-8"))
+          if not packs:
+              print("No new pack-level entries detected; skipping notification call.")
+              raise SystemExit(0)
+
+          req = urllib.request.Request(
+              url="${PACK_NOTIFY_WEBHOOK_URL}",
+              method="POST",
+              data=json.dumps({"packs": packs}).encode("utf-8"),
+              headers={
+                  "Content-Type": "application/json",
+                  "X-CI-Secret": "${CI_SECRET_TOKEN}",
+              },
+          )
+          with urllib.request.urlopen(req, timeout=30) as response:
+              body = response.read().decode("utf-8")
+              print(f"status={response.status}")
+              print(body)
+          PY
+
       - name: Commit and push if changed
         run: |
           git config user.name "github-actions[bot]"
