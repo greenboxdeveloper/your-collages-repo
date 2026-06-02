@@ -214,7 +214,10 @@ jobs:
           python - <<'PY'
           import os
           import json
+          import socket
           import urllib.request
+          import urllib.parse
+          import urllib.error
           from pathlib import Path
 
           payload_path = Path("ota_pack_payloads.json")
@@ -233,6 +236,17 @@ jobs:
               print("Missing PACK_NOTIFY_WEBHOOK_URL or CI_SECRET_TOKEN; skipping.")
               raise SystemExit(0)
 
+          parsed = urllib.parse.urlparse(webhook_url)
+          if parsed.scheme not in ("http", "https") or not parsed.hostname:
+              print("PACK_NOTIFY_WEBHOOK_URL is not a valid absolute URL; skipping.")
+              raise SystemExit(0)
+
+          try:
+              socket.getaddrinfo(parsed.hostname, parsed.port or (443 if parsed.scheme == "https" else 80))
+          except socket.gaierror:
+              print(f"Webhook host is not resolvable: {parsed.hostname}. Check PACK_NOTIFY_WEBHOOK_URL secret.")
+              raise SystemExit(0)
+
           req = urllib.request.Request(
               url=webhook_url,
               method="POST",
@@ -242,10 +256,14 @@ jobs:
                   "X-CI-Secret": secret_token,
               },
           )
-          with urllib.request.urlopen(req, timeout=30) as response:
-              body = response.read().decode("utf-8")
-              print(f"status={response.status}")
-              print(body)
+          try:
+              with urllib.request.urlopen(req, timeout=30) as response:
+                  body = response.read().decode("utf-8")
+                  print(f"status={response.status}")
+                  print(body)
+          except urllib.error.URLError as err:
+              print(f"Notification webhook call failed: {err}")
+              raise SystemExit(0)
           PY
 
       - name: Commit and push if changed
