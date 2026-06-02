@@ -206,7 +206,7 @@ jobs:
           PY
 
       - name: Trigger Firebase pack notifications
-        if: success() && secrets.PACK_NOTIFY_WEBHOOK_URL != '' && secrets.CI_SECRET_TOKEN != ''
+        if: success()
         env:
           PACK_NOTIFY_WEBHOOK_URL: ${{ secrets.PACK_NOTIFY_WEBHOOK_URL }}
           CI_SECRET_TOKEN: ${{ secrets.CI_SECRET_TOKEN }}
