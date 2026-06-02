@@ -1,0 +1,158 @@
+{
+  "chrome" : {
+    "background_color_rgba" : [
+      1,
+      1,
+      1,
+      1
+    ],
+    "background_hazy_blur_radius" : 48,
+    "background_image_name" : "paper__5_jpg",
+    "border_color_rgba" : [
+      1,
+      1,
+      1,
+      1
+    ],
+    "border_corner_radius" : 0,
+    "border_width" : 20,
+    "canvas_aspect" : 0.5625,
+    "canvas_ratio_preset" : "9:16",
+    "has_background_image" : true
+  },
+  "dependencies" : [
+    {
+      "asset_ref" : "5.jpg",
+      "id" : "paper__5_jpg",
+      "type" : "background",
+      "url" : "https:\/\/photocollagemaker.john4shine.workers.dev\/Backgrounds\/Paper\/5.jpg"
+    },
+    {
+      "id" : "Polaroid3.2_B",
+      "type" : "sticker"
+    },
+    {
+      "id" : "Polaroid3.3_B",
+      "type" : "sticker"
+    }
+  ],
+  "editor" : {
+    "divider_positions" : {
+
+    },
+    "shared_vertex_positions" : {
+
+    }
+  },
+  "layout" : {
+    "category" : "TemplateBuilder",
+    "dividers" : [
+
+    ],
+    "id" : "template-builder-0DE3BC4C",
+    "isPremium" : false,
+    "name" : "Template builder",
+    "shared_vertices" : [
+
+    ],
+    "slots" : [
+
+    ],
+    "type" : "grid"
+  },
+  "stickers" : [
+    {
+      "hole_n_rect" : [
+        0.07396449704142012,
+        0.05078125,
+        0.8579881656804734,
+        0.8984375
+      ],
+      "id" : "3BF9535B-9C21-4202-942E-040C7C03C1D3",
+      "image_name" : "Polaroid3.2_B",
+      "is_transform_locked" : true,
+      "linked_canvas_photo_id" : "61367178-26F8-4F2E-8C9A-13442F7B1559",
+      "offset_height" : -379.33333333333337,
+      "offset_width" : 0,
+      "placement_kind" : "sticker",
+      "rotation_radians" : -3.7010160173313815e-16,
+      "scale" : 2.3051872347318927,
+      "z_index" : 1138
+    },
+    {
+      "id" : "61367178-26F8-4F2E-8C9A-13442F7B1559",
+      "inner_offset_height" : 54.333333333333314,
+      "inner_offset_width" : 2.3333333333333712,
+      "inner_scale" : 1,
+      "offset_height" : -379.33333333333337,
+      "offset_width" : 0,
+      "parent_frame_sticker_id" : "3BF9535B-9C21-4202-942E-040C7C03C1D3",
+      "placement_kind" : "canvas_photo",
+      "rotation_radians" : -3.7010160173313815e-16,
+      "scale" : 2.3051872347318927,
+      "z_index" : 1138
+    },
+    {
+      "hole_n_rect" : [
+        0.08900523560209424,
+        0.056640625,
+        0.8350785340314136,
+        0.7890625
+      ],
+      "id" : "FB2142E3-70A3-4F61-B5B2-0E6AC1B156EF",
+      "image_name" : "Polaroid3.3_B",
+      "linked_canvas_photo_id" : "6E9EA4ED-7107-4395-97B3-9AA45454A98D",
+      "offset_height" : 0,
+      "offset_width" : 0,
+      "placement_kind" : "sticker",
+      "rotation_radians" : 4.834573279184187e-16,
+      "scale" : 1.9818101677252629,
+      "z_index" : 1135
+    },
+    {
+      "id" : "6E9EA4ED-7107-4395-97B3-9AA45454A98D",
+      "inner_offset_height" : 0,
+      "inner_offset_width" : 0,
+      "inner_scale" : 1,
+      "offset_height" : 0,
+      "offset_width" : 0,
+      "parent_frame_sticker_id" : "FB2142E3-70A3-4F61-B5B2-0E6AC1B156EF",
+      "placement_kind" : "canvas_photo",
+      "rotation_radians" : 4.834573279184187e-16,
+      "scale" : 1.9818101677252629,
+      "z_index" : 1135
+    },
+    {
+      "hole_n_rect" : [
+        0.07396449704142012,
+        0.05078125,
+        0.8579881656804734,
+        0.8984375
+      ],
+      "id" : "8CBB41E1-CFCB-4190-8123-98D15C9FAD3C",
+      "image_name" : "Polaroid3.2_B",
+      "is_transform_locked" : true,
+      "linked_canvas_photo_id" : "9206DF4C-AF57-408C-A187-B9D4C4C7BA90",
+      "offset_height" : 364.0000000000002,
+      "offset_width" : 3.333333333333343,
+      "placement_kind" : "sticker",
+      "rotation_radians" : 2.419708770493488e-16,
+      "scale" : 2.2156382219225517,
+      "z_index" : 1132
+    },
+    {
+      "id" : "9206DF4C-AF57-408C-A187-B9D4C4C7BA90",
+      "inner_offset_height" : -25.333333333333485,
+      "inner_offset_width" : -6,
+      "inner_scale" : 1,
+      "offset_height" : 364.0000000000002,
+      "offset_width" : 3.333333333333343,
+      "parent_frame_sticker_id" : "8CBB41E1-CFCB-4190-8123-98D15C9FAD3C",
+      "placement_kind" : "canvas_photo",
+      "rotation_radians" : 2.419708770493488e-16,
+      "scale" : 2.2156382219225517,
+      "z_index" : 1132
+    }
+  ],
+  "version" : "1"
+}

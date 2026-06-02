@@ -1,0 +1,150 @@
+{
+  "chrome" : {
+    "background_color_rgba" : [
+      1,
+      1,
+      1,
+      1
+    ],
+    "background_hazy_blur_radius" : 9,
+    "background_hazy_canvas_photo_id" : "95128DB1-A09A-4206-B4CB-54B046E5D229",
+    "background_hazy_polaroid_frame_id" : "F9949238-23D9-4EC9-80C8-EC8CBE668D17",
+    "border_color_rgba" : [
+      1,
+      1,
+      1,
+      1
+    ],
+    "border_corner_radius" : 0,
+    "border_width" : 20,
+    "canvas_aspect" : 0.5625,
+    "canvas_ratio_preset" : "9:16",
+    "has_background_image" : true
+  },
+  "dependencies" : [
+    {
+      "id" : "Polaroid 1",
+      "type" : "sticker"
+    }
+  ],
+  "editor" : {
+    "divider_positions" : {
+
+    },
+    "shared_vertex_positions" : {
+
+    }
+  },
+  "layout" : {
+    "category" : "TemplateBuilder",
+    "dividers" : [
+
+    ],
+    "id" : "template-builder-B529285B",
+    "isPremium" : false,
+    "name" : "Template builder",
+    "shared_vertices" : [
+
+    ],
+    "slots" : [
+
+    ],
+    "type" : "grid"
+  },
+  "stickers" : [
+    {
+      "hole_n_rect" : [
+        0.06818181818181818,
+        0.0546875,
+        0.8535353535353536,
+        0.728515625
+      ],
+      "id" : "F9949238-23D9-4EC9-80C8-EC8CBE668D17",
+      "image_name" : "Polaroid 1",
+      "is_transform_locked" : true,
+      "linked_canvas_photo_id" : "95128DB1-A09A-4206-B4CB-54B046E5D229",
+      "offset_height" : 16.666666666666686,
+      "offset_width" : 0,
+      "placement_kind" : "sticker",
+      "rotation_radians" : -1.4435900172313503e-16,
+      "scale" : 2.1588291433974733,
+      "z_index" : 1084
+    },
+    {
+      "id" : "95128DB1-A09A-4206-B4CB-54B046E5D229",
+      "inner_offset_height" : 0,
+      "inner_offset_width" : 0,
+      "inner_scale" : 1,
+      "offset_height" : 16.666666666666686,
+      "offset_width" : 0,
+      "parent_frame_sticker_id" : "F9949238-23D9-4EC9-80C8-EC8CBE668D17",
+      "placement_kind" : "canvas_photo",
+      "rotation_radians" : -1.4435900172313503e-16,
+      "scale" : 2.1588291433974733,
+      "z_index" : 1084
+    },
+    {
+      "hole_n_rect" : [
+        0.06818181818181818,
+        0.0546875,
+        0.8535353535353536,
+        0.728515625
+      ],
+      "id" : "5C1639EB-EF10-4C9C-85CD-A5485E60F26D",
+      "image_name" : "Polaroid 1",
+      "is_transform_locked" : true,
+      "linked_canvas_photo_id" : "0B68AA12-4345-48DD-BD58-33285EB305BD",
+      "offset_height" : -339.5555891758216,
+      "offset_width" : 0,
+      "placement_kind" : "sticker",
+      "rotation_radians" : -1.4435900172313503e-16,
+      "scale" : 2.1588291433974733,
+      "z_index" : 1081
+    },
+    {
+      "id" : "0B68AA12-4345-48DD-BD58-33285EB305BD",
+      "inner_offset_height" : 0,
+      "inner_offset_width" : 0,
+      "inner_scale" : 1,
+      "offset_height" : -339.5555891758216,
+      "offset_width" : 0,
+      "parent_frame_sticker_id" : "5C1639EB-EF10-4C9C-85CD-A5485E60F26D",
+      "placement_kind" : "canvas_photo",
+      "rotation_radians" : -1.4435900172313503e-16,
+      "scale" : 2.1588291433974733,
+      "z_index" : 1081
+    },
+    {
+      "hole_n_rect" : [
+        0.06818181818181818,
+        0.0546875,
+        0.8535353535353536,
+        0.728515625
+      ],
+      "id" : "1FDC08DC-2D3D-4BC7-8585-6E7168260752",
+      "image_name" : "Polaroid 1",
+      "is_transform_locked" : true,
+      "linked_canvas_photo_id" : "440C9E47-50B2-4903-A13F-3BD188EB339B",
+      "offset_height" : 375.0844574009211,
+      "offset_width" : 0,
+      "placement_kind" : "sticker",
+      "rotation_radians" : -1.4435900172313503e-16,
+      "scale" : 2.1588291433974733,
+      "z_index" : 1087
+    },
+    {
+      "id" : "440C9E47-50B2-4903-A13F-3BD188EB339B",
+      "inner_offset_height" : 0,
+      "inner_offset_width" : 0,
+      "inner_scale" : 1,
+      "offset_height" : 375.0844574009211,
+      "offset_width" : 0,
+      "parent_frame_sticker_id" : "1FDC08DC-2D3D-4BC7-8585-6E7168260752",
+      "placement_kind" : "canvas_photo",
+      "rotation_radians" : -1.4435900172313503e-16,
+      "scale" : 2.1588291433974733,
+      "z_index" : 1087
+    }
+  ],
+  "version" : "1"
+}

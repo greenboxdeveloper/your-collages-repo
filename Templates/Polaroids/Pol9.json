@@ -1,0 +1,152 @@
+{
+  "chrome" : {
+    "background_color_rgba" : [
+      1,
+      1,
+      1,
+      1
+    ],
+    "background_hazy_blur_radius" : 48,
+    "background_image_name" : "paper__2_jpg",
+    "border_color_rgba" : [
+      1,
+      1,
+      1,
+      1
+    ],
+    "border_corner_radius" : 0,
+    "border_width" : 20,
+    "canvas_aspect" : 1,
+    "canvas_ratio_preset" : "1:1",
+    "has_background_image" : true
+  },
+  "dependencies" : [
+    {
+      "asset_ref" : "2.jpg",
+      "id" : "paper__2_jpg",
+      "type" : "background",
+      "url" : "https:\/\/photocollagemaker.john4shine.workers.dev\/Backgrounds\/Paper\/2.jpg"
+    },
+    {
+      "id" : "Polaroid 1",
+      "type" : "sticker"
+    },
+    {
+      "asset_ref" : "Tape.png",
+      "id" : "photo_frame_pr__tape",
+      "type" : "sticker",
+      "url" : "https:\/\/photocollagemaker.john4shine.workers.dev\/Stickers\/Photo%20Frame_PR\/Tape.png"
+    },
+    {
+      "id" : "GillSans-LightItalic",
+      "type" : "font"
+    }
+  ],
+  "editor" : {
+    "divider_positions" : {
+
+    },
+    "shared_vertex_positions" : {
+
+    }
+  },
+  "layout" : {
+    "category" : "TemplateBuilder",
+    "dividers" : [
+
+    ],
+    "id" : "template-builder-C676B141",
+    "isPremium" : false,
+    "name" : "Template builder",
+    "shared_vertices" : [
+
+    ],
+    "slots" : [
+
+    ],
+    "type" : "grid"
+  },
+  "stickers" : [
+    {
+      "hole_n_rect" : [
+        0.06818181818181818,
+        0.0546875,
+        0.8535353535353536,
+        0.728515625
+      ],
+      "id" : "44AF8498-5DCD-4511-B699-F245533D217D",
+      "image_name" : "Polaroid 1",
+      "is_transform_locked" : true,
+      "linked_canvas_photo_id" : "E74D11B2-00A9-4C2F-BFBE-4074652BBCE2",
+      "offset_height" : 0,
+      "offset_width" : 0,
+      "placement_kind" : "sticker",
+      "rotation_radians" : 0,
+      "scale" : 2.229109945144246,
+      "z_index" : 1099
+    },
+    {
+      "id" : "E74D11B2-00A9-4C2F-BFBE-4074652BBCE2",
+      "inner_offset_height" : 0.22659953967688296,
+      "inner_offset_width" : 0.9907303052453216,
+      "inner_scale" : 1,
+      "offset_height" : 0,
+      "offset_width" : 0,
+      "parent_frame_sticker_id" : "44AF8498-5DCD-4511-B699-F245533D217D",
+      "placement_kind" : "canvas_photo",
+      "rotation_radians" : 0,
+      "scale" : 2.229109945144246,
+      "z_index" : 1099
+    },
+    {
+      "id" : "01A5046D-F6AA-41BB-8047-866A8802291E",
+      "image_name" : "photo_frame_pr__tape",
+      "offset_height" : -134,
+      "offset_width" : -108.66666666666666,
+      "placement_kind" : "sticker",
+      "rotation_radians" : -0.702686473646793,
+      "scale" : 1.4273749421631072,
+      "z_index" : 1380
+    },
+    {
+      "id" : "BD2672F3-D78F-44D5-9372-3E113C0466A4",
+      "image_name" : "photo_frame_pr__tape",
+      "offset_height" : 146.00313649104032,
+      "offset_width" : 106.73475556227311,
+      "placement_kind" : "sticker",
+      "rotation_radians" : -0.702686473646793,
+      "scale" : 1.4273749421631072,
+      "z_index" : 1449
+    }
+  ],
+  "text_items" : [
+    {
+      "alignment" : "center",
+      "backgroundColorHex" : "#00000000",
+      "backgroundOpacity" : 1,
+      "cornerRadius" : 8,
+      "fontName" : "GillSans-LightItalic",
+      "fontSize" : 18.788321018218994,
+      "id" : "996A3AA8-F60B-43C3-9DB4-ACBA524F9353",
+      "letterSpacing" : -0.4054053872823715,
+      "lineSpacing" : 0,
+      "nPosition" : [
+        0.5,
+        0.7881072026800668
+      ],
+      "outlineColorHex" : "#000000",
+      "outlineOpacity" : 1,
+      "outlineWidth" : 0,
+      "rotation" : 0,
+      "scale" : 1,
+      "shadowColorHex" : "#00000000",
+      "shadowRadius" : 0,
+      "text" : "Acceptance is the fertile ground \nwhere change takes root.",
+      "textCase" : "none",
+      "textColorHex" : "#000000",
+      "textOpacity" : 1,
+      "zIndex" : 1237
+    }
+  ],
+  "version" : "1"
+}

@@ -1,0 +1,175 @@
+{
+  "chrome" : {
+    "background_color_rgba" : [
+      1,
+      1,
+      1,
+      1
+    ],
+    "background_hazy_blur_radius" : 48,
+    "border_color_rgba" : [
+      1,
+      1,
+      1,
+      1
+    ],
+    "border_corner_radius" : 0,
+    "border_width" : 3.4229379147291183,
+    "canvas_aspect" : 0.8,
+    "canvas_ratio_preset" : "4:5",
+    "has_background_image" : false
+  },
+  "dependencies" : [
+    {
+      "id" : "Polaroid3.3_W",
+      "type" : "sticker"
+    }
+  ],
+  "editor" : {
+    "divider_positions" : {
+
+    },
+    "shared_vertex_positions" : {
+
+    }
+  },
+  "layout" : {
+    "category" : "Classic",
+    "dividers" : [
+      {
+        "affects" : [
+          "slot_0",
+          "slot_1",
+          "slot_2",
+          "slot_3"
+        ],
+        "id" : "DRAG_V_0",
+        "position" : 0.5,
+        "segment_end" : 1,
+        "segment_start" : 0,
+        "type" : "vertical"
+      },
+      {
+        "affects" : [
+          "slot_0",
+          "slot_1",
+          "slot_2",
+          "slot_3"
+        ],
+        "id" : "DRAG_H_1",
+        "position" : 0.5,
+        "segment_end" : 1,
+        "segment_start" : 0,
+        "type" : "horizontal"
+      }
+    ],
+    "id" : "classic_4",
+    "isPremium" : false,
+    "name" : "Collage 4",
+    "shared_vertices" : [
+
+    ],
+    "slots" : [
+      {
+        "id" : "slot_0",
+        "n_rect" : [
+          0,
+          0,
+          0.5,
+          0.5
+        ]
+      },
+      {
+        "id" : "slot_1",
+        "n_rect" : [
+          0.5,
+          0,
+          0.5,
+          0.5
+        ]
+      },
+      {
+        "id" : "slot_2",
+        "n_rect" : [
+          0,
+          0.5,
+          0.5,
+          0.5
+        ]
+      },
+      {
+        "id" : "slot_3",
+        "n_rect" : [
+          0.5,
+          0.5,
+          0.5,
+          0.5
+        ]
+      }
+    ],
+    "type" : "grid"
+  },
+  "stickers" : [
+    {
+      "hole_n_rect" : [
+        0.08900523560209424,
+        0.056640625,
+        0.8350785340314136,
+        0.791015625
+      ],
+      "id" : "26BE3F46-55A3-4DC3-A4E2-33F21D02CB04",
+      "image_name" : "Polaroid3.3_W",
+      "linked_canvas_photo_id" : "6F54C017-E83A-4069-83A2-F89E6E742E20",
+      "offset_height" : -28,
+      "offset_width" : -52.016015624999994,
+      "placement_kind" : "sticker",
+      "rotation_radians" : 0,
+      "scale" : 1.656823655390599,
+      "z_index" : 121
+    },
+    {
+      "id" : "6F54C017-E83A-4069-83A2-F89E6E742E20",
+      "inner_offset_height" : 0,
+      "inner_offset_width" : 0,
+      "inner_scale" : 1,
+      "offset_height" : -28,
+      "offset_width" : -52.016015624999994,
+      "parent_frame_sticker_id" : "26BE3F46-55A3-4DC3-A4E2-33F21D02CB04",
+      "placement_kind" : "canvas_photo",
+      "rotation_radians" : 0,
+      "scale" : 1.656823655390599,
+      "z_index" : 121
+    },
+    {
+      "hole_n_rect" : [
+        0.08900523560209424,
+        0.056640625,
+        0.8350785340314136,
+        0.791015625
+      ],
+      "id" : "89221CE9-EAC2-4619-A63F-333C801176C1",
+      "image_name" : "Polaroid3.3_W",
+      "linked_canvas_photo_id" : "EB7C8DFB-9C03-4181-A510-345F0AC822CF",
+      "offset_height" : 58.000000000000085,
+      "offset_width" : 53.333333333333314,
+      "placement_kind" : "sticker",
+      "rotation_radians" : 0,
+      "scale" : 1.5264062569247823,
+      "z_index" : 306
+    },
+    {
+      "id" : "EB7C8DFB-9C03-4181-A510-345F0AC822CF",
+      "inner_offset_height" : 0,
+      "inner_offset_width" : 0,
+      "inner_scale" : 1,
+      "offset_height" : 58.000000000000085,
+      "offset_width" : 53.333333333333314,
+      "parent_frame_sticker_id" : "89221CE9-EAC2-4619-A63F-333C801176C1",
+      "placement_kind" : "canvas_photo",
+      "rotation_radians" : 0,
+      "scale" : 1.5264062569247823,
+      "z_index" : 306
+    }
+  ],
+  "version" : "1"
+}

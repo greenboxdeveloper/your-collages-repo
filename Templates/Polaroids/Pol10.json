@@ -1,0 +1,183 @@
+{
+  "chrome" : {
+    "background_color_rgba" : [
+      1,
+      1,
+      1,
+      1
+    ],
+    "background_hazy_blur_radius" : 6,
+    "background_hazy_canvas_photo_id" : "CB704967-3EF5-41CF-959A-3CF89F469FBD",
+    "background_hazy_polaroid_frame_id" : "32002CAB-BD8F-4966-B8C6-C96F6C9056FF",
+    "border_color_rgba" : [
+      1,
+      1,
+      1,
+      1
+    ],
+    "border_corner_radius" : 0,
+    "border_width" : 20,
+    "canvas_aspect" : 0.8,
+    "canvas_ratio_preset" : "4:5",
+    "has_background_image" : true
+  },
+  "dependencies" : [
+    {
+      "id" : "Polaroid1.2_W",
+      "type" : "sticker"
+    },
+    {
+      "id" : "BradleyHandITCTT-Bold",
+      "type" : "font"
+    }
+  ],
+  "editor" : {
+    "divider_positions" : {
+
+    },
+    "shared_vertex_positions" : {
+
+    }
+  },
+  "layout" : {
+    "category" : "TemplateBuilder",
+    "dividers" : [
+
+    ],
+    "id" : "template-builder-7E95ECD7",
+    "isPremium" : false,
+    "name" : "Template builder",
+    "shared_vertices" : [
+
+    ],
+    "slots" : [
+
+    ],
+    "type" : "grid"
+  },
+  "stickers" : [
+    {
+      "hole_n_rect" : [
+        0.10546875,
+        0.10546875,
+        0.7890625,
+        0.7890625
+      ],
+      "id" : "32002CAB-BD8F-4966-B8C6-C96F6C9056FF",
+      "image_name" : "Polaroid1.2_W",
+      "is_transform_locked" : true,
+      "linked_canvas_photo_id" : "CB704967-3EF5-41CF-959A-3CF89F469FBD",
+      "offset_height" : -119.66666666666671,
+      "offset_width" : -72.66666666666667,
+      "placement_kind" : "sticker",
+      "rotation_radians" : 0,
+      "scale" : 1,
+      "z_index" : 442
+    },
+    {
+      "id" : "CB704967-3EF5-41CF-959A-3CF89F469FBD",
+      "inner_offset_height" : 1.3333333333333712,
+      "inner_offset_width" : 2.3333333333333144,
+      "inner_scale" : 1,
+      "offset_height" : -119.66666666666671,
+      "offset_width" : -72.66666666666667,
+      "parent_frame_sticker_id" : "32002CAB-BD8F-4966-B8C6-C96F6C9056FF",
+      "placement_kind" : "canvas_photo",
+      "rotation_radians" : 0,
+      "scale" : 1,
+      "z_index" : 442
+    },
+    {
+      "hole_n_rect" : [
+        0.10546875,
+        0.10546875,
+        0.7890625,
+        0.7890625
+      ],
+      "id" : "BFFEAD74-6063-43DE-84CA-54CA623DE289",
+      "image_name" : "Polaroid1.2_W",
+      "is_transform_locked" : true,
+      "linked_canvas_photo_id" : "427D014F-2D48-41A3-B984-9FBC37CB54D0",
+      "offset_height" : -116.8017477696128,
+      "offset_width" : 88.08284437894855,
+      "placement_kind" : "sticker",
+      "rotation_radians" : 0,
+      "scale" : 1.0157598286124232,
+      "z_index" : 439
+    },
+    {
+      "id" : "427D014F-2D48-41A3-B984-9FBC37CB54D0",
+      "inner_offset_height" : 0.3333333333333144,
+      "inner_offset_width" : 9.000000000000057,
+      "inner_scale" : 1,
+      "offset_height" : -116.8017477696128,
+      "offset_width" : 88.08284437894855,
+      "parent_frame_sticker_id" : "BFFEAD74-6063-43DE-84CA-54CA623DE289",
+      "placement_kind" : "canvas_photo",
+      "rotation_radians" : 0,
+      "scale" : 1.0157598286124232,
+      "z_index" : 439
+    },
+    {
+      "hole_n_rect" : [
+        0.10546875,
+        0.10546875,
+        0.7890625,
+        0.7890625
+      ],
+      "id" : "D522D7EC-CB7D-4353-AF87-FD4C69DFB183",
+      "image_name" : "Polaroid1.2_W",
+      "is_transform_locked" : true,
+      "linked_canvas_photo_id" : "E111695C-6364-4FEE-B68B-4A1B48F969E7",
+      "offset_height" : 82.39662694245189,
+      "offset_width" : 4.666666666666686,
+      "placement_kind" : "sticker",
+      "rotation_radians" : 6.975736996017264e-17,
+      "scale" : 1.374083068466171,
+      "z_index" : 445
+    },
+    {
+      "id" : "E111695C-6364-4FEE-B68B-4A1B48F969E7",
+      "inner_offset_height" : 0,
+      "inner_offset_width" : 0,
+      "inner_scale" : 1,
+      "offset_height" : 82.39662694245189,
+      "offset_width" : 4.666666666666686,
+      "parent_frame_sticker_id" : "D522D7EC-CB7D-4353-AF87-FD4C69DFB183",
+      "placement_kind" : "canvas_photo",
+      "rotation_radians" : 6.975736996017264e-17,
+      "scale" : 1.374083068466171,
+      "z_index" : 445
+    }
+  ],
+  "text_items" : [
+    {
+      "alignment" : "center",
+      "backgroundColorHex" : "#00000000",
+      "backgroundOpacity" : 1,
+      "cornerRadius" : 8,
+      "fontName" : "BradleyHandITCTT-Bold",
+      "fontSize" : 19.72262728214264,
+      "id" : "3018E2BD-01C7-41BA-BFB0-EDAACEFF8ADD",
+      "letterSpacing" : 0,
+      "lineSpacing" : 0,
+      "nPosition" : [
+        0.5142434693575116,
+        0.9155266951378875
+      ],
+      "outlineColorHex" : "#000000",
+      "outlineOpacity" : 1,
+      "outlineWidth" : 0.3,
+      "rotation" : 0,
+      "scale" : 1,
+      "shadowColorHex" : "#00000000",
+      "shadowRadius" : 0,
+      "text" : "My favorite place is with you all.",
+      "textCase" : "none",
+      "textColorHex" : "#FFFFFF",
+      "textOpacity" : 1,
+      "zIndex" : 274
+    }
+  ],
+  "version" : "1"
+}

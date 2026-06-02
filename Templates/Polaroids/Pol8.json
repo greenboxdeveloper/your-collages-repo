@@ -1,0 +1,263 @@
+{
+  "chrome" : {
+    "background_color_rgba" : [
+      1,
+      1,
+      1,
+      1
+    ],
+    "background_hazy_blur_radius" : 48,
+    "background_image_name" : "paper__1_jpg",
+    "border_color_rgba" : [
+      1,
+      1,
+      1,
+      1
+    ],
+    "border_corner_radius" : 0,
+    "border_width" : 20,
+    "canvas_aspect" : 0.5625,
+    "canvas_ratio_preset" : "9:16",
+    "has_background_image" : true
+  },
+  "dependencies" : [
+    {
+      "asset_ref" : "1.jpg",
+      "id" : "paper__1_jpg",
+      "type" : "background",
+      "url" : "https:\/\/photocollagemaker.john4shine.workers.dev\/Backgrounds\/Paper\/1.jpg"
+    },
+    {
+      "id" : "Polaroid 1",
+      "type" : "sticker"
+    },
+    {
+      "id" : "Sticker_Birthday_12.png",
+      "type" : "sticker"
+    },
+    {
+      "id" : "Sticker_Birthday_15.png",
+      "type" : "sticker"
+    },
+    {
+      "asset_ref" : "Sticker_Birthday_33.png",
+      "id" : "Sticker_Birthday_33.png",
+      "type" : "sticker",
+      "url" : "https:\/\/photocollagemaker.john4shine.workers.dev\/Stickers\/Birthday%20Pack%2004_PR\/Sticker_Birthday_33.png"
+    },
+    {
+      "id" : "BradleyHandITCTT-Bold",
+      "type" : "font"
+    },
+    {
+      "id" : "AvenirNext-UltraLight",
+      "type" : "font"
+    }
+  ],
+  "editor" : {
+    "divider_positions" : {
+
+    },
+    "shared_vertex_positions" : {
+
+    }
+  },
+  "layout" : {
+    "category" : "TemplateBuilder",
+    "dividers" : [
+
+    ],
+    "id" : "template-builder-C7D308EF",
+    "isPremium" : false,
+    "name" : "Template builder",
+    "shared_vertices" : [
+
+    ],
+    "slots" : [
+
+    ],
+    "type" : "grid"
+  },
+  "stickers" : [
+    {
+      "hole_n_rect" : [
+        0.06818181818181818,
+        0.0546875,
+        0.8535353535353536,
+        0.728515625
+      ],
+      "id" : "5AF66FE9-80B4-4CB7-84EA-9E5066C15F52",
+      "image_name" : "Polaroid 1",
+      "is_transform_locked" : true,
+      "linked_canvas_photo_id" : "BFFABFAA-F786-4CDD-9763-F267E53E3855",
+      "offset_height" : -147.33333333333331,
+      "offset_width" : -59.66666666666666,
+      "placement_kind" : "sticker",
+      "rotation_radians" : 0,
+      "scale" : 1.780932712783866,
+      "z_index" : 365
+    },
+    {
+      "id" : "BFFABFAA-F786-4CDD-9763-F267E53E3855",
+      "inner_offset_height" : 0,
+      "inner_offset_width" : 0,
+      "inner_scale" : 1,
+      "offset_height" : -147.33333333333331,
+      "offset_width" : -59.66666666666666,
+      "parent_frame_sticker_id" : "5AF66FE9-80B4-4CB7-84EA-9E5066C15F52",
+      "placement_kind" : "canvas_photo",
+      "rotation_radians" : 0,
+      "scale" : 1.780932712783866,
+      "z_index" : 365
+    },
+    {
+      "hole_n_rect" : [
+        0.06818181818181818,
+        0.0546875,
+        0.8535353535353536,
+        0.728515625
+      ],
+      "id" : "68EE37BD-3DAE-4C47-B114-75EB5409034C",
+      "image_name" : "Polaroid 1",
+      "is_transform_locked" : true,
+      "linked_canvas_photo_id" : "BEB42796-0347-4701-B539-FEB6AD24BC41",
+      "offset_height" : 8.65218753271023,
+      "offset_width" : 56.773821480524305,
+      "placement_kind" : "sticker",
+      "rotation_radians" : 0,
+      "scale" : 1.780932712783866,
+      "z_index" : 362
+    },
+    {
+      "id" : "BEB42796-0347-4701-B539-FEB6AD24BC41",
+      "inner_offset_height" : 0,
+      "inner_offset_width" : 0,
+      "inner_scale" : 1,
+      "offset_height" : 8.65218753271023,
+      "offset_width" : 56.773821480524305,
+      "parent_frame_sticker_id" : "68EE37BD-3DAE-4C47-B114-75EB5409034C",
+      "placement_kind" : "canvas_photo",
+      "rotation_radians" : 0,
+      "scale" : 1.780932712783866,
+      "z_index" : 362
+    },
+    {
+      "hole_n_rect" : [
+        0.06818181818181818,
+        0.0546875,
+        0.8535353535353536,
+        0.728515625
+      ],
+      "id" : "66B360E1-5F30-4854-A58E-9EE71FC49A64",
+      "image_name" : "Polaroid 1",
+      "is_transform_locked" : true,
+      "linked_canvas_photo_id" : "061ABC42-B418-4E9E-A9F2-DCE56E38FB9C",
+      "offset_height" : 150.57911977750473,
+      "offset_width" : -65.68231315110896,
+      "placement_kind" : "sticker",
+      "rotation_radians" : 0,
+      "scale" : 1.780932712783866,
+      "z_index" : 359
+    },
+    {
+      "id" : "061ABC42-B418-4E9E-A9F2-DCE56E38FB9C",
+      "inner_offset_height" : 0,
+      "inner_offset_width" : 0,
+      "inner_scale" : 1,
+      "offset_height" : 150.57911977750473,
+      "offset_width" : -65.68231315110896,
+      "parent_frame_sticker_id" : "66B360E1-5F30-4854-A58E-9EE71FC49A64",
+      "placement_kind" : "canvas_photo",
+      "rotation_radians" : 0,
+      "scale" : 1.780932712783866,
+      "z_index" : 359
+    },
+    {
+      "id" : "CD858E01-6648-4676-9BF3-863A1B5BFF04",
+      "image_name" : "Sticker_Birthday_12.png",
+      "offset_height" : -294.5763964384929,
+      "offset_width" : -140.1388964384929,
+      "placement_kind" : "sticker",
+      "rotation_radians" : 0.49862660658617114,
+      "scale" : 1.1769312646951384,
+      "z_index" : 603
+    },
+    {
+      "id" : "5CFB5E46-B2E2-44A6-B0B1-AFA6A8D562B3",
+      "image_name" : "Sticker_Birthday_15.png",
+      "offset_height" : 114,
+      "offset_width" : 151,
+      "placement_kind" : "sticker",
+      "rotation_radians" : 0.4628498629571524,
+      "scale" : 1.6650035140638444,
+      "z_index" : 777
+    },
+    {
+      "id" : "398867DE-D9F3-45F2-A73D-2F1C0EB94580",
+      "image_name" : "Sticker_Birthday_33.png",
+      "offset_height" : 209.66666666666663,
+      "offset_width" : -155.33333333333331,
+      "placement_kind" : "sticker",
+      "rotation_radians" : -0.28916221065552006,
+      "scale" : 1.7837961081668368,
+      "z_index" : 937
+    }
+  ],
+  "text_items" : [
+    {
+      "alignment" : "center",
+      "backgroundColorHex" : "#00000000",
+      "backgroundOpacity" : 1,
+      "cornerRadius" : 8,
+      "fontName" : "BradleyHandITCTT-Bold",
+      "fontSize" : 30,
+      "id" : "971407A8-E5AE-432A-988B-3B62CD56C2FD",
+      "letterSpacing" : 0,
+      "lineSpacing" : 0,
+      "nPosition" : [
+        0.8097261567516525,
+        0.230406043437205
+      ],
+      "outlineColorHex" : "#FFFFFF",
+      "outlineOpacity" : 1,
+      "outlineWidth" : 0,
+      "rotation" : 0,
+      "scale" : 0.7464003228625754,
+      "shadowColorHex" : "#00000000",
+      "shadowRadius" : 0,
+      "text" : "Best Wishes\n for you",
+      "textCase" : "none",
+      "textColorHex" : "#FFFFFF",
+      "textOpacity" : 1,
+      "zIndex" : 366
+    },
+    {
+      "alignment" : "center",
+      "backgroundColorHex" : "#00000000",
+      "backgroundOpacity" : 1,
+      "cornerRadius" : 8,
+      "fontName" : "AvenirNext-UltraLight",
+      "fontSize" : 30,
+      "id" : "14B7F08B-D434-47CF-B981-6A6568FBD5B5",
+      "letterSpacing" : 0,
+      "lineSpacing" : 0,
+      "nPosition" : [
+        0.7650912197499832,
+        0.8553212695156949
+      ],
+      "outlineColorHex" : "#FFFFFF",
+      "outlineOpacity" : 1,
+      "outlineWidth" : 0,
+      "rotation" : 0,
+      "scale" : 0.7464003228625754,
+      "shadowColorHex" : "#00000000",
+      "shadowRadius" : 0,
+      "text" : "Happiest \nMoment",
+      "textCase" : "none",
+      "textColorHex" : "#FFFFFF",
+      "textOpacity" : 1,
+      "zIndex" : 778
+    }
+  ],
+  "version" : "1"
+}

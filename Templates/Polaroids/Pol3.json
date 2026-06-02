@@ -1,0 +1,93 @@
+{
+  "chrome" : {
+    "background_color_rgba" : [
+      1,
+      1,
+      1,
+      1
+    ],
+    "background_hazy_blur_radius" : 48,
+    "background_image_name" : "summer_pack_01__summer_1_11_jpg",
+    "border_color_rgba" : [
+      1,
+      1,
+      1,
+      1
+    ],
+    "border_corner_radius" : 0,
+    "border_width" : 20,
+    "canvas_aspect" : 1,
+    "canvas_ratio_preset" : "1:1",
+    "has_background_image" : true
+  },
+  "dependencies" : [
+    {
+      "asset_ref" : "Summer 1.11.jpg",
+      "id" : "summer_pack_01__summer_1_11_jpg",
+      "type" : "background",
+      "url" : "https:\/\/photocollagemaker.john4shine.workers.dev\/Backgrounds\/Summer%20Pack%2001\/Summer%201.11.jpg"
+    },
+    {
+      "id" : "Polaroid1.2_B",
+      "type" : "sticker"
+    }
+  ],
+  "editor" : {
+    "divider_positions" : {
+
+    },
+    "shared_vertex_positions" : {
+
+    }
+  },
+  "layout" : {
+    "category" : "TemplateBuilder",
+    "dividers" : [
+
+    ],
+    "id" : "template-builder-DAB009C7",
+    "isPremium" : false,
+    "name" : "Template builder",
+    "shared_vertices" : [
+
+    ],
+    "slots" : [
+
+    ],
+    "type" : "grid"
+  },
+  "stickers" : [
+    {
+      "hole_n_rect" : [
+        0.10546875,
+        0.10546875,
+        0.7890625,
+        0.7890625
+      ],
+      "id" : "FAC47002-61F7-484B-84E6-F1CFF997D1C3",
+      "image_name" : "Polaroid1.2_B",
+      "is_transform_locked" : true,
+      "linked_canvas_photo_id" : "15B6BC04-5746-48FD-8031-BB00A771E81A",
+      "offset_height" : 0,
+      "offset_width" : 0,
+      "placement_kind" : "sticker",
+      "rotation_radians" : -0.13615600824629226,
+      "scale" : 1.6020199849431986,
+      "z_index" : 145
+    },
+    {
+      "id" : "15B6BC04-5746-48FD-8031-BB00A771E81A",
+      "inner_offset_height" : 0,
+      "inner_offset_width" : 0,
+      "inner_scale" : 1,
+      "offset_height" : 0,
+      "offset_width" : 0,
+      "parent_frame_sticker_id" : "FAC47002-61F7-484B-84E6-F1CFF997D1C3",
+      "placement_kind" : "canvas_photo",
+      "rotation_radians" : -0.13615600824629226,
+      "scale" : 1.6020199849431986,
+      "z_index" : 145
+    }
+  ],
+  "version" : "1"
+}
