@@ -1,5 +1,5 @@
 {
-  "version": "7.6",
+  "version": "7.7",
   "sections": [
     {
       "id": "slideshow",
@@ -38,6 +38,16 @@
       "display_size": "small",
       "category": "made_for_you",
       "count": 10
+    },
+    {
+      "id": "templates_pol8_json_featured_templates",
+      "title": "Featured Templates",
+      "subtitle": "Holiday picks",
+      "display_size": "hero",
+      "category": "templates",
+      "sub_category": "Polaroids",
+      "count": 1,
+      "item": "Pol8.json"
     },
     {
       "id": "filters_moody_film_looks",
@@ -98,15 +108,6 @@
       "display_size": "small",
       "category": "templates",
       "sub_category": "Holiday",
-      "count": 8
-    },
-    {
-      "id": "templates_polaroids",
-      "title": "Polaroids",
-      "subtitle": "",
-      "display_size": "small",
-      "category": "templates",
-      "sub_category": "Polaroids",
       "count": 8
     },
     {
