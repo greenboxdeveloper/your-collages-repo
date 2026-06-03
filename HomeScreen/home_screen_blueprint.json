@@ -54,7 +54,7 @@
     },
     {
       "slot": "template_rows",
-      "max_rows": 3,
+      "max_rows": 4,
       "count": 8,
       "display_size": "small",
       "title_template": "{name}",
