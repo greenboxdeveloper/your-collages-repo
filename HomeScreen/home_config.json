@@ -1,5 +1,5 @@
 {
-  "version": "7.2",
+  "version": "7.3",
   "sections": [
     {
       "id": "slideshow",
@@ -14,13 +14,6 @@
       "subtitle": "Pick a style and start",
       "display_size": "medium",
       "category": "tools_grid"
-    },
-    {
-      "id": "template_store",
-      "title": "Template Store",
-      "subtitle": "Browse curated templates",
-      "display_size": "medium",
-      "category": "template_store_row"
     },
     {
       "id": "trending_layouts",
@@ -45,60 +38,6 @@
       "display_size": "small",
       "category": "made_for_you",
       "count": 10
-    },
-    {
-      "id": "templates_birthday",
-      "title": "Birthday",
-      "subtitle": "",
-      "display_size": "hero",
-      "category": "templates",
-      "sub_category": "Birthday",
-      "count": 1
-    },
-    {
-      "id": "templates_hazy_test",
-      "title": "Hazy Test",
-      "subtitle": "",
-      "display_size": "hero",
-      "category": "templates",
-      "sub_category": "Hazy Test",
-      "count": 1
-    },
-    {
-      "id": "templates_holiday",
-      "title": "Holiday",
-      "subtitle": "",
-      "display_size": "hero",
-      "category": "templates",
-      "sub_category": "Holiday",
-      "count": 1
-    },
-    {
-      "id": "templates_polaroids",
-      "title": "Polaroids",
-      "subtitle": "",
-      "display_size": "hero",
-      "category": "templates",
-      "sub_category": "Polaroids",
-      "count": 1
-    },
-    {
-      "id": "templates_summer",
-      "title": "Summer",
-      "subtitle": "",
-      "display_size": "hero",
-      "category": "templates",
-      "sub_category": "Summer",
-      "count": 1
-    },
-    {
-      "id": "templates_test",
-      "title": "Test",
-      "subtitle": "",
-      "display_size": "hero",
-      "category": "templates",
-      "sub_category": "Test",
-      "count": 1
     },
     {
       "id": "film_filters",
@@ -133,6 +72,42 @@
       "display_size": "small",
       "category": "stylish_layouts",
       "count": 12
+    },
+    {
+      "id": "templates_birthday",
+      "title": "Birthday",
+      "subtitle": "",
+      "display_size": "small",
+      "category": "templates",
+      "sub_category": "Birthday",
+      "count": 8
+    },
+    {
+      "id": "templates_hazy_test",
+      "title": "Hazy Test",
+      "subtitle": "",
+      "display_size": "small",
+      "category": "templates",
+      "sub_category": "Hazy Test",
+      "count": 8
+    },
+    {
+      "id": "templates_holiday",
+      "title": "Holiday",
+      "subtitle": "",
+      "display_size": "small",
+      "category": "templates",
+      "sub_category": "Holiday",
+      "count": 8
+    },
+    {
+      "id": "templates_polaroids",
+      "title": "Polaroids",
+      "subtitle": "",
+      "display_size": "small",
+      "category": "templates",
+      "sub_category": "Polaroids",
+      "count": 8
     },
     {
       "id": "Artistic_filters",
