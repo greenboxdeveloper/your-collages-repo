@@ -10,7 +10,7 @@
   },
   "sections": [
     {
-      "slot": "template_rows",
+      "slot": "template_row",
       "id": "featured_templates",
       "title": "Featured Templates",
       "subtitle": "Holiday picks",

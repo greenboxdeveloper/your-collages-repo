@@ -2993,7 +2993,6 @@ _HOME_VALID_DISPLAY_SIZES = frozenset({"hero", "medium", "small"})
 _HOME_RESERVED_CATEGORIES = frozenset({
     "slideshow",
     "tools_grid",
-    "template_store_row",
     "continue_projects",
     "made_for_you",
     "popular_layouts",
@@ -3023,13 +3022,6 @@ _HOME_FIXED_PREFIX: list[dict] = [
         "subtitle": "Pick a style and start",
         "display_size": "medium",
         "category": "tools_grid",
-    },
-    {
-        "id": "template_store",
-        "title": "Template Store",
-        "subtitle": "Browse curated templates",
-        "display_size": "medium",
-        "category": "template_store_row",
     },
     {
         "id": "trending_layouts",
@@ -3313,7 +3305,6 @@ def _expand_tail_slots(
     if kind in _HOME_RESERVED_CATEGORIES or kind in {
         "slideshow",
         "tools_grid",
-        "template_store_row",
         "popular_layouts",
         "continue_projects",
         "made_for_you",
@@ -3324,8 +3315,6 @@ def _expand_tail_slots(
             "slideshow": "slideshow",
             "tools": "tools_grid",
             "tools_grid": "tools_grid",
-            "template_store": "template_store_row",
-            "template_store_row": "template_store_row",
             "trending": "popular_layouts",
             "popular_layouts": "popular_layouts",
             "continue": "continue_projects",
