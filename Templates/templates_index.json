@@ -1,5 +1,5 @@
 {
-  "version": "2.5",
+  "version": "2.6",
   "templates": [
     {
       "id": "birthday__birthday_01",
@@ -138,6 +138,16 @@
       "category_folder": "Polaroids",
       "recipe": "Pol9.json",
       "preview": "Pol9.jpg",
+      "is_premium": true,
+      "neutral_empty_slots": true
+    },
+    {
+      "id": "summer__summer1_1_1",
+      "title": "Summer1.1 1",
+      "category": "Summer",
+      "category_folder": "Summer",
+      "recipe": "Summer1.1_1.json",
+      "preview": "Summer1.1_1.jpg",
       "is_premium": true,
       "neutral_empty_slots": true
     },
