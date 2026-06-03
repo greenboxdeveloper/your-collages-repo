@@ -14,7 +14,7 @@
       "id": "featured_templates",
       "title": "Featured Templates",
       "subtitle": "Holiday picks",
-      "display_size": "Hero",
+      "display_size": "hero",
       "sub_category": "Classic",
       "count": 1
     },
