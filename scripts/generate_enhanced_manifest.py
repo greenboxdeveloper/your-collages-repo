@@ -3296,6 +3296,16 @@ _BLUEPRINT_STORE_TO_CATEGORY: dict[str, str] = {
     "layout": "layouts",
 }
 
+_HOME_STICKER_DISPLAY_SIZE = "medium"
+
+
+def _display_size_for_store(store_norm: str, requested: str) -> str:
+    """Stickers always use medium (full-width pack banner); other stores use blueprint size."""
+    if store_norm == "stickers":
+        return _HOME_STICKER_DISPLAY_SIZE
+    return requested
+
+
 _BLUEPRINT_STORE_TO_SLOT: dict[str, str] = {
     "templates": "template_row",
     "filters": "filter_row",
@@ -3567,9 +3577,9 @@ def _compile_blueprint_section_v2(
         "id": _auto_section_id([store_norm, pack, title], used_ids),
         "title": title or pack,
         "subtitle": subtitle,
-        "display_size": display_size,
+        "display_size": _display_size_for_store(store_norm, display_size),
         "sub_category": pack,
-        "count": entry.get("count", 10),
+        "count": 1 if store_norm == "stickers" else entry.get("count", 10),
         "item": entry.get("item"),
     }
     return _expand_tail_slots(
@@ -3781,10 +3791,10 @@ def _expand_tail_slots(
             section_id=str(slot.get("id") or f"stickers_{_slugify(resolved)}"),
             title=str(slot.get("title") or resolved),
             subtitle=str(slot.get("subtitle") or ""),
-            display_size=display_size,
+            display_size=_HOME_STICKER_DISPLAY_SIZE,
             category="stickers",
             sub_category=resolved,
-            count=count,
+            count=1,
         )
         try_emit(sec)
         return sections
@@ -3797,10 +3807,10 @@ def _expand_tail_slots(
                 section_id=f"stickers_{_slugify(cid)}",
                 title=name,
                 subtitle=str(slot.get("subtitle") or ""),
-                display_size=display_size,
+                display_size=_HOME_STICKER_DISPLAY_SIZE,
                 category="stickers",
                 sub_category=name,
-                count=count,
+                count=1,
             )
             try_emit(sec)
         return sections
