@@ -1,5 +1,5 @@
 {
-  "version": "7.0",
+  "version": "7.1",
   "sections": [
     {
       "id": "slideshow",
@@ -105,6 +105,15 @@
       "display_size": "small",
       "category": "templates",
       "sub_category": "Holiday",
+      "count": 8
+    },
+    {
+      "id": "templates_polaroids",
+      "title": "Polaroids",
+      "subtitle": "",
+      "display_size": "small",
+      "category": "templates",
+      "sub_category": "Polaroids",
       "count": 8
     },
     {
