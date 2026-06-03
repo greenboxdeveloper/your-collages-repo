@@ -10,13 +10,13 @@
   },
   "sections": [
     {
-      "slot": "template_row",
+      "slot": "template_rows",
       "id": "featured_templates",
       "title": "Featured Templates",
       "subtitle": "Holiday picks",
-      "display_size": "small",
+      "display_size": "Hero",
       "sub_category": "Classic",
-      "count": 6
+      "count": 1
     },
     {
       "slot": "filter_row",
