@@ -3105,23 +3105,28 @@ def _load_home_catalog_index(
     background_manifest_path: Path,
     font_manifest_path: Path,
     templates_index_path: Path,
+    frame_manifest_path: Path | None = None,
 ) -> dict[str, list[tuple[str, str, str]]]:
     filters_doc = _load_json_if_exists(filter_manifest_path) or {}
     stickers_doc = _load_json_if_exists(sticker_manifest_path) or {}
     backgrounds_doc = _load_json_if_exists(background_manifest_path) or {}
     fonts_doc = _load_json_if_exists(font_manifest_path) or {}
     templates_doc = _load_json_if_exists(templates_index_path) or {}
+    frames_doc = _load_json_if_exists(frame_manifest_path) if frame_manifest_path else {}
 
     return {
         "filters": _home_catalog_entries_from_categories(filters_doc.get("categories")),
         "stickers": _home_catalog_entries_from_categories(stickers_doc.get("categories")),
         "backgrounds": _home_catalog_entries_from_categories(backgrounds_doc.get("categories")),
+        "frames": _home_catalog_entries_from_categories(frames_doc.get("categories")),
         "fonts": _home_catalog_entries_from_categories(fonts_doc.get("categories")),
         "templates": [
             (folder, label, folder)
             for folder, label, _, _ in _home_template_categories(templates_doc.get("templates"))
         ],
         "template_rows_meta": _home_template_categories(templates_doc.get("templates")),
+        "templates_raw": templates_doc.get("templates") or [],
+        "filters_doc": filters_doc,
     }
 
 
@@ -3271,6 +3276,340 @@ def _apply_priority_order(
         ranked.append((rank, i, row))
     ranked.sort(key=lambda t: (t[0], t[1]))
     return [t[2] for t in ranked]
+
+
+# Blueprint v2 — human-authored `store` / `file` / `pack` (no slot / id required).
+_BLUEPRINT_STORE_TO_CATEGORY: dict[str, str] = {
+    "templates": "templates",
+    "template": "templates",
+    "filters": "filters",
+    "filter": "filters",
+    "stickers": "stickers",
+    "sticker": "stickers",
+    "frames": "frames",
+    "frame": "frames",
+    "backgrounds": "backgrounds",
+    "background": "backgrounds",
+    "fonts": "fonts",
+    "font": "fonts",
+    "layouts": "layouts",
+    "layout": "layouts",
+}
+
+_BLUEPRINT_STORE_TO_SLOT: dict[str, str] = {
+    "templates": "template_row",
+    "filters": "filter_row",
+    "stickers": "sticker_row",
+    "frames": "frame_row",
+    "backgrounds": "background_row",
+    "fonts": "fonts_row",
+}
+
+
+def _normalize_blueprint_store(raw: str | None) -> str | None:
+    key = _normalize_catalog_key(str(raw or ""))
+    return _BLUEPRINT_STORE_TO_CATEGORY.get(key)
+
+
+def _parse_blueprint_file_ref(raw: str) -> tuple[str, str | None]:
+    """Return (basename, optional parent folder from path)."""
+    text = str(raw or "").strip().replace("\\", "/")
+    for prefix in ("templates/", "template/"):
+        if text.lower().startswith(prefix):
+            text = text[len(prefix) :]
+            break
+    parts = [p for p in text.split("/") if p]
+    if len(parts) >= 2:
+        return parts[-1], parts[-2]
+    if parts:
+        return parts[-1], None
+    return "", None
+
+
+def _template_entry_matches_file(entry: dict, basename: str, path_folder: str | None) -> bool:
+    bn = basename.lower()
+    if not bn:
+        return False
+    matched_field = False
+    for field in ("recipe", "preview", "id", "title"):
+        val = str(entry.get(field) or "").strip()
+        if not val:
+            continue
+        leaf = Path(val).name.lower()
+        if val.lower() == bn or leaf == bn:
+            matched_field = True
+            break
+    if not matched_field:
+        return False
+    if path_folder:
+        folder = str(entry.get("category_folder") or entry.get("category") or "").strip()
+        if folder and _normalize_catalog_key(folder) != _normalize_catalog_key(path_folder):
+            return False
+    return True
+
+
+def _find_template_by_file(file_ref: str, templates_raw: list) -> dict | None:
+    basename, path_folder = _parse_blueprint_file_ref(file_ref)
+    if not basename:
+        return None
+    for entry in templates_raw or []:
+        if isinstance(entry, dict) and _template_entry_matches_file(entry, basename, path_folder):
+            return entry
+    return None
+
+
+def _template_file_suggestions(basename: str, templates_raw: list, *, limit: int = 8) -> list[str]:
+    bn = _normalize_catalog_key(Path(basename).stem or basename)
+    if not bn:
+        return []
+    hits: list[str] = []
+    for entry in templates_raw or []:
+        if not isinstance(entry, dict):
+            continue
+        for field in ("recipe", "preview", "id"):
+            val = str(entry.get(field) or "").strip()
+            if val and (_normalize_catalog_key(val).find(bn) >= 0 or bn in _normalize_catalog_key(val)):
+                hits.append(val)
+                break
+        if len(hits) >= limit:
+            break
+    return hits
+
+
+def _find_filter_by_file(file_ref: str, filters_doc: dict) -> tuple[str, str] | None:
+    """Return (category display name, item id) for home_config ``item``."""
+    basename, _ = _parse_blueprint_file_ref(file_ref)
+    if not basename:
+        return None
+    bn = _normalize_catalog_key(Path(basename).stem or basename)
+    for cat in filters_doc.get("categories") or []:
+        if not isinstance(cat, dict):
+            continue
+        cat_name = str(cat.get("name") or cat.get("id") or "").strip()
+        for filt in cat.get("filters") or []:
+            if not isinstance(filt, dict):
+                continue
+            for field in ("id", "name", "lutFileName"):
+                val = str(filt.get(field) or "").strip()
+                if not val:
+                    continue
+                if (
+                    val.lower() == basename.lower()
+                    or _normalize_catalog_key(val) == bn
+                    or _normalize_catalog_key(Path(val).name) == bn
+                ):
+                    item_key = str(filt.get("id") or filt.get("name") or "").strip()
+                    return cat_name, item_key
+    return None
+
+
+def _auto_section_id(parts: list[str], used: set[str]) -> str:
+    base = _slugify("_".join(p for p in parts if p)) or "section"
+    sid = base
+    suffix = 2
+    while sid in used:
+        sid = f"{base}_{suffix}"
+        suffix += 1
+    used.add(sid)
+    return sid
+
+
+def _try_emit_home_section(sec: dict, emitted: set[tuple[str, str]], sections: list[dict]) -> bool:
+    key = _section_dedup_key(sec)
+    if key in emitted:
+        return False
+    cat = key[0]
+    if cat in _HOME_STORE_CATEGORIES_NEEDING_SUB and not sec.get("sub_category") and not sec.get("item"):
+        print(
+            f"[home-config] skip section '{sec.get('id')}': missing sub_category",
+            file=sys.stderr,
+        )
+        return False
+    emitted.add(key)
+    sections.append(sec)
+    return True
+
+
+def _compile_blueprint_section_v2(
+    entry: dict,
+    catalog: dict,
+    emitted: set[tuple[str, str]],
+    *,
+    filter_manifest_path: Path,
+    used_ids: set[str],
+    default_display_size: str = "small",
+) -> list[dict]:
+    store_norm = _normalize_blueprint_store(entry.get("store") or entry.get("NameOfItem"))
+    if not store_norm:
+        print(
+            f"[home-config] skip section: unknown store '{entry.get('store')}' "
+            f"(title='{entry.get('title', '')}')",
+            file=sys.stderr,
+        )
+        return []
+
+    title = str(entry.get("title") or "").strip()
+    subtitle = str(entry.get("subtitle") or "")
+    display_size = str(entry.get("display_size") or default_display_size)
+
+    if store_norm == "layouts":
+        pack = str(entry.get("pack") or "classic").strip().lower()
+        category = "stylish_layouts" if pack in ("stylish", "special", "stylish_layouts") else "classic_layouts"
+        sec = _make_section(
+            section_id=_auto_section_id([category, title or pack], used_ids),
+            title=title or ("Stylish Collage" if category == "stylish_layouts" else "Classic Collage"),
+            subtitle=subtitle,
+            display_size=display_size,
+            category=category,
+            count=entry.get("count", 12),
+        )
+        out: list[dict] = []
+        if _try_emit_home_section(sec, emitted, out):
+            return out
+        return []
+
+    if entry.get("all_packs") and store_norm == "templates":
+        legacy = {
+            "slot": "template_rows",
+            "id": _auto_section_id(["templates", "all_packs", title], used_ids),
+            "title": entry.get("title") or "{name}",
+            "subtitle": subtitle,
+            "display_size": display_size,
+            "max_rows": int(entry.get("max_rows") or 3),
+            "count": entry.get("count", 8),
+            "title_template": entry.get("title") or "{name}",
+            "subtitle_template": entry.get("subtitle_template") or subtitle,
+        }
+        return _expand_tail_slots(
+            legacy, catalog, emitted, filter_manifest_path=filter_manifest_path
+        )
+
+    file_ref = str(entry.get("file") or "").strip()
+    if file_ref:
+        if store_norm == "templates":
+            tpl = _find_template_by_file(file_ref, catalog.get("templates_raw") or [])
+            if not tpl:
+                hints = _template_file_suggestions(_parse_blueprint_file_ref(file_ref)[0], catalog.get("templates_raw") or [])
+                hint_txt = f" (e.g. {', '.join(hints)})" if hints else ""
+                print(
+                    f"[home-config] ERROR: Templates file not found '{file_ref}'{hint_txt}",
+                    file=sys.stderr,
+                )
+                return []
+            basename, _ = _parse_blueprint_file_ref(file_ref)
+            sub = str(tpl.get("category") or tpl.get("category_folder") or "").strip() or None
+            sec = _make_section(
+                section_id=_auto_section_id(["templates", basename, title], used_ids),
+                title=title or str(tpl.get("title") or basename),
+                subtitle=subtitle,
+                display_size=display_size,
+                category="templates",
+                sub_category=sub,
+                count=1,
+                item=basename,
+            )
+            out = []
+            if _try_emit_home_section(sec, emitted, out):
+                return out
+            return []
+
+        if store_norm == "filters":
+            found = _find_filter_by_file(file_ref, catalog.get("filters_doc") or {})
+            if not found:
+                print(
+                    f"[home-config] ERROR: Filters file/id not found '{file_ref}'",
+                    file=sys.stderr,
+                )
+                return []
+            cat_name, item_key = found
+            sec = _make_section(
+                section_id=_auto_section_id(["filters", item_key, title], used_ids),
+                title=title or item_key,
+                subtitle=subtitle,
+                display_size=display_size,
+                category="filters",
+                sub_category=cat_name,
+                count=1,
+                item=item_key,
+            )
+            out = []
+            if _try_emit_home_section(sec, emitted, out):
+                return out
+            return []
+
+        print(
+            f"[home-config] skip section: single 'file' only supported for Templates/Filters "
+            f"(store={store_norm}, file={file_ref})",
+            file=sys.stderr,
+        )
+        return []
+
+    pack = str(entry.get("pack") or entry.get("folder") or "").strip()
+    if not pack:
+        print(
+            f"[home-config] skip section: need 'pack' or 'file' for store '{store_norm}' "
+            f"(title='{title}')",
+            file=sys.stderr,
+        )
+        return []
+
+    slot_kind = _BLUEPRINT_STORE_TO_SLOT.get(store_norm)
+    if not slot_kind:
+        print(
+            f"[home-config] skip section: store '{store_norm}' has no row compiler yet "
+            f"(use legacy slot format)",
+            file=sys.stderr,
+        )
+        return []
+
+    legacy = {
+        "slot": slot_kind,
+        "id": _auto_section_id([store_norm, pack, title], used_ids),
+        "title": title or pack,
+        "subtitle": subtitle,
+        "display_size": display_size,
+        "sub_category": pack,
+        "count": entry.get("count", 10),
+        "item": entry.get("item"),
+    }
+    return _expand_tail_slots(
+        legacy, catalog, emitted, filter_manifest_path=filter_manifest_path
+    )
+
+
+def _compile_blueprint_section(
+    entry: dict,
+    catalog: dict,
+    emitted: set[tuple[str, str]],
+    *,
+    filter_manifest_path: Path,
+    used_ids: set[str],
+    default_display_size: str = "small",
+) -> list[dict]:
+    if not isinstance(entry, dict):
+        return []
+    if entry.get("slot"):
+        return _expand_tail_slots(
+            entry,
+            catalog,
+            emitted,
+            filter_manifest_path=filter_manifest_path,
+            default_display_size=default_display_size,
+        )
+    if entry.get("store") or entry.get("NameOfItem"):
+        return _compile_blueprint_section_v2(
+            entry,
+            catalog,
+            emitted,
+            filter_manifest_path=filter_manifest_path,
+            used_ids=used_ids,
+            default_display_size=default_display_size,
+        )
+    print(
+        f"[home-config] skip section: need 'store' or legacy 'slot' (title='{entry.get('title', '')}')",
+        file=sys.stderr,
+    )
+    return []
 
 
 def _expand_tail_slots(
@@ -3486,6 +3825,26 @@ def _expand_tail_slots(
         try_emit(sec)
         return sections
 
+    if kind in ("frame_row", "frames_row"):
+        entries = catalog.get("frames") or []
+        sub_raw = slot.get("sub_category")
+        resolved = _resolve_sub_category_value(sub_raw, entries) if sub_raw else None
+        if not resolved and entries:
+            resolved = entries[0][1]
+        if not resolved:
+            return sections
+        sec = _make_section(
+            section_id=str(slot.get("id") or f"frames_{_slugify(resolved)}"),
+            title=str(slot.get("title") or resolved),
+            subtitle=str(slot.get("subtitle") or ""),
+            display_size=display_size,
+            category="frames",
+            sub_category=resolved,
+            count=count,
+        )
+        try_emit(sec)
+        return sections
+
     if kind == "background_rows":
         rows = list(catalog.get("backgrounds") or [])
         rows = _apply_priority_order([(e[0], e[1], e[2]) for e in rows], priority, folder_index=2)
@@ -3539,11 +3898,19 @@ def _build_home_config_payload(blueprint: dict, catalog: dict, *, filter_manifes
         emitted.add(key)
         sections.append(sec)
 
-    for slot in blueprint.get("sections") or []:
-        if not isinstance(slot, dict):
+    used_ids: set[str] = {str(sec["id"]) for sec in sections if sec.get("id")}
+
+    for entry in blueprint.get("sections") or []:
+        if not isinstance(entry, dict):
             continue
         sections.extend(
-            _expand_tail_slots(slot, catalog, emitted, filter_manifest_path=filter_manifest_path)
+            _compile_blueprint_section(
+                entry,
+                catalog,
+                emitted,
+                filter_manifest_path=filter_manifest_path,
+                used_ids=used_ids,
+            )
         )
 
     randomize = blueprint.get("randomize")
@@ -3630,9 +3997,13 @@ def validate_home_config(path: Path) -> int:
                 return 1
         if cat in _HOME_STORE_CATEGORIES_NEEDING_SUB:
             sub = str(section.get("sub_category") or "").strip()
-            if not sub:
+            has_item = bool(str(section.get("item") or "").strip())
+            count_val = section.get("count")
+            is_single_item = count_val == 1 or count_val == "1"
+            if not sub and not (has_item and is_single_item):
                 print(
-                    f"[home-config] ERROR: sections[{i}] category '{cat}' requires non-empty sub_category",
+                    f"[home-config] ERROR: sections[{i}] category '{cat}' requires non-empty sub_category "
+                    f"(or item with count=1)",
                     file=sys.stderr,
                 )
                 return 1
@@ -3685,12 +4056,19 @@ def generate_home_config(
         print(f"[home-config] invalid blueprint JSON: {exc}", file=sys.stderr)
         return 1
 
+    frame_candidates = [
+        repo_root / "Frames" / "frame_manifest.json",
+        repo_root / "PhotoCollageMaker/PhotoCollage/Resource/frame_manifest.json",
+    ]
+    frame_manifest_path = next((p for p in frame_candidates if p.is_file()), frame_candidates[0])
+
     catalog = _load_home_catalog_index(
         filter_manifest_path=filter_manifest_path,
         sticker_manifest_path=sticker_manifest_path,
         background_manifest_path=background_manifest_path,
         font_manifest_path=font_manifest_path,
         templates_index_path=templates_index_path,
+        frame_manifest_path=frame_manifest_path,
     )
     payload = _build_home_config_payload(blueprint, catalog, filter_manifest_path=filter_manifest_path)
     outputs = [output_ota.resolve(), output_bundle.resolve()]
@@ -3713,7 +4091,7 @@ def _add_home_config_args(parser: argparse.ArgumentParser) -> None:
     parser.add_argument(
         "--home-blueprint",
         default="HomeScreen/home_screen_blueprint.json",
-        help="Blueprint JSON (fixed 6-row prefix + tail slots).",
+        help="Blueprint JSON v2 (store/file/pack) or legacy slots + fixed header prefix.",
     )
     parser.add_argument(
         "--home-output-ota",

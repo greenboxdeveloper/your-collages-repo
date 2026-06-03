@@ -1,5 +1,5 @@
 {
-  "version": "1.2",
+  "version": "2.0",
   "randomize": {
     "enabled": true,
     "title": "Discover More",
@@ -10,72 +10,67 @@
   },
   "sections": [
     {
-      "slot": "template_row",
-      "id": "featured_templates",
       "title": "Featured Templates",
       "subtitle": "Holiday picks",
       "display_size": "hero",
-      "sub_category": "Classic",
-      "count": 1
+      "store": "Templates",
+      "file": "store_demo.json"
     },
     {
-      "slot": "filter_row",
-      "id": "film_filters",
       "title": "Film Looks",
       "subtitle": "",
       "display_size": "small",
-      "sub_category": "Moody",
+      "store": "Filters",
+      "pack": "Moody",
       "count": 10
     },
     {
-      "slot": "filter_row",
-      "id": "cinematic_filters",
       "title": "Your Cine filters",
       "subtitle": "Create memorable holiday",
       "display_size": "small",
-      "sub_category": "Cinematic",
+      "store": "Filters",
+      "pack": "Cinematic",
       "count": 10
     },
     {
-      "slot": "classic_layouts",
-      "id": "classic_layouts",
       "title": "Classic Collage",
       "subtitle": "Grid layouts from the catalog",
       "display_size": "small",
+      "store": "Layouts",
+      "pack": "classic",
       "count": 12
     },
     {
-      "slot": "stylish_layouts",
-      "id": "stylish_layouts",
       "title": "Stylish Collage",
       "subtitle": "Creative shapes and styles",
       "display_size": "small",
+      "store": "Layouts",
+      "pack": "stylish",
       "count": 12
     },
     {
-      "slot": "template_rows",
+      "store": "Templates",
+      "all_packs": true,
       "max_rows": 4,
       "count": 8,
       "display_size": "small",
-      "title_template": "{name}",
-      "subtitle_template": ""
+      "title": "{name}",
+      "subtitle": ""
     },
     {
-      "slot": "filter_row",
-      "id": "Artistic_filters",
       "title": "Your art filters",
       "subtitle": "Create social posts",
       "display_size": "small",
-      "sub_category": "Color Boost",
+      "store": "Filters",
+      "pack": "Vintage",
       "count": 10
     },
     {
-      "slot": "fonts_row",
-      "id": "stylish_fonts",
       "title": "Your Stylish Fonts",
       "subtitle": "",
       "display_size": "small",
-      "pick": "first",
+      "store": "Fonts",
+      "pack": "Basic",
       "count": 10
     }
   ]
