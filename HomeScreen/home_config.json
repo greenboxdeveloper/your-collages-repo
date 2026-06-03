@@ -1,5 +1,5 @@
 {
-  "version": "7.5",
+  "version": "7.6",
   "sections": [
     {
       "id": "slideshow",
@@ -108,6 +108,15 @@
       "category": "templates",
       "sub_category": "Polaroids",
       "count": 8
+    },
+    {
+      "id": "filters_portrait_your_art_filters",
+      "title": "Your art filters",
+      "subtitle": "Create social posts",
+      "display_size": "small",
+      "category": "filters",
+      "sub_category": "Portrait",
+      "count": 10
     },
     {
       "id": "fonts_basic_your_stylish_fonts",
