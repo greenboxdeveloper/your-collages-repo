@@ -1,5 +1,5 @@
 {
-  "version": "7.4",
+  "version": "7.5",
   "sections": [
     {
       "id": "slideshow",
@@ -40,7 +40,7 @@
       "count": 10
     },
     {
-      "id": "film_filters",
+      "id": "filters_moody_film_looks",
       "title": "Film Looks",
       "subtitle": "",
       "display_size": "small",
@@ -49,7 +49,7 @@
       "count": 10
     },
     {
-      "id": "cinematic_filters",
+      "id": "filters_cinematic_your_cine_filters",
       "title": "Your Cine filters",
       "subtitle": "Create memorable holiday",
       "display_size": "small",
@@ -58,7 +58,7 @@
       "count": 10
     },
     {
-      "id": "classic_layouts",
+      "id": "classic_layouts_classic_collage",
       "title": "Classic Collage",
       "subtitle": "Grid layouts from the catalog",
       "display_size": "small",
@@ -66,7 +66,7 @@
       "count": 12
     },
     {
-      "id": "stylish_layouts",
+      "id": "stylish_layouts_stylish_collage",
       "title": "Stylish Collage",
       "subtitle": "Creative shapes and styles",
       "display_size": "small",
@@ -110,16 +110,7 @@
       "count": 8
     },
     {
-      "id": "Artistic_filters",
-      "title": "Your art filters",
-      "subtitle": "Create social posts",
-      "display_size": "small",
-      "category": "filters",
-      "sub_category": "Color Boost",
-      "count": 10
-    },
-    {
-      "id": "stylish_fonts",
+      "id": "fonts_basic_your_stylish_fonts",
       "title": "Your Stylish Fonts",
       "subtitle": "",
       "display_size": "small",
