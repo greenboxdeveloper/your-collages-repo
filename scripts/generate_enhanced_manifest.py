@@ -3924,8 +3924,8 @@ def _build_home_config_payload(blueprint: dict, catalog: dict, *, filter_manifes
             "title": "Discover More",
             "subtitle": "",
             "display_size": "small",
-            "template_count": 6,
-            "store_count": 6,
+            "max_rows": 6,
+            "items_per_row": 10,
         }
 
     payload: dict = {"sections": sections}
@@ -4030,6 +4030,10 @@ def validate_home_config(path: Path) -> int:
                 if not isinstance(c, int) and not (isinstance(c, str) and c.lower() == "all"):
                     print(f"[home-config] ERROR: randomize.{key} must be int or 'all'", file=sys.stderr)
                     return 1
+        for key in ("max_rows", "items_per_row"):
+            if key in randomize and not isinstance(randomize[key], int):
+                print(f"[home-config] ERROR: randomize.{key} must be an integer", file=sys.stderr)
+                return 1
 
     print(f"[home-config] OK: {path}")
     return 0
