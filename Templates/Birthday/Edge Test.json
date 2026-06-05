@@ -1,0 +1,119 @@
+{
+  "chrome" : {
+    "background_color_rgba" : [
+      1,
+      1,
+      1,
+      1
+    ],
+    "background_hazy_blur_radius" : 48,
+    "border_color_rgba" : [
+      1,
+      1,
+      1,
+      1
+    ],
+    "border_corner_radius" : 0,
+    "border_width" : 20,
+    "canvas_aspect" : 0.5625,
+    "canvas_ratio_preset" : "9:16",
+    "has_background_image" : false
+  },
+  "dependencies" : [
+    {
+      "id" : "Polaroid 1",
+      "type" : "sticker"
+    },
+    {
+      "id" : "Polaroid1.1_B",
+      "type" : "sticker"
+    }
+  ],
+  "editor" : {
+    "divider_positions" : {
+
+    },
+    "shared_vertex_positions" : {
+
+    }
+  },
+  "layout" : {
+    "category" : "TemplateBuilder",
+    "dividers" : [
+
+    ],
+    "id" : "template-builder-74EB6790",
+    "isPremium" : false,
+    "name" : "Template builder",
+    "shared_vertices" : [
+
+    ],
+    "slots" : [
+
+    ],
+    "type" : "grid"
+  },
+  "stickers" : [
+    {
+      "hole_n_rect" : [
+        0.06818181818181818,
+        0.0546875,
+        0.8535353535353536,
+        0.728515625
+      ],
+      "id" : "8CD0913A-C2BA-4E95-838E-9710D2CF3532",
+      "image_name" : "Polaroid 1",
+      "linked_canvas_photo_id" : "D52E9194-E226-4F34-8352-6E2DADF6CF31",
+      "offset_height" : -156.12527581053,
+      "offset_width" : -52.53532986137802,
+      "placement_kind" : "sticker",
+      "rotation_radians" : 3.487868498008632e-16,
+      "scale" : 2.623921685228303,
+      "z_index" : 927
+    },
+    {
+      "id" : "D52E9194-E226-4F34-8352-6E2DADF6CF31",
+      "inner_offset_height" : 2.6666666666666288,
+      "inner_offset_width" : 1,
+      "inner_scale" : 1,
+      "offset_height" : -156.12527581053,
+      "offset_width" : -52.53532986137802,
+      "parent_frame_sticker_id" : "8CD0913A-C2BA-4E95-838E-9710D2CF3532",
+      "placement_kind" : "canvas_photo",
+      "rotation_radians" : 3.487868498008632e-16,
+      "scale" : 2.623921685228303,
+      "z_index" : 927
+    },
+    {
+      "hole_n_rect" : [
+        0.05078125,
+        0.05078125,
+        0.8984375,
+        0.8984375
+      ],
+      "id" : "4007D4EA-E869-4F17-8E57-4C42196112D1",
+      "image_name" : "Polaroid1.1_B",
+      "linked_canvas_photo_id" : "A9B595BD-8453-4538-AAA5-16B74057A5F3",
+      "offset_height" : 146.66666666666663,
+      "offset_width" : 118.08333333333329,
+      "placement_kind" : "sticker",
+      "rotation_radians" : 0,
+      "scale" : 1,
+      "z_index" : 635
+    },
+    {
+      "id" : "A9B595BD-8453-4538-AAA5-16B74057A5F3",
+      "inner_offset_height" : 37.33333333333337,
+      "inner_offset_width" : -1.3333333333333144,
+      "inner_scale" : 1,
+      "offset_height" : 146.66666666666663,
+      "offset_width" : 118.08333333333329,
+      "parent_frame_sticker_id" : "4007D4EA-E869-4F17-8E57-4C42196112D1",
+      "placement_kind" : "canvas_photo",
+      "rotation_radians" : 0,
+      "scale" : 1,
+      "z_index" : 635
+    }
+  ],
+  "version" : "1"
+}
