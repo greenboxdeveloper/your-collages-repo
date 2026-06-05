@@ -1,5 +1,5 @@
 {
-  "version": "2.6",
+  "version": "2.7",
   "templates": [
     {
       "id": "birthday__birthday_01",
@@ -8,6 +8,16 @@
       "category_folder": "Birthday",
       "recipe": "Birthday 01.json",
       "preview": "Birthday 01.jpg",
+      "is_premium": true,
+      "neutral_empty_slots": true
+    },
+    {
+      "id": "birthday__edge_test",
+      "title": "Edge Test",
+      "category": "Birthday",
+      "category_folder": "Birthday",
+      "recipe": "Edge Test.json",
+      "preview": "Edge Test.jpg",
       "is_premium": true,
       "neutral_empty_slots": true
     },
