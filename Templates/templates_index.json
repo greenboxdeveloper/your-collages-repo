@@ -1,5 +1,5 @@
 {
-  "version": "2.7",
+  "version": "2.8",
   "templates": [
     {
       "id": "birthday__birthday_01",
@@ -12,20 +12,10 @@
       "neutral_empty_slots": true
     },
     {
-      "id": "birthday__edge_test",
-      "title": "Edge Test",
-      "category": "Birthday",
-      "category_folder": "Birthday",
-      "recipe": "Edge Test.json",
-      "preview": "Edge Test.jpg",
-      "is_premium": true,
-      "neutral_empty_slots": true
-    },
-    {
-      "id": "hazy_test__hazy_test",
+      "id": "hazy__hazy_test",
       "title": "Hazy Test",
-      "category": "Hazy Test",
-      "category_folder": "Hazy Test",
+      "category": "Hazy",
+      "category_folder": "Hazy",
       "recipe": "Hazy Test.json",
       "preview": "Hazy Test.jpg",
       "is_premium": true,
@@ -58,6 +48,56 @@
       "category_folder": "Holiday",
       "recipe": "Holiday Season 2.json",
       "preview": "Holiday Season 2.jpg",
+      "is_premium": true,
+      "neutral_empty_slots": true
+    },
+    {
+      "id": "love__font_test_6",
+      "title": "Font Test 6",
+      "category": "Love",
+      "category_folder": "Love",
+      "recipe": "Font Test 6.json",
+      "preview": "Font Test 6.jpg",
+      "is_premium": true,
+      "neutral_empty_slots": true
+    },
+    {
+      "id": "love__font_troubleshooting",
+      "title": "Font Troubleshooting",
+      "category": "Love",
+      "category_folder": "Love",
+      "recipe": "Font Troubleshooting.json",
+      "preview": "Font Troubleshooting.jpg",
+      "is_premium": true,
+      "neutral_empty_slots": true
+    },
+    {
+      "id": "love__test_1",
+      "title": "Test 1",
+      "category": "Love",
+      "category_folder": "Love",
+      "recipe": "test 1_PR.json",
+      "preview": "test 1_PR.jpg",
+      "is_premium": true,
+      "neutral_empty_slots": true
+    },
+    {
+      "id": "love__test_4",
+      "title": "Test 4",
+      "category": "Love",
+      "category_folder": "Love",
+      "recipe": "Test 4.json",
+      "preview": "Test 4.jpg",
+      "is_premium": true,
+      "neutral_empty_slots": true
+    },
+    {
+      "id": "love__test_font_5",
+      "title": "Test Font 5",
+      "category": "Love",
+      "category_folder": "Love",
+      "recipe": "Test Font 5.json",
+      "preview": "Test Font 5.jpg",
       "is_premium": true,
       "neutral_empty_slots": true
     },
@@ -198,56 +238,6 @@
       "category_folder": "Summer",
       "recipe": "Summer 1.4.json",
       "preview": "Summer 1.4.jpg",
-      "is_premium": true,
-      "neutral_empty_slots": true
-    },
-    {
-      "id": "test__font_test_6",
-      "title": "Font Test 6",
-      "category": "Test",
-      "category_folder": "Test",
-      "recipe": "Font Test 6.json",
-      "preview": "Font Test 6.jpg",
-      "is_premium": true,
-      "neutral_empty_slots": true
-    },
-    {
-      "id": "test__font_troubleshooting",
-      "title": "Font Troubleshooting",
-      "category": "Test",
-      "category_folder": "Test",
-      "recipe": "Font Troubleshooting.json",
-      "preview": "Font Troubleshooting.jpg",
-      "is_premium": true,
-      "neutral_empty_slots": true
-    },
-    {
-      "id": "test__test_1",
-      "title": "Test 1",
-      "category": "Test",
-      "category_folder": "Test",
-      "recipe": "test 1_PR.json",
-      "preview": "test 1_PR.jpg",
-      "is_premium": true,
-      "neutral_empty_slots": true
-    },
-    {
-      "id": "test__test_4",
-      "title": "Test 4",
-      "category": "Test",
-      "category_folder": "Test",
-      "recipe": "Test 4.json",
-      "preview": "Test 4.jpg",
-      "is_premium": true,
-      "neutral_empty_slots": true
-    },
-    {
-      "id": "test__test_font_5",
-      "title": "Test Font 5",
-      "category": "Test",
-      "category_folder": "Test",
-      "recipe": "Test Font 5.json",
-      "preview": "Test Font 5.jpg",
       "is_premium": true,
       "neutral_empty_slots": true
     }

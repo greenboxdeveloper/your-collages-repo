@@ -1,5 +1,5 @@
 {
-  "version": "8.0",
+  "version": "8.1",
   "sections": [
     {
       "id": "slideshow",
@@ -93,12 +93,12 @@
       "count": 8
     },
     {
-      "id": "templates_hazy_test",
-      "title": "Hazy Test",
+      "id": "templates_hazy",
+      "title": "Hazy",
       "subtitle": "",
       "display_size": "small",
       "category": "templates",
-      "sub_category": "Hazy Test",
+      "sub_category": "Hazy",
       "count": 8
     },
     {
@@ -108,6 +108,15 @@
       "display_size": "small",
       "category": "templates",
       "sub_category": "Holiday",
+      "count": 8
+    },
+    {
+      "id": "templates_love",
+      "title": "Love",
+      "subtitle": "",
+      "display_size": "small",
+      "category": "templates",
+      "sub_category": "Love",
       "count": 8
     },
     {
