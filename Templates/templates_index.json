@@ -1,5 +1,5 @@
 {
-  "version": "2.8",
+  "version": "2.9",
   "templates": [
     {
       "id": "birthday__birthday_01",
@@ -72,32 +72,12 @@
       "neutral_empty_slots": true
     },
     {
-      "id": "love__test_1",
-      "title": "Test 1",
-      "category": "Love",
-      "category_folder": "Love",
-      "recipe": "test 1_PR.json",
-      "preview": "test 1_PR.jpg",
-      "is_premium": true,
-      "neutral_empty_slots": true
-    },
-    {
       "id": "love__test_4",
       "title": "Test 4",
       "category": "Love",
       "category_folder": "Love",
       "recipe": "Test 4.json",
       "preview": "Test 4.jpg",
-      "is_premium": true,
-      "neutral_empty_slots": true
-    },
-    {
-      "id": "love__test_font_5",
-      "title": "Test Font 5",
-      "category": "Love",
-      "category_folder": "Love",
-      "recipe": "Test Font 5.json",
-      "preview": "Test Font 5.jpg",
       "is_premium": true,
       "neutral_empty_slots": true
     },
