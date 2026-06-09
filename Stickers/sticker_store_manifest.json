@@ -1,5 +1,5 @@
 {
-  "version": "2.9",
+  "version": "3.0",
   "categories": [
     {
       "id": "animal_pack_01",
@@ -3254,6 +3254,112 @@
       "promoHeaderUrl": null
     },
     {
+      "id": "flower_pack_01",
+      "name": "Flower Pack 01",
+      "count": 12,
+      "remoteFolderName": "Flower Pack 01",
+      "stickers": [
+        {
+          "id": "flower_pack_01__f_1_1",
+          "name": "F 1.1",
+          "isPremium": false,
+          "source": "ota",
+          "fileName": "F 1.1",
+          "previewWebpUrl": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/Stickers/Flower%20Pack%2001/F%201.1_preview.webp"
+        },
+        {
+          "id": "flower_pack_01__f_1_10",
+          "name": "F 1.10",
+          "isPremium": false,
+          "source": "ota",
+          "fileName": "F 1.10",
+          "previewWebpUrl": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/Stickers/Flower%20Pack%2001/F%201.10_preview.webp"
+        },
+        {
+          "id": "flower_pack_01__f_1_11",
+          "name": "F 1.11",
+          "isPremium": false,
+          "source": "ota",
+          "fileName": "F 1.11",
+          "previewWebpUrl": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/Stickers/Flower%20Pack%2001/F%201.11_preview.webp"
+        },
+        {
+          "id": "flower_pack_01__f_1_12",
+          "name": "F 1.12",
+          "isPremium": false,
+          "source": "ota",
+          "fileName": "F 1.12",
+          "previewWebpUrl": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/Stickers/Flower%20Pack%2001/F%201.12_preview.webp"
+        },
+        {
+          "id": "flower_pack_01__f_1_2",
+          "name": "F 1.2",
+          "isPremium": false,
+          "source": "ota",
+          "fileName": "F 1.2",
+          "previewWebpUrl": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/Stickers/Flower%20Pack%2001/F%201.2_preview.webp"
+        },
+        {
+          "id": "flower_pack_01__f_1_3",
+          "name": "F 1.3",
+          "isPremium": false,
+          "source": "ota",
+          "fileName": "F 1.3",
+          "previewWebpUrl": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/Stickers/Flower%20Pack%2001/F%201.3_preview.webp"
+        },
+        {
+          "id": "flower_pack_01__f_1_4",
+          "name": "F 1.4",
+          "isPremium": false,
+          "source": "ota",
+          "fileName": "F 1.4",
+          "previewWebpUrl": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/Stickers/Flower%20Pack%2001/F%201.4_preview.webp"
+        },
+        {
+          "id": "flower_pack_01__f_1_5",
+          "name": "F 1.5",
+          "isPremium": false,
+          "source": "ota",
+          "fileName": "F 1.5",
+          "previewWebpUrl": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/Stickers/Flower%20Pack%2001/F%201.5_preview.webp"
+        },
+        {
+          "id": "flower_pack_01__f_1_6",
+          "name": "F 1.6",
+          "isPremium": false,
+          "source": "ota",
+          "fileName": "F 1.6",
+          "previewWebpUrl": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/Stickers/Flower%20Pack%2001/F%201.6_preview.webp"
+        },
+        {
+          "id": "flower_pack_01__f_1_7",
+          "name": "F 1.7",
+          "isPremium": false,
+          "source": "ota",
+          "fileName": "F 1.7",
+          "previewWebpUrl": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/Stickers/Flower%20Pack%2001/F%201.7_preview.webp"
+        },
+        {
+          "id": "flower_pack_01__f_1_8",
+          "name": "F 1.8",
+          "isPremium": false,
+          "source": "ota",
+          "fileName": "F 1.8",
+          "previewWebpUrl": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/Stickers/Flower%20Pack%2001/F%201.8_preview.webp"
+        },
+        {
+          "id": "flower_pack_01__f_1_9",
+          "name": "F 1.9",
+          "isPremium": false,
+          "source": "ota",
+          "fileName": "F 1.9",
+          "previewWebpUrl": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/Stickers/Flower%20Pack%2001/F%201.9_preview.webp"
+        }
+      ],
+      "bannerImageUrl": null,
+      "promoHeaderUrl": null
+    },
+    {
       "id": "holloween_pack_01_pr",
       "name": "Holloween Pack 01",
       "count": 60,
@@ -5210,6 +5316,88 @@
           "source": "ota",
           "fileName": "Sticker_School_40",
           "previewWebpUrl": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/Stickers/School%20Pack%2001_PR/Sticker_School_40_preview.webp"
+        }
+      ],
+      "bannerImageUrl": null,
+      "promoHeaderUrl": null
+    },
+    {
+      "id": "sea_pack_01",
+      "name": "Sea Pack 01",
+      "count": 9,
+      "remoteFolderName": "Sea Pack 01",
+      "stickers": [
+        {
+          "id": "sea_pack_01__s1_1",
+          "name": "S1.1",
+          "isPremium": false,
+          "source": "ota",
+          "fileName": "S1.1",
+          "previewWebpUrl": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/Stickers/Sea%20Pack%2001/S1.1_preview.webp"
+        },
+        {
+          "id": "sea_pack_01__s1_10",
+          "name": "S1.10",
+          "isPremium": false,
+          "source": "ota",
+          "fileName": "S1.10",
+          "previewWebpUrl": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/Stickers/Sea%20Pack%2001/S1.10_preview.webp"
+        },
+        {
+          "id": "sea_pack_01__s1_11",
+          "name": "S1.11",
+          "isPremium": false,
+          "source": "ota",
+          "fileName": "S1.11",
+          "previewWebpUrl": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/Stickers/Sea%20Pack%2001/S1.11_preview.webp"
+        },
+        {
+          "id": "sea_pack_01__s1_2",
+          "name": "S1.2",
+          "isPremium": false,
+          "source": "ota",
+          "fileName": "S1.2",
+          "previewWebpUrl": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/Stickers/Sea%20Pack%2001/S1.2_preview.webp"
+        },
+        {
+          "id": "sea_pack_01__s1_3",
+          "name": "S1.3",
+          "isPremium": false,
+          "source": "ota",
+          "fileName": "S1.3",
+          "previewWebpUrl": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/Stickers/Sea%20Pack%2001/S1.3_preview.webp"
+        },
+        {
+          "id": "sea_pack_01__s1_4",
+          "name": "S1.4",
+          "isPremium": false,
+          "source": "ota",
+          "fileName": "S1.4",
+          "previewWebpUrl": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/Stickers/Sea%20Pack%2001/S1.4_preview.webp"
+        },
+        {
+          "id": "sea_pack_01__s1_7",
+          "name": "S1.7",
+          "isPremium": false,
+          "source": "ota",
+          "fileName": "S1.7",
+          "previewWebpUrl": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/Stickers/Sea%20Pack%2001/S1.7_preview.webp"
+        },
+        {
+          "id": "sea_pack_01__s1_8",
+          "name": "S1.8",
+          "isPremium": false,
+          "source": "ota",
+          "fileName": "S1.8",
+          "previewWebpUrl": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/Stickers/Sea%20Pack%2001/S1.8_preview.webp"
+        },
+        {
+          "id": "sea_pack_01__s1_9",
+          "name": "S1.9",
+          "isPremium": false,
+          "source": "ota",
+          "fileName": "S1.9",
+          "previewWebpUrl": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/Stickers/Sea%20Pack%2001/S1.9_preview.webp"
         }
       ],
       "bannerImageUrl": null,
