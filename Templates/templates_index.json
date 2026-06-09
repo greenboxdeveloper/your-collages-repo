@@ -1,5 +1,5 @@
 {
-  "version": "3.1",
+  "version": "3.2",
   "templates": [
     {
       "id": "birthday__birthday_01",
@@ -8,6 +8,16 @@
       "category_folder": "Birthday",
       "recipe": "Birthday 01.json",
       "preview": "Birthday 01.jpg",
+      "is_premium": true,
+      "neutral_empty_slots": true
+    },
+    {
+      "id": "fathers_day__dad1",
+      "title": "Dad1",
+      "category": "Fathers Day",
+      "category_folder": "Fathers Day",
+      "recipe": "DAD1.json",
+      "preview": "DAD1.jpg",
       "is_premium": true,
       "neutral_empty_slots": true
     },
