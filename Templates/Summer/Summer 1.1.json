@@ -6,7 +6,9 @@
       1,
       1
     ],
-    "background_hazy_blur_radius" : 48,
+    "background_hazy_blur_radius" : 5,
+    "background_hazy_canvas_photo_id" : "B1B839CD-0188-488B-A5C0-4A75F4954855",
+    "background_hazy_polaroid_frame_id" : "D051F6D0-B77E-43D2-A65C-29B87D1CCB46",
     "border_color_rgba" : [
       1,
       1,
@@ -17,6 +19,7 @@
     "border_width" : 20,
     "canvas_aspect" : 0.5625,
     "canvas_ratio_preset" : "9:16",
+    "editor_canvas_min_side" : 400,
     "has_background_image" : true
   },
   "dependencies" : [
@@ -143,7 +146,7 @@
       "scale" : 2.859295120872402,
       "shadowColorHex" : "#00000000",
       "shadowRadius" : 0,
-      "text" : "Vive",
+      "text" : "Vibe",
       "textCase" : "none",
       "textColorHex" : "#FFFFFF",
       "textOpacity" : 1,

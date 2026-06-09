@@ -1,0 +1,254 @@
+{
+  "chrome" : {
+    "background_color_rgba" : [
+      1,
+      1,
+      1,
+      1
+    ],
+    "background_hazy_blur_radius" : 48,
+    "background_image_name" : "summer_pack_01__summer_1_4_jpg",
+    "border_color_rgba" : [
+      1,
+      1,
+      1,
+      1
+    ],
+    "border_corner_radius" : 0,
+    "border_width" : 20,
+    "canvas_aspect" : 0.8,
+    "canvas_ratio_preset" : "4:5",
+    "editor_canvas_min_side" : 400,
+    "has_background_image" : true
+  },
+  "dependencies" : [
+    {
+      "asset_ref" : "Summer 1.4.jpg",
+      "id" : "summer_pack_01__summer_1_4_jpg",
+      "type" : "background",
+      "url" : "https:\/\/photocollagemaker.john4shine.workers.dev\/Backgrounds\/Summer%20Pack%2001\/Summer%201.4.jpg"
+    },
+    {
+      "id" : "Polaroid4.1_W",
+      "type" : "sticker"
+    },
+    {
+      "id" : "file:\/\/\/var\/mobile\/Containers\/Data\/Application\/BAAD4E20-24C5-4340-8FB2-E38A67FC5CFC\/Documents\/MyCollageProjects\/33557F5C-8D6D-4D00-9C4A-B61F369351A9_overlays\/sticker_canvas_5E53A14B-8D20-4135-A07D-0CB85C07059A.jpg",
+      "type" : "sticker"
+    },
+    {
+      "id" : "file:\/\/\/var\/mobile\/Containers\/Data\/Application\/BAAD4E20-24C5-4340-8FB2-E38A67FC5CFC\/Documents\/MyCollageProjects\/33557F5C-8D6D-4D00-9C4A-B61F369351A9_overlays\/sticker_canvas_FE3061C1-8355-4993-91C4-E2BB735A13CA.jpg",
+      "type" : "sticker"
+    },
+    {
+      "id" : "file:\/\/\/var\/mobile\/Containers\/Data\/Application\/BAAD4E20-24C5-4340-8FB2-E38A67FC5CFC\/Documents\/MyCollageProjects\/33557F5C-8D6D-4D00-9C4A-B61F369351A9_overlays\/sticker_canvas_5AB8BA65-743A-447A-A4FB-C12C5F2E1272.jpg",
+      "type" : "sticker"
+    },
+    {
+      "asset_ref" : "Summer2.5.png",
+      "id" : "summer_pack_01_pr__summer2_5",
+      "type" : "sticker",
+      "url" : "https:\/\/photocollagemaker.john4shine.workers.dev\/Stickers\/Summer%20Pack%2001_PR\/Summer2.5.png"
+    },
+    {
+      "asset_ref" : "Summer2.2.png",
+      "id" : "summer_pack_01_pr__summer2_2",
+      "type" : "sticker",
+      "url" : "https:\/\/photocollagemaker.john4shine.workers.dev\/Stickers\/Summer%20Pack%2001_PR\/Summer2.2.png"
+    },
+    {
+      "asset_ref" : "Summer1.2.png",
+      "id" : "summer_pack_01_pr__summer1_2",
+      "type" : "sticker",
+      "url" : "https:\/\/photocollagemaker.john4shine.workers.dev\/Stickers\/Summer%20Pack%2001_PR\/Summer1.2.png"
+    },
+    {
+      "asset_ref" : "Chrisye_PR.otf",
+      "id" : "Chrisye",
+      "type" : "font",
+      "url" : "https:\/\/photocollagemaker.john4shine.workers.dev\/Fonts\/English\/Chrisye_PR.otf"
+    }
+  ],
+  "editor" : {
+    "divider_positions" : {
+
+    },
+    "shared_vertex_positions" : {
+
+    }
+  },
+  "layout" : {
+    "category" : "TemplateBuilder",
+    "dividers" : [
+
+    ],
+    "id" : "template-builder-F8D663E4",
+    "isPremium" : false,
+    "name" : "Template builder",
+    "shared_vertices" : [
+
+    ],
+    "slots" : [
+
+    ],
+    "type" : "grid"
+  },
+  "stickers" : [
+    {
+      "hole_n_rect" : [
+        0.06424581005586592,
+        0.044921875,
+        0.8715083798882681,
+        0.7109375
+      ],
+      "id" : "9A79BBCC-A3E5-484A-89F2-883CA424FB2E",
+      "image_name" : "Polaroid4.1_W",
+      "is_transform_locked" : true,
+      "linked_canvas_photo_id" : "5E53A14B-8D20-4135-A07D-0CB85C07059A",
+      "offset_height" : -17.420435510887696,
+      "offset_width" : -116.24790619765493,
+      "placement_kind" : "sticker",
+      "rotation_radians" : -0.5154974376610636,
+      "scale" : 1.2253071964285545,
+      "z_index" : 3229
+    },
+    {
+      "id" : "5E53A14B-8D20-4135-A07D-0CB85C07059A",
+      "image_name" : "file:\/\/\/var\/mobile\/Containers\/Data\/Application\/BAAD4E20-24C5-4340-8FB2-E38A67FC5CFC\/Documents\/MyCollageProjects\/33557F5C-8D6D-4D00-9C4A-B61F369351A9_overlays\/sticker_canvas_5E53A14B-8D20-4135-A07D-0CB85C07059A.jpg",
+      "inner_offset_height" : 19.33333333333337,
+      "inner_offset_width" : 0,
+      "inner_scale" : 1,
+      "offset_height" : -17.420435510887696,
+      "offset_width" : -116.24790619765493,
+      "parent_frame_sticker_id" : "9A79BBCC-A3E5-484A-89F2-883CA424FB2E",
+      "placement_kind" : "canvas_photo",
+      "rotation_radians" : -0.5154974376610636,
+      "scale" : 1.2253071964285545,
+      "z_index" : 3229
+    },
+    {
+      "hole_n_rect" : [
+        0.06424581005586592,
+        0.044921875,
+        0.8715083798882681,
+        0.7109375
+      ],
+      "id" : "55B2F51C-6D92-4830-9D26-96C00984B235",
+      "image_name" : "Polaroid4.1_W",
+      "is_transform_locked" : true,
+      "linked_canvas_photo_id" : "FE3061C1-8355-4993-91C4-E2BB735A13CA",
+      "offset_height" : -32.108151443578414,
+      "offset_width" : 117.27430246900504,
+      "placement_kind" : "sticker",
+      "rotation_radians" : 0.49625524978804486,
+      "scale" : 1.2196686422012712,
+      "z_index" : 3169
+    },
+    {
+      "id" : "FE3061C1-8355-4993-91C4-E2BB735A13CA",
+      "image_name" : "file:\/\/\/var\/mobile\/Containers\/Data\/Application\/BAAD4E20-24C5-4340-8FB2-E38A67FC5CFC\/Documents\/MyCollageProjects\/33557F5C-8D6D-4D00-9C4A-B61F369351A9_overlays\/sticker_canvas_FE3061C1-8355-4993-91C4-E2BB735A13CA.jpg",
+      "inner_offset_height" : 2.162586884986105,
+      "inner_offset_width" : 1.0780808310535122,
+      "inner_scale" : 1,
+      "offset_height" : -32.108151443578414,
+      "offset_width" : 117.27430246900504,
+      "parent_frame_sticker_id" : "55B2F51C-6D92-4830-9D26-96C00984B235",
+      "placement_kind" : "canvas_photo",
+      "rotation_radians" : 0.49625524978804486,
+      "scale" : 1.2196686422012712,
+      "z_index" : 3169
+    },
+    {
+      "hole_n_rect" : [
+        0.06424581005586592,
+        0.044921875,
+        0.8715083798882681,
+        0.7109375
+      ],
+      "id" : "4A0E5E79-B0FA-4BEA-9E34-017B1B809801",
+      "image_name" : "Polaroid4.1_W",
+      "is_transform_locked" : true,
+      "linked_canvas_photo_id" : "5AB8BA65-743A-447A-A4FB-C12C5F2E1272",
+      "offset_height" : -79.9802109623447,
+      "offset_width" : 0,
+      "placement_kind" : "sticker",
+      "rotation_radians" : 2.7902947984069054e-16,
+      "scale" : 1.3441067387378063,
+      "z_index" : 3172
+    },
+    {
+      "id" : "5AB8BA65-743A-447A-A4FB-C12C5F2E1272",
+      "image_name" : "file:\/\/\/var\/mobile\/Containers\/Data\/Application\/BAAD4E20-24C5-4340-8FB2-E38A67FC5CFC\/Documents\/MyCollageProjects\/33557F5C-8D6D-4D00-9C4A-B61F369351A9_overlays\/sticker_canvas_5AB8BA65-743A-447A-A4FB-C12C5F2E1272.jpg",
+      "inner_offset_height" : -1.6666666666666288,
+      "inner_offset_width" : -0.6666666666666572,
+      "inner_scale" : 1,
+      "offset_height" : -79.9802109623447,
+      "offset_width" : 0,
+      "parent_frame_sticker_id" : "4A0E5E79-B0FA-4BEA-9E34-017B1B809801",
+      "placement_kind" : "canvas_photo",
+      "rotation_radians" : 2.7902947984069054e-16,
+      "scale" : 1.3441067387378063,
+      "z_index" : 3172
+    },
+    {
+      "id" : "A4E0E142-459B-400C-B73D-8114B7DA6AED",
+      "image_name" : "summer_pack_01_pr__summer2_5",
+      "offset_height" : 87.77219430485738,
+      "offset_width" : 123.95309882747067,
+      "placement_kind" : "sticker",
+      "rotation_radians" : -0.3055881376303686,
+      "scale" : 1.4471212563386386,
+      "z_index" : 3507
+    },
+    {
+      "id" : "1D843419-4B61-4D3C-B8A9-9B732E524AA8",
+      "image_name" : "summer_pack_01_pr__summer2_2",
+      "offset_height" : 91.1222780569515,
+      "offset_width" : -111.81855668924287,
+      "placement_kind" : "sticker",
+      "rotation_radians" : 0,
+      "scale" : 1.3616188159638856,
+      "z_index" : 3397
+    },
+    {
+      "id" : "8725D1B2-4DE9-44B3-880C-1291ACDB368C",
+      "image_name" : "summer_pack_01_pr__summer1_2",
+      "offset_height" : -167.83919597989956,
+      "offset_width" : -59.2964824120603,
+      "placement_kind" : "sticker",
+      "rotation_radians" : -0.9173239214463665,
+      "scale" : 1.1155343940298812,
+      "z_index" : 3315
+    }
+  ],
+  "text_items" : [
+    {
+      "alignment" : "center",
+      "backgroundColorHex" : "#00000000",
+      "backgroundOpacity" : 1,
+      "cornerRadius" : 8,
+      "fontName" : "Chrisye",
+      "fontSize" : 30,
+      "id" : "8C955194-B234-4288-94F0-C94BC5B41B1C",
+      "letterSpacing" : 0,
+      "lineSpacing" : 0,
+      "nPosition" : [
+        0.5,
+        0.707365393315327
+      ],
+      "outlineColorHex" : "#000000",
+      "outlineOpacity" : 0,
+      "outlineWidth" : 0.3,
+      "rotation" : 0,
+      "scale" : 1.707230872447118,
+      "shadowColorHex" : "#00000000",
+      "shadowRadius" : 0,
+      "text" : "Ocean\nhood",
+      "textCase" : "none",
+      "textColorHex" : "#ED709DFF",
+      "textOpacity" : 1,
+      "zIndex" : 1906
+    }
+  ],
+  "version" : "1"
+}
