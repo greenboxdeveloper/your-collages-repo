@@ -1,5 +1,5 @@
 {
-  "version": "3.0",
+  "version": "3.1",
   "categories": [
     {
       "id": "animal_pack_01",
@@ -3844,6 +3844,24 @@
           "source": "ota",
           "fileName": "Sticker_Holloween_60",
           "previewWebpUrl": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/Stickers/Holloween%20Pack%2001_PR/Sticker_Holloween_60_preview.webp"
+        }
+      ],
+      "bannerImageUrl": null,
+      "promoHeaderUrl": null
+    },
+    {
+      "id": "leaf_pack_01",
+      "name": "Leaf Pack 01",
+      "count": 1,
+      "remoteFolderName": "Leaf Pack 01",
+      "stickers": [
+        {
+          "id": "leaf_pack_01__l1_7",
+          "name": "L1.7",
+          "isPremium": false,
+          "source": "ota",
+          "fileName": "L1.7",
+          "previewWebpUrl": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/Stickers/Leaf%20Pack%2001/L1.7_preview.webp"
         }
       ],
       "bannerImageUrl": null,
