@@ -1,0 +1,206 @@
+{
+  "chrome" : {
+    "background_color_rgba" : [
+      1,
+      1,
+      1,
+      1
+    ],
+    "background_hazy_blur_radius" : 2,
+    "background_hazy_canvas_photo_id" : "91F197DB-B8F2-45C0-83AC-23F75B023FB7",
+    "background_hazy_polaroid_frame_id" : "9FF34E5A-0927-4830-89A3-15742FC7C26C",
+    "border_color_rgba" : [
+      1,
+      1,
+      1,
+      1
+    ],
+    "border_corner_radius" : 0,
+    "border_width" : 19.01433765888214,
+    "canvas_aspect" : 0.8,
+    "canvas_ratio_preset" : "4:5",
+    "editor_canvas_min_side" : 400,
+    "has_background_image" : true
+  },
+  "dependencies" : [
+    {
+      "id" : "Polaroid4.1_W",
+      "type" : "sticker"
+    },
+    {
+      "id" : "file:\/\/\/var\/mobile\/Containers\/Data\/Application\/BAAD4E20-24C5-4340-8FB2-E38A67FC5CFC\/Documents\/MyCollageProjects\/01F24666-2A34-4A08-91C4-95F24CD25510_overlays\/sticker_canvas_91F197DB-B8F2-45C0-83AC-23F75B023FB7.jpg",
+      "type" : "sticker"
+    },
+    {
+      "asset_ref" : "Doodle_SocialMedia_29.png",
+      "id" : "doodles_socialmedia_pr__doodle_socialmedia_29",
+      "type" : "sticker",
+      "url" : "https:\/\/photocollagemaker.john4shine.workers.dev\/Stickers\/Doodles_SocialMedia_PR\/Doodle_SocialMedia_29.png"
+    },
+    {
+      "asset_ref" : "Doodle_SocialMedia_13.png",
+      "id" : "doodles_socialmedia_pr__doodle_socialmedia_13",
+      "type" : "sticker",
+      "url" : "https:\/\/photocollagemaker.john4shine.workers.dev\/Stickers\/Doodles_SocialMedia_PR\/Doodle_SocialMedia_13.png"
+    },
+    {
+      "asset_ref" : "Doodle_Science_05.png",
+      "id" : "doodles_science_pr__doodle_science_05",
+      "type" : "sticker",
+      "url" : "https:\/\/photocollagemaker.john4shine.workers.dev\/Stickers\/Doodles_Science_PR\/Doodle_Science_05.png"
+    },
+    {
+      "asset_ref" : "Chrisye_PR.otf",
+      "id" : "Chrisye",
+      "type" : "font",
+      "url" : "https:\/\/photocollagemaker.john4shine.workers.dev\/Fonts\/English\/Chrisye_PR.otf"
+    }
+  ],
+  "editor" : {
+    "divider_positions" : {
+
+    },
+    "shared_vertex_positions" : {
+
+    }
+  },
+  "layout" : {
+    "category" : "TemplateBuilder",
+    "dividers" : [
+
+    ],
+    "id" : "template-builder-C4AA3842",
+    "isPremium" : false,
+    "name" : "Template builder",
+    "shared_vertices" : [
+
+    ],
+    "slots" : [
+
+    ],
+    "type" : "grid"
+  },
+  "stickers" : [
+    {
+      "hole_n_rect" : [
+        0.06424581005586592,
+        0.044921875,
+        0.8715083798882681,
+        0.7109375
+      ],
+      "id" : "9FF34E5A-0927-4830-89A3-15742FC7C26C",
+      "image_name" : "Polaroid4.1_W",
+      "is_transform_locked" : true,
+      "linked_canvas_photo_id" : "91F197DB-B8F2-45C0-83AC-23F75B023FB7",
+      "offset_height" : -4.355108877721924,
+      "offset_width" : -12.395309882747078,
+      "placement_kind" : "sticker",
+      "rotation_radians" : -0.135385955331766,
+      "scale" : 2.8744255752170216,
+      "z_index" : 696
+    },
+    {
+      "id" : "91F197DB-B8F2-45C0-83AC-23F75B023FB7",
+      "image_name" : "file:\/\/\/var\/mobile\/Containers\/Data\/Application\/BAAD4E20-24C5-4340-8FB2-E38A67FC5CFC\/Documents\/MyCollageProjects\/01F24666-2A34-4A08-91C4-95F24CD25510_overlays\/sticker_canvas_91F197DB-B8F2-45C0-83AC-23F75B023FB7.jpg",
+      "inner_offset_height" : 0,
+      "inner_offset_width" : 0,
+      "inner_scale" : 1,
+      "offset_height" : -4.355108877721924,
+      "offset_width" : -12.395309882747078,
+      "parent_frame_sticker_id" : "9FF34E5A-0927-4830-89A3-15742FC7C26C",
+      "placement_kind" : "canvas_photo",
+      "rotation_radians" : -0.135385955331766,
+      "scale" : 2.8744255752170216,
+      "z_index" : 696
+    },
+    {
+      "id" : "CEC21E4F-5955-4E29-A167-DA93401817C6",
+      "image_name" : "doodles_socialmedia_pr__doodle_socialmedia_29",
+      "offset_height" : -203.68509212730314,
+      "offset_width" : 74.37185929648236,
+      "placement_kind" : "sticker",
+      "rotation_radians" : 0.7304904919797396,
+      "scale" : 1.0659594650233721,
+      "z_index" : 1253
+    },
+    {
+      "id" : "A59595F1-C98B-4C54-A133-AF07D4CB5863",
+      "image_name" : "doodles_socialmedia_pr__doodle_socialmedia_13",
+      "offset_height" : -74.37185929648244,
+      "offset_width" : -126.96817420435512,
+      "placement_kind" : "sticker",
+      "rotation_radians" : -0.43587303721288406,
+      "scale" : 0.8174396600959621,
+      "z_index" : 941
+    },
+    {
+      "id" : "1C22667B-4CF5-4C93-966F-39B7CE9411AE",
+      "image_name" : "doodles_science_pr__doodle_science_05",
+      "offset_height" : 125.96314907872701,
+      "offset_width" : 151.08877721943045,
+      "placement_kind" : "sticker",
+      "rotation_radians" : 0.2607913306725568,
+      "scale" : 0.6450186903243686,
+      "z_index" : 1538
+    }
+  ],
+  "text_items" : [
+    {
+      "alignment" : "center",
+      "backgroundColorHex" : "#00000000",
+      "backgroundOpacity" : 1,
+      "cornerRadius" : 8,
+      "fontName" : "Chrisye",
+      "fontSize" : 30,
+      "id" : "9741C8EF-7069-4D91-ADD9-1258957CDBA7",
+      "isUserProContent" : false,
+      "letterSpacing" : 4.549549221992493,
+      "lineSpacing" : 0,
+      "nPosition" : [
+        0.7244556113902846,
+        0.9308207705192626
+      ],
+      "outlineColorHex" : "#000000",
+      "outlineOpacity" : 0,
+      "outlineWidth" : 0.3,
+      "rotation" : -9.295831251292796,
+      "scale" : 2.1780004626599325,
+      "shadowColorHex" : "#00000000",
+      "shadowRadius" : 0,
+      "text" : "Day",
+      "textCase" : "none",
+      "textColorHex" : "#000000",
+      "textOpacity" : 1,
+      "zIndex" : 1483
+    },
+    {
+      "alignment" : "center",
+      "backgroundColorHex" : "#00000000",
+      "backgroundOpacity" : 1,
+      "cornerRadius" : 8,
+      "fontName" : "Chrisye",
+      "fontSize" : 30,
+      "id" : "DF782CF8-3346-46CD-A627-AAE344289EF8",
+      "isUserProContent" : false,
+      "letterSpacing" : 0,
+      "lineSpacing" : 0,
+      "nPosition" : [
+        0.51249007143289,
+        0.7896057408629193
+      ],
+      "outlineColorHex" : "#000000",
+      "outlineOpacity" : 0,
+      "outlineWidth" : 0.3,
+      "rotation" : -7.512086126546472,
+      "scale" : 2.3382157108717054,
+      "shadowColorHex" : "#00000000",
+      "shadowRadius" : 0,
+      "text" : "Father's",
+      "textCase" : "none",
+      "textColorHex" : "#000000",
+      "textOpacity" : 1,
+      "zIndex" : 1482
+    }
+  ],
+  "version" : "1"
+}
