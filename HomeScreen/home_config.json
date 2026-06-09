@@ -1,5 +1,5 @@
 {
-  "version": "8.5",
+  "version": "8.6",
   "sections": [
     {
       "id": "slideshow",
@@ -93,6 +93,15 @@
       "count": 8
     },
     {
+      "id": "templates_fathers_day",
+      "title": "Fathers Day",
+      "subtitle": "",
+      "display_size": "small",
+      "category": "templates",
+      "sub_category": "Fathers Day",
+      "count": 8
+    },
+    {
       "id": "templates_hazy",
       "title": "Hazy",
       "subtitle": "",
@@ -108,15 +117,6 @@
       "display_size": "small",
       "category": "templates",
       "sub_category": "Holiday",
-      "count": 8
-    },
-    {
-      "id": "templates_love",
-      "title": "Love",
-      "subtitle": "",
-      "display_size": "small",
-      "category": "templates",
-      "sub_category": "Love",
       "count": 8
     },
     {
