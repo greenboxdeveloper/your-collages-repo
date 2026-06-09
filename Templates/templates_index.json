@@ -1,5 +1,5 @@
 {
-  "version": "2.9",
+  "version": "3.0",
   "templates": [
     {
       "id": "birthday__birthday_01",
@@ -172,16 +172,6 @@
       "neutral_empty_slots": true
     },
     {
-      "id": "summer__summer1_1_1",
-      "title": "Summer1.1 1",
-      "category": "Summer",
-      "category_folder": "Summer",
-      "recipe": "Summer1.1_1.json",
-      "preview": "Summer1.1_1.jpg",
-      "is_premium": true,
-      "neutral_empty_slots": true
-    },
-    {
       "id": "summer__summer_1_1",
       "title": "Summer 1.1",
       "category": "Summer",
@@ -218,6 +208,16 @@
       "category_folder": "Summer",
       "recipe": "Summer 1.4.json",
       "preview": "Summer 1.4.jpg",
+      "is_premium": true,
+      "neutral_empty_slots": true
+    },
+    {
+      "id": "summer__summer_1_5",
+      "title": "Summer 1.5",
+      "category": "Summer",
+      "category_folder": "Summer",
+      "recipe": "Summer 1.5.json",
+      "preview": "Summer 1.5.jpg",
       "is_premium": true,
       "neutral_empty_slots": true
     }
