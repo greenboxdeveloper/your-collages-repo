@@ -1,5 +1,5 @@
 {
-  "version": "9.7",
+  "version": "9.8",
   "sections": [
     {
       "id": "slideshow",
@@ -40,13 +40,14 @@
       "count": 10
     },
     {
-      "id": "templates_fathers_day_father_s_day_specials",
-      "title": "Father's Day Specials",
-      "subtitle": "Wish your father",
-      "display_size": "small",
+      "id": "templates_fathersday_1_3_json_greet_your_father",
+      "title": "Greet your father",
+      "subtitle": "Father's day special",
+      "display_size": "hero",
       "category": "templates",
       "sub_category": "Fathers Day",
-      "count": 10
+      "count": 1,
+      "item": "FathersDay 1.3.json"
     },
     {
       "id": "filters_moody_film_looks",
