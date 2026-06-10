@@ -1,5 +1,5 @@
 {
-  "version": "8.8",
+  "version": "8.9",
   "sections": [
     {
       "id": "slideshow",
@@ -40,14 +40,13 @@
       "count": 10
     },
     {
-      "id": "templates_pol8_json_featured_templates",
-      "title": "Featured Templates",
-      "subtitle": "Holiday picks",
-      "display_size": "hero",
+      "id": "templates_father_s_day_father_s_day_specials",
+      "title": "Father's Day Specials",
+      "subtitle": "Wish your father",
+      "display_size": "small",
       "category": "templates",
-      "sub_category": "Polaroids",
-      "count": 1,
-      "item": "Pol8.json"
+      "sub_category": "Father'S Day",
+      "count": 10
     },
     {
       "id": "filters_moody_film_looks",
@@ -93,12 +92,12 @@
       "count": 8
     },
     {
-      "id": "templates_fathers_day",
-      "title": "Fathers Day",
+      "id": "templates_father_s_day",
+      "title": "Father'S Day",
       "subtitle": "",
       "display_size": "small",
       "category": "templates",
-      "sub_category": "Fathers Day",
+      "sub_category": "Father's Day",
       "count": 8
     },
     {
