@@ -1,5 +1,5 @@
 {
-  "version": "3.3",
+  "version": "3.4",
   "templates": [
     {
       "id": "birthday__birthday_01",
@@ -12,20 +12,20 @@
       "neutral_empty_slots": true
     },
     {
-      "id": "father_s_day__fathersday_1_1",
+      "id": "fathers_day__fathersday_1_1",
       "title": "Fathersday 1.1",
-      "category": "Father'S Day",
-      "category_folder": "Father's Day",
+      "category": "Fathers Day",
+      "category_folder": "Fathers Day",
       "recipe": "FathersDay 1.1.json",
       "preview": "FathersDay 1.1.jpg",
       "is_premium": true,
       "neutral_empty_slots": true
     },
     {
-      "id": "father_s_day__fathersday_1_2",
+      "id": "fathers_day__fathersday_1_2",
       "title": "Fathersday 1.2",
-      "category": "Father'S Day",
-      "category_folder": "Father's Day",
+      "category": "Fathers Day",
+      "category_folder": "Fathers Day",
       "recipe": "FathersDay 1.2.json",
       "preview": "FathersDay 1.2.jpg",
       "is_premium": true,
