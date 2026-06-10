@@ -10,11 +10,19 @@
   },
   "sections": [
     {
-      "title": "Featured Templates",
-      "subtitle": "Holiday picks",
+      "title": "Greet your father",
+      "subtitle": "Father's day special",
       "display_size": "hero",
       "store": "Templates",
-      "file": "Pol8.json"
+      "file": "DAD1.json"
+    },
+    {
+      "title": "Father's Day Specials",
+      "subtitle": "Wish your father",
+      "display_size": "small",
+      "store": "Templates",
+      "pack": "Father's Day",
+      "count": 10
     },
     {
       "title": "Film Looks",
