@@ -1,5 +1,5 @@
 {
-  "version": "9.2",
+  "version": "9.3",
   "sections": [
     {
       "id": "slideshow",
@@ -40,7 +40,7 @@
       "count": 10
     },
     {
-      "id": "templates_father_s_day_father_s_day_specials",
+      "id": "templates_fathers_day_father_s_day_specials",
       "title": "Father's Day Specials",
       "subtitle": "Wish your father",
       "display_size": "small",
