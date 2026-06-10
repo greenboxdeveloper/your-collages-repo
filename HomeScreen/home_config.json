@@ -40,16 +40,6 @@
       "count": 10
     },
     {
-      "id": "templates_fathersday_1_3_json_greet_your_father",
-      "title": "Greet your father",
-      "subtitle": "Father's day special",
-      "display_size": "hero",
-      "category": "templates",
-      "sub_category": "Fathers Day",
-      "count": 1,
-      "item": "FathersDay 1.3.json"
-    },
-    {
       "id": "filters_moody_film_looks",
       "title": "Film Looks",
       "subtitle": "",
