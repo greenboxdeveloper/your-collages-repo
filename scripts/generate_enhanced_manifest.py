@@ -3214,9 +3214,18 @@ def _resolve_sub_category_value(
     return resolved
 
 
-def _section_dedup_key(section: dict) -> tuple[str, str]:
+def _section_dedup_key(section: dict) -> tuple[str, ...]:
+    """Dedup key for home sections.
+
+    Pack/category rows use ``(category, sub_category)``. Single-item rows (hero ``file``,
+    featured filter, etc.) include ``item`` so a hero from ``Fathers Day`` does not block a
+    separate ``pack: Fathers Day`` row in the blueprint.
+    """
     cat = str(section.get("category") or "").lower()
     sub = str(section.get("sub_category") or "").strip()
+    item = str(section.get("item") or "").strip()
+    if item:
+        return cat, sub, item
     return cat, sub
 
 
