@@ -2916,6 +2916,34 @@ _JSON_TEMPLATE_INDEX_SKIP_DIRS = frozenset({"Recipes", "Previews"})
 _JSON_TEMPLATE_PREVIEW_EXTS = (".png", ".jpg", ".jpeg", ".webp")
 
 
+def _find_template_preview_in_category(cat_dir: Path, stem: str) -> Path | None:
+    """Return the preview image for ``stem`` in ``cat_dir`` (case-insensitive stem + extension).
+
+    GitHub Actions runs on Linux where ``FathersDay 1.3.JPG`` does not match a literal ``.jpg`` path.
+    """
+    stem_lower = stem.lower()
+    allowed_exts = {ext.lower() for ext in _JSON_TEMPLATE_PREVIEW_EXTS}
+    matches: list[Path] = []
+    for p in cat_dir.iterdir():
+        if not p.is_file():
+            continue
+        if p.suffix.lower() not in allowed_exts:
+            continue
+        if p.stem.lower() != stem_lower:
+            continue
+        matches.append(p)
+    if not matches:
+        return None
+
+    def _preview_rank(path: Path) -> int:
+        try:
+            return _JSON_TEMPLATE_PREVIEW_EXTS.index(path.suffix.lower())
+        except ValueError:
+            return len(_JSON_TEMPLATE_PREVIEW_EXTS)
+
+    return min(matches, key=_preview_rank)
+
+
 def generate_json_template_index(templates_dir: Path, output_path: Path) -> int:
     """Emit ``Templates/templates_index.json`` for iOS ``TemplateStoreCatalog`` / ``TemplateManifestLoader``.
 
@@ -2946,12 +2974,11 @@ def generate_json_template_index(templates_dir: Path, output_path: Path) -> int:
         folder_base, folder_fd = _folder_display_base_and_premium_default(cat_dir.name)
         for jf in json_files:
             stem = jf.stem
-            preview_name: str | None = None
-            for ext in _JSON_TEMPLATE_PREVIEW_EXTS:
-                cand = cat_dir / f"{stem}{ext}"
-                if cand.is_file():
-                    preview_name = cand.name
-                    break
+            preview_path = _find_template_preview_in_category(cat_dir, stem)
+            if preview_path is None:
+                preview_name = None
+            else:
+                preview_name = preview_path.name
             if preview_name is None:
                 print(
                     f"[template-index] skip (no preview for stem “{stem}”): {jf} — "
