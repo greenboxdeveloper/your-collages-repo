@@ -1,0 +1,201 @@
+{
+  "chrome" : {
+    "background_color_rgba" : [
+      1,
+      1,
+      1,
+      1
+    ],
+    "background_hazy_blur_radius" : 48,
+    "background_image_name" : "valentine_pack_01__valentine1_4_jpg",
+    "border_color_rgba" : [
+      1,
+      1,
+      1,
+      1
+    ],
+    "border_corner_radius" : 0,
+    "border_width" : 20,
+    "canvas_aspect" : 0.8,
+    "canvas_ratio_preset" : "4:5",
+    "editor_canvas_min_side" : 400,
+    "has_background_image" : true
+  },
+  "dependencies" : [
+    {
+      "asset_ref" : "Valentine1.4_PR.jpg",
+      "id" : "valentine_pack_01__valentine1_4_jpg",
+      "type" : "background",
+      "url" : "https:\/\/photocollagemaker.john4shine.workers.dev\/Backgrounds\/Valentine%20Pack%2001\/Valentine1.4_PR.jpg"
+    },
+    {
+      "id" : "Polaroid3.2_W",
+      "type" : "sticker"
+    },
+    {
+      "id" : "file:\/\/\/var\/mobile\/Containers\/Data\/Application\/5255113B-37D2-460F-B500-F8043266DDFE\/Documents\/MyCollageProjects\/4B549931-3571-4E42-AE50-064F13B59693_overlays\/sticker_canvas_EE5E6ADD-F556-480C-87B1-63A30F99D834.jpg",
+      "type" : "sticker"
+    },
+    {
+      "asset_ref" : "Embolism Spark.ttf",
+      "id" : "Embolism Spark",
+      "type" : "font",
+      "url" : "https:\/\/photocollagemaker.john4shine.workers.dev\/Fonts\/English\/Embolism%20Spark.ttf"
+    },
+    {
+      "asset_ref" : "Chrisye_PR.otf",
+      "id" : "Chrisye",
+      "type" : "font",
+      "url" : "https:\/\/photocollagemaker.john4shine.workers.dev\/Fonts\/English\/Chrisye_PR.otf"
+    }
+  ],
+  "editor" : {
+    "divider_positions" : {
+
+    },
+    "shared_vertex_positions" : {
+
+    }
+  },
+  "layout" : {
+    "category" : "TemplateBuilder",
+    "dividers" : [
+
+    ],
+    "id" : "template-builder-6C1FAF49",
+    "isPremium" : true,
+    "name" : "Template builder",
+    "shared_vertices" : [
+
+    ],
+    "slots" : [
+
+    ],
+    "type" : "grid"
+  },
+  "stickers" : [
+    {
+      "hole_n_rect" : [
+        0.07396449704142012,
+        0.05078125,
+        0.8579881656804734,
+        0.8984375
+      ],
+      "id" : "72726D05-82DA-4113-BFC4-0EC263519CE1",
+      "image_name" : "Polaroid3.2_W",
+      "is_transform_locked" : true,
+      "linked_canvas_photo_id" : "EE5E6ADD-F556-480C-87B1-63A30F99D834",
+      "n_position_x" : 0.5,
+      "n_position_y" : 0.5,
+      "offset_height" : 0,
+      "offset_width" : 0,
+      "placement_kind" : "sticker",
+      "rotation_radians" : -0.151156227075444,
+      "scale" : 3.2926843380858646,
+      "z_index" : 705
+    },
+    {
+      "id" : "EE5E6ADD-F556-480C-87B1-63A30F99D834",
+      "image_name" : "file:\/\/\/var\/mobile\/Containers\/Data\/Application\/5255113B-37D2-460F-B500-F8043266DDFE\/Documents\/MyCollageProjects\/4B549931-3571-4E42-AE50-064F13B59693_overlays\/sticker_canvas_EE5E6ADD-F556-480C-87B1-63A30F99D834.jpg",
+      "inner_offset_height" : -2,
+      "inner_offset_width" : 0.6666666666666856,
+      "inner_scale" : 1,
+      "n_position_x" : 0.5,
+      "n_position_y" : 0.5,
+      "offset_height" : 0,
+      "offset_width" : 0,
+      "parent_frame_sticker_id" : "72726D05-82DA-4113-BFC4-0EC263519CE1",
+      "placement_kind" : "canvas_photo",
+      "rotation_radians" : -0.151156227075444,
+      "scale" : 3.2926843380858646,
+      "z_index" : 705
+    }
+  ],
+  "text_items" : [
+    {
+      "alignment" : "center",
+      "backgroundColorHex" : "#00000000",
+      "backgroundOpacity" : 1,
+      "cornerRadius" : 8,
+      "fontName" : "Embolism Spark",
+      "fontSize" : 30,
+      "id" : "38F8AA84-4918-4E12-A85A-75807A425E57",
+      "isUserProContent" : false,
+      "letterSpacing" : 0,
+      "lineSpacing" : 0,
+      "nPosition" : [
+        0.27470686767169183,
+        0.17504187604690113
+      ],
+      "outlineColorHex" : "#FFFFFF",
+      "outlineOpacity" : 0.5100671052932739,
+      "outlineWidth" : 0.6563218235969543,
+      "rotation" : -8.75961071126691,
+      "scale" : 1.179398301764495,
+      "shadowColorHex" : "#00000000",
+      "shadowRadius" : 0,
+      "text" : "My super",
+      "textCase" : "none",
+      "textColorHex" : "#F27CA4FF",
+      "textOpacity" : 1,
+      "zIndex" : 710
+    },
+    {
+      "alignment" : "center",
+      "backgroundColorHex" : "#00000000",
+      "backgroundOpacity" : 1,
+      "cornerRadius" : 8,
+      "fontName" : "Chrisye",
+      "fontSize" : 30,
+      "id" : "AB811E75-5DCF-44F0-95E6-675CFF090CC2",
+      "isUserProContent" : false,
+      "letterSpacing" : 0,
+      "lineSpacing" : 0,
+      "nPosition" : [
+        0.6019436876255495,
+        0.1520038765460222
+      ],
+      "outlineColorHex" : "#FFFFFF",
+      "outlineOpacity" : 0.5100671052932739,
+      "outlineWidth" : 0.6563218235969543,
+      "rotation" : -10.03879122205841,
+      "scale" : 1.9127883753459185,
+      "shadowColorHex" : "#00000000",
+      "shadowRadius" : 0,
+      "text" : "Cool",
+      "textCase" : "none",
+      "textColorHex" : "#F27CA4FF",
+      "textOpacity" : 1,
+      "zIndex" : 709
+    },
+    {
+      "alignment" : "center",
+      "backgroundColorHex" : "#00000000",
+      "backgroundOpacity" : 1,
+      "cornerRadius" : 8,
+      "fontName" : "Chrisye",
+      "fontSize" : 30,
+      "id" : "2D3F5A1F-F01D-4890-B239-E6DF0CA1768B",
+      "isUserProContent" : false,
+      "letterSpacing" : 0,
+      "lineSpacing" : 0,
+      "nPosition" : [
+        0.6453706093506344,
+        0.27418645424960364
+      ],
+      "outlineColorHex" : "#FFFFFF",
+      "outlineOpacity" : 0.5100671052932739,
+      "outlineWidth" : 0.6563218235969543,
+      "rotation" : -10.03879122205841,
+      "scale" : 1.9127883753459185,
+      "shadowColorHex" : "#00000000",
+      "shadowRadius" : 0,
+      "text" : "Dad",
+      "textCase" : "none",
+      "textColorHex" : "#F27CA4FF",
+      "textOpacity" : 1,
+      "zIndex" : 708
+    }
+  ],
+  "version" : "1"
+}
