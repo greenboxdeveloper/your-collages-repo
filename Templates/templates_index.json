@@ -1,5 +1,5 @@
 {
-  "version": "3.5",
+  "version": "3.6",
   "templates": [
     {
       "id": "birthday__birthday_01",
@@ -248,6 +248,16 @@
       "category_folder": "Summer",
       "recipe": "Summer 1.5.json",
       "preview": "Summer 1.5.jpg",
+      "is_premium": true,
+      "neutral_empty_slots": true
+    },
+    {
+      "id": "summer__summer_1_6",
+      "title": "Summer 1.6",
+      "category": "Summer",
+      "category_folder": "Summer",
+      "recipe": "Summer 1.6.json",
+      "preview": "Summer 1.6.jpg",
       "is_premium": true,
       "neutral_empty_slots": true
     }
