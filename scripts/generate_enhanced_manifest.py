@@ -2910,6 +2910,101 @@ def generate_png_template_manifest(
     return 0
 
 
+_POLAROID_FRAME_IMAGE_EXTS = (".png", ".jpg", ".jpeg")
+
+
+def generate_polaroid_frame_manifest(
+    frames_dir: Path,
+    output_path: Path,
+) -> int:
+    """Emit ``polaroid_frame_manifest.json`` from ``PolaroidFrame/<Category>/*.{png,jpg,jpeg}``.
+
+    Rules mirror PNGTemplates:
+    - Folder name under ``PolaroidFrame/`` is preserved as ``remoteFolderName``.
+    - Loose images directly under ``PolaroidFrame/`` become a single default category.
+    - Version is bumped only when categories/items actually change.
+    """
+    categories: list[dict] = []
+    if not frames_dir.is_dir():
+        frames_dir.mkdir(parents=True, exist_ok=True)
+
+    subdirs = sorted([p for p in frames_dir.iterdir() if p.is_dir()], key=lambda p: p.name.lower())
+    loose_images = sorted(
+        [
+            p for p in frames_dir.iterdir()
+            if p.is_file() and p.suffix.lower() in _POLAROID_FRAME_IMAGE_EXTS
+        ],
+        key=lambda p: p.name.lower(),
+    )
+
+    def _items_from_images(images: list[Path], cat_id: str, folder_premium_default: bool) -> list[dict]:
+        items: list[dict] = []
+        for p in images:
+            stem = p.stem
+            display_name, is_premium = _store_stem_to_name_and_premium(
+                stem, default_premium=False, folder_premium_default=folder_premium_default
+            )
+            clean_stem = _clean_stem_premium_suffix(stem)
+            item_id = f"{cat_id}__{_slugify(clean_stem)}"
+            ext = p.suffix.lower().lstrip(".")
+            file_ext = "jpg" if ext == "jpeg" else ext
+            items.append({
+                "id": item_id,
+                "name": display_name,
+                "fileName": clean_stem,
+                "isPremium": is_premium,
+                "holeCount": 0,
+                "fileExtension": file_ext,
+            })
+        return items
+
+    for cat_dir in subdirs:
+        images = sorted(
+            [
+                p for p in cat_dir.iterdir()
+                if p.is_file() and p.suffix.lower() in _POLAROID_FRAME_IMAGE_EXTS
+            ],
+            key=lambda p: p.name.lower(),
+        )
+        if not images:
+            continue
+
+        cat_id = _slugify(cat_dir.name)
+        folder_base, folder_fd = _folder_display_base_and_premium_default(cat_dir.name)
+        cat_name = _title_from_stem(folder_base)
+        items = _items_from_images(images, cat_id, folder_fd)
+        if not items:
+            continue
+
+        categories.append({
+            "id": cat_id,
+            "name": cat_name,
+            "icon": "photo.artframe",
+            "remoteFolderName": cat_dir.name,
+            "items": items,
+        })
+
+    if loose_images:
+        folder_name = frames_dir.name
+        cat_id = _slugify(folder_name)
+        folder_base, folder_fd = _folder_display_base_and_premium_default(folder_name)
+        cat_name = _title_from_stem(folder_base)
+        items = _items_from_images(loose_images, cat_id, folder_fd)
+        if items:
+            categories.append({
+                "id": cat_id,
+                "name": cat_name,
+                "icon": "photo.artframe",
+                "remoteFolderName": folder_name,
+                "items": items,
+            })
+
+    version = _write_versioned_manifest(output_path, "categories", categories)
+    total_items = sum(len(c.get("items") or []) for c in categories)
+    print(f"[polaroid-frame-manifest] v{version} — {len(categories)} categories, {total_items} frames → {output_path}")
+    return 0
+
+
 # Legacy flat layout under ``Templates/Recipes`` and ``Templates/Previews`` (still supported in the app;
 # this generator only emits the **category-folder** layout: ``Templates/<CategoryFolder>/*.json`` + preview.)
 _JSON_TEMPLATE_INDEX_SKIP_DIRS = frozenset({"Recipes", "Previews"})
@@ -4293,6 +4388,14 @@ def _add_store_manifest_args(parser: argparse.ArgumentParser) -> None:
     parser.add_argument("--png-templates-dir", default="PNGTemplates")
     parser.add_argument("--png-templates-output", default="PNGTemplates/png_template_manifest.json")
     parser.add_argument(
+        "--generate-polaroid-frame-manifest",
+        action="store_true",
+        default=False,
+        help="Generate PolaroidFrame/polaroid_frame_manifest.json from PolaroidFrame category folders.",
+    )
+    parser.add_argument("--polaroid-frames-dir", default="PolaroidFrame")
+    parser.add_argument("--polaroid-frames-output", default="PolaroidFrame/polaroid_frame_manifest.json")
+    parser.add_argument(
         "--generate-templates-index",
         action="store_true",
         default=False,
@@ -4420,6 +4523,14 @@ def main_with_filter_support() -> int:
         result = generate_png_template_manifest(
             repo_root / args.png_templates_dir,
             repo_root / args.png_templates_output,
+        )
+        if result != 0:
+            return result
+
+    if args.generate_polaroid_frame_manifest:
+        result = generate_polaroid_frame_manifest(
+            repo_root / args.polaroid_frames_dir,
+            repo_root / args.polaroid_frames_output,
         )
         if result != 0:
             return result
