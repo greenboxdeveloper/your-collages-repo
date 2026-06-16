@@ -2930,11 +2930,16 @@ def _slots_from_mask(
     ignore_edge_touching: bool,
     slot_shape: str | None = "organic",
     hole_expansion_px: int = _SLOT_HOLE_EXPANSION_PX,
+    include_path_data: bool = False,
 ) -> list[dict]:
-    """Extract normalized slot dicts (+ optional ``pathData``) for each connected component."""
+    """Extract normalized slot dicts (+ optional ``pathData``) for each connected component.
+
+    ``pathData`` is only emitted when ``include_path_data`` is true (opaque grey/color
+    placeholders). Native transparency holes only need rects — the PNG alpha is the mask.
+    """
     labeled, num = _ndi.label(mask)
     slots: list[dict] = []
-    use_path = _shape_is_organic(slot_shape)
+    use_path = include_path_data and _shape_is_organic(slot_shape)
     for lbl in range(1, num + 1):
         comp = labeled == lbl
         area = int(np.sum(comp))
@@ -2993,11 +2998,11 @@ def _detect_template_slots(
     Returns a list of dicts::
 
         {"x": 0.1, "y": 0.1, "width": 0.8, "height": 0.65,
-         "areaFraction": 0.52, "source": "transparency",
-         "pathData": "M 12.50 25.00 L ... Z"}  # optional, design space 0…500
+         "areaFraction": 0.52, "source": "transparency"}
 
     All coordinates are normalized 0..1 relative to the image dimensions.
-    ``pathData`` is emitted for organic-shaped slots (Swift default for grey/color cues).
+    ``pathData`` is emitted only for opaque placeholder slots (grey / color-cue) when
+    the image has no native transparency holes — not for alpha-cut PNG templates.
     Returns ``[]`` if detection fails or no holes are found.
     """
     if Image is None or np is None or not _SCIPY_AVAILABLE:
@@ -3040,11 +3045,11 @@ def _detect_template_slots(
     # ── 1. Transparency pass ────────────────────────────────────────────────
     if detection_mode in ("auto", "transparency"):
         trans_mask = alpha < 128
-        trans_shape = sidecar.get("transparencyShape") or sidecar.get("transparency_shape") or default_shape
         slots = _slots_from_mask(
             trans_mask, "transparency",
             width=w, height=h, total_pixels=total_pixels, min_area=min_area,
-            ignore_edge_touching=ignore_edge_touching, slot_shape=trans_shape,
+            ignore_edge_touching=ignore_edge_touching,
+            include_path_data=False,
         )
         if slots:
             return _sort_slots(slots)
@@ -3074,6 +3079,7 @@ def _detect_template_slots(
             grey_mask, "slotGray",
             width=w, height=h, total_pixels=total_pixels, min_area=min_area,
             ignore_edge_touching=ignore_edge_touching, slot_shape=grey_shape,
+            include_path_data=True,
         )
         if slots:
             return _sort_slots(slots)
@@ -3110,6 +3116,7 @@ def _detect_template_slots(
             cue_mask, "colorCue",
             width=w, height=h, total_pixels=total_pixels, min_area=min_area,
             ignore_edge_touching=ignore_edge_touching, slot_shape=cue_shape,
+            include_path_data=True,
         ))
 
     if combined_slots:
