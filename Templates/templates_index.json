@@ -1,5 +1,5 @@
 {
-  "version": "3.6",
+  "version": "3.7",
   "templates": [
     {
       "id": "birthday__birthday_01",
@@ -78,6 +78,16 @@
       "category_folder": "Holiday",
       "recipe": "Holiday Season 2.json",
       "preview": "Holiday Season 2.jpg",
+      "is_premium": true,
+      "neutral_empty_slots": true
+    },
+    {
+      "id": "holiday__travel_2",
+      "title": "Travel 2",
+      "category": "Holiday",
+      "category_folder": "Holiday",
+      "recipe": "Travel 2.json",
+      "preview": "Travel 2.jpg",
       "is_premium": true,
       "neutral_empty_slots": true
     },
