@@ -1,5 +1,5 @@
 {
-  "version": "1.6",
+  "version": "1.7",
   "categories": [
     {
       "id": "polaroidframe",
@@ -12,184 +12,462 @@
           "name": "Polaroid 1",
           "fileName": "Polaroid 1",
           "isPremium": false,
-          "holeCount": 0,
-          "fileExtension": "png"
+          "holeCount": 1,
+          "fileExtension": "png",
+          "precomputedHoles": [
+            {
+              "x": 0.078,
+              "y": 0.058824,
+              "width": 0.836,
+              "height": 0.719814,
+              "areaFraction": 0.601765,
+              "source": "transparency"
+            }
+          ]
         },
         {
           "id": "polaroidframe__polaroid1_1_b",
           "name": "Polaroid1.1 B",
           "fileName": "Polaroid1.1_B",
           "isPremium": false,
-          "holeCount": 0,
-          "fileExtension": "png"
+          "holeCount": 1,
+          "fileExtension": "png",
+          "precomputedHoles": [
+            {
+              "x": 0.055664,
+              "y": 0.055664,
+              "width": 0.888672,
+              "height": 0.888672,
+              "areaFraction": 0.789738,
+              "source": "transparency"
+            }
+          ]
         },
         {
           "id": "polaroidframe__polaroid1_1_w",
           "name": "Polaroid1.1 W",
           "fileName": "Polaroid1.1_W",
           "isPremium": false,
-          "holeCount": 0,
-          "fileExtension": "png"
+          "holeCount": 1,
+          "fileExtension": "png",
+          "precomputedHoles": [
+            {
+              "x": 0.055664,
+              "y": 0.055664,
+              "width": 0.888672,
+              "height": 0.888672,
+              "areaFraction": 0.789738,
+              "source": "transparency"
+            }
+          ]
         },
         {
           "id": "polaroidframe__polaroid1_2_b",
           "name": "Polaroid1.2 B",
           "fileName": "Polaroid1.2_B",
           "isPremium": false,
-          "holeCount": 0,
-          "fileExtension": "png"
+          "holeCount": 1,
+          "fileExtension": "png",
+          "precomputedHoles": [
+            {
+              "x": 0.111328,
+              "y": 0.111328,
+              "width": 0.777344,
+              "height": 0.777344,
+              "areaFraction": 0.604263,
+              "source": "transparency"
+            }
+          ]
         },
         {
           "id": "polaroidframe__polaroid1_2_w",
           "name": "Polaroid1.2 W",
           "fileName": "Polaroid1.2_W",
           "isPremium": false,
-          "holeCount": 0,
-          "fileExtension": "png"
+          "holeCount": 1,
+          "fileExtension": "png",
+          "precomputedHoles": [
+            {
+              "x": 0.111328,
+              "y": 0.111328,
+              "width": 0.777344,
+              "height": 0.777344,
+              "areaFraction": 0.604263,
+              "source": "transparency"
+            }
+          ]
         },
         {
           "id": "polaroidframe__polaroid2_1_b",
           "name": "Polaroid2.1 B",
           "fileName": "Polaroid2.1_B",
           "isPremium": false,
-          "holeCount": 0,
-          "fileExtension": "png"
+          "holeCount": 1,
+          "fileExtension": "png",
+          "precomputedHoles": [
+            {
+              "x": 0.061523,
+              "y": 0.061523,
+              "width": 0.876953,
+              "height": 0.876953,
+              "areaFraction": 0.769047,
+              "source": "transparency"
+            }
+          ]
         },
         {
           "id": "polaroidframe__polaroid2_1_w",
           "name": "Polaroid2.1 W",
           "fileName": "Polaroid2.1_W",
           "isPremium": false,
-          "holeCount": 0,
-          "fileExtension": "png"
+          "holeCount": 1,
+          "fileExtension": "png",
+          "precomputedHoles": [
+            {
+              "x": 0.061523,
+              "y": 0.061523,
+              "width": 0.876953,
+              "height": 0.876953,
+              "areaFraction": 0.769047,
+              "source": "transparency"
+            }
+          ]
         },
         {
           "id": "polaroidframe__polaroid3_1_b",
           "name": "Polaroid3.1 B",
           "fileName": "Polaroid3.1_B",
           "isPremium": false,
-          "holeCount": 0,
-          "fileExtension": "png"
+          "holeCount": 1,
+          "fileExtension": "png",
+          "precomputedHoles": [
+            {
+              "x": 0.043956,
+              "y": 0.035156,
+              "width": 0.912088,
+              "height": 0.929688,
+              "areaFraction": 0.847957,
+              "source": "transparency"
+            }
+          ]
         },
         {
           "id": "polaroidframe__polaroid3_1_w",
           "name": "Polaroid3.1 W",
           "fileName": "Polaroid3.1_W",
           "isPremium": false,
-          "holeCount": 0,
-          "fileExtension": "png"
+          "holeCount": 1,
+          "fileExtension": "png",
+          "precomputedHoles": [
+            {
+              "x": 0.062271,
+              "y": 0.049805,
+              "width": 0.875458,
+              "height": 0.900391,
+              "areaFraction": 0.788254,
+              "source": "transparency"
+            }
+          ]
         },
         {
           "id": "polaroidframe__polaroid3_2_b",
           "name": "Polaroid3.2 B",
           "fileName": "Polaroid3.2_B",
           "isPremium": false,
-          "holeCount": 0,
-          "fileExtension": "png"
+          "holeCount": 1,
+          "fileExtension": "png",
+          "precomputedHoles": [
+            {
+              "x": 0.081361,
+              "y": 0.055664,
+              "width": 0.841716,
+              "height": 0.888672,
+              "areaFraction": 0.748009,
+              "source": "transparency"
+            }
+          ]
         },
         {
           "id": "polaroidframe__polaroid3_2_w",
           "name": "Polaroid3.2 W",
           "fileName": "Polaroid3.2_W",
           "isPremium": false,
-          "holeCount": 0,
-          "fileExtension": "png"
+          "holeCount": 1,
+          "fileExtension": "png",
+          "precomputedHoles": [
+            {
+              "x": 0.081361,
+              "y": 0.055664,
+              "width": 0.841716,
+              "height": 0.888672,
+              "areaFraction": 0.748009,
+              "source": "transparency"
+            }
+          ]
         },
         {
           "id": "polaroidframe__polaroid3_3_b",
           "name": "Polaroid3.3 B",
           "fileName": "Polaroid3.3_B",
           "isPremium": false,
-          "holeCount": 0,
-          "fileExtension": "png"
+          "holeCount": 1,
+          "fileExtension": "png",
+          "precomputedHoles": [
+            {
+              "x": 0.096732,
+              "y": 0.0625,
+              "width": 0.818301,
+              "height": 0.777344,
+              "areaFraction": 0.6361,
+              "source": "transparency"
+            }
+          ]
         },
         {
           "id": "polaroidframe__polaroid3_3_w",
           "name": "Polaroid3.3 W",
           "fileName": "Polaroid3.3_W",
           "isPremium": false,
-          "holeCount": 0,
-          "fileExtension": "png"
+          "holeCount": 1,
+          "fileExtension": "png",
+          "precomputedHoles": [
+            {
+              "x": 0.096732,
+              "y": 0.0625,
+              "width": 0.819608,
+              "height": 0.777344,
+              "areaFraction": 0.637114,
+              "source": "transparency"
+            }
+          ]
         },
         {
           "id": "polaroidframe__polaroid3_4_b",
           "name": "Polaroid3.4 B",
           "fileName": "Polaroid3.4_B",
           "isPremium": false,
-          "holeCount": 0,
-          "fileExtension": "png"
+          "holeCount": 1,
+          "fileExtension": "png",
+          "precomputedHoles": [
+            {
+              "x": 0.095238,
+              "y": 0.049805,
+              "width": 0.809524,
+              "height": 0.900391,
+              "areaFraction": 0.728882,
+              "source": "transparency"
+            }
+          ]
         },
         {
           "id": "polaroidframe__polaroid3_4_w",
           "name": "Polaroid3.4 W",
           "fileName": "Polaroid3.4_W",
           "isPremium": false,
-          "holeCount": 0,
-          "fileExtension": "png"
+          "holeCount": 1,
+          "fileExtension": "png",
+          "precomputedHoles": [
+            {
+              "x": 0.095238,
+              "y": 0.049805,
+              "width": 0.809524,
+              "height": 0.900391,
+              "areaFraction": 0.728882,
+              "source": "transparency"
+            }
+          ]
         },
         {
           "id": "polaroidframe__polaroid4_1_b",
           "name": "Polaroid4.1 B",
           "fileName": "Polaroid4.1_B",
           "isPremium": false,
-          "holeCount": 0,
-          "fileExtension": "png"
+          "holeCount": 1,
+          "fileExtension": "png",
+          "precomputedHoles": [
+            {
+              "x": 0.07113,
+              "y": 0.049805,
+              "width": 0.857741,
+              "height": 0.700195,
+              "areaFraction": 0.600586,
+              "source": "transparency"
+            }
+          ]
         },
         {
           "id": "polaroidframe__polaroid4_1_w",
           "name": "Polaroid4.1 W",
           "fileName": "Polaroid4.1_W",
           "isPremium": false,
-          "holeCount": 0,
-          "fileExtension": "png"
+          "holeCount": 1,
+          "fileExtension": "png",
+          "precomputedHoles": [
+            {
+              "x": 0.07113,
+              "y": 0.049805,
+              "width": 0.857741,
+              "height": 0.700195,
+              "areaFraction": 0.600586,
+              "source": "transparency"
+            }
+          ]
         },
         {
           "id": "polaroidframe__polaroid4_2_b",
           "name": "Polaroid4.2 B",
           "fileName": "Polaroid4.2_B",
           "isPremium": false,
-          "holeCount": 0,
-          "fileExtension": "png"
+          "holeCount": 1,
+          "fileExtension": "png",
+          "precomputedHoles": [
+            {
+              "x": 0.053147,
+              "y": 0.130859,
+              "width": 0.893706,
+              "height": 0.623047,
+              "areaFraction": 0.556818,
+              "source": "transparency"
+            }
+          ]
         },
         {
           "id": "polaroidframe__polaroid4_2_w",
           "name": "Polaroid4.2 W",
           "fileName": "Polaroid4.2_W",
           "isPremium": false,
-          "holeCount": 0,
-          "fileExtension": "png"
+          "holeCount": 1,
+          "fileExtension": "png",
+          "precomputedHoles": [
+            {
+              "x": 0.054469,
+              "y": 0.130859,
+              "width": 0.891061,
+              "height": 0.623047,
+              "areaFraction": 0.555173,
+              "source": "transparency"
+            }
+          ]
         },
         {
           "id": "polaroidframe__polaroid5_1_b",
           "name": "Polaroid5.1 B",
           "fileName": "Polaroid5.1_B",
           "isPremium": false,
-          "holeCount": 0,
-          "fileExtension": "png"
+          "holeCount": 3,
+          "fileExtension": "png",
+          "precomputedHoles": [
+            {
+              "x": 0.084011,
+              "y": 0.030273,
+              "width": 0.831978,
+              "height": 0.299805,
+              "areaFraction": 0.249431,
+              "source": "transparency"
+            },
+            {
+              "x": 0.084011,
+              "y": 0.349609,
+              "width": 0.831978,
+              "height": 0.300781,
+              "areaFraction": 0.250243,
+              "source": "transparency"
+            },
+            {
+              "x": 0.084011,
+              "y": 0.669922,
+              "width": 0.831978,
+              "height": 0.299805,
+              "areaFraction": 0.249431,
+              "source": "transparency"
+            }
+          ]
         },
         {
           "id": "polaroidframe__polaroid5_1_w",
           "name": "Polaroid5.1 W",
           "fileName": "Polaroid5.1_W",
           "isPremium": false,
-          "holeCount": 0,
-          "fileExtension": "png"
+          "holeCount": 3,
+          "fileExtension": "png",
+          "precomputedHoles": [
+            {
+              "x": 0.084011,
+              "y": 0.030273,
+              "width": 0.831978,
+              "height": 0.299805,
+              "areaFraction": 0.249431,
+              "source": "transparency"
+            },
+            {
+              "x": 0.084011,
+              "y": 0.349609,
+              "width": 0.831978,
+              "height": 0.300781,
+              "areaFraction": 0.250243,
+              "source": "transparency"
+            },
+            {
+              "x": 0.084011,
+              "y": 0.669922,
+              "width": 0.831978,
+              "height": 0.299805,
+              "areaFraction": 0.249431,
+              "source": "transparency"
+            }
+          ]
         },
         {
           "id": "polaroidframe__polaroid5_2_b",
           "name": "Polaroid5.2 B",
           "fileName": "Polaroid5.2_B",
           "isPremium": false,
-          "holeCount": 0,
-          "fileExtension": "png"
+          "holeCount": 2,
+          "fileExtension": "png",
+          "precomputedHoles": [
+            {
+              "x": 0.074074,
+              "y": 0.018555,
+              "width": 0.851852,
+              "height": 0.472656,
+              "areaFraction": 0.402633,
+              "source": "transparency"
+            },
+            {
+              "x": 0.074074,
+              "y": 0.508789,
+              "width": 0.851852,
+              "height": 0.473633,
+              "areaFraction": 0.403461,
+              "source": "transparency"
+            }
+          ]
         },
         {
           "id": "polaroidframe__polaroid5_2_w",
           "name": "Polaroid5.2 W",
           "fileName": "Polaroid5.2_W",
           "isPremium": false,
-          "holeCount": 0,
-          "fileExtension": "png"
+          "holeCount": 2,
+          "fileExtension": "png",
+          "precomputedHoles": [
+            {
+              "x": 0.074074,
+              "y": 0.018555,
+              "width": 0.851852,
+              "height": 0.472656,
+              "areaFraction": 0.402633,
+              "source": "transparency"
+            },
+            {
+              "x": 0.074074,
+              "y": 0.508789,
+              "width": 0.851852,
+              "height": 0.473633,
+              "areaFraction": 0.403461,
+              "source": "transparency"
+            }
+          ]
         }
       ]
     }
