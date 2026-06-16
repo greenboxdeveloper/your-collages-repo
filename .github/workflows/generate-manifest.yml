@@ -61,11 +61,11 @@ jobs:
           python -m pip install -r scripts/requirements.txt
           # Belt-and-suspenders: shape WebP previews need cairosvg on the same interpreter as `python`.
           python -m pip install 'cairosvg>=2.7.0'
-          python -m pip show Pillow cairosvg
+          python -m pip show Pillow cairosvg scipy
 
       - name: Verify shape preview toolchain
         run: |
-          python -c "from PIL import Image; import cairosvg; print('Pillow', Image.__version__); print('cairosvg', cairosvg.__version__)"
+          python -c "from PIL import Image; import cairosvg; import scipy; print('Pillow', Image.__version__); print('cairosvg', cairosvg.__version__); print('scipy', scipy.__version__)"
 
       # Script reads one SVG folder (--svg-dir). Repo paths above also watch svgs/**;
       # if your layouts live only under svgs/, set --svg-dir svgs (or symlink / duplicate into collages).

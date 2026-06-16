@@ -1,5 +1,5 @@
 {
-  "version": "1.5",
+  "version": "1.6",
   "categories": [
     {
       "id": "polaroidframe",
@@ -12,520 +12,184 @@
           "name": "Polaroid 1",
           "fileName": "Polaroid 1",
           "isPremium": false,
-          "holeCount": 1,
-          "fileExtension": "png",
-          "slots": [
-            {
-              "id": "slot_0",
-              "n_rect": [
-                0.070707,
-                0.052734,
-                0.85101,
-                0.730469
-              ],
-              "path_data": null
-            }
-          ]
+          "holeCount": 0,
+          "fileExtension": "png"
         },
         {
           "id": "polaroidframe__polaroid1_1_b",
           "name": "Polaroid1.1 B",
           "fileName": "Polaroid1.1_B",
           "isPremium": false,
-          "holeCount": 1,
-          "fileExtension": "png",
-          "slots": [
-            {
-              "id": "slot_0",
-              "n_rect": [
-                0.050781,
-                0.050781,
-                0.898438,
-                0.898438
-              ],
-              "path_data": null
-            }
-          ]
+          "holeCount": 0,
+          "fileExtension": "png"
         },
         {
           "id": "polaroidframe__polaroid1_1_w",
           "name": "Polaroid1.1 W",
           "fileName": "Polaroid1.1_W",
           "isPremium": false,
-          "holeCount": 1,
-          "fileExtension": "png",
-          "slots": [
-            {
-              "id": "slot_0",
-              "n_rect": [
-                0.050781,
-                0.050781,
-                0.898438,
-                0.898438
-              ],
-              "path_data": null
-            }
-          ]
+          "holeCount": 0,
+          "fileExtension": "png"
         },
         {
           "id": "polaroidframe__polaroid1_2_b",
           "name": "Polaroid1.2 B",
           "fileName": "Polaroid1.2_B",
           "isPremium": false,
-          "holeCount": 1,
-          "fileExtension": "png",
-          "slots": [
-            {
-              "id": "slot_0",
-              "n_rect": [
-                0.105469,
-                0.105469,
-                0.789062,
-                0.789062
-              ],
-              "path_data": null
-            }
-          ]
+          "holeCount": 0,
+          "fileExtension": "png"
         },
         {
           "id": "polaroidframe__polaroid1_2_w",
           "name": "Polaroid1.2 W",
           "fileName": "Polaroid1.2_W",
           "isPremium": false,
-          "holeCount": 1,
-          "fileExtension": "png",
-          "slots": [
-            {
-              "id": "slot_0",
-              "n_rect": [
-                0.105469,
-                0.105469,
-                0.789062,
-                0.789062
-              ],
-              "path_data": null
-            }
-          ]
+          "holeCount": 0,
+          "fileExtension": "png"
         },
         {
           "id": "polaroidframe__polaroid2_1_b",
           "name": "Polaroid2.1 B",
           "fileName": "Polaroid2.1_B",
           "isPremium": false,
-          "holeCount": 1,
-          "fileExtension": "png",
-          "slots": [
-            {
-              "id": "slot_0",
-              "n_rect": [
-                0.054688,
-                0.056641,
-                0.890625,
-                0.886719
-              ],
-              "path_data": null
-            }
-          ]
+          "holeCount": 0,
+          "fileExtension": "png"
         },
         {
           "id": "polaroidframe__polaroid2_1_w",
           "name": "Polaroid2.1 W",
           "fileName": "Polaroid2.1_W",
           "isPremium": false,
-          "holeCount": 1,
-          "fileExtension": "png",
-          "slots": [
-            {
-              "id": "slot_0",
-              "n_rect": [
-                0.054688,
-                0.056641,
-                0.890625,
-                0.886719
-              ],
-              "path_data": null
-            }
-          ]
+          "holeCount": 0,
+          "fileExtension": "png"
         },
         {
           "id": "polaroidframe__polaroid3_1_b",
           "name": "Polaroid3.1 B",
           "fileName": "Polaroid3.1_B",
           "isPremium": false,
-          "holeCount": 1,
-          "fileExtension": "png",
-          "slots": [
-            {
-              "id": "slot_0",
-              "n_rect": [
-                0.036585,
-                0.029297,
-                0.926829,
-                0.941406
-              ],
-              "path_data": null
-            }
-          ]
+          "holeCount": 0,
+          "fileExtension": "png"
         },
         {
           "id": "polaroidframe__polaroid3_1_w",
           "name": "Polaroid3.1 W",
           "fileName": "Polaroid3.1_W",
           "isPremium": false,
-          "holeCount": 1,
-          "fileExtension": "png",
-          "slots": [
-            {
-              "id": "slot_0",
-              "n_rect": [
-                0.056098,
-                0.044922,
-                0.887805,
-                0.910156
-              ],
-              "path_data": null
-            }
-          ]
+          "holeCount": 0,
+          "fileExtension": "png"
         },
         {
           "id": "polaroidframe__polaroid3_2_b",
           "name": "Polaroid3.2 B",
           "fileName": "Polaroid3.2_B",
           "isPremium": false,
-          "holeCount": 1,
-          "fileExtension": "png",
-          "slots": [
-            {
-              "id": "slot_0",
-              "n_rect": [
-                0.073964,
-                0.050781,
-                0.857988,
-                0.898438
-              ],
-              "path_data": null
-            }
-          ]
+          "holeCount": 0,
+          "fileExtension": "png"
         },
         {
           "id": "polaroidframe__polaroid3_2_w",
           "name": "Polaroid3.2 W",
           "fileName": "Polaroid3.2_W",
           "isPremium": false,
-          "holeCount": 1,
-          "fileExtension": "png",
-          "slots": [
-            {
-              "id": "slot_0",
-              "n_rect": [
-                0.073964,
-                0.050781,
-                0.857988,
-                0.898438
-              ],
-              "path_data": null
-            }
-          ]
+          "holeCount": 0,
+          "fileExtension": "png"
         },
         {
           "id": "polaroidframe__polaroid3_3_b",
           "name": "Polaroid3.3 B",
           "fileName": "Polaroid3.3_B",
           "isPremium": false,
-          "holeCount": 1,
-          "fileExtension": "png",
-          "slots": [
-            {
-              "id": "slot_0",
-              "n_rect": [
-                0.089005,
-                0.056641,
-                0.835079,
-                0.789062
-              ],
-              "path_data": null
-            }
-          ]
+          "holeCount": 0,
+          "fileExtension": "png"
         },
         {
           "id": "polaroidframe__polaroid3_3_w",
           "name": "Polaroid3.3 W",
           "fileName": "Polaroid3.3_W",
           "isPremium": false,
-          "holeCount": 1,
-          "fileExtension": "png",
-          "slots": [
-            {
-              "id": "slot_0",
-              "n_rect": [
-                0.089005,
-                0.056641,
-                0.835079,
-                0.789062
-              ],
-              "path_data": null
-            }
-          ]
+          "holeCount": 0,
+          "fileExtension": "png"
         },
         {
           "id": "polaroidframe__polaroid3_4_b",
           "name": "Polaroid3.4 B",
           "fileName": "Polaroid3.4_B",
           "isPremium": false,
-          "holeCount": 1,
-          "fileExtension": "png",
-          "slots": [
-            {
-              "id": "slot_0",
-              "n_rect": [
-                0.08589,
-                0.044922,
-                0.828221,
-                0.910156
-              ],
-              "path_data": null
-            }
-          ]
+          "holeCount": 0,
+          "fileExtension": "png"
         },
         {
           "id": "polaroidframe__polaroid3_4_w",
           "name": "Polaroid3.4 W",
           "fileName": "Polaroid3.4_W",
           "isPremium": false,
-          "holeCount": 1,
-          "fileExtension": "png",
-          "slots": [
-            {
-              "id": "slot_0",
-              "n_rect": [
-                0.08589,
-                0.044922,
-                0.828221,
-                0.910156
-              ],
-              "path_data": null
-            }
-          ]
+          "holeCount": 0,
+          "fileExtension": "png"
         },
         {
           "id": "polaroidframe__polaroid4_1_b",
           "name": "Polaroid4.1 B",
           "fileName": "Polaroid4.1_B",
           "isPremium": false,
-          "holeCount": 1,
-          "fileExtension": "png",
-          "slots": [
-            {
-              "id": "slot_0",
-              "n_rect": [
-                0.064246,
-                0.044922,
-                0.871508,
-                0.710938
-              ],
-              "path_data": null
-            }
-          ]
+          "holeCount": 0,
+          "fileExtension": "png"
         },
         {
           "id": "polaroidframe__polaroid4_1_w",
           "name": "Polaroid4.1 W",
           "fileName": "Polaroid4.1_W",
           "isPremium": false,
-          "holeCount": 1,
-          "fileExtension": "png",
-          "slots": [
-            {
-              "id": "slot_0",
-              "n_rect": [
-                0.064246,
-                0.044922,
-                0.871508,
-                0.710938
-              ],
-              "path_data": null
-            }
-          ]
+          "holeCount": 0,
+          "fileExtension": "png"
         },
         {
           "id": "polaroidframe__polaroid4_2_b",
           "name": "Polaroid4.2 B",
           "fileName": "Polaroid4.2_B",
           "isPremium": false,
-          "holeCount": 1,
-          "fileExtension": "png",
-          "slots": [
-            {
-              "id": "slot_0",
-              "n_rect": [
-                0.044693,
-                0.125,
-                0.910615,
-                0.634766
-              ],
-              "path_data": null
-            }
-          ]
+          "holeCount": 0,
+          "fileExtension": "png"
         },
         {
           "id": "polaroidframe__polaroid4_2_w",
           "name": "Polaroid4.2 W",
           "fileName": "Polaroid4.2_W",
           "isPremium": false,
-          "holeCount": 1,
-          "fileExtension": "png",
-          "slots": [
-            {
-              "id": "slot_0",
-              "n_rect": [
-                0.047486,
-                0.125,
-                0.905028,
-                0.634766
-              ],
-              "path_data": null
-            }
-          ]
+          "holeCount": 0,
+          "fileExtension": "png"
         },
         {
           "id": "polaroidframe__polaroid5_1_b",
           "name": "Polaroid5.1 B",
           "fileName": "Polaroid5.1_B",
           "isPremium": false,
-          "holeCount": 3,
-          "fileExtension": "png",
-          "slots": [
-            {
-              "id": "slot_0",
-              "n_rect": [
-                0.065217,
-                0.025391,
-                0.869565,
-                0.310547
-              ],
-              "path_data": null
-            },
-            {
-              "id": "slot_1",
-              "n_rect": [
-                0.070652,
-                0.34375,
-                0.858696,
-                0.3125
-              ],
-              "path_data": null
-            },
-            {
-              "id": "slot_2",
-              "n_rect": [
-                0.065217,
-                0.664062,
-                0.869565,
-                0.310547
-              ],
-              "path_data": null
-            }
-          ]
+          "holeCount": 0,
+          "fileExtension": "png"
         },
         {
           "id": "polaroidframe__polaroid5_1_w",
           "name": "Polaroid5.1 W",
           "fileName": "Polaroid5.1_W",
           "isPremium": false,
-          "holeCount": 3,
-          "fileExtension": "png",
-          "slots": [
-            {
-              "id": "slot_0",
-              "n_rect": [
-                0.065217,
-                0.025391,
-                0.869565,
-                0.310547
-              ],
-              "path_data": null
-            },
-            {
-              "id": "slot_1",
-              "n_rect": [
-                0.070652,
-                0.34375,
-                0.858696,
-                0.3125
-              ],
-              "path_data": null
-            },
-            {
-              "id": "slot_2",
-              "n_rect": [
-                0.065217,
-                0.664062,
-                0.869565,
-                0.310547
-              ],
-              "path_data": null
-            }
-          ]
+          "holeCount": 0,
+          "fileExtension": "png"
         },
         {
           "id": "polaroidframe__polaroid5_2_b",
           "name": "Polaroid5.2 B",
           "fileName": "Polaroid5.2_B",
           "isPremium": false,
-          "holeCount": 2,
-          "fileExtension": "png",
-          "slots": [
-            {
-              "id": "slot_0",
-              "n_rect": [
-                0.062963,
-                0.013672,
-                0.874074,
-                0.482422
-              ],
-              "path_data": null
-            },
-            {
-              "id": "slot_1",
-              "n_rect": [
-                0.062963,
-                0.503906,
-                0.874074,
-                0.484375
-              ],
-              "path_data": null
-            }
-          ]
+          "holeCount": 0,
+          "fileExtension": "png"
         },
         {
           "id": "polaroidframe__polaroid5_2_w",
           "name": "Polaroid5.2 W",
           "fileName": "Polaroid5.2_W",
           "isPremium": false,
-          "holeCount": 2,
-          "fileExtension": "png",
-          "slots": [
-            {
-              "id": "slot_0",
-              "n_rect": [
-                0.062963,
-                0.013672,
-                0.874074,
-                0.482422
-              ],
-              "path_data": null
-            },
-            {
-              "id": "slot_1",
-              "n_rect": [
-                0.062963,
-                0.503906,
-                0.874074,
-                0.484375
-              ],
-              "path_data": null
-            }
-          ]
+          "holeCount": 0,
+          "fileExtension": "png"
         }
       ]
     }
