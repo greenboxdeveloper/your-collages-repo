@@ -2831,6 +2831,146 @@ except ImportError:
     _ndi = None
     _SCIPY_AVAILABLE = False
 
+_SLOT_DESIGN_SIZE = 500.0
+_SLOT_HOLE_EXPANSION_PX = 3
+_BOUNDARY_DIRS = (
+    (1, 0), (1, 1), (0, 1), (-1, 1),
+    (-1, 0), (-1, -1), (0, -1), (1, -1),
+)
+
+
+def _shape_is_organic(shape: str | None) -> bool:
+    """Mirrors Swift ``SlotShape`` default (.organic unless explicitly rect)."""
+    if not shape:
+        return True
+    return shape.lower().strip() not in ("rect", "rectangle", "square")
+
+
+def _trace_component_boundary(comp: "np.ndarray") -> list[tuple[int, int]]:
+    """Moore-neighbor clockwise boundary trace (matches Swift ``traceBoundary``)."""
+    h, w = comp.shape
+
+    def filled(x: int, y: int) -> bool:
+        return 0 <= x < w and 0 <= y < h and bool(comp[y, x])
+
+    start: tuple[int, int] | None = None
+    for y in range(h):
+        xs = np.where(comp[y])[0]
+        if xs.size:
+            start = (int(xs[0]), y)
+            break
+    if start is None:
+        return []
+
+    px, py = start
+    back_dir = 4
+    path: list[tuple[int, int]] = []
+    max_steps = w * h * 8
+    steps = 0
+    while True:
+        path.append((px, py))
+        found = False
+        for k in range(8):
+            d = (back_dir + 1 + k) % 8
+            dx, dy = _BOUNDARY_DIRS[d]
+            nx, ny = px + dx, py + dy
+            if filled(nx, ny):
+                px, py = nx, ny
+                back_dir = (d + 4) % 8
+                found = True
+                break
+        if not found:
+            break
+        steps += 1
+        if (px, py) == start and len(path) >= 3:
+            break
+        if steps >= max_steps:
+            break
+    return path
+
+
+def _simplify_boundary_ring(points: list[tuple[int, int]], max_points: int = 512) -> list[tuple[int, int]]:
+    if len(points) <= 4:
+        return points
+    step = max(1, len(points) // max_points)
+    out = points[::step]
+    if out[-1] != points[-1]:
+        out.append(points[-1])
+    return out
+
+
+def _contour_path_data(comp: "np.ndarray", width: int, height: int) -> str | None:
+    """SVG path in 0…500 design space (matches Swift ``contourPathData``)."""
+    boundary = _trace_component_boundary(comp)
+    if len(boundary) < 3:
+        return None
+    simplified = _simplify_boundary_ring(boundary)
+    if len(simplified) < 3:
+        return None
+    sx = _SLOT_DESIGN_SIZE / max(width, 1)
+    sy = _SLOT_DESIGN_SIZE / max(height, 1)
+    parts: list[str] = []
+    for i, (x, y) in enumerate(simplified):
+        cmd = "M" if i == 0 else "L"
+        px = (x + 0.5) * sx
+        py = (y + 0.5) * sy
+        parts.append(f"{cmd} {px:.2f} {py:.2f}")
+    parts.append("Z")
+    return " ".join(parts)
+
+
+def _slots_from_mask(
+    mask: "np.ndarray",
+    source_name: str,
+    *,
+    width: int,
+    height: int,
+    total_pixels: int,
+    min_area: int,
+    ignore_edge_touching: bool,
+    slot_shape: str | None = "organic",
+    hole_expansion_px: int = _SLOT_HOLE_EXPANSION_PX,
+) -> list[dict]:
+    """Extract normalized slot dicts (+ optional ``pathData``) for each connected component."""
+    labeled, num = _ndi.label(mask)
+    slots: list[dict] = []
+    use_path = _shape_is_organic(slot_shape)
+    for lbl in range(1, num + 1):
+        comp = labeled == lbl
+        area = int(np.sum(comp))
+        if area < min_area:
+            continue
+        if ignore_edge_touching and (
+            comp[0, :].any() or comp[-1, :].any()
+            or comp[:, 0].any() or comp[:, -1].any()
+        ):
+            continue
+        rows = np.where(comp.any(axis=1))[0]
+        cols = np.where(comp.any(axis=0))[0]
+        if not len(rows) or not len(cols):
+            continue
+        y1, y2 = int(rows[0]), int(rows[-1])
+        x1, x2 = int(cols[0]), int(cols[-1])
+        if hole_expansion_px > 0:
+            x1 = max(0, x1 - hole_expansion_px)
+            y1 = max(0, y1 - hole_expansion_px)
+            x2 = min(width - 1, x2 + hole_expansion_px)
+            y2 = min(height - 1, y2 + hole_expansion_px)
+        entry: dict = {
+            "x": round(x1 / width, 6),
+            "y": round(y1 / height, 6),
+            "width": round((x2 - x1 + 1) / width, 6),
+            "height": round((y2 - y1 + 1) / height, 6),
+            "areaFraction": round(area / total_pixels, 6),
+            "source": source_name,
+        }
+        if use_path:
+            path_data = _contour_path_data(comp, width, height)
+            if path_data:
+                entry["pathData"] = path_data
+        slots.append(entry)
+    return slots
+
 
 def _detect_template_slots(
     image_path: Path,
@@ -2853,9 +2993,11 @@ def _detect_template_slots(
     Returns a list of dicts::
 
         {"x": 0.1, "y": 0.1, "width": 0.8, "height": 0.65,
-         "areaFraction": 0.52, "source": "transparency"}
+         "areaFraction": 0.52, "source": "transparency",
+         "pathData": "M 12.50 25.00 L ... Z"}  # optional, design space 0…500
 
     All coordinates are normalized 0..1 relative to the image dimensions.
+    ``pathData`` is emitted for organic-shaped slots (Swift default for grey/color cues).
     Returns ``[]`` if detection fails or no holes are found.
     """
     if Image is None or np is None or not _SCIPY_AVAILABLE:
@@ -2893,40 +3035,17 @@ def _detect_template_slots(
     g_ch = arr[:, :, 1].astype(np.float32)
     b_ch = arr[:, :, 2].astype(np.float32)
 
-    def _bboxes_from_mask(mask: "np.ndarray", source_name: str) -> list[dict]:
-        """Extract normalized bounding boxes of connected components in *mask*."""
-        labeled, num = _ndi.label(mask)
-        slots: list[dict] = []
-        for lbl in range(1, num + 1):
-            comp = labeled == lbl
-            area = int(np.sum(comp))
-            if area < min_area:
-                continue
-            if ignore_edge_touching and (
-                comp[0, :].any() or comp[-1, :].any()
-                or comp[:, 0].any() or comp[:, -1].any()
-            ):
-                continue
-            rows = np.where(comp.any(axis=1))[0]
-            cols = np.where(comp.any(axis=0))[0]
-            if not len(rows) or not len(cols):
-                continue
-            y1, y2 = int(rows[0]), int(rows[-1])
-            x1, x2 = int(cols[0]), int(cols[-1])
-            slots.append({
-                "x": round(x1 / w, 6),
-                "y": round(y1 / h, 6),
-                "width":  round((x2 - x1 + 1) / w, 6),
-                "height": round((y2 - y1 + 1) / h, 6),
-                "areaFraction": round(area / total_pixels, 6),
-                "source": source_name,
-            })
-        return slots
+    default_shape = sidecar.get("slotShape") or sidecar.get("slot_shape") or "organic"
 
     # ── 1. Transparency pass ────────────────────────────────────────────────
     if detection_mode in ("auto", "transparency"):
         trans_mask = alpha < 128
-        slots = _bboxes_from_mask(trans_mask, "transparency")
+        trans_shape = sidecar.get("transparencyShape") or sidecar.get("transparency_shape") or default_shape
+        slots = _slots_from_mask(
+            trans_mask, "transparency",
+            width=w, height=h, total_pixels=total_pixels, min_area=min_area,
+            ignore_edge_touching=ignore_edge_touching, slot_shape=trans_shape,
+        )
         if slots:
             return _sort_slots(slots)
 
@@ -2945,16 +3064,21 @@ def _detect_template_slots(
         min_lum  = float(grey_range.get("minLuminance") or grey_range.get("min")    or 160)
         max_lum  = float(grey_range.get("maxLuminance") or grey_range.get("max")    or 230)
         max_spr  = float(grey_range.get("maxSpread")    or grey_range.get("spread") or 18)
+        grey_shape = grey_range.get("shape") or default_shape
         avg      = (r_ch + g_ch + b_ch) / 3.0
         ch_max   = np.maximum(np.maximum(r_ch, g_ch), b_ch)
         ch_min   = np.minimum(np.minimum(r_ch, g_ch), b_ch)
         spread   = ch_max - ch_min
         grey_mask = opaque & (avg >= min_lum) & (avg <= max_lum) & (spread <= max_spr)
-        slots = _bboxes_from_mask(grey_mask, "slotGray")
+        slots = _slots_from_mask(
+            grey_mask, "slotGray",
+            width=w, height=h, total_pixels=total_pixels, min_area=min_area,
+            ignore_edge_touching=ignore_edge_touching, slot_shape=grey_shape,
+        )
         if slots:
             return _sort_slots(slots)
 
-    # ── 3. Color-cue pass ──────────────────────────────────────────────────
+    # ── 3. Color-cue pass (per cue — mirrors Swift ``regionsFromColorCues``) ─
     slot_cues = sidecar.get("slotCues") or sidecar.get("slot_cues") or []
     if not slot_cues and detection_mode in ("auto", "colorcue", "color_cue", "color-cue"):
         # Mirror Swift SlotRegionAnalyzer.defaultCuePalette
@@ -2963,7 +3087,7 @@ def _detect_template_slots(
             {"hex": "FF8000"}, {"hex": "FF0000"}, {"hex": "0000FF"},
         ]
 
-    combined = np.zeros((h, w), dtype=bool)
+    combined_slots: list[dict] = []
     for cue in slot_cues:
         hex_str = str(cue.get("hex") or "").strip().lstrip("#")
         if len(hex_str) != 6:
@@ -2975,17 +3099,21 @@ def _detect_template_slots(
         except ValueError:
             continue
         tol = float(cue.get("tolerance") or 14)
+        cue_shape = cue.get("shape") or default_shape
         cue_mask = (
             opaque
             & (np.abs(r_ch - cr) <= tol)
             & (np.abs(g_ch - cg) <= tol)
             & (np.abs(b_ch - cb) <= tol)
         )
-        combined |= cue_mask
+        combined_slots.extend(_slots_from_mask(
+            cue_mask, "colorCue",
+            width=w, height=h, total_pixels=total_pixels, min_area=min_area,
+            ignore_edge_touching=ignore_edge_touching, slot_shape=cue_shape,
+        ))
 
-    slots = _bboxes_from_mask(combined, "colorCue")
-    if slots:
-        return _sort_slots(slots)
+    if combined_slots:
+        return _sort_slots(combined_slots)
 
     return []
 
