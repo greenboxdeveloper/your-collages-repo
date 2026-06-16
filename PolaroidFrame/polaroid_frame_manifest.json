@@ -1,5 +1,5 @@
 {
-  "version": "1.1",
+  "version": "1.2",
   "categories": [
     {
       "id": "polaroidframe",
@@ -99,22 +99,6 @@
           "id": "polaroidframe__polaroid3_3_w",
           "name": "Polaroid3.3 W",
           "fileName": "Polaroid3.3_W",
-          "isPremium": false,
-          "holeCount": 0,
-          "fileExtension": "png"
-        },
-        {
-          "id": "polaroidframe__polaroid3_4_b",
-          "name": "Polaroid3.4 B",
-          "fileName": "Polaroid3.4_B",
-          "isPremium": false,
-          "holeCount": 0,
-          "fileExtension": "png"
-        },
-        {
-          "id": "polaroidframe__polaroid3_4_w",
-          "name": "Polaroid3.4 W",
-          "fileName": "Polaroid3.4_W",
           "isPremium": false,
           "holeCount": 0,
           "fileExtension": "png"
