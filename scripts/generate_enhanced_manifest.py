@@ -71,17 +71,6 @@ try:
 except ImportError:
     TTFont = None
 
-try:
-    from frame_hole_analyzer import (
-        analyze_image_path,
-        png_template_config_from_sidecar,
-        polaroid_config,
-    )
-except ImportError:
-    analyze_image_path = None  # type: ignore
-    png_template_config_from_sidecar = None  # type: ignore
-    polaroid_config = None  # type: ignore
-
 
 # -----------------------------------------------------------------------------
 # Classic layouts from JSON (stylish removed; use SVG-derived layouts for organic)
@@ -2830,6 +2819,182 @@ def generate_shape_store_manifest(
 _PNG_TEMPLATE_IMAGE_EXTS = (".png", ".jpg", ".jpeg")
 
 
+# ---------------------------------------------------------------------------
+# CI-side slot detection — replicates Swift SlotRegionAnalyzer / MultiHoleAnalyzer
+# Results are baked into the manifest so the iPhone skips all pixel scanning.
+# ---------------------------------------------------------------------------
+
+try:
+    from scipy import ndimage as _ndi
+    _SCIPY_AVAILABLE = True
+except ImportError:
+    _ndi = None
+    _SCIPY_AVAILABLE = False
+
+
+def _detect_template_slots(
+    image_path: Path,
+    *,
+    sidecar: dict | None = None,
+    ignore_edge_touching: bool = False,
+    min_area_fraction: float = 0.005,
+    max_analysis_side: int = 1024,
+) -> list[dict]:
+    """Detect photo-slot regions in a template image at CI time.
+
+    Replicates the logic of Swift ``SlotRegionAnalyzer.analyze``:
+      1. Transparency pass (alpha < 128) — PNG holes.
+      2. Neutral-grey pass (luminance band, low spread) — opaque placeholders.
+      3. Color-cue pass (sidecar or default palette) — designer-colored JPG slots.
+
+    For Polaroid frames pass ``ignore_edge_touching=True`` to mirror
+    ``FrameHoleAnalyzer.Options.ignoreEdgeTouchingHoles``.
+
+    Returns a list of dicts::
+
+        {"x": 0.1, "y": 0.1, "width": 0.8, "height": 0.65,
+         "areaFraction": 0.52, "source": "transparency"}
+
+    All coordinates are normalized 0..1 relative to the image dimensions.
+    Returns ``[]`` if detection fails or no holes are found.
+    """
+    if Image is None or np is None or not _SCIPY_AVAILABLE:
+        return []
+
+    if sidecar is None:
+        sidecar = {}
+
+    try:
+        img = Image.open(image_path)
+    except Exception as exc:
+        print(f"  [slot-detect] cannot open {image_path.name}: {exc}", file=sys.stderr)
+        return []
+
+    ow, oh = img.size
+    scale = min(1.0, max_analysis_side / max(ow, oh, 1))
+    if scale < 1.0:
+        w = max(2, int(round(ow * scale)))
+        h = max(2, int(round(oh * scale)))
+        img = img.resize((w, h), Image.BILINEAR)
+    else:
+        w, h = ow, oh
+
+    total_pixels = w * h
+    min_area = max(1, int(total_pixels * min_area_fraction))
+
+    detection_mode = (
+        sidecar.get("detectionMode") or sidecar.get("detection_mode") or "auto"
+    ).lower().strip()
+
+    rgba = img.convert("RGBA")
+    arr = np.array(rgba, dtype=np.uint8)  # shape (h, w, 4)
+    alpha = arr[:, :, 3]
+    r_ch = arr[:, :, 0].astype(np.float32)
+    g_ch = arr[:, :, 1].astype(np.float32)
+    b_ch = arr[:, :, 2].astype(np.float32)
+
+    def _bboxes_from_mask(mask: "np.ndarray", source_name: str) -> list[dict]:
+        """Extract normalized bounding boxes of connected components in *mask*."""
+        labeled, num = _ndi.label(mask)
+        slots: list[dict] = []
+        for lbl in range(1, num + 1):
+            comp = labeled == lbl
+            area = int(np.sum(comp))
+            if area < min_area:
+                continue
+            if ignore_edge_touching and (
+                comp[0, :].any() or comp[-1, :].any()
+                or comp[:, 0].any() or comp[:, -1].any()
+            ):
+                continue
+            rows = np.where(comp.any(axis=1))[0]
+            cols = np.where(comp.any(axis=0))[0]
+            if not len(rows) or not len(cols):
+                continue
+            y1, y2 = int(rows[0]), int(rows[-1])
+            x1, x2 = int(cols[0]), int(cols[-1])
+            slots.append({
+                "x": round(x1 / w, 6),
+                "y": round(y1 / h, 6),
+                "width":  round((x2 - x1 + 1) / w, 6),
+                "height": round((y2 - y1 + 1) / h, 6),
+                "areaFraction": round(area / total_pixels, 6),
+                "source": source_name,
+            })
+        return slots
+
+    # ── 1. Transparency pass ────────────────────────────────────────────────
+    if detection_mode in ("auto", "transparency"):
+        trans_mask = alpha < 128
+        slots = _bboxes_from_mask(trans_mask, "transparency")
+        if slots:
+            return _sort_slots(slots)
+
+    if detection_mode == "transparency":
+        return []
+
+    opaque = alpha >= 128
+
+    # ── 2. Neutral-grey pass ────────────────────────────────────────────────
+    grey_range = sidecar.get("greyRange") or sidecar.get("grey_range")
+    if grey_range is None and detection_mode == "auto":
+        # Mirror Swift GreyRangeCue.defaultSlotPlaceholder
+        grey_range = {"minLuminance": 160, "maxLuminance": 230, "maxSpread": 18}
+
+    if grey_range and isinstance(grey_range, dict):
+        min_lum  = float(grey_range.get("minLuminance") or grey_range.get("min")    or 160)
+        max_lum  = float(grey_range.get("maxLuminance") or grey_range.get("max")    or 230)
+        max_spr  = float(grey_range.get("maxSpread")    or grey_range.get("spread") or 18)
+        avg      = (r_ch + g_ch + b_ch) / 3.0
+        ch_max   = np.maximum(np.maximum(r_ch, g_ch), b_ch)
+        ch_min   = np.minimum(np.minimum(r_ch, g_ch), b_ch)
+        spread   = ch_max - ch_min
+        grey_mask = opaque & (avg >= min_lum) & (avg <= max_lum) & (spread <= max_spr)
+        slots = _bboxes_from_mask(grey_mask, "slotGray")
+        if slots:
+            return _sort_slots(slots)
+
+    # ── 3. Color-cue pass ──────────────────────────────────────────────────
+    slot_cues = sidecar.get("slotCues") or sidecar.get("slot_cues") or []
+    if not slot_cues and detection_mode in ("auto", "colorcue", "color_cue", "color-cue"):
+        # Mirror Swift SlotRegionAnalyzer.defaultCuePalette
+        slot_cues = [
+            {"hex": "FF00FF"}, {"hex": "00FFFF"}, {"hex": "FFFF00"},
+            {"hex": "FF8000"}, {"hex": "FF0000"}, {"hex": "0000FF"},
+        ]
+
+    combined = np.zeros((h, w), dtype=bool)
+    for cue in slot_cues:
+        hex_str = str(cue.get("hex") or "").strip().lstrip("#")
+        if len(hex_str) != 6:
+            continue
+        try:
+            cr = int(hex_str[0:2], 16)
+            cg = int(hex_str[2:4], 16)
+            cb = int(hex_str[4:6], 16)
+        except ValueError:
+            continue
+        tol = float(cue.get("tolerance") or 14)
+        cue_mask = (
+            opaque
+            & (np.abs(r_ch - cr) <= tol)
+            & (np.abs(g_ch - cg) <= tol)
+            & (np.abs(b_ch - cb) <= tol)
+        )
+        combined |= cue_mask
+
+    slots = _bboxes_from_mask(combined, "colorCue")
+    if slots:
+        return _sort_slots(slots)
+
+    return []
+
+
+def _sort_slots(slots: list[dict]) -> list[dict]:
+    """Sort slots reading-order: top-to-bottom, left-to-right (mirrors Swift sort)."""
+    return sorted(slots, key=lambda s: (round(s["y"], 2), round(s["x"], 2)))
+
+
 def _load_png_template_sidecar(image_path: Path) -> dict:
     """Optional ``<stem>.cues.json`` next to the template image for color-cue detection."""
     sidecar = image_path.with_name(f"{image_path.stem}.cues.json")
@@ -2853,8 +3018,7 @@ def generate_png_template_manifest(
     - PNG and JPEG templates are included (JPG defaults to color-cue detection in the app).
     - Folder name under ``PNGTemplates/`` is preserved as ``remoteFolderName`` (GitHub URL segment).
     - Optional sidecar ``<stem>.cues.json``: ``detectionMode``, ``slotCues`` (hex/shape/tolerance).
-    - ``slots`` (``n_rect`` + optional ``path_data``) are baked at manifest generation time via
-      ``frame_hole_analyzer`` so the iOS app can skip runtime ``SlotRegionAnalyzer``.
+    - Item ``holeCount`` is informational only (runtime ``SlotRegionAnalyzer`` is authoritative).
     - Version is bumped only when categories/items actually change.
     """
     categories: list[dict] = []
@@ -2886,12 +3050,13 @@ def generate_png_template_manifest(
             ext = p.suffix.lower().lstrip(".")
             file_ext = "jpg" if ext == "jpeg" else ext
             sidecar = _load_png_template_sidecar(p)
+            detected_slots = _detect_template_slots(p, sidecar=sidecar, ignore_edge_touching=False)
             entry: dict = {
                 "id": item_id,
                 "name": display_name,
                 "fileName": clean_stem,
                 "isPremium": is_premium,
-                "holeCount": 0,
+                "holeCount": len(detected_slots) if detected_slots else 0,
                 "fileExtension": file_ext,
             }
             detection_mode = sidecar.get("detectionMode") or sidecar.get("detection_mode")
@@ -2903,12 +3068,8 @@ def generate_png_template_manifest(
             grey_range = sidecar.get("greyRange") or sidecar.get("grey_range")
             if isinstance(grey_range, dict) and grey_range:
                 entry["greyRange"] = grey_range
-            if analyze_image_path is not None and png_template_config_from_sidecar is not None:
-                cfg = png_template_config_from_sidecar(sidecar, file_ext)
-                baked_slots = analyze_image_path(p, cfg)
-                if baked_slots:
-                    entry["slots"] = baked_slots
-                    entry["holeCount"] = len(baked_slots)
+            if detected_slots:
+                entry["precomputedSlots"] = detected_slots
             items.append(entry)
 
         if not items:
@@ -2940,7 +3101,6 @@ def generate_polaroid_frame_manifest(
     Rules mirror PNGTemplates:
     - Folder name under ``PolaroidFrame/`` is preserved as ``remoteFolderName``.
     - Loose images directly under ``PolaroidFrame/`` become a single default category.
-    - ``slots`` are baked at manifest generation time (rect holes) for instant placement on iOS.
     - Version is bumped only when categories/items actually change.
     """
     categories: list[dict] = []
@@ -2967,25 +3127,22 @@ def generate_polaroid_frame_manifest(
             item_id = f"{cat_id}__{_slugify(clean_stem)}"
             ext = p.suffix.lower().lstrip(".")
             file_ext = "jpg" if ext == "jpeg" else ext
-            items.append({
+            # Polaroid: transparency-only detection, ignore holes touching frame edges.
+            detected_holes = _detect_template_slots(
+                p, sidecar={"detectionMode": "transparency"}, ignore_edge_touching=True
+            )
+            entry: dict = {
                 "id": item_id,
                 "name": display_name,
                 "fileName": clean_stem,
                 "isPremium": is_premium,
-                "holeCount": 0,
+                "holeCount": len(detected_holes) if detected_holes else 0,
                 "fileExtension": file_ext,
-            })
+            }
+            if detected_holes:
+                entry["precomputedHoles"] = detected_holes
+            items.append(entry)
         return items
-
-    def _bake_polaroid_slots(items: list[dict], images: list[Path]) -> None:
-        if analyze_image_path is None or polaroid_config is None:
-            return
-        cfg = polaroid_config()
-        for entry, image_path in zip(items, images):
-            baked = analyze_image_path(image_path, cfg)
-            if baked:
-                entry["slots"] = baked
-                entry["holeCount"] = len(baked)
 
     for cat_dir in subdirs:
         images = sorted(
@@ -3004,7 +3161,6 @@ def generate_polaroid_frame_manifest(
         items = _items_from_images(images, cat_id, folder_fd)
         if not items:
             continue
-        _bake_polaroid_slots(items, images)
 
         categories.append({
             "id": cat_id,
@@ -3021,7 +3177,6 @@ def generate_polaroid_frame_manifest(
         cat_name = _title_from_stem(folder_base)
         items = _items_from_images(loose_images, cat_id, folder_fd)
         if items:
-            _bake_polaroid_slots(items, loose_images)
             categories.append({
                 "id": cat_id,
                 "name": cat_name,
