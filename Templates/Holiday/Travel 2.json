@@ -1,0 +1,108 @@
+{
+  "chrome" : {
+    "background_color_rgba" : [
+      1,
+      1,
+      1,
+      1
+    ],
+    "background_hazy_blur_radius" : 48,
+    "border_color_rgba" : [
+      1,
+      1,
+      1,
+      1
+    ],
+    "border_corner_radius" : 0,
+    "border_width" : 20,
+    "canvas_aspect" : 0.5625,
+    "canvas_ratio_preset" : "9:16",
+    "editor_canvas_min_side" : 400,
+    "has_background_image" : false
+  },
+  "dependencies" : [
+    {
+      "asset_ref" : "testtemplates__pngt_1_3",
+      "id" : "pngframe-testtemplates__pngt_1_3",
+      "type" : "frame",
+      "url" : "https:\/\/photocollagemaker.john4shine.workers.dev\/PNGTemplates\/TestTemplates\/PNGT_1.3.png"
+    },
+    {
+      "id" : "BradleyHandITCTT-Bold",
+      "type" : "font"
+    }
+  ],
+  "editor" : {
+    "divider_positions" : {
+
+    },
+    "shared_vertex_positions" : {
+
+    }
+  },
+  "frame" : {
+    "category_id" : "",
+    "file_name" : "testtemplates__pngt_1_3",
+    "id" : "pngframe-testtemplates__pngt_1_3",
+    "is_premium" : false,
+    "name" : "testtemplates__pngt_1_3",
+    "opacity" : 1,
+    "source" : "bundle"
+  },
+  "layout" : {
+    "category" : "PNGFrame",
+    "dividers" : [
+
+    ],
+    "id" : "png-frame-0E3F63C6",
+    "isPremium" : false,
+    "name" : "PNG Frame",
+    "shared_vertices" : [
+
+    ],
+    "slots" : [
+      {
+        "id" : "pngframe-slot-0",
+        "n_rect" : [
+          0.175695,
+          0.175781,
+          0.650073,
+          0.649414
+        ]
+      }
+    ],
+    "type" : "pngFrame"
+  },
+  "text_items" : [
+    {
+      "alignment" : "center",
+      "backgroundColorHex" : "#00000000",
+      "backgroundOpacity" : 1,
+      "cornerRadius" : 8,
+      "fontName" : "BradleyHandITCTT-Bold",
+      "fontSize" : 30,
+      "id" : "24C97144-05CA-4CD3-BC77-B0EA023FFA85",
+      "letterSpacing" : 0,
+      "lineSpacing" : 0,
+      "nPosition" : [
+        0.4216691068814056,
+        0.9229989868287741
+      ],
+      "outlineColorHex" : "#000000",
+      "outlineOpacity" : 1,
+      "outlineWidth" : 0,
+      "renderedHeight" : 124.66666666666666,
+      "renderedWidth" : 170.33333333333331,
+      "rotation" : 0,
+      "scale" : 1,
+      "shadowColorHex" : "#00000000",
+      "shadowRadius" : 0,
+      "text" : "Snapshots from last flight",
+      "textCase" : "none",
+      "textColorHex" : "#000000",
+      "textOpacity" : 1,
+      "zIndex" : 1
+    }
+  ],
+  "version" : "1"
+}
