@@ -2995,7 +2995,7 @@ def generate_polaroid_frame_manifest(
                 "id": cat_id,
                 "name": cat_name,
                 "icon": "photo.artframe",
-                "remoteFolderName": folder_name,
+                "remoteFolderName": "",
                 "items": items,
             })
 
