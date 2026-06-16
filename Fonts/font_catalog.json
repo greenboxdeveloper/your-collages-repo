@@ -1,5 +1,5 @@
 {
-  "version": "3.4",
+  "version": "3.5",
   "categories": [
     {
       "id": "en",
@@ -9,7 +9,7 @@
         {
           "id": "en__agamtoh",
           "displayName": "Agamtoh",
-          "postScriptName": "Agamtoh_PR",
+          "postScriptName": "Agamtoh",
           "isPremium": true,
           "source": "ota",
           "fileName": "Agamtoh_PR.ttf",
@@ -19,7 +19,7 @@
         {
           "id": "en__chrisye",
           "displayName": "Chrisye",
-          "postScriptName": "Chrisye_PR",
+          "postScriptName": "Chrisye",
           "isPremium": true,
           "source": "ota",
           "fileName": "Chrisye_PR.otf",
@@ -29,7 +29,7 @@
         {
           "id": "en__embolism_spark",
           "displayName": "Embolism Spark",
-          "postScriptName": "EmbolismSpark",
+          "postScriptName": "EmbolismSparkRegular",
           "isPremium": false,
           "source": "ota",
           "fileName": "Embolism Spark.ttf",
@@ -39,7 +39,7 @@
         {
           "id": "en__flaemische_kanzleischrift_a",
           "displayName": "Flaemische Kanzleischrift",
-          "postScriptName": "FlaemischeKanzleischrift_a",
+          "postScriptName": "FlaemischeKanzleischrift",
           "isPremium": false,
           "source": "ota",
           "fileName": "Flaemische Kanzleischrift_a.ttf",
@@ -49,7 +49,7 @@
         {
           "id": "en__jastyka",
           "displayName": "Jastyka",
-          "postScriptName": "Jastyka_PR",
+          "postScriptName": "Jastyka",
           "isPremium": true,
           "source": "ota",
           "fileName": "Jastyka_PR.ttf",
@@ -59,7 +59,7 @@
         {
           "id": "en__klandestin",
           "displayName": "Klandestin",
-          "postScriptName": "Klandestin_PR",
+          "postScriptName": "Klandestin-Regular",
           "isPremium": true,
           "source": "ota",
           "fileName": "Klandestin_PR.ttf",
@@ -69,7 +69,7 @@
         {
           "id": "en__kleptocracy_titling_bd",
           "displayName": "Kleptocracy Titling Bd",
-          "postScriptName": "kleptocracytitlingbd_PR",
+          "postScriptName": "KleptocracyTitlingRg-Bold",
           "isPremium": true,
           "source": "ota",
           "fileName": "kleptocracy titling bd_PR.otf",
@@ -79,7 +79,7 @@
         {
           "id": "en__manbow_clear",
           "displayName": "Manbow Clear",
-          "postScriptName": "ManbowClear",
+          "postScriptName": "ManbowClear-Regular",
           "isPremium": false,
           "source": "ota",
           "fileName": "Manbow Clear.otf",
@@ -88,7 +88,7 @@
         {
           "id": "en__manbow_solid",
           "displayName": "Manbow Solid",
-          "postScriptName": "ManbowSolid",
+          "postScriptName": "ManbowSolid-Regular",
           "isPremium": false,
           "source": "ota",
           "fileName": "Manbow Solid.otf",
@@ -98,7 +98,7 @@
         {
           "id": "en__manbow_stripe",
           "displayName": "Manbow Stripe",
-          "postScriptName": "ManbowStripe",
+          "postScriptName": "ManbowStripe-Regular",
           "isPremium": false,
           "source": "ota",
           "fileName": "Manbow Stripe.otf",
@@ -127,7 +127,7 @@
         {
           "id": "en__rhigen",
           "displayName": "Rhigen",
-          "postScriptName": "Rhigen_PR",
+          "postScriptName": "Rhigen",
           "isPremium": true,
           "source": "ota",
           "fileName": "Rhigen_PR.otf",
