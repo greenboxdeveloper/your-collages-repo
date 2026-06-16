@@ -1,0 +1,73 @@
+{
+  "chrome" : {
+    "background_color_rgba" : [
+      1,
+      1,
+      1,
+      1
+    ],
+    "background_hazy_blur_radius" : 48,
+    "border_color_rgba" : [
+      1,
+      1,
+      1,
+      1
+    ],
+    "border_corner_radius" : 0,
+    "border_width" : 20,
+    "canvas_aspect" : 0.8,
+    "canvas_ratio_preset" : "4:5",
+    "editor_canvas_min_side" : 400,
+    "has_background_image" : false
+  },
+  "dependencies" : [
+    {
+      "asset_ref" : "testtemplates__valentine1",
+      "id" : "pngframe-testtemplates__valentine1",
+      "type" : "frame",
+      "url" : "https:\/\/photocollagemaker.john4shine.workers.dev\/PNGTemplates\/TestTemplates\/valentine1.png"
+    }
+  ],
+  "editor" : {
+    "divider_positions" : {
+
+    },
+    "shared_vertex_positions" : {
+
+    }
+  },
+  "frame" : {
+    "category_id" : "",
+    "file_name" : "testtemplates__valentine1",
+    "id" : "pngframe-testtemplates__valentine1",
+    "is_premium" : false,
+    "name" : "testtemplates__valentine1",
+    "opacity" : 1,
+    "source" : "bundle"
+  },
+  "layout" : {
+    "category" : "PNGFrame",
+    "dividers" : [
+
+    ],
+    "id" : "png-frame-E5A8DE2A",
+    "isPremium" : false,
+    "name" : "PNG Frame",
+    "shared_vertices" : [
+
+    ],
+    "slots" : [
+      {
+        "id" : "pngframe-slot-0",
+        "n_rect" : [
+          0.221408,
+          0.301758,
+          0.557185,
+          0.388672
+        ]
+      }
+    ],
+    "type" : "pngFrame"
+  },
+  "version" : "1"
+}
