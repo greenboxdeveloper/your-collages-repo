@@ -71,6 +71,17 @@ try:
 except ImportError:
     TTFont = None
 
+try:
+    from frame_hole_analyzer import (
+        analyze_image_path,
+        png_template_config_from_sidecar,
+        polaroid_config,
+    )
+except ImportError:
+    analyze_image_path = None  # type: ignore
+    png_template_config_from_sidecar = None  # type: ignore
+    polaroid_config = None  # type: ignore
+
 
 # -----------------------------------------------------------------------------
 # Classic layouts from JSON (stylish removed; use SVG-derived layouts for organic)
@@ -2842,7 +2853,8 @@ def generate_png_template_manifest(
     - PNG and JPEG templates are included (JPG defaults to color-cue detection in the app).
     - Folder name under ``PNGTemplates/`` is preserved as ``remoteFolderName`` (GitHub URL segment).
     - Optional sidecar ``<stem>.cues.json``: ``detectionMode``, ``slotCues`` (hex/shape/tolerance).
-    - Item ``holeCount`` is informational only (runtime ``SlotRegionAnalyzer`` is authoritative).
+    - ``slots`` (``n_rect`` + optional ``path_data``) are baked at manifest generation time via
+      ``frame_hole_analyzer`` so the iOS app can skip runtime ``SlotRegionAnalyzer``.
     - Version is bumped only when categories/items actually change.
     """
     categories: list[dict] = []
@@ -2891,6 +2903,12 @@ def generate_png_template_manifest(
             grey_range = sidecar.get("greyRange") or sidecar.get("grey_range")
             if isinstance(grey_range, dict) and grey_range:
                 entry["greyRange"] = grey_range
+            if analyze_image_path is not None and png_template_config_from_sidecar is not None:
+                cfg = png_template_config_from_sidecar(sidecar, file_ext)
+                baked_slots = analyze_image_path(p, cfg)
+                if baked_slots:
+                    entry["slots"] = baked_slots
+                    entry["holeCount"] = len(baked_slots)
             items.append(entry)
 
         if not items:
@@ -2922,6 +2940,7 @@ def generate_polaroid_frame_manifest(
     Rules mirror PNGTemplates:
     - Folder name under ``PolaroidFrame/`` is preserved as ``remoteFolderName``.
     - Loose images directly under ``PolaroidFrame/`` become a single default category.
+    - ``slots`` are baked at manifest generation time (rect holes) for instant placement on iOS.
     - Version is bumped only when categories/items actually change.
     """
     categories: list[dict] = []
@@ -2958,6 +2977,16 @@ def generate_polaroid_frame_manifest(
             })
         return items
 
+    def _bake_polaroid_slots(items: list[dict], images: list[Path]) -> None:
+        if analyze_image_path is None or polaroid_config is None:
+            return
+        cfg = polaroid_config()
+        for entry, image_path in zip(items, images):
+            baked = analyze_image_path(image_path, cfg)
+            if baked:
+                entry["slots"] = baked
+                entry["holeCount"] = len(baked)
+
     for cat_dir in subdirs:
         images = sorted(
             [
@@ -2975,6 +3004,7 @@ def generate_polaroid_frame_manifest(
         items = _items_from_images(images, cat_id, folder_fd)
         if not items:
             continue
+        _bake_polaroid_slots(items, images)
 
         categories.append({
             "id": cat_id,
@@ -2991,6 +3021,7 @@ def generate_polaroid_frame_manifest(
         cat_name = _title_from_stem(folder_base)
         items = _items_from_images(loose_images, cat_id, folder_fd)
         if items:
+            _bake_polaroid_slots(items, loose_images)
             categories.append({
                 "id": cat_id,
                 "name": cat_name,
