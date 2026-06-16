@@ -1,5 +1,5 @@
 {
-  "version": "2.0",
+  "version": "2.1",
   "categories": [
     {
       "id": "testtemplates",
@@ -51,6 +51,14 @@
           "id": "testtemplates__pngt_1_1",
           "name": "Pngt 1.1",
           "fileName": "PNGT_1.1",
+          "isPremium": false,
+          "holeCount": 0,
+          "fileExtension": "png"
+        },
+        {
+          "id": "testtemplates__pngt_1_2",
+          "name": "Pngt 1.2",
+          "fileName": "PNGT_1.2",
           "isPremium": false,
           "holeCount": 0,
           "fileExtension": "png"
