@@ -1,5 +1,5 @@
 {
-  "version": "2.8",
+  "version": "2.9",
   "categories": [
     {
       "id": "testtemplates",
@@ -75,6 +75,40 @@
               "width": 0.557185,
               "height": 0.388672,
               "areaFraction": 0.209819,
+              "source": "transparency"
+            }
+          ]
+        },
+        {
+          "id": "testtemplates__valentines",
+          "name": "Valentines",
+          "fileName": "valentines",
+          "isPremium": false,
+          "holeCount": 3,
+          "fileExtension": "png",
+          "precomputedSlots": [
+            {
+              "x": 0.176573,
+              "y": 0.191406,
+              "width": 0.65035,
+              "height": 0.34375,
+              "areaFraction": 0.148601,
+              "source": "transparency"
+            },
+            {
+              "x": 0.426573,
+              "y": 0.686523,
+              "width": 0.298951,
+              "height": 0.131836,
+              "areaFraction": 0.032674,
+              "source": "transparency"
+            },
+            {
+              "x": 0.131119,
+              "y": 0.704102,
+              "width": 0.300699,
+              "height": 0.132812,
+              "areaFraction": 0.03301,
               "source": "transparency"
             }
           ]
