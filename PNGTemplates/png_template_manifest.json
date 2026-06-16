@@ -1,5 +1,5 @@
 {
-  "version": "2.2",
+  "version": "2.3",
   "categories": [
     {
       "id": "testtemplates",
@@ -7,46 +7,6 @@
       "icon": "square.grid.2x2",
       "remoteFolderName": "TestTemplates",
       "items": [
-        {
-          "id": "testtemplates__1hole",
-          "name": "1Hole",
-          "fileName": "1hole",
-          "isPremium": false,
-          "holeCount": 0,
-          "fileExtension": "png"
-        },
-        {
-          "id": "testtemplates__2",
-          "name": "2",
-          "fileName": "2",
-          "isPremium": false,
-          "holeCount": 0,
-          "fileExtension": "jpg"
-        },
-        {
-          "id": "testtemplates__2hole",
-          "name": "2Hole",
-          "fileName": "2hole",
-          "isPremium": false,
-          "holeCount": 0,
-          "fileExtension": "png"
-        },
-        {
-          "id": "testtemplates__adventure",
-          "name": "Adventure",
-          "fileName": "adventure",
-          "isPremium": false,
-          "holeCount": 0,
-          "fileExtension": "png"
-        },
-        {
-          "id": "testtemplates__color_cure_test",
-          "name": "Color Cure Test",
-          "fileName": "color-cure-test",
-          "isPremium": false,
-          "holeCount": 0,
-          "fileExtension": "jpg"
-        },
         {
           "id": "testtemplates__pngt_1_1",
           "name": "Pngt 1.1",
@@ -56,9 +16,17 @@
           "fileExtension": "png"
         },
         {
-          "id": "testtemplates__valentines",
-          "name": "Valentines",
-          "fileName": "valentines",
+          "id": "testtemplates__pngt_1_2",
+          "name": "Pngt 1.2",
+          "fileName": "PNGT_1.2",
+          "isPremium": false,
+          "holeCount": 0,
+          "fileExtension": "png"
+        },
+        {
+          "id": "testtemplates__pngt_1_3",
+          "name": "Pngt 1.3",
+          "fileName": "PNGT_1.3",
           "isPremium": false,
           "holeCount": 0,
           "fileExtension": "png"
