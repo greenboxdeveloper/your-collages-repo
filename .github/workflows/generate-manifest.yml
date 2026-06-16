@@ -17,6 +17,7 @@ on:
       - "Fonts/**"
       - "Shapes/**"
       - "PNGTemplates/**"
+      - "PolaroidFrame/**"
       - "Templates/**"
       - "scripts/**"
       - "HomeScreen/**"
@@ -105,6 +106,9 @@ jobs:
             --generate-png-template-manifest \
             --png-templates-dir PNGTemplates \
             --png-templates-output PNGTemplates/png_template_manifest.json \
+            --generate-polaroid-frame-manifest \
+            --polaroid-frames-dir PolaroidFrame \
+            --polaroid-frames-output PolaroidFrame/polaroid_frame_manifest.json \
             --generate-templates-index \
             --templates-index-dir Templates \
             --templates-index-output Templates/templates_index.json \
@@ -282,6 +286,7 @@ jobs:
             Shapes/shape_store_manifest.json \
             Shapes/**/*_preview.webp \
             PNGTemplates/png_template_manifest.json \
+            PolaroidFrame/polaroid_frame_manifest.json \
             Templates/templates_index.json \
             HomeScreen/home_config.json \
             PhotoCollageMaker/PhotoCollage/Resource/home_config.json || true

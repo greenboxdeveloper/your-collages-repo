@@ -1,23 +1,15 @@
 {
-  "version": "1",
+  "version": "1.3",
   "categories": [
     {
       "id": "polaroidframe",
-      "name": "PolaroidFrame",
+      "name": "Polaroidframe",
       "icon": "photo.artframe",
       "remoteFolderName": "",
       "items": [
         {
-          "id": "polaroidframe__polaroid_1",
-          "name": "Polaroid 1",
-          "fileName": "Polaroid 1",
-          "isPremium": false,
-          "holeCount": 0,
-          "fileExtension": "png"
-        },
-        {
           "id": "polaroidframe__polaroid1_1_b",
-          "name": "Polaroid1.1_B",
+          "name": "Polaroid1.1 B",
           "fileName": "Polaroid1.1_B",
           "isPremium": false,
           "holeCount": 0,
@@ -25,7 +17,7 @@
         },
         {
           "id": "polaroidframe__polaroid1_1_w",
-          "name": "Polaroid1.1_W",
+          "name": "Polaroid1.1 W",
           "fileName": "Polaroid1.1_W",
           "isPremium": false,
           "holeCount": 0,
@@ -33,7 +25,7 @@
         },
         {
           "id": "polaroidframe__polaroid1_2_b",
-          "name": "Polaroid1.2_B",
+          "name": "Polaroid1.2 B",
           "fileName": "Polaroid1.2_B",
           "isPremium": false,
           "holeCount": 0,
@@ -41,7 +33,7 @@
         },
         {
           "id": "polaroidframe__polaroid1_2_w",
-          "name": "Polaroid1.2_W",
+          "name": "Polaroid1.2 W",
           "fileName": "Polaroid1.2_W",
           "isPremium": false,
           "holeCount": 0,
@@ -49,7 +41,7 @@
         },
         {
           "id": "polaroidframe__polaroid2_1_b",
-          "name": "Polaroid2.1_B",
+          "name": "Polaroid2.1 B",
           "fileName": "Polaroid2.1_B",
           "isPremium": false,
           "holeCount": 0,
@@ -57,7 +49,7 @@
         },
         {
           "id": "polaroidframe__polaroid2_1_w",
-          "name": "Polaroid2.1_W",
+          "name": "Polaroid2.1 W",
           "fileName": "Polaroid2.1_W",
           "isPremium": false,
           "holeCount": 0,
@@ -65,7 +57,7 @@
         },
         {
           "id": "polaroidframe__polaroid3_1_b",
-          "name": "Polaroid3.1_B",
+          "name": "Polaroid3.1 B",
           "fileName": "Polaroid3.1_B",
           "isPremium": false,
           "holeCount": 0,
@@ -73,7 +65,7 @@
         },
         {
           "id": "polaroidframe__polaroid3_1_w",
-          "name": "Polaroid3.1_W",
+          "name": "Polaroid3.1 W",
           "fileName": "Polaroid3.1_W",
           "isPremium": false,
           "holeCount": 0,
@@ -81,7 +73,7 @@
         },
         {
           "id": "polaroidframe__polaroid3_2_b",
-          "name": "Polaroid3.2_B",
+          "name": "Polaroid3.2 B",
           "fileName": "Polaroid3.2_B",
           "isPremium": false,
           "holeCount": 0,
@@ -89,7 +81,7 @@
         },
         {
           "id": "polaroidframe__polaroid3_2_w",
-          "name": "Polaroid3.2_W",
+          "name": "Polaroid3.2 W",
           "fileName": "Polaroid3.2_W",
           "isPremium": false,
           "holeCount": 0,
@@ -97,7 +89,7 @@
         },
         {
           "id": "polaroidframe__polaroid3_3_b",
-          "name": "Polaroid3.3_B",
+          "name": "Polaroid3.3 B",
           "fileName": "Polaroid3.3_B",
           "isPremium": false,
           "holeCount": 0,
@@ -105,7 +97,7 @@
         },
         {
           "id": "polaroidframe__polaroid3_3_w",
-          "name": "Polaroid3.3_W",
+          "name": "Polaroid3.3 W",
           "fileName": "Polaroid3.3_W",
           "isPremium": false,
           "holeCount": 0,
@@ -113,7 +105,7 @@
         },
         {
           "id": "polaroidframe__polaroid3_4_b",
-          "name": "Polaroid3.4_B",
+          "name": "Polaroid3.4 B",
           "fileName": "Polaroid3.4_B",
           "isPremium": false,
           "holeCount": 0,
@@ -121,7 +113,7 @@
         },
         {
           "id": "polaroidframe__polaroid3_4_w",
-          "name": "Polaroid3.4_W",
+          "name": "Polaroid3.4 W",
           "fileName": "Polaroid3.4_W",
           "isPremium": false,
           "holeCount": 0,
@@ -129,7 +121,7 @@
         },
         {
           "id": "polaroidframe__polaroid4_1_b",
-          "name": "Polaroid4.1_B",
+          "name": "Polaroid4.1 B",
           "fileName": "Polaroid4.1_B",
           "isPremium": false,
           "holeCount": 0,
@@ -137,7 +129,7 @@
         },
         {
           "id": "polaroidframe__polaroid4_1_w",
-          "name": "Polaroid4.1_W",
+          "name": "Polaroid4.1 W",
           "fileName": "Polaroid4.1_W",
           "isPremium": false,
           "holeCount": 0,
@@ -145,7 +137,7 @@
         },
         {
           "id": "polaroidframe__polaroid4_2_b",
-          "name": "Polaroid4.2_B",
+          "name": "Polaroid4.2 B",
           "fileName": "Polaroid4.2_B",
           "isPremium": false,
           "holeCount": 0,
@@ -153,7 +145,7 @@
         },
         {
           "id": "polaroidframe__polaroid4_2_w",
-          "name": "Polaroid4.2_W",
+          "name": "Polaroid4.2 W",
           "fileName": "Polaroid4.2_W",
           "isPremium": false,
           "holeCount": 0,
@@ -161,7 +153,7 @@
         },
         {
           "id": "polaroidframe__polaroid5_1_b",
-          "name": "Polaroid5.1_B",
+          "name": "Polaroid5.1 B",
           "fileName": "Polaroid5.1_B",
           "isPremium": false,
           "holeCount": 0,
@@ -169,7 +161,7 @@
         },
         {
           "id": "polaroidframe__polaroid5_1_w",
-          "name": "Polaroid5.1_W",
+          "name": "Polaroid5.1 W",
           "fileName": "Polaroid5.1_W",
           "isPremium": false,
           "holeCount": 0,
@@ -177,7 +169,7 @@
         },
         {
           "id": "polaroidframe__polaroid5_2_b",
-          "name": "Polaroid5.2_B",
+          "name": "Polaroid5.2 B",
           "fileName": "Polaroid5.2_B",
           "isPremium": false,
           "holeCount": 0,
@@ -185,7 +177,7 @@
         },
         {
           "id": "polaroidframe__polaroid5_2_w",
-          "name": "Polaroid5.2_W",
+          "name": "Polaroid5.2 W",
           "fileName": "Polaroid5.2_W",
           "isPremium": false,
           "holeCount": 0,
