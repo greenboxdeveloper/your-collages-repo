@@ -1,5 +1,5 @@
 {
-  "version": "3.7",
+  "version": "3.8",
   "templates": [
     {
       "id": "birthday__birthday_01",
@@ -268,6 +268,16 @@
       "category_folder": "Summer",
       "recipe": "Summer 1.6.json",
       "preview": "Summer 1.6.jpg",
+      "is_premium": true,
+      "neutral_empty_slots": true
+    },
+    {
+      "id": "valentines_day__valentine1",
+      "title": "Valentine1",
+      "category": "Valentines Day",
+      "category_folder": "Valentines Day",
+      "recipe": "Valentine1.json",
+      "preview": "Valentine1.jpg",
       "is_premium": true,
       "neutral_empty_slots": true
     }
