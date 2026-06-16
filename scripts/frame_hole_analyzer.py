@@ -362,7 +362,7 @@ def _normalized_cues(raw_cues: list[dict[str, Any]] | None) -> list[dict[str, An
     return out or list(DEFAULT_CUE_PALETTE)
 
 
-def _collect_components(pixels, w: int, h: int, config: AnalyzeConfig) -> list[_Component]:
+def _collect_components(pixels, w: int, h: int, config: AnalyzeConfig) -> tuple[list[_Component], str]:
     total_pixels = w * h
     min_area = max(1, int(total_pixels * config.min_area_fraction))
     mode = config.detection_mode.lower().replace("-", "_").replace(" ", "_")
@@ -380,34 +380,36 @@ def _collect_components(pixels, w: int, h: int, config: AnalyzeConfig) -> list[_
         return _sort_components(comps, w, h)
 
     if mode in ("transparency", "alpha", "holes"):
-        return sorted_from_mask(_build_transparency_mask(pixels, w, h))
+        return sorted_from_mask(_build_transparency_mask(pixels, w, h)), "rect"
 
     if mode in ("colorcue", "color_cue"):
         if not config.slot_cues and grey:
             grey_comps = sorted_from_mask(_build_grey_mask(pixels, w, h, grey))
             if grey_comps:
-                return grey_comps
+                return grey_comps, str(grey.get("shape", "organic")).lower()
         all_comps: list[_Component] = []
+        shape = str(cues[0].get("shape", config.default_shape)).lower() if cues else config.default_shape
         for cue in cues:
             mask = _build_color_cue_mask(pixels, w, h, int(cue["hex"]), float(cue["tolerance"]))
             all_comps.extend(sorted_from_mask(mask))
-        return all_comps
+        return all_comps, shape
 
-    # auto
+    # auto — same pass order and shapes as iOS SlotRegionAnalyzer
     transparent = sorted_from_mask(_build_transparency_mask(pixels, w, h))
     if transparent:
-        return transparent
+        return transparent, "rect"
     if grey:
         grey_comps = sorted_from_mask(_build_grey_mask(pixels, w, h, grey))
         if grey_comps:
-            return grey_comps
+            return grey_comps, str(grey.get("shape", "organic")).lower()
     color_all: list[_Component] = []
+    shape = str(cues[0].get("shape", config.default_shape)).lower() if cues else config.default_shape
     for cue in cues:
         mask = _build_color_cue_mask(pixels, w, h, int(cue["hex"]), float(cue["tolerance"]))
         color_all.extend(sorted_from_mask(mask))
     if color_all:
-        return color_all
-    return sorted_from_mask(_build_chroma_mask(pixels, w, h))
+        return color_all, shape
+    return sorted_from_mask(_build_chroma_mask(pixels, w, h)), config.default_shape
 
 
 def analyze_image_path(path: Path, config: AnalyzeConfig | None = None) -> list[dict[str, Any]]:
@@ -419,14 +421,9 @@ def analyze_image_path(path: Path, config: AnalyzeConfig | None = None) -> list[
         return []
     img, w, h = loaded
     pixels = img.tobytes()
-    components = _collect_components(pixels, w, h, config)
+    components, shape = _collect_components(pixels, w, h, config)
     if not components:
         return []
-
-    # Use per-detection shape when color-cue; otherwise config default (rect for polaroid).
-    shape = config.default_shape
-    if config.detection_mode.lower() in ("colorcue", "color_cue") and config.slot_cues:
-        shape = str(config.slot_cues[0].get("shape", shape)).lower()
 
     return _components_to_manifest_slots(
         components,
