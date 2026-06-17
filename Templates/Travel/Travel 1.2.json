@@ -1,0 +1,194 @@
+{
+  "chrome" : {
+    "background_color_rgba" : [
+      1,
+      1,
+      1,
+      1
+    ],
+    "background_hazy_blur_radius" : 3,
+    "background_hazy_canvas_photo_id" : "4A0CE216-EECD-401D-933A-F4A087363233",
+    "background_hazy_polaroid_frame_id" : "9BCCCAB7-AB7E-4ED8-B032-47F385F13B20",
+    "border_color_rgba" : [
+      1,
+      1,
+      1,
+      1
+    ],
+    "border_corner_radius" : 0,
+    "border_width" : 20,
+    "canvas_aspect" : 0.8,
+    "canvas_ratio_preset" : "4:5",
+    "editor_canvas_min_side" : 400,
+    "has_background_image" : true
+  },
+  "dependencies" : [
+    {
+      "asset_ref" : "Polaroid3.4_W.png",
+      "id" : "polaroidframe__polaroid3_4_w",
+      "type" : "sticker",
+      "url" : "https:\/\/photocollagemaker.john4shine.workers.dev\/PolaroidFrame\/Polaroid3.4_W.png"
+    },
+    {
+      "asset_ref" : "Agamtoh_PR.ttf",
+      "id" : "Agamtoh",
+      "type" : "font",
+      "url" : "https:\/\/photocollagemaker.john4shine.workers.dev\/Fonts\/English\/Agamtoh_PR.ttf"
+    }
+  ],
+  "editor" : {
+    "divider_positions" : {
+
+    },
+    "shared_vertex_positions" : {
+
+    }
+  },
+  "layout" : {
+    "category" : "TemplateBuilder",
+    "dividers" : [
+
+    ],
+    "id" : "template-builder-2E433399",
+    "isPremium" : false,
+    "name" : "Template builder",
+    "shared_vertices" : [
+
+    ],
+    "slots" : [
+
+    ],
+    "type" : "grid"
+  },
+  "stickers" : [
+    {
+      "hole_n_rect" : [
+        0.08895705521472393,
+        0.044921875,
+        0.8220858895705522,
+        0.91015625
+      ],
+      "id" : "9BCCCAB7-AB7E-4ED8-B032-47F385F13B20",
+      "image_name" : "polaroidframe__polaroid3_4_w",
+      "is_transform_locked" : true,
+      "linked_canvas_photo_id" : "4A0CE216-EECD-401D-933A-F4A087363233",
+      "n_position_x" : 0.5,
+      "n_position_y" : 0.5,
+      "offset_height" : 0,
+      "offset_width" : 0,
+      "placement_kind" : "sticker",
+      "rotation_radians" : 0,
+      "scale" : 3.0467996478884842,
+      "z_index" : 413
+    },
+    {
+      "id" : "4A0CE216-EECD-401D-933A-F4A087363233",
+      "inner_offset_height" : -0.43761766030706895,
+      "inner_offset_width" : -4.04796335784031,
+      "inner_scale" : 1,
+      "n_position_x" : 0.5,
+      "n_position_y" : 0.5,
+      "offset_height" : 0,
+      "offset_width" : 0,
+      "parent_frame_sticker_id" : "9BCCCAB7-AB7E-4ED8-B032-47F385F13B20",
+      "placement_kind" : "canvas_photo",
+      "rotation_radians" : 0,
+      "scale" : 3.0467996478884842,
+      "z_index" : 413
+    }
+  ],
+  "text_items" : [
+    {
+      "alignment" : "center",
+      "backgroundColorHex" : "#00000000",
+      "backgroundOpacity" : 1,
+      "cornerRadius" : 8,
+      "fontName" : "Agamtoh",
+      "fontSize" : 30,
+      "id" : "8AD80AD2-2E8F-4FD6-9A6C-61041039E8B0",
+      "isUserProContent" : false,
+      "layoutCanvasMinSide" : 398,
+      "letterSpacing" : 0,
+      "lineSpacing" : 0,
+      "nPosition" : [
+        0.46649916247906204,
+        0.19112227805695137
+      ],
+      "outlineColorHex" : "#000000",
+      "outlineOpacity" : 1,
+      "outlineWidth" : 0,
+      "renderedHeight" : 62.61708542713568,
+      "renderedWidth" : 252.32562814070354,
+      "rotation" : 0,
+      "scale" : 1,
+      "shadowColorHex" : "#00000000",
+      "shadowRadius" : 0,
+      "text" : "Aloha",
+      "textCase" : "none",
+      "textColorHex" : "#FFFFFF",
+      "textOpacity" : 1,
+      "zIndex" : 420
+    },
+    {
+      "alignment" : "center",
+      "backgroundColorHex" : "#00000000",
+      "backgroundOpacity" : 1,
+      "cornerRadius" : 8,
+      "fontName" : "System",
+      "fontSize" : 12.014597475528717,
+      "id" : "AF1AA9E9-EAE2-4FB9-9BBC-7250E15FC32F",
+      "layoutCanvasMinSide" : 398,
+      "letterSpacing" : 0,
+      "lineSpacing" : 0,
+      "nPosition" : [
+        0.6206030150753769,
+        0.9494137353433835
+      ],
+      "outlineColorHex" : "#000000",
+      "outlineOpacity" : 1,
+      "outlineWidth" : 0,
+      "renderedHeight" : 21.22613065326633,
+      "renderedWidth" : 252.06030150753767,
+      "rotation" : 0,
+      "scale" : 1,
+      "shadowColorHex" : "#00000000",
+      "shadowRadius" : 0,
+      "text" : "Travel Around the World",
+      "textCase" : "uppercase",
+      "textColorHex" : "#FFFFFF",
+      "textOpacity" : 1,
+      "zIndex" : 429
+    },
+    {
+      "alignment" : "center",
+      "backgroundColorHex" : "#00000000",
+      "backgroundOpacity" : 1,
+      "cornerRadius" : 8,
+      "fontName" : "System",
+      "fontSize" : 12.948904573917389,
+      "id" : "69C3605C-A371-4D2C-8B5A-F9EF941D41B7",
+      "layoutCanvasMinSide" : 398,
+      "letterSpacing" : 0,
+      "lineSpacing" : 0,
+      "nPosition" : [
+        0.13232830820770553,
+        0.8865996649916249
+      ],
+      "outlineColorHex" : "#000000",
+      "outlineOpacity" : 1,
+      "outlineWidth" : 0,
+      "renderedHeight" : 22.02211055276382,
+      "renderedWidth" : 252.06030150753767,
+      "rotation" : -89.99999999999999,
+      "scale" : 1.2274898125309843,
+      "shadowColorHex" : "#00000000",
+      "shadowRadius" : 0,
+      "text" : "2026",
+      "textCase" : "none",
+      "textColorHex" : "#FFFFFF",
+      "textOpacity" : 1,
+      "zIndex" : 430
+    }
+  ],
+  "version" : "1"
+}
