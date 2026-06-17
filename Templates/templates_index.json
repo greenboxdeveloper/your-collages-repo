@@ -1,5 +1,5 @@
 {
-  "version": "3.9",
+  "version": "4.0",
   "templates": [
     {
       "id": "birthday__birthday_01",
@@ -48,6 +48,16 @@
       "category_folder": "Fathers Day",
       "recipe": "FathersDay 1.3.json",
       "preview": "FathersDay 1.3.JPG",
+      "is_premium": true,
+      "neutral_empty_slots": true
+    },
+    {
+      "id": "fathers_day__fathersday_1_4",
+      "title": "Fathersday 1.4",
+      "category": "Fathers Day",
+      "category_folder": "Fathers Day",
+      "recipe": "FathersDay 1.4.json",
+      "preview": "FathersDay 1.4.jpg",
       "is_premium": true,
       "neutral_empty_slots": true
     },
@@ -228,6 +238,26 @@
       "category_folder": "Summer",
       "recipe": "Summer 1.6.json",
       "preview": "Summer 1.6.jpg",
+      "is_premium": true,
+      "neutral_empty_slots": true
+    },
+    {
+      "id": "summer__summer_1_7",
+      "title": "Summer 1.7",
+      "category": "Summer",
+      "category_folder": "Summer",
+      "recipe": "Summer 1.7.json",
+      "preview": "Summer 1.7.jpg",
+      "is_premium": true,
+      "neutral_empty_slots": true
+    },
+    {
+      "id": "travel__travel_1_1",
+      "title": "Travel 1.1",
+      "category": "Travel",
+      "category_folder": "Travel",
+      "recipe": "Travel 1.1.json",
+      "preview": "Travel 1.1.jpg",
       "is_premium": true,
       "neutral_empty_slots": true
     },
