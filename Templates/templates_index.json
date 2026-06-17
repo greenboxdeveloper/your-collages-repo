@@ -1,5 +1,5 @@
 {
-  "version": "4.0",
+  "version": "4.1",
   "templates": [
     {
       "id": "birthday__birthday_01",
@@ -258,6 +258,16 @@
       "category_folder": "Travel",
       "recipe": "Travel 1.1.json",
       "preview": "Travel 1.1.jpg",
+      "is_premium": true,
+      "neutral_empty_slots": true
+    },
+    {
+      "id": "travel__travel_1_2",
+      "title": "Travel 1.2",
+      "category": "Travel",
+      "category_folder": "Travel",
+      "recipe": "Travel 1.2.json",
+      "preview": "Travel 1.2.jpg",
       "is_premium": true,
       "neutral_empty_slots": true
     },
