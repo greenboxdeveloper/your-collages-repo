@@ -7,7 +7,7 @@
       1
     ],
     "background_hazy_blur_radius" : 48,
-    "background_image_name" : "summer_pack_01__summer_1_4_jpg",
+    "background_image_name" : "summer_pack_01__summer_1_1_jpg",
     "border_color_rgba" : [
       1,
       1,
@@ -15,7 +15,7 @@
       1
     ],
     "border_corner_radius" : 0,
-    "border_width" : 20,
+    "border_width" : 35.322579741477966,
     "canvas_aspect" : 1,
     "canvas_ratio_preset" : "1:1",
     "editor_canvas_min_side" : 400,
@@ -23,16 +23,10 @@
   },
   "dependencies" : [
     {
-      "asset_ref" : "Summer 1.4.jpg",
-      "id" : "summer_pack_01__summer_1_4_jpg",
+      "asset_ref" : "Summer 1.1.jpg",
+      "id" : "summer_pack_01__summer_1_1_jpg",
       "type" : "background",
-      "url" : "https:\/\/photocollagemaker.john4shine.workers.dev\/Backgrounds\/Summer%20Pack%2001\/Summer%201.4.jpg"
-    },
-    {
-      "asset_ref" : "S1.10.png",
-      "id" : "sea_pack_01__s1_10",
-      "type" : "sticker",
-      "url" : "https:\/\/photocollagemaker.john4shine.workers.dev\/Stickers\/Sea%20Pack%2001\/S1.10.png"
+      "url" : "https:\/\/photocollagemaker.john4shine.workers.dev\/Backgrounds\/Summer%20Pack%2001\/Summer%201.1.jpg"
     },
     {
       "asset_ref" : "S1.7.png",
@@ -47,10 +41,16 @@
       "url" : "https:\/\/photocollagemaker.john4shine.workers.dev\/Stickers\/Sea%20Pack%2001\/S1.2.png"
     },
     {
-      "asset_ref" : "S1.8.png",
-      "id" : "sea_pack_01__s1_8",
+      "asset_ref" : "S1.9.png",
+      "id" : "sea_pack_01__s1_9",
       "type" : "sticker",
-      "url" : "https:\/\/photocollagemaker.john4shine.workers.dev\/Stickers\/Sea%20Pack%2001\/S1.8.png"
+      "url" : "https:\/\/photocollagemaker.john4shine.workers.dev\/Stickers\/Sea%20Pack%2001\/S1.9.png"
+    },
+    {
+      "asset_ref" : "S1.10.png",
+      "id" : "sea_pack_01__s1_10",
+      "type" : "sticker",
+      "url" : "https:\/\/photocollagemaker.john4shine.workers.dev\/Stickers\/Sea%20Pack%2001\/S1.10.png"
     },
     {
       "asset_ref" : "Agamtoh_PR.ttf",
@@ -71,6 +71,10 @@
     },
     "shared_vertex_positions" : {
 
+    },
+    "slot_asset_local_identifiers" : {
+      "0" : "B9D64682-50DB-4EDB-802A-CFF24CDB8DF4\/L0\/001",
+      "1" : "761018EF-BD82-42BB-BEFB-7E0A8150A7C2\/L0\/001"
     }
   },
   "layout" : {
@@ -110,52 +114,44 @@
   },
   "stickers" : [
     {
-      "id" : "D0ABB6B1-44DB-4542-9018-DF0780CA4E14",
+      "id" : "D9F35248-6DE5-4B73-8AC9-39FA4B6D74DC",
+      "image_name" : "sea_pack_01__s1_7",
+      "offset_height" : 143.38358458961477,
+      "offset_width" : -67.00167504187601,
+      "placement_kind" : "sticker",
+      "rotation_radians" : -0.06390852961540364,
+      "scale" : 0.752438726992109,
+      "z_index" : 2041
+    },
+    {
+      "id" : "08F85C05-D772-40D7-B8CD-BF6076FA3599",
+      "image_name" : "sea_pack_01__s1_2",
+      "offset_height" : -136.96769148314846,
+      "offset_width" : 60.97152428810722,
+      "placement_kind" : "sticker",
+      "rotation_radians" : -0.11019481208770042,
+      "scale" : 0.8202956153144981,
+      "z_index" : 2479
+    },
+    {
+      "id" : "7DBD88C7-50B0-4F61-8FF4-0DFFF5E7797A",
+      "image_name" : "sea_pack_01__s1_9",
+      "offset_height" : 161.95453844359994,
+      "offset_width" : 74.4107009464157,
+      "placement_kind" : "sticker",
+      "rotation_radians" : -1.336522394336992,
+      "scale" : 0.6289474045527687,
+      "z_index" : 2911
+    },
+    {
+      "id" : "62E5C72C-DAE7-43BC-B864-65DB15C26A16",
       "image_name" : "sea_pack_01__s1_10",
-      "n_position_x" : 0.3182579564489112,
-      "n_position_y" : 0.125,
-      "offset_height" : -150,
-      "offset_width" : -72.69681742043552,
+      "offset_height" : -146.73366834170855,
+      "offset_width" : -64.321608040201,
       "placement_kind" : "sticker",
       "rotation_radians" : 0,
       "scale" : 1,
-      "z_index" : 1054
-    },
-    {
-      "id" : "CBBAFBE9-AED3-4C31-A2ED-FF6F29E7743F",
-      "image_name" : "sea_pack_01__s1_7",
-      "n_position_x" : 0.35259631490787285,
-      "n_position_y" : 0.8659966499162475,
-      "offset_height" : 146.398659966499,
-      "offset_width" : -58.96147403685086,
-      "placement_kind" : "sticker",
-      "rotation_radians" : -0.07015709298679541,
-      "scale" : 0.796175560132415,
-      "z_index" : 546
-    },
-    {
-      "id" : "1E03C8FD-5280-49CE-912B-5266E5B32E1C",
-      "image_name" : "sea_pack_01__s1_2",
-      "n_position_x" : 0.6624790619765496,
-      "n_position_y" : 0.8559463986599664,
-      "offset_height" : 142.37855946398653,
-      "offset_width" : 64.99162479061984,
-      "placement_kind" : "sticker",
-      "rotation_radians" : -3.177835742630087e-16,
-      "scale" : 0.8325374854754872,
-      "z_index" : 781
-    },
-    {
-      "id" : "8DE781AB-4B95-4EBF-91E0-681FBD680B24",
-      "image_name" : "sea_pack_01__s1_8",
-      "n_position_x" : 0.6641541038525964,
-      "n_position_y" : 0.13421273031825798,
-      "offset_height" : -146.3149078726968,
-      "offset_width" : 65.66164154103858,
-      "placement_kind" : "sticker",
-      "rotation_radians" : 1.9568697757431908,
-      "scale" : 0.7592373701027277,
-      "z_index" : 982
+      "z_index" : 3070
     }
   ],
   "text_items" : [
@@ -165,27 +161,27 @@
       "backgroundOpacity" : 1,
       "cornerRadius" : 8,
       "fontName" : "Agamtoh",
-      "fontSize" : 30,
-      "id" : "BE9A354D-0D8B-4B92-8810-D9A8433C55A2",
+      "fontSize" : 28.598538875579834,
+      "id" : "C45E451B-E5DE-4039-B253-B4FE8D6D7F2B",
       "isUserProContent" : false,
-      "letterSpacing" : 0,
+      "letterSpacing" : 4.189189225435257,
       "lineSpacing" : 0,
       "nPosition" : [
-        0.4279731993299832,
-        0.4799834661060091
+        0.41277761389783324,
+        0.5
       ],
-      "outlineColorHex" : "#FFFFFF",
-      "outlineOpacity" : 1,
-      "outlineWidth" : 0.1862068921327591,
-      "rotation" : -90.00000000000001,
-      "scale" : 1.0794601569281388,
+      "outlineColorHex" : "#000000",
+      "outlineOpacity" : 0,
+      "outlineWidth" : 0.3,
+      "rotation" : -89.99999999999999,
+      "scale" : 1.04724590827109,
       "shadowColorHex" : "#00000000",
       "shadowRadius" : 0,
       "text" : "Hello",
       "textCase" : "none",
       "textColorHex" : "#007AFF",
       "textOpacity" : 1,
-      "zIndex" : 1059
+      "zIndex" : 2920
     },
     {
       "alignment" : "center",
@@ -194,26 +190,26 @@
       "cornerRadius" : 8,
       "fontName" : "Chrisye",
       "fontSize" : 30,
-      "id" : "F11D9684-BF24-4559-B670-CD8C7347FF0B",
+      "id" : "7DE2AC2B-A5E3-4114-82F5-972B28C9D1AB",
       "isUserProContent" : false,
       "letterSpacing" : 0,
       "lineSpacing" : 0,
       "nPosition" : [
-        0.5586264656616413,
-        0.4748743718592965
+        0.5460636515912898,
+        0.5159128978224455
       ],
-      "outlineColorHex" : "#FFFFFF",
-      "outlineOpacity" : 1,
-      "outlineWidth" : 0.27126437425613403,
+      "outlineColorHex" : "#007AFF",
+      "outlineOpacity" : 0,
+      "outlineWidth" : 0.3,
       "rotation" : -90.00000000000001,
-      "scale" : 1.9097977093660206,
+      "scale" : 2.1141496143710747,
       "shadowColorHex" : "#00000000",
       "shadowRadius" : 0,
       "text" : "Summer",
       "textCase" : "none",
       "textColorHex" : "#007AFF",
       "textOpacity" : 1,
-      "zIndex" : 1058
+      "zIndex" : 2919
     }
   ],
   "version" : "1"

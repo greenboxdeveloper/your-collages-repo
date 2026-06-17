@@ -1,0 +1,205 @@
+{
+  "chrome" : {
+    "background_color_rgba" : [
+      1,
+      1,
+      1,
+      1
+    ],
+    "background_hazy_blur_radius" : 7,
+    "background_hazy_slot_index" : 0,
+    "border_color_rgba" : [
+      1,
+      1,
+      1,
+      0.7522181272506714
+    ],
+    "border_corner_radius" : 0,
+    "border_width" : 100,
+    "canvas_aspect" : 0.8,
+    "canvas_ratio_preset" : "4:5",
+    "editor_canvas_min_side" : 400,
+    "has_background_image" : true
+  },
+  "dependencies" : [
+    {
+      "asset_ref" : "Doodle_SocialMedia_13.png",
+      "id" : "doodles_socialmedia_pr__doodle_socialmedia_13",
+      "type" : "sticker",
+      "url" : "https:\/\/photocollagemaker.john4shine.workers.dev\/Stickers\/Doodles_SocialMedia_PR\/Doodle_SocialMedia_13.png"
+    },
+    {
+      "asset_ref" : "Doodle_SocialMedia_21.png",
+      "id" : "doodles_socialmedia_pr__doodle_socialmedia_21",
+      "type" : "sticker",
+      "url" : "https:\/\/photocollagemaker.john4shine.workers.dev\/Stickers\/Doodles_SocialMedia_PR\/Doodle_SocialMedia_21.png"
+    },
+    {
+      "asset_ref" : "Chrisye_PR.otf",
+      "id" : "Chrisye",
+      "type" : "font",
+      "url" : "https:\/\/photocollagemaker.john4shine.workers.dev\/Fonts\/English\/Chrisye_PR.otf"
+    },
+    {
+      "id" : "SnellRoundhand-Bold",
+      "type" : "font"
+    }
+  ],
+  "editor" : {
+    "divider_positions" : {
+
+    },
+    "shared_vertex_positions" : {
+
+    },
+    "slot_asset_local_identifiers" : {
+      "0" : "48867F89-504B-40BA-954B-8AA945F057CC\/L0\/001"
+    }
+  },
+  "layout" : {
+    "category" : "Stylish",
+    "dividers" : [
+
+    ],
+    "id" : "svg_PCM_SL09",
+    "isPremium" : true,
+    "name" : "Pcm Sl09",
+    "shared_vertices" : [
+
+    ],
+    "slots" : [
+      {
+        "id" : "slot_0",
+        "n_rect" : [
+          0.07,
+          0.07,
+          0.86,
+          0.86
+        ],
+        "path_data" : "m 250,35 l 0,0 c 118.66,0 215,96.34 215,215 l 0,215 L 35,465 l 0,-215 c 0,-118.66 96.34,-215 215,-215 Z"
+      }
+    ],
+    "type" : "organic"
+  },
+  "stickers" : [
+    {
+      "id" : "4F6EB5A9-BC20-49A0-A70D-26A6CA37C49A",
+      "image_name" : "doodles_socialmedia_pr__doodle_socialmedia_13",
+      "n_position_x" : 0.17085427135678383,
+      "n_position_y" : 0.3350083752093803,
+      "offset_height" : -65.99664991624788,
+      "offset_width" : -131.65829145728648,
+      "placement_kind" : "sticker",
+      "rotation_radians" : -0.08469708236427342,
+      "scale" : 0.9648815995919121,
+      "z_index" : 2251
+    },
+    {
+      "id" : "6046868B-4485-49DD-B025-82778AB2E6B8",
+      "image_name" : "doodles_socialmedia_pr__doodle_socialmedia_21",
+      "n_position_x" : 0.8226549413735347,
+      "n_position_y" : 1.039363484087102,
+      "offset_height" : 215.7453936348408,
+      "offset_width" : 129.06197654941388,
+      "placement_kind" : "sticker",
+      "rotation_radians" : -0.2685776747610541,
+      "scale" : 1.1007130611768432,
+      "z_index" : 2001
+    }
+  ],
+  "text_items" : [
+    {
+      "alignment" : "center",
+      "backgroundColorHex" : "#00000000",
+      "backgroundOpacity" : 1,
+      "cornerRadius" : 8,
+      "fontName" : "Chrisye",
+      "fontSize" : 52.072991371154785,
+      "id" : "3E7000E4-DF3F-4C2D-BF66-6B83558A9544",
+      "isUserProContent" : false,
+      "layoutCanvasMinSide" : 398,
+      "letterSpacing" : 0,
+      "lineSpacing" : 0,
+      "nPosition" : [
+        0.5,
+        0.2939698492462314
+      ],
+      "outlineColorHex" : "#FFFFFF",
+      "outlineOpacity" : 1,
+      "outlineWidth" : 0.7103448510169983,
+      "renderedHeight" : 56.514572864321615,
+      "renderedWidth" : 252.06030150753767,
+      "rotation" : 0,
+      "scale" : 0.6060810568733905,
+      "shadowColorHex" : "#00000000",
+      "shadowRadius" : 0,
+      "text" : "Travel",
+      "textCase" : "none",
+      "textColorHex" : "#000000",
+      "textOpacity" : 1,
+      "zIndex" : 2261
+    },
+    {
+      "alignment" : "center",
+      "backgroundColorHex" : "#00000000",
+      "backgroundOpacity" : 1,
+      "cornerRadius" : 8,
+      "fontName" : "Chrisye",
+      "fontSize" : 30,
+      "id" : "C01837A9-0898-437F-ADF0-C2CF3967AC68",
+      "isUserProContent" : false,
+      "layoutCanvasMinSide" : 398,
+      "letterSpacing" : 0,
+      "lineSpacing" : 0,
+      "nPosition" : [
+        0.5,
+        0.3743718592964824
+      ],
+      "outlineColorHex" : "#FFFFFF",
+      "outlineOpacity" : 1,
+      "outlineWidth" : 0.6965517401695251,
+      "renderedHeight" : 37.41105527638191,
+      "renderedWidth" : 252.06030150753767,
+      "rotation" : 0,
+      "scale" : 1,
+      "shadowColorHex" : "#00000000",
+      "shadowRadius" : 0,
+      "text" : "Diary",
+      "textCase" : "none",
+      "textColorHex" : "#FF9500",
+      "textOpacity" : 1,
+      "zIndex" : 2258
+    },
+    {
+      "alignment" : "center",
+      "backgroundColorHex" : "#00000000",
+      "backgroundOpacity" : 1,
+      "cornerRadius" : 8,
+      "fontName" : "SnellRoundhand-Bold",
+      "fontSize" : 32.45255398750305,
+      "id" : "2E4463B5-6AAD-47DA-99BA-0121F9A36622",
+      "layoutCanvasMinSide" : 398,
+      "letterSpacing" : 0,
+      "lineSpacing" : 0,
+      "nPosition" : [
+        0.5,
+        0.44891122278056944
+      ],
+      "outlineColorHex" : "#000000",
+      "outlineOpacity" : 1,
+      "outlineWidth" : 0,
+      "renderedHeight" : 41.92160804020101,
+      "renderedWidth" : 252.06030150753767,
+      "rotation" : 0,
+      "scale" : 1,
+      "shadowColorHex" : "#00000000",
+      "shadowRadius" : 0,
+      "text" : "2026",
+      "textCase" : "none",
+      "textColorHex" : "#FFFFFF",
+      "textOpacity" : 1,
+      "zIndex" : 2260
+    }
+  ],
+  "version" : "1"
+}

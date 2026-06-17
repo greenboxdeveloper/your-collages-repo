@@ -1,0 +1,169 @@
+{
+  "chrome" : {
+    "background_color_rgba" : [
+      1,
+      1,
+      1,
+      1
+    ],
+    "background_hazy_blur_radius" : 48,
+    "border_color_rgba" : [
+      1,
+      1,
+      1,
+      1
+    ],
+    "border_corner_radius" : 0,
+    "border_width" : 20,
+    "canvas_aspect" : 0.5625,
+    "canvas_ratio_preset" : "9:16",
+    "editor_canvas_min_side" : 400,
+    "has_background_image" : false
+  },
+  "dependencies" : [
+    {
+      "asset_ref" : "F 1.4.png",
+      "id" : "flower_pack_01__f_1_4",
+      "type" : "sticker",
+      "url" : "https:\/\/photocollagemaker.john4shine.workers.dev\/Stickers\/Flower%20Pack%2001\/F%201.4.png"
+    },
+    {
+      "asset_ref" : "testtemplates__pngt_1_1",
+      "id" : "pngframe-testtemplates__pngt_1_1",
+      "type" : "frame",
+      "url" : "https:\/\/photocollagemaker.john4shine.workers.dev\/PNGTemplates\/TestTemplates\/PNGT_1.1.png"
+    },
+    {
+      "asset_ref" : "Agamtoh_PR.ttf",
+      "id" : "Agamtoh",
+      "type" : "font",
+      "url" : "https:\/\/photocollagemaker.john4shine.workers.dev\/Fonts\/English\/Agamtoh_PR.ttf"
+    },
+    {
+      "asset_ref" : "Chrisye_PR.otf",
+      "id" : "Chrisye",
+      "type" : "font",
+      "url" : "https:\/\/photocollagemaker.john4shine.workers.dev\/Fonts\/English\/Chrisye_PR.otf"
+    }
+  ],
+  "editor" : {
+    "divider_positions" : {
+
+    },
+    "shared_vertex_positions" : {
+
+    }
+  },
+  "frame" : {
+    "category_id" : "",
+    "file_name" : "testtemplates__pngt_1_1",
+    "id" : "pngframe-testtemplates__pngt_1_1",
+    "is_premium" : false,
+    "name" : "testtemplates__pngt_1_1",
+    "opacity" : 1,
+    "source" : "bundle"
+  },
+  "layout" : {
+    "category" : "PNGFrame",
+    "dividers" : [
+
+    ],
+    "id" : "png-frame-8C8F6298",
+    "isPremium" : false,
+    "name" : "PNG Frame",
+    "shared_vertices" : [
+
+    ],
+    "slots" : [
+      {
+        "id" : "pngframe-slot-0",
+        "n_rect" : [
+          0.17220052083333334,
+          0.1923828125,
+          0.6521267361111112,
+          0.595703125
+        ]
+      }
+    ],
+    "type" : "pngFrame"
+  },
+  "stickers" : [
+    {
+      "id" : "088FCB37-5064-4549-841B-653E9C9DEEC4",
+      "image_name" : "flower_pack_01__f_1_4",
+      "n_position_x" : 0.20100502512562807,
+      "n_position_y" : 0.23194095477386933,
+      "offset_height" : -190.61976549413737,
+      "offset_width" : -119.59798994974878,
+      "placement_kind" : "sticker",
+      "rotation_radians" : 0,
+      "scale" : 1,
+      "z_index" : 126
+    }
+  ],
+  "text_items" : [
+    {
+      "alignment" : "center",
+      "backgroundColorHex" : "#00000000",
+      "backgroundOpacity" : 1,
+      "cornerRadius" : 8,
+      "fontName" : "Agamtoh",
+      "fontSize" : 30,
+      "id" : "B289D16C-B072-4F35-BA52-E7DAA7D41F2C",
+      "isUserProContent" : false,
+      "layoutCanvasMinSide" : 398,
+      "letterSpacing" : 0,
+      "lineSpacing" : 0,
+      "nPosition" : [
+        0.23317081914318522,
+        0.8229591987585277
+      ],
+      "outlineColorHex" : "#FFFFFF",
+      "outlineOpacity" : 1,
+      "outlineWidth" : 0.5172414183616638,
+      "renderedHeight" : 45.14698492462311,
+      "renderedWidth" : 124.62060301507539,
+      "rotation" : -7.327471962526033e-15,
+      "scale" : 1.1533009342056195,
+      "shadowColorHex" : "#00000000",
+      "shadowRadius" : 0,
+      "text" : "Hello",
+      "textCase" : "none",
+      "textColorHex" : "#FF8B81FF",
+      "textOpacity" : 1,
+      "zIndex" : 131
+    },
+    {
+      "alignment" : "center",
+      "backgroundColorHex" : "#00000000",
+      "backgroundOpacity" : 1,
+      "cornerRadius" : 8,
+      "fontName" : "Chrisye",
+      "fontSize" : 66.4379529953003,
+      "id" : "4FC92682-DF91-4850-BD1D-9DCD4183578D",
+      "isUserProContent" : false,
+      "layoutCanvasMinSide" : 398,
+      "letterSpacing" : 0,
+      "lineSpacing" : 0,
+      "nPosition" : [
+        0.37604690117252937,
+        0.892902010050251
+      ],
+      "outlineColorHex" : "#FFFFFF",
+      "outlineOpacity" : 1,
+      "outlineWidth" : 0.9885057806968689,
+      "renderedHeight" : 88.428391959799,
+      "renderedWidth" : 124.62060301507539,
+      "rotation" : 0,
+      "scale" : 1,
+      "shadowColorHex" : "#00000000",
+      "shadowRadius" : 0,
+      "text" : "Summer",
+      "textCase" : "none",
+      "textColorHex" : "#FF9500",
+      "textOpacity" : 1,
+      "zIndex" : 133
+    }
+  ],
+  "version" : "1"
+}

@@ -1,0 +1,195 @@
+{
+  "chrome" : {
+    "background_color_rgba" : [
+      0.9899999499320984,
+      0.9300000071525574,
+      0.800000011920929,
+      1
+    ],
+    "background_hazy_blur_radius" : 48,
+    "border_color_rgba" : [
+      1,
+      1,
+      1,
+      1
+    ],
+    "border_corner_radius" : 0,
+    "border_width" : 0,
+    "canvas_aspect" : 0.8,
+    "canvas_ratio_preset" : "4:5",
+    "editor_canvas_min_side" : 400,
+    "has_background_image" : false
+  },
+  "dependencies" : [
+    {
+      "asset_ref" : "Embolism Spark.ttf",
+      "id" : "EmbolismSparkRegular",
+      "type" : "font",
+      "url" : "https:\/\/photocollagemaker.john4shine.workers.dev\/Fonts\/English\/Embolism%20Spark.ttf"
+    }
+  ],
+  "editor" : {
+    "divider_positions" : {
+      "DRAG_V_0" : 0.7185929648241206
+    },
+    "shared_vertex_positions" : {
+
+    },
+    "slot_asset_local_identifiers" : {
+      "0" : "992D3AC1-7F1E-447A-A51E-A27B08E662A9\/L0\/001",
+      "1" : "45863AF1-0D07-47A5-BD14-08DF60FD3E3B\/L0\/001",
+      "2" : "9259CC2E-3CAD-4582-A302-C5A9F06EED27\/L0\/001",
+      "3" : "950E1FD3-EF53-4D1D-8E08-AC357E5A7859\/L0\/001"
+    }
+  },
+  "layout" : {
+    "category" : "Classic",
+    "dividers" : [
+      {
+        "affects" : [
+          "slot_0",
+          "slot_1",
+          "slot_2",
+          "slot_3"
+        ],
+        "id" : "DRAG_V_0",
+        "position" : 0.5,
+        "segment_end" : 1,
+        "segment_start" : 0,
+        "type" : "vertical"
+      },
+      {
+        "affects" : [
+          "slot_1",
+          "slot_2"
+        ],
+        "id" : "DRAG_H_1",
+        "position" : 0.33,
+        "segment_end" : 1,
+        "segment_start" : 0.5,
+        "type" : "horizontal"
+      },
+      {
+        "affects" : [
+          "slot_2",
+          "slot_3"
+        ],
+        "id" : "DRAG_H_2",
+        "position" : 0.66,
+        "segment_end" : 1,
+        "segment_start" : 0.5,
+        "type" : "horizontal"
+      }
+    ],
+    "id" : "classic_13",
+    "isPremium" : false,
+    "name" : "Collage 13",
+    "shared_vertices" : [
+
+    ],
+    "slots" : [
+      {
+        "id" : "slot_0",
+        "n_rect" : [
+          0,
+          0,
+          0.5,
+          1
+        ]
+      },
+      {
+        "id" : "slot_1",
+        "n_rect" : [
+          0.5,
+          0,
+          0.5,
+          0.33
+        ]
+      },
+      {
+        "id" : "slot_2",
+        "n_rect" : [
+          0.5,
+          0.33,
+          0.5,
+          0.33
+        ]
+      },
+      {
+        "id" : "slot_3",
+        "n_rect" : [
+          0.5,
+          0.66,
+          0.5,
+          0.34
+        ]
+      }
+    ],
+    "type" : "grid"
+  },
+  "text_items" : [
+    {
+      "alignment" : "center",
+      "backgroundColorHex" : "#00000000",
+      "backgroundOpacity" : 1,
+      "cornerRadius" : 8,
+      "fontName" : "EmbolismSparkRegular",
+      "fontSize" : 45.76642179489136,
+      "id" : "C975F291-8847-40C8-80EC-B1FF5C52FA86",
+      "isUserProContent" : false,
+      "layoutCanvasMinSide" : 398,
+      "letterSpacing" : 0,
+      "lineSpacing" : 0,
+      "nPosition" : [
+        0.36348408710217717,
+        0.6749258493087718
+      ],
+      "outlineColorHex" : "#FFFFFF",
+      "outlineOpacity" : 1,
+      "outlineWidth" : 0.30804598331451416,
+      "renderedHeight" : 46.96281407035176,
+      "renderedWidth" : 252.32562814070354,
+      "rotation" : 1.509903313490213e-14,
+      "scale" : 2.258773399870722,
+      "shadowColorHex" : "#00000000",
+      "shadowRadius" : 0,
+      "text" : "Out",
+      "textCase" : "none",
+      "textColorHex" : "#5AC8FA",
+      "textOpacity" : 1,
+      "zIndex" : 11
+    },
+    {
+      "alignment" : "center",
+      "backgroundColorHex" : "#000000",
+      "backgroundOpacity" : 0,
+      "cornerRadius" : 8,
+      "fontName" : "EmbolismSparkRegular",
+      "fontSize" : 60.13138675689697,
+      "id" : "1EBCF438-B796-47A6-A9AE-54B01D7C66A4",
+      "isUserProContent" : false,
+      "layoutCanvasMinSide" : 398,
+      "letterSpacing" : 0,
+      "lineSpacing" : 0,
+      "nPosition" : [
+        0.38107202680066987,
+        0.09313232830820772
+      ],
+      "outlineColorHex" : "#FFFFFF",
+      "outlineOpacity" : 1,
+      "outlineWidth" : 0.7264367938041687,
+      "renderedHeight" : 49.61608040201005,
+      "renderedWidth" : 252.06030150753767,
+      "rotation" : 0,
+      "scale" : 1,
+      "shadowColorHex" : "#00000000",
+      "shadowRadius" : 0,
+      "text" : "Father's Day",
+      "textCase" : "none",
+      "textColorHex" : "#5AC8FA",
+      "textOpacity" : 1,
+      "zIndex" : 12
+    }
+  ],
+  "version" : "1"
+}
