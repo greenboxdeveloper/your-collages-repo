@@ -1,5 +1,5 @@
 {
-  "version": "12.5",
+  "version": "12.6",
   "sections": [
     {
       "id": "slideshow",
@@ -102,12 +102,12 @@
       "count": 8
     },
     {
-      "id": "templates_hazy",
-      "title": "Hazy",
+      "id": "templates_dreamy",
+      "title": "Dreamy",
       "subtitle": "",
       "display_size": "small",
       "category": "templates",
-      "sub_category": "Hazy",
+      "sub_category": "Dreamy",
       "count": 8
     },
     {

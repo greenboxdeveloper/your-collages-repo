@@ -1,5 +1,5 @@
 {
-  "version": "3.8",
+  "version": "3.9",
   "templates": [
     {
       "id": "birthday__birthday_01",
@@ -8,6 +8,16 @@
       "category_folder": "Birthday",
       "recipe": "Birthday 01.json",
       "preview": "Birthday 01.jpg",
+      "is_premium": true,
+      "neutral_empty_slots": true
+    },
+    {
+      "id": "dreamy__hazy_test",
+      "title": "Hazy Test",
+      "category": "Dreamy",
+      "category_folder": "Dreamy",
+      "recipe": "Hazy Test.json",
+      "preview": "Hazy Test.jpg",
       "is_premium": true,
       "neutral_empty_slots": true
     },
@@ -42,16 +52,6 @@
       "neutral_empty_slots": true
     },
     {
-      "id": "hazy__hazy_test",
-      "title": "Hazy Test",
-      "category": "Hazy",
-      "category_folder": "Hazy",
-      "recipe": "Hazy Test.json",
-      "preview": "Hazy Test.jpg",
-      "is_premium": true,
-      "neutral_empty_slots": true
-    },
-    {
       "id": "holiday__holiday",
       "title": "Holiday",
       "category": "Holiday",
@@ -59,26 +59,6 @@
       "recipe": "Holiday_F.json",
       "preview": "Holiday_F.jpg",
       "is_premium": false,
-      "neutral_empty_slots": true
-    },
-    {
-      "id": "holiday__holiday_3",
-      "title": "Holiday 3",
-      "category": "Holiday",
-      "category_folder": "Holiday",
-      "recipe": "Holiday 3.json",
-      "preview": "Holiday 3.jpg",
-      "is_premium": true,
-      "neutral_empty_slots": true
-    },
-    {
-      "id": "holiday__holiday_season_2",
-      "title": "Holiday Season 2",
-      "category": "Holiday",
-      "category_folder": "Holiday",
-      "recipe": "Holiday Season 2.json",
-      "preview": "Holiday Season 2.jpg",
-      "is_premium": true,
       "neutral_empty_slots": true
     },
     {
@@ -98,26 +78,6 @@
       "category_folder": "Love",
       "recipe": "Font Test 6.json",
       "preview": "Font Test 6.jpg",
-      "is_premium": true,
-      "neutral_empty_slots": true
-    },
-    {
-      "id": "love__font_troubleshooting",
-      "title": "Font Troubleshooting",
-      "category": "Love",
-      "category_folder": "Love",
-      "recipe": "Font Troubleshooting.json",
-      "preview": "Font Troubleshooting.jpg",
-      "is_premium": true,
-      "neutral_empty_slots": true
-    },
-    {
-      "id": "love__test_4",
-      "title": "Test 4",
-      "category": "Love",
-      "category_folder": "Love",
-      "recipe": "Test 4.json",
-      "preview": "Test 4.jpg",
       "is_premium": true,
       "neutral_empty_slots": true
     },
