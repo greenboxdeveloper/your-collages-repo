@@ -1,0 +1,230 @@
+{
+  "chrome" : {
+    "background_color_rgba" : [
+      1,
+      1,
+      1,
+      1
+    ],
+    "background_hazy_blur_radius" : 2,
+    "background_hazy_canvas_photo_id" : "7E3C739E-9594-4E55-A070-E464CDF2EE1A",
+    "background_hazy_polaroid_frame_id" : "0512AD0F-5EF1-4507-A360-24183B4A9F2A",
+    "border_color_rgba" : [
+      1,
+      1,
+      1,
+      1
+    ],
+    "border_corner_radius" : 0,
+    "border_width" : 20,
+    "canvas_aspect" : 0.5625,
+    "canvas_ratio_preset" : "9:16",
+    "editor_canvas_min_side" : 400,
+    "has_background_image" : true
+  },
+  "dependencies" : [
+    {
+      "asset_ref" : "Polaroid3.2_W.png",
+      "id" : "polaroidframe__polaroid3_2_w",
+      "type" : "sticker",
+      "url" : "https:\/\/photocollagemaker.john4shine.workers.dev\/PolaroidFrame\/Polaroid3.2_W.png"
+    },
+    {
+      "id" : "BradleyHandITCTT-Bold",
+      "type" : "font"
+    },
+    {
+      "asset_ref" : "Agamtoh_PR.ttf",
+      "id" : "Agamtoh",
+      "type" : "font",
+      "url" : "https:\/\/photocollagemaker.john4shine.workers.dev\/Fonts\/English\/Agamtoh_PR.ttf"
+    }
+  ],
+  "editor" : {
+    "divider_positions" : {
+
+    },
+    "shared_vertex_positions" : {
+
+    }
+  },
+  "layout" : {
+    "category" : "TemplateBuilder",
+    "dividers" : [
+
+    ],
+    "id" : "template-builder-5E33CF29",
+    "isPremium" : false,
+    "name" : "Template builder",
+    "shared_vertices" : [
+
+    ],
+    "slots" : [
+
+    ],
+    "type" : "grid"
+  },
+  "stickers" : [
+    {
+      "hole_n_rect" : [
+        0.076923,
+        0.052734,
+        0.850592,
+        0.894531
+      ],
+      "id" : "0512AD0F-5EF1-4507-A360-24183B4A9F2A",
+      "image_name" : "polaroidframe__polaroid3_2_w",
+      "is_transform_locked" : true,
+      "linked_canvas_photo_id" : "7E3C739E-9594-4E55-A070-E464CDF2EE1A",
+      "n_position_x" : 0.5,
+      "n_position_y" : 0.5,
+      "offset_height" : 0,
+      "offset_width" : 0,
+      "placement_kind" : "sticker",
+      "rotation_radians" : 0,
+      "scale" : 3.5748891092976374,
+      "z_index" : 532
+    },
+    {
+      "id" : "7E3C739E-9594-4E55-A070-E464CDF2EE1A",
+      "inner_offset_height" : 0,
+      "inner_offset_width" : 0,
+      "inner_scale" : 1,
+      "n_position_x" : 0.5,
+      "n_position_y" : 0.5,
+      "offset_height" : 0,
+      "offset_width" : 0,
+      "parent_frame_sticker_id" : "0512AD0F-5EF1-4507-A360-24183B4A9F2A",
+      "placement_kind" : "canvas_photo",
+      "rotation_radians" : 0,
+      "scale" : 3.5748891092976374,
+      "z_index" : 532
+    }
+  ],
+  "text_items" : [
+    {
+      "alignment" : "center",
+      "backgroundColorHex" : "#00000000",
+      "backgroundOpacity" : 1,
+      "cornerRadius" : 8,
+      "fontName" : "BradleyHandITCTT-Bold",
+      "fontSize" : 30,
+      "id" : "A8B79A07-95D8-4CAE-BAAB-081DC4D55E80",
+      "isUserProContent" : false,
+      "layoutCanvasMinSide" : 398,
+      "letterSpacing" : 0,
+      "lineSpacing" : 0,
+      "nPosition" : [
+        0.28140703517587967,
+        0.12405778894472363
+      ],
+      "outlineColorHex" : "#000000",
+      "outlineOpacity" : 0,
+      "outlineWidth" : 0.49425286054611206,
+      "renderedHeight" : 29.090148991825597,
+      "renderedWidth" : 102.40736004710199,
+      "rotation" : 0,
+      "scale" : 1,
+      "shadowColorHex" : "#00000000",
+      "shadowRadius" : 0,
+      "text" : "The world is",
+      "textCase" : "none",
+      "textColorHex" : "#FFFFFF",
+      "textOpacity" : 1,
+      "zIndex" : 1064
+    },
+    {
+      "alignment" : "center",
+      "backgroundColorHex" : "#00000000",
+      "backgroundOpacity" : 1,
+      "cornerRadius" : 8,
+      "fontName" : "Agamtoh",
+      "fontSize" : 40.97810125350952,
+      "id" : "6558703E-00AD-4786-B6B8-51FFB90BE0E7",
+      "isUserProContent" : false,
+      "layoutCanvasMinSide" : 398,
+      "letterSpacing" : 0,
+      "lineSpacing" : 0,
+      "nPosition" : [
+        0.6984924623115578,
+        0.9004396984924623
+      ],
+      "outlineColorHex" : "#000000",
+      "outlineOpacity" : 1,
+      "outlineWidth" : 0,
+      "renderedHeight" : 57.6463567839196,
+      "renderedWidth" : 102.97989949748745,
+      "rotation" : 0,
+      "scale" : 1,
+      "shadowColorHex" : "#00000000",
+      "shadowRadius" : 0,
+      "text" : "Explore",
+      "textCase" : "none",
+      "textColorHex" : "#FFFFFF",
+      "textOpacity" : 1,
+      "zIndex" : 1068
+    },
+    {
+      "alignment" : "center",
+      "backgroundColorHex" : "#00000000",
+      "backgroundOpacity" : 1,
+      "cornerRadius" : 8,
+      "fontName" : "Agamtoh",
+      "fontSize" : 40.510947704315186,
+      "id" : "962CB6D9-8EE4-43B4-8C4B-ABA6112E1459",
+      "isUserProContent" : false,
+      "layoutCanvasMinSide" : 398,
+      "letterSpacing" : 0,
+      "lineSpacing" : 0,
+      "nPosition" : [
+        0.7211055276381909,
+        0.12013190954773867
+      ],
+      "outlineColorHex" : "#000000",
+      "outlineOpacity" : 1,
+      "outlineWidth" : 0,
+      "renderedHeight" : 57.08668341708543,
+      "renderedWidth" : 98.50251256281408,
+      "rotation" : 0,
+      "scale" : 1,
+      "shadowColorHex" : "#00000000",
+      "shadowRadius" : 0,
+      "text" : "Yours",
+      "textCase" : "none",
+      "textColorHex" : "#000000",
+      "textOpacity" : 1,
+      "zIndex" : 1065
+    },
+    {
+      "alignment" : "center",
+      "backgroundColorHex" : "#00000000",
+      "backgroundOpacity" : 1,
+      "cornerRadius" : 8,
+      "fontName" : "BradleyHandITCTT-Bold",
+      "fontSize" : 25.562044143676758,
+      "id" : "F72E9749-707E-441E-8147-5A26F99B8E6E",
+      "layoutCanvasMinSide" : 398,
+      "letterSpacing" : 0,
+      "lineSpacing" : 0,
+      "nPosition" : [
+        0.4158291457286432,
+        0.8815954773869348
+      ],
+      "outlineColorHex" : "#000000",
+      "outlineOpacity" : 1,
+      "outlineWidth" : 0,
+      "renderedHeight" : 24.62562814070352,
+      "renderedWidth" : 28.543341708542716,
+      "rotation" : 0,
+      "scale" : 1,
+      "shadowColorHex" : "#00000000",
+      "shadowRadius" : 0,
+      "text" : "To",
+      "textCase" : "none",
+      "textColorHex" : "#FFFFFF",
+      "textOpacity" : 1,
+      "zIndex" : 1067
+    }
+  ],
+  "version" : "1"
+}
