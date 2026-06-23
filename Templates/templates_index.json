@@ -1,5 +1,5 @@
 {
-  "version": "4.2",
+  "version": "4.3",
   "templates": [
     {
       "id": "birthday__birthday_01",
@@ -88,6 +88,16 @@
       "category_folder": "Love",
       "recipe": "Font Test 6.json",
       "preview": "Font Test 6.jpg",
+      "is_premium": true,
+      "neutral_empty_slots": true
+    },
+    {
+      "id": "mood__mood_1_1",
+      "title": "Mood 1.1",
+      "category": "Mood",
+      "category_folder": "Mood",
+      "recipe": "Mood 1.1.json",
+      "preview": "Mood 1.1.jpg",
       "is_premium": true,
       "neutral_empty_slots": true
     },
