@@ -1,5 +1,5 @@
 {
-  "version": "14.1",
+  "version": "14.2",
   "sections": [
     {
       "id": "slideshow",
@@ -59,8 +59,8 @@
       "count": 15
     },
     {
-      "id": "filters_moody_film_looks",
-      "title": "Film Looks",
+      "id": "filters_moody_film_looks_filtes",
+      "title": "Film Looks filtes",
       "subtitle": "",
       "display_size": "small",
       "category": "filters",

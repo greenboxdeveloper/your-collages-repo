@@ -1,5 +1,5 @@
 {
-  "version": "18.1",
+  "version": "18.2",
   "categories": [
     {
       "id": "b_w",
@@ -184,104 +184,104 @@
       "remoteFolderName": "Cinematic",
       "filters": [
         {
-          "id": "cinematic__cinematic1",
-          "name": "Cinematic1",
+          "id": "cinematic__deep_ocean",
+          "name": "Deep Ocean",
           "isPremium": true,
           "source": "ota",
           "ciFilterName": null,
-          "lutFileName": "Cinematic1",
-          "previewOriginalUrl": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/Filters/Cinematic/StorePreviews/cinematic__cinematic1/original.jpg",
-          "previewFilteredUrl": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/Filters/Cinematic/StorePreviews/cinematic__cinematic1/filtered.jpg"
+          "lutFileName": "Deep Ocean",
+          "previewOriginalUrl": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/Filters/Cinematic/StorePreviews/cinematic__deep_ocean/original.jpg",
+          "previewFilteredUrl": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/Filters/Cinematic/StorePreviews/cinematic__deep_ocean/filtered.jpg"
         },
         {
-          "id": "cinematic__cinematic10",
-          "name": "Cinematic10",
+          "id": "cinematic__dreamy_soft",
+          "name": "Dreamy Soft",
           "isPremium": true,
           "source": "ota",
           "ciFilterName": null,
-          "lutFileName": "Cinematic10",
-          "previewOriginalUrl": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/Filters/Cinematic/StorePreviews/cinematic__cinematic10/original.jpg",
-          "previewFilteredUrl": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/Filters/Cinematic/StorePreviews/cinematic__cinematic10/filtered.jpg"
+          "lutFileName": "Dreamy Soft",
+          "previewOriginalUrl": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/Filters/Cinematic/StorePreviews/cinematic__dreamy_soft/original.jpg",
+          "previewFilteredUrl": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/Filters/Cinematic/StorePreviews/cinematic__dreamy_soft/filtered.jpg"
         },
         {
-          "id": "cinematic__cinematic2",
-          "name": "Cinematic2",
+          "id": "cinematic__evergreen",
+          "name": "Evergreen",
           "isPremium": true,
           "source": "ota",
           "ciFilterName": null,
-          "lutFileName": "Cinematic2",
-          "previewOriginalUrl": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/Filters/Cinematic/StorePreviews/cinematic__cinematic2/original.jpg",
-          "previewFilteredUrl": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/Filters/Cinematic/StorePreviews/cinematic__cinematic2/filtered.jpg"
+          "lutFileName": "Evergreen",
+          "previewOriginalUrl": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/Filters/Cinematic/StorePreviews/cinematic__evergreen/original.jpg",
+          "previewFilteredUrl": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/Filters/Cinematic/StorePreviews/cinematic__evergreen/filtered.jpg"
         },
         {
-          "id": "cinematic__cinematic3",
-          "name": "Cinematic3",
+          "id": "cinematic__golden_hour",
+          "name": "Golden Hour",
           "isPremium": true,
           "source": "ota",
           "ciFilterName": null,
-          "lutFileName": "Cinematic3",
-          "previewOriginalUrl": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/Filters/Cinematic/StorePreviews/cinematic__cinematic3/original.jpg",
-          "previewFilteredUrl": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/Filters/Cinematic/StorePreviews/cinematic__cinematic3/filtered.jpg"
+          "lutFileName": "Golden Hour",
+          "previewOriginalUrl": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/Filters/Cinematic/StorePreviews/cinematic__golden_hour/original.jpg",
+          "previewFilteredUrl": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/Filters/Cinematic/StorePreviews/cinematic__golden_hour/filtered.jpg"
         },
         {
-          "id": "cinematic__cinematic4",
-          "name": "Cinematic4",
+          "id": "cinematic__monochrome_classic",
+          "name": "Monochrome Classic",
           "isPremium": true,
           "source": "ota",
           "ciFilterName": null,
-          "lutFileName": "Cinematic4",
-          "previewOriginalUrl": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/Filters/Cinematic/StorePreviews/cinematic__cinematic4/original.jpg",
-          "previewFilteredUrl": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/Filters/Cinematic/StorePreviews/cinematic__cinematic4/filtered.jpg"
+          "lutFileName": "Monochrome Classic",
+          "previewOriginalUrl": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/Filters/Cinematic/StorePreviews/cinematic__monochrome_classic/original.jpg",
+          "previewFilteredUrl": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/Filters/Cinematic/StorePreviews/cinematic__monochrome_classic/filtered.jpg"
         },
         {
-          "id": "cinematic__cinematic5",
-          "name": "Cinematic5",
+          "id": "cinematic__retro_film",
+          "name": "Retro Film",
           "isPremium": true,
           "source": "ota",
           "ciFilterName": null,
-          "lutFileName": "Cinematic5",
-          "previewOriginalUrl": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/Filters/Cinematic/StorePreviews/cinematic__cinematic5/original.jpg",
-          "previewFilteredUrl": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/Filters/Cinematic/StorePreviews/cinematic__cinematic5/filtered.jpg"
+          "lutFileName": "Retro Film",
+          "previewOriginalUrl": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/Filters/Cinematic/StorePreviews/cinematic__retro_film/original.jpg",
+          "previewFilteredUrl": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/Filters/Cinematic/StorePreviews/cinematic__retro_film/filtered.jpg"
         },
         {
-          "id": "cinematic__cinematic6",
-          "name": "Cinematic6",
+          "id": "cinematic__rose_quartz",
+          "name": "Rose Quartz",
           "isPremium": true,
           "source": "ota",
           "ciFilterName": null,
-          "lutFileName": "Cinematic6",
-          "previewOriginalUrl": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/Filters/Cinematic/StorePreviews/cinematic__cinematic6/original.jpg",
-          "previewFilteredUrl": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/Filters/Cinematic/StorePreviews/cinematic__cinematic6/filtered.jpg"
+          "lutFileName": "Rose Quartz",
+          "previewOriginalUrl": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/Filters/Cinematic/StorePreviews/cinematic__rose_quartz/original.jpg",
+          "previewFilteredUrl": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/Filters/Cinematic/StorePreviews/cinematic__rose_quartz/filtered.jpg"
         },
         {
-          "id": "cinematic__cinematic7",
-          "name": "Cinematic7",
+          "id": "cinematic__twilight",
+          "name": "Twilight",
           "isPremium": true,
           "source": "ota",
           "ciFilterName": null,
-          "lutFileName": "Cinematic7",
-          "previewOriginalUrl": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/Filters/Cinematic/StorePreviews/cinematic__cinematic7/original.jpg",
-          "previewFilteredUrl": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/Filters/Cinematic/StorePreviews/cinematic__cinematic7/filtered.jpg"
+          "lutFileName": "Twilight",
+          "previewOriginalUrl": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/Filters/Cinematic/StorePreviews/cinematic__twilight/original.jpg",
+          "previewFilteredUrl": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/Filters/Cinematic/StorePreviews/cinematic__twilight/filtered.jpg"
         },
         {
-          "id": "cinematic__cinematic8",
-          "name": "Cinematic8",
+          "id": "cinematic__vintage_noir",
+          "name": "Vintage Noir",
           "isPremium": true,
           "source": "ota",
           "ciFilterName": null,
-          "lutFileName": "Cinematic8",
-          "previewOriginalUrl": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/Filters/Cinematic/StorePreviews/cinematic__cinematic8/original.jpg",
-          "previewFilteredUrl": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/Filters/Cinematic/StorePreviews/cinematic__cinematic8/filtered.jpg"
+          "lutFileName": "Vintage Noir",
+          "previewOriginalUrl": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/Filters/Cinematic/StorePreviews/cinematic__vintage_noir/original.jpg",
+          "previewFilteredUrl": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/Filters/Cinematic/StorePreviews/cinematic__vintage_noir/filtered.jpg"
         },
         {
-          "id": "cinematic__cinematic9",
-          "name": "Cinematic9",
+          "id": "cinematic__vivid_contrast",
+          "name": "Vivid Contrast",
           "isPremium": true,
           "source": "ota",
           "ciFilterName": null,
-          "lutFileName": "Cinematic9",
-          "previewOriginalUrl": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/Filters/Cinematic/StorePreviews/cinematic__cinematic9/original.jpg",
-          "previewFilteredUrl": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/Filters/Cinematic/StorePreviews/cinematic__cinematic9/filtered.jpg"
+          "lutFileName": "Vivid Contrast",
+          "previewOriginalUrl": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/Filters/Cinematic/StorePreviews/cinematic__vivid_contrast/original.jpg",
+          "previewFilteredUrl": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/Filters/Cinematic/StorePreviews/cinematic__vivid_contrast/filtered.jpg"
         }
       ]
     },
@@ -719,104 +719,104 @@
       "remoteFolderName": "Moody",
       "filters": [
         {
-          "id": "moody__moody1",
-          "name": "Moody1",
+          "id": "moody__cold_steel",
+          "name": "Cold Steel",
           "isPremium": true,
           "source": "ota",
           "ciFilterName": null,
-          "lutFileName": "Moody1",
-          "previewOriginalUrl": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/Filters/Moody/StorePreviews/moody__moody1/original.jpg",
-          "previewFilteredUrl": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/Filters/Moody/StorePreviews/moody__moody1/filtered.jpg"
+          "lutFileName": "Cold Steel",
+          "previewOriginalUrl": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/Filters/Moody/StorePreviews/moody__cold_steel/original.jpg",
+          "previewFilteredUrl": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/Filters/Moody/StorePreviews/moody__cold_steel/filtered.jpg"
         },
         {
-          "id": "moody__moody10",
-          "name": "Moody10",
+          "id": "moody__crimson_night",
+          "name": "Crimson Night",
           "isPremium": true,
           "source": "ota",
           "ciFilterName": null,
-          "lutFileName": "Moody10",
-          "previewOriginalUrl": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/Filters/Moody/StorePreviews/moody__moody10/original.jpg",
-          "previewFilteredUrl": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/Filters/Moody/StorePreviews/moody__moody10/filtered.jpg"
+          "lutFileName": "Crimson Night",
+          "previewOriginalUrl": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/Filters/Moody/StorePreviews/moody__crimson_night/original.jpg",
+          "previewFilteredUrl": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/Filters/Moody/StorePreviews/moody__crimson_night/filtered.jpg"
         },
         {
-          "id": "moody__moody2",
-          "name": "Moody2",
+          "id": "moody__deep_forest",
+          "name": "Deep Forest",
           "isPremium": true,
           "source": "ota",
           "ciFilterName": null,
-          "lutFileName": "Moody2",
-          "previewOriginalUrl": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/Filters/Moody/StorePreviews/moody__moody2/original.jpg",
-          "previewFilteredUrl": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/Filters/Moody/StorePreviews/moody__moody2/filtered.jpg"
+          "lutFileName": "Deep Forest",
+          "previewOriginalUrl": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/Filters/Moody/StorePreviews/moody__deep_forest/original.jpg",
+          "previewFilteredUrl": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/Filters/Moody/StorePreviews/moody__deep_forest/filtered.jpg"
         },
         {
-          "id": "moody__moody3",
-          "name": "Moody3",
+          "id": "moody__electric_bloom",
+          "name": "Electric Bloom",
           "isPremium": true,
           "source": "ota",
           "ciFilterName": null,
-          "lutFileName": "Moody3",
-          "previewOriginalUrl": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/Filters/Moody/StorePreviews/moody__moody3/original.jpg",
-          "previewFilteredUrl": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/Filters/Moody/StorePreviews/moody__moody3/filtered.jpg"
+          "lutFileName": "Electric Bloom",
+          "previewOriginalUrl": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/Filters/Moody/StorePreviews/moody__electric_bloom/original.jpg",
+          "previewFilteredUrl": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/Filters/Moody/StorePreviews/moody__electric_bloom/filtered.jpg"
         },
         {
-          "id": "moody__moody4",
-          "name": "Moody4",
+          "id": "moody__midnight",
+          "name": "Midnight",
           "isPremium": true,
           "source": "ota",
           "ciFilterName": null,
-          "lutFileName": "Moody4",
-          "previewOriginalUrl": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/Filters/Moody/StorePreviews/moody__moody4/original.jpg",
-          "previewFilteredUrl": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/Filters/Moody/StorePreviews/moody__moody4/filtered.jpg"
+          "lutFileName": "Midnight",
+          "previewOriginalUrl": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/Filters/Moody/StorePreviews/moody__midnight/original.jpg",
+          "previewFilteredUrl": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/Filters/Moody/StorePreviews/moody__midnight/filtered.jpg"
         },
         {
-          "id": "moody__moody5",
-          "name": "Moody5",
+          "id": "moody__neon_dream",
+          "name": "Neon Dream",
           "isPremium": true,
           "source": "ota",
           "ciFilterName": null,
-          "lutFileName": "Moody5",
-          "previewOriginalUrl": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/Filters/Moody/StorePreviews/moody__moody5/original.jpg",
-          "previewFilteredUrl": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/Filters/Moody/StorePreviews/moody__moody5/filtered.jpg"
+          "lutFileName": "Neon Dream",
+          "previewOriginalUrl": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/Filters/Moody/StorePreviews/moody__neon_dream/original.jpg",
+          "previewFilteredUrl": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/Filters/Moody/StorePreviews/moody__neon_dream/filtered.jpg"
         },
         {
-          "id": "moody__moody6",
-          "name": "Moody6",
+          "id": "moody__royal_haze",
+          "name": "Royal Haze",
           "isPremium": true,
           "source": "ota",
           "ciFilterName": null,
-          "lutFileName": "Moody6",
-          "previewOriginalUrl": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/Filters/Moody/StorePreviews/moody__moody6/original.jpg",
-          "previewFilteredUrl": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/Filters/Moody/StorePreviews/moody__moody6/filtered.jpg"
+          "lutFileName": "Royal Haze",
+          "previewOriginalUrl": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/Filters/Moody/StorePreviews/moody__royal_haze/original.jpg",
+          "previewFilteredUrl": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/Filters/Moody/StorePreviews/moody__royal_haze/filtered.jpg"
         },
         {
-          "id": "moody__moody7",
-          "name": "Moody7",
+          "id": "moody__urban_teal",
+          "name": "Urban Teal",
           "isPremium": true,
           "source": "ota",
           "ciFilterName": null,
-          "lutFileName": "Moody7",
-          "previewOriginalUrl": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/Filters/Moody/StorePreviews/moody__moody7/original.jpg",
-          "previewFilteredUrl": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/Filters/Moody/StorePreviews/moody__moody7/filtered.jpg"
+          "lutFileName": "Urban Teal",
+          "previewOriginalUrl": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/Filters/Moody/StorePreviews/moody__urban_teal/original.jpg",
+          "previewFilteredUrl": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/Filters/Moody/StorePreviews/moody__urban_teal/filtered.jpg"
         },
         {
-          "id": "moody__moody8",
-          "name": "Moody8",
+          "id": "moody__velvet_dusk",
+          "name": "Velvet Dusk",
           "isPremium": true,
           "source": "ota",
           "ciFilterName": null,
-          "lutFileName": "Moody8",
-          "previewOriginalUrl": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/Filters/Moody/StorePreviews/moody__moody8/original.jpg",
-          "previewFilteredUrl": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/Filters/Moody/StorePreviews/moody__moody8/filtered.jpg"
+          "lutFileName": "Velvet Dusk",
+          "previewOriginalUrl": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/Filters/Moody/StorePreviews/moody__velvet_dusk/original.jpg",
+          "previewFilteredUrl": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/Filters/Moody/StorePreviews/moody__velvet_dusk/filtered.jpg"
         },
         {
-          "id": "moody__moody9",
-          "name": "Moody9",
+          "id": "moody__warmish_glow",
+          "name": "Warmish Glow",
           "isPremium": true,
           "source": "ota",
           "ciFilterName": null,
-          "lutFileName": "Moody9",
-          "previewOriginalUrl": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/Filters/Moody/StorePreviews/moody__moody9/original.jpg",
-          "previewFilteredUrl": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/Filters/Moody/StorePreviews/moody__moody9/filtered.jpg"
+          "lutFileName": "Warmish Glow",
+          "previewOriginalUrl": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/Filters/Moody/StorePreviews/moody__warmish_glow/original.jpg",
+          "previewFilteredUrl": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/Filters/Moody/StorePreviews/moody__warmish_glow/filtered.jpg"
         }
       ]
     },
@@ -933,104 +933,104 @@
       "remoteFolderName": "Portrait",
       "filters": [
         {
-          "id": "portrait__portrait1",
-          "name": "Portrait1",
+          "id": "portrait__cinematic_portrait",
+          "name": "Cinematic Portrait",
           "isPremium": true,
           "source": "ota",
           "ciFilterName": null,
-          "lutFileName": "Portrait1",
-          "previewOriginalUrl": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/Filters/Portrait/StorePreviews/portrait__portrait1/original.jpg",
-          "previewFilteredUrl": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/Filters/Portrait/StorePreviews/portrait__portrait1/filtered.jpg"
+          "lutFileName": "Cinematic Portrait",
+          "previewOriginalUrl": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/Filters/Portrait/StorePreviews/portrait__cinematic_portrait/original.jpg",
+          "previewFilteredUrl": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/Filters/Portrait/StorePreviews/portrait__cinematic_portrait/filtered.jpg"
         },
         {
-          "id": "portrait__portrait10",
-          "name": "Portrait10",
+          "id": "portrait__daylight_fresh",
+          "name": "Daylight Fresh",
           "isPremium": true,
           "source": "ota",
           "ciFilterName": null,
-          "lutFileName": "Portrait10",
-          "previewOriginalUrl": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/Filters/Portrait/StorePreviews/portrait__portrait10/original.jpg",
-          "previewFilteredUrl": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/Filters/Portrait/StorePreviews/portrait__portrait10/filtered.jpg"
+          "lutFileName": "Daylight Fresh",
+          "previewOriginalUrl": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/Filters/Portrait/StorePreviews/portrait__daylight_fresh/original.jpg",
+          "previewFilteredUrl": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/Filters/Portrait/StorePreviews/portrait__daylight_fresh/filtered.jpg"
         },
         {
-          "id": "portrait__portrait2",
-          "name": "Portrait2",
+          "id": "portrait__fairytale",
+          "name": "Fairytale",
           "isPremium": true,
           "source": "ota",
           "ciFilterName": null,
-          "lutFileName": "Portrait2",
-          "previewOriginalUrl": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/Filters/Portrait/StorePreviews/portrait__portrait2/original.jpg",
-          "previewFilteredUrl": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/Filters/Portrait/StorePreviews/portrait__portrait2/filtered.jpg"
+          "lutFileName": "Fairytale",
+          "previewOriginalUrl": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/Filters/Portrait/StorePreviews/portrait__fairytale/original.jpg",
+          "previewFilteredUrl": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/Filters/Portrait/StorePreviews/portrait__fairytale/filtered.jpg"
         },
         {
-          "id": "portrait__portrait3",
-          "name": "Portrait3",
+          "id": "portrait__golden_hour",
+          "name": "Golden Hour",
           "isPremium": true,
           "source": "ota",
           "ciFilterName": null,
-          "lutFileName": "Portrait3",
-          "previewOriginalUrl": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/Filters/Portrait/StorePreviews/portrait__portrait3/original.jpg",
-          "previewFilteredUrl": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/Filters/Portrait/StorePreviews/portrait__portrait3/filtered.jpg"
+          "lutFileName": "Golden Hour",
+          "previewOriginalUrl": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/Filters/Portrait/StorePreviews/portrait__golden_hour/original.jpg",
+          "previewFilteredUrl": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/Filters/Portrait/StorePreviews/portrait__golden_hour/filtered.jpg"
         },
         {
-          "id": "portrait__portrait4",
-          "name": "Portrait4",
+          "id": "portrait__natural_radiance",
+          "name": "Natural Radiance",
           "isPremium": true,
           "source": "ota",
           "ciFilterName": null,
-          "lutFileName": "Portrait4",
-          "previewOriginalUrl": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/Filters/Portrait/StorePreviews/portrait__portrait4/original.jpg",
-          "previewFilteredUrl": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/Filters/Portrait/StorePreviews/portrait__portrait4/filtered.jpg"
+          "lutFileName": "Natural Radiance",
+          "previewOriginalUrl": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/Filters/Portrait/StorePreviews/portrait__natural_radiance/original.jpg",
+          "previewFilteredUrl": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/Filters/Portrait/StorePreviews/portrait__natural_radiance/filtered.jpg"
         },
         {
-          "id": "portrait__portrait5",
-          "name": "Portrait5",
+          "id": "portrait__pure_clarity",
+          "name": "Pure Clarity",
           "isPremium": true,
           "source": "ota",
           "ciFilterName": null,
-          "lutFileName": "Portrait5",
-          "previewOriginalUrl": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/Filters/Portrait/StorePreviews/portrait__portrait5/original.jpg",
-          "previewFilteredUrl": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/Filters/Portrait/StorePreviews/portrait__portrait5/filtered.jpg"
+          "lutFileName": "Pure Clarity",
+          "previewOriginalUrl": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/Filters/Portrait/StorePreviews/portrait__pure_clarity/original.jpg",
+          "previewFilteredUrl": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/Filters/Portrait/StorePreviews/portrait__pure_clarity/filtered.jpg"
         },
         {
-          "id": "portrait__portrait6",
-          "name": "Portrait6",
+          "id": "portrait__rose_petal",
+          "name": "Rose Petal",
           "isPremium": true,
           "source": "ota",
           "ciFilterName": null,
-          "lutFileName": "Portrait6",
-          "previewOriginalUrl": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/Filters/Portrait/StorePreviews/portrait__portrait6/original.jpg",
-          "previewFilteredUrl": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/Filters/Portrait/StorePreviews/portrait__portrait6/filtered.jpg"
+          "lutFileName": "Rose Petal",
+          "previewOriginalUrl": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/Filters/Portrait/StorePreviews/portrait__rose_petal/original.jpg",
+          "previewFilteredUrl": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/Filters/Portrait/StorePreviews/portrait__rose_petal/filtered.jpg"
         },
         {
-          "id": "portrait__portrait7",
-          "name": "Portrait7",
+          "id": "portrait__soft_glow",
+          "name": "Soft Glow",
           "isPremium": true,
           "source": "ota",
           "ciFilterName": null,
-          "lutFileName": "Portrait7",
-          "previewOriginalUrl": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/Filters/Portrait/StorePreviews/portrait__portrait7/original.jpg",
-          "previewFilteredUrl": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/Filters/Portrait/StorePreviews/portrait__portrait7/filtered.jpg"
+          "lutFileName": "Soft Glow",
+          "previewOriginalUrl": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/Filters/Portrait/StorePreviews/portrait__soft_glow/original.jpg",
+          "previewFilteredUrl": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/Filters/Portrait/StorePreviews/portrait__soft_glow/filtered.jpg"
         },
         {
-          "id": "portrait__portrait8",
-          "name": "Portrait8",
+          "id": "portrait__studio_light",
+          "name": "Studio Light",
           "isPremium": true,
           "source": "ota",
           "ciFilterName": null,
-          "lutFileName": "Portrait8",
-          "previewOriginalUrl": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/Filters/Portrait/StorePreviews/portrait__portrait8/original.jpg",
-          "previewFilteredUrl": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/Filters/Portrait/StorePreviews/portrait__portrait8/filtered.jpg"
+          "lutFileName": "Studio Light",
+          "previewOriginalUrl": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/Filters/Portrait/StorePreviews/portrait__studio_light/original.jpg",
+          "previewFilteredUrl": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/Filters/Portrait/StorePreviews/portrait__studio_light/filtered.jpg"
         },
         {
-          "id": "portrait__portrait9",
-          "name": "Portrait9",
+          "id": "portrait__velvet_touch",
+          "name": "Velvet Touch",
           "isPremium": true,
           "source": "ota",
           "ciFilterName": null,
-          "lutFileName": "Portrait9",
-          "previewOriginalUrl": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/Filters/Portrait/StorePreviews/portrait__portrait9/original.jpg",
-          "previewFilteredUrl": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/Filters/Portrait/StorePreviews/portrait__portrait9/filtered.jpg"
+          "lutFileName": "Velvet Touch",
+          "previewOriginalUrl": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/Filters/Portrait/StorePreviews/portrait__velvet_touch/original.jpg",
+          "previewFilteredUrl": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/Filters/Portrait/StorePreviews/portrait__velvet_touch/filtered.jpg"
         }
       ]
     }
