@@ -1,0 +1,219 @@
+{
+  "chrome" : {
+    "background_color_rgba" : [
+      1,
+      1,
+      1,
+      1
+    ],
+    "background_hazy_blur_radius" : 48,
+    "border_color_rgba" : [
+      1,
+      1,
+      1,
+      1
+    ],
+    "border_corner_radius" : 0,
+    "border_width" : 20,
+    "canvas_aspect" : 0.5625,
+    "canvas_ratio_preset" : "9:16",
+    "editor_canvas_min_side" : 400,
+    "has_background_image" : false
+  },
+  "dependencies" : [
+    {
+      "asset_ref" : "LP01_U.png",
+      "id" : "letter_pack_01_pr__lp01_u",
+      "type" : "sticker",
+      "url" : "https:\/\/photocollagemaker.john4shine.workers.dev\/Stickers\/Letter%20Pack%2001_PR\/LP01_U.png"
+    },
+    {
+      "asset_ref" : "LP01_R.png",
+      "id" : "letter_pack_01_pr__lp01_r",
+      "type" : "sticker",
+      "url" : "https:\/\/photocollagemaker.john4shine.workers.dev\/Stickers\/Letter%20Pack%2001_PR\/LP01_R.png"
+    },
+    {
+      "asset_ref" : "LP01_B.png",
+      "id" : "letter_pack_01_pr__lp01_b",
+      "type" : "sticker",
+      "url" : "https:\/\/photocollagemaker.john4shine.workers.dev\/Stickers\/Letter%20Pack%2001_PR\/LP01_B.png"
+    },
+    {
+      "asset_ref" : "LP01_A.png",
+      "id" : "letter_pack_01_pr__lp01_a",
+      "type" : "sticker",
+      "url" : "https:\/\/photocollagemaker.john4shine.workers.dev\/Stickers\/Letter%20Pack%2001_PR\/LP01_A.png"
+    },
+    {
+      "asset_ref" : "LP01_N.png",
+      "id" : "letter_pack_01_pr__lp01_n",
+      "type" : "sticker",
+      "url" : "https:\/\/photocollagemaker.john4shine.workers.dev\/Stickers\/Letter%20Pack%2001_PR\/LP01_N.png"
+    },
+    {
+      "asset_ref" : "LP01_V.png",
+      "id" : "letter_pack_01_pr__lp01_v",
+      "type" : "sticker",
+      "url" : "https:\/\/photocollagemaker.john4shine.workers.dev\/Stickers\/Letter%20Pack%2001_PR\/LP01_V.png"
+    },
+    {
+      "asset_ref" : "LP01_I.png",
+      "id" : "letter_pack_01_pr__lp01_i",
+      "type" : "sticker",
+      "url" : "https:\/\/photocollagemaker.john4shine.workers.dev\/Stickers\/Letter%20Pack%2001_PR\/LP01_I.png"
+    },
+    {
+      "asset_ref" : "LP01_E.png",
+      "id" : "letter_pack_01_pr__lp01_e",
+      "type" : "sticker",
+      "url" : "https:\/\/photocollagemaker.john4shine.workers.dev\/Stickers\/Letter%20Pack%2001_PR\/LP01_E.png"
+    }
+  ],
+  "editor" : {
+    "divider_positions" : {
+
+    },
+    "shared_vertex_positions" : {
+
+    },
+    "slot_asset_local_identifiers" : {
+      "0" : "CAE85541-BE17-4EDA-8006-1EC926BC0BCF\/L0\/001"
+    }
+  },
+  "layout" : {
+    "category" : "Classic",
+    "dividers" : [
+
+    ],
+    "id" : "classic_1",
+    "isPremium" : false,
+    "name" : "Collage 1",
+    "shared_vertices" : [
+
+    ],
+    "slots" : [
+      {
+        "id" : "slot_0",
+        "n_rect" : [
+          0,
+          0,
+          1,
+          1
+        ]
+      }
+    ],
+    "type" : "grid"
+  },
+  "stickers" : [
+    {
+      "id" : "0C2B3095-E156-40B5-9B82-B5A078898855",
+      "image_name" : "letter_pack_01_pr__lp01_u",
+      "n_position_x" : 0.13065326633165858,
+      "n_position_y" : 0.5141581431701994,
+      "offset_height" : 10.068012921030661,
+      "offset_width" : -147.73869346733656,
+      "placement_kind" : "sticker",
+      "rotation_radians" : -0.4106267646477194,
+      "scale" : 0.6324339261517758,
+      "z_index" : 9362
+    },
+    {
+      "id" : "9C31CF85-7D22-446F-AECE-19BF7BEA6D57",
+      "image_name" : "letter_pack_01_pr__lp01_r",
+      "n_position_x" : 0.2872696817420433,
+      "n_position_y" : 0.5150753768844221,
+      "offset_height" : 10.720268006700135,
+      "offset_width" : -85.09212730318268,
+      "placement_kind" : "sticker",
+      "rotation_radians" : -0.10173958832184701,
+      "scale" : 0.6133116389817992,
+      "z_index" : 9580
+    },
+    {
+      "id" : "182EC9BE-D5EC-4BAC-BF11-64FCBB005C7A",
+      "image_name" : "letter_pack_01_pr__lp01_b",
+      "n_position_x" : 0.442424413479226,
+      "n_position_y" : 0.5070348113694267,
+      "offset_height" : 5.002532529370127,
+      "offset_width" : -23.0302346083096,
+      "placement_kind" : "sticker",
+      "rotation_radians" : -0.14875379122540455,
+      "scale" : 0.5451042449730275,
+      "z_index" : 9492
+    },
+    {
+      "id" : "F49C7E2F-5F67-4182-8311-B65AE340A42A",
+      "image_name" : "letter_pack_01_pr__lp01_a",
+      "n_position_x" : 0.5901412574284245,
+      "n_position_y" : 0.516993943264417,
+      "offset_height" : 12.084581876918794,
+      "offset_width" : 36.056502971369795,
+      "placement_kind" : "sticker",
+      "rotation_radians" : 3.255343931474723e-16,
+      "scale" : 0.5901003477561312,
+      "z_index" : 9676
+    },
+    {
+      "id" : "21E07CC6-FD8C-478D-A4D0-D7589AFEAE19",
+      "image_name" : "letter_pack_01_pr__lp01_n",
+      "n_position_x" : 0.7512329479898634,
+      "n_position_y" : 0.5091971498230543,
+      "offset_height" : 6.540195429727507,
+      "offset_width" : 100.49317919594536,
+      "placement_kind" : "sticker",
+      "rotation_radians" : -0.27836884764186,
+      "scale" : 0.5864152988793052,
+      "z_index" : 9769
+    },
+    {
+      "id" : "297736EC-73DA-46BE-BDF4-4405DF123DE8",
+      "image_name" : "letter_pack_01_pr__lp01_v",
+      "n_position_x" : 0.4840871021775544,
+      "n_position_y" : 0.62766959798995,
+      "offset_height" : 90.78726968174225,
+      "offset_width" : -6.365159128978237,
+      "placement_kind" : "sticker",
+      "rotation_radians" : -4.960524086056721e-16,
+      "scale" : 0.5706592518372964,
+      "z_index" : 10167
+    },
+    {
+      "id" : "2671D803-F013-40A7-9DBA-14482CA0292E",
+      "image_name" : "letter_pack_01_pr__lp01_i",
+      "n_position_x" : 0.6210427708513351,
+      "n_position_y" : 0.61730527638191,
+      "offset_height" : 83.41708542713602,
+      "offset_width" : 48.41710834053403,
+      "placement_kind" : "sticker",
+      "rotation_radians" : 0.18037370450608387,
+      "scale" : 0.6405284687617344,
+      "z_index" : 10051
+    },
+    {
+      "id" : "B4D0A6A5-3857-47C2-85BD-A6BA68F2D80A",
+      "image_name" : "letter_pack_01_pr__lp01_e",
+      "n_position_x" : 0.9106694078306421,
+      "n_position_y" : 0.6229585427135674,
+      "offset_height" : 87.43718592964795,
+      "offset_width" : 164.26776313225685,
+      "placement_kind" : "sticker",
+      "rotation_radians" : -0.5188568852138498,
+      "scale" : 0.7146447373548644,
+      "z_index" : 9871
+    },
+    {
+      "id" : "650A8F90-AE7B-404F-AD77-047CFB43780D",
+      "image_name" : "letter_pack_01_pr__lp01_b",
+      "n_position_x" : 0.753954420555341,
+      "n_position_y" : 0.6190736966120678,
+      "offset_height" : 84.67462870191487,
+      "offset_width" : 101.5817682221364,
+      "placement_kind" : "sticker",
+      "rotation_radians" : 0,
+      "scale" : 0.5508983460172685,
+      "z_index" : 10204
+    }
+  ],
+  "version" : "1"
+}
