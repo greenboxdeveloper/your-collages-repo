@@ -7,6 +7,7 @@
       1
     ],
     "background_hazy_blur_radius" : 1,
+    "background_hazy_canvas_photo_id" : "AC1FF64F-EF7F-4847-A129-4BFC002F1D4D",
     "background_hazy_polaroid_frame_id" : "E583CEC2-A642-4FBF-AC2E-DC91D19D1BD7",
     "border_color_rgba" : [
       1,
@@ -18,12 +19,15 @@
     "border_width" : 20,
     "canvas_aspect" : 0.8,
     "canvas_ratio_preset" : "4:5",
+    "editor_canvas_min_side" : 400,
     "has_background_image" : true
   },
   "dependencies" : [
     {
+      "asset_ref" : "Polaroid4.2_W.png",
       "id" : "Polaroid4.2_W",
-      "type" : "sticker"
+      "type" : "sticker",
+      "url" : "https:\/\/photocollagemaker.john4shine.workers.dev\/PolaroidFrame\/Polaroid4.2_W.png"
     },
     {
       "asset_ref" : "Summer3.9.png",
@@ -74,7 +78,9 @@
       "image_name" : "Polaroid4.2_W",
       "is_transform_locked" : true,
       "linked_canvas_photo_id" : "AC1FF64F-EF7F-4847-A129-4BFC002F1D4D",
-      "offset_height" : -9.333333333333513,
+      "n_position_x" : 0.5058333333333334,
+      "n_position_y" : 0.48133333333333295,
+      "offset_height" : -9.333333333333528,
       "offset_width" : 2.333333333333343,
       "placement_kind" : "sticker",
       "rotation_radians" : 0.001283182873123124,
@@ -86,7 +92,9 @@
       "inner_offset_height" : 0,
       "inner_offset_width" : 0,
       "inner_scale" : 1,
-      "offset_height" : -9.333333333333513,
+      "n_position_x" : 0.5058333333333334,
+      "n_position_y" : 0.48133333333333295,
+      "offset_height" : -9.333333333333528,
       "offset_width" : 2.333333333333343,
       "parent_frame_sticker_id" : "E583CEC2-A642-4FBF-AC2E-DC91D19D1BD7",
       "placement_kind" : "canvas_photo",
@@ -97,7 +105,9 @@
     {
       "id" : "95BACFD6-316C-48B1-A9A7-EED8D9FD6B35",
       "image_name" : "summer_pack_01_pr__summer3_9",
-      "offset_height" : -114.00000000000003,
+      "n_position_x" : 0.18583333333333335,
+      "n_position_y" : 0.2719999999999999,
+      "offset_height" : -114.00000000000004,
       "offset_width" : -125.66666666666666,
       "placement_kind" : "sticker",
       "rotation_radians" : -0.2071258625247521,
@@ -107,6 +117,8 @@
     {
       "id" : "00B830ED-F082-4660-86E4-227EB387FE89",
       "image_name" : "summer_pack_01_pr__summer1_5",
+      "n_position_x" : 0.8316666666666666,
+      "n_position_y" : 0.8764550259013355,
       "offset_height" : 188.22751295066774,
       "offset_width" : 132.66666666666663,
       "placement_kind" : "sticker",
@@ -124,6 +136,7 @@
       "fontName" : "System",
       "fontSize" : 11.781021535396576,
       "id" : "29B8365F-ABC6-4E58-85E3-D32E7A6B020D",
+      "layoutCanvasMinSide" : 400,
       "letterSpacing" : 0,
       "lineSpacing" : 0,
       "nPosition" : [
@@ -133,6 +146,8 @@
       "outlineColorHex" : "#000000",
       "outlineOpacity" : 0,
       "outlineWidth" : 0.3,
+      "renderedHeight" : 21.702666666666666,
+      "renderedWidth" : 252.22733333333332,
       "rotation" : 0,
       "scale" : 1,
       "shadowColorHex" : "#00000000",
@@ -151,15 +166,18 @@
       "fontName" : "System",
       "fontSize" : 15.284671068191528,
       "id" : "69E3F7F8-9B88-463B-B382-C66999603CC4",
+      "layoutCanvasMinSide" : 400,
       "letterSpacing" : 0,
       "lineSpacing" : 0,
       "nPosition" : [
-        0.2780569514237856,
-        0.838358458961474
+        0.2680067001675043,
+        0.8001675041876046
       ],
       "outlineColorHex" : "#000000",
       "outlineOpacity" : 1,
       "outlineWidth" : 0.12528736889362335,
+      "renderedHeight" : 24.349333333333334,
+      "renderedWidth" : 252.22733333333332,
       "rotation" : 0,
       "scale" : 1,
       "shadowColorHex" : "#00000000",
@@ -178,15 +196,18 @@
       "fontName" : "System",
       "fontSize" : 14.934305906295776,
       "id" : "51C9C333-71EC-45D2-BC71-D3E0C3742B45",
+      "layoutCanvasMinSide" : 400,
       "letterSpacing" : 0,
       "lineSpacing" : 0,
       "nPosition" : [
-        0.438860971524288,
-        0.8731993299832497
+        0.6231155778894473,
+        0.8698492462311558
       ],
       "outlineColorHex" : "#007AFF",
       "outlineOpacity" : 0,
       "outlineWidth" : 0.056321851909160614,
+      "renderedHeight" : 23.82,
+      "renderedWidth" : 252.22733333333332,
       "rotation" : 0,
       "scale" : 1,
       "shadowColorHex" : "#00000000",
@@ -195,7 +216,7 @@
       "textCase" : "none",
       "textColorHex" : "#007AFF",
       "textOpacity" : 1,
-      "zIndex" : 45
+      "zIndex" : 250
     }
   ],
   "version" : "1"

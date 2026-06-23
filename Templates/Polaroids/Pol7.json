@@ -18,6 +18,7 @@
     "border_width" : 20,
     "canvas_aspect" : 0.8,
     "canvas_ratio_preset" : "4:5",
+    "editor_canvas_min_side" : 400,
     "has_background_image" : true
   },
   "dependencies" : [
@@ -28,8 +29,10 @@
       "url" : "https:\/\/photocollagemaker.john4shine.workers.dev\/Backgrounds\/Paper\/6.jpg"
     },
     {
+      "asset_ref" : "Polaroid1.1_B.png",
       "id" : "Polaroid1.1_B",
-      "type" : "sticker"
+      "type" : "sticker",
+      "url" : "https:\/\/photocollagemaker.john4shine.workers.dev\/PolaroidFrame\/Polaroid1.1_B.png"
     },
     {
       "asset_ref" : "Tape.png",
@@ -80,6 +83,8 @@
       "image_name" : "Polaroid1.1_B",
       "is_transform_locked" : true,
       "linked_canvas_photo_id" : "B6CA3433-B1DE-4FCD-9EEC-02B9DD1DA0AB",
+      "n_position_x" : 0.32666666666666666,
+      "n_position_y" : 0.27333333333333343,
       "offset_height" : -113.33333333333329,
       "offset_width" : -69.33333333333334,
       "placement_kind" : "sticker",
@@ -92,6 +97,8 @@
       "inner_offset_height" : 0.6666666666666288,
       "inner_offset_width" : -0.3333333333333428,
       "inner_scale" : 1,
+      "n_position_x" : 0.32666666666666666,
+      "n_position_y" : 0.27333333333333343,
       "offset_height" : -113.33333333333329,
       "offset_width" : -69.33333333333334,
       "parent_frame_sticker_id" : "638B9371-8C7F-45CE-843A-8CF3F05B3AFC",
@@ -111,8 +118,10 @@
       "image_name" : "Polaroid1.1_B",
       "is_transform_locked" : true,
       "linked_canvas_photo_id" : "23D99E34-54B3-45BE-BCB7-D291B75DC991",
-      "offset_height" : 13.341753868210816,
-      "offset_width" : 58.62708554954742,
+      "n_position_x" : 0.6465677138738686,
+      "n_position_y" : 0.5266835077364216,
+      "offset_height" : 13.341753868210793,
+      "offset_width" : 58.62708554954743,
       "placement_kind" : "sticker",
       "rotation_radians" : 0.2166365768509181,
       "scale" : 1.5715692905934626,
@@ -123,8 +132,10 @@
       "inner_offset_height" : -8.04444173985091,
       "inner_offset_width" : -3.003657449637217,
       "inner_scale" : 1.3210045282716567,
-      "offset_height" : 13.341753868210816,
-      "offset_width" : 58.62708554954742,
+      "n_position_x" : 0.6465677138738686,
+      "n_position_y" : 0.5266835077364216,
+      "offset_height" : 13.341753868210793,
+      "offset_width" : 58.62708554954743,
       "parent_frame_sticker_id" : "009EA0B7-3771-4AF4-87B3-4B87547AB697",
       "placement_kind" : "canvas_photo",
       "rotation_radians" : 0.2166365768509181,
@@ -134,6 +145,8 @@
     {
       "id" : "28620F28-6CD4-484D-876F-353A95137966",
       "image_name" : "photo_frame_pr__tape",
+      "n_position_x" : 0.2975,
+      "n_position_y" : 0.10133333333333328,
       "offset_height" : -199.33333333333337,
       "offset_width" : -81,
       "placement_kind" : "sticker",
@@ -144,8 +157,10 @@
     {
       "id" : "4F181F84-3368-4A78-ACA4-BD7C65E5CA72",
       "image_name" : "photo_frame_pr__tape",
-      "offset_height" : 124.0644083632578,
-      "offset_width" : 31.851096141276116,
+      "n_position_x" : 0.5796277403531903,
+      "n_position_y" : 0.7481288167265157,
+      "offset_height" : 124.06440836325783,
+      "offset_width" : 31.851096141276123,
       "placement_kind" : "sticker",
       "rotation_radians" : 0.057024364576128486,
       "scale" : 1.0190620161041373,
@@ -162,6 +177,7 @@
       "fontSize" : 30,
       "id" : "0496ADA2-1CD6-4430-B00D-5B43EEC1E0BA",
       "isUserProContent" : false,
+      "layoutCanvasMinSide" : 400,
       "letterSpacing" : 0,
       "lineSpacing" : 0,
       "nPosition" : [
@@ -171,6 +187,8 @@
       "outlineColorHex" : "#000000",
       "outlineOpacity" : 1,
       "outlineWidth" : 0,
+      "renderedHeight" : 141.59666666666666,
+      "renderedWidth" : 252.22733333333332,
       "rotation" : 1.4876988529977098e-14,
       "scale" : 0.6961345568231034,
       "shadowColorHex" : "#00000000",

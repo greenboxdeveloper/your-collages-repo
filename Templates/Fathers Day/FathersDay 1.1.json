@@ -24,8 +24,10 @@
   },
   "dependencies" : [
     {
+      "asset_ref" : "Polaroid4.1_W.png",
       "id" : "Polaroid4.1_W",
-      "type" : "sticker"
+      "type" : "sticker",
+      "url" : "https:\/\/photocollagemaker.john4shine.workers.dev\/PolaroidFrame\/Polaroid4.1_W.png"
     },
     {
       "id" : "file:\/\/\/var\/mobile\/Containers\/Data\/Application\/BAAD4E20-24C5-4340-8FB2-E38A67FC5CFC\/Documents\/MyCollageProjects\/01F24666-2A34-4A08-91C4-95F24CD25510_overlays\/sticker_canvas_91F197DB-B8F2-45C0-83AC-23F75B023FB7.jpg",
@@ -48,6 +50,18 @@
       "id" : "doodles_science_pr__doodle_science_05",
       "type" : "sticker",
       "url" : "https:\/\/photocollagemaker.john4shine.workers.dev\/Stickers\/Doodles_Science_PR\/Doodle_Science_05.png"
+    },
+    {
+      "asset_ref" : "Doodle_SocialMedia_07.png",
+      "id" : "Doodle_SocialMedia_07.png",
+      "type" : "sticker",
+      "url" : "https:\/\/photocollagemaker.john4shine.workers.dev\/Stickers\/Doodles_SocialMedia_PR\/Doodle_SocialMedia_07.png"
+    },
+    {
+      "asset_ref" : "Doodle_SocialMedia_04.png",
+      "id" : "Doodle_SocialMedia_04.png",
+      "type" : "sticker",
+      "url" : "https:\/\/photocollagemaker.john4shine.workers.dev\/Stickers\/Doodles_SocialMedia_PR\/Doodle_SocialMedia_04.png"
     },
     {
       "asset_ref" : "Chrisye_PR.otf",
@@ -92,8 +106,10 @@
       "image_name" : "Polaroid4.1_W",
       "is_transform_locked" : true,
       "linked_canvas_photo_id" : "91F197DB-B8F2-45C0-83AC-23F75B023FB7",
-      "offset_height" : -4.355108877721924,
-      "offset_width" : -12.395309882747078,
+      "n_position_x" : 0.4690117252931323,
+      "n_position_y" : 0.49128978224455616,
+      "offset_height" : -4.35510887772192,
+      "offset_width" : -12.395309882747085,
       "placement_kind" : "sticker",
       "rotation_radians" : -0.135385955331766,
       "scale" : 2.8744255752170216,
@@ -105,8 +121,10 @@
       "inner_offset_height" : 0,
       "inner_offset_width" : 0,
       "inner_scale" : 1,
-      "offset_height" : -4.355108877721924,
-      "offset_width" : -12.395309882747078,
+      "n_position_x" : 0.4690117252931323,
+      "n_position_y" : 0.49128978224455616,
+      "offset_height" : -4.35510887772192,
+      "offset_width" : -12.395309882747085,
       "parent_frame_sticker_id" : "9FF34E5A-0927-4830-89A3-15742FC7C26C",
       "placement_kind" : "canvas_photo",
       "rotation_radians" : -0.135385955331766,
@@ -116,8 +134,10 @@
     {
       "id" : "CEC21E4F-5955-4E29-A167-DA93401817C6",
       "image_name" : "doodles_socialmedia_pr__doodle_socialmedia_29",
+      "n_position_x" : 0.6859296482412058,
+      "n_position_y" : 0.09262981574539375,
       "offset_height" : -203.68509212730314,
-      "offset_width" : 74.37185929648236,
+      "offset_width" : 74.37185929648234,
       "placement_kind" : "sticker",
       "rotation_radians" : 0.7304904919797396,
       "scale" : 1.0659594650233721,
@@ -126,8 +146,10 @@
     {
       "id" : "A59595F1-C98B-4C54-A133-AF07D4CB5863",
       "image_name" : "doodles_socialmedia_pr__doodle_socialmedia_13",
+      "n_position_x" : 0.18257956448911217,
+      "n_position_y" : 0.35125628140703513,
       "offset_height" : -74.37185929648244,
-      "offset_width" : -126.96817420435512,
+      "offset_width" : -126.96817420435514,
       "placement_kind" : "sticker",
       "rotation_radians" : -0.43587303721288406,
       "scale" : 0.8174396600959621,
@@ -136,12 +158,38 @@
     {
       "id" : "1C22667B-4CF5-4C93-966F-39B7CE9411AE",
       "image_name" : "doodles_science_pr__doodle_science_05",
-      "offset_height" : 125.96314907872701,
-      "offset_width" : 151.08877721943045,
+      "n_position_x" : 0.8777219430485761,
+      "n_position_y" : 0.751926298157454,
+      "offset_height" : 125.96314907872703,
+      "offset_width" : 151.08877721943043,
       "placement_kind" : "sticker",
       "rotation_radians" : 0.2607913306725568,
       "scale" : 0.6450186903243686,
       "z_index" : 1538
+    },
+    {
+      "id" : "B8DAF8ED-D2CE-4634-904D-580F0E40E874",
+      "image_name" : "Doodle_SocialMedia_07.png",
+      "n_position_x" : 0.7202680067001674,
+      "n_position_y" : 0.1080402010050251,
+      "offset_height" : -195.97989949748745,
+      "offset_width" : 88.10720268006698,
+      "placement_kind" : "sticker",
+      "rotation_radians" : 0,
+      "scale" : 1,
+      "z_index" : 1739
+    },
+    {
+      "id" : "1C62E23C-82B9-4D74-90F9-03158C837F41",
+      "image_name" : "Doodle_SocialMedia_04.png",
+      "n_position_x" : 0.13840033500837523,
+      "n_position_y" : 0.530820770519263,
+      "offset_height" : 15.410385259631509,
+      "offset_width" : -144.63986599664992,
+      "placement_kind" : "sticker",
+      "rotation_radians" : 0.31822324406805425,
+      "scale" : 1.0355737321726606,
+      "z_index" : 1831
     }
   ],
   "text_items" : [
@@ -154,6 +202,7 @@
       "fontSize" : 30,
       "id" : "9741C8EF-7069-4D91-ADD9-1258957CDBA7",
       "isUserProContent" : false,
+      "layoutCanvasMinSide" : 400,
       "letterSpacing" : 4.549549221992493,
       "lineSpacing" : 0,
       "nPosition" : [
@@ -163,6 +212,8 @@
       "outlineColorHex" : "#000000",
       "outlineOpacity" : 0,
       "outlineWidth" : 0.3,
+      "renderedHeight" : 36.25933333333333,
+      "renderedWidth" : 252.22733333333332,
       "rotation" : -9.295831251292796,
       "scale" : 2.1780004626599325,
       "shadowColorHex" : "#00000000",
@@ -182,6 +233,7 @@
       "fontSize" : 30,
       "id" : "DF782CF8-3346-46CD-A627-AAE344289EF8",
       "isUserProContent" : false,
+      "layoutCanvasMinSide" : 400,
       "letterSpacing" : 0,
       "lineSpacing" : 0,
       "nPosition" : [
@@ -191,6 +243,8 @@
       "outlineColorHex" : "#000000",
       "outlineOpacity" : 0,
       "outlineWidth" : 0.3,
+      "renderedHeight" : 36.25933333333333,
+      "renderedWidth" : 252.22733333333332,
       "rotation" : -7.512086126546472,
       "scale" : 2.3382157108717054,
       "shadowColorHex" : "#00000000",
