@@ -1,0 +1,115 @@
+{
+  "chrome" : {
+    "background_color_rgba" : [
+      1,
+      1,
+      1,
+      1
+    ],
+    "background_hazy_blur_radius" : 5,
+    "background_hazy_canvas_photo_id" : "0146DF57-F499-43AA-A4D2-9273D7CE9E13",
+    "background_hazy_polaroid_frame_id" : "E79D2354-9F46-4FC7-B687-42E108EF4901",
+    "border_color_rgba" : [
+      1,
+      1,
+      1,
+      1
+    ],
+    "border_corner_radius" : 0,
+    "border_width" : 20,
+    "canvas_aspect" : 0.5625,
+    "canvas_ratio_preset" : "9:16",
+    "editor_canvas_min_side" : 400,
+    "has_background_image" : true
+  },
+  "dependencies" : [
+    {
+      "asset_ref" : "Polaroid5.2_W.png",
+      "id" : "polaroidframe__polaroid5_2_w",
+      "type" : "sticker",
+      "url" : "https:\/\/photocollagemaker.john4shine.workers.dev\/PolaroidFrame\/Polaroid5.2_W.png"
+    }
+  ],
+  "editor" : {
+    "divider_positions" : {
+
+    },
+    "shared_vertex_positions" : {
+
+    }
+  },
+  "layout" : {
+    "category" : "TemplateBuilder",
+    "dividers" : [
+
+    ],
+    "id" : "template-builder-E8775AB9",
+    "isPremium" : false,
+    "name" : "Template builder",
+    "shared_vertices" : [
+
+    ],
+    "slots" : [
+
+    ],
+    "type" : "grid"
+  },
+  "stickers" : [
+    {
+      "id" : "E79D2354-9F46-4FC7-B687-42E108EF4901",
+      "image_name" : "polaroidframe__polaroid5_2_w",
+      "linked_canvas_photo_id" : "0146DF57-F499-43AA-A4D2-9273D7CE9E13",
+      "n_position_x" : 0.5,
+      "n_position_y" : 0.5,
+      "offset_height" : 0,
+      "offset_width" : 0,
+      "placement_kind" : "sticker",
+      "rotation_radians" : -1.0269835021914304e-16,
+      "scale" : 4,
+      "z_index" : 244
+    },
+    {
+      "hole_n_rect" : [
+        0.068519,
+        0.015625,
+        0.862963,
+        0.478516
+      ],
+      "id" : "0146DF57-F499-43AA-A4D2-9273D7CE9E13",
+      "inner_offset_height" : 0,
+      "inner_offset_width" : 0,
+      "inner_scale" : 1,
+      "n_position_x" : 0.5,
+      "n_position_y" : 0.5,
+      "offset_height" : 0,
+      "offset_width" : 0,
+      "parent_frame_sticker_id" : "E79D2354-9F46-4FC7-B687-42E108EF4901",
+      "placement_kind" : "canvas_photo",
+      "rotation_radians" : -1.0269835021914304e-16,
+      "scale" : 4,
+      "z_index" : 244
+    },
+    {
+      "hole_n_rect" : [
+        0.068519,
+        0.505859,
+        0.862963,
+        0.4794919999999999
+      ],
+      "id" : "52F47189-3E18-4FFE-89F2-CB5186A7C9AA",
+      "inner_offset_height" : 0,
+      "inner_offset_width" : 0,
+      "inner_scale" : 1,
+      "n_position_x" : 0.5,
+      "n_position_y" : 0.5,
+      "offset_height" : 0,
+      "offset_width" : 0,
+      "parent_frame_sticker_id" : "E79D2354-9F46-4FC7-B687-42E108EF4901",
+      "placement_kind" : "canvas_photo",
+      "rotation_radians" : -1.0269835021914304e-16,
+      "scale" : 4,
+      "z_index" : 244
+    }
+  ],
+  "version" : "1"
+}
