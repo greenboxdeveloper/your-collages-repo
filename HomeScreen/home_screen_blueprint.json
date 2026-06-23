@@ -1,7 +1,7 @@
 {
   "version": "2.0",
   "randomize": {
-    "enabled": true,
+    "enabled": false,
     "title": "Discover More",
     "subtitle": "",
     "display_size": "small",
@@ -10,19 +10,19 @@
   },
   "sections": [
     {
-      "title": "Greet your father",
-      "subtitle": "Father's day special",
+      "title": "Making wishes and sweet memories",
+      "subtitle": "",
       "display_size": "hero",
       "store": "Templates",
-      "file": "FathersDay 1.3.json"
+      "file": "Pol8.json"
     },
     {
-      "title": "Father's Day Specials",
-      "subtitle": "Wish your father",
+      "title": "Polaroid Specials",
+      "subtitle": "",
       "display_size": "small",
       "store": "Templates",
-      "pack": "Fathers Day",
-      "count": 8
+      "pack": "Polaroids",
+      "count": 15
     },
     {
       "title": "Film Looks",
@@ -33,7 +33,7 @@
       "count": 10
     },
     {
-      "title": "Your Cine filters",
+      "title": "Cinematic filters",
       "subtitle": "Create memorable holiday",
       "display_size": "small",
       "store": "Filters",
@@ -66,16 +66,16 @@
       "subtitle": ""
     },
     {
-      "title": "Your art filters",
-      "subtitle": "Create social posts",
+      "title": "Artistic filters",
+      "subtitle": "Create social photos shine",
       "display_size": "small",
       "store": "Filters",
       "pack": "Portrait",
       "count": 10
     },
     {
-      "title": "Your Stylish Fonts",
-      "subtitle": "",
+      "title": "Stylish Fonts",
+      "subtitle": "Customize your collage texts",
       "display_size": "small",
       "store": "Fonts",
       "pack": "Basic",
