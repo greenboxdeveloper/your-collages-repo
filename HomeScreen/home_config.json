@@ -1,5 +1,5 @@
 {
-  "version": "14.0",
+  "version": "14.1",
   "sections": [
     {
       "id": "slideshow",
@@ -40,23 +40,23 @@
       "count": 10
     },
     {
-      "id": "templates_fathersday_1_3_json_greet_your_father",
-      "title": "Greet your father",
-      "subtitle": "Father's day special",
+      "id": "templates_pol8_json_making_wishes_and_sweet_memories",
+      "title": "Making wishes and sweet memories",
+      "subtitle": "",
       "display_size": "hero",
       "category": "templates",
-      "sub_category": "Fathers Day",
+      "sub_category": "Polaroids",
       "count": 1,
-      "item": "FathersDay 1.3.json"
+      "item": "Pol8.json"
     },
     {
-      "id": "templates_fathers_day_father_s_day_specials",
-      "title": "Father's Day Specials",
-      "subtitle": "Wish your father",
+      "id": "templates_polaroids_polaroid_specials",
+      "title": "Polaroid Specials",
+      "subtitle": "",
       "display_size": "small",
       "category": "templates",
-      "sub_category": "Fathers Day",
-      "count": 8
+      "sub_category": "Polaroids",
+      "count": 15
     },
     {
       "id": "filters_moody_film_looks",
@@ -68,8 +68,8 @@
       "count": 10
     },
     {
-      "id": "filters_cinematic_your_cine_filters",
-      "title": "Your Cine filters",
+      "id": "filters_cinematic_cinematic_filters",
+      "title": "Cinematic filters",
       "subtitle": "Create memorable holiday",
       "display_size": "small",
       "category": "filters",
@@ -120,18 +120,27 @@
       "count": 8
     },
     {
-      "id": "filters_portrait_your_art_filters",
-      "title": "Your art filters",
-      "subtitle": "Create social posts",
+      "id": "templates_fathers_day",
+      "title": "Fathers Day",
+      "subtitle": "",
+      "display_size": "small",
+      "category": "templates",
+      "sub_category": "Fathers Day",
+      "count": 8
+    },
+    {
+      "id": "filters_portrait_artistic_filters",
+      "title": "Artistic filters",
+      "subtitle": "Create social photos shine",
       "display_size": "small",
       "category": "filters",
       "sub_category": "Portrait",
       "count": 10
     },
     {
-      "id": "fonts_basic_your_stylish_fonts",
-      "title": "Your Stylish Fonts",
-      "subtitle": "",
+      "id": "fonts_basic_stylish_fonts",
+      "title": "Stylish Fonts",
+      "subtitle": "Customize your collage texts",
       "display_size": "small",
       "category": "fonts",
       "sub_category": "English",
@@ -139,7 +148,7 @@
     }
   ],
   "randomize": {
-    "enabled": true,
+    "enabled": false,
     "title": "Discover More",
     "subtitle": "",
     "display_size": "small",
