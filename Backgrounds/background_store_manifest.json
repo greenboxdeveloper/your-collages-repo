@@ -1,5 +1,5 @@
 {
-  "version": "2.4",
+  "version": "2.5",
   "categories": [
     {
       "id": "4th_july_pack_01",
@@ -70,13 +70,13 @@
           "fileName": "4thJuly_1.7.jpg"
         },
         {
-          "id": "4th_july_pack_01__artboard_8_jpg",
-          "name": "Artboard 8",
+          "id": "4th_july_pack_01__4thjuly_1_8_jpg",
+          "name": "4Thjuly 1.8",
           "isPremium": false,
           "kind": "image",
           "source": "ota",
           "colorHex": null,
-          "fileName": "Artboard 8.jpg"
+          "fileName": "4thJuly_1.8.jpg"
         }
       ]
     },
