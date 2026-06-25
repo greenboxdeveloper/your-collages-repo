@@ -146,8 +146,8 @@
       "outlineColorHex" : "#000000",
       "outlineOpacity" : 0,
       "outlineWidth" : 0.3,
-      "renderedHeight" : 15.880666666666666,
-      "renderedWidth" : 131.82866666666666,
+      "renderedHeight" : 21.702666666666666,
+      "renderedWidth" : 252.22733333333332,
       "rotation" : 0,
       "scale" : 1,
       "shadowColorHex" : "#00000000",
@@ -170,14 +170,14 @@
       "letterSpacing" : 0,
       "lineSpacing" : 0,
       "nPosition" : [
-        0.2680067001675043,
-        0.8001675041876046
+        0.2696817420435511,
+        0.8289782244556113
       ],
       "outlineColorHex" : "#000000",
       "outlineOpacity" : 1,
       "outlineWidth" : 0.12528736889362335,
-      "renderedHeight" : 17.602666666666668,
-      "renderedWidth" : 131.82866666666666,
+      "renderedHeight" : 24.614,
+      "renderedWidth" : 251.96266666666668,
       "rotation" : 0,
       "scale" : 1,
       "shadowColorHex" : "#00000000",
@@ -186,7 +186,7 @@
       "textCase" : "none",
       "textColorHex" : "#000000",
       "textOpacity" : 1,
-      "zIndex" : 251
+      "zIndex" : 253
     },
     {
       "alignment" : "center",
@@ -200,14 +200,14 @@
       "letterSpacing" : 0,
       "lineSpacing" : 0,
       "nPosition" : [
-        0.4078726968174204,
-        0.8537688442211055
+        0.42629815745393634,
+        0.8711892797319934
       ],
       "outlineColorHex" : "#007AFF",
       "outlineOpacity" : 0,
       "outlineWidth" : 0.056321851909160614,
-      "renderedHeight" : 27.552000000000003,
-      "renderedWidth" : 131.63733333333334,
+      "renderedHeight" : 24.084666666666667,
+      "renderedWidth" : 252.22733333333332,
       "rotation" : 0,
       "scale" : 1,
       "shadowColorHex" : "#00000000",
@@ -216,7 +216,7 @@
       "textCase" : "none",
       "textColorHex" : "#007AFF",
       "textOpacity" : 1,
-      "zIndex" : 250
+      "zIndex" : 254
     }
   ],
   "version" : "1"
