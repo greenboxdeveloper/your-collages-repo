@@ -1,5 +1,5 @@
 {
-  "version": "3.3",
+  "version": "3.4",
   "categories": [
     {
       "id": "4th_july_pack_01",
@@ -4218,17 +4218,9 @@
     {
       "id": "letter_pack_01_pr",
       "name": "Letter Pack 01",
-      "count": 26,
+      "count": 25,
       "remoteFolderName": "Letter Pack 01_PR",
       "stickers": [
-        {
-          "id": "letter_pack_01_pr__lp01",
-          "name": "Lp01",
-          "isPremium": false,
-          "source": "ota",
-          "fileName": "LP01",
-          "previewWebpUrl": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/Stickers/Letter%20Pack%2001_PR/LP01_preview.webp"
-        },
         {
           "id": "letter_pack_01_pr__lp01_a",
           "name": "Lp01",
