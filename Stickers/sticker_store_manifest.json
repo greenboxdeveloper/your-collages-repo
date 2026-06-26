@@ -5696,7 +5696,7 @@
         {
           "id": "scrapbook_abc_pr__lp01",
           "name": "Lp01",
-          "isPremium": false,
+          "isPremium": true,
           "source": "ota",
           "fileName": "LP01",
           "previewWebpUrl": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/Stickers/Scrapbook%20ABC_PR/LP01_preview.webp"
