@@ -22,52 +22,84 @@
   },
   "dependencies" : [
     {
-      "asset_ref" : "LP01_U.png",
       "id" : "letter_pack_01_pr__lp01_u",
+      "type" : "sticker"
+    },
+    {
+      "id" : "letter_pack_01_pr__lp01_r",
+      "type" : "sticker"
+    },
+    {
+      "id" : "letter_pack_01_pr__lp01_b",
+      "type" : "sticker"
+    },
+    {
+      "id" : "letter_pack_01_pr__lp01_a",
+      "type" : "sticker"
+    },
+    {
+      "id" : "letter_pack_01_pr__lp01_n",
+      "type" : "sticker"
+    },
+    {
+      "id" : "letter_pack_01_pr__lp01_v",
+      "type" : "sticker"
+    },
+    {
+      "id" : "letter_pack_01_pr__lp01_i",
+      "type" : "sticker"
+    },
+    {
+      "id" : "letter_pack_01_pr__lp01_e",
+      "type" : "sticker"
+    },
+    {
+      "asset_ref" : "LP01_U.png",
+      "id" : "scrapbook_abc_pr__lp01_u",
       "type" : "sticker",
-      "url" : "https:\/\/photocollagemaker.john4shine.workers.dev\/Stickers\/Letter%20Pack%2001_PR\/LP01_U.png"
+      "url" : "https:\/\/photocollagemaker.john4shine.workers.dev\/Stickers\/Scrapbook%20ABC_PR\/LP01_U.png"
     },
     {
       "asset_ref" : "LP01_R.png",
-      "id" : "letter_pack_01_pr__lp01_r",
+      "id" : "scrapbook_abc_pr__lp01_r",
       "type" : "sticker",
-      "url" : "https:\/\/photocollagemaker.john4shine.workers.dev\/Stickers\/Letter%20Pack%2001_PR\/LP01_R.png"
+      "url" : "https:\/\/photocollagemaker.john4shine.workers.dev\/Stickers\/Scrapbook%20ABC_PR\/LP01_R.png"
     },
     {
       "asset_ref" : "LP01_B.png",
-      "id" : "letter_pack_01_pr__lp01_b",
+      "id" : "scrapbook_abc_pr__lp01_b",
       "type" : "sticker",
-      "url" : "https:\/\/photocollagemaker.john4shine.workers.dev\/Stickers\/Letter%20Pack%2001_PR\/LP01_B.png"
+      "url" : "https:\/\/photocollagemaker.john4shine.workers.dev\/Stickers\/Scrapbook%20ABC_PR\/LP01_B.png"
     },
     {
-      "asset_ref" : "LP01_A.png",
-      "id" : "letter_pack_01_pr__lp01_a",
+      "asset_ref" : "LP01-A.png",
+      "id" : "scrapbook_abc_pr__lp01_a",
       "type" : "sticker",
-      "url" : "https:\/\/photocollagemaker.john4shine.workers.dev\/Stickers\/Letter%20Pack%2001_PR\/LP01_A.png"
+      "url" : "https:\/\/photocollagemaker.john4shine.workers.dev\/Stickers\/Scrapbook%20ABC_PR\/LP01-A.png"
     },
     {
       "asset_ref" : "LP01_N.png",
-      "id" : "letter_pack_01_pr__lp01_n",
+      "id" : "scrapbook_abc_pr__lp01_n",
       "type" : "sticker",
-      "url" : "https:\/\/photocollagemaker.john4shine.workers.dev\/Stickers\/Letter%20Pack%2001_PR\/LP01_N.png"
+      "url" : "https:\/\/photocollagemaker.john4shine.workers.dev\/Stickers\/Scrapbook%20ABC_PR\/LP01_N.png"
     },
     {
       "asset_ref" : "LP01_V.png",
-      "id" : "letter_pack_01_pr__lp01_v",
+      "id" : "scrapbook_abc_pr__lp01_v",
       "type" : "sticker",
-      "url" : "https:\/\/photocollagemaker.john4shine.workers.dev\/Stickers\/Letter%20Pack%2001_PR\/LP01_V.png"
+      "url" : "https:\/\/photocollagemaker.john4shine.workers.dev\/Stickers\/Scrapbook%20ABC_PR\/LP01_V.png"
     },
     {
       "asset_ref" : "LP01_I.png",
-      "id" : "letter_pack_01_pr__lp01_i",
+      "id" : "scrapbook_abc_pr__lp01_i",
       "type" : "sticker",
-      "url" : "https:\/\/photocollagemaker.john4shine.workers.dev\/Stickers\/Letter%20Pack%2001_PR\/LP01_I.png"
+      "url" : "https:\/\/photocollagemaker.john4shine.workers.dev\/Stickers\/Scrapbook%20ABC_PR\/LP01_I.png"
     },
     {
       "asset_ref" : "LP01_E.png",
-      "id" : "letter_pack_01_pr__lp01_e",
+      "id" : "scrapbook_abc_pr__lp01_e",
       "type" : "sticker",
-      "url" : "https:\/\/photocollagemaker.john4shine.workers.dev\/Stickers\/Letter%20Pack%2001_PR\/LP01_E.png"
+      "url" : "https:\/\/photocollagemaker.john4shine.workers.dev\/Stickers\/Scrapbook%20ABC_PR\/LP01_E.png"
     }
   ],
   "editor" : {
@@ -76,9 +108,6 @@
     },
     "shared_vertex_positions" : {
 
-    },
-    "slot_asset_local_identifiers" : {
-      "0" : "CAE85541-BE17-4EDA-8006-1EC926BC0BCF\/L0\/001"
     }
   },
   "layout" : {
@@ -213,6 +242,114 @@
       "rotation_radians" : 0,
       "scale" : 0.5508983460172685,
       "z_index" : 10204
+    },
+    {
+      "id" : "D7CD88B1-585E-4AD0-9E33-610A3138015D",
+      "image_name" : "scrapbook_abc_pr__lp01_u",
+      "n_position_x" : 0.08626465661641536,
+      "n_position_y" : 0.5174309045226131,
+      "offset_height" : 12.395309882747085,
+      "offset_width" : -165.49413735343387,
+      "placement_kind" : "sticker",
+      "rotation_radians" : -1.2401310215141802e-16,
+      "scale" : 0.5828007786817595,
+      "z_index" : 12774
+    },
+    {
+      "id" : "17D00B23-A7A0-4AE3-8924-772DF6253721",
+      "image_name" : "scrapbook_abc_pr__lp01_r",
+      "n_position_x" : 0.2552345058626466,
+      "n_position_y" : 0.5164886934673366,
+      "offset_height" : 11.725293132328257,
+      "offset_width" : -97.90619765494135,
+      "placement_kind" : "sticker",
+      "rotation_radians" : 0.09580200501990753,
+      "scale" : 0.6218167586259491,
+      "z_index" : 12067
+    },
+    {
+      "id" : "27AE85EF-2400-40C2-91A3-A6C2A755A2E7",
+      "image_name" : "scrapbook_abc_pr__lp01_b",
+      "n_position_x" : 0.4338358458961473,
+      "n_position_y" : 0.5174309045226128,
+      "offset_height" : 12.395309882746847,
+      "offset_width" : -26.46566164154107,
+      "placement_kind" : "sticker",
+      "rotation_radians" : 0.05376270550803586,
+      "scale" : 0.6491188345747778,
+      "z_index" : 12130
+    },
+    {
+      "id" : "38ACBED7-60E1-4F58-BB22-F79A542A36BA",
+      "image_name" : "scrapbook_abc_pr__lp01_a",
+      "n_position_x" : 0.5971524288107202,
+      "n_position_y" : 0.5315640703517588,
+      "offset_height" : 22.44556113902847,
+      "offset_width" : 38.86097152428807,
+      "placement_kind" : "sticker",
+      "rotation_radians" : 4.805507708367448e-16,
+      "scale" : 0.6573839212660638,
+      "z_index" : 12166
+    },
+    {
+      "id" : "499B8B47-687E-4596-9CEA-2349F5356E48",
+      "image_name" : "scrapbook_abc_pr__lp01_n",
+      "n_position_x" : 0.752931323283082,
+      "n_position_y" : 0.5268530150753769,
+      "offset_height" : 19.09547738693465,
+      "offset_width" : 101.1725293132328,
+      "placement_kind" : "sticker",
+      "rotation_radians" : 0.07532772547250409,
+      "scale" : 0.6049012769217363,
+      "z_index" : 12329
+    },
+    {
+      "id" : "79FA345B-6C22-4487-B8A3-6ABABB0D7C12",
+      "image_name" : "scrapbook_abc_pr__lp01_v",
+      "n_position_x" : 0.4304857621440537,
+      "n_position_y" : 0.6757223618090453,
+      "offset_height" : 124.95812395309889,
+      "offset_width" : -27.805695142378518,
+      "placement_kind" : "sticker",
+      "rotation_radians" : 0,
+      "scale" : 0.6550765664775752,
+      "z_index" : 12655
+    },
+    {
+      "id" : "FB196255-B2E4-4F23-9274-2201043A7E6A",
+      "image_name" : "scrapbook_abc_pr__lp01_i",
+      "n_position_x" : 0.5829145728643216,
+      "n_position_y" : 0.6667713567839197,
+      "offset_height" : 118.5929648241207,
+      "offset_width" : 33.16582914572863,
+      "placement_kind" : "sticker",
+      "rotation_radians" : 0,
+      "scale" : 0.5758100831418508,
+      "z_index" : 12544
+    },
+    {
+      "id" : "FB03C961-193C-478B-81DA-AF4FC3D35E61",
+      "image_name" : "scrapbook_abc_pr__lp01_b",
+      "n_position_x" : 0.7463987889811806,
+      "n_position_y" : 0.6667713567839194,
+      "offset_height" : 118.59296482412047,
+      "offset_width" : 98.55951559247225,
+      "placement_kind" : "sticker",
+      "rotation_radians" : -3.3667619529388877e-16,
+      "scale" : 0.6713578160370504,
+      "z_index" : 12444
+    },
+    {
+      "id" : "69E9F7C8-D237-49C6-B2AE-EBD5D6DF8382",
+      "image_name" : "scrapbook_abc_pr__lp01_e",
+      "n_position_x" : 0.9216608634864105,
+      "n_position_y" : 0.667713567839196,
+      "offset_height" : 119.26298157453937,
+      "offset_width" : 168.6643453945642,
+      "placement_kind" : "sticker",
+      "rotation_radians" : 0.06596410234554517,
+      "scale" : 0.626713092108715,
+      "z_index" : 12376
     }
   ],
   "version" : "1"
