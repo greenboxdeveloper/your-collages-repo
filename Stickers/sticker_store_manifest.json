@@ -1,5 +1,5 @@
 {
-  "version": "3.7",
+  "version": "3.8",
   "categories": [
     {
       "id": "4th_july_pack_01",
@@ -5694,14 +5694,6 @@
       "remoteFolderName": "Scrapbook ABC_PR",
       "stickers": [
         {
-          "id": "scrapbook_abc_pr__lp01",
-          "name": "Lp01",
-          "isPremium": false,
-          "source": "ota",
-          "fileName": "LP01",
-          "previewWebpUrl": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/Stickers/Scrapbook%20ABC_PR/LP01_preview.webp"
-        },
-        {
           "id": "scrapbook_abc_pr__lp01_a",
           "name": "Lp01 A",
           "isPremium": true,
@@ -5740,6 +5732,14 @@
           "source": "ota",
           "fileName": "LP01_E",
           "previewWebpUrl": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/Stickers/Scrapbook%20ABC_PR/LP01_E_preview.webp"
+        },
+        {
+          "id": "scrapbook_abc_pr__lp01_f",
+          "name": "Lp01 F",
+          "isPremium": true,
+          "source": "ota",
+          "fileName": "LP01-F",
+          "previewWebpUrl": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/Stickers/Scrapbook%20ABC_PR/LP01-F_preview.webp"
         },
         {
           "id": "scrapbook_abc_pr__lp01_g",
