@@ -1,5 +1,5 @@
 {
-  "version": "3.6",
+  "version": "3.7",
   "categories": [
     {
       "id": "4th_july_pack_01",
@@ -5696,18 +5696,18 @@
         {
           "id": "scrapbook_abc_pr__lp01",
           "name": "Lp01",
-          "isPremium": true,
+          "isPremium": false,
           "source": "ota",
           "fileName": "LP01",
           "previewWebpUrl": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/Stickers/Scrapbook%20ABC_PR/LP01_preview.webp"
         },
         {
           "id": "scrapbook_abc_pr__lp01_a",
-          "name": "Lp01",
+          "name": "Lp01 A",
           "isPremium": true,
           "source": "ota",
-          "fileName": "LP01_A",
-          "previewWebpUrl": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/Stickers/Scrapbook%20ABC_PR/LP01_A_preview.webp"
+          "fileName": "LP01-A",
+          "previewWebpUrl": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/Stickers/Scrapbook%20ABC_PR/LP01-A_preview.webp"
         },
         {
           "id": "scrapbook_abc_pr__lp01_b",
@@ -5818,8 +5818,8 @@
           "name": "Lp01 P",
           "isPremium": true,
           "source": "ota",
-          "fileName": "LP01_P",
-          "previewWebpUrl": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/Stickers/Scrapbook%20ABC_PR/LP01_P_preview.webp"
+          "fileName": "LP01-P",
+          "previewWebpUrl": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/Stickers/Scrapbook%20ABC_PR/LP01-P_preview.webp"
         },
         {
           "id": "scrapbook_abc_pr__lp01_q",
