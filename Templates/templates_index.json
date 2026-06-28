@@ -1,5 +1,5 @@
 {
-  "version": "4.6",
+  "version": "4.7",
   "templates": [
     {
       "id": "birthday__birthday_01",
@@ -8,16 +8,6 @@
       "category_folder": "Birthday",
       "recipe": "Birthday 01.json",
       "preview": "Birthday 01.jpg",
-      "is_premium": true,
-      "neutral_empty_slots": true
-    },
-    {
-      "id": "daily_life__dailylife_1_1",
-      "title": "Dailylife 1.1",
-      "category": "Daily Life",
-      "category_folder": "Daily Life",
-      "recipe": "DailyLife 1.1.json",
-      "preview": "DailyLife 1.1.jpg",
       "is_premium": true,
       "neutral_empty_slots": true
     },
