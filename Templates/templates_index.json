@@ -1,5 +1,5 @@
 {
-  "version": "4.9",
+  "version": "5.0",
   "templates": [
     {
       "id": "4th_july__4th_1",
@@ -8,6 +8,16 @@
       "category_folder": "4th July",
       "recipe": "4th 1.json",
       "preview": "4th 1.jpg",
+      "is_premium": true,
+      "neutral_empty_slots": true
+    },
+    {
+      "id": "4th_july__4th_10",
+      "title": "4Th 10",
+      "category": "4Th July",
+      "category_folder": "4th July",
+      "recipe": "4th 10.json",
+      "preview": "4th 10.jpg",
       "is_premium": true,
       "neutral_empty_slots": true
     },
