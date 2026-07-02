@@ -11,7 +11,7 @@
   "sections": [
     {
       "title": "Celebrating Freedom",
-      "subtitle": "Red, White and Bluce sparkle",
+      "subtitle": "Red, White and Blue sparkle",
       "display_size": "hero",
       "store": "Templates",
       "file": "4th 11.json"
@@ -66,8 +66,8 @@
     },
     {
       "store": "Templates",
-      "all_packs": true,
-      "max_rows": 4,
+      "all_packs": false,
+      "max_rows": 1,
       "count": 8,
       "display_size": "small",
       "title": "{name}",
