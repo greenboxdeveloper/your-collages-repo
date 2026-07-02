@@ -1,5 +1,5 @@
 {
-  "version": "16.5",
+  "version": "16.6",
   "sections": [
     {
       "id": "slideshow",
@@ -42,7 +42,7 @@
     {
       "id": "templates_4th_11_json_celebrating_freedom",
       "title": "Celebrating Freedom",
-      "subtitle": "Red, White and Bluce sparkle",
+      "subtitle": "Red, White and Blue sparkle",
       "display_size": "hero",
       "category": "templates",
       "sub_category": "4Th July",
@@ -100,42 +100,6 @@
       "display_size": "small",
       "category": "stylish_layouts",
       "count": 12
-    },
-    {
-      "id": "templates_4th_july",
-      "title": "4Th July",
-      "subtitle": "",
-      "display_size": "small",
-      "category": "templates",
-      "sub_category": "4th July",
-      "count": 8
-    },
-    {
-      "id": "templates_birthday",
-      "title": "Birthday",
-      "subtitle": "",
-      "display_size": "small",
-      "category": "templates",
-      "sub_category": "Birthday",
-      "count": 8
-    },
-    {
-      "id": "templates_dreamy",
-      "title": "Dreamy",
-      "subtitle": "",
-      "display_size": "small",
-      "category": "templates",
-      "sub_category": "Dreamy",
-      "count": 8
-    },
-    {
-      "id": "templates_fathers_day",
-      "title": "Fathers Day",
-      "subtitle": "",
-      "display_size": "small",
-      "category": "templates",
-      "sub_category": "Fathers Day",
-      "count": 8
     },
     {
       "id": "filters_portrait_artistic_filters",
