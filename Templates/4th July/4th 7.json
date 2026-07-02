@@ -1,0 +1,131 @@
+{
+  "chrome" : {
+    "background_color_rgba" : [
+      1,
+      1,
+      1,
+      1
+    ],
+    "background_hazy_blur_radius" : 6,
+    "background_hazy_slot_index" : 3,
+    "border_color_rgba" : [
+      1,
+      1,
+      1,
+      1
+    ],
+    "border_corner_radius" : 0,
+    "border_width" : 85.14336943626404,
+    "canvas_aspect" : 1,
+    "canvas_ratio_preset" : "1:1",
+    "editor_canvas_min_side" : 400,
+    "has_background_image" : true
+  },
+  "dependencies" : [
+    {
+      "asset_ref" : "4July_1.7.png",
+      "id" : "4th_of_july__4july_1_7",
+      "type" : "sticker",
+      "url" : "https:\/\/photocollagemaker.john4shine.workers.dev\/Stickers\/4th%20of%20July\/4July_1.7.png"
+    }
+  ],
+  "editor" : {
+    "divider_positions" : {
+
+    },
+    "shared_vertex_positions" : {
+
+    }
+  },
+  "layout" : {
+    "category" : "Classic",
+    "dividers" : [
+      {
+        "affects" : [
+          "slot_0",
+          "slot_1",
+          "slot_2",
+          "slot_3"
+        ],
+        "id" : "DRAG_V_0",
+        "position" : 0.5,
+        "segment_end" : 1,
+        "segment_start" : 0,
+        "type" : "vertical"
+      },
+      {
+        "affects" : [
+          "slot_0",
+          "slot_1",
+          "slot_2",
+          "slot_3"
+        ],
+        "id" : "DRAG_H_1",
+        "position" : 0.5,
+        "segment_end" : 1,
+        "segment_start" : 0,
+        "type" : "horizontal"
+      }
+    ],
+    "id" : "classic_4",
+    "isPremium" : false,
+    "name" : "Collage 4",
+    "shared_vertices" : [
+
+    ],
+    "slots" : [
+      {
+        "id" : "slot_0",
+        "n_rect" : [
+          0,
+          0,
+          0.5,
+          0.5
+        ]
+      },
+      {
+        "id" : "slot_1",
+        "n_rect" : [
+          0.5,
+          0,
+          0.5,
+          0.5
+        ]
+      },
+      {
+        "id" : "slot_2",
+        "n_rect" : [
+          0,
+          0.5,
+          0.5,
+          0.5
+        ]
+      },
+      {
+        "id" : "slot_3",
+        "n_rect" : [
+          0.5,
+          0.5,
+          0.5,
+          0.5
+        ]
+      }
+    ],
+    "type" : "grid"
+  },
+  "stickers" : [
+    {
+      "id" : "AD52D884-A944-4634-BB3F-47C0C8CCC278",
+      "image_name" : "4th_of_july__4july_1_7",
+      "n_position_x" : 0.5,
+      "n_position_y" : 0.5192629815745394,
+      "offset_height" : 7.705192629815771,
+      "offset_width" : 0,
+      "placement_kind" : "sticker",
+      "rotation_radians" : -2.1169424078191279e-16,
+      "scale" : 1.8698192007522998,
+      "z_index" : 112
+    }
+  ],
+  "version" : "1"
+}

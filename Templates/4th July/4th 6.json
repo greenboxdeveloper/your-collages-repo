@@ -1,0 +1,193 @@
+{
+  "chrome" : {
+    "background_color_rgba" : [
+      0.0081787109375,
+      0,
+      0.2874908447265625,
+      1
+    ],
+    "background_hazy_blur_radius" : 48,
+    "border_color_rgba" : [
+      1,
+      1,
+      1,
+      1
+    ],
+    "border_corner_radius" : 0,
+    "border_width" : 0,
+    "canvas_aspect" : 1,
+    "canvas_ratio_preset" : "1:1",
+    "editor_canvas_min_side" : 400,
+    "has_background_image" : false
+  },
+  "dependencies" : [
+    {
+      "asset_ref" : "4July_1.1.png",
+      "id" : "4th_of_july__4july_1_1",
+      "type" : "sticker",
+      "url" : "https:\/\/photocollagemaker.john4shine.workers.dev\/Stickers\/4th%20of%20July\/4July_1.1.png"
+    },
+    {
+      "asset_ref" : "4July_1.6.png",
+      "id" : "4th_of_july__4july_1_6",
+      "type" : "sticker",
+      "url" : "https:\/\/photocollagemaker.john4shine.workers.dev\/Stickers\/4th%20of%20July\/4July_1.6.png"
+    }
+  ],
+  "editor" : {
+    "divider_positions" : {
+
+    },
+    "shared_vertex_positions" : {
+
+    }
+  },
+  "layout" : {
+    "category" : "Stylish",
+    "dividers" : [
+
+    ],
+    "id" : "svg_CIRCLE",
+    "isPremium" : true,
+    "name" : "Circle",
+    "shared_vertices" : [
+
+    ],
+    "slots" : [
+      {
+        "id" : "slot_0",
+        "n_rect" : [
+          0.0528,
+          0.0528,
+          0.8944,
+          0.8944
+        ],
+        "path_data" : "M 473.6 250.0 L 469.30358869816234 293.6221960028063 L 456.5794634695237 335.5680154768341 L 435.91660531084915 374.225504103183 L 408.10907627331204 408.109076273312 L 374.2255041031831 435.91660531084915 L 335.5680154768341 456.5794634695237 L 293.6221960028063 469.30358869816234 L 250.0 473.6 L 206.37780399719372 469.30358869816234 L 164.43198452316594 456.5794634695237 L 125.774495896817 435.91660531084915 L 91.89092372668799 408.10907627331204 L 64.08339468915088 374.225504103183 L 43.420536530476284 335.5680154768341 L 30.696411301837685 293.62219600280633 L 26.400000000000006 250.00000000000003 L 30.696411301837685 206.3778039971937 L 43.420536530476255 164.43198452316597 L 64.08339468915085 125.774495896817 L 91.89092372668793 91.89092372668799 L 125.77449589681696 64.08339468915088 L 164.4319845231658 43.42053653047634 L 206.37780399719364 30.696411301837713 L 249.99999999999997 26.400000000000006 L 293.6221960028063 30.696411301837685 L 335.56801547683415 43.42053653047631 L 374.22550410318297 64.08339468915085 L 408.109076273312 91.89092372668793 L 435.91660531084915 125.77449589681696 L 456.57946346952366 164.4319845231658 L 469.3035886981623 206.3778039971936 L 473.6 249.99999999999994 Z"
+      }
+    ],
+    "type" : "organic"
+  },
+  "stickers" : [
+    {
+      "id" : "3DA03B83-8A0A-4FB0-BCD6-582C8E0A7A16",
+      "image_name" : "4th_of_july__4july_1_1",
+      "n_position_x" : 0.8492462311557789,
+      "n_position_y" : 0.14321608040201006,
+      "offset_height" : -142.71356783919597,
+      "offset_width" : 139.69849246231155,
+      "placement_kind" : "sticker",
+      "rotation_radians" : -0.09748246644562565,
+      "scale" : 0.5147748730275785,
+      "z_index" : 85
+    },
+    {
+      "id" : "B409DAB9-6EEB-4779-A3EB-15A8CF0DB894",
+      "image_name" : "4th_of_july__4july_1_1",
+      "n_position_x" : 0.09094862605576737,
+      "n_position_y" : 0.7915959131186111,
+      "offset_height" : 116.63836524744444,
+      "offset_width" : -163.62054957769305,
+      "placement_kind" : "sticker",
+      "rotation_radians" : -0.09748246644562565,
+      "scale" : 0.5147748730275785,
+      "z_index" : 1655
+    },
+    {
+      "id" : "0E21379F-0905-4EED-83CB-86AD0D416E91",
+      "image_name" : "4th_of_july__4july_1_1",
+      "n_position_x" : 0.13487035661594515,
+      "n_position_y" : 0.9203452292212202,
+      "offset_height" : 168.1380916884881,
+      "offset_width" : -146.05185735362193,
+      "placement_kind" : "sticker",
+      "rotation_radians" : -0.09748246644562565,
+      "scale" : 0.5147748730275785,
+      "z_index" : 329
+    },
+    {
+      "id" : "25856A97-BCA8-48B4-AE63-08F41B9FA5CB",
+      "image_name" : "4th_of_july__4july_1_6",
+      "n_position_x" : 0.9246231155778895,
+      "n_position_y" : 0.25125628140703515,
+      "offset_height" : -99.49748743718594,
+      "offset_width" : 169.84924623115577,
+      "placement_kind" : "sticker",
+      "rotation_radians" : 0.1200202688843285,
+      "scale" : 0.4268771368088667,
+      "z_index" : 649
+    },
+    {
+      "id" : "98C507D5-DBE4-437D-99E0-2C318B1D193B",
+      "image_name" : "4th_of_july__4july_1_6",
+      "n_position_x" : 0.9100111659760705,
+      "n_position_y" : 0.04058440551604814,
+      "offset_height" : -183.76623779358076,
+      "offset_width" : 164.00446639042818,
+      "placement_kind" : "sticker",
+      "rotation_radians" : 0.1200202688843285,
+      "scale" : 0.4268771368088667,
+      "z_index" : 994
+    },
+    {
+      "id" : "CBADA27C-9099-497C-A993-5DDCABCBAE94",
+      "image_name" : "4th_of_july__4july_1_6",
+      "n_position_x" : 0.6817796762437793,
+      "n_position_y" : 0.07149918735183936,
+      "offset_height" : -171.40032505926425,
+      "offset_width" : 72.71187049751174,
+      "placement_kind" : "sticker",
+      "rotation_radians" : 0.1200202688843285,
+      "scale" : 0.4268771368088667,
+      "z_index" : 1810
+    },
+    {
+      "id" : "C490516E-B813-40EA-BB99-8DDE4F9D58D8",
+      "image_name" : "4th_of_july__4july_1_6",
+      "n_position_x" : 0.7433288947663542,
+      "n_position_y" : 0.19361345790713214,
+      "offset_height" : -122.55461683714715,
+      "offset_width" : 97.33155790654169,
+      "placement_kind" : "sticker",
+      "rotation_radians" : 0.1200202688843285,
+      "scale" : 0.4268771368088667,
+      "z_index" : 1828
+    },
+    {
+      "id" : "64C1E61F-6B72-4A75-9938-2CAC3C7EEB7A",
+      "image_name" : "4th_of_july__4july_1_6",
+      "n_position_x" : 0.2937845957395706,
+      "n_position_y" : 0.8284362666765412,
+      "offset_height" : 131.37450667061648,
+      "offset_width" : -82.48616170417176,
+      "placement_kind" : "sticker",
+      "rotation_radians" : 0.1200202688843285,
+      "scale" : 0.4268771368088667,
+      "z_index" : 1716
+    },
+    {
+      "id" : "F465CA85-37BF-4BB8-BEBA-CA766E449691",
+      "image_name" : "4th_of_july__4july_1_6",
+      "n_position_x" : 0.19870080373820986,
+      "n_position_y" : 0.670169913433282,
+      "offset_height" : 68.06796537331282,
+      "offset_width" : -120.51967850471605,
+      "placement_kind" : "sticker",
+      "rotation_radians" : -0.15469319941615467,
+      "scale" : 0.3104936951071982,
+      "z_index" : 1684
+    },
+    {
+      "id" : "16260FB1-36F6-4107-A335-1389E6A7EF26",
+      "image_name" : "4th_of_july__4july_1_6",
+      "n_position_x" : 0.3256729167498867,
+      "n_position_y" : 0.7000360879646129,
+      "offset_height" : 80.01443518584517,
+      "offset_width" : -69.73083330004532,
+      "placement_kind" : "sticker",
+      "rotation_radians" : 0.1200202688843285,
+      "scale" : 0.4268771368088667,
+      "z_index" : 1700
+    }
+  ],
+  "version" : "1"
+}

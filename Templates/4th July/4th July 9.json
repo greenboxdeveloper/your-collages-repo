@@ -1,0 +1,200 @@
+{
+  "chrome" : {
+    "background_color_rgba" : [
+      0.1411764705882353,
+      0.16470588235294117,
+      0.2235294117647059,
+      1
+    ],
+    "background_hazy_blur_radius" : 48,
+    "border_color_rgba" : [
+      1,
+      1,
+      1,
+      1
+    ],
+    "border_corner_radius" : 0,
+    "border_width" : 20,
+    "canvas_aspect" : 1,
+    "canvas_ratio_preset" : "1:1",
+    "editor_canvas_min_side" : 400,
+    "has_background_image" : false
+  },
+  "dependencies" : [
+    {
+      "asset_ref" : "Polaroid 1.png",
+      "id" : "polaroidframe__polaroid_1",
+      "type" : "sticker",
+      "url" : "https:\/\/photocollagemaker.john4shine.workers.dev\/PolaroidFrame\/Polaroid%201.png"
+    },
+    {
+      "asset_ref" : "4July_1.13.png",
+      "id" : "4th_of_july__4july_1_13",
+      "type" : "sticker",
+      "url" : "https:\/\/photocollagemaker.john4shine.workers.dev\/Stickers\/4th%20of%20July\/4July_1.13.png"
+    },
+    {
+      "asset_ref" : "4July_1.12.png",
+      "id" : "4th_of_july__4july_1_12",
+      "type" : "sticker",
+      "url" : "https:\/\/photocollagemaker.john4shine.workers.dev\/Stickers\/4th%20of%20July\/4July_1.12.png"
+    },
+    {
+      "id" : "Georgia-Bold",
+      "type" : "font"
+    }
+  ],
+  "editor" : {
+    "divider_positions" : {
+
+    },
+    "shared_vertex_positions" : {
+
+    }
+  },
+  "layout" : {
+    "category" : "TemplateBuilder",
+    "dividers" : [
+
+    ],
+    "id" : "template-builder-D06FDD39",
+    "isPremium" : false,
+    "name" : "Template builder",
+    "shared_vertices" : [
+
+    ],
+    "slots" : [
+
+    ],
+    "type" : "grid"
+  },
+  "stickers" : [
+    {
+      "hole_n_rect" : [
+        0.072,
+        0.05418,
+        0.848,
+        0.729102
+      ],
+      "id" : "3BFCEAE8-C39C-4EDF-93A0-18AAB7065729",
+      "image_name" : "polaroidframe__polaroid_1",
+      "is_transform_locked" : true,
+      "linked_canvas_photo_id" : "7C24347E-2E76-4421-A435-498F109AC9C1",
+      "n_position_x" : 0.36455108359133126,
+      "n_position_y" : 0.32500000000000007,
+      "offset_height" : -69.99999999999997,
+      "offset_width" : -54.179566563467496,
+      "placement_kind" : "sticker",
+      "rotation_radians" : 0,
+      "scale" : 1.4401458969478127,
+      "z_index" : 821
+    },
+    {
+      "id" : "7C24347E-2E76-4421-A435-498F109AC9C1",
+      "inner_offset_height" : 0,
+      "inner_offset_width" : 0,
+      "inner_scale" : 1,
+      "n_position_x" : 0.36455108359133126,
+      "n_position_y" : 0.32500000000000007,
+      "offset_height" : -69.99999999999997,
+      "offset_width" : -54.179566563467496,
+      "parent_frame_sticker_id" : "3BFCEAE8-C39C-4EDF-93A0-18AAB7065729",
+      "placement_kind" : "canvas_photo",
+      "rotation_radians" : 0,
+      "scale" : 1.4401458969478127,
+      "z_index" : 821
+    },
+    {
+      "hole_n_rect" : [
+        0.072,
+        0.05418,
+        0.848,
+        0.729102
+      ],
+      "id" : "B5C673F4-D110-40AB-95C6-60C25802CEA5",
+      "image_name" : "polaroidframe__polaroid_1",
+      "is_transform_locked" : true,
+      "linked_canvas_photo_id" : "704A9A8D-43D6-4E21-BABC-3205F439BEC4",
+      "n_position_x" : 0.5922725297107932,
+      "n_position_y" : 0.6170140609798588,
+      "offset_height" : 46.80562439194351,
+      "offset_width" : 36.9090118843173,
+      "placement_kind" : "sticker",
+      "rotation_radians" : 0,
+      "scale" : 1.4401458969478127,
+      "z_index" : 824
+    },
+    {
+      "id" : "704A9A8D-43D6-4E21-BABC-3205F439BEC4",
+      "inner_offset_height" : 0,
+      "inner_offset_width" : 0,
+      "inner_scale" : 1,
+      "n_position_x" : 0.5922725297107932,
+      "n_position_y" : 0.6170140609798588,
+      "offset_height" : 46.80562439194351,
+      "offset_width" : 36.9090118843173,
+      "parent_frame_sticker_id" : "B5C673F4-D110-40AB-95C6-60C25802CEA5",
+      "placement_kind" : "canvas_photo",
+      "rotation_radians" : 0,
+      "scale" : 1.4401458969478127,
+      "z_index" : 824
+    },
+    {
+      "id" : "767A4223-45C6-4D6F-AA04-B1B585F495AC",
+      "image_name" : "4th_of_july__4july_1_13",
+      "n_position_x" : 0.8241206030150754,
+      "n_position_y" : 0.13484087102177544,
+      "offset_height" : -146.0636515912898,
+      "offset_width" : 129.64824120603015,
+      "placement_kind" : "sticker",
+      "rotation_radians" : -1.8601965322712704e-16,
+      "scale" : 1.5493673731613322,
+      "z_index" : 1209
+    },
+    {
+      "id" : "8713A934-494A-499F-BC7D-B0E0AAE26D6D",
+      "image_name" : "4th_of_july__4july_1_12",
+      "n_position_x" : 0.07286432160804018,
+      "n_position_y" : 0.8040201005025126,
+      "offset_height" : 121.60804020100504,
+      "offset_width" : -170.85427135678393,
+      "placement_kind" : "sticker",
+      "rotation_radians" : 0,
+      "scale" : 1,
+      "z_index" : 1388
+    }
+  ],
+  "text_items" : [
+    {
+      "alignment" : "center",
+      "backgroundColorHex" : "#00000000",
+      "backgroundOpacity" : 1,
+      "cornerRadius" : 8,
+      "fontName" : "Georgia-Bold",
+      "fontSize" : 30,
+      "id" : "06CC4A9F-4D64-4719-80DC-0EA716D4A749",
+      "layoutCanvasMinSide" : 398,
+      "letterSpacing" : 0,
+      "lineSpacing" : 0,
+      "nPosition" : [
+        0.27386934673366825,
+        0.7194304857621442
+      ],
+      "outlineColorHex" : "#000000",
+      "outlineOpacity" : 1,
+      "outlineWidth" : 0,
+      "renderedHeight" : 114.0460636515913,
+      "renderedWidth" : 396.0025125628141,
+      "rotation" : 1.3614109839465982e-14,
+      "scale" : 1.1017747350877345,
+      "shadowColorHex" : "#00000000",
+      "shadowRadius" : 0,
+      "text" : "Long \nLive \nUSA",
+      "textCase" : "none",
+      "textColorHex" : "#FFFFFF",
+      "textOpacity" : 1,
+      "zIndex" : 1022
+    }
+  ],
+  "version" : "1"
+}

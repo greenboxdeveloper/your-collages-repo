@@ -1,0 +1,166 @@
+{
+  "chrome" : {
+    "background_color_rgba" : [
+      1,
+      1,
+      1,
+      1
+    ],
+    "background_hazy_blur_radius" : 48,
+    "background_image_name" : "4th_july_pack_01__4thjuly_1_6_jpg",
+    "border_color_rgba" : [
+      1,
+      1,
+      1,
+      1
+    ],
+    "border_corner_radius" : 0,
+    "border_width" : 50.64516067504883,
+    "canvas_aspect" : 1,
+    "canvas_ratio_preset" : "1:1",
+    "editor_canvas_min_side" : 400,
+    "has_background_image" : true
+  },
+  "dependencies" : [
+    {
+      "asset_ref" : "4thJuly 1.6.jpg",
+      "id" : "4th_july_pack_01__4thjuly_1_6_jpg",
+      "type" : "background",
+      "url" : "https:\/\/photocollagemaker.john4shine.workers.dev\/Backgrounds\/4th%20July%20Pack%2001\/4thJuly%201.6.jpg"
+    },
+    {
+      "id" : "SnellRoundhand",
+      "type" : "font"
+    },
+    {
+      "id" : "SnellRoundhand-Bold",
+      "type" : "font"
+    }
+  ],
+  "editor" : {
+    "divider_positions" : {
+
+    },
+    "shared_vertex_positions" : {
+
+    }
+  },
+  "layout" : {
+    "category" : "Stylish",
+    "dividers" : [
+
+    ],
+    "id" : "svg_PCM_SL23",
+    "isPremium" : true,
+    "name" : "Pcm Sl23",
+    "shared_vertices" : [
+
+    ],
+    "slots" : [
+      {
+        "id" : "slot_0",
+        "n_rect" : [
+          0.08,
+          0.08,
+          0.84,
+          0.84
+        ],
+        "path_data" : "M 379.79 460.0 L 250.0 355.27 L 120.21 460.0 L 174.84 297.85 L 40.0 200.43 L 203.55 204.94 L 250.0 40.0 L 296.45 204.94 L 460.0 200.43 L 325.16 297.85 L 379.79 460.0 Z"
+      }
+    ],
+    "type" : "organic"
+  },
+  "text_items" : [
+    {
+      "alignment" : "center",
+      "backgroundColorHex" : "#00000000",
+      "backgroundOpacity" : 1,
+      "cornerRadius" : 8,
+      "fontName" : "SnellRoundhand",
+      "fontSize" : 30,
+      "id" : "9E319E52-6805-465D-B272-DDAF109BA7A8",
+      "layoutCanvasMinSide" : 398,
+      "letterSpacing" : 0,
+      "lineSpacing" : 0,
+      "nPosition" : [
+        0.22278056951423775,
+        0.0919331566569121
+      ],
+      "outlineColorHex" : "#000000",
+      "outlineOpacity" : 1,
+      "outlineWidth" : 0.3264367878437042,
+      "renderedHeight" : 50.87185929648241,
+      "renderedWidth" : 396.0025125628141,
+      "rotation" : 2.1760371282653068e-14,
+      "scale" : 1.0968565499749907,
+      "shadowColorHex" : "#00000000",
+      "shadowRadius" : 0,
+      "text" : "Happy",
+      "textCase" : "none",
+      "textColorHex" : "#FFFFFF",
+      "textOpacity" : 1,
+      "zIndex" : 18
+    },
+    {
+      "alignment" : "center",
+      "backgroundColorHex" : "#00000000",
+      "backgroundOpacity" : 1,
+      "cornerRadius" : 8,
+      "fontName" : "SnellRoundhand",
+      "fontSize" : 30,
+      "id" : "B87FBD8A-4021-4321-80AF-F26C6CDEC71D",
+      "layoutCanvasMinSide" : 398,
+      "letterSpacing" : 0,
+      "lineSpacing" : 0,
+      "nPosition" : [
+        0.7596015787026954,
+        0.09310065482984359
+      ],
+      "outlineColorHex" : "#000000",
+      "outlineOpacity" : 1,
+      "outlineWidth" : 0.19770115613937378,
+      "renderedHeight" : 50.539363484087104,
+      "renderedWidth" : 396.0025125628141,
+      "rotation" : 2.6117996654306808e-14,
+      "scale" : 1.0842206996788673,
+      "shadowColorHex" : "#00000000",
+      "shadowRadius" : 0,
+      "text" : "Independence",
+      "textCase" : "none",
+      "textColorHex" : "#FFFFFF",
+      "textOpacity" : 1,
+      "zIndex" : 21
+    },
+    {
+      "alignment" : "center",
+      "backgroundColorHex" : "#00000000",
+      "backgroundOpacity" : 1,
+      "cornerRadius" : 8,
+      "fontName" : "SnellRoundhand-Bold",
+      "fontSize" : 30,
+      "id" : "C1289136-EACE-44A4-BCCA-314D568E6024",
+      "layoutCanvasMinSide" : 398,
+      "letterSpacing" : 1.3963964581489563,
+      "lineSpacing" : 0,
+      "nPosition" : [
+        0.48911222780569513,
+        0.8822637216607587
+      ],
+      "outlineColorHex" : "#000000",
+      "outlineOpacity" : 1,
+      "outlineWidth" : 0.48965516686439514,
+      "renderedHeight" : 51.869346733668344,
+      "renderedWidth" : 396.0025125628141,
+      "rotation" : 0,
+      "scale" : 2.199715387226111,
+      "shadowColorHex" : "#00000000",
+      "shadowRadius" : 0,
+      "text" : "Day",
+      "textCase" : "none",
+      "textColorHex" : "#FFFFFF",
+      "textOpacity" : 1,
+      "zIndex" : 20
+    }
+  ],
+  "version" : "1"
+}
