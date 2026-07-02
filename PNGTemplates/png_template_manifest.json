@@ -1,5 +1,5 @@
 {
-  "version": "3.7",
+  "version": "3.8",
   "categories": [
     {
       "id": "testtemplates",
@@ -7,6 +7,32 @@
       "icon": "square.grid.2x2",
       "remoteFolderName": "TestTemplates",
       "items": [
+        {
+          "id": "testtemplates__4thpng1",
+          "name": "4Thpng1",
+          "fileName": "4thpng1",
+          "isPremium": false,
+          "holeCount": 2,
+          "fileExtension": "png",
+          "precomputedSlots": [
+            {
+              "x": 0.092657,
+              "y": 0.251953,
+              "width": 0.458042,
+              "height": 0.31543,
+              "areaFraction": 0.098913,
+              "source": "transparency"
+            },
+            {
+              "x": 0.424825,
+              "y": 0.364258,
+              "width": 0.480769,
+              "height": 0.308594,
+              "areaFraction": 0.125376,
+              "source": "transparency"
+            }
+          ]
+        },
         {
           "id": "testtemplates__pngt_1_1",
           "name": "Pngt 1.1",
