@@ -10,11 +10,19 @@
   },
   "sections": [
     {
-      "title": "Making wishes and sweet memories",
-      "subtitle": "",
+      "title": "Celebrating Freedom",
+      "subtitle": "Red, White and Bluce sparkle",
       "display_size": "hero",
       "store": "Templates",
-      "file": "Pol8.json"
+      "file": "4th 11.json"
+    },
+    {
+      "title": "4th July Celebrations",
+      "subtitle": "Happy 250th, America",
+      "display_size": "small",
+      "store": "Templates",
+      "pack": "4th July",
+      "count": 20
     },
     {
       "title": "Polaroid Specials",
