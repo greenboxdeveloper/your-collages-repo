@@ -1,5 +1,5 @@
 {
-  "version": "15.7",
+  "version": "15.8",
   "sections": [
     {
       "id": "slideshow",
@@ -102,15 +102,6 @@
       "count": 8
     },
     {
-      "id": "templates_daily_life",
-      "title": "Daily Life",
-      "subtitle": "",
-      "display_size": "small",
-      "category": "templates",
-      "sub_category": "Daily Life",
-      "count": 8
-    },
-    {
       "id": "templates_dreamy",
       "title": "Dreamy",
       "subtitle": "",
@@ -126,6 +117,15 @@
       "display_size": "small",
       "category": "templates",
       "sub_category": "Fathers Day",
+      "count": 8
+    },
+    {
+      "id": "templates_holiday",
+      "title": "Holiday",
+      "subtitle": "",
+      "display_size": "small",
+      "category": "templates",
+      "sub_category": "Holiday",
       "count": 8
     },
     {
