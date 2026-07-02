@@ -1,5 +1,5 @@
 {
-  "version": "16.3",
+  "version": "16.4",
   "sections": [
     {
       "id": "slideshow",
@@ -40,14 +40,23 @@
       "count": 10
     },
     {
-      "id": "templates_pol8_json_making_wishes_and_sweet_memories",
-      "title": "Making wishes and sweet memories",
-      "subtitle": "",
+      "id": "templates_4th_11_json_celebrating_freedom",
+      "title": "Celebrating Freedom",
+      "subtitle": "Red, White and Bluce sparkle",
       "display_size": "hero",
       "category": "templates",
-      "sub_category": "Polaroids",
+      "sub_category": "4Th July",
       "count": 1,
-      "item": "Pol8.json"
+      "item": "4th 11.json"
+    },
+    {
+      "id": "templates_4th_july_4th_july_celebrations",
+      "title": "4th July Celebrations",
+      "subtitle": "Happy 250th, America",
+      "display_size": "small",
+      "category": "templates",
+      "sub_category": "4Th July",
+      "count": 20
     },
     {
       "id": "templates_polaroids_polaroid_specials",
