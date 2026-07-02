@@ -1,0 +1,93 @@
+{
+  "chrome" : {
+    "background_color_rgba" : [
+      1,
+      1,
+      1,
+      1
+    ],
+    "background_hazy_blur_radius" : 48,
+    "border_color_rgba" : [
+      1,
+      1,
+      1,
+      1
+    ],
+    "border_corner_radius" : 0,
+    "border_width" : 20,
+    "canvas_aspect" : 0.5625,
+    "canvas_ratio_preset" : "9:16",
+    "editor_canvas_min_side" : 400,
+    "has_background_image" : false
+  },
+  "dependencies" : [
+    {
+      "asset_ref" : "4July_2.9.png",
+      "id" : "independence_day__4july_2_9",
+      "type" : "sticker",
+      "url" : "https:\/\/photocollagemaker.john4shine.workers.dev\/Stickers\/Independence%20Day\/4July_2.9.png"
+    },
+    {
+      "asset_ref" : "testtemplates__4thpng2",
+      "id" : "pngframe-testtemplates__4thpng2",
+      "type" : "frame",
+      "url" : "https:\/\/photocollagemaker.john4shine.workers.dev\/PNGTemplates\/TestTemplates\/4thpng2.png"
+    }
+  ],
+  "editor" : {
+    "divider_positions" : {
+
+    },
+    "shared_vertex_positions" : {
+
+    }
+  },
+  "frame" : {
+    "category_id" : "",
+    "file_name" : "testtemplates__4thpng2",
+    "id" : "pngframe-testtemplates__4thpng2",
+    "is_premium" : false,
+    "name" : "testtemplates__4thpng2",
+    "opacity" : 1,
+    "source" : "bundle"
+  },
+  "layout" : {
+    "category" : "PNGFrame",
+    "dividers" : [
+
+    ],
+    "id" : "png-frame-0F46C798",
+    "isPremium" : false,
+    "name" : "PNG Frame",
+    "shared_vertices" : [
+
+    ],
+    "slots" : [
+      {
+        "id" : "pngframe-slot-0",
+        "n_rect" : [
+          0.2206411875,
+          0.1533201875,
+          0.558716625,
+          0.48730462500000005
+        ]
+      }
+    ],
+    "type" : "pngFrame"
+  },
+  "stickers" : [
+    {
+      "id" : "C6DEBC24-AF9B-4168-A7E1-0C457025F3F8",
+      "image_name" : "independence_day__4july_2_9",
+      "n_position_x" : 0.5,
+      "n_position_y" : 0.7691411966677923,
+      "offset_height" : 191.3892954082079,
+      "offset_width" : 0,
+      "placement_kind" : "sticker",
+      "rotation_radians" : 0,
+      "scale" : 2.373257909159972,
+      "z_index" : 88
+    }
+  ],
+  "version" : "1"
+}

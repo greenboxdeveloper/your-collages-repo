@@ -1,0 +1,179 @@
+{
+  "chrome" : {
+    "background_color_rgba" : [
+      1,
+      1,
+      1,
+      1
+    ],
+    "background_hazy_blur_radius" : 48,
+    "background_image_name" : "4th_july_pack_01__4thjuly_1_5_jpg",
+    "border_color_rgba" : [
+      1,
+      1,
+      1,
+      1
+    ],
+    "border_corner_radius" : 0,
+    "border_width" : 20,
+    "canvas_aspect" : 0.5625,
+    "canvas_ratio_preset" : "9:16",
+    "editor_canvas_min_side" : 400,
+    "has_background_image" : true
+  },
+  "dependencies" : [
+    {
+      "asset_ref" : "4thJuly 1.5.jpg",
+      "id" : "4th_july_pack_01__4thjuly_1_5_jpg",
+      "type" : "background",
+      "url" : "https:\/\/photocollagemaker.john4shine.workers.dev\/Backgrounds\/4th%20July%20Pack%2001\/4thJuly%201.5.jpg"
+    },
+    {
+      "asset_ref" : "Polaroid5.1_W.png",
+      "id" : "polaroidframe__polaroid5_1_w",
+      "type" : "sticker",
+      "url" : "https:\/\/photocollagemaker.john4shine.workers.dev\/PolaroidFrame\/Polaroid5.1_W.png"
+    },
+    {
+      "id" : "Baskerville-Bold",
+      "type" : "font"
+    }
+  ],
+  "editor" : {
+    "divider_positions" : {
+
+    },
+    "shared_vertex_positions" : {
+
+    }
+  },
+  "layout" : {
+    "category" : "TemplateBuilder",
+    "dividers" : [
+
+    ],
+    "id" : "template-builder-B9EAA7B3",
+    "isPremium" : false,
+    "name" : "Template builder",
+    "shared_vertices" : [
+
+    ],
+    "slots" : [
+
+    ],
+    "type" : "grid"
+  },
+  "stickers" : [
+    {
+      "id" : "FE175ACE-9853-4F8E-9D2B-9833C48A151D",
+      "image_name" : "polaroidframe__polaroid5_1_w",
+      "is_transform_locked" : true,
+      "linked_canvas_photo_id" : "A5E3E6A8-6257-48D7-867D-2AE1038F225E",
+      "n_position_x" : 0.3433835845896147,
+      "n_position_y" : 0.5,
+      "offset_height" : 0,
+      "offset_width" : -62.646566164154116,
+      "placement_kind" : "sticker",
+      "rotation_radians" : 0,
+      "scale" : 4.1981426432622415,
+      "z_index" : 255
+    },
+    {
+      "hole_n_rect" : [
+        0.075881,
+        0.027344,
+        0.848238,
+        0.305664
+      ],
+      "id" : "A5E3E6A8-6257-48D7-867D-2AE1038F225E",
+      "inner_offset_height" : 0,
+      "inner_offset_width" : 0,
+      "inner_scale" : 1,
+      "n_position_x" : 0.3433835845896147,
+      "n_position_y" : 0.5,
+      "offset_height" : 0,
+      "offset_width" : -62.646566164154116,
+      "parent_frame_sticker_id" : "FE175ACE-9853-4F8E-9D2B-9833C48A151D",
+      "placement_kind" : "canvas_photo",
+      "rotation_radians" : 0,
+      "scale" : 4.1981426432622415,
+      "z_index" : 255
+    },
+    {
+      "hole_n_rect" : [
+        0.075881,
+        0.34668,
+        0.848238,
+        0.30664100000000005
+      ],
+      "id" : "24406B65-AA70-43ED-BE11-EEBCAB936C88",
+      "inner_offset_height" : 0,
+      "inner_offset_width" : 0,
+      "inner_scale" : 1,
+      "n_position_x" : 0.3433835845896147,
+      "n_position_y" : 0.5,
+      "offset_height" : 0,
+      "offset_width" : -62.646566164154116,
+      "parent_frame_sticker_id" : "FE175ACE-9853-4F8E-9D2B-9833C48A151D",
+      "placement_kind" : "canvas_photo",
+      "rotation_radians" : 0,
+      "scale" : 4.1981426432622415,
+      "z_index" : 255
+    },
+    {
+      "hole_n_rect" : [
+        0.075881,
+        0.666992,
+        0.848238,
+        0.30566399999999994
+      ],
+      "id" : "6BCDDAAE-E935-45DC-9E4C-7419ACF062E2",
+      "inner_offset_height" : 0,
+      "inner_offset_width" : 0,
+      "inner_scale" : 1,
+      "is_transform_locked" : true,
+      "n_position_x" : 0.3433835845896147,
+      "n_position_y" : 0.5,
+      "offset_height" : 0,
+      "offset_width" : -62.646566164154116,
+      "parent_frame_sticker_id" : "FE175ACE-9853-4F8E-9D2B-9833C48A151D",
+      "placement_kind" : "canvas_photo",
+      "rotation_radians" : 0,
+      "scale" : 4.1981426432622415,
+      "z_index" : 255
+    }
+  ],
+  "text_items" : [
+    {
+      "alignment" : "center",
+      "backgroundColorHex" : "#00000000",
+      "backgroundOpacity" : 1,
+      "cornerRadius" : 8,
+      "fontName" : "Baskerville-Bold",
+      "fontSize" : 30,
+      "id" : "8698176B-32AB-445C-9242-98101D633883",
+      "layoutCanvasMinSide" : 398,
+      "letterSpacing" : 0,
+      "lineSpacing" : 0,
+      "nPosition" : [
+        0.7562814070351758,
+        0.49999999999999994
+      ],
+      "outlineColorHex" : "#FF3B30",
+      "outlineOpacity" : 1,
+      "outlineWidth" : 1,
+      "renderedHeight" : 47.879396984924625,
+      "renderedWidth" : 125.30935929648241,
+      "rotation" : 90,
+      "scale" : 2.1826654141291137,
+      "shadowColorHex" : "#00000000",
+      "shadowRadius" : 0,
+      "text" : "Independence Day",
+      "textCase" : "none",
+      "textColorHex" : "#002E7AFF",
+      "textOpacity" : 1,
+      "zIndex" : 253
+    }
+  ],
+  "version" : "1"
+}
