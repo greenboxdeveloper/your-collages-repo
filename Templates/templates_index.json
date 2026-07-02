@@ -1,5 +1,5 @@
 {
-  "version": "5.1",
+  "version": "5.2",
   "templates": [
     {
       "id": "4th_july__4th_1",
@@ -38,6 +38,26 @@
       "category_folder": "4th July",
       "recipe": "4th 12.json",
       "preview": "4th 12.jpg",
+      "is_premium": true,
+      "neutral_empty_slots": true
+    },
+    {
+      "id": "4th_july__4th_13",
+      "title": "4Th 13",
+      "category": "4Th July",
+      "category_folder": "4th July",
+      "recipe": "4th 13.json",
+      "preview": "4th 13.jpg",
+      "is_premium": true,
+      "neutral_empty_slots": true
+    },
+    {
+      "id": "4th_july__4th_14",
+      "title": "4Th 14",
+      "category": "4Th July",
+      "category_folder": "4th July",
+      "recipe": "4th 14.json",
+      "preview": "4th 14.jpg",
       "is_premium": true,
       "neutral_empty_slots": true
     },
