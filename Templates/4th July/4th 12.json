@@ -1,0 +1,174 @@
+{
+  "chrome" : {
+    "background_color_rgba" : [
+      0.047058823529411764,
+      0.12156862745098039,
+      0.23921568627450981,
+      1
+    ],
+    "background_hazy_blur_radius" : 48,
+    "border_color_rgba" : [
+      1,
+      1,
+      1,
+      1
+    ],
+    "border_corner_radius" : 0,
+    "border_width" : 20,
+    "canvas_aspect" : 1,
+    "canvas_ratio_preset" : "1:1",
+    "editor_canvas_min_side" : 400,
+    "has_background_image" : false
+  },
+  "dependencies" : [
+    {
+      "asset_ref" : "Polaroid3.3_W.png",
+      "id" : "polaroidframe__polaroid3_3_w",
+      "type" : "sticker",
+      "url" : "https:\/\/photocollagemaker.john4shine.workers.dev\/PolaroidFrame\/Polaroid3.3_W.png"
+    },
+    {
+      "id" : "file:\/\/\/var\/mobile\/Containers\/Data\/Application\/F5E693B1-AC82-47B5-AD14-9EFBB732FF44\/Documents\/MyCollageProjects\/E3C23DC5-7921-49F5-B720-60403C1AAEC2_overlays\/sticker_canvas_76578B4F-5B6F-4C26-A901-AAC61FDB6C10.jpg",
+      "type" : "sticker"
+    },
+    {
+      "id" : "file:\/\/\/var\/mobile\/Containers\/Data\/Application\/F5E693B1-AC82-47B5-AD14-9EFBB732FF44\/Documents\/MyCollageProjects\/E3C23DC5-7921-49F5-B720-60403C1AAEC2_overlays\/sticker_canvas_30FAD284-09C0-4702-A6A7-6FDBEAF8515A.jpg",
+      "type" : "sticker"
+    },
+    {
+      "asset_ref" : "4July_1.10.png",
+      "id" : "4th_of_july__4july_1_10",
+      "type" : "sticker",
+      "url" : "https:\/\/photocollagemaker.john4shine.workers.dev\/Stickers\/4th%20of%20July\/4July_1.10.png"
+    },
+    {
+      "asset_ref" : "4July_1.13.png",
+      "id" : "4th_of_july__4july_1_13",
+      "type" : "sticker",
+      "url" : "https:\/\/photocollagemaker.john4shine.workers.dev\/Stickers\/4th%20of%20July\/4July_1.13.png"
+    }
+  ],
+  "editor" : {
+    "divider_positions" : {
+
+    },
+    "shared_vertex_positions" : {
+
+    }
+  },
+  "layout" : {
+    "category" : "TemplateBuilder",
+    "dividers" : [
+
+    ],
+    "id" : "template-builder-08C15C3B",
+    "isPremium" : false,
+    "name" : "Template builder",
+    "shared_vertices" : [
+
+    ],
+    "slots" : [
+
+    ],
+    "type" : "grid"
+  },
+  "stickers" : [
+    {
+      "hole_n_rect" : [
+        0.09281,
+        0.05957,
+        0.8274509999999999,
+        0.783203
+      ],
+      "id" : "3FC79430-E5D7-4348-8D5B-83232AC0C165",
+      "image_name" : "polaroidframe__polaroid3_3_w",
+      "is_transform_locked" : true,
+      "linked_canvas_photo_id" : "76578B4F-5B6F-4C26-A901-AAC61FDB6C10",
+      "n_position_x" : 0.6767169179229482,
+      "n_position_y" : 0.5820770519262978,
+      "offset_height" : 32.83082077051911,
+      "offset_width" : 70.68676716917928,
+      "placement_kind" : "sticker",
+      "rotation_radians" : 0,
+      "scale" : 1.5941785041731276,
+      "z_index" : 334
+    },
+    {
+      "id" : "76578B4F-5B6F-4C26-A901-AAC61FDB6C10",
+      "image_name" : "file:\/\/\/var\/mobile\/Containers\/Data\/Application\/F5E693B1-AC82-47B5-AD14-9EFBB732FF44\/Documents\/MyCollageProjects\/E3C23DC5-7921-49F5-B720-60403C1AAEC2_overlays\/sticker_canvas_76578B4F-5B6F-4C26-A901-AAC61FDB6C10.jpg",
+      "inner_offset_height" : 0,
+      "inner_offset_width" : 0,
+      "inner_scale" : 1,
+      "n_position_x" : 0.6767169179229482,
+      "n_position_y" : 0.5820770519262978,
+      "offset_height" : 32.83082077051911,
+      "offset_width" : 70.68676716917928,
+      "parent_frame_sticker_id" : "3FC79430-E5D7-4348-8D5B-83232AC0C165",
+      "placement_kind" : "canvas_photo",
+      "rotation_radians" : 0,
+      "scale" : 1.5941785041731276,
+      "z_index" : 334
+    },
+    {
+      "hole_n_rect" : [
+        0.09281,
+        0.05957,
+        0.8274509999999999,
+        0.783203
+      ],
+      "id" : "262063D6-E113-4A0D-BF91-2D924D9E21CF",
+      "image_name" : "polaroidframe__polaroid3_3_w",
+      "is_transform_locked" : true,
+      "linked_canvas_photo_id" : "30FAD284-09C0-4702-A6A7-6FDBEAF8515A",
+      "n_position_x" : 0.3609715242881071,
+      "n_position_y" : 0.4313232830820767,
+      "offset_height" : -27.470686767169326,
+      "offset_width" : -55.611390284757164,
+      "placement_kind" : "sticker",
+      "rotation_radians" : -0.13553611878295888,
+      "scale" : 1.723396651499536,
+      "z_index" : 330
+    },
+    {
+      "id" : "30FAD284-09C0-4702-A6A7-6FDBEAF8515A",
+      "image_name" : "file:\/\/\/var\/mobile\/Containers\/Data\/Application\/F5E693B1-AC82-47B5-AD14-9EFBB732FF44\/Documents\/MyCollageProjects\/E3C23DC5-7921-49F5-B720-60403C1AAEC2_overlays\/sticker_canvas_30FAD284-09C0-4702-A6A7-6FDBEAF8515A.jpg",
+      "inner_offset_height" : 0,
+      "inner_offset_width" : 0,
+      "inner_scale" : 1,
+      "n_position_x" : 0.3609715242881071,
+      "n_position_y" : 0.4313232830820767,
+      "offset_height" : -27.470686767169326,
+      "offset_width" : -55.611390284757164,
+      "parent_frame_sticker_id" : "262063D6-E113-4A0D-BF91-2D924D9E21CF",
+      "placement_kind" : "canvas_photo",
+      "rotation_radians" : -0.13553611878295888,
+      "scale" : 1.723396651499536,
+      "z_index" : 330
+    },
+    {
+      "id" : "9228AFF3-1E1F-4319-91F4-AC4CBBD96EAC",
+      "image_name" : "4th_of_july__4july_1_10",
+      "n_position_x" : 0.1515912897822445,
+      "n_position_y" : 0.8350083752093802,
+      "offset_height" : 134.00335008375208,
+      "offset_width" : -139.3634840871022,
+      "placement_kind" : "sticker",
+      "rotation_radians" : -0.4566759421247798,
+      "scale" : 1.803744016552663,
+      "z_index" : 545
+    },
+    {
+      "id" : "907B14D5-A6AF-4F67-9346-5C9A0FEC13BC",
+      "image_name" : "4th_of_july__4july_1_13",
+      "n_position_x" : 0.7747068676716917,
+      "n_position_y" : 0.14740368509212726,
+      "offset_height" : -141.03852596314908,
+      "offset_width" : 109.8827470686767,
+      "placement_kind" : "sticker",
+      "rotation_radians" : 0.3622388294249923,
+      "scale" : 2.0107287854484954,
+      "z_index" : 448
+    }
+  ],
+  "version" : "1"
+}
