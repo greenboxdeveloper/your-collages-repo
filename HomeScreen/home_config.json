@@ -1,5 +1,5 @@
 {
-  "version": "15.8",
+  "version": "15.9",
   "sections": [
     {
       "id": "slideshow",
@@ -93,6 +93,15 @@
       "count": 12
     },
     {
+      "id": "templates_4th_july",
+      "title": "4Th July",
+      "subtitle": "",
+      "display_size": "small",
+      "category": "templates",
+      "sub_category": "4th July",
+      "count": 8
+    },
+    {
       "id": "templates_birthday",
       "title": "Birthday",
       "subtitle": "",
@@ -117,15 +126,6 @@
       "display_size": "small",
       "category": "templates",
       "sub_category": "Fathers Day",
-      "count": 8
-    },
-    {
-      "id": "templates_holiday",
-      "title": "Holiday",
-      "subtitle": "",
-      "display_size": "small",
-      "category": "templates",
-      "sub_category": "Holiday",
       "count": 8
     },
     {

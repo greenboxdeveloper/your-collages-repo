@@ -1,6 +1,56 @@
 {
-  "version": "4.7",
+  "version": "4.8",
   "templates": [
+    {
+      "id": "4th_july__4th_1",
+      "title": "4Th 1",
+      "category": "4Th July",
+      "category_folder": "4th July",
+      "recipe": "4th 1.json",
+      "preview": "4th 1.jpg",
+      "is_premium": true,
+      "neutral_empty_slots": true
+    },
+    {
+      "id": "4th_july__4th_2",
+      "title": "4Th 2",
+      "category": "4Th July",
+      "category_folder": "4th July",
+      "recipe": "4th 2.json",
+      "preview": "4th 2.jpg",
+      "is_premium": true,
+      "neutral_empty_slots": true
+    },
+    {
+      "id": "4th_july__4th_3",
+      "title": "4Th 3",
+      "category": "4Th July",
+      "category_folder": "4th July",
+      "recipe": "4th 3.json",
+      "preview": "4th 3.jpg",
+      "is_premium": true,
+      "neutral_empty_slots": true
+    },
+    {
+      "id": "4th_july__4th_4",
+      "title": "4Th 4",
+      "category": "4Th July",
+      "category_folder": "4th July",
+      "recipe": "4th 4.json",
+      "preview": "4th 4.jpg",
+      "is_premium": true,
+      "neutral_empty_slots": true
+    },
+    {
+      "id": "4th_july__4th_5",
+      "title": "4Th 5",
+      "category": "4Th July",
+      "category_folder": "4th July",
+      "recipe": "4th 5.json",
+      "preview": "4th 5.jpg",
+      "is_premium": true,
+      "neutral_empty_slots": true
+    },
     {
       "id": "birthday__birthday_01",
       "title": "Birthday 01",
