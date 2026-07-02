@@ -1,5 +1,5 @@
 {
-  "version": "2.6",
+  "version": "2.7",
   "categories": [
     {
       "id": "4th_july_pack_01",
@@ -77,6 +77,22 @@
           "source": "ota",
           "colorHex": null,
           "fileName": "4thJuly 1.8.jpg"
+        }
+      ]
+    },
+    {
+      "id": "bulk",
+      "name": "Bulk",
+      "remoteFolderName": "Bulk",
+      "backgrounds": [
+        {
+          "id": "bulk__denim_png",
+          "name": "Denim",
+          "isPremium": false,
+          "kind": "image",
+          "source": "ota",
+          "colorHex": null,
+          "fileName": "denim.png"
         }
       ]
     },
