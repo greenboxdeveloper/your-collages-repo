@@ -1,5 +1,5 @@
 {
-  "version": "3.8",
+  "version": "3.9",
   "categories": [
     {
       "id": "testtemplates",
@@ -29,6 +29,24 @@
               "width": 0.480769,
               "height": 0.308594,
               "areaFraction": 0.125376,
+              "source": "transparency"
+            }
+          ]
+        },
+        {
+          "id": "testtemplates__4thpng2",
+          "name": "4Thpng2",
+          "fileName": "4thpng2",
+          "isPremium": false,
+          "holeCount": 1,
+          "fileExtension": "png",
+          "precomputedSlots": [
+            {
+              "x": 0.225524,
+              "y": 0.158203,
+              "width": 0.548951,
+              "height": 0.477539,
+              "areaFraction": 0.25161,
               "source": "transparency"
             }
           ]
