@@ -1,5 +1,5 @@
 {
-  "version": "4.8",
+  "version": "4.9",
   "templates": [
     {
       "id": "4th_july__4th_1",
@@ -48,6 +48,46 @@
       "category_folder": "4th July",
       "recipe": "4th 5.json",
       "preview": "4th 5.jpg",
+      "is_premium": true,
+      "neutral_empty_slots": true
+    },
+    {
+      "id": "4th_july__4th_6",
+      "title": "4Th 6",
+      "category": "4Th July",
+      "category_folder": "4th July",
+      "recipe": "4th 6.json",
+      "preview": "4th 6.jpg",
+      "is_premium": true,
+      "neutral_empty_slots": true
+    },
+    {
+      "id": "4th_july__4th_7",
+      "title": "4Th 7",
+      "category": "4Th July",
+      "category_folder": "4th July",
+      "recipe": "4th 7.json",
+      "preview": "4th 7.jpg",
+      "is_premium": true,
+      "neutral_empty_slots": true
+    },
+    {
+      "id": "4th_july__4th_july_8",
+      "title": "4Th July 8",
+      "category": "4Th July",
+      "category_folder": "4th July",
+      "recipe": "4th July 8.json",
+      "preview": "4th July 8.jpg",
+      "is_premium": true,
+      "neutral_empty_slots": true
+    },
+    {
+      "id": "4th_july__4th_july_9",
+      "title": "4Th July 9",
+      "category": "4Th July",
+      "category_folder": "4th July",
+      "recipe": "4th July 9.json",
+      "preview": "4th July 9.jpg",
       "is_premium": true,
       "neutral_empty_slots": true
     },
