@@ -1,0 +1,400 @@
+{
+  "chrome" : {
+    "background_color_rgba" : [
+      1,
+      1,
+      1,
+      1
+    ],
+    "background_hazy_blur_radius" : 48,
+    "border_color_rgba" : [
+      1,
+      1,
+      1,
+      1
+    ],
+    "border_corner_radius" : 0,
+    "border_width" : 51.45161151885986,
+    "canvas_aspect" : 1,
+    "canvas_ratio_preset" : "1:1",
+    "editor_canvas_min_side" : 400,
+    "has_background_image" : false
+  },
+  "dependencies" : [
+    {
+      "asset_ref" : "Flaemische Kanzleischrift_a.ttf",
+      "id" : "FlaemischeKanzleischrift",
+      "type" : "font",
+      "url" : "https:\/\/photocollagemaker.john4shine.workers.dev\/Fonts\/English\/Flaemische%20Kanzleischrift_a.ttf"
+    }
+  ],
+  "editor" : {
+    "divider_positions" : {
+
+    },
+    "shared_vertex_positions" : {
+
+    }
+  },
+  "layout" : {
+    "category" : "Classic",
+    "dividers" : [
+      {
+        "affects" : [
+          "slot_0",
+          "slot_1",
+          "slot_2",
+          "slot_3"
+        ],
+        "id" : "DRAG_V_0",
+        "position" : 0.5,
+        "segment_end" : 1,
+        "segment_start" : 0,
+        "type" : "vertical"
+      },
+      {
+        "affects" : [
+          "slot_0",
+          "slot_1",
+          "slot_2",
+          "slot_3"
+        ],
+        "id" : "DRAG_H_1",
+        "position" : 0.5,
+        "segment_end" : 1,
+        "segment_start" : 0,
+        "type" : "horizontal"
+      }
+    ],
+    "id" : "classic_4",
+    "isPremium" : false,
+    "name" : "Collage 4",
+    "shared_vertices" : [
+
+    ],
+    "slots" : [
+      {
+        "id" : "slot_0",
+        "n_rect" : [
+          0,
+          0,
+          0.5,
+          0.5
+        ]
+      },
+      {
+        "id" : "slot_1",
+        "n_rect" : [
+          0.5,
+          0,
+          0.5,
+          0.5
+        ]
+      },
+      {
+        "id" : "slot_2",
+        "n_rect" : [
+          0,
+          0.5,
+          0.5,
+          0.5
+        ]
+      },
+      {
+        "id" : "slot_3",
+        "n_rect" : [
+          0.5,
+          0.5,
+          0.5,
+          0.5
+        ]
+      }
+    ],
+    "type" : "grid"
+  },
+  "shapes" : [
+    {
+      "fill_color_rgba" : [
+        0.1392059326171875,
+        0.190185546875,
+        0.3744964599609375,
+        1
+      ],
+      "id" : "60C2C964-B964-4151-8442-2ACFF747C760",
+      "kind" : "star",
+      "n_position_x" : 0.5661641541038526,
+      "n_position_y" : 0.2236180904522614,
+      "offset_height" : -110.55276381909545,
+      "offset_width" : 26.465661641541026,
+      "opacity" : 1,
+      "rotation_radians" : 0.0815809094068325,
+      "scale" : 0.4227812122975084,
+      "scale_y" : 0.7547169811320761,
+      "stroke_color_rgba" : [
+        0,
+        0,
+        0,
+        0
+      ],
+      "stroke_width" : 0,
+      "z_index" : 680
+    },
+    {
+      "fill_color_rgba" : [
+        0.1392059326171875,
+        0.190185546875,
+        0.3744964599609375,
+        1
+      ],
+      "id" : "A38B572B-676C-4E58-89F6-CA5815053D30",
+      "kind" : "star",
+      "n_position_x" : 0.9280586962482973,
+      "n_position_y" : 0.38164864633417334,
+      "offset_height" : -47.34054146633066,
+      "offset_width" : 171.2234784993189,
+      "opacity" : 1,
+      "rotation_radians" : 0.0815809094068325,
+      "scale" : 0.4227812122975084,
+      "scale_x" : 0.18160839766998413,
+      "scale_y" : 0.7547169811320761,
+      "stroke_color_rgba" : [
+        0,
+        0,
+        0,
+        0
+      ],
+      "stroke_width" : 0,
+      "z_index" : 1180
+    },
+    {
+      "fill_color_rgba" : [
+        0.1392059326171875,
+        0.190185546875,
+        0.3744964599609375,
+        1
+      ],
+      "id" : "2AC89FD0-6E4C-4C5A-9272-F6E168EE2104",
+      "kind" : "star",
+      "n_position_x" : 0.9680903719133978,
+      "n_position_y" : 0.29584589425492414,
+      "offset_height" : -81.66164229803034,
+      "offset_width" : 187.2361487653591,
+      "opacity" : 1,
+      "rotation_radians" : 0.0815809094068325,
+      "scale" : 0.4227812122975084,
+      "scale_y" : 0.009980138670605916,
+      "stroke_color_rgba" : [
+        0,
+        0,
+        0,
+        0
+      ],
+      "stroke_width" : 0,
+      "z_index" : 1620
+    },
+    {
+      "fill_color_rgba" : [
+        0.9019607843137255,
+        0.17254901960784313,
+        0.29411764705882354,
+        1
+      ],
+      "id" : "173C25B7-8D27-4440-B01D-0846783F2DD4",
+      "kind" : "star",
+      "n_position_x" : 0.5736260228579375,
+      "n_position_y" : 0.4113927219395788,
+      "offset_height" : -35.44291122416847,
+      "offset_width" : 29.450409143175005,
+      "opacity" : 1,
+      "rotation_radians" : 0,
+      "scale" : 0.12644585639413122,
+      "scale_x" : 3.5367525877432424,
+      "scale_y" : 1.1429286690973293,
+      "stroke_color_rgba" : [
+        0,
+        0,
+        0,
+        0
+      ],
+      "stroke_width" : 0,
+      "z_index" : 1420
+    },
+    {
+      "fill_color_rgba" : [
+        0.9019607843137255,
+        0.17254901960784313,
+        0.29411764705882354,
+        1
+      ],
+      "id" : "C6BEFBC7-71C0-4F9E-B9B6-ECBF0382EF18",
+      "kind" : "star",
+      "n_position_x" : 0.5559009637264193,
+      "n_position_y" : 0.08178687977619437,
+      "offset_height" : -167.28524808952224,
+      "offset_width" : 22.360385490567715,
+      "opacity" : 1,
+      "rotation_radians" : 0,
+      "scale" : 0.12644585639413122,
+      "scale_x" : 3.5367525877432424,
+      "scale_y" : 1.836977560268094,
+      "stroke_color_rgba" : [
+        0,
+        0,
+        0,
+        0
+      ],
+      "stroke_width" : 0,
+      "z_index" : 1360
+    },
+    {
+      "fill_color_rgba" : [
+        0.9019607843137255,
+        0.17254901960784313,
+        0.29411764705882354,
+        1
+      ],
+      "id" : "F577EF0C-121E-4613-BC8F-BD2A28478B23",
+      "kind" : "star",
+      "n_position_x" : 0.9156971479081668,
+      "n_position_y" : 0.44949903093823745,
+      "offset_height" : -20.20038762470502,
+      "offset_width" : 166.27885916326673,
+      "opacity" : 1,
+      "rotation_radians" : 0,
+      "scale" : 0.12644585639413122,
+      "scale_x" : 3.5367525877432424,
+      "scale_y" : 2.3047770630889697,
+      "stroke_color_rgba" : [
+        0,
+        0,
+        0,
+        0
+      ],
+      "stroke_width" : 0,
+      "z_index" : 1387
+    },
+    {
+      "fill_color_rgba" : [
+        0.9019607843137255,
+        0.17254901960784313,
+        0.29411764705882354,
+        1
+      ],
+      "id" : "3CDB17B4-D0C4-46C1-B15E-FC2012CE16FE",
+      "kind" : "star",
+      "n_position_x" : 0.9440990362735808,
+      "n_position_y" : 0.06998109310727324,
+      "offset_height" : -172.0075627570907,
+      "offset_width" : 177.63961450943233,
+      "opacity" : 1,
+      "rotation_radians" : 0,
+      "scale" : 0.12644585639413122,
+      "scale_x" : 1.9228482653056331,
+      "scale_y" : 2.9120644142222396,
+      "stroke_color_rgba" : [
+        0,
+        0,
+        0,
+        0
+      ],
+      "stroke_width" : 0,
+      "z_index" : 1323
+    }
+  ],
+  "text_items" : [
+    {
+      "alignment" : "center",
+      "backgroundColorHex" : "#00000000",
+      "backgroundOpacity" : 1,
+      "cornerRadius" : 8,
+      "fontName" : "FlaemischeKanzleischrift",
+      "fontSize" : 30,
+      "id" : "CE20D908-C782-4B4E-8DA2-3208648C3EB1",
+      "isUserProContent" : false,
+      "layoutCanvasMinSide" : 398,
+      "letterSpacing" : 0,
+      "lineSpacing" : 0,
+      "nPosition" : [
+        0.7286432160804021,
+        0.08542713567839205
+      ],
+      "outlineColorHex" : "#000000",
+      "outlineOpacity" : 1,
+      "outlineWidth" : 0,
+      "renderedHeight" : 47.879396984924625,
+      "renderedWidth" : 396.0025125628141,
+      "rotation" : -1.4654943925052066e-14,
+      "scale" : 1.9602637064302342,
+      "shadowColorHex" : "#00000000",
+      "shadowRadius" : 0,
+      "text" : "Happy",
+      "textCase" : "none",
+      "textColorHex" : "#FF3B30",
+      "textOpacity" : 1,
+      "zIndex" : 230
+    },
+    {
+      "alignment" : "center",
+      "backgroundColorHex" : "#00000000",
+      "backgroundOpacity" : 1,
+      "cornerRadius" : 8,
+      "fontName" : "FlaemischeKanzleischrift",
+      "fontSize" : 30,
+      "id" : "C56880A7-B3EB-4FA1-8BB7-3A9728945BF2",
+      "isUserProContent" : false,
+      "layoutCanvasMinSide" : 398,
+      "letterSpacing" : 0,
+      "lineSpacing" : 0,
+      "nPosition" : [
+        0.739431691731958,
+        0.3978604082690941
+      ],
+      "outlineColorHex" : "#000000",
+      "outlineOpacity" : 1,
+      "outlineWidth" : 0,
+      "renderedHeight" : 47.879396984924625,
+      "renderedWidth" : 396.0025125628141,
+      "rotation" : -2.042810365310288e-14,
+      "scale" : 1.682406952092297,
+      "shadowColorHex" : "#00000000",
+      "shadowRadius" : 0,
+      "text" : "July",
+      "textCase" : "none",
+      "textColorHex" : "#FF3B30",
+      "textOpacity" : 1,
+      "zIndex" : 228
+    },
+    {
+      "alignment" : "center",
+      "backgroundColorHex" : "#00000000",
+      "backgroundOpacity" : 1,
+      "cornerRadius" : 8,
+      "fontName" : "FlaemischeKanzleischrift",
+      "fontSize" : 37.24087619781494,
+      "id" : "446B33D2-FC4A-49D5-BA83-03516544DA54",
+      "isUserProContent" : false,
+      "layoutCanvasMinSide" : 398,
+      "letterSpacing" : -1.8358665704727173,
+      "lineSpacing" : 0,
+      "nPosition" : [
+        0.7290553958651075,
+        0.2397275862608773
+      ],
+      "outlineColorHex" : "#000000",
+      "outlineOpacity" : 1,
+      "outlineWidth" : 0,
+      "renderedHeight" : 56.52428810720268,
+      "renderedWidth" : 396.0025125628141,
+      "rotation" : 0,
+      "scale" : 2.0908317135264087,
+      "shadowColorHex" : "#00000000",
+      "shadowRadius" : 0,
+      "text" : "4th of",
+      "textCase" : "none",
+      "textColorHex" : "#010049FF",
+      "textOpacity" : 1,
+      "zIndex" : 231
+    }
+  ],
+  "version" : "1"
+}

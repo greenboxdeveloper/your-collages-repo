@@ -1,0 +1,151 @@
+{
+  "chrome" : {
+    "background_color_rgba" : [
+      1,
+      1,
+      1,
+      1
+    ],
+    "background_hazy_blur_radius" : 48,
+    "border_color_rgba" : [
+      1,
+      1,
+      1,
+      1
+    ],
+    "border_corner_radius" : 1.8373485654592514,
+    "border_width" : 52.70609259605408,
+    "canvas_aspect" : 0.5625,
+    "canvas_ratio_preset" : "9:16",
+    "editor_canvas_min_side" : 400,
+    "has_background_image" : false
+  },
+  "dependencies" : [
+    {
+      "asset_ref" : "4July_1.3.png",
+      "id" : "4th_of_july__4july_1_3",
+      "type" : "sticker",
+      "url" : "https:\/\/photocollagemaker.john4shine.workers.dev\/Stickers\/4th%20of%20July\/4July_1.3.png"
+    }
+  ],
+  "editor" : {
+    "divider_positions" : {
+
+    },
+    "shared_vertex_positions" : {
+
+    },
+    "slot_layout_offsets" : {
+      "1" : [
+        -93,
+        203
+      ]
+    },
+    "slot_layout_rotation_degrees" : {
+      "1" : 0
+    },
+    "slot_layout_scale_y" : {
+      "1" : 0.5606830792323032
+    },
+    "slot_layout_scales" : {
+      "1" : 1.2155393883153578
+    },
+    "slot_layout_z_order" : [
+      0,
+      2,
+      3,
+      1
+    ]
+  },
+  "layout" : {
+    "category" : "Classic",
+    "dividers" : [
+      {
+        "affects" : [
+          "slot_0",
+          "slot_1",
+          "slot_2",
+          "slot_3"
+        ],
+        "id" : "DRAG_V_0",
+        "position" : 0.5,
+        "segment_end" : 1,
+        "segment_start" : 0,
+        "type" : "vertical"
+      },
+      {
+        "affects" : [
+          "slot_0",
+          "slot_1",
+          "slot_2",
+          "slot_3"
+        ],
+        "id" : "DRAG_H_1",
+        "position" : 0.5,
+        "segment_end" : 1,
+        "segment_start" : 0,
+        "type" : "horizontal"
+      }
+    ],
+    "id" : "classic_4",
+    "isPremium" : false,
+    "name" : "Collage 4",
+    "shared_vertices" : [
+
+    ],
+    "slots" : [
+      {
+        "id" : "slot_0",
+        "n_rect" : [
+          0,
+          0,
+          0.5,
+          0.5
+        ]
+      },
+      {
+        "id" : "slot_1",
+        "n_rect" : [
+          0.5,
+          0,
+          0.5,
+          0.5
+        ]
+      },
+      {
+        "id" : "slot_2",
+        "n_rect" : [
+          0,
+          0.5,
+          0.5,
+          0.5
+        ]
+      },
+      {
+        "id" : "slot_3",
+        "n_rect" : [
+          0.5,
+          0.5,
+          0.5,
+          0.5
+        ]
+      }
+    ],
+    "type" : "grid"
+  },
+  "stickers" : [
+    {
+      "id" : "211586A4-1089-464F-8E67-BB708EB64668",
+      "image_name" : "4th_of_july__4july_1_3",
+      "n_position_x" : 0.7367717430023054,
+      "n_position_y" : 0.2632282569976946,
+      "offset_height" : -168.37101724608385,
+      "offset_width" : 94.70869720092216,
+      "placement_kind" : "sticker",
+      "rotation_radians" : 0.2934724151517478,
+      "scale" : 1.8941739440184435,
+      "z_index" : 217
+    }
+  ],
+  "version" : "1"
+}

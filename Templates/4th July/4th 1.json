@@ -1,0 +1,172 @@
+{
+  "chrome" : {
+    "background_color_rgba" : [
+      1,
+      1,
+      1,
+      1
+    ],
+    "background_hazy_blur_radius" : 48,
+    "background_image_name" : "4th_july_pack_01__4thjuly_1_1_jpg",
+    "border_color_rgba" : [
+      1,
+      1,
+      1,
+      1
+    ],
+    "border_corner_radius" : 0,
+    "border_width" : 20,
+    "canvas_aspect" : 0.5625,
+    "canvas_ratio_preset" : "9:16",
+    "editor_canvas_min_side" : 400,
+    "has_background_image" : true
+  },
+  "dependencies" : [
+    {
+      "asset_ref" : "4thJuly 1.1.jpg",
+      "id" : "4th_july_pack_01__4thjuly_1_1_jpg",
+      "type" : "background",
+      "url" : "https:\/\/photocollagemaker.john4shine.workers.dev\/Backgrounds\/4th%20July%20Pack%2001\/4thJuly%201.1.jpg"
+    },
+    {
+      "asset_ref" : "Polaroid4.1_W.png",
+      "id" : "polaroidframe__polaroid4_1_w",
+      "type" : "sticker",
+      "url" : "https:\/\/photocollagemaker.john4shine.workers.dev\/PolaroidFrame\/Polaroid4.1_W.png"
+    },
+    {
+      "asset_ref" : "4July_1.15.png",
+      "id" : "4th_of_july__4july_1_15",
+      "type" : "sticker",
+      "url" : "https:\/\/photocollagemaker.john4shine.workers.dev\/Stickers\/4th%20of%20July\/4July_1.15.png"
+    },
+    {
+      "asset_ref" : "4July_1.9.png",
+      "id" : "4th_of_july__4july_1_9",
+      "type" : "sticker",
+      "url" : "https:\/\/photocollagemaker.john4shine.workers.dev\/Stickers\/4th%20of%20July\/4July_1.9.png"
+    },
+    {
+      "id" : "HoeflerText-Black",
+      "type" : "font"
+    }
+  ],
+  "editor" : {
+    "divider_positions" : {
+
+    },
+    "shared_vertex_positions" : {
+
+    }
+  },
+  "layout" : {
+    "category" : "TemplateBuilder",
+    "dividers" : [
+
+    ],
+    "id" : "template-builder-43D7EA14",
+    "isPremium" : false,
+    "name" : "Template builder",
+    "shared_vertices" : [
+
+    ],
+    "slots" : [
+
+    ],
+    "type" : "grid"
+  },
+  "stickers" : [
+    {
+      "hole_n_rect" : [
+        0.066946,
+        0.046875,
+        0.866109,
+        0.706055
+      ],
+      "id" : "F3F3CA6C-4B98-4645-8353-7EE38980AE5D",
+      "image_name" : "polaroidframe__polaroid4_1_w",
+      "is_transform_locked" : true,
+      "linked_canvas_photo_id" : "0F6B7350-6F54-41A7-8D72-019C7C5F7762",
+      "n_position_x" : 0.5,
+      "n_position_y" : 0.4924623115577891,
+      "offset_height" : -5.360134003349988,
+      "offset_width" : 0,
+      "placement_kind" : "sticker",
+      "rotation_radians" : 0,
+      "scale" : 3.367720139038141,
+      "z_index" : 653
+    },
+    {
+      "id" : "0F6B7350-6F54-41A7-8D72-019C7C5F7762",
+      "inner_offset_height" : 6.5836628677989815,
+      "inner_offset_width" : 5.98978929237434,
+      "inner_scale" : 1.1500613783753864,
+      "n_position_x" : 0.5,
+      "n_position_y" : 0.4924623115577891,
+      "offset_height" : -5.360134003349988,
+      "offset_width" : 0,
+      "parent_frame_sticker_id" : "F3F3CA6C-4B98-4645-8353-7EE38980AE5D",
+      "placement_kind" : "canvas_photo",
+      "rotation_radians" : 0,
+      "scale" : 3.367720139038141,
+      "z_index" : 653
+    },
+    {
+      "id" : "8828FDED-B1D1-4BF1-B391-FF7DB5599478",
+      "image_name" : "4th_of_july__4july_1_15",
+      "n_position_x" : 0.22696817420435517,
+      "n_position_y" : 0.15609296482412066,
+      "offset_height" : -244.55611390284753,
+      "offset_width" : -109.21273031825794,
+      "placement_kind" : "sticker",
+      "rotation_radians" : -0.409253732888868,
+      "scale" : 1.6920381043733856,
+      "z_index" : 756
+    },
+    {
+      "id" : "26717FD6-DF2A-400A-995C-15C89143ACCE",
+      "image_name" : "4th_of_july__4july_1_9",
+      "n_position_x" : 0.5,
+      "n_position_y" : 0.5,
+      "offset_height" : 0,
+      "offset_width" : 0,
+      "placement_kind" : "sticker",
+      "rotation_radians" : 0,
+      "scale" : 1,
+      "z_index" : 601
+    }
+  ],
+  "text_items" : [
+    {
+      "alignment" : "center",
+      "backgroundColorHex" : "#00000000",
+      "backgroundOpacity" : 1,
+      "cornerRadius" : 8,
+      "fontName" : "HoeflerText-Black",
+      "fontSize" : 30,
+      "id" : "8C339421-4AF2-4C9F-B7E9-8F7DAB37249C",
+      "layoutCanvasMinSide" : 398,
+      "letterSpacing" : 0,
+      "lineSpacing" : 0,
+      "nPosition" : [
+        0.5108877721943048,
+        0.739321608040201
+      ],
+      "outlineColorHex" : "#FF3B30",
+      "outlineOpacity" : 1,
+      "outlineWidth" : 0.5747126340866089,
+      "renderedHeight" : 24.87484296482412,
+      "renderedWidth" : 125.30935929648241,
+      "rotation" : 2.886579864025407e-15,
+      "scale" : 2.0459278916512837,
+      "shadowColorHex" : "#00000000",
+      "shadowRadius" : 0,
+      "text" : "Happy 4th",
+      "textCase" : "none",
+      "textColorHex" : "#FFEBD3FF",
+      "textOpacity" : 1,
+      "zIndex" : 757
+    }
+  ],
+  "version" : "1"
+}

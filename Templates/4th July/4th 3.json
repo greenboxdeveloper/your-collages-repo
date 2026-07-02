@@ -1,0 +1,105 @@
+{
+  "chrome" : {
+    "background_color_rgba" : [
+      0.7058823529411765,
+      0.8196078431372549,
+      0.8745098039215686,
+      1
+    ],
+    "background_hazy_blur_radius" : 48,
+    "border_color_rgba" : [
+      1,
+      1,
+      1,
+      1
+    ],
+    "border_corner_radius" : 0,
+    "border_width" : 70.5376386642456,
+    "canvas_aspect" : 0.5625,
+    "canvas_ratio_preset" : "9:16",
+    "editor_canvas_min_side" : 400,
+    "has_background_image" : false
+  },
+  "dependencies" : [
+    {
+      "asset_ref" : "4July_2.7.png",
+      "id" : "independence_day__4july_2_7",
+      "type" : "sticker",
+      "url" : "https:\/\/photocollagemaker.john4shine.workers.dev\/Stickers\/Independence%20Day\/4July_2.7.png"
+    },
+    {
+      "asset_ref" : "4July_1.12.png",
+      "id" : "4th_of_july__4july_1_12",
+      "type" : "sticker",
+      "url" : "https:\/\/photocollagemaker.john4shine.workers.dev\/Stickers\/4th%20of%20July\/4July_1.12.png"
+    }
+  ],
+  "editor" : {
+    "divider_positions" : {
+
+    },
+    "shared_vertex_positions" : {
+
+    }
+  },
+  "layout" : {
+    "category" : "Classic",
+    "dividers" : [
+
+    ],
+    "id" : "svg_PCM_CL24",
+    "isPremium" : true,
+    "name" : "Pcm Cl24",
+    "shared_vertices" : [
+
+    ],
+    "slots" : [
+      {
+        "id" : "slot_0",
+        "n_rect" : [
+          0.5,
+          0,
+          0.5,
+          0.5
+        ]
+      },
+      {
+        "id" : "slot_1",
+        "n_rect" : [
+          -0,
+          0.5,
+          0.5,
+          0.5
+        ]
+      }
+    ],
+    "type" : "grid"
+  },
+  "stickers" : [
+    {
+      "id" : "18BB60DD-9E6B-4F8D-BDBA-95CEBB588DE8",
+      "image_name" : "independence_day__4july_2_7",
+      "n_position_x" : 0.2520938023450586,
+      "n_position_y" : 0.26046901172529335,
+      "offset_height" : -170.33314721756918,
+      "offset_width" : -99.16247906197655,
+      "placement_kind" : "sticker",
+      "rotation_radians" : 0,
+      "scale" : 1.4828034816382019,
+      "z_index" : 453
+    },
+    {
+      "id" : "A6B72FAC-8672-40B8-9175-9801BAC8C78C",
+      "image_name" : "4th_of_july__4july_1_12",
+      "n_position_x" : 0.7378559463986599,
+      "n_position_y" : 0.7914572864321608,
+      "offset_height" : 207.25851479620326,
+      "offset_width" : 95.14237855946396,
+      "placement_kind" : "sticker",
+      "rotation_radians" : 0.4118448424169448,
+      "scale" : 1.5399745787185548,
+      "z_index" : 204
+    }
+  ],
+  "version" : "1"
+}
