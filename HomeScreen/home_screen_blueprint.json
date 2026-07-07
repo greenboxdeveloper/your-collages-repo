@@ -32,7 +32,13 @@
       "pack": "4th July",
       "count": 20
     },
-    
+    {
+      "title": "Looks Changed?",
+      "subtitle": "Compare phtos",
+      "display_size": "hero",
+      "store": "Templates",
+      "file": "BA5.json"
+    },
     {
       "title": "Film Looks filtes",
       "subtitle": "",
@@ -56,6 +62,14 @@
       "store": "Layouts",
       "pack": "classic",
       "count": 12
+    },
+    {
+      "title": "Before After",
+      "subtitle": "Compare before and after photos",
+      "display_size": "small",
+      "store": "Templates",
+      "pack": "Before After",
+      "count": 20
     },
     {
       "title": "Stylish Collage",
