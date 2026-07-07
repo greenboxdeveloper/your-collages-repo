@@ -1,0 +1,172 @@
+{
+  "chrome" : {
+    "background_color_rgba" : [
+      1,
+      1,
+      1,
+      1
+    ],
+    "background_hazy_blur_radius" : 48,
+    "border_color_rgba" : [
+      1,
+      1,
+      1,
+      1
+    ],
+    "border_corner_radius" : 0,
+    "border_width" : 20,
+    "canvas_aspect" : 0.5625,
+    "canvas_ratio_preset" : "9:16",
+    "editor_canvas_min_side" : 400,
+    "has_background_image" : false
+  },
+  "dependencies" : [
+    {
+      "asset_ref" : "Doodle_Arrow_12.png",
+      "id" : "Doodle_Arrow_12.png",
+      "type" : "sticker",
+      "url" : "https:\/\/photocollagemaker.john4shine.workers.dev\/Stickers\/Doodle_Arrow\/Doodle_Arrow_12.png"
+    },
+    {
+      "asset_ref" : "testtemplates__ba8pang",
+      "id" : "pngframe-testtemplates__ba8pang",
+      "type" : "frame",
+      "url" : "https:\/\/photocollagemaker.john4shine.workers.dev\/PNGTemplates\/TestTemplates\/ba8pang.png"
+    },
+    {
+      "asset_ref" : "Chrisye_PR.otf",
+      "id" : "Chrisye",
+      "type" : "font",
+      "url" : "https:\/\/photocollagemaker.john4shine.workers.dev\/Fonts\/English\/Chrisye_PR.otf"
+    }
+  ],
+  "editor" : {
+    "divider_positions" : {
+
+    },
+    "shared_vertex_positions" : {
+
+    }
+  },
+  "frame" : {
+    "category_id" : "",
+    "file_name" : "testtemplates__ba8pang",
+    "id" : "pngframe-testtemplates__ba8pang",
+    "is_premium" : false,
+    "name" : "testtemplates__ba8pang",
+    "opacity" : 1,
+    "source" : "bundle"
+  },
+  "layout" : {
+    "category" : "PNGFrame",
+    "dividers" : [
+
+    ],
+    "id" : "png-frame-3D283A15",
+    "isPremium" : false,
+    "name" : "PNG Frame",
+    "shared_vertices" : [
+
+    ],
+    "slots" : [
+      {
+        "id" : "pngframe-slot-0",
+        "n_rect" : [
+          0.5793871875,
+          0,
+          0.42061281250000004,
+          1
+        ]
+      },
+      {
+        "id" : "pngframe-slot-1",
+        "n_rect" : [
+          0,
+          0.1914061875,
+          0.4187408125,
+          0.37109362500000004
+        ]
+      }
+    ],
+    "type" : "pngFrame"
+  },
+  "stickers" : [
+    {
+      "id" : "04FCAD17-2639-494B-9A1C-E63D441D0B70",
+      "image_name" : "Doodle_Arrow_12.png",
+      "n_position_x" : 0.28371021775544386,
+      "n_position_y" : 0.674701633165829,
+      "offset_height" : 124.23227247347839,
+      "offset_width" : -86.51591289782246,
+      "placement_kind" : "sticker",
+      "rotation_radians" : 1.2973391315214484,
+      "scale" : 1.6142214935043055,
+      "z_index" : 87
+    }
+  ],
+  "text_items" : [
+    {
+      "alignment" : "center",
+      "backgroundColorHex" : "#00000000",
+      "backgroundOpacity" : 1,
+      "cornerRadius" : 8,
+      "fontName" : "Chrisye",
+      "fontSize" : 30,
+      "id" : "CB8DE414-5908-4DE2-B530-90F92EFF33C0",
+      "isUserProContent" : false,
+      "layoutCanvasMinSide" : 398,
+      "letterSpacing" : 0,
+      "lineSpacing" : 0,
+      "nPosition" : [
+        0.19011725293132326,
+        0.09338194880653272
+      ],
+      "outlineColorHex" : "#000000",
+      "outlineOpacity" : 1,
+      "outlineWidth" : 0,
+      "renderedHeight" : 24.87484296482412,
+      "renderedWidth" : 57.97895728643216,
+      "rotation" : 0,
+      "scale" : 1,
+      "shadowColorHex" : "#00000000",
+      "shadowRadius" : 0,
+      "text" : "Before",
+      "textCase" : "none",
+      "textColorHex" : "#A2CFF6FF",
+      "textOpacity" : 1,
+      "zIndex" : 10
+    },
+    {
+      "alignment" : "center",
+      "backgroundColorHex" : "#00000000",
+      "backgroundOpacity" : 1,
+      "cornerRadius" : 8,
+      "fontName" : "Chrisye",
+      "fontSize" : 30,
+      "id" : "55D769C7-6F56-45FB-81A6-CE67E131B675",
+      "isUserProContent" : false,
+      "layoutCanvasMinSide" : 398,
+      "letterSpacing" : 0,
+      "lineSpacing" : 0,
+      "nPosition" : [
+        0.7761536969914429,
+        0.8347481049133237
+      ],
+      "outlineColorHex" : "#000000",
+      "outlineOpacity" : 1,
+      "outlineWidth" : 0,
+      "renderedHeight" : 24.87484296482412,
+      "renderedWidth" : 51.80700376884422,
+      "rotation" : 0,
+      "scale" : 1,
+      "shadowColorHex" : "#00000000",
+      "shadowRadius" : 0,
+      "text" : "After",
+      "textCase" : "none",
+      "textColorHex" : "#9BD3F8FF",
+      "textOpacity" : 1,
+      "zIndex" : 9
+    }
+  ],
+  "version" : "1"
+}
