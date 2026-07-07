@@ -1,0 +1,83 @@
+{
+  "chrome" : {
+    "background_color_rgba" : [
+      1,
+      1,
+      1,
+      1
+    ],
+    "background_hazy_blur_radius" : 48,
+    "border_color_rgba" : [
+      1,
+      1,
+      1,
+      1
+    ],
+    "border_corner_radius" : 0,
+    "border_width" : 20,
+    "canvas_aspect" : 1.4403600900225055,
+    "canvas_custom_height" : 1333,
+    "canvas_custom_width" : 1920,
+    "editor_canvas_min_side" : 400,
+    "has_background_image" : false
+  },
+  "dependencies" : [
+    {
+      "asset_ref" : "testtemplates__ba7pang",
+      "id" : "pngframe-testtemplates__ba7pang",
+      "type" : "frame",
+      "url" : "https:\/\/photocollagemaker.john4shine.workers.dev\/PNGTemplates\/TestTemplates\/ba7pang.png"
+    }
+  ],
+  "editor" : {
+    "divider_positions" : {
+
+    },
+    "shared_vertex_positions" : {
+
+    }
+  },
+  "frame" : {
+    "category_id" : "",
+    "file_name" : "testtemplates__ba7pang",
+    "id" : "pngframe-testtemplates__ba7pang",
+    "is_premium" : false,
+    "name" : "testtemplates__ba7pang",
+    "opacity" : 1,
+    "source" : "bundle"
+  },
+  "layout" : {
+    "category" : "PNGFrame",
+    "dividers" : [
+
+    ],
+    "id" : "png-frame-740AFA4F",
+    "isPremium" : false,
+    "name" : "PNG Frame",
+    "shared_vertices" : [
+
+    ],
+    "slots" : [
+      {
+        "id" : "pngframe-slot-0",
+        "n_rect" : [
+          0.2382811875,
+          0.12121718749999999,
+          0.269531625,
+          0.757566625
+        ]
+      },
+      {
+        "id" : "pngframe-slot-1",
+        "n_rect" : [
+          0.4931641875,
+          0.12121718749999999,
+          0.26953162500000005,
+          0.757566625
+        ]
+      }
+    ],
+    "type" : "pngFrame"
+  },
+  "version" : "1"
+}

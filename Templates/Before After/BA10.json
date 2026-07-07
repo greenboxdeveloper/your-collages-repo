@@ -1,0 +1,469 @@
+{
+  "chrome" : {
+    "background_color_rgba" : [
+      1,
+      1,
+      1,
+      1
+    ],
+    "background_hazy_blur_radius" : 48,
+    "border_color_rgba" : [
+      1,
+      1,
+      1,
+      1
+    ],
+    "border_corner_radius" : 0,
+    "border_width" : 20,
+    "canvas_aspect" : 0.5625,
+    "canvas_ratio_preset" : "9:16",
+    "editor_canvas_min_side" : 400,
+    "has_background_image" : false
+  },
+  "dependencies" : [
+    {
+      "asset_ref" : "Polaroid3.1_W.png",
+      "id" : "polaroidframe__polaroid3_1_w",
+      "type" : "sticker",
+      "url" : "https:\/\/photocollagemaker.john4shine.workers.dev\/PolaroidFrame\/Polaroid3.1_W.png"
+    },
+    {
+      "asset_ref" : "Rhigen_PR.otf",
+      "id" : "Rhigen",
+      "type" : "font",
+      "url" : "https:\/\/photocollagemaker.john4shine.workers.dev\/Fonts\/English\/Rhigen_PR.otf"
+    },
+    {
+      "id" : "TimesNewRomanPS-ItalicMT",
+      "type" : "font"
+    },
+    {
+      "id" : "AppleSDGothicNeo-Bold",
+      "type" : "font"
+    }
+  ],
+  "editor" : {
+    "divider_positions" : {
+
+    },
+    "shared_vertex_positions" : {
+
+    }
+  },
+  "layout" : {
+    "category" : "TemplateBuilder",
+    "dividers" : [
+
+    ],
+    "id" : "template-builder-9F23A58C",
+    "isPremium" : false,
+    "name" : "Template builder",
+    "shared_vertices" : [
+
+    ],
+    "slots" : [
+
+    ],
+    "type" : "grid"
+  },
+  "shapes" : [
+    {
+      "fill_color_rgba" : [
+        1,
+        0.75,
+        0.7200000286102295,
+        1
+      ],
+      "id" : "E8250059-0D4B-48F0-9049-3640BD8B99BC",
+      "kind" : "square",
+      "n_position_x" : 0.5,
+      "n_position_y" : 0.5,
+      "offset_height" : 0,
+      "offset_width" : 0,
+      "opacity" : 1,
+      "rotation_radians" : 0,
+      "scale" : 3.600981689358684,
+      "stroke_color_rgba" : [
+        0,
+        0,
+        0,
+        0
+      ],
+      "stroke_width" : 0,
+      "z_index" : 219
+    },
+    {
+      "fill_color_rgba" : [
+        0,
+        0,
+        0,
+        1
+      ],
+      "id" : "CB0487C0-D162-4B92-8418-1A47DA597CB5",
+      "kind" : "square",
+      "n_position_x" : 0.3417085427135678,
+      "n_position_y" : 1,
+      "offset_height" : 355.55555555555554,
+      "offset_width" : -63.31658291457287,
+      "opacity" : 1,
+      "rotation_radians" : 0,
+      "scale" : 1,
+      "scale_x" : 1.7431935939707957,
+      "stroke_color_rgba" : [
+        0,
+        0,
+        0,
+        0
+      ],
+      "stroke_width" : 0,
+      "z_index" : 774
+    },
+    {
+      "fill_color_rgba" : [
+        0,
+        0,
+        0,
+        1
+      ],
+      "id" : "CECBF53B-25C7-44E2-81E0-6B20C5874EFC",
+      "kind" : "square",
+      "n_position_x" : 0.35924213821323936,
+      "n_position_y" : -0.03549507418763276,
+      "offset_height" : -380.7964972000944,
+      "offset_width" : -56.30314471470426,
+      "opacity" : 1,
+      "rotation_radians" : 0,
+      "scale" : 1,
+      "scale_x" : 1.7431935939707957,
+      "stroke_color_rgba" : [
+        0,
+        0,
+        0,
+        0
+      ],
+      "stroke_width" : 0,
+      "z_index" : 780
+    }
+  ],
+  "stickers" : [
+    {
+      "hole_n_rect" : [
+        0.058608,
+        0.046875,
+        0.882784,
+        0.90625
+      ],
+      "id" : "3B87CFAF-0256-4B21-A761-5C76DDDD5C43",
+      "image_name" : "polaroidframe__polaroid3_1_w",
+      "is_transform_locked" : true,
+      "linked_canvas_photo_id" : "A421132C-6867-4E5C-BED0-6B64494C8328",
+      "n_position_x" : 0.3500837520938025,
+      "n_position_y" : 0.3186243718592967,
+      "offset_height" : -128.97822445561124,
+      "offset_width" : -59.966499162479,
+      "placement_kind" : "sticker",
+      "rotation_radians" : 3.565376686853268e-16,
+      "scale" : 1.7840262464207044,
+      "z_index" : 267
+    },
+    {
+      "id" : "A421132C-6867-4E5C-BED0-6B64494C8328",
+      "inner_offset_height" : 28.593115147026914,
+      "inner_offset_width" : 79.29130389353917,
+      "inner_scale" : 1.4460456992198194,
+      "n_position_x" : 0.3500837520938025,
+      "n_position_y" : 0.3186243718592967,
+      "offset_height" : -128.97822445561124,
+      "offset_width" : -59.966499162479,
+      "parent_frame_sticker_id" : "3B87CFAF-0256-4B21-A761-5C76DDDD5C43",
+      "placement_kind" : "canvas_photo",
+      "rotation_radians" : 3.565376686853268e-16,
+      "scale" : 1.7840262464207044,
+      "z_index" : 267
+    },
+    {
+      "hole_n_rect" : [
+        0.058608,
+        0.046875,
+        0.882784,
+        0.90625
+      ],
+      "id" : "EFBC338C-675C-4EA0-BC50-A9067614A8AB",
+      "image_name" : "polaroidframe__polaroid3_1_w",
+      "is_transform_locked" : true,
+      "linked_canvas_photo_id" : "6E874193-F7D0-49C0-955D-01A2A12F4F59",
+      "n_position_x" : 0.6479562836335317,
+      "n_position_y" : 0.6528075347400346,
+      "offset_height" : 108.66313581513572,
+      "offset_width" : 59.182513453412696,
+      "placement_kind" : "sticker",
+      "rotation_radians" : 3.565376686853268e-16,
+      "scale" : 1.7840262464207044,
+      "z_index" : 266
+    },
+    {
+      "id" : "6E874193-F7D0-49C0-955D-01A2A12F4F59",
+      "inner_offset_height" : 24.135982683381442,
+      "inner_offset_width" : -64.80980432375472,
+      "inner_scale" : 1.424231291315258,
+      "n_position_x" : 0.6479562836335317,
+      "n_position_y" : 0.6528075347400346,
+      "offset_height" : 108.66313581513572,
+      "offset_width" : 59.182513453412696,
+      "parent_frame_sticker_id" : "EFBC338C-675C-4EA0-BC50-A9067614A8AB",
+      "placement_kind" : "canvas_photo",
+      "rotation_radians" : 3.565376686853268e-16,
+      "scale" : 1.7840262464207044,
+      "z_index" : 266
+    }
+  ],
+  "text_items" : [
+    {
+      "alignment" : "center",
+      "backgroundColorHex" : "#00000000",
+      "backgroundOpacity" : 1,
+      "cornerRadius" : 8,
+      "fontName" : "Rhigen",
+      "fontSize" : 30,
+      "id" : "5394DB4F-9E36-4186-A2C5-067591C240AF",
+      "isUserProContent" : false,
+      "layoutCanvasMinSide" : 398,
+      "letterSpacing" : 0,
+      "lineSpacing" : 0,
+      "nPosition" : [
+        0.727706917796223,
+        0.2013190954773868
+      ],
+      "outlineColorHex" : "#000000",
+      "outlineOpacity" : 1,
+      "outlineWidth" : 0,
+      "renderedHeight" : 24.87484296482412,
+      "renderedWidth" : 60.036275125628144,
+      "rotation" : 0,
+      "scale" : 1.6939692202410608,
+      "shadowColorHex" : "#00000000",
+      "shadowRadius" : 0,
+      "text" : "Before",
+      "textCase" : "none",
+      "textColorHex" : "#000000",
+      "textOpacity" : 1,
+      "zIndex" : 407
+    },
+    {
+      "alignment" : "center",
+      "backgroundColorHex" : "#00000000",
+      "backgroundOpacity" : 1,
+      "cornerRadius" : 8,
+      "fontName" : "Rhigen",
+      "fontSize" : 30,
+      "id" : "BC064D24-8461-4325-AB2F-46BF75937EFE",
+      "isUserProContent" : false,
+      "layoutCanvasMinSide" : 398,
+      "letterSpacing" : 0,
+      "lineSpacing" : 0,
+      "nPosition" : [
+        0.727706917796223,
+        0.28968966242774713
+      ],
+      "outlineColorHex" : "#000000",
+      "outlineOpacity" : 1,
+      "outlineWidth" : 0,
+      "renderedHeight" : 24.87484296482412,
+      "renderedWidth" : 60.036275125628144,
+      "rotation" : 0,
+      "scale" : 1.6939692202410608,
+      "shadowColorHex" : "#00000000",
+      "shadowRadius" : 0,
+      "text" : "Before",
+      "textCase" : "none",
+      "textColorHex" : "#000000",
+      "textOpacity" : 0.5385356545448303,
+      "zIndex" : 403
+    },
+    {
+      "alignment" : "center",
+      "backgroundColorHex" : "#00000000",
+      "backgroundOpacity" : 1,
+      "cornerRadius" : 8,
+      "fontName" : "Rhigen",
+      "fontSize" : 30,
+      "id" : "5335B3F5-360F-4E74-8DA6-27D20A6C3E5F",
+      "isUserProContent" : false,
+      "layoutCanvasMinSide" : 398,
+      "letterSpacing" : 0,
+      "lineSpacing" : 0,
+      "nPosition" : [
+        0.727706917796223,
+        0.3853247509056121
+      ],
+      "outlineColorHex" : "#000000",
+      "outlineOpacity" : 1,
+      "outlineWidth" : 0,
+      "renderedHeight" : 24.87484296482412,
+      "renderedWidth" : 60.036275125628144,
+      "rotation" : 0,
+      "scale" : 1.6939692202410608,
+      "shadowColorHex" : "#00000000",
+      "shadowRadius" : 0,
+      "text" : "Before",
+      "textCase" : "none",
+      "textColorHex" : "#000000",
+      "textOpacity" : 0.25337186455726624,
+      "zIndex" : 781
+    },
+    {
+      "alignment" : "center",
+      "backgroundColorHex" : "#00000000",
+      "backgroundOpacity" : 1,
+      "cornerRadius" : 8,
+      "fontName" : "Rhigen",
+      "fontSize" : 30,
+      "id" : "305B7722-F312-4112-8C52-A4F96B270F2A",
+      "isUserProContent" : false,
+      "layoutCanvasMinSide" : 398,
+      "letterSpacing" : 0,
+      "lineSpacing" : 0,
+      "nPosition" : [
+        0.22770691779622299,
+        0.5530695445097505
+      ],
+      "outlineColorHex" : "#000000",
+      "outlineOpacity" : 1,
+      "outlineWidth" : 0,
+      "renderedHeight" : 24.87484296482412,
+      "renderedWidth" : 49.001570351758794,
+      "rotation" : 0,
+      "scale" : 1.6939692202410608,
+      "shadowColorHex" : "#00000000",
+      "shadowRadius" : 0,
+      "text" : "After",
+      "textCase" : "none",
+      "textColorHex" : "#000000",
+      "textOpacity" : 1,
+      "zIndex" : 413
+    },
+    {
+      "alignment" : "center",
+      "backgroundColorHex" : "#00000000",
+      "backgroundOpacity" : 1,
+      "cornerRadius" : 8,
+      "fontName" : "Rhigen",
+      "fontSize" : 30,
+      "id" : "043A0333-5AC5-46B6-ABAE-D9111CAEF0D0",
+      "isUserProContent" : false,
+      "layoutCanvasMinSide" : 398,
+      "letterSpacing" : 0,
+      "lineSpacing" : 0,
+      "nPosition" : [
+        0.22510937257390196,
+        0.7085766427553061
+      ],
+      "outlineColorHex" : "#000000",
+      "outlineOpacity" : 1,
+      "outlineWidth" : 0,
+      "renderedHeight" : 24.87484296482412,
+      "renderedWidth" : 49.001570351758794,
+      "rotation" : 0,
+      "scale" : 1.6939692202410608,
+      "shadowColorHex" : "#00000000",
+      "shadowRadius" : 0,
+      "text" : "After",
+      "textCase" : "none",
+      "textColorHex" : "#000000",
+      "textOpacity" : 0.2774566411972046,
+      "zIndex" : 422
+    },
+    {
+      "alignment" : "center",
+      "backgroundColorHex" : "#00000000",
+      "backgroundOpacity" : 1,
+      "cornerRadius" : 8,
+      "fontName" : "Rhigen",
+      "fontSize" : 30,
+      "id" : "EBD392CA-137E-4F89-98C8-352AF06C91C1",
+      "isUserProContent" : false,
+      "layoutCanvasMinSide" : 398,
+      "letterSpacing" : 0,
+      "lineSpacing" : 0,
+      "nPosition" : [
+        0.22759118757286145,
+        0.6267488306674234
+      ],
+      "outlineColorHex" : "#000000",
+      "outlineOpacity" : 1,
+      "outlineWidth" : 0,
+      "renderedHeight" : 24.87484296482412,
+      "renderedWidth" : 49.001570351758794,
+      "rotation" : 0,
+      "scale" : 1.6939692202410608,
+      "shadowColorHex" : "#00000000",
+      "shadowRadius" : 0,
+      "text" : "After",
+      "textCase" : "none",
+      "textColorHex" : "#000000",
+      "textOpacity" : 0.5096338987350464,
+      "zIndex" : 421
+    },
+    {
+      "alignment" : "center",
+      "backgroundColorHex" : "#00000000",
+      "backgroundOpacity" : 1,
+      "cornerRadius" : 8,
+      "fontName" : "TimesNewRomanPS-ItalicMT",
+      "fontSize" : 30,
+      "id" : "75E5D745-04E7-4026-9473-FE6690DB03A6",
+      "layoutCanvasMinSide" : 398,
+      "letterSpacing" : 0,
+      "lineSpacing" : 0,
+      "nPosition" : [
+        0.35678391959798994,
+        0.07270728643216084
+      ],
+      "outlineColorHex" : "#000000",
+      "outlineOpacity" : 1,
+      "outlineWidth" : 0,
+      "renderedHeight" : 25.435929648241206,
+      "renderedWidth" : 171.50549623115577,
+      "rotation" : -1.9262369477246466e-14,
+      "scale" : 0.6064424361260191,
+      "shadowColorHex" : "#00000000",
+      "shadowRadius" : 0,
+      "text" : "My best transformation",
+      "textCase" : "none",
+      "textColorHex" : "#000000",
+      "textOpacity" : 1,
+      "zIndex" : 562
+    },
+    {
+      "alignment" : "center",
+      "backgroundColorHex" : "#00000000",
+      "backgroundOpacity" : 1,
+      "cornerRadius" : 8,
+      "fontName" : "AppleSDGothicNeo-Bold",
+      "fontSize" : 30,
+      "id" : "AC1CFF2D-A30D-49EF-B5D3-264157A14881",
+      "layoutCanvasMinSide" : 398,
+      "letterSpacing" : 0,
+      "lineSpacing" : 0,
+      "nPosition" : [
+        0.3341708542713568,
+        0.9660804020100504
+      ],
+      "outlineColorHex" : "#000000",
+      "outlineOpacity" : 1,
+      "outlineWidth" : 0,
+      "renderedHeight" : 26.9321608040201,
+      "renderedWidth" : 63.40279522613066,
+      "rotation" : 0,
+      "scale" : 1,
+      "shadowColorHex" : "#00000000",
+      "shadowRadius" : 0,
+      "text" : "Follow",
+      "textCase" : "none",
+      "textColorHex" : "#FFFFFF",
+      "textOpacity" : 1,
+      "zIndex" : 789
+    }
+  ],
+  "version" : "1"
+}
