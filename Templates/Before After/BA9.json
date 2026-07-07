@@ -46,7 +46,32 @@
     },
     "shared_vertex_positions" : {
 
-    }
+    },
+    "slot_layout_offsets" : {
+      "0" : [
+        0,
+        0
+      ],
+      "1" : [
+        217,
+        84.33333333333337
+      ]
+    },
+    "slot_layout_rotation_degrees" : {
+      "0" : 0,
+      "1" : 0
+    },
+    "slot_layout_scale_y" : {
+      "0" : 1.015627818519147
+    },
+    "slot_layout_scales" : {
+      "0" : 1.015627818519147,
+      "1" : 1.0713145384449563
+    },
+    "slot_layout_z_order" : [
+      1,
+      0
+    ]
   },
   "frame" : {
     "category_id" : "",
@@ -62,7 +87,7 @@
     "dividers" : [
 
     ],
-    "id" : "png-frame-3D283A15",
+    "id" : "png-frame-158BAFC4",
     "isPremium" : false,
     "name" : "PNG Frame",
     "shared_vertices" : [
@@ -70,19 +95,19 @@
     ],
     "slots" : [
       {
-        "id" : "pngframe-slot-0",
-        "n_rect" : [
-          0.5793871875,
-          0,
-          0.42061281250000004,
-          1
-        ]
-      },
-      {
         "id" : "pngframe-slot-1",
         "n_rect" : [
           0,
           0.1914061875,
+          0.4187408125,
+          0.37109362500000004
+        ]
+      },
+      {
+        "id" : "pngframe-slot-1-copy-ADEC10",
+        "n_rect" : [
+          0.035,
+          0.2264061875,
           0.4187408125,
           0.37109362500000004
         ]
@@ -92,16 +117,16 @@
   },
   "stickers" : [
     {
-      "id" : "04FCAD17-2639-494B-9A1C-E63D441D0B70",
+      "id" : "12A588BD-C7E0-444C-9216-55EE708DAB5B",
       "image_name" : "Doodle_Arrow_12.png",
-      "n_position_x" : 0.28371021775544386,
-      "n_position_y" : 0.674701633165829,
-      "offset_height" : 124.23227247347839,
-      "offset_width" : -86.51591289782246,
+      "n_position_x" : 0.2763819095477386,
+      "n_position_y" : 0.6921717964824121,
+      "offset_height" : 136.65549972082638,
+      "offset_width" : -89.44723618090455,
       "placement_kind" : "sticker",
-      "rotation_radians" : 1.2973391315214484,
-      "scale" : 1.6142214935043055,
-      "z_index" : 87
+      "rotation_radians" : 1.2070633981064547,
+      "scale" : 1.3167673430919764,
+      "z_index" : 61
     }
   ],
   "text_items" : [
@@ -112,14 +137,14 @@
       "cornerRadius" : 8,
       "fontName" : "Chrisye",
       "fontSize" : 30,
-      "id" : "CB8DE414-5908-4DE2-B530-90F92EFF33C0",
+      "id" : "23F8BDDE-26E8-4548-9736-FB8F4998FCFB",
       "isUserProContent" : false,
       "layoutCanvasMinSide" : 398,
       "letterSpacing" : 0,
       "lineSpacing" : 0,
       "nPosition" : [
-        0.19011725293132326,
-        0.09338194880653272
+        0.1716917922948073,
+        0.09600247330402017
       ],
       "outlineColorHex" : "#000000",
       "outlineOpacity" : 1,
@@ -132,9 +157,9 @@
       "shadowRadius" : 0,
       "text" : "Before",
       "textCase" : "none",
-      "textColorHex" : "#A2CFF6FF",
+      "textColorHex" : "#AAC1F0FF",
       "textOpacity" : 1,
-      "zIndex" : 10
+      "zIndex" : 64
     },
     {
       "alignment" : "center",
@@ -143,14 +168,14 @@
       "cornerRadius" : 8,
       "fontName" : "Chrisye",
       "fontSize" : 30,
-      "id" : "55D769C7-6F56-45FB-81A6-CE67E131B675",
+      "id" : "1EC3BBDF-29C9-46CD-90E8-EFC43CC5FB23",
       "isUserProContent" : false,
       "layoutCanvasMinSide" : 398,
       "letterSpacing" : 0,
       "lineSpacing" : 0,
       "nPosition" : [
-        0.7761536969914429,
-        0.8347481049133237
+        0.802599488457786,
+        0.8317844484361443
       ],
       "outlineColorHex" : "#000000",
       "outlineOpacity" : 1,
@@ -163,9 +188,9 @@
       "shadowRadius" : 0,
       "text" : "After",
       "textCase" : "none",
-      "textColorHex" : "#9BD3F8FF",
+      "textColorHex" : "#AAC1F0FF",
       "textOpacity" : 1,
-      "zIndex" : 9
+      "zIndex" : 74
     }
   ],
   "version" : "1"
