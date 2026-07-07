@@ -1,5 +1,5 @@
 {
-  "version": "17.0",
+  "version": "17.1",
   "sections": [
     {
       "id": "slideshow",
@@ -68,6 +68,16 @@
       "count": 20
     },
     {
+      "id": "templates_ba5_json_looks_changed",
+      "title": "Looks Changed?",
+      "subtitle": "Compare phtos",
+      "display_size": "hero",
+      "category": "templates",
+      "sub_category": "Before After",
+      "count": 1,
+      "item": "BA5.json"
+    },
+    {
       "id": "filters_moody_film_looks_filtes",
       "title": "Film Looks filtes",
       "subtitle": "",
@@ -92,6 +102,15 @@
       "display_size": "small",
       "category": "classic_layouts",
       "count": 12
+    },
+    {
+      "id": "templates_before_after_before_after",
+      "title": "Before After",
+      "subtitle": "Compare before and after photos",
+      "display_size": "small",
+      "category": "templates",
+      "sub_category": "Before After",
+      "count": 20
     },
     {
       "id": "stylish_layouts_stylish_collage",
