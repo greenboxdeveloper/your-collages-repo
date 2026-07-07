@@ -1,5 +1,5 @@
 {
-  "version": "5.3",
+  "version": "5.4",
   "templates": [
     {
       "id": "4th_july__4th_1",
@@ -152,6 +152,16 @@
       "neutral_empty_slots": true
     },
     {
+      "id": "before_after__ba10",
+      "title": "Ba10",
+      "category": "Before After",
+      "category_folder": "Before After",
+      "recipe": "BA10.json",
+      "preview": "BA10.jpg",
+      "is_premium": true,
+      "neutral_empty_slots": true
+    },
+    {
       "id": "before_after__ba2",
       "title": "Ba2",
       "category": "Before After",
@@ -198,6 +208,16 @@
       "category_folder": "Before After",
       "recipe": "BA6.json",
       "preview": "BA6.jpg",
+      "is_premium": true,
+      "neutral_empty_slots": true
+    },
+    {
+      "id": "before_after__ba7",
+      "title": "Ba7",
+      "category": "Before After",
+      "category_folder": "Before After",
+      "recipe": "BA7.json",
+      "preview": "BA7.jpg",
       "is_premium": true,
       "neutral_empty_slots": true
     },
