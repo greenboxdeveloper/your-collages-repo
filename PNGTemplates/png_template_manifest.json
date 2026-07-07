@@ -1,5 +1,5 @@
 {
-  "version": "4.0",
+  "version": "4.1",
   "categories": [
     {
       "id": "testtemplates",
@@ -73,6 +73,58 @@
               "width": 0.259766,
               "height": 0.747801,
               "areaFraction": 0.184108,
+              "source": "transparency"
+            }
+          ]
+        },
+        {
+          "id": "testtemplates__ba8pang",
+          "name": "Ba8Pang",
+          "fileName": "ba8pang",
+          "isPremium": false,
+          "holeCount": 2,
+          "fileExtension": "png",
+          "precomputedSlots": [
+            {
+              "x": 0.58427,
+              "y": 0.0,
+              "width": 0.41573,
+              "height": 1.0,
+              "areaFraction": 0.147249,
+              "source": "transparency"
+            },
+            {
+              "x": 0.0,
+              "y": 0.196289,
+              "width": 0.413858,
+              "height": 0.361328,
+              "areaFraction": 0.144687,
+              "source": "transparency"
+            }
+          ]
+        },
+        {
+          "id": "testtemplates__ba9pang",
+          "name": "Ba9Pang",
+          "fileName": "ba9pang",
+          "isPremium": false,
+          "holeCount": 2,
+          "fileExtension": "png",
+          "precomputedSlots": [
+            {
+              "x": 0.083455,
+              "y": 0.072266,
+              "width": 0.480234,
+              "height": 0.382812,
+              "areaFraction": 0.161932,
+              "source": "transparency"
+            },
+            {
+              "x": 0.417277,
+              "y": 0.478516,
+              "width": 0.481698,
+              "height": 0.382812,
+              "areaFraction": 0.162344,
               "source": "transparency"
             }
           ]
