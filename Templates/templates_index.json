@@ -1,5 +1,5 @@
 {
-  "version": "5.2",
+  "version": "5.3",
   "templates": [
     {
       "id": "4th_july__4th_1",
@@ -138,6 +138,66 @@
       "category_folder": "4th July",
       "recipe": "4th July 9.json",
       "preview": "4th July 9.jpg",
+      "is_premium": true,
+      "neutral_empty_slots": true
+    },
+    {
+      "id": "before_after__ba1",
+      "title": "Ba1",
+      "category": "Before After",
+      "category_folder": "Before After",
+      "recipe": "BA1.json",
+      "preview": "BA1.jpg",
+      "is_premium": true,
+      "neutral_empty_slots": true
+    },
+    {
+      "id": "before_after__ba2",
+      "title": "Ba2",
+      "category": "Before After",
+      "category_folder": "Before After",
+      "recipe": "BA2.json",
+      "preview": "BA2.jpg",
+      "is_premium": true,
+      "neutral_empty_slots": true
+    },
+    {
+      "id": "before_after__ba3",
+      "title": "Ba3",
+      "category": "Before After",
+      "category_folder": "Before After",
+      "recipe": "BA3.json",
+      "preview": "BA3.jpg",
+      "is_premium": true,
+      "neutral_empty_slots": true
+    },
+    {
+      "id": "before_after__ba4",
+      "title": "Ba4",
+      "category": "Before After",
+      "category_folder": "Before After",
+      "recipe": "BA4.json",
+      "preview": "BA4.jpg",
+      "is_premium": true,
+      "neutral_empty_slots": true
+    },
+    {
+      "id": "before_after__ba5",
+      "title": "Ba5",
+      "category": "Before After",
+      "category_folder": "Before After",
+      "recipe": "BA5.json",
+      "preview": "BA5.jpg",
+      "is_premium": true,
+      "neutral_empty_slots": true
+    },
+    {
+      "id": "before_after__ba6",
+      "title": "Ba6",
+      "category": "Before After",
+      "category_folder": "Before After",
+      "recipe": "BA6.json",
+      "preview": "BA6.jpg",
       "is_premium": true,
       "neutral_empty_slots": true
     },
