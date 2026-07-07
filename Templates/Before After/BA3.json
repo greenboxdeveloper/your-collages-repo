@@ -1,0 +1,172 @@
+{
+  "chrome" : {
+    "background_color_rgba" : [
+      1,
+      1,
+      1,
+      1
+    ],
+    "background_hazy_blur_radius" : 48,
+    "border_color_rgba" : [
+      1,
+      1,
+      1,
+      1
+    ],
+    "border_corner_radius" : 0,
+    "border_width" : 0,
+    "canvas_aspect" : 0.5625,
+    "canvas_ratio_preset" : "9:16",
+    "editor_canvas_min_side" : 400,
+    "has_background_image" : false
+  },
+  "dependencies" : [
+    {
+      "asset_ref" : "Agamtoh_PR.ttf",
+      "id" : "Agamtoh",
+      "type" : "font",
+      "url" : "https:\/\/photocollagemaker.john4shine.workers.dev\/Fonts\/English\/Agamtoh_PR.ttf"
+    }
+  ],
+  "editor" : {
+    "divider_positions" : {
+
+    },
+    "shared_vertex_positions" : {
+
+    }
+  },
+  "layout" : {
+    "category" : "Classic",
+    "dividers" : [
+
+    ],
+    "id" : "classic_1",
+    "isPremium" : false,
+    "name" : "Collage 1",
+    "shared_vertices" : [
+      [
+        0.676592709309258,
+        0
+      ],
+      [
+        1,
+        0
+      ],
+      [
+        1,
+        1
+      ],
+      [
+        0.30625372625841074,
+        1
+      ],
+      [
+        0,
+        0
+      ],
+      [
+        0,
+        1
+      ]
+    ],
+    "slots" : [
+      {
+        "id" : "slot_0-DA",
+        "n_rect" : [
+          0.30625372625841074,
+          0,
+          0.6937462737415893,
+          1
+        ],
+        "vertex_indices" : [
+          0,
+          1,
+          2,
+          3
+        ]
+      },
+      {
+        "id" : "slot_0-DB",
+        "n_rect" : [
+          0,
+          0,
+          0.676592709309258,
+          1
+        ],
+        "vertex_indices" : [
+          4,
+          0,
+          3,
+          5
+        ]
+      }
+    ],
+    "type" : "grid"
+  },
+  "text_items" : [
+    {
+      "alignment" : "center",
+      "backgroundColorHex" : "#00000000",
+      "backgroundOpacity" : 1,
+      "cornerRadius" : 8,
+      "fontName" : "Agamtoh",
+      "fontSize" : 30,
+      "id" : "B4C3743D-9DC6-4821-A614-CE1179946DCC",
+      "isUserProContent" : false,
+      "layoutCanvasMinSide" : 398,
+      "letterSpacing" : 0,
+      "lineSpacing" : 0,
+      "nPosition" : [
+        0.19095477386934673,
+        0.051036432160804
+      ],
+      "outlineColorHex" : "#FF3B30",
+      "outlineOpacity" : 1,
+      "outlineWidth" : 0.10114942491054535,
+      "renderedHeight" : 44.32584798994975,
+      "renderedWidth" : 85.65923366834171,
+      "rotation" : 0,
+      "scale" : 1,
+      "shadowColorHex" : "#00000000",
+      "shadowRadius" : 0,
+      "text" : "Before",
+      "textCase" : "none",
+      "textColorHex" : "#000000",
+      "textOpacity" : 1,
+      "zIndex" : 15
+    },
+    {
+      "alignment" : "center",
+      "backgroundColorHex" : "#00000000",
+      "backgroundOpacity" : 1,
+      "cornerRadius" : 8,
+      "fontName" : "Agamtoh",
+      "fontSize" : 30,
+      "id" : "57096B12-654D-4944-8389-3ACA6969F764",
+      "isUserProContent" : false,
+      "layoutCanvasMinSide" : 398,
+      "letterSpacing" : 0,
+      "lineSpacing" : 0,
+      "nPosition" : [
+        0.7998324958123952,
+        0.04766017587939708
+      ],
+      "outlineColorHex" : "#FF3B30",
+      "outlineOpacity" : 1,
+      "outlineWidth" : 0.0712643712759018,
+      "renderedHeight" : 44.32584798994975,
+      "renderedWidth" : 72.00612437185929,
+      "rotation" : 0,
+      "scale" : 1,
+      "shadowColorHex" : "#00000000",
+      "shadowRadius" : 0,
+      "text" : "After",
+      "textCase" : "none",
+      "textColorHex" : "#000000",
+      "textOpacity" : 1,
+      "zIndex" : 16
+    }
+  ],
+  "version" : "1"
+}

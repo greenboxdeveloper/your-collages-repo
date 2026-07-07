@@ -1,0 +1,143 @@
+{
+  "chrome" : {
+    "background_color_rgba" : [
+      1,
+      1,
+      1,
+      1
+    ],
+    "background_hazy_blur_radius" : 48,
+    "border_color_rgba" : [
+      1,
+      1,
+      1,
+      1
+    ],
+    "border_corner_radius" : 0,
+    "border_width" : 0,
+    "canvas_aspect" : 0.5625,
+    "canvas_ratio_preset" : "9:16",
+    "editor_canvas_min_side" : 400,
+    "has_background_image" : false
+  },
+  "dependencies" : [
+    {
+      "id" : "Futura-Bold",
+      "type" : "font"
+    }
+  ],
+  "editor" : {
+    "divider_positions" : {
+
+    },
+    "shared_vertex_positions" : {
+
+    }
+  },
+  "layout" : {
+    "category" : "Classic",
+    "dividers" : [
+      {
+        "affects" : [
+          "slot_0",
+          "slot_1"
+        ],
+        "id" : "DRAG_V_0",
+        "position" : 0.5,
+        "segment_end" : 1,
+        "segment_start" : 0,
+        "type" : "vertical"
+      }
+    ],
+    "id" : "classic_8",
+    "isPremium" : false,
+    "name" : "Collage 8",
+    "shared_vertices" : [
+
+    ],
+    "slots" : [
+      {
+        "id" : "slot_0",
+        "n_rect" : [
+          0,
+          0,
+          0.5,
+          1
+        ]
+      },
+      {
+        "id" : "slot_1",
+        "n_rect" : [
+          0.5,
+          0,
+          0.5,
+          1
+        ]
+      }
+    ],
+    "type" : "grid"
+  },
+  "text_items" : [
+    {
+      "alignment" : "center",
+      "backgroundColorHex" : "#00000000",
+      "backgroundOpacity" : 1,
+      "cornerRadius" : 8,
+      "fontName" : "Futura-Bold",
+      "fontSize" : 30,
+      "id" : "A9B050B3-2F43-473F-9DB3-16ED16CEA8D9",
+      "layoutCanvasMinSide" : 398,
+      "letterSpacing" : 0,
+      "lineSpacing" : 0,
+      "nPosition" : [
+        0.24539363484087107,
+        0.9463773633621626
+      ],
+      "outlineColorHex" : "#000000",
+      "outlineOpacity" : 1,
+      "outlineWidth" : 0,
+      "renderedHeight" : 28.61542085427136,
+      "renderedWidth" : 81.17054020100502,
+      "rotation" : 0,
+      "scale" : 1.487882135554456,
+      "shadowColorHex" : "#00000000",
+      "shadowRadius" : 0,
+      "text" : "BEFORE",
+      "textCase" : "none",
+      "textColorHex" : "#FFFFFF",
+      "textOpacity" : 1,
+      "zIndex" : 57
+    },
+    {
+      "alignment" : "center",
+      "backgroundColorHex" : "#00000000",
+      "backgroundOpacity" : 1,
+      "cornerRadius" : 8,
+      "fontName" : "Futura-Bold",
+      "fontSize" : 30,
+      "id" : "5353728B-7E6F-4C8D-B0A8-A01577675B05",
+      "layoutCanvasMinSide" : 398,
+      "letterSpacing" : 0,
+      "lineSpacing" : 0,
+      "nPosition" : [
+        0.754892030243073,
+        0.9463773633621626
+      ],
+      "outlineColorHex" : "#000000",
+      "outlineOpacity" : 1,
+      "outlineWidth" : 0,
+      "renderedHeight" : 28.61542085427136,
+      "renderedWidth" : 66.76931532663316,
+      "rotation" : 0,
+      "scale" : 1.487882135554456,
+      "shadowColorHex" : "#00000000",
+      "shadowRadius" : 0,
+      "text" : "AFTER",
+      "textCase" : "none",
+      "textColorHex" : "#FFFFFF",
+      "textOpacity" : 1,
+      "zIndex" : 62
+    }
+  ],
+  "version" : "1"
+}

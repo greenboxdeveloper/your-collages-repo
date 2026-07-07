@@ -1,0 +1,249 @@
+{
+  "chrome" : {
+    "background_color_rgba" : [
+      1,
+      1,
+      1,
+      1
+    ],
+    "background_hazy_blur_radius" : 48,
+    "background_linear_gradient" : {
+      "end" : [
+        0.8,
+        1
+      ],
+      "start" : [
+        0.2,
+        0
+      ],
+      "stops" : [
+        "#F4E8DB",
+        "#E0BC9E",
+        "#B78C7A"
+      ]
+    },
+    "border_color_rgba" : [
+      1,
+      1,
+      1,
+      1
+    ],
+    "border_corner_radius" : 0,
+    "border_width" : 20,
+    "canvas_aspect" : 0.5625,
+    "canvas_ratio_preset" : "9:16",
+    "editor_canvas_min_side" : 400,
+    "has_background_image" : true
+  },
+  "dependencies" : [
+    {
+      "asset_ref" : "Polaroid 1.png",
+      "id" : "polaroidframe__polaroid_1",
+      "type" : "sticker",
+      "url" : "https:\/\/photocollagemaker.john4shine.workers.dev\/PolaroidFrame\/Polaroid%201.png"
+    },
+    {
+      "asset_ref" : "Doodle_Arrow_01.png",
+      "id" : "Doodle_Arrow_01.png",
+      "type" : "sticker",
+      "url" : "https:\/\/photocollagemaker.john4shine.workers.dev\/Stickers\/Doodle_Arrow\/Doodle_Arrow_01.png"
+    },
+    {
+      "asset_ref" : "Doodle_Arrow_08.png",
+      "id" : "Doodle_Arrow_08.png",
+      "type" : "sticker",
+      "url" : "https:\/\/photocollagemaker.john4shine.workers.dev\/Stickers\/Doodle_Arrow\/Doodle_Arrow_08.png"
+    },
+    {
+      "asset_ref" : "Jastyka_PR.ttf",
+      "id" : "Jastyka",
+      "type" : "font",
+      "url" : "https:\/\/photocollagemaker.john4shine.workers.dev\/Fonts\/English\/Jastyka_PR.ttf"
+    }
+  ],
+  "editor" : {
+    "divider_positions" : {
+
+    },
+    "shared_vertex_positions" : {
+
+    }
+  },
+  "layout" : {
+    "category" : "TemplateBuilder",
+    "dividers" : [
+
+    ],
+    "id" : "template-builder-ECBDD945",
+    "isPremium" : false,
+    "name" : "Template builder",
+    "shared_vertices" : [
+
+    ],
+    "slots" : [
+
+    ],
+    "type" : "grid"
+  },
+  "stickers" : [
+    {
+      "hole_n_rect" : [
+        0.072,
+        0.05418,
+        0.848,
+        0.729102
+      ],
+      "id" : "D2DEA87A-EB76-4E2F-B833-D4484F2A139D",
+      "image_name" : "polaroidframe__polaroid_1",
+      "is_transform_locked" : true,
+      "linked_canvas_photo_id" : "D640D3AB-FBC7-4465-8256-E6DDA4C4FD77",
+      "n_position_x" : 0.7194304857621442,
+      "n_position_y" : 0.5240028266331657,
+      "offset_height" : 17.068676716917803,
+      "offset_width" : 87.77219430485768,
+      "placement_kind" : "sticker",
+      "rotation_radians" : 0.1019840170070582,
+      "scale" : 1.9120798759665012,
+      "z_index" : 251
+    },
+    {
+      "id" : "D640D3AB-FBC7-4465-8256-E6DDA4C4FD77",
+      "inner_offset_height" : 0,
+      "inner_offset_width" : 0,
+      "inner_scale" : 1,
+      "n_position_x" : 0.7194304857621442,
+      "n_position_y" : 0.5240028266331657,
+      "offset_height" : 17.068676716917803,
+      "offset_width" : 87.77219430485768,
+      "parent_frame_sticker_id" : "D2DEA87A-EB76-4E2F-B833-D4484F2A139D",
+      "placement_kind" : "canvas_photo",
+      "rotation_radians" : 0.1019840170070582,
+      "scale" : 1.9120798759665012,
+      "z_index" : 251
+    },
+    {
+      "hole_n_rect" : [
+        0.072,
+        0.05418,
+        0.848,
+        0.729102
+      ],
+      "id" : "49B0FFE3-FF60-41B8-8C0A-B93D06183B71",
+      "image_name" : "polaroidframe__polaroid_1",
+      "is_transform_locked" : true,
+      "linked_canvas_photo_id" : "7CA26F41-052D-4587-AE22-048DAE12ADC4",
+      "n_position_x" : 0.28065729808061246,
+      "n_position_y" : 0.38881909547738697,
+      "offset_height" : -79.06197654941371,
+      "offset_width" : -87.73708076775502,
+      "placement_kind" : "sticker",
+      "rotation_radians" : -0.0769997428695854,
+      "scale" : 1.8500883722750128,
+      "z_index" : 247
+    },
+    {
+      "id" : "7CA26F41-052D-4587-AE22-048DAE12ADC4",
+      "inner_offset_height" : 0,
+      "inner_offset_width" : 0,
+      "inner_scale" : 1,
+      "n_position_x" : 0.28065729808061246,
+      "n_position_y" : 0.38881909547738697,
+      "offset_height" : -79.06197654941371,
+      "offset_width" : -87.73708076775502,
+      "parent_frame_sticker_id" : "49B0FFE3-FF60-41B8-8C0A-B93D06183B71",
+      "placement_kind" : "canvas_photo",
+      "rotation_radians" : -0.0769997428695854,
+      "scale" : 1.8500883722750128,
+      "z_index" : 247
+    },
+    {
+      "id" : "1E681A90-079A-4EC2-A740-79D7E1CA5979",
+      "image_name" : "Doodle_Arrow_01.png",
+      "n_position_x" : 0.5,
+      "n_position_y" : 0.12971105527638188,
+      "offset_height" : -263.31658291457285,
+      "offset_width" : 0,
+      "placement_kind" : "sticker",
+      "rotation_radians" : 1.8727533940321295,
+      "scale" : 1.8255301919935638,
+      "z_index" : 367
+    },
+    {
+      "id" : "57342788-5E7A-47E9-B70B-671423469B10",
+      "image_name" : "Doodle_Arrow_08.png",
+      "n_position_x" : 0.3467336683417086,
+      "n_position_y" : 0.7468592964824118,
+      "offset_height" : 175.54438860971504,
+      "offset_width" : -61.30653266331656,
+      "placement_kind" : "sticker",
+      "rotation_radians" : -3.715441055156721,
+      "scale" : 1.9829413886637626,
+      "z_index" : 417
+    }
+  ],
+  "text_items" : [
+    {
+      "alignment" : "center",
+      "backgroundColorHex" : "#00000000",
+      "backgroundOpacity" : 1,
+      "cornerRadius" : 8,
+      "fontName" : "Jastyka",
+      "fontSize" : 30,
+      "id" : "341FCFB7-FA74-4882-A223-8ECA99A6C517",
+      "isUserProContent" : false,
+      "layoutCanvasMinSide" : 398,
+      "letterSpacing" : 0,
+      "lineSpacing" : 0,
+      "nPosition" : [
+        0.2654941373534338,
+        0.5400439698492462
+      ],
+      "outlineColorHex" : "#000000",
+      "outlineOpacity" : 1,
+      "outlineWidth" : 0,
+      "renderedHeight" : 37.96686557788944,
+      "renderedWidth" : 53.30323492462312,
+      "rotation" : 0,
+      "scale" : 1,
+      "shadowColorHex" : "#00000000",
+      "shadowRadius" : 0,
+      "text" : "Before",
+      "textCase" : "none",
+      "textColorHex" : "#000000",
+      "textOpacity" : 1,
+      "zIndex" : 253
+    },
+    {
+      "alignment" : "center",
+      "backgroundColorHex" : "#00000000",
+      "backgroundOpacity" : 1,
+      "cornerRadius" : 8,
+      "fontName" : "Jastyka",
+      "fontSize" : 30,
+      "id" : "98F44396-5062-4E87-995D-6292E3D4DA40",
+      "isUserProContent" : false,
+      "layoutCanvasMinSide" : 398,
+      "letterSpacing" : 0,
+      "lineSpacing" : 0,
+      "nPosition" : [
+        0.6919168850310768,
+        0.6727877829300616
+      ],
+      "outlineColorHex" : "#000000",
+      "outlineOpacity" : 1,
+      "outlineWidth" : 0,
+      "renderedHeight" : 37.96686557788944,
+      "renderedWidth" : 48.25345477386935,
+      "rotation" : 6.2133220648337515,
+      "scale" : 1.1003190684834978,
+      "shadowColorHex" : "#00000000",
+      "shadowRadius" : 0,
+      "text" : "After",
+      "textCase" : "none",
+      "textColorHex" : "#000000",
+      "textOpacity" : 1,
+      "zIndex" : 295
+    }
+  ],
+  "version" : "1"
+}

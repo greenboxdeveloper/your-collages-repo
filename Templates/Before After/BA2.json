@@ -1,0 +1,143 @@
+{
+  "chrome" : {
+    "background_color_rgba" : [
+      1,
+      1,
+      1,
+      1
+    ],
+    "background_hazy_blur_radius" : 48,
+    "border_color_rgba" : [
+      1,
+      1,
+      1,
+      1
+    ],
+    "border_corner_radius" : 19.252872467041016,
+    "border_width" : 67.43295192718506,
+    "canvas_aspect" : 0.5625,
+    "canvas_ratio_preset" : "9:16",
+    "editor_canvas_min_side" : 400,
+    "has_background_image" : false
+  },
+  "dependencies" : [
+    {
+      "id" : "Verdana-BoldItalic",
+      "type" : "font"
+    }
+  ],
+  "editor" : {
+    "divider_positions" : {
+
+    },
+    "shared_vertex_positions" : {
+
+    }
+  },
+  "layout" : {
+    "category" : "Classic",
+    "dividers" : [
+      {
+        "affects" : [
+          "slot_0",
+          "slot_1"
+        ],
+        "id" : "DRAG_H_0",
+        "position" : 0.5,
+        "segment_end" : 1,
+        "segment_start" : 0,
+        "type" : "horizontal"
+      }
+    ],
+    "id" : "classic_5",
+    "isPremium" : false,
+    "name" : "Collage 5",
+    "shared_vertices" : [
+
+    ],
+    "slots" : [
+      {
+        "id" : "slot_0",
+        "n_rect" : [
+          0,
+          0,
+          1,
+          0.5
+        ]
+      },
+      {
+        "id" : "slot_1",
+        "n_rect" : [
+          0,
+          0.5,
+          1,
+          0.5
+        ]
+      }
+    ],
+    "type" : "grid"
+  },
+  "text_items" : [
+    {
+      "alignment" : "center",
+      "backgroundColorHex" : "#00000000",
+      "backgroundOpacity" : 1,
+      "cornerRadius" : 8,
+      "fontName" : "Verdana-BoldItalic",
+      "fontSize" : 30,
+      "id" : "9B0DA19B-EC89-45CA-9600-31E2B518D1C3",
+      "layoutCanvasMinSide" : 398,
+      "letterSpacing" : 0,
+      "lineSpacing" : 0,
+      "nPosition" : [
+        0.31063189837329086,
+        0.9280882714867899
+      ],
+      "outlineColorHex" : "#000000",
+      "outlineOpacity" : 1,
+      "outlineWidth" : 0,
+      "renderedHeight" : 27.306218592964825,
+      "renderedWidth" : 73.68938442211055,
+      "rotation" : 9.2148511043888e-15,
+      "scale" : 1.7411109199704464,
+      "shadowColorHex" : "#00000000",
+      "shadowRadius" : 0,
+      "text" : "AFTER",
+      "textCase" : "none",
+      "textColorHex" : "#FFFFFF",
+      "textOpacity" : 1,
+      "zIndex" : 96
+    },
+    {
+      "alignment" : "center",
+      "backgroundColorHex" : "#00000000",
+      "backgroundOpacity" : 1,
+      "cornerRadius" : 8,
+      "fontName" : "Verdana-BoldItalic",
+      "fontSize" : 30,
+      "id" : "847A48C3-D19D-4807-AF7F-A8BAD80A8D1B",
+      "layoutCanvasMinSide" : 398,
+      "letterSpacing" : 0,
+      "lineSpacing" : 0,
+      "nPosition" : [
+        0.3616004767254077,
+        0.44012197056006164
+      ],
+      "outlineColorHex" : "#000000",
+      "outlineOpacity" : 1,
+      "outlineWidth" : 0,
+      "renderedHeight" : 27.306218592964825,
+      "renderedWidth" : 87.71655150753769,
+      "rotation" : 9.2148511043888e-15,
+      "scale" : 1.7411109199704464,
+      "shadowColorHex" : "#00000000",
+      "shadowRadius" : 0,
+      "text" : "BEFORE",
+      "textCase" : "none",
+      "textColorHex" : "#FFFFFF",
+      "textOpacity" : 1,
+      "zIndex" : 94
+    }
+  ],
+  "version" : "1"
+}

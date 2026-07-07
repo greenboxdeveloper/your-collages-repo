@@ -1,0 +1,137 @@
+{
+  "chrome" : {
+    "background_color_rgba" : [
+      1,
+      1,
+      1,
+      1
+    ],
+    "background_hazy_blur_radius" : 48,
+    "border_color_rgba" : [
+      1,
+      1,
+      1,
+      1
+    ],
+    "border_corner_radius" : 0,
+    "border_width" : 0,
+    "canvas_aspect" : 1,
+    "canvas_ratio_preset" : "1:1",
+    "editor_canvas_min_side" : 400,
+    "has_background_image" : false
+  },
+  "dependencies" : [
+    {
+      "asset_ref" : "Perfograma.otf",
+      "id" : "Perfograma",
+      "type" : "font",
+      "url" : "https:\/\/photocollagemaker.john4shine.workers.dev\/Fonts\/English\/Perfograma.otf"
+    }
+  ],
+  "editor" : {
+    "divider_positions" : {
+
+    },
+    "shared_vertex_positions" : {
+
+    }
+  },
+  "layout" : {
+    "category" : "Classic",
+    "dividers" : [
+
+    ],
+    "id" : "svg_PCM_CL24",
+    "isPremium" : true,
+    "name" : "Pcm Cl24",
+    "shared_vertices" : [
+
+    ],
+    "slots" : [
+      {
+        "id" : "slot_0",
+        "n_rect" : [
+          0.5,
+          0,
+          0.5,
+          0.5
+        ]
+      },
+      {
+        "id" : "slot_1",
+        "n_rect" : [
+          -0,
+          0.5,
+          0.5,
+          0.5
+        ]
+      }
+    ],
+    "type" : "grid"
+  },
+  "text_items" : [
+    {
+      "alignment" : "center",
+      "backgroundColorHex" : "#00000000",
+      "backgroundOpacity" : 1,
+      "cornerRadius" : 8,
+      "fontName" : "Perfograma",
+      "fontSize" : 30,
+      "id" : "E6EBFB1F-291F-4686-B581-3AD12A548233",
+      "isUserProContent" : false,
+      "layoutCanvasMinSide" : 398,
+      "letterSpacing" : 0,
+      "lineSpacing" : 0,
+      "nPosition" : [
+        0.7512562814070352,
+        0.7579564489112227
+      ],
+      "outlineColorHex" : "#FF9500",
+      "outlineOpacity" : 1,
+      "outlineWidth" : 0.016091953963041306,
+      "renderedHeight" : 41.89447236180905,
+      "renderedWidth" : 152.94807370184253,
+      "rotation" : 2.808864252301646e-14,
+      "scale" : 1.225070875271447,
+      "shadowColorHex" : "#00000000",
+      "shadowRadius" : 0,
+      "text" : "BEFORE",
+      "textCase" : "none",
+      "textColorHex" : "#000000",
+      "textOpacity" : 1,
+      "zIndex" : 31
+    },
+    {
+      "alignment" : "center",
+      "backgroundColorHex" : "#00000000",
+      "backgroundOpacity" : 1,
+      "cornerRadius" : 8,
+      "fontName" : "Perfograma",
+      "fontSize" : 30,
+      "id" : "35A77DC3-DC39-4A91-B1C7-B5857566254B",
+      "isUserProContent" : false,
+      "layoutCanvasMinSide" : 398,
+      "letterSpacing" : 0,
+      "lineSpacing" : 0,
+      "nPosition" : [
+        0.23051398550047508,
+        0.2441109186477296
+      ],
+      "outlineColorHex" : "#FF9500",
+      "outlineOpacity" : 1,
+      "outlineWidth" : 0.05287356302142143,
+      "renderedHeight" : 42.22696817420435,
+      "renderedWidth" : 124.68592964824121,
+      "rotation" : 2.808864252301646e-14,
+      "scale" : 1.225070875271447,
+      "shadowColorHex" : "#00000000",
+      "shadowRadius" : 0,
+      "text" : "AFTER",
+      "textCase" : "none",
+      "textColorHex" : "#000000",
+      "textOpacity" : 1,
+      "zIndex" : 32
+    }
+  ],
+  "version" : "1"
+}

@@ -1,0 +1,223 @@
+{
+  "chrome" : {
+    "background_color_rgba" : [
+      1,
+      1,
+      1,
+      1
+    ],
+    "background_hazy_blur_radius" : 48,
+    "background_image_name" : "paper__3_jpg",
+    "border_color_rgba" : [
+      1,
+      1,
+      1,
+      1
+    ],
+    "border_corner_radius" : 0,
+    "border_width" : 20,
+    "canvas_aspect" : 0.5625,
+    "canvas_ratio_preset" : "9:16",
+    "editor_canvas_min_side" : 400,
+    "has_background_image" : true
+  },
+  "dependencies" : [
+    {
+      "asset_ref" : "3.jpg",
+      "id" : "paper__3_jpg",
+      "type" : "background",
+      "url" : "https:\/\/photocollagemaker.john4shine.workers.dev\/Backgrounds\/Paper\/3.jpg"
+    },
+    {
+      "asset_ref" : "Polaroid4.1_W.png",
+      "id" : "polaroidframe__polaroid4_1_w",
+      "type" : "sticker",
+      "url" : "https:\/\/photocollagemaker.john4shine.workers.dev\/PolaroidFrame\/Polaroid4.1_W.png"
+    },
+    {
+      "asset_ref" : "Doodle_Arrow_16.png",
+      "id" : "Doodle_Arrow_16.png",
+      "type" : "sticker",
+      "url" : "https:\/\/photocollagemaker.john4shine.workers.dev\/Stickers\/Doodle_Arrow\/Doodle_Arrow_16.png"
+    },
+    {
+      "asset_ref" : "Chrisye_PR.otf",
+      "id" : "Chrisye",
+      "type" : "font",
+      "url" : "https:\/\/photocollagemaker.john4shine.workers.dev\/Fonts\/English\/Chrisye_PR.otf"
+    }
+  ],
+  "editor" : {
+    "divider_positions" : {
+
+    },
+    "shared_vertex_positions" : {
+
+    }
+  },
+  "layout" : {
+    "category" : "TemplateBuilder",
+    "dividers" : [
+
+    ],
+    "id" : "template-builder-874F5594",
+    "isPremium" : false,
+    "name" : "Template builder",
+    "shared_vertices" : [
+
+    ],
+    "slots" : [
+
+    ],
+    "type" : "grid"
+  },
+  "stickers" : [
+    {
+      "hole_n_rect" : [
+        0.066946,
+        0.046875,
+        0.866109,
+        0.706055
+      ],
+      "id" : "C067E1B6-2B01-4939-80DB-36844B4D0574",
+      "image_name" : "polaroidframe__polaroid4_1_w",
+      "is_transform_locked" : true,
+      "linked_canvas_photo_id" : "53DC71A1-0910-4570-8AA2-E572BD6268AA",
+      "n_position_x" : 0.5,
+      "n_position_y" : 0.7181218592964825,
+      "offset_height" : 155.10887772194312,
+      "offset_width" : 0,
+      "placement_kind" : "sticker",
+      "rotation_radians" : -1.5889178713150434e-16,
+      "scale" : 1.9214157401033618,
+      "z_index" : 124
+    },
+    {
+      "id" : "53DC71A1-0910-4570-8AA2-E572BD6268AA",
+      "inner_offset_height" : 11.796856970395908,
+      "inner_offset_width" : -0.1734831907411234,
+      "inner_scale" : 1,
+      "n_position_x" : 0.5,
+      "n_position_y" : 0.7181218592964825,
+      "offset_height" : 155.10887772194312,
+      "offset_width" : 0,
+      "parent_frame_sticker_id" : "C067E1B6-2B01-4939-80DB-36844B4D0574",
+      "placement_kind" : "canvas_photo",
+      "rotation_radians" : -1.5889178713150434e-16,
+      "scale" : 1.9214157401033618,
+      "z_index" : 124
+    },
+    {
+      "hole_n_rect" : [
+        0.066946,
+        0.046875,
+        0.866109,
+        0.706055
+      ],
+      "id" : "45B2C499-9921-40D2-8778-A68C4B757FA9",
+      "image_name" : "polaroidframe__polaroid4_1_w",
+      "is_transform_locked" : true,
+      "linked_canvas_photo_id" : "83573937-ACF9-436C-A24D-9D01881976FB",
+      "n_position_x" : 0.5,
+      "n_position_y" : 0.2663316582914571,
+      "offset_height" : -166.16415410385272,
+      "offset_width" : 0,
+      "placement_kind" : "sticker",
+      "rotation_radians" : -1.8020653906377932e-16,
+      "scale" : 1.920864159538973,
+      "z_index" : 126
+    },
+    {
+      "id" : "83573937-ACF9-436C-A24D-9D01881976FB",
+      "inner_offset_height" : 0,
+      "inner_offset_width" : 0,
+      "inner_scale" : 1,
+      "n_position_x" : 0.5,
+      "n_position_y" : 0.2663316582914571,
+      "offset_height" : -166.16415410385272,
+      "offset_width" : 0,
+      "parent_frame_sticker_id" : "45B2C499-9921-40D2-8778-A68C4B757FA9",
+      "placement_kind" : "canvas_photo",
+      "rotation_radians" : -1.8020653906377932e-16,
+      "scale" : 1.920864159538973,
+      "z_index" : 126
+    },
+    {
+      "id" : "6FC2D86A-5457-43E5-A13C-94F3FA0C5921",
+      "image_name" : "Doodle_Arrow_16.png",
+      "n_position_x" : 0.5108877721943048,
+      "n_position_y" : 0.4886934673366835,
+      "offset_height" : -8.040201005025061,
+      "offset_width" : 4.355108877721925,
+      "placement_kind" : "sticker",
+      "rotation_radians" : -3.2577658139787515,
+      "scale" : 0.6852062946433324,
+      "z_index" : 274
+    }
+  ],
+  "text_items" : [
+    {
+      "alignment" : "center",
+      "backgroundColorHex" : "#00000000",
+      "backgroundOpacity" : 1,
+      "cornerRadius" : 8,
+      "fontName" : "Chrisye",
+      "fontSize" : 30,
+      "id" : "A87F26D4-D1D3-40D3-B9EA-45286C2AD890",
+      "isUserProContent" : false,
+      "layoutCanvasMinSide" : 398,
+      "letterSpacing" : 0,
+      "lineSpacing" : 0,
+      "nPosition" : [
+        0.5,
+        0.4081344221105527
+      ],
+      "outlineColorHex" : "#FFCC00",
+      "outlineOpacity" : 1,
+      "outlineWidth" : 0.05287356302142143,
+      "renderedHeight" : 25.06187185929648,
+      "renderedWidth" : 57.97895728643216,
+      "rotation" : -2.7755575615628914e-15,
+      "scale" : 1.6524416137910123,
+      "shadowColorHex" : "#00000000",
+      "shadowRadius" : 0,
+      "text" : "Before",
+      "textCase" : "none",
+      "textColorHex" : "#FF3B30",
+      "textOpacity" : 1,
+      "zIndex" : 191
+    },
+    {
+      "alignment" : "center",
+      "backgroundColorHex" : "#00000000",
+      "backgroundOpacity" : 1,
+      "cornerRadius" : 8,
+      "fontName" : "Chrisye",
+      "fontSize" : 30,
+      "id" : "1D0F7F46-806F-4AA7-90A3-DD6739F24E06",
+      "isUserProContent" : false,
+      "layoutCanvasMinSide" : 398,
+      "letterSpacing" : 0,
+      "lineSpacing" : 0,
+      "nPosition" : [
+        0.4918733428135468,
+        0.8599881736880821
+      ],
+      "outlineColorHex" : "#FFCC00",
+      "outlineOpacity" : 1,
+      "outlineWidth" : 0.09655172377824783,
+      "renderedHeight" : 25.06187185929648,
+      "renderedWidth" : 52.181061557788944,
+      "rotation" : -2.7755575615628914e-15,
+      "scale" : 1.6524416137910123,
+      "shadowColorHex" : "#00000000",
+      "shadowRadius" : 0,
+      "text" : "After",
+      "textCase" : "none",
+      "textColorHex" : "#FF3B30",
+      "textOpacity" : 1,
+      "zIndex" : 190
+    }
+  ],
+  "version" : "1"
+}
