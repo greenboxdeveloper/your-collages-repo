@@ -1,5 +1,5 @@
 {
-  "version": "3.9",
+  "version": "4.0",
   "categories": [
     {
       "id": "testtemplates",
@@ -47,6 +47,32 @@
               "width": 0.548951,
               "height": 0.477539,
               "areaFraction": 0.25161,
+              "source": "transparency"
+            }
+          ]
+        },
+        {
+          "id": "testtemplates__ba7pang",
+          "name": "Ba7Pang",
+          "fileName": "ba7pang",
+          "isPremium": false,
+          "holeCount": 2,
+          "fileExtension": "png",
+          "precomputedSlots": [
+            {
+              "x": 0.243164,
+              "y": 0.1261,
+              "width": 0.259766,
+              "height": 0.747801,
+              "areaFraction": 0.18399,
+              "source": "transparency"
+            },
+            {
+              "x": 0.498047,
+              "y": 0.1261,
+              "width": 0.259766,
+              "height": 0.747801,
+              "areaFraction": 0.184108,
               "source": "transparency"
             }
           ]
