@@ -1,5 +1,5 @@
 {
-  "version": "3.5",
+  "version": "3.6",
   "categories": [
     {
       "id": "en",
@@ -35,6 +35,15 @@
           "fileName": "Embolism Spark.ttf",
           "remoteDirectory": "English",
           "licenseUrl": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/Fonts/English/1001fonts-embolism-spark-eula.txt"
+        },
+        {
+          "id": "en__fifa_26_inspired_font",
+          "displayName": "Fifa 26 Inspired Font",
+          "postScriptName": "FWC2026-UltraCondensedMedium",
+          "isPremium": false,
+          "source": "ota",
+          "fileName": "FIFA 26 Inspired Font_F.ttf",
+          "remoteDirectory": "English"
         },
         {
           "id": "en__flaemische_kanzleischrift_a",
