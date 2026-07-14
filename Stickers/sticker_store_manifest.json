@@ -1,5 +1,5 @@
 {
-  "version": "4.2",
+  "version": "4.3",
   "categories": [
     {
       "id": "4th_of_july",
@@ -3516,6 +3516,120 @@
           "source": "ota",
           "fileName": "F 1.9",
           "previewWebpUrl": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/Stickers/Flower%20Pack%2001/F%201.9_preview.webp"
+        }
+      ],
+      "bannerImageUrl": null,
+      "promoHeaderUrl": null
+    },
+    {
+      "id": "football_season",
+      "name": "Football Season",
+      "count": 13,
+      "remoteFolderName": "Football Season",
+      "stickers": [
+        {
+          "id": "football_season__cheer",
+          "name": "Cheer",
+          "isPremium": false,
+          "source": "ota",
+          "fileName": "cheer",
+          "previewWebpUrl": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/Stickers/Football%20Season/cheer_preview.webp"
+        },
+        {
+          "id": "football_season__football",
+          "name": "Football",
+          "isPremium": false,
+          "source": "ota",
+          "fileName": "football",
+          "previewWebpUrl": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/Stickers/Football%20Season/football_preview.webp"
+        },
+        {
+          "id": "football_season__football_3",
+          "name": "Football (3)",
+          "isPremium": false,
+          "source": "ota",
+          "fileName": "football (3)",
+          "previewWebpUrl": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/Stickers/Football%20Season/football%20%283%29_preview.webp"
+        },
+        {
+          "id": "football_season__football_4",
+          "name": "Football (4)",
+          "isPremium": false,
+          "source": "ota",
+          "fileName": "football (4)",
+          "previewWebpUrl": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/Stickers/Football%20Season/football%20%284%29_preview.webp"
+        },
+        {
+          "id": "football_season__football_5",
+          "name": "Football (5)",
+          "isPremium": false,
+          "source": "ota",
+          "fileName": "football (5)",
+          "previewWebpUrl": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/Stickers/Football%20Season/football%20%285%29_preview.webp"
+        },
+        {
+          "id": "football_season__football_6",
+          "name": "Football (6)",
+          "isPremium": false,
+          "source": "ota",
+          "fileName": "football (6)",
+          "previewWebpUrl": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/Stickers/Football%20Season/football%20%286%29_preview.webp"
+        },
+        {
+          "id": "football_season__football_pitch",
+          "name": "Football Pitch",
+          "isPremium": false,
+          "source": "ota",
+          "fileName": "football-pitch",
+          "previewWebpUrl": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/Stickers/Football%20Season/football-pitch_preview.webp"
+        },
+        {
+          "id": "football_season__football_png_24994",
+          "name": "Football Png 24994",
+          "isPremium": false,
+          "source": "ota",
+          "fileName": "football-png-24994",
+          "previewWebpUrl": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/Stickers/Football%20Season/football-png-24994_preview.webp"
+        },
+        {
+          "id": "football_season__football_png_25013",
+          "name": "Football Png 25013",
+          "isPremium": false,
+          "source": "ota",
+          "fileName": "football-png-25013",
+          "previewWebpUrl": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/Stickers/Football%20Season/football-png-25013_preview.webp"
+        },
+        {
+          "id": "football_season__kick",
+          "name": "Kick",
+          "isPremium": false,
+          "source": "ota",
+          "fileName": "kick",
+          "previewWebpUrl": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/Stickers/Football%20Season/kick_preview.webp"
+        },
+        {
+          "id": "football_season__pngtree_2026_fifa_world_cup_logo_21016269",
+          "name": "—Pngtree—2026 Fifa World Cup Logo 21016269",
+          "isPremium": false,
+          "source": "ota",
+          "fileName": "—Pngtree—2026 fifa world cup logo_21016269",
+          "previewWebpUrl": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/Stickers/Football%20Season/%E2%80%94Pngtree%E2%80%942026%20fifa%20world%20cup%20logo_21016269_preview.webp"
+        },
+        {
+          "id": "football_season__trophy",
+          "name": "Trophy",
+          "isPremium": false,
+          "source": "ota",
+          "fileName": "trophy",
+          "previewWebpUrl": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/Stickers/Football%20Season/trophy_preview.webp"
+        },
+        {
+          "id": "football_season__wc",
+          "name": "Wc",
+          "isPremium": false,
+          "source": "ota",
+          "fileName": "wc",
+          "previewWebpUrl": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/Stickers/Football%20Season/wc_preview.webp"
         }
       ],
       "bannerImageUrl": null,
