@@ -1,5 +1,5 @@
 {
-  "version": "2.7",
+  "version": "2.8",
   "categories": [
     {
       "id": "4th_july_pack_01",
@@ -93,6 +93,51 @@
           "source": "ota",
           "colorHex": null,
           "fileName": "denim.png"
+        },
+        {
+          "id": "bulk__empty_soccer_stadium_with_dreamy_fantasy_view_sky_jpg",
+          "name": "Empty Soccer Stadium With Dreamy Fantasy View Sky",
+          "isPremium": false,
+          "kind": "image",
+          "source": "ota",
+          "colorHex": null,
+          "fileName": "empty-soccer-stadium-with-dreamy-fantasy-view-sky.jpg"
+        },
+        {
+          "id": "bulk__football_grass_jpg",
+          "name": "Football Grass",
+          "isPremium": false,
+          "kind": "image",
+          "source": "ota",
+          "colorHex": null,
+          "fileName": "football-grass.jpg"
+        },
+        {
+          "id": "bulk__night_football_game_jpg",
+          "name": "Night Football Game",
+          "isPremium": false,
+          "kind": "image",
+          "source": "ota",
+          "colorHex": null,
+          "fileName": "night-football-game.jpg"
+        },
+        {
+          "id": "bulk__soccer_players_action_professional_stadium_jpg",
+          "name": "Soccer Players Action Professional Stadium",
+          "isPremium": false,
+          "kind": "image",
+          "source": "ota",
+          "colorHex": null,
+          "fileName": "soccer-players-action-professional-stadium.jpg"
+        },
+        {
+          "id": "bulk__soccer_stadium_night_jpg",
+          "name": "Soccer Stadium Night",
+          "isPremium": false,
+          "kind": "image",
+          "source": "ota",
+          "colorHex": null,
+          "fileName": "soccer-stadium-night.jpg"
         }
       ]
     },
