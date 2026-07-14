@@ -1,0 +1,187 @@
+{
+  "chrome" : {
+    "background_color_rgba" : [
+      1,
+      1,
+      1,
+      1
+    ],
+    "background_hazy_blur_radius" : 48,
+    "border_color_rgba" : [
+      1,
+      1,
+      1,
+      1
+    ],
+    "border_corner_radius" : 0,
+    "border_width" : 70.09578347206116,
+    "canvas_aspect" : 0.5625,
+    "canvas_ratio_preset" : "9:16",
+    "editor_canvas_min_side" : 400,
+    "has_background_image" : false
+  },
+  "dependencies" : [
+    {
+      "asset_ref" : "football-png-25013.png",
+      "id" : "football_season__football_png_25013",
+      "type" : "sticker",
+      "url" : "https:\/\/photocollagemaker.john4shine.workers.dev\/Stickers\/Football%20Season\/football-png-25013.png"
+    },
+    {
+      "asset_ref" : "football (5).png",
+      "id" : "football_season__football_5",
+      "type" : "sticker",
+      "url" : "https:\/\/photocollagemaker.john4shine.workers.dev\/Stickers\/Football%20Season\/football%20(5).png"
+    },
+    {
+      "asset_ref" : "FIFA 26 Inspired Font_F.ttf",
+      "id" : "FWC2026-UltraCondensedMedium",
+      "type" : "font",
+      "url" : "https:\/\/photocollagemaker.john4shine.workers.dev\/Fonts\/English\/FIFA%2026%20Inspired%20Font_F.ttf"
+    }
+  ],
+  "editor" : {
+    "divider_positions" : {
+
+    },
+    "shared_vertex_positions" : {
+
+    }
+  },
+  "layout" : {
+    "category" : "Classic",
+    "dividers" : [
+      {
+        "affects" : [
+          "slot_0",
+          "slot_1",
+          "slot_2",
+          "slot_3"
+        ],
+        "id" : "DRAG_V_0",
+        "position" : 0.5,
+        "segment_end" : 1,
+        "segment_start" : 0,
+        "type" : "vertical"
+      },
+      {
+        "affects" : [
+          "slot_0",
+          "slot_1",
+          "slot_2",
+          "slot_3"
+        ],
+        "id" : "DRAG_H_1",
+        "position" : 0.5,
+        "segment_end" : 1,
+        "segment_start" : 0,
+        "type" : "horizontal"
+      }
+    ],
+    "id" : "classic_4",
+    "isPremium" : false,
+    "name" : "Collage 4",
+    "shared_vertices" : [
+
+    ],
+    "slots" : [
+      {
+        "id" : "slot_0",
+        "n_rect" : [
+          0,
+          0,
+          0.5,
+          0.5
+        ]
+      },
+      {
+        "id" : "slot_1",
+        "n_rect" : [
+          0.5,
+          0,
+          0.5,
+          0.5
+        ]
+      },
+      {
+        "id" : "slot_2",
+        "n_rect" : [
+          0,
+          0.5,
+          0.5,
+          0.5
+        ]
+      },
+      {
+        "id" : "slot_3",
+        "n_rect" : [
+          0.5,
+          0.5,
+          0.5,
+          0.5
+        ]
+      }
+    ],
+    "type" : "grid"
+  },
+  "stickers" : [
+    {
+      "id" : "BE937D83-0883-45EA-8DB0-AED9A2DE4B97",
+      "image_name" : "football_season__football_png_25013",
+      "n_position_x" : 0.5,
+      "n_position_y" : 0.5,
+      "offset_height" : 0,
+      "offset_width" : 0,
+      "placement_kind" : "sticker",
+      "rotation_radians" : 3.93354058386529e-16,
+      "scale" : 1.8735103762959269,
+      "z_index" : 67
+    },
+    {
+      "id" : "1FB96B91-6B7D-4C28-B04F-D8617B85F528",
+      "image_name" : "football_season__football_5",
+      "n_position_x" : 0.5,
+      "n_position_y" : 0.5,
+      "offset_height" : 0,
+      "offset_width" : 0,
+      "placement_kind" : "sticker",
+      "rotation_radians" : -4.650491330678176e-17,
+      "scale" : 1.347292715358544,
+      "z_index" : 349
+    }
+  ],
+  "text_items" : [
+    {
+      "alignment" : "center",
+      "backgroundColorHex" : "#00000000",
+      "backgroundOpacity" : 1,
+      "cornerRadius" : 8,
+      "fontName" : "FWC2026-UltraCondensedMedium",
+      "fontSize" : 30,
+      "id" : "E3562171-08AD-4FF1-B5A7-64B696920DC0",
+      "isUserProContent" : false,
+      "layoutCanvasMinSide" : 398,
+      "letterSpacing" : 0,
+      "lineSpacing" : 0,
+      "nPosition" : [
+        0.5014611041705304,
+        0.9353015075376884
+      ],
+      "outlineColorHex" : "#000000",
+      "outlineOpacity" : 1,
+      "outlineWidth" : 0.3448275923728943,
+      "renderedHeight" : 30.298680904522616,
+      "renderedWidth" : 105.85835427135679,
+      "rotation" : -1.7458257062230587e-14,
+      "scale" : 2.1033761187999533,
+      "shadowColorHex" : "#00000000",
+      "shadowRadius" : 0,
+      "text" : "FIFA World Cup 2026",
+      "textCase" : "none",
+      "textColorHex" : "#FFFFFF",
+      "textOpacity" : 1,
+      "zIndex" : 350
+    }
+  ],
+  "version" : "1"
+}

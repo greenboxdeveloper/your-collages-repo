@@ -1,0 +1,206 @@
+{
+  "chrome" : {
+    "background_color_rgba" : [
+      1,
+      1,
+      1,
+      1
+    ],
+    "background_hazy_blur_radius" : 48,
+    "background_image_name" : "bulk__soccer_players_action_professional_stadium_jpg",
+    "border_color_rgba" : [
+      1,
+      1,
+      1,
+      1
+    ],
+    "border_corner_radius" : 0,
+    "border_width" : 20,
+    "canvas_aspect" : 1,
+    "canvas_ratio_preset" : "1:1",
+    "editor_canvas_min_side" : 400,
+    "has_background_image" : true
+  },
+  "dependencies" : [
+    {
+      "asset_ref" : "soccer-players-action-professional-stadium.jpg",
+      "id" : "bulk__soccer_players_action_professional_stadium_jpg",
+      "type" : "background",
+      "url" : "https:\/\/photocollagemaker.john4shine.workers.dev\/Backgrounds\/Bulk\/soccer-players-action-professional-stadium.jpg"
+    },
+    {
+      "asset_ref" : "Polaroid1.1_W.png",
+      "id" : "polaroidframe__polaroid1_1_w",
+      "type" : "sticker",
+      "url" : "https:\/\/photocollagemaker.john4shine.workers.dev\/PolaroidFrame\/Polaroid1.1_W.png"
+    },
+    {
+      "asset_ref" : "wc.png",
+      "id" : "football_season__wc",
+      "type" : "sticker",
+      "url" : "https:\/\/photocollagemaker.john4shine.workers.dev\/Stickers\/Football%20Season\/wc.png"
+    },
+    {
+      "asset_ref" : "football.png",
+      "id" : "football_season__football",
+      "type" : "sticker",
+      "url" : "https:\/\/photocollagemaker.john4shine.workers.dev\/Stickers\/Football%20Season\/football.png"
+    }
+  ],
+  "editor" : {
+    "divider_positions" : {
+
+    },
+    "shared_vertex_positions" : {
+
+    }
+  },
+  "layout" : {
+    "category" : "TemplateBuilder",
+    "dividers" : [
+
+    ],
+    "id" : "template-builder-B74B9C91",
+    "isPremium" : false,
+    "name" : "Template builder",
+    "shared_vertices" : [
+
+    ],
+    "slots" : [
+
+    ],
+    "type" : "grid"
+  },
+  "stickers" : [
+    {
+      "hole_n_rect" : [
+        0.052734,
+        0.052734,
+        0.894531,
+        0.894531
+      ],
+      "id" : "085B2BB5-4048-4BC8-A4D9-70849D57EAB4",
+      "image_name" : "polaroidframe__polaroid1_1_w",
+      "is_transform_locked" : true,
+      "linked_canvas_photo_id" : "6B83F578-6A96-419A-ABEA-C7A4B75AC5E0",
+      "n_position_x" : 0.7181064353750464,
+      "n_position_y" : 0.30573701842546064,
+      "offset_height" : -77.70519262981574,
+      "offset_width" : 87.24257415001856,
+      "placement_kind" : "sticker",
+      "rotation_radians" : -3.468491450797473e-16,
+      "scale" : 1.2463224878574077,
+      "z_index" : 222
+    },
+    {
+      "id" : "6B83F578-6A96-419A-ABEA-C7A4B75AC5E0",
+      "inner_offset_height" : 0,
+      "inner_offset_width" : 0,
+      "inner_scale" : 1,
+      "n_position_x" : 0.7181064353750464,
+      "n_position_y" : 0.30573701842546064,
+      "offset_height" : -77.70519262981574,
+      "offset_width" : 87.24257415001856,
+      "parent_frame_sticker_id" : "085B2BB5-4048-4BC8-A4D9-70849D57EAB4",
+      "placement_kind" : "canvas_photo",
+      "rotation_radians" : -3.468491450797473e-16,
+      "scale" : 1.2463224878574077,
+      "z_index" : 222
+    },
+    {
+      "hole_n_rect" : [
+        0.052734,
+        0.052734,
+        0.894531,
+        0.894531
+      ],
+      "id" : "B9AADD18-2DE7-4556-8BC7-860E7C242525",
+      "image_name" : "polaroidframe__polaroid1_1_w",
+      "is_transform_locked" : true,
+      "linked_canvas_photo_id" : "4E3D613C-3FF7-4AE5-92B4-91C801CA3A8C",
+      "n_position_x" : 0.2889447236180904,
+      "n_position_y" : 0.34928810720268016,
+      "offset_height" : -60.284757118927935,
+      "offset_width" : -84.42211055276383,
+      "placement_kind" : "sticker",
+      "rotation_radians" : -0.4408268981384401,
+      "scale" : 1.3284650863427565,
+      "z_index" : 220
+    },
+    {
+      "id" : "4E3D613C-3FF7-4AE5-92B4-91C801CA3A8C",
+      "inner_offset_height" : 0,
+      "inner_offset_width" : 0,
+      "inner_scale" : 1,
+      "n_position_x" : 0.2889447236180904,
+      "n_position_y" : 0.34928810720268016,
+      "offset_height" : -60.284757118927935,
+      "offset_width" : -84.42211055276383,
+      "parent_frame_sticker_id" : "B9AADD18-2DE7-4556-8BC7-860E7C242525",
+      "placement_kind" : "canvas_photo",
+      "rotation_radians" : -0.4408268981384401,
+      "scale" : 1.3284650863427565,
+      "z_index" : 220
+    },
+    {
+      "hole_n_rect" : [
+        0.052734,
+        0.052734,
+        0.894531,
+        0.894531
+      ],
+      "id" : "E2363CAB-5286-413F-94AD-F13BB89ADF62",
+      "image_name" : "polaroidframe__polaroid1_1_w",
+      "is_transform_locked" : true,
+      "linked_canvas_photo_id" : "FA5320F7-11AF-47FE-8A0D-0DEFA9167252",
+      "n_position_x" : 0.5393634840871022,
+      "n_position_y" : 0.6876046901172526,
+      "offset_height" : 75.04187604690102,
+      "offset_width" : 15.745393634840887,
+      "placement_kind" : "sticker",
+      "rotation_radians" : 0,
+      "scale" : 1.345307158563556,
+      "z_index" : 226
+    },
+    {
+      "id" : "FA5320F7-11AF-47FE-8A0D-0DEFA9167252",
+      "inner_offset_height" : 0,
+      "inner_offset_width" : 0,
+      "inner_scale" : 1,
+      "n_position_x" : 0.5393634840871022,
+      "n_position_y" : 0.6876046901172526,
+      "offset_height" : 75.04187604690102,
+      "offset_width" : 15.745393634840887,
+      "parent_frame_sticker_id" : "E2363CAB-5286-413F-94AD-F13BB89ADF62",
+      "placement_kind" : "canvas_photo",
+      "rotation_radians" : 0,
+      "scale" : 1.345307158563556,
+      "z_index" : 226
+    },
+    {
+      "id" : "45DCBBF7-A8BE-474D-B046-0D2C5E871649",
+      "image_name" : "football_season__wc",
+      "n_position_x" : 0.20100502512562812,
+      "n_position_y" : 0.7922948073701843,
+      "offset_height" : 116.91792294807372,
+      "offset_width" : -119.59798994974875,
+      "placement_kind" : "sticker",
+      "rotation_radians" : -0.6094993005078638,
+      "scale" : 1.8569796997070918,
+      "z_index" : 339
+    },
+    {
+      "id" : "F43D38BE-3C7B-4D78-AB37-BA4CF80A5547",
+      "image_name" : "football_season__football",
+      "n_position_x" : 0.8525963149078724,
+      "n_position_y" : 0.6800670016750417,
+      "offset_height" : 72.0268006700167,
+      "offset_width" : 141.03852596314894,
+      "placement_kind" : "sticker",
+      "rotation_radians" : -0.8134634310253556,
+      "scale" : 1.296022966396342,
+      "z_index" : 422
+    }
+  ],
+  "version" : "1"
+}

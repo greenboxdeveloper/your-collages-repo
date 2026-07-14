@@ -1,0 +1,272 @@
+{
+  "chrome" : {
+    "background_color_rgba" : [
+      1,
+      1,
+      1,
+      1
+    ],
+    "background_hazy_blur_radius" : 48,
+    "background_image_name" : "bulk__soccer_stadium_night_jpg",
+    "border_color_rgba" : [
+      1,
+      1,
+      1,
+      1
+    ],
+    "border_corner_radius" : 0,
+    "border_width" : 20,
+    "canvas_aspect" : 0.5625,
+    "canvas_ratio_preset" : "9:16",
+    "editor_canvas_min_side" : 400,
+    "has_background_image" : true
+  },
+  "dependencies" : [
+    {
+      "asset_ref" : "soccer-stadium-night.jpg",
+      "id" : "bulk__soccer_stadium_night_jpg",
+      "type" : "background",
+      "url" : "https:\/\/photocollagemaker.john4shine.workers.dev\/Backgrounds\/Bulk\/soccer-stadium-night.jpg"
+    },
+    {
+      "asset_ref" : "Polaroid1.1_W.png",
+      "id" : "polaroidframe__polaroid1_1_w",
+      "type" : "sticker",
+      "url" : "https:\/\/photocollagemaker.john4shine.workers.dev\/PolaroidFrame\/Polaroid1.1_W.png"
+    },
+    {
+      "id" : "file:\/\/\/var\/mobile\/Containers\/Data\/Application\/3C86E114-9C20-437A-B765-68935E255F73\/Documents\/MyCollageProjects\/1C2B2836-B4DC-4666-94E9-F9E4E8150150_overlays\/sticker_canvas_582CB706-5F9A-4CCD-AA98-2253FE260312.jpg",
+      "type" : "sticker"
+    },
+    {
+      "id" : "file:\/\/\/var\/mobile\/Containers\/Data\/Application\/3C86E114-9C20-437A-B765-68935E255F73\/Documents\/MyCollageProjects\/1C2B2836-B4DC-4666-94E9-F9E4E8150150_overlays\/sticker_canvas_553F9ADB-9586-4CB2-901D-78D2BC6499C9.jpg",
+      "type" : "sticker"
+    },
+    {
+      "asset_ref" : "trophy.png",
+      "id" : "football_season__trophy",
+      "type" : "sticker",
+      "url" : "https:\/\/photocollagemaker.john4shine.workers.dev\/Stickers\/Football%20Season\/trophy.png"
+    },
+    {
+      "asset_ref" : "ar.png",
+      "id" : "bulk__ar",
+      "type" : "sticker",
+      "url" : "https:\/\/photocollagemaker.john4shine.workers.dev\/Stickers\/World%20Flags_F\/ar.png"
+    },
+    {
+      "asset_ref" : "FIFA 26 Inspired Font_F.ttf",
+      "id" : "FWC2026-UltraCondensedMedium",
+      "type" : "font",
+      "url" : "https:\/\/photocollagemaker.john4shine.workers.dev\/Fonts\/English\/FIFA%2026%20Inspired%20Font_F.ttf"
+    }
+  ],
+  "editor" : {
+    "divider_positions" : {
+
+    },
+    "shared_vertex_positions" : {
+
+    }
+  },
+  "layout" : {
+    "category" : "TemplateBuilder",
+    "dividers" : [
+
+    ],
+    "id" : "template-builder-E81A7A29",
+    "isPremium" : false,
+    "name" : "Template builder",
+    "shared_vertices" : [
+
+    ],
+    "slots" : [
+
+    ],
+    "type" : "grid"
+  },
+  "shapes" : [
+    {
+      "fill_color_rgba" : [
+        0.18823528289794922,
+        0.8196078538894653,
+        0.34509801864624023,
+        1
+      ],
+      "id" : "8B7F2F5C-A6FB-4321-B036-FEBFDD9ABFC9",
+      "kind" : "square",
+      "n_position_x" : 0.6926298157453937,
+      "n_position_y" : 0.4783291457286434,
+      "offset_height" : -15.410385259631374,
+      "offset_width" : 77.0519262981575,
+      "opacity" : 1,
+      "rotation_radians" : -3.836655347809495e-16,
+      "scale" : 0.8072714350804694,
+      "stroke_color_rgba" : [
+        0,
+        0,
+        0,
+        0
+      ],
+      "stroke_width" : 0,
+      "z_index" : 590
+    },
+    {
+      "fill_color_rgba" : [
+        0.18823528289794922,
+        0.8196078538894653,
+        0.34509801864624023,
+        1
+      ],
+      "id" : "AC6322E2-8E65-4086-81EE-64C372E783AD",
+      "kind" : "square",
+      "n_position_x" : 0.5075376884422111,
+      "n_position_y" : 0.285942814037466,
+      "offset_height" : -152.21844335113528,
+      "offset_width" : 3.0150753768844574,
+      "opacity" : 1,
+      "rotation_radians" : 0,
+      "scale" : 0.6016663047629051,
+      "stroke_color_rgba" : [
+        0,
+        0,
+        0,
+        0
+      ],
+      "stroke_width" : 0,
+      "z_index" : 658
+    }
+  ],
+  "stickers" : [
+    {
+      "hole_n_rect" : [
+        0.052734,
+        0.052734,
+        0.894531,
+        0.894531
+      ],
+      "id" : "7DEE2365-5AA1-4675-AACD-27DA3B18A9A5",
+      "image_name" : "polaroidframe__polaroid1_1_w",
+      "is_transform_locked" : true,
+      "linked_canvas_photo_id" : "582CB706-5F9A-4CCD-AA98-2253FE260312",
+      "n_position_x" : 0.7613065326633166,
+      "n_position_y" : 0.3238065326633165,
+      "offset_height" : -125.29313232830826,
+      "offset_width" : 104.52261306532664,
+      "placement_kind" : "sticker",
+      "rotation_radians" : 0,
+      "scale" : 1,
+      "z_index" : 39
+    },
+    {
+      "id" : "582CB706-5F9A-4CCD-AA98-2253FE260312",
+      "image_name" : "file:\/\/\/var\/mobile\/Containers\/Data\/Application\/3C86E114-9C20-437A-B765-68935E255F73\/Documents\/MyCollageProjects\/1C2B2836-B4DC-4666-94E9-F9E4E8150150_overlays\/sticker_canvas_582CB706-5F9A-4CCD-AA98-2253FE260312.jpg",
+      "inner_offset_height" : 0,
+      "inner_offset_width" : 0,
+      "inner_scale" : 1,
+      "n_position_x" : 0.7613065326633166,
+      "n_position_y" : 0.3238065326633165,
+      "offset_height" : -125.29313232830826,
+      "offset_width" : 104.52261306532664,
+      "parent_frame_sticker_id" : "7DEE2365-5AA1-4675-AACD-27DA3B18A9A5",
+      "placement_kind" : "canvas_photo",
+      "rotation_radians" : 0,
+      "scale" : 1,
+      "z_index" : 39
+    },
+    {
+      "hole_n_rect" : [
+        0.052734,
+        0.052734,
+        0.894531,
+        0.894531
+      ],
+      "id" : "69D685EB-B860-44F3-B0E1-2F14732741C9",
+      "image_name" : "polaroidframe__polaroid1_1_w",
+      "is_transform_locked" : true,
+      "linked_canvas_photo_id" : "553F9ADB-9586-4CB2-901D-78D2BC6499C9",
+      "n_position_x" : 0.36067636018053706,
+      "n_position_y" : 0.4559984710556364,
+      "offset_height" : -31.289976138214115,
+      "offset_width" : -55.729455927785175,
+      "placement_kind" : "sticker",
+      "rotation_radians" : 0,
+      "scale" : 1.3066236930557313,
+      "z_index" : 35
+    },
+    {
+      "id" : "553F9ADB-9586-4CB2-901D-78D2BC6499C9",
+      "image_name" : "file:\/\/\/var\/mobile\/Containers\/Data\/Application\/3C86E114-9C20-437A-B765-68935E255F73\/Documents\/MyCollageProjects\/1C2B2836-B4DC-4666-94E9-F9E4E8150150_overlays\/sticker_canvas_553F9ADB-9586-4CB2-901D-78D2BC6499C9.jpg",
+      "inner_offset_height" : 0,
+      "inner_offset_width" : 0,
+      "inner_scale" : 1,
+      "n_position_x" : 0.36067636018053706,
+      "n_position_y" : 0.4559984710556364,
+      "offset_height" : -31.289976138214115,
+      "offset_width" : -55.729455927785175,
+      "parent_frame_sticker_id" : "69D685EB-B860-44F3-B0E1-2F14732741C9",
+      "placement_kind" : "canvas_photo",
+      "rotation_radians" : 0,
+      "scale" : 1.3066236930557313,
+      "z_index" : 35
+    },
+    {
+      "id" : "4F248E91-BFE6-4C64-AEDE-26E1ADD36C17",
+      "image_name" : "football_season__trophy",
+      "n_position_x" : 0.5108877721943048,
+      "n_position_y" : 0.16728824076833215,
+      "offset_height" : -236.59502878696378,
+      "offset_width" : 4.355108877721925,
+      "placement_kind" : "sticker",
+      "rotation_radians" : -2.4802620430283604e-16,
+      "scale" : 1.0777844014215745,
+      "z_index" : 660
+    },
+    {
+      "id" : "FA01676E-7C44-4C46-9421-BD8AB6FFDA13",
+      "image_name" : "bulk__ar",
+      "n_position_x" : 0.46733668341708545,
+      "n_position_y" : 0.6304962311557789,
+      "offset_height" : 92.79731993299833,
+      "offset_width" : -13.065326633165819,
+      "placement_kind" : "sticker",
+      "rotation_radians" : 0,
+      "scale" : 1,
+      "z_index" : 832
+    }
+  ],
+  "text_items" : [
+    {
+      "alignment" : "center",
+      "backgroundColorHex" : "#00000000",
+      "backgroundOpacity" : 1,
+      "cornerRadius" : 8,
+      "fontName" : "FWC2026-UltraCondensedMedium",
+      "fontSize" : 30,
+      "id" : "8CEAB17E-0F5B-4B71-AD6F-46BB54F10F96",
+      "isUserProContent" : false,
+      "layoutCanvasMinSide" : 400,
+      "letterSpacing" : 0,
+      "lineSpacing" : 0,
+      "nPosition" : [
+        0.5,
+        0.7803077889447234
+      ],
+      "outlineColorHex" : "#000000",
+      "outlineOpacity" : 1,
+      "outlineWidth" : 0,
+      "renderedHeight" : 29.216718749999995,
+      "renderedWidth" : 92.11640625,
+      "rotation" : 0,
+      "scale" : 2.531442778212702,
+      "shadowColorHex" : "#00000000",
+      "shadowRadius" : 0,
+      "text" : "Vamos Argentina",
+      "textCase" : "none",
+      "textColorHex" : "#FFFFFF",
+      "textOpacity" : 1,
+      "zIndex" : 827
+    }
+  ],
+  "version" : "1"
+}

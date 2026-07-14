@@ -9,6 +9,21 @@
     "items_per_row": 10
   },
   "sections": [
+      {
+        "title": "Cup Crazy 🏆",
+        "subtitle": "A goal from last night's match",
+        "display_size": "hero",
+        "store": "Templates",
+        "file": "Fifa5.json"
+      },
+      {
+        "title": "Football Fever",
+        "subtitle": "",
+        "display_size": "small",
+        "store": "Templates",
+        "pack": "Football Fever",
+        "count": 15
+      },
     {
       "title": "Celebrate Summer",
       "subtitle": "",
