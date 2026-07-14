@@ -1,5 +1,5 @@
 {
-  "version": "4.1",
+  "version": "4.2",
   "categories": [
     {
       "id": "testtemplates",
@@ -125,6 +125,32 @@
               "width": 0.481698,
               "height": 0.382812,
               "areaFraction": 0.162344,
+              "source": "transparency"
+            }
+          ]
+        },
+        {
+          "id": "testtemplates__fifatmplt1",
+          "name": "Fifatmplt1",
+          "fileName": "fifatmplt1",
+          "isPremium": false,
+          "holeCount": 2,
+          "fileExtension": "png",
+          "precomputedSlots": [
+            {
+              "x": 0.0,
+              "y": 0.0,
+              "width": 1.0,
+              "height": 0.744141,
+              "areaFraction": 0.371126,
+              "source": "transparency"
+            },
+            {
+              "x": 0.0,
+              "y": 0.738281,
+              "width": 0.506993,
+              "height": 0.261719,
+              "areaFraction": 0.12933,
               "source": "transparency"
             }
           ]
