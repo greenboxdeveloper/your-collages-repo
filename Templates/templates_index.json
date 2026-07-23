@@ -1,5 +1,5 @@
 {
-  "version": "5.5",
+  "version": "5.6",
   "templates": [
     {
       "id": "4th_july__4th_1",
@@ -298,6 +298,46 @@
       "category_folder": "Fathers Day",
       "recipe": "FathersDay 1.4.json",
       "preview": "FathersDay 1.4.jpg",
+      "is_premium": true,
+      "neutral_empty_slots": true
+    },
+    {
+      "id": "football_fever__fifa1",
+      "title": "Fifa1",
+      "category": "Football Fever",
+      "category_folder": "Football Fever",
+      "recipe": "Fifa1.json",
+      "preview": "Fifa1.jpg",
+      "is_premium": true,
+      "neutral_empty_slots": true
+    },
+    {
+      "id": "football_fever__fifa2",
+      "title": "Fifa2",
+      "category": "Football Fever",
+      "category_folder": "Football Fever",
+      "recipe": "Fifa2.json",
+      "preview": "Fifa2.jpg",
+      "is_premium": true,
+      "neutral_empty_slots": true
+    },
+    {
+      "id": "football_fever__fifa4",
+      "title": "Fifa4",
+      "category": "Football Fever",
+      "category_folder": "Football Fever",
+      "recipe": "Fifa4.json",
+      "preview": "Fifa4.jpg",
+      "is_premium": true,
+      "neutral_empty_slots": true
+    },
+    {
+      "id": "football_fever__fifa5",
+      "title": "Fifa5",
+      "category": "Football Fever",
+      "category_folder": "Football Fever",
+      "recipe": "Fifa5.json",
+      "preview": "Fifa5.jpg",
       "is_premium": true,
       "neutral_empty_slots": true
     },
