@@ -1,5 +1,5 @@
 {
-  "version": "18.2",
+  "version": "18.3",
   "sections": [
     {
       "id": "slideshow",
@@ -40,25 +40,6 @@
       "count": 10
     },
     {
-      "id": "templates_fifa5_json_cup_crazy",
-      "title": "Cup Crazy 🏆",
-      "subtitle": "A goal from last night's match",
-      "display_size": "hero",
-      "category": "templates",
-      "sub_category": "Football Fever",
-      "count": 1,
-      "item": "Fifa5.json"
-    },
-    {
-      "id": "templates_football_fever_football_fever",
-      "title": "Football Fever",
-      "subtitle": "",
-      "display_size": "small",
-      "category": "templates",
-      "sub_category": "Football Fever",
-      "count": 15
-    },
-    {
       "id": "templates_summer_1_6_json_celebrate_summer",
       "title": "Celebrate Summer",
       "subtitle": "",
@@ -75,6 +56,15 @@
       "display_size": "small",
       "category": "templates",
       "sub_category": "Polaroids",
+      "count": 15
+    },
+    {
+      "id": "templates_football_fever_football_fever",
+      "title": "Football Fever",
+      "subtitle": "",
+      "display_size": "small",
+      "category": "templates",
+      "sub_category": "Football Fever",
       "count": 15
     },
     {
