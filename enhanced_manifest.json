@@ -1,5 +1,5 @@
 {
-  "version": "4.5",
+  "version": "4.6",
   "layouts": [
     {
       "category": "Classic",
@@ -8413,47 +8413,6 @@
       "dividers": []
     },
     {
-      "id": "svg_SVG13",
-      "name": "Svg13",
-      "category": "Stylish",
-      "isPremium": true,
-      "type": "grid",
-      "thumbnailURL": null,
-      "slots": [
-        {
-          "id": "slot_0",
-          "n_rect": [
-            0.05,
-            0.05,
-            0.902,
-            0.574
-          ]
-        },
-        {
-          "id": "slot_1",
-          "n_rect": [
-            0.188,
-            0.624,
-            0.626,
-            0.29
-          ]
-        }
-      ],
-      "dividers": [
-        {
-          "id": "DRAG_H_0",
-          "type": "horizontal",
-          "position": 0.624,
-          "affects": [
-            "slot_0",
-            "slot_1"
-          ],
-          "segment_start": 0.05,
-          "segment_end": 0.952
-        }
-      ]
-    },
-    {
       "id": "svg_SVG14",
       "name": "Svg14",
       "category": "Stylish",
@@ -8549,88 +8508,6 @@
         }
       ],
       "dividers": []
-    },
-    {
-      "id": "svg_SVG16",
-      "name": "Svg16",
-      "category": "Stylish",
-      "isPremium": true,
-      "type": "grid",
-      "thumbnailURL": null,
-      "slots": [
-        {
-          "id": "slot_0",
-          "n_rect": [
-            0.0,
-            0.0,
-            0.25,
-            1.0
-          ]
-        },
-        {
-          "id": "slot_1",
-          "n_rect": [
-            0.25,
-            0.0,
-            0.25,
-            1.0
-          ]
-        },
-        {
-          "id": "slot_2",
-          "n_rect": [
-            0.5,
-            0.0,
-            0.5,
-            0.5
-          ]
-        },
-        {
-          "id": "slot_3",
-          "n_rect": [
-            0.5,
-            0.5,
-            0.5,
-            0.5
-          ]
-        }
-      ],
-      "dividers": [
-        {
-          "id": "DRAG_V_0",
-          "type": "vertical",
-          "position": 0.25,
-          "affects": [
-            "slot_0",
-            "slot_1"
-          ],
-          "segment_start": 0.0,
-          "segment_end": 1.0
-        },
-        {
-          "id": "DRAG_V_1",
-          "type": "vertical",
-          "position": 0.5,
-          "affects": [
-            "slot_1",
-            "slot_2",
-            "slot_3"
-          ],
-          "segment_start": 0.0,
-          "segment_end": 1.0
-        },
-        {
-          "id": "DRAG_H_2",
-          "type": "horizontal",
-          "position": 0.5,
-          "affects": [
-            "slot_2",
-            "slot_3"
-          ],
-          "segment_start": 0.5,
-          "segment_end": 1.0
-        }
-      ]
     },
     {
       "id": "svg_SVG8",
@@ -8897,57 +8774,6 @@
           ],
           "segment_start": 0.0,
           "segment_end": 1.0
-        }
-      ]
-    },
-    {
-      "id": "svg_drag test",
-      "name": "Drag Test",
-      "category": "Stylish",
-      "isPremium": true,
-      "type": "grid",
-      "thumbnailURL": null,
-      "slots": [
-        {
-          "id": "slot_0",
-          "n_rect": [
-            0.0,
-            0.0,
-            0.72,
-            0.5
-          ]
-        },
-        {
-          "id": "slot_1",
-          "n_rect": [
-            0.104,
-            0.5,
-            0.896,
-            0.5
-          ]
-        }
-      ],
-      "dividers": [
-        {
-          "id": "DRAG_H_1",
-          "type": "horizontal",
-          "position": 0.5,
-          "affects": [
-            "slot_0",
-            "slot_1"
-          ],
-          "segment_start": 0.0,
-          "segment_end": 1.0
-        },
-        {
-          "id": "DRAG_V_1",
-          "type": "vertical",
-          "position": 0.72,
-          "affects": [
-            "slot_0"
-          ],
-          "segment_start": 0.0,
-          "segment_end": 0.5
         }
       ]
     },
