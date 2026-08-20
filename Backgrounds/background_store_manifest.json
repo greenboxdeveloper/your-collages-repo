@@ -1,82 +1,91 @@
 {
-  "version": "2.8",
+  "version": "3.0",
   "categories": [
     {
-      "id": "4th_july_pack_01",
-      "name": "4Th July Pack 01",
-      "remoteFolderName": "4th July Pack 01",
+      "id": "bold_hearts",
+      "name": "Bold Hearts",
+      "remoteFolderName": "Bold Hearts",
       "backgrounds": [
         {
-          "id": "4th_july_pack_01__4thjuly_1_1_jpg",
-          "name": "4Thjuly 1.1",
-          "isPremium": false,
+          "id": "bold_hearts__valentine1_1_jpg",
+          "name": "Valentine1.1",
+          "isPremium": true,
           "kind": "image",
           "source": "ota",
           "colorHex": null,
-          "fileName": "4thJuly 1.1.jpg"
+          "fileName": "Valentine1.1_PR.jpg"
         },
         {
-          "id": "4th_july_pack_01__4thjuly_1_2_jpg",
-          "name": "4Thjuly 1.2",
-          "isPremium": false,
+          "id": "bold_hearts__valentine1_2_jpg",
+          "name": "Valentine1.2",
+          "isPremium": true,
           "kind": "image",
           "source": "ota",
           "colorHex": null,
-          "fileName": "4thJuly 1.2.jpg"
+          "fileName": "Valentine1.2_PR.jpg"
         },
         {
-          "id": "4th_july_pack_01__4thjuly_1_3_jpg",
-          "name": "4Thjuly 1.3",
-          "isPremium": false,
+          "id": "bold_hearts__valentine1_3_jpg",
+          "name": "Valentine1.3",
+          "isPremium": true,
           "kind": "image",
           "source": "ota",
           "colorHex": null,
-          "fileName": "4thJuly 1.3.jpg"
+          "fileName": "Valentine1.3_PR.jpg"
         },
         {
-          "id": "4th_july_pack_01__4thjuly_1_4_jpg",
-          "name": "4Thjuly 1.4",
-          "isPremium": false,
+          "id": "bold_hearts__valentine1_4_jpg",
+          "name": "Valentine1.4",
+          "isPremium": true,
           "kind": "image",
           "source": "ota",
           "colorHex": null,
-          "fileName": "4thJuly 1.4.jpg"
+          "fileName": "Valentine1.4_PR.jpg"
         },
         {
-          "id": "4th_july_pack_01__4thjuly_1_5_jpg",
-          "name": "4Thjuly 1.5",
-          "isPremium": false,
+          "id": "bold_hearts__valentine1_5_jpg",
+          "name": "Valentine1.5",
+          "isPremium": true,
           "kind": "image",
           "source": "ota",
           "colorHex": null,
-          "fileName": "4thJuly 1.5.jpg"
+          "fileName": "Valentine1.5_PR.jpg"
         },
         {
-          "id": "4th_july_pack_01__4thjuly_1_6_jpg",
-          "name": "4Thjuly 1.6",
-          "isPremium": false,
+          "id": "bold_hearts__valentine1_6_jpg",
+          "name": "Valentine1.6",
+          "isPremium": true,
           "kind": "image",
           "source": "ota",
           "colorHex": null,
-          "fileName": "4thJuly 1.6.jpg"
+          "fileName": "Valentine1.6_PR.jpg"
         },
         {
-          "id": "4th_july_pack_01__4thjuly_1_7_jpg",
-          "name": "4Thjuly 1.7",
-          "isPremium": false,
+          "id": "bold_hearts__valentine1_7_jpg",
+          "name": "Valentine1.7",
+          "isPremium": true,
           "kind": "image",
           "source": "ota",
           "colorHex": null,
-          "fileName": "4thJuly 1.7.jpg"
+          "fileName": "Valentine1.7_PR.jpg"
         },
         {
-          "id": "4th_july_pack_01__4thjuly_1_8_jpg",
-          "name": "4Thjuly 1.8",
-          "isPremium": false,
+          "id": "bold_hearts__valentine1_8_jpg",
+          "name": "Valentine1.8",
+          "isPremium": true,
           "kind": "image",
           "source": "ota",
           "colorHex": null,
-          "fileName": "4thJuly 1.8.jpg"
+          "fileName": "Valentine1.8_PR.jpg"
+        },
+        {
+          "id": "bold_hearts__valentine1_9_jpg",
+          "name": "Valentine1.9",
+          "isPremium": true,
+          "kind": "image",
+          "source": "ota",
+          "colorHex": null,
+          "fileName": "Valentine1.9_PR.jpg"
         }
       ]
     },
@@ -142,12 +151,12 @@
       ]
     },
     {
-      "id": "candy_pack_01",
-      "name": "Candy Pack 01",
-      "remoteFolderName": "Candy Pack 01",
+      "id": "candy_doodles",
+      "name": "Candy Doodles",
+      "remoteFolderName": "Candy Doodles",
       "backgrounds": [
         {
-          "id": "candy_pack_01__candy1_10_jpg",
+          "id": "candy_doodles__candy1_10_jpg",
           "name": "Candy1.10",
           "isPremium": true,
           "kind": "image",
@@ -156,7 +165,7 @@
           "fileName": "Candy1.10_PR.jpg"
         },
         {
-          "id": "candy_pack_01__candy1_1_jpg",
+          "id": "candy_doodles__candy1_1_jpg",
           "name": "Candy1.1",
           "isPremium": false,
           "kind": "image",
@@ -165,7 +174,7 @@
           "fileName": "Candy1.1.jpg"
         },
         {
-          "id": "candy_pack_01__candy1_2_jpg",
+          "id": "candy_doodles__candy1_2_jpg",
           "name": "Candy1.2",
           "isPremium": true,
           "kind": "image",
@@ -174,7 +183,7 @@
           "fileName": "Candy1.2_PR.jpg"
         },
         {
-          "id": "candy_pack_01__candy1_3_jpg",
+          "id": "candy_doodles__candy1_3_jpg",
           "name": "Candy1.3",
           "isPremium": true,
           "kind": "image",
@@ -183,7 +192,7 @@
           "fileName": "Candy1.3_PR.jpg"
         },
         {
-          "id": "candy_pack_01__candy1_4_jpg",
+          "id": "candy_doodles__candy1_4_jpg",
           "name": "Candy1.4",
           "isPremium": true,
           "kind": "image",
@@ -192,7 +201,7 @@
           "fileName": "Candy1.4_PR.jpg"
         },
         {
-          "id": "candy_pack_01__candy1_5_jpg",
+          "id": "candy_doodles__candy1_5_jpg",
           "name": "Candy1.5",
           "isPremium": true,
           "kind": "image",
@@ -201,7 +210,7 @@
           "fileName": "Candy1.5_PR.jpg"
         },
         {
-          "id": "candy_pack_01__candy1_6_jpg",
+          "id": "candy_doodles__candy1_6_jpg",
           "name": "Candy1.6",
           "isPremium": true,
           "kind": "image",
@@ -210,7 +219,7 @@
           "fileName": "Candy1.6_PR.jpg"
         },
         {
-          "id": "candy_pack_01__candy1_7_jpg",
+          "id": "candy_doodles__candy1_7_jpg",
           "name": "Candy1.7",
           "isPremium": true,
           "kind": "image",
@@ -219,7 +228,7 @@
           "fileName": "Candy1.7_PR.jpg"
         },
         {
-          "id": "candy_pack_01__candy1_8_jpg",
+          "id": "candy_doodles__candy1_8_jpg",
           "name": "Candy1.8",
           "isPremium": true,
           "kind": "image",
@@ -228,7 +237,7 @@
           "fileName": "Candy1.8_PR.jpg"
         },
         {
-          "id": "candy_pack_01__candy1_9_jpg",
+          "id": "candy_doodles__candy1_9_jpg",
           "name": "Candy1.9",
           "isPremium": true,
           "kind": "image",
@@ -239,470 +248,12 @@
       ]
     },
     {
-      "id": "dot_pack_01",
-      "name": "Dot Pack 01",
-      "remoteFolderName": "Dot Pack 01",
+      "id": "floral_patterns",
+      "name": "Floral Patterns",
+      "remoteFolderName": "Floral Patterns",
       "backgrounds": [
         {
-          "id": "dot_pack_01__dot1_10_jpg",
-          "name": "Dot1.10",
-          "isPremium": true,
-          "kind": "image",
-          "source": "ota",
-          "colorHex": null,
-          "fileName": "Dot1.10_PR.jpg"
-        },
-        {
-          "id": "dot_pack_01__dot1_1_jpg",
-          "name": "Dot1.1",
-          "isPremium": false,
-          "kind": "image",
-          "source": "ota",
-          "colorHex": null,
-          "fileName": "Dot1.1.jpg"
-        },
-        {
-          "id": "dot_pack_01__dot1_2_jpg",
-          "name": "Dot1.2",
-          "isPremium": true,
-          "kind": "image",
-          "source": "ota",
-          "colorHex": null,
-          "fileName": "Dot1.2_PR.jpg"
-        },
-        {
-          "id": "dot_pack_01__dot1_3_jpg",
-          "name": "Dot1.3",
-          "isPremium": true,
-          "kind": "image",
-          "source": "ota",
-          "colorHex": null,
-          "fileName": "Dot1.3_PR.jpg"
-        },
-        {
-          "id": "dot_pack_01__dot1_4_jpg",
-          "name": "Dot1.4",
-          "isPremium": true,
-          "kind": "image",
-          "source": "ota",
-          "colorHex": null,
-          "fileName": "Dot1.4_PR.jpg"
-        },
-        {
-          "id": "dot_pack_01__dot1_5_jpg",
-          "name": "Dot1.5",
-          "isPremium": true,
-          "kind": "image",
-          "source": "ota",
-          "colorHex": null,
-          "fileName": "Dot1.5_PR.jpg"
-        },
-        {
-          "id": "dot_pack_01__dot1_6_jpg",
-          "name": "Dot1.6",
-          "isPremium": true,
-          "kind": "image",
-          "source": "ota",
-          "colorHex": null,
-          "fileName": "Dot1.6_PR.jpg"
-        },
-        {
-          "id": "dot_pack_01__dot1_7_jpg",
-          "name": "Dot1.7",
-          "isPremium": true,
-          "kind": "image",
-          "source": "ota",
-          "colorHex": null,
-          "fileName": "Dot1.7_PR.jpg"
-        },
-        {
-          "id": "dot_pack_01__dot1_8_jpg",
-          "name": "Dot1.8",
-          "isPremium": true,
-          "kind": "image",
-          "source": "ota",
-          "colorHex": null,
-          "fileName": "Dot1.8_PR.jpg"
-        },
-        {
-          "id": "dot_pack_01__dot1_9_jpg",
-          "name": "Dot1.9",
-          "isPremium": true,
-          "kind": "image",
-          "source": "ota",
-          "colorHex": null,
-          "fileName": "Dot1.9_PR.jpg"
-        }
-      ]
-    },
-    {
-      "id": "dot_pack_02",
-      "name": "Dot Pack 02",
-      "remoteFolderName": "Dot Pack 02",
-      "backgrounds": [
-        {
-          "id": "dot_pack_02__dot2_10_jpg",
-          "name": "Dot2.10",
-          "isPremium": true,
-          "kind": "image",
-          "source": "ota",
-          "colorHex": null,
-          "fileName": "Dot2.10_PR.jpg"
-        },
-        {
-          "id": "dot_pack_02__dot2_1_jpg",
-          "name": "Dot2.1",
-          "isPremium": false,
-          "kind": "image",
-          "source": "ota",
-          "colorHex": null,
-          "fileName": "Dot2.1.jpg"
-        },
-        {
-          "id": "dot_pack_02__dot2_2_jpg",
-          "name": "Dot2.2",
-          "isPremium": true,
-          "kind": "image",
-          "source": "ota",
-          "colorHex": null,
-          "fileName": "Dot2.2_PR.jpg"
-        },
-        {
-          "id": "dot_pack_02__dot2_3_jpg",
-          "name": "Dot2.3",
-          "isPremium": true,
-          "kind": "image",
-          "source": "ota",
-          "colorHex": null,
-          "fileName": "Dot2.3_PR.jpg"
-        },
-        {
-          "id": "dot_pack_02__dot2_4_jpg",
-          "name": "Dot2.4",
-          "isPremium": true,
-          "kind": "image",
-          "source": "ota",
-          "colorHex": null,
-          "fileName": "Dot2.4_PR.jpg"
-        },
-        {
-          "id": "dot_pack_02__dot2_5_jpg",
-          "name": "Dot2.5",
-          "isPremium": true,
-          "kind": "image",
-          "source": "ota",
-          "colorHex": null,
-          "fileName": "Dot2.5_PR.jpg"
-        },
-        {
-          "id": "dot_pack_02__dot2_6_jpg",
-          "name": "Dot2.6",
-          "isPremium": true,
-          "kind": "image",
-          "source": "ota",
-          "colorHex": null,
-          "fileName": "Dot2.6_PR.jpg"
-        },
-        {
-          "id": "dot_pack_02__dot2_7_jpg",
-          "name": "Dot2.7",
-          "isPremium": true,
-          "kind": "image",
-          "source": "ota",
-          "colorHex": null,
-          "fileName": "Dot2.7_PR.jpg"
-        },
-        {
-          "id": "dot_pack_02__dot2_8_jpg",
-          "name": "Dot2.8",
-          "isPremium": true,
-          "kind": "image",
-          "source": "ota",
-          "colorHex": null,
-          "fileName": "Dot2.8_PR.jpg"
-        },
-        {
-          "id": "dot_pack_02__dot2_9_jpg",
-          "name": "Dot2.9",
-          "isPremium": true,
-          "kind": "image",
-          "source": "ota",
-          "colorHex": null,
-          "fileName": "Dot2.9_PR.jpg"
-        }
-      ]
-    },
-    {
-      "id": "dot_pack_03",
-      "name": "Dot Pack 03",
-      "remoteFolderName": "Dot Pack 03",
-      "backgrounds": [
-        {
-          "id": "dot_pack_03__dot3_10_jpg",
-          "name": "Dot3.10",
-          "isPremium": true,
-          "kind": "image",
-          "source": "ota",
-          "colorHex": null,
-          "fileName": "Dot3.10_PR.jpg"
-        },
-        {
-          "id": "dot_pack_03__dot3_1_jpg",
-          "name": "Dot3.1",
-          "isPremium": false,
-          "kind": "image",
-          "source": "ota",
-          "colorHex": null,
-          "fileName": "Dot3.1.jpg"
-        },
-        {
-          "id": "dot_pack_03__dot3_2_jpg",
-          "name": "Dot3.2",
-          "isPremium": true,
-          "kind": "image",
-          "source": "ota",
-          "colorHex": null,
-          "fileName": "Dot3.2_PR.jpg"
-        },
-        {
-          "id": "dot_pack_03__dot3_3_jpg",
-          "name": "Dot3.3",
-          "isPremium": true,
-          "kind": "image",
-          "source": "ota",
-          "colorHex": null,
-          "fileName": "Dot3.3_PR.jpg"
-        },
-        {
-          "id": "dot_pack_03__dot3_4_jpg",
-          "name": "Dot3.4",
-          "isPremium": true,
-          "kind": "image",
-          "source": "ota",
-          "colorHex": null,
-          "fileName": "Dot3.4_PR.jpg"
-        },
-        {
-          "id": "dot_pack_03__dot3_5_jpg",
-          "name": "Dot3.5",
-          "isPremium": true,
-          "kind": "image",
-          "source": "ota",
-          "colorHex": null,
-          "fileName": "Dot3.5_PR.jpg"
-        },
-        {
-          "id": "dot_pack_03__dot3_6_jpg",
-          "name": "Dot3.6",
-          "isPremium": true,
-          "kind": "image",
-          "source": "ota",
-          "colorHex": null,
-          "fileName": "Dot3.6_PR.jpg"
-        },
-        {
-          "id": "dot_pack_03__dot3_7_jpg",
-          "name": "Dot3.7",
-          "isPremium": true,
-          "kind": "image",
-          "source": "ota",
-          "colorHex": null,
-          "fileName": "Dot3.7_PR.jpg"
-        },
-        {
-          "id": "dot_pack_03__dot3_8_jpg",
-          "name": "Dot3.8",
-          "isPremium": true,
-          "kind": "image",
-          "source": "ota",
-          "colorHex": null,
-          "fileName": "Dot3.8_PR.jpg"
-        },
-        {
-          "id": "dot_pack_03__dot3_9_jpg",
-          "name": "Dot3.9",
-          "isPremium": true,
-          "kind": "image",
-          "source": "ota",
-          "colorHex": null,
-          "fileName": "Dot3.9_PR.jpg"
-        }
-      ]
-    },
-    {
-      "id": "dot_pack_04",
-      "name": "Dot Pack 04",
-      "remoteFolderName": "Dot Pack 04",
-      "backgrounds": [
-        {
-          "id": "dot_pack_04__dot4_10_jpg",
-          "name": "Dot4.10",
-          "isPremium": true,
-          "kind": "image",
-          "source": "ota",
-          "colorHex": null,
-          "fileName": "Dot4.10_PR.jpg"
-        },
-        {
-          "id": "dot_pack_04__dot4_1_jpg",
-          "name": "Dot4.1",
-          "isPremium": false,
-          "kind": "image",
-          "source": "ota",
-          "colorHex": null,
-          "fileName": "Dot4.1.jpg"
-        },
-        {
-          "id": "dot_pack_04__dot4_2_jpg",
-          "name": "Dot4.2",
-          "isPremium": true,
-          "kind": "image",
-          "source": "ota",
-          "colorHex": null,
-          "fileName": "Dot4.2_PR.jpg"
-        },
-        {
-          "id": "dot_pack_04__dot4_3_jpg",
-          "name": "Dot4.3",
-          "isPremium": true,
-          "kind": "image",
-          "source": "ota",
-          "colorHex": null,
-          "fileName": "Dot4.3_PR.jpg"
-        },
-        {
-          "id": "dot_pack_04__dot4_4_jpg",
-          "name": "Dot4.4",
-          "isPremium": true,
-          "kind": "image",
-          "source": "ota",
-          "colorHex": null,
-          "fileName": "Dot4.4_PR.jpg"
-        },
-        {
-          "id": "dot_pack_04__dot4_5_jpg",
-          "name": "Dot4.5",
-          "isPremium": true,
-          "kind": "image",
-          "source": "ota",
-          "colorHex": null,
-          "fileName": "Dot4.5_PR.jpg"
-        },
-        {
-          "id": "dot_pack_04__dot4_6_jpg",
-          "name": "Dot4.6",
-          "isPremium": true,
-          "kind": "image",
-          "source": "ota",
-          "colorHex": null,
-          "fileName": "Dot4.6_PR.jpg"
-        },
-        {
-          "id": "dot_pack_04__dot4_7_jpg",
-          "name": "Dot4.7",
-          "isPremium": true,
-          "kind": "image",
-          "source": "ota",
-          "colorHex": null,
-          "fileName": "Dot4.7_PR.jpg"
-        },
-        {
-          "id": "dot_pack_04__dot4_8_jpg",
-          "name": "Dot4.8",
-          "isPremium": true,
-          "kind": "image",
-          "source": "ota",
-          "colorHex": null,
-          "fileName": "Dot4.8_PR.jpg"
-        },
-        {
-          "id": "dot_pack_04__dot4_9_jpg",
-          "name": "Dot4.9",
-          "isPremium": true,
-          "kind": "image",
-          "source": "ota",
-          "colorHex": null,
-          "fileName": "Dot4.9_PR.jpg"
-        }
-      ]
-    },
-    {
-      "id": "paper",
-      "name": "Paper",
-      "remoteFolderName": "Paper",
-      "backgrounds": [
-        {
-          "id": "paper__1_jpg",
-          "name": "1",
-          "isPremium": false,
-          "kind": "image",
-          "source": "ota",
-          "colorHex": null,
-          "fileName": "1.jpg"
-        },
-        {
-          "id": "paper__2_jpg",
-          "name": "2",
-          "isPremium": false,
-          "kind": "image",
-          "source": "ota",
-          "colorHex": null,
-          "fileName": "2.jpg"
-        },
-        {
-          "id": "paper__3_jpg",
-          "name": "3",
-          "isPremium": false,
-          "kind": "image",
-          "source": "ota",
-          "colorHex": null,
-          "fileName": "3.jpg"
-        },
-        {
-          "id": "paper__4_jpg",
-          "name": "4",
-          "isPremium": false,
-          "kind": "image",
-          "source": "ota",
-          "colorHex": null,
-          "fileName": "4.jpg"
-        },
-        {
-          "id": "paper__5_jpg",
-          "name": "5",
-          "isPremium": false,
-          "kind": "image",
-          "source": "ota",
-          "colorHex": null,
-          "fileName": "5.jpg"
-        },
-        {
-          "id": "paper__6_jpg",
-          "name": "6",
-          "isPremium": false,
-          "kind": "image",
-          "source": "ota",
-          "colorHex": null,
-          "fileName": "6.jpg"
-        },
-        {
-          "id": "paper__7_jpg",
-          "name": "7",
-          "isPremium": false,
-          "kind": "image",
-          "source": "ota",
-          "colorHex": null,
-          "fileName": "7.jpg"
-        }
-      ]
-    },
-    {
-      "id": "spring",
-      "name": "Spring",
-      "remoteFolderName": "Spring",
-      "backgrounds": [
-        {
-          "id": "spring__spring01_jpg",
+          "id": "floral_patterns__spring01_jpg",
           "name": "Spring01",
           "isPremium": false,
           "kind": "image",
@@ -711,7 +262,7 @@
           "fileName": "Spring01.jpg"
         },
         {
-          "id": "spring__spring02_jpg",
+          "id": "floral_patterns__spring02_jpg",
           "name": "Spring02",
           "isPremium": false,
           "kind": "image",
@@ -720,7 +271,7 @@
           "fileName": "Spring02.jpg"
         },
         {
-          "id": "spring__spring03_jpg",
+          "id": "floral_patterns__spring03_jpg",
           "name": "Spring03",
           "isPremium": false,
           "kind": "image",
@@ -729,7 +280,7 @@
           "fileName": "Spring03.jpg"
         },
         {
-          "id": "spring__spring04_jpg",
+          "id": "floral_patterns__spring04_jpg",
           "name": "Spring04",
           "isPremium": true,
           "kind": "image",
@@ -738,7 +289,7 @@
           "fileName": "Spring04_PR.jpg"
         },
         {
-          "id": "spring__spring05_jpg",
+          "id": "floral_patterns__spring05_jpg",
           "name": "Spring05",
           "isPremium": true,
           "kind": "image",
@@ -747,7 +298,7 @@
           "fileName": "Spring05_PR.jpg"
         },
         {
-          "id": "spring__spring06_jpg",
+          "id": "floral_patterns__spring06_jpg",
           "name": "Spring06",
           "isPremium": true,
           "kind": "image",
@@ -756,7 +307,7 @@
           "fileName": "Spring06_PR.jpg"
         },
         {
-          "id": "spring__spring07_jpg",
+          "id": "floral_patterns__spring07_jpg",
           "name": "Spring07",
           "isPremium": true,
           "kind": "image",
@@ -765,7 +316,7 @@
           "fileName": "Spring07_PR.jpg"
         },
         {
-          "id": "spring__spring08_jpg",
+          "id": "floral_patterns__spring08_jpg",
           "name": "Spring08",
           "isPremium": true,
           "kind": "image",
@@ -774,7 +325,7 @@
           "fileName": "Spring08_PR.jpg"
         },
         {
-          "id": "spring__spring09_jpg",
+          "id": "floral_patterns__spring09_jpg",
           "name": "Spring09",
           "isPremium": true,
           "kind": "image",
@@ -785,12 +336,303 @@
       ]
     },
     {
-      "id": "summer_pack_01",
-      "name": "Summer Pack 01",
-      "remoteFolderName": "Summer Pack 01",
+      "id": "large_polka_dots",
+      "name": "Large Polka Dots",
+      "remoteFolderName": "Large Polka Dots",
       "backgrounds": [
         {
-          "id": "summer_pack_01__summer_1_10_jpg",
+          "id": "large_polka_dots__dot1_10_jpg",
+          "name": "Dot1.10",
+          "isPremium": true,
+          "kind": "image",
+          "source": "ota",
+          "colorHex": null,
+          "fileName": "Dot1.10_PR.jpg"
+        },
+        {
+          "id": "large_polka_dots__dot1_1_jpg",
+          "name": "Dot1.1",
+          "isPremium": false,
+          "kind": "image",
+          "source": "ota",
+          "colorHex": null,
+          "fileName": "Dot1.1.jpg"
+        },
+        {
+          "id": "large_polka_dots__dot1_2_jpg",
+          "name": "Dot1.2",
+          "isPremium": true,
+          "kind": "image",
+          "source": "ota",
+          "colorHex": null,
+          "fileName": "Dot1.2_PR.jpg"
+        },
+        {
+          "id": "large_polka_dots__dot1_3_jpg",
+          "name": "Dot1.3",
+          "isPremium": true,
+          "kind": "image",
+          "source": "ota",
+          "colorHex": null,
+          "fileName": "Dot1.3_PR.jpg"
+        },
+        {
+          "id": "large_polka_dots__dot1_4_jpg",
+          "name": "Dot1.4",
+          "isPremium": true,
+          "kind": "image",
+          "source": "ota",
+          "colorHex": null,
+          "fileName": "Dot1.4_PR.jpg"
+        },
+        {
+          "id": "large_polka_dots__dot1_5_jpg",
+          "name": "Dot1.5",
+          "isPremium": true,
+          "kind": "image",
+          "source": "ota",
+          "colorHex": null,
+          "fileName": "Dot1.5_PR.jpg"
+        },
+        {
+          "id": "large_polka_dots__dot1_6_jpg",
+          "name": "Dot1.6",
+          "isPremium": true,
+          "kind": "image",
+          "source": "ota",
+          "colorHex": null,
+          "fileName": "Dot1.6_PR.jpg"
+        },
+        {
+          "id": "large_polka_dots__dot1_7_jpg",
+          "name": "Dot1.7",
+          "isPremium": true,
+          "kind": "image",
+          "source": "ota",
+          "colorHex": null,
+          "fileName": "Dot1.7_PR.jpg"
+        },
+        {
+          "id": "large_polka_dots__dot1_8_jpg",
+          "name": "Dot1.8",
+          "isPremium": true,
+          "kind": "image",
+          "source": "ota",
+          "colorHex": null,
+          "fileName": "Dot1.8_PR.jpg"
+        },
+        {
+          "id": "large_polka_dots__dot1_9_jpg",
+          "name": "Dot1.9",
+          "isPremium": true,
+          "kind": "image",
+          "source": "ota",
+          "colorHex": null,
+          "fileName": "Dot1.9_PR.jpg"
+        }
+      ]
+    },
+    {
+      "id": "medium_polka_dots",
+      "name": "Medium Polka Dots",
+      "remoteFolderName": "Medium Polka Dots",
+      "backgrounds": [
+        {
+          "id": "medium_polka_dots__dot2_10_jpg",
+          "name": "Dot2.10",
+          "isPremium": true,
+          "kind": "image",
+          "source": "ota",
+          "colorHex": null,
+          "fileName": "Dot2.10_PR.jpg"
+        },
+        {
+          "id": "medium_polka_dots__dot2_1_jpg",
+          "name": "Dot2.1",
+          "isPremium": false,
+          "kind": "image",
+          "source": "ota",
+          "colorHex": null,
+          "fileName": "Dot2.1.jpg"
+        },
+        {
+          "id": "medium_polka_dots__dot2_2_jpg",
+          "name": "Dot2.2",
+          "isPremium": true,
+          "kind": "image",
+          "source": "ota",
+          "colorHex": null,
+          "fileName": "Dot2.2_PR.jpg"
+        },
+        {
+          "id": "medium_polka_dots__dot2_3_jpg",
+          "name": "Dot2.3",
+          "isPremium": true,
+          "kind": "image",
+          "source": "ota",
+          "colorHex": null,
+          "fileName": "Dot2.3_PR.jpg"
+        },
+        {
+          "id": "medium_polka_dots__dot2_4_jpg",
+          "name": "Dot2.4",
+          "isPremium": true,
+          "kind": "image",
+          "source": "ota",
+          "colorHex": null,
+          "fileName": "Dot2.4_PR.jpg"
+        },
+        {
+          "id": "medium_polka_dots__dot2_5_jpg",
+          "name": "Dot2.5",
+          "isPremium": true,
+          "kind": "image",
+          "source": "ota",
+          "colorHex": null,
+          "fileName": "Dot2.5_PR.jpg"
+        },
+        {
+          "id": "medium_polka_dots__dot2_6_jpg",
+          "name": "Dot2.6",
+          "isPremium": true,
+          "kind": "image",
+          "source": "ota",
+          "colorHex": null,
+          "fileName": "Dot2.6_PR.jpg"
+        },
+        {
+          "id": "medium_polka_dots__dot2_7_jpg",
+          "name": "Dot2.7",
+          "isPremium": true,
+          "kind": "image",
+          "source": "ota",
+          "colorHex": null,
+          "fileName": "Dot2.7_PR.jpg"
+        },
+        {
+          "id": "medium_polka_dots__dot2_8_jpg",
+          "name": "Dot2.8",
+          "isPremium": true,
+          "kind": "image",
+          "source": "ota",
+          "colorHex": null,
+          "fileName": "Dot2.8_PR.jpg"
+        },
+        {
+          "id": "medium_polka_dots__dot2_9_jpg",
+          "name": "Dot2.9",
+          "isPremium": true,
+          "kind": "image",
+          "source": "ota",
+          "colorHex": null,
+          "fileName": "Dot2.9_PR.jpg"
+        }
+      ]
+    },
+    {
+      "id": "mini_polka_dots",
+      "name": "Mini Polka Dots",
+      "remoteFolderName": "Mini Polka Dots",
+      "backgrounds": [
+        {
+          "id": "mini_polka_dots__dot4_10_jpg",
+          "name": "Dot4.10",
+          "isPremium": true,
+          "kind": "image",
+          "source": "ota",
+          "colorHex": null,
+          "fileName": "Dot4.10_PR.jpg"
+        },
+        {
+          "id": "mini_polka_dots__dot4_1_jpg",
+          "name": "Dot4.1",
+          "isPremium": false,
+          "kind": "image",
+          "source": "ota",
+          "colorHex": null,
+          "fileName": "Dot4.1.jpg"
+        },
+        {
+          "id": "mini_polka_dots__dot4_2_jpg",
+          "name": "Dot4.2",
+          "isPremium": true,
+          "kind": "image",
+          "source": "ota",
+          "colorHex": null,
+          "fileName": "Dot4.2_PR.jpg"
+        },
+        {
+          "id": "mini_polka_dots__dot4_3_jpg",
+          "name": "Dot4.3",
+          "isPremium": true,
+          "kind": "image",
+          "source": "ota",
+          "colorHex": null,
+          "fileName": "Dot4.3_PR.jpg"
+        },
+        {
+          "id": "mini_polka_dots__dot4_4_jpg",
+          "name": "Dot4.4",
+          "isPremium": true,
+          "kind": "image",
+          "source": "ota",
+          "colorHex": null,
+          "fileName": "Dot4.4_PR.jpg"
+        },
+        {
+          "id": "mini_polka_dots__dot4_5_jpg",
+          "name": "Dot4.5",
+          "isPremium": true,
+          "kind": "image",
+          "source": "ota",
+          "colorHex": null,
+          "fileName": "Dot4.5_PR.jpg"
+        },
+        {
+          "id": "mini_polka_dots__dot4_6_jpg",
+          "name": "Dot4.6",
+          "isPremium": true,
+          "kind": "image",
+          "source": "ota",
+          "colorHex": null,
+          "fileName": "Dot4.6_PR.jpg"
+        },
+        {
+          "id": "mini_polka_dots__dot4_7_jpg",
+          "name": "Dot4.7",
+          "isPremium": true,
+          "kind": "image",
+          "source": "ota",
+          "colorHex": null,
+          "fileName": "Dot4.7_PR.jpg"
+        },
+        {
+          "id": "mini_polka_dots__dot4_8_jpg",
+          "name": "Dot4.8",
+          "isPremium": true,
+          "kind": "image",
+          "source": "ota",
+          "colorHex": null,
+          "fileName": "Dot4.8_PR.jpg"
+        },
+        {
+          "id": "mini_polka_dots__dot4_9_jpg",
+          "name": "Dot4.9",
+          "isPremium": true,
+          "kind": "image",
+          "source": "ota",
+          "colorHex": null,
+          "fileName": "Dot4.9_PR.jpg"
+        }
+      ]
+    },
+    {
+      "id": "ocean_sand_photos",
+      "name": "Ocean & Sand Photos",
+      "remoteFolderName": "Ocean & Sand Photos",
+      "backgrounds": [
+        {
+          "id": "ocean_sand_photos__summer_1_10_jpg",
           "name": "Summer 1.10",
           "isPremium": false,
           "kind": "image",
@@ -799,7 +641,7 @@
           "fileName": "Summer 1.10.JPG"
         },
         {
-          "id": "summer_pack_01__summer_1_11_jpg",
+          "id": "ocean_sand_photos__summer_1_11_jpg",
           "name": "Summer 1.11",
           "isPremium": false,
           "kind": "image",
@@ -808,7 +650,7 @@
           "fileName": "Summer 1.11.jpg"
         },
         {
-          "id": "summer_pack_01__summer_1_12_jpg",
+          "id": "ocean_sand_photos__summer_1_12_jpg",
           "name": "Summer 1.12",
           "isPremium": false,
           "kind": "image",
@@ -817,7 +659,7 @@
           "fileName": "Summer 1.12.jpg"
         },
         {
-          "id": "summer_pack_01__summer_1_1_jpg",
+          "id": "ocean_sand_photos__summer_1_1_jpg",
           "name": "Summer 1.1",
           "isPremium": false,
           "kind": "image",
@@ -826,7 +668,7 @@
           "fileName": "Summer 1.1.jpg"
         },
         {
-          "id": "summer_pack_01__summer_1_2_jpg",
+          "id": "ocean_sand_photos__summer_1_2_jpg",
           "name": "Summer 1.2",
           "isPremium": false,
           "kind": "image",
@@ -835,7 +677,7 @@
           "fileName": "Summer 1.2.JPG"
         },
         {
-          "id": "summer_pack_01__summer_1_3_jpg",
+          "id": "ocean_sand_photos__summer_1_3_jpg",
           "name": "Summer 1.3",
           "isPremium": false,
           "kind": "image",
@@ -844,7 +686,7 @@
           "fileName": "Summer 1.3.jpg"
         },
         {
-          "id": "summer_pack_01__summer_1_4_jpg",
+          "id": "ocean_sand_photos__summer_1_4_jpg",
           "name": "Summer 1.4",
           "isPremium": false,
           "kind": "image",
@@ -853,7 +695,7 @@
           "fileName": "Summer 1.4.jpg"
         },
         {
-          "id": "summer_pack_01__summer_1_5_jpg",
+          "id": "ocean_sand_photos__summer_1_5_jpg",
           "name": "Summer 1.5",
           "isPremium": false,
           "kind": "image",
@@ -862,7 +704,7 @@
           "fileName": "Summer 1.5.jpg"
         },
         {
-          "id": "summer_pack_01__summer_1_9_jpg",
+          "id": "ocean_sand_photos__summer_1_9_jpg",
           "name": "Summer 1.9",
           "isPremium": false,
           "kind": "image",
@@ -873,100 +715,82 @@
       ]
     },
     {
-      "id": "valentine_pack_01",
-      "name": "Valentine Pack 01",
-      "remoteFolderName": "Valentine Pack 01",
+      "id": "paper_textures",
+      "name": "Paper Textures",
+      "remoteFolderName": "Paper Textures",
       "backgrounds": [
         {
-          "id": "valentine_pack_01__valentine1_1_jpg",
-          "name": "Valentine1.1",
-          "isPremium": true,
+          "id": "paper_textures__1_jpg",
+          "name": "1",
+          "isPremium": false,
           "kind": "image",
           "source": "ota",
           "colorHex": null,
-          "fileName": "Valentine1.1_PR.jpg"
+          "fileName": "1.jpg"
         },
         {
-          "id": "valentine_pack_01__valentine1_2_jpg",
-          "name": "Valentine1.2",
-          "isPremium": true,
+          "id": "paper_textures__2_jpg",
+          "name": "2",
+          "isPremium": false,
           "kind": "image",
           "source": "ota",
           "colorHex": null,
-          "fileName": "Valentine1.2_PR.jpg"
+          "fileName": "2.jpg"
         },
         {
-          "id": "valentine_pack_01__valentine1_3_jpg",
-          "name": "Valentine1.3",
-          "isPremium": true,
+          "id": "paper_textures__3_jpg",
+          "name": "3",
+          "isPremium": false,
           "kind": "image",
           "source": "ota",
           "colorHex": null,
-          "fileName": "Valentine1.3_PR.jpg"
+          "fileName": "3.jpg"
         },
         {
-          "id": "valentine_pack_01__valentine1_4_jpg",
-          "name": "Valentine1.4",
-          "isPremium": true,
+          "id": "paper_textures__4_jpg",
+          "name": "4",
+          "isPremium": false,
           "kind": "image",
           "source": "ota",
           "colorHex": null,
-          "fileName": "Valentine1.4_PR.jpg"
+          "fileName": "4.jpg"
         },
         {
-          "id": "valentine_pack_01__valentine1_5_jpg",
-          "name": "Valentine1.5",
-          "isPremium": true,
+          "id": "paper_textures__5_jpg",
+          "name": "5",
+          "isPremium": false,
           "kind": "image",
           "source": "ota",
           "colorHex": null,
-          "fileName": "Valentine1.5_PR.jpg"
+          "fileName": "5.jpg"
         },
         {
-          "id": "valentine_pack_01__valentine1_6_jpg",
-          "name": "Valentine1.6",
-          "isPremium": true,
+          "id": "paper_textures__6_jpg",
+          "name": "6",
+          "isPremium": false,
           "kind": "image",
           "source": "ota",
           "colorHex": null,
-          "fileName": "Valentine1.6_PR.jpg"
+          "fileName": "6.jpg"
         },
         {
-          "id": "valentine_pack_01__valentine1_7_jpg",
-          "name": "Valentine1.7",
-          "isPremium": true,
+          "id": "paper_textures__7_jpg",
+          "name": "7",
+          "isPremium": false,
           "kind": "image",
           "source": "ota",
           "colorHex": null,
-          "fileName": "Valentine1.7_PR.jpg"
-        },
-        {
-          "id": "valentine_pack_01__valentine1_8_jpg",
-          "name": "Valentine1.8",
-          "isPremium": true,
-          "kind": "image",
-          "source": "ota",
-          "colorHex": null,
-          "fileName": "Valentine1.8_PR.jpg"
-        },
-        {
-          "id": "valentine_pack_01__valentine1_9_jpg",
-          "name": "Valentine1.9",
-          "isPremium": true,
-          "kind": "image",
-          "source": "ota",
-          "colorHex": null,
-          "fileName": "Valentine1.9_PR.jpg"
+          "fileName": "7.jpg"
         }
       ]
     },
     {
-      "id": "valentine_pack_02",
-      "name": "Valentine Pack 02",
-      "remoteFolderName": "Valentine Pack 02",
+      "id": "petite_hearts",
+      "name": "Petite Hearts",
+      "remoteFolderName": "Petite Hearts",
       "backgrounds": [
         {
-          "id": "valentine_pack_02__valentine2_1_jpg",
+          "id": "petite_hearts__valentine2_1_jpg",
           "name": "Valentine2.1",
           "isPremium": true,
           "kind": "image",
@@ -975,7 +799,7 @@
           "fileName": "Valentine2.1_PR.jpg"
         },
         {
-          "id": "valentine_pack_02__valentine2_2_jpg",
+          "id": "petite_hearts__valentine2_2_jpg",
           "name": "Valentine2.2",
           "isPremium": true,
           "kind": "image",
@@ -984,7 +808,7 @@
           "fileName": "Valentine2.2_PR.jpg"
         },
         {
-          "id": "valentine_pack_02__valentine2_3_jpg",
+          "id": "petite_hearts__valentine2_3_jpg",
           "name": "Valentine2.3",
           "isPremium": true,
           "kind": "image",
@@ -993,7 +817,7 @@
           "fileName": "Valentine2.3_PR.jpg"
         },
         {
-          "id": "valentine_pack_02__valentine2_4_jpg",
+          "id": "petite_hearts__valentine2_4_jpg",
           "name": "Valentine2.4",
           "isPremium": true,
           "kind": "image",
@@ -1002,7 +826,7 @@
           "fileName": "Valentine2.4_PR.jpg"
         },
         {
-          "id": "valentine_pack_02__valentine2_5_jpg",
+          "id": "petite_hearts__valentine2_5_jpg",
           "name": "Valentine2.5",
           "isPremium": true,
           "kind": "image",
@@ -1011,7 +835,7 @@
           "fileName": "Valentine2.5_PR.jpg"
         },
         {
-          "id": "valentine_pack_02__valentine2_6_jpg",
+          "id": "petite_hearts__valentine2_6_jpg",
           "name": "Valentine2.6",
           "isPremium": true,
           "kind": "image",
@@ -1020,7 +844,7 @@
           "fileName": "Valentine2.6_PR.jpg"
         },
         {
-          "id": "valentine_pack_02__valentine2_7_jpg",
+          "id": "petite_hearts__valentine2_7_jpg",
           "name": "Valentine2.7",
           "isPremium": true,
           "kind": "image",
@@ -1029,7 +853,7 @@
           "fileName": "Valentine2.7_PR.jpg"
         },
         {
-          "id": "valentine_pack_02__valentine2_8_jpg",
+          "id": "petite_hearts__valentine2_8_jpg",
           "name": "Valentine2.8",
           "isPremium": true,
           "kind": "image",
@@ -1038,7 +862,7 @@
           "fileName": "Valentine2.8_PR.jpg"
         },
         {
-          "id": "valentine_pack_02__valentine2_9_jpg",
+          "id": "petite_hearts__valentine2_9_jpg",
           "name": "Valentine2.9",
           "isPremium": true,
           "kind": "image",
@@ -1049,12 +873,12 @@
       ]
     },
     {
-      "id": "vintage_pack_01",
-      "name": "Vintage Pack 01",
-      "remoteFolderName": "Vintage Pack 01",
+      "id": "retro_geometric",
+      "name": "Retro Geometric",
+      "remoteFolderName": "Retro Geometric",
       "backgrounds": [
         {
-          "id": "vintage_pack_01__vintage1_1_jpg",
+          "id": "retro_geometric__vintage1_1_jpg",
           "name": "Vintage1.1",
           "isPremium": false,
           "kind": "image",
@@ -1063,7 +887,7 @@
           "fileName": "Vintage1.1.jpg"
         },
         {
-          "id": "vintage_pack_01__vintage1_2_jpg",
+          "id": "retro_geometric__vintage1_2_jpg",
           "name": "Vintage1.2",
           "isPremium": true,
           "kind": "image",
@@ -1072,7 +896,7 @@
           "fileName": "Vintage1.2_PR.jpg"
         },
         {
-          "id": "vintage_pack_01__vintage1_3_jpg",
+          "id": "retro_geometric__vintage1_3_jpg",
           "name": "Vintage1.3",
           "isPremium": true,
           "kind": "image",
@@ -1081,7 +905,7 @@
           "fileName": "Vintage1.3_PR.jpg"
         },
         {
-          "id": "vintage_pack_01__vintage1_4_jpg",
+          "id": "retro_geometric__vintage1_4_jpg",
           "name": "Vintage1.4",
           "isPremium": true,
           "kind": "image",
@@ -1090,7 +914,7 @@
           "fileName": "Vintage1.4_PR.jpg"
         },
         {
-          "id": "vintage_pack_01__vintage1_5_jpg",
+          "id": "retro_geometric__vintage1_5_jpg",
           "name": "Vintage1.5",
           "isPremium": true,
           "kind": "image",
@@ -1099,7 +923,7 @@
           "fileName": "Vintage1.5_PR.jpg"
         },
         {
-          "id": "vintage_pack_01__vintage1_6_jpg",
+          "id": "retro_geometric__vintage1_6_jpg",
           "name": "Vintage1.6",
           "isPremium": true,
           "kind": "image",
@@ -1108,7 +932,7 @@
           "fileName": "Vintage1.6_PR.jpg"
         },
         {
-          "id": "vintage_pack_01__vintage1_7_jpg",
+          "id": "retro_geometric__vintage1_7_jpg",
           "name": "Vintage1.7",
           "isPremium": true,
           "kind": "image",
@@ -1117,13 +941,189 @@
           "fileName": "Vintage1.7_PR.jpg"
         },
         {
-          "id": "vintage_pack_01__vintage1_8_jpg",
+          "id": "retro_geometric__vintage1_8_jpg",
           "name": "Vintage1.8",
           "isPremium": true,
           "kind": "image",
           "source": "ota",
           "colorHex": null,
           "fileName": "Vintage1.8_PR.jpg"
+        }
+      ]
+    },
+    {
+      "id": "small_polka_dots",
+      "name": "Small Polka Dots",
+      "remoteFolderName": "Small Polka Dots",
+      "backgrounds": [
+        {
+          "id": "small_polka_dots__dot3_10_jpg",
+          "name": "Dot3.10",
+          "isPremium": true,
+          "kind": "image",
+          "source": "ota",
+          "colorHex": null,
+          "fileName": "Dot3.10_PR.jpg"
+        },
+        {
+          "id": "small_polka_dots__dot3_1_jpg",
+          "name": "Dot3.1",
+          "isPremium": false,
+          "kind": "image",
+          "source": "ota",
+          "colorHex": null,
+          "fileName": "Dot3.1.jpg"
+        },
+        {
+          "id": "small_polka_dots__dot3_2_jpg",
+          "name": "Dot3.2",
+          "isPremium": true,
+          "kind": "image",
+          "source": "ota",
+          "colorHex": null,
+          "fileName": "Dot3.2_PR.jpg"
+        },
+        {
+          "id": "small_polka_dots__dot3_3_jpg",
+          "name": "Dot3.3",
+          "isPremium": true,
+          "kind": "image",
+          "source": "ota",
+          "colorHex": null,
+          "fileName": "Dot3.3_PR.jpg"
+        },
+        {
+          "id": "small_polka_dots__dot3_4_jpg",
+          "name": "Dot3.4",
+          "isPremium": true,
+          "kind": "image",
+          "source": "ota",
+          "colorHex": null,
+          "fileName": "Dot3.4_PR.jpg"
+        },
+        {
+          "id": "small_polka_dots__dot3_5_jpg",
+          "name": "Dot3.5",
+          "isPremium": true,
+          "kind": "image",
+          "source": "ota",
+          "colorHex": null,
+          "fileName": "Dot3.5_PR.jpg"
+        },
+        {
+          "id": "small_polka_dots__dot3_6_jpg",
+          "name": "Dot3.6",
+          "isPremium": true,
+          "kind": "image",
+          "source": "ota",
+          "colorHex": null,
+          "fileName": "Dot3.6_PR.jpg"
+        },
+        {
+          "id": "small_polka_dots__dot3_7_jpg",
+          "name": "Dot3.7",
+          "isPremium": true,
+          "kind": "image",
+          "source": "ota",
+          "colorHex": null,
+          "fileName": "Dot3.7_PR.jpg"
+        },
+        {
+          "id": "small_polka_dots__dot3_8_jpg",
+          "name": "Dot3.8",
+          "isPremium": true,
+          "kind": "image",
+          "source": "ota",
+          "colorHex": null,
+          "fileName": "Dot3.8_PR.jpg"
+        },
+        {
+          "id": "small_polka_dots__dot3_9_jpg",
+          "name": "Dot3.9",
+          "isPremium": true,
+          "kind": "image",
+          "source": "ota",
+          "colorHex": null,
+          "fileName": "Dot3.9_PR.jpg"
+        }
+      ]
+    },
+    {
+      "id": "stars_stripes_patterns",
+      "name": "Stars & Stripes Patterns",
+      "remoteFolderName": "Stars & Stripes Patterns",
+      "backgrounds": [
+        {
+          "id": "stars_stripes_patterns__4thjuly_1_1_jpg",
+          "name": "4Thjuly 1.1",
+          "isPremium": false,
+          "kind": "image",
+          "source": "ota",
+          "colorHex": null,
+          "fileName": "4thJuly 1.1.jpg"
+        },
+        {
+          "id": "stars_stripes_patterns__4thjuly_1_2_jpg",
+          "name": "4Thjuly 1.2",
+          "isPremium": false,
+          "kind": "image",
+          "source": "ota",
+          "colorHex": null,
+          "fileName": "4thJuly 1.2.jpg"
+        },
+        {
+          "id": "stars_stripes_patterns__4thjuly_1_3_jpg",
+          "name": "4Thjuly 1.3",
+          "isPremium": false,
+          "kind": "image",
+          "source": "ota",
+          "colorHex": null,
+          "fileName": "4thJuly 1.3.jpg"
+        },
+        {
+          "id": "stars_stripes_patterns__4thjuly_1_4_jpg",
+          "name": "4Thjuly 1.4",
+          "isPremium": false,
+          "kind": "image",
+          "source": "ota",
+          "colorHex": null,
+          "fileName": "4thJuly 1.4.jpg"
+        },
+        {
+          "id": "stars_stripes_patterns__4thjuly_1_5_jpg",
+          "name": "4Thjuly 1.5",
+          "isPremium": false,
+          "kind": "image",
+          "source": "ota",
+          "colorHex": null,
+          "fileName": "4thJuly 1.5.jpg"
+        },
+        {
+          "id": "stars_stripes_patterns__4thjuly_1_6_jpg",
+          "name": "4Thjuly 1.6",
+          "isPremium": false,
+          "kind": "image",
+          "source": "ota",
+          "colorHex": null,
+          "fileName": "4thJuly 1.6.jpg"
+        },
+        {
+          "id": "stars_stripes_patterns__4thjuly_1_7_jpg",
+          "name": "4Thjuly 1.7",
+          "isPremium": false,
+          "kind": "image",
+          "source": "ota",
+          "colorHex": null,
+          "fileName": "4thJuly 1.7.jpg"
+        },
+        {
+          "id": "stars_stripes_patterns__4thjuly_1_8_jpg",
+          "name": "4Thjuly 1.8",
+          "isPremium": false,
+          "kind": "image",
+          "source": "ota",
+          "colorHex": null,
+          "fileName": "4thJuly 1.8.jpg"
         }
       ]
     }
