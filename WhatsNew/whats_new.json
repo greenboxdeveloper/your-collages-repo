@@ -1,0 +1,1199 @@
+{
+  "schema": 1,
+  "versions": {
+    "3.2.2": {
+      "locales": {
+        "ar-SA": {
+          "headline": "مرحباً بكم في أكبر تحديث لنا على الإطلاق! لقد أعدنا تصميم التطبيق بالكامل لمنحكم حرية إبداعية مطلقة وتجربة فائقة السرعة.",
+          "items": [
+            {
+              "id": "item2",
+              "icon": "scissors",
+              "title": "قصاصات بضغطة زر مدعومة بالذكاء الاصطناعي",
+              "subtitle": "اعزل العناصر فوراً، واحذف الخلفيات، وأنشئ ملصقات مخصصة باستخدام ذكاء اصطناعي قوي."
+            },
+            {
+              "id": "item1",
+              "icon": "wand.and.stars",
+              "title": "Image Playground من Apple",
+              "subtitle": "أنشئ خلفيات وملصقات مميزة لصور الكولاج باستخدام Image Playground مباشرةً داخل التطبيق (على الأجهزة المدعومة)."
+            },
+            {
+              "id": "item3",
+              "icon": "pencil.and.outline",
+              "title": "حرية تصميم التخطيط",
+              "subtitle": "ارسم، وقسّم، وخصص بالكامل تخطيطات قماشك الهندسي الخاصة بك—لا مزيد من الإطارات الصلبة!"
+            },
+            {
+              "id": "item6",
+              "icon": "square.and.arrow.down.on.square",
+              "title": "حفظ المشاريع",
+              "subtitle": "لا تفقد تقدمك أبداً. احفظ التخطيطات كمشاريع قابلة للتعديل للتحسين عليها في أي وقت."
+            },
+            {
+              "id": "item5",
+              "icon": "square.grid.2x2",
+              "title": "متاجر المحتوى والقوالب الأسبوعية",
+              "subtitle": "اكتشف تخطيطات جديدة، وملصقات موسمية، وعناصر مميزة يتم تحديثها كل أسبوع."
+            }
+          ]
+        },
+        "cs": {
+          "headline": "Vítejte u naší dosud největší aktualizace! Kompletně jsme aplikaci přepracovali, abychom vám poskytli maximální kreativní svobodu a bleskově rychlé prostředí.",
+          "items": [
+            {
+              "id": "item2",
+              "icon": "scissors",
+              "title": "AI výřezy jedním klepnutím",
+              "subtitle": "Okamžitě izolujte objekty, mažte pozadí a vytvářejte si vlastní nálepky pomocí výkonné umělé inteligence."
+            },
+            {
+              "id": "item1",
+              "icon": "wand.and.stars",
+              "title": "Apple Image Playground",
+              "subtitle": "Vytvářejte skvělá vlastní pozadí a nálepky pro své koláže pomocí Image Playground přímo v aplikaci (na podporovaných zařízeních)."
+            },
+            {
+              "id": "item3",
+              "icon": "pencil.and.outline",
+              "title": "Svoboda v navrhování rozvržení",
+              "subtitle": "Kreslete, stříhejte a plně si přizpůsobujte vlastní geometrická rozvržení plátna – už žádné omezující rámečky!"
+            },
+            {
+              "id": "item6",
+              "icon": "square.and.arrow.down.on.square",
+              "title": "Ukládání projektů",
+              "subtitle": "Nikdy neztratíte svůj postup. Ukládejte si rozvržení jako rozpracované projekty, které můžete kdykoli upravit."
+            },
+            {
+              "id": "item5",
+              "icon": "square.grid.2x2",
+              "title": "Týdenní obchody s obsahem a šablonami",
+              "subtitle": "Objevujte nová rozvržení, sezónní nálepky a prémiový obsah aktualizovaný každý týden."
+            }
+          ]
+        },
+        "da": {
+          "headline": "Velkommen til vores største opdatering nogensinde! Vi har fuldstændig gennemrenoveret appen for at give dig ultimativ kreativ frihed og en lynhurtig oplevelse.",
+          "items": [
+            {
+              "id": "item2",
+              "icon": "scissors",
+              "title": "AI-udklip med ét tryk",
+              "subtitle": "Isoler øjeblikkeligt motiver, slet baggrunde og lav dine egne klistermærker med kraftfuld AI."
+            },
+            {
+              "id": "item1",
+              "icon": "wand.and.stars",
+              "title": "Apple Image Playground",
+              "subtitle": "Skab seje baggrunde og klistermærker til dine collager med Image Playground direkte i appen (på understøttede enheder)."
+            },
+            {
+              "id": "item3",
+              "icon": "pencil.and.outline",
+              "title": "Frihed til layoutdesign",
+              "subtitle": "Tegn, skær og tilpas dine helt egne geometriske lærredslayouts – slut med stive kasser!"
+            },
+            {
+              "id": "item6",
+              "icon": "square.and.arrow.down.on.square",
+              "title": "Gem projekter",
+              "subtitle": "Mist aldrig dine fremskridt. Gem dine layouts som redigerbare projekter, så du til enhver tid kan finpudse dem."
+            },
+            {
+              "id": "item5",
+              "icon": "square.grid.2x2",
+              "title": "Ugentlige indholds- og skabelonbutikker",
+              "subtitle": "Gå på opdagelse i friske layouts, sæsonbetonede klistermærker og premium-indhold, der opdateres hver eneste uge."
+            }
+          ]
+        },
+        "de-DE": {
+          "headline": "Willkommen bei unserem bisher größten Update! Wir haben die App komplett überarbeitet, um dir ultimative kreative Freiheit und ein blitzschnelles Erlebnis zu bieten.",
+          "items": [
+            {
+              "id": "item2",
+              "icon": "scissors",
+              "title": "KI-Ausschneiden mit einem Fingertipp",
+              "subtitle": "Isoliere Motive sofort, lösche Hintergründe und erstelle benutzerdefinierte Sticker mit leistungsstarker KI."
+            },
+            {
+              "id": "item1",
+              "icon": "wand.and.stars",
+              "title": "Apple Image Playground",
+              "subtitle": "Erstelle coole Hintergründe und Sticker für deine Collagen mit Image Playground direkt in der App (auf unterstützten Geräten)."
+            },
+            {
+              "id": "item3",
+              "icon": "pencil.and.outline",
+              "title": "Freiheit beim Layout-Design",
+              "subtitle": "Zeichne, schneide und gestalte deine eigenen geometrischen Canvas-Layouts – Schluss mit starren Kästen!"
+            },
+            {
+              "id": "item6",
+              "icon": "square.and.arrow.down.on.square",
+              "title": "Projekte speichern",
+              "subtitle": "Verliere nie wieder deinen Fortschritt. Speichere Layouts als bearbeitbare Projekte, um sie jederzeit anzupassen."
+            },
+            {
+              "id": "item5",
+              "icon": "square.grid.2x2",
+              "title": "Wöchentliche Inhalte & Vorlagen-Shops",
+              "subtitle": "Entdecke jede Woche neue Layouts, saisonale Sticker und Premium-Assets."
+            }
+          ]
+        },
+        "el": {
+          "headline": "Καλώς ήρθατε στη μεγαλύτερη ενημέρωσή μας μέχρι σήμερα! Ανασχεδιάσαμε πλήρως την εφαρμογή για να σας προσφέρουμε απόλυτη δημιουργική ελευθερία και μια αστραπιαία εμπειρία χρήσης.",
+          "items": [
+            {
+              "id": "item2",
+              "icon": "scissors",
+              "title": "Αφαίρεση φόντου με AI με ένα πάτημα",
+              "subtitle": "Απομονώστε αμέσως θέματα, διαγράψτε φόντα και δημιουργήστε προσαρμοσμένα αυτοκόλλητα με τη βοήθεια ισχυρής τεχνητής νοημοσύνης."
+            },
+            {
+              "id": "item1",
+              "icon": "wand.and.stars",
+              "title": "Apple Image Playground",
+              "subtitle": "Δημιουργήστε εντυπωσιακά φόντα και αυτοκόλλητα για τα κολάζ σας με το Image Playground, απευθείας μέσα στην εφαρμογή (σε υποστηριζόμενες συσκευές)."
+            },
+            {
+              "id": "item3",
+              "icon": "pencil.and.outline",
+              "title": "Ελευθερία στον σχεδιασμό διάταξης",
+              "subtitle": "Σχεδιάστε, κόψτε και προσαρμόστε πλήρως τις δικές σας γεωμετρικές διατάξεις καμβά — τέλος στα άκαμπτα πλαίσια!"
+            },
+            {
+              "id": "item6",
+              "icon": "square.and.arrow.down.on.square",
+              "title": "Αποθήκευση έργων",
+              "subtitle": "Μην χάνετε ποτέ την πρόοδό σας. Αποθηκεύστε τις διατάξεις σας ως επεξεργάσιμα έργα για να τις τροποποιείτε ανά πάσα στιγμή."
+            },
+            {
+              "id": "item5",
+              "icon": "square.grid.2x2",
+              "title": "Εβδομαδιαία καταστήματα περιεχομένου και προτύπων",
+              "subtitle": "Ανακαλύψτε νέες διατάξεις, εποχιακά αυτοκόλλητα και premium στοιχεία που ανανεώνονται κάθε εβδομάδα."
+            }
+          ]
+        },
+        "en-AU": {
+          "headline": "Welcome to our biggest update yet! We’ve completely overhauled the app to give you ultimate creative freedom and a blazing-fast experience.",
+          "items": [
+            {
+              "id": "item2",
+              "icon": "scissors",
+              "title": "AI One-Tap Cutouts",
+              "subtitle": "Instantly isolate subjects, erase backgrounds, and create custom stickers with powerful AI."
+            },
+            {
+              "id": "item1",
+              "icon": "wand.and.stars",
+              "title": "Apple Image Playground",
+              "subtitle": "Create cool custom backgrounds and stickers for your collages with Image Playground, right inside the app (on supported devices)."
+            },
+            {
+              "id": "item3",
+              "icon": "pencil.and.outline",
+              "title": "Layout Design Freedom",
+              "subtitle": "Draw, slice, and fully customize your own geometric canvas layouts—no more rigid boxes!"
+            },
+            {
+              "id": "item6",
+              "icon": "square.and.arrow.down.on.square",
+              "title": "Save Projects",
+              "subtitle": "Never lose your progress. Save layouts as editable projects to tweak them anytime."
+            },
+            {
+              "id": "item5",
+              "icon": "square.grid.2x2",
+              "title": "Weekly Content & Template Stores",
+              "subtitle": "Discover fresh layouts, seasonal stickers, and premium assets updated every single week."
+            }
+          ]
+        },
+        "en-CA": {
+          "headline": "Welcome to our biggest update yet! We’ve completely overhauled the app to give you ultimate creative freedom and a blazing-fast experience.",
+          "items": [
+            {
+              "id": "item2",
+              "icon": "scissors",
+              "title": "AI One-Tap Cutouts",
+              "subtitle": "Instantly isolate subjects, erase backgrounds, and create custom stickers with powerful AI."
+            },
+            {
+              "id": "item1",
+              "icon": "wand.and.stars",
+              "title": "Apple Image Playground",
+              "subtitle": "Create cool custom backgrounds and stickers for your collages with Image Playground, right inside the app (on supported devices)."
+            },
+            {
+              "id": "item3",
+              "icon": "pencil.and.outline",
+              "title": "Layout Design Freedom",
+              "subtitle": "Draw, slice, and fully customize your own geometric canvas layouts—no more rigid boxes!"
+            },
+            {
+              "id": "item6",
+              "icon": "square.and.arrow.down.on.square",
+              "title": "Save Projects",
+              "subtitle": "Never lose your progress. Save layouts as editable projects to tweak them anytime."
+            },
+            {
+              "id": "item5",
+              "icon": "square.grid.2x2",
+              "title": "Weekly Content & Template Stores",
+              "subtitle": "Discover fresh layouts, seasonal stickers, and premium assets updated every single week."
+            }
+          ]
+        },
+        "en-GB": {
+          "headline": "Welcome to our biggest update yet! We’ve completely overhauled the app to give you ultimate creative freedom and a blazing-fast experience.",
+          "items": [
+            {
+              "id": "item2",
+              "icon": "scissors",
+              "title": "AI One-Tap Cutouts",
+              "subtitle": "Instantly isolate subjects, erase backgrounds, and create custom stickers with powerful AI."
+            },
+            {
+              "id": "item1",
+              "icon": "wand.and.stars",
+              "title": "Apple Image Playground",
+              "subtitle": "Create cool custom backgrounds and stickers for your collages with Image Playground, right inside the app (on supported devices)."
+            },
+            {
+              "id": "item3",
+              "icon": "pencil.and.outline",
+              "title": "Layout Design Freedom",
+              "subtitle": "Draw, slice, and fully customize your own geometric canvas layouts—no more rigid boxes!"
+            },
+            {
+              "id": "item6",
+              "icon": "square.and.arrow.down.on.square",
+              "title": "Save Projects",
+              "subtitle": "Never lose your progress. Save layouts as editable projects to tweak them anytime."
+            },
+            {
+              "id": "item5",
+              "icon": "square.grid.2x2",
+              "title": "Weekly Content & Template Stores",
+              "subtitle": "Discover fresh layouts, seasonal stickers, and premium assets updated every single week."
+            }
+          ]
+        },
+        "en-US": {
+          "headline": "Welcome to our biggest update yet! We’ve completely overhauled the app to give you ultimate creative freedom and a blazing-fast experience.",
+          "items": [
+            {
+              "id": "item2",
+              "icon": "scissors",
+              "title": "AI One-Tap Cutouts",
+              "subtitle": "Instantly isolate subjects, erase backgrounds, and create custom stickers with powerful AI."
+            },
+            {
+              "id": "item1",
+              "icon": "wand.and.stars",
+              "title": "Apple Image Playground",
+              "subtitle": "Create cool custom backgrounds and stickers for your collages with Image Playground, right inside the app (on supported devices)."
+            },
+            {
+              "id": "item3",
+              "icon": "pencil.and.outline",
+              "title": "Layout Design Freedom",
+              "subtitle": "Draw, slice, and fully customize your own geometric canvas layouts—no more rigid boxes!"
+            },
+            {
+              "id": "item6",
+              "icon": "square.and.arrow.down.on.square",
+              "title": "Save Projects",
+              "subtitle": "Never lose your progress. Save layouts as editable projects to tweak them anytime."
+            },
+            {
+              "id": "item5",
+              "icon": "square.grid.2x2",
+              "title": "Weekly Content & Template Stores",
+              "subtitle": "Discover fresh layouts, seasonal stickers, and premium assets updated every single week."
+            }
+          ]
+        },
+        "es-ES": {
+          "headline": "¡Bienvenido a nuestra actualización más importante hasta la fecha! Hemos rediseñado la aplicación por completo para ofrecerte la máxima libertad creativa y una experiencia ultrarrápida.",
+          "items": [
+            {
+              "id": "item2",
+              "icon": "scissors",
+              "title": "Recorte con IA en un toque",
+              "subtitle": "Aísla sujetos al instante, elimina fondos y crea pegatinas personalizadas gracias a una potente IA."
+            },
+            {
+              "id": "item1",
+              "icon": "wand.and.stars",
+              "title": "Apple Image Playground",
+              "subtitle": "Crea fondos y stickers geniales para tus collages con Image Playground, directamente en la app (en dispositivos compatibles)."
+            },
+            {
+              "id": "item3",
+              "icon": "pencil.and.outline",
+              "title": "Libertad de diseño",
+              "subtitle": "Dibuja, recorta y personaliza totalmente tus propios diseños geométricos de lienzo; ¡se acabó el estar limitado a marcos rígidos!"
+            },
+            {
+              "id": "item6",
+              "icon": "square.and.arrow.down.on.square",
+              "title": "Guardado de proyectos",
+              "subtitle": "No pierdas nunca tu progreso. Guarda tus diseños como proyectos editables para retocarlos en cualquier momento."
+            },
+            {
+              "id": "item5",
+              "icon": "square.grid.2x2",
+              "title": "Tienda de contenidos y plantillas semanal",
+              "subtitle": "Descubre nuevos diseños, pegatinas de temporada y recursos premium que se actualizan cada semana."
+            }
+          ]
+        },
+        "es-MX": {
+          "headline": "¡Bienvenido a nuestra actualización más importante hasta la fecha! Hemos rediseñado la aplicación por completo para ofrecerte la máxima libertad creativa y una experiencia ultrarrápida.",
+          "items": [
+            {
+              "id": "item2",
+              "icon": "scissors",
+              "title": "Recorte con IA en un toque",
+              "subtitle": "Aísla sujetos al instante, elimina fondos y crea pegatinas personalizadas gracias a una potente IA."
+            },
+            {
+              "id": "item1",
+              "icon": "wand.and.stars",
+              "title": "Apple Image Playground",
+              "subtitle": "Crea fondos y stickers geniales para tus collages con Image Playground, directamente en la app (en dispositivos compatibles)."
+            },
+            {
+              "id": "item3",
+              "icon": "pencil.and.outline",
+              "title": "Libertad de diseño",
+              "subtitle": "Dibuja, recorta y personaliza totalmente tus propios diseños geométricos de lienzo; ¡se acabó el estar limitado a marcos rígidos!"
+            },
+            {
+              "id": "item6",
+              "icon": "square.and.arrow.down.on.square",
+              "title": "Guardado de proyectos",
+              "subtitle": "No pierdas nunca tu progreso. Guarda tus diseños como proyectos editables para retocarlos en cualquier momento."
+            },
+            {
+              "id": "item5",
+              "icon": "square.grid.2x2",
+              "title": "Tienda de contenidos y plantillas semanal",
+              "subtitle": "Descubre nuevos diseños, pegatinas de temporada y recursos premium que se actualizan cada semana."
+            }
+          ]
+        },
+        "fi": {
+          "headline": "Tervetuloa kaikkien aikojen suurimpaan päivitykseemme! Olemme uudistaneet sovelluksen täysin tarjotaksemme sinulle äärimmäistä luovaa vapautta ja salamannopean käyttökokemuksen.",
+          "items": [
+            {
+              "id": "item2",
+              "icon": "scissors",
+              "title": "AI-leikkaus yhdellä napautuksella",
+              "subtitle": "Eristä kohteet, poista taustat ja luo mukautettuja tarroja välittömästi tehokkaan tekoälyn avulla."
+            },
+            {
+              "id": "item1",
+              "icon": "wand.and.stars",
+              "title": "Apple Image Playground",
+              "subtitle": "Luo upeita taustoja ja tarroja kollaaseihisi Image Playgroundilla suoraan sovelluksessa (tuetuilla laitteilla)."
+            },
+            {
+              "id": "item3",
+              "icon": "pencil.and.outline",
+              "title": "Vapaus asettelun suunnitteluun",
+              "subtitle": "Piirrä, leikkaa ja mukauta geometrisia kankaita täysin vapaasti – ei enää jäykkiä laatikoita!"
+            },
+            {
+              "id": "item6",
+              "icon": "square.and.arrow.down.on.square",
+              "title": "Projektien tallennus",
+              "subtitle": "Älä koskaan kadota edistymistäsi. Tallenna asettelut muokattavina projekteina ja hienosäädä niitä milloin tahansa."
+            },
+            {
+              "id": "item5",
+              "icon": "square.grid.2x2",
+              "title": "Viikoittaiset sisältö- ja mallipohjakaupat",
+              "subtitle": "Löydä uusia asetteluja, sesonkitarroja ja premium-sisältöä, joita päivitetään joka viikko."
+            }
+          ]
+        },
+        "fr-CA": {
+          "headline": "Bienvenue dans notre plus grosse mise à jour à ce jour ! Nous avons entièrement repensé l'application pour vous offrir une liberté de création ultime et une expérience ultra-rapide.",
+          "items": [
+            {
+              "id": "item2",
+              "icon": "scissors",
+              "title": "Découpe IA en un clic",
+              "subtitle": "Isolez instantanément vos sujets, effacez les arrière-plans et créez des autocollants personnalisés grâce à une IA puissante."
+            },
+            {
+              "id": "item1",
+              "icon": "wand.and.stars",
+              "title": "Apple Image Playground",
+              "subtitle": "créez des arrière-plans et des stickers originaux pour vos collages avec Image Playground, directement dans l’app (sur les appareils compatibles)."
+            },
+            {
+              "id": "item3",
+              "icon": "pencil.and.outline",
+              "title": "Liberté de mise en page",
+              "subtitle": "Dessinez, découpez et personnalisez entièrement vos propres canevas géométriques — fini les cadres rigides !"
+            },
+            {
+              "id": "item6",
+              "icon": "square.and.arrow.down.on.square",
+              "title": "Enregistrement de projets",
+              "subtitle": "Ne perdez jamais votre progression. Enregistrez vos mises en page en tant que projets modifiables pour y retoucher à tout moment."
+            },
+            {
+              "id": "item5",
+              "icon": "square.grid.2x2",
+              "title": "Boutique de contenu et modèles hebdomadaires",
+              "subtitle": "Découvrez de nouvelles mises en page, des autocollants saisonniers et des ressources premium mis à jour chaque semaine."
+            }
+          ]
+        },
+        "fr-FR": {
+          "headline": "Bienvenue dans notre plus grosse mise à jour à ce jour ! Nous avons entièrement repensé l'application pour vous offrir une liberté de création ultime et une expérience ultra-rapide.",
+          "items": [
+            {
+              "id": "item2",
+              "icon": "scissors",
+              "title": "Découpe IA en un clic",
+              "subtitle": "Isolez instantanément vos sujets, effacez les arrière-plans et créez des autocollants personnalisés grâce à une IA puissante."
+            },
+            {
+              "id": "item1",
+              "icon": "wand.and.stars",
+              "title": "Apple Image Playground",
+              "subtitle": "créez des arrière-plans et des stickers originaux pour vos collages avec Image Playground, directement dans l’app (sur les appareils compatibles)."
+            },
+            {
+              "id": "item3",
+              "icon": "pencil.and.outline",
+              "title": "Liberté de mise en page",
+              "subtitle": "Dessinez, découpez et personnalisez entièrement vos propres canevas géométriques — fini les cadres rigides !"
+            },
+            {
+              "id": "item6",
+              "icon": "square.and.arrow.down.on.square",
+              "title": "Enregistrement de projets",
+              "subtitle": "Ne perdez jamais votre progression. Enregistrez vos mises en page en tant que projets modifiables pour y retoucher à tout moment."
+            },
+            {
+              "id": "item5",
+              "icon": "square.grid.2x2",
+              "title": "Boutique de contenu et modèles hebdomadaires",
+              "subtitle": "Découvrez de nouvelles mises en page, des autocollants saisonniers et des ressources premium mis à jour chaque semaine."
+            }
+          ]
+        },
+        "hr": {
+          "headline": "Dobrodošli u naše najveće ažuriranje do sada! Potpuno smo redizajnirali aplikaciju kako bismo vam pružili vrhunsku kreativnu slobodu i nevjerojatno brzo iskustvo.",
+          "items": [
+            {
+              "id": "item2",
+              "icon": "scissors",
+              "title": "AI izrezivanje jednim dodirom",
+              "subtitle": "Trenutačno izolirajte subjekte, izbrišite pozadine i izradite prilagođene naljepnice pomoću moćne umjetne inteligencije."
+            },
+            {
+              "id": "item1",
+              "icon": "wand.and.stars",
+              "title": "Apple Image Playground",
+              "subtitle": "Izradite cool pozadine i naljepnice za svoje kolaže uz Image Playground izravno u aplikaciji (na podržanim uređajima)."
+            },
+            {
+              "id": "item3",
+              "icon": "pencil.and.outline",
+              "title": "Sloboda dizajna izgleda",
+              "subtitle": "Crtajte, režite i potpuno prilagodite vlastite geometrijske izglede platna — nema više krutih okvira!"
+            },
+            {
+              "id": "item6",
+              "icon": "square.and.arrow.down.on.square",
+              "title": "Spremanje projekata",
+              "subtitle": "Nikada ne gubite svoj napredak. Spremite izglede kao uredive projekte kako biste ih mogli dotjerati u bilo kojem trenutku."
+            },
+            {
+              "id": "item5",
+              "icon": "square.grid.2x2",
+              "title": "Tjedne trgovine sadržaja i predložaka",
+              "subtitle": "Otkrijte nove izglede, sezonske naljepnice i vrhunske elemente koji se ažuriraju svaki tjedan."
+            }
+          ]
+        },
+        "hu": {
+          "headline": "Üdvözöljük eddigi legnagyobb frissítésünkben! Teljesen átdolgoztuk az alkalmazást, hogy maximális kreatív szabadságot és villámgyors élményt biztosítsunk.",
+          "items": [
+            {
+              "id": "item2",
+              "icon": "scissors",
+              "title": "MI-alapú kivágás egy koppintással",
+              "subtitle": "Azonnal izolálhatja a témákat, eltávolíthatja a háttereket, és egyedi matricákat készíthet az erőteljes MI segítségével."
+            },
+            {
+              "id": "item1",
+              "icon": "wand.and.stars",
+              "title": "Apple Image Playground",
+              "subtitle": "Készíts menő háttereket és matricákat a kollázsaidhoz az Image Playgrounddal, közvetlenül az alkalmazásban (támogatott eszközökön)."
+            },
+            {
+              "id": "item3",
+              "icon": "pencil.and.outline",
+              "title": "Szabad elrendezésű tervezés",
+              "subtitle": "Rajzoljon, vágjon és szabja teljesen testre saját geometriai vászonelrendezéseit – nincs többé kötött keret!"
+            },
+            {
+              "id": "item6",
+              "icon": "square.and.arrow.down.on.square",
+              "title": "Projektek mentése",
+              "subtitle": "Soha ne veszítse el a haladását. Mentse el az elrendezéseket szerkeszthető projektként, hogy bármikor tovább finomíthassa őket."
+            },
+            {
+              "id": "item5",
+              "icon": "square.grid.2x2",
+              "title": "Heti tartalom- és sablonáruház",
+              "subtitle": "Fedezze fel az új elrendezéseket, szezonális matricákat és prémium tartalmakat, amelyek minden héten frissülnek."
+            }
+          ]
+        },
+        "id": {
+          "headline": "Selamat datang di pembaruan terbesar kami! Kami telah merombak aplikasi ini sepenuhnya untuk memberikan Anda kebebasan berkreasi yang luar biasa dan pengalaman yang sangat cepat.",
+          "items": [
+            {
+              "id": "item2",
+              "icon": "scissors",
+              "title": "Potong Otomatis dengan AI",
+              "subtitle": "Isolasi subjek, hapus latar belakang, dan buat stiker kustom secara instan dengan teknologi AI yang canggih."
+            },
+            {
+              "id": "item1",
+              "icon": "wand.and.stars",
+              "title": "Apple Image Playground",
+              "subtitle": "Buat latar belakang dan stiker keren untuk kolase Anda dengan Image Playground, langsung di dalam aplikasi (di perangkat yang didukung)."
+            },
+            {
+              "id": "item3",
+              "icon": "pencil.and.outline",
+              "title": "Kebebasan Desain Tata Letak",
+              "subtitle": "Gambar, potong, dan sesuaikan tata letak kanvas geometris Anda sepenuhnya — tidak ada lagi kotak yang kaku!"
+            },
+            {
+              "id": "item6",
+              "icon": "square.and.arrow.down.on.square",
+              "title": "Simpan Proyek",
+              "subtitle": "Jangan pernah kehilangan progres Anda. Simpan tata letak sebagai proyek yang dapat diedit untuk disesuaikan kapan saja."
+            },
+            {
+              "id": "item5",
+              "icon": "square.grid.2x2",
+              "title": "Toko Konten & Templat Mingguan",
+              "subtitle": "Temukan tata letak baru, stiker musiman, dan aset premium yang diperbarui setiap minggu."
+            }
+          ]
+        },
+        "it": {
+          "headline": "Benvenuto nel nostro aggiornamento più importante di sempre! Abbiamo completamente riprogettato l'app per offrirti la massima libertà creativa e un'esperienza incredibilmente veloce.",
+          "items": [
+            {
+              "id": "item2",
+              "icon": "scissors",
+              "title": "Ritaglio AI con un tocco",
+              "subtitle": "Isola istantaneamente i soggetti, elimina gli sfondi e crea adesivi personalizzati grazie a una potente intelligenza artificiale."
+            },
+            {
+              "id": "item1",
+              "icon": "wand.and.stars",
+              "title": "Apple Image Playground",
+              "subtitle": "crea sfondi e sticker fantastici per i tuoi collage con Image Playground, direttamente nell’app (sui dispositivi supportati)."
+            },
+            {
+              "id": "item3",
+              "icon": "pencil.and.outline",
+              "title": "Libertà nel design del layout",
+              "subtitle": "Disegna, ritaglia e personalizza completamente i tuoi layout geometrici — basta con i riquadri rigidi!"
+            },
+            {
+              "id": "item6",
+              "icon": "square.and.arrow.down.on.square",
+              "title": "Salvataggio progetti",
+              "subtitle": "Non perdere mai i tuoi progressi. Salva i layout come progetti modificabili per ritoccarli quando vuoi."
+            },
+            {
+              "id": "item5",
+              "icon": "square.grid.2x2",
+              "title": "Negozio di contenuti e modelli settimanale",
+              "subtitle": "Scopri nuovi layout, adesivi stagionali e risorse premium aggiornati ogni settimana."
+            }
+          ]
+        },
+        "ja": {
+          "headline": "これまでで最大のアップデートへようこそ！アプリを全面的に刷新し、究極の創作の自由と、驚くほど高速な体験をお届けします。",
+          "items": [
+            {
+              "id": "item2",
+              "icon": "scissors",
+              "title": "AIワンタップ切り抜き",
+              "subtitle": "強力なAIを使って、被写体を瞬時に切り抜き、背景を消去し、独自のステッカーを作成できます。"
+            },
+            {
+              "id": "item1",
+              "icon": "wand.and.stars",
+              "title": "Apple Image Playground",
+              "subtitle": "Image Playgroundを使って、コラージュ用のおしゃれな背景やステッカーをアプリ内で作成できます（対応デバイスのみ）。"
+            },
+            {
+              "id": "item3",
+              "icon": "pencil.and.outline",
+              "title": "レイアウトデザインの自由",
+              "subtitle": "自由に描画や分割ができ、独自の幾何学的なキャンバスレイアウトを完全にカスタマイズ可能。固定された枠に縛られることはありません！"
+            },
+            {
+              "id": "item6",
+              "icon": "square.and.arrow.down.on.square",
+              "title": "プロジェクトの保存",
+              "subtitle": "作業の進行状況を失うことはありません。レイアウトを編集可能なプロジェクトとして保存し、いつでも微調整できます。"
+            },
+            {
+              "id": "item5",
+              "icon": "square.grid.2x2",
+              "title": "毎週更新されるコンテンツ＆テンプレートストア",
+              "subtitle": "毎週追加される新しいレイアウト、季節のステッカー、プレミアム素材をお楽しみください。"
+            }
+          ]
+        },
+        "ko": {
+          "headline": "지금까지 중 가장 큰 규모의 업데이트를 만나보세요! 앱을 완전히 새롭게 개편하여 궁극의 창의적인 자유와 매우 빠른 경험을 제공합니다.",
+          "items": [
+            {
+              "id": "item2",
+              "icon": "scissors",
+              "title": "AI 원탭 누끼 따기",
+              "subtitle": "강력한 AI를 사용하여 피사체를 즉시 분리하고, 배경을 지우며, 나만의 맞춤형 스티커를 만들 수 있습니다."
+            },
+            {
+              "id": "item1",
+              "icon": "wand.and.stars",
+              "title": "Apple Image Playground",
+              "subtitle": "앱 안에서 바로 Image Playground로 콜라주에 쓸 멋진 배경과 스티커를 만들어 보세요(지원되는 기기에서)."
+            },
+            {
+              "id": "item3",
+              "icon": "pencil.and.outline",
+              "title": "레이아웃 디자인의 자유",
+              "subtitle": "자유롭게 그리고, 자르고, 나만의 기하학적 캔버스 레이아웃을 완벽하게 커스터마이징하세요. 더 이상 고정된 틀에 갇힐 필요가 없습니다!"
+            },
+            {
+              "id": "item6",
+              "icon": "square.and.arrow.down.on.square",
+              "title": "프로젝트 저장",
+              "subtitle": "작업 내용을 잃어버릴 걱정이 없습니다. 레이아웃을 편집 가능한 프로젝트로 저장하여 언제든지 다시 수정할 수 있습니다."
+            },
+            {
+              "id": "item5",
+              "icon": "square.grid.2x2",
+              "title": "매주 업데이트되는 콘텐츠 및 템플릿 스토어",
+              "subtitle": "매주 새롭게 업데이트되는 신규 레이아웃, 시즌 스티커, 프리미엄 에셋을 발견해보세요."
+            }
+          ]
+        },
+        "ms": {
+          "headline": "Selamat datang ke kemas kini kami yang terbesar setakat ini! Kami telah merombak aplikasi ini sepenuhnya untuk memberikan anda kebebasan kreatif yang mutlak dan pengalaman yang sangat pantas.",
+          "items": [
+            {
+              "id": "item2",
+              "icon": "scissors",
+              "title": "Pemotongan AI Satu-Ketik",
+              "subtitle": "Asingkan subjek, padam latar belakang dan cipta pelekat tersuai dengan serta-merta menggunakan AI yang berkuasa."
+            },
+            {
+              "id": "item1",
+              "icon": "wand.and.stars",
+              "title": "Apple Image Playground",
+              "subtitle": "Cipta latar belakang dan pelekat yang menarik untuk kolaj anda dengan Image Playground, terus dalam aplikasi (pada peranti yang disokong)."
+            },
+            {
+              "id": "item3",
+              "icon": "pencil.and.outline",
+              "title": "Kebebasan Reka Bentuk Susun Atur",
+              "subtitle": "Lukis, potong dan sesuaikan susun atur kanvas geometri anda sepenuhnya—tiada lagi kotak yang kaku!"
+            },
+            {
+              "id": "item6",
+              "icon": "square.and.arrow.down.on.square",
+              "title": "Simpan Projek",
+              "subtitle": "Jangan sekali-kali kehilangan progres anda. Simpan susun atur sebagai projek yang boleh disunting untuk diubah suai pada bila-bila masa."
+            },
+            {
+              "id": "item5",
+              "icon": "square.grid.2x2",
+              "title": "Kedai Kandungan & Templat Mingguan",
+              "subtitle": "Temui susun atur baharu, pelekat bermusim dan aset premium yang dikemas kini setiap minggu."
+            }
+          ]
+        },
+        "nl-NL": {
+          "headline": "Welkom bij onze grootste update tot nu toe! We hebben de app volledig vernieuwd om je ultieme creatieve vrijheid en een razendsnelle ervaring te bieden.",
+          "items": [
+            {
+              "id": "item2",
+              "icon": "scissors",
+              "title": "AI-uitknipfunctie in één tik",
+              "subtitle": "Isoleer direct onderwerpen, wis achtergronden en maak aangepaste stickers met krachtige AI."
+            },
+            {
+              "id": "item1",
+              "icon": "wand.and.stars",
+              "title": "Apple Image Playground",
+              "subtitle": "Maak coole achtergronden en stickers voor je collages met Image Playground, direct in de app (op ondersteunde apparaten)."
+            },
+            {
+              "id": "item3",
+              "icon": "pencil.and.outline",
+              "title": "Creatieve vrijheid in lay-out",
+              "subtitle": "Teken, snijd en pas je eigen geometrische canvaslay-outs volledig aan — geen strakke kaders meer!"
+            },
+            {
+              "id": "item6",
+              "icon": "square.and.arrow.down.on.square",
+              "title": "Projecten opslaan",
+              "subtitle": "Verlies nooit meer je voortgang. Sla lay-outs op als bewerkbare projecten om ze op elk gewenst moment aan te passen."
+            },
+            {
+              "id": "item5",
+              "icon": "square.grid.2x2",
+              "title": "Wekelijkse content- & sjabloonwinkels",
+              "subtitle": "Ontdek elke week nieuwe lay-outs, seizoensgebonden stickers en premium assets."
+            }
+          ]
+        },
+        "no": {
+          "headline": "Velkommen til vår største oppdatering noensinne! Vi har fullstendig overhalt appen for å gi deg ultimat kreativ frihet og en lynrask opplevelse.",
+          "items": [
+            {
+              "id": "item2",
+              "icon": "scissors",
+              "title": "AI-utklipp med ett trykk",
+              "subtitle": "Isoler motiver umiddelbart, slett bakgrunner og lag egendefinerte klistremerker med kraftig AI."
+            },
+            {
+              "id": "item1",
+              "icon": "wand.and.stars",
+              "title": "Apple Image Playground",
+              "subtitle": "Lag kule bakgrunner og klistremerker til collagene dine med Image Playground, rett i appen (på støttede enheter)."
+            },
+            {
+              "id": "item3",
+              "icon": "pencil.and.outline",
+              "title": "Frihet i layoutdesign",
+              "subtitle": "Tegn, skjær og tilpass dine egne geometriske lerretslayout fullstendig – slutt på stive bokser!"
+            },
+            {
+              "id": "item6",
+              "icon": "square.and.arrow.down.on.square",
+              "title": "Lagre prosjekter",
+              "subtitle": "Mist aldri fremgangen din. Lagre layouter som redigerbare prosjekter slik at du kan finjustere dem når som helst."
+            },
+            {
+              "id": "item5",
+              "icon": "square.grid.2x2",
+              "title": "Ukentlige butikker for innhold og maler",
+              "subtitle": "Utforsk nye layouter, sesongbaserte klistremerker og førsteklasses innhold som oppdateres hver eneste uke."
+            }
+          ]
+        },
+        "pl": {
+          "headline": "Witamy w naszej największej jak dotąd aktualizacji! Całkowicie przebudowaliśmy aplikację, aby zapewnić Ci najwyższą swobodę twórczą i błyskawiczne działanie.",
+          "items": [
+            {
+              "id": "item2",
+              "icon": "scissors",
+              "title": "Wycinanie AI jednym dotknięciem",
+              "subtitle": "Błyskawicznie izoluj obiekty, usuwaj tła i twórz własne naklejki dzięki potężnej sztucznej inteligencji."
+            },
+            {
+              "id": "item1",
+              "icon": "wand.and.stars",
+              "title": "Apple Image Playground",
+              "subtitle": "Twórz świetne tła i naklejki do swoich kolaży za pomocą Image Playground bezpośrednio w aplikacji (na obsługiwanych urządzeniach)."
+            },
+            {
+              "id": "item3",
+              "icon": "pencil.and.outline",
+              "title": "Swoboda projektowania układu",
+              "subtitle": "Rysuj, dziel i w pełni dostosowuj własne geometryczne układy płótna – koniec ze sztywnymi ramkami!"
+            },
+            {
+              "id": "item6",
+              "icon": "square.and.arrow.down.on.square",
+              "title": "Zapisywanie projektów",
+              "subtitle": "Nigdy nie trać swoich postępów. Zapisuj układy jako edytowalne projekty, aby móc je dopracować w dowolnym momencie."
+            },
+            {
+              "id": "item5",
+              "icon": "square.grid.2x2",
+              "title": "Tygodniowy sklep z zawartością i szablonami",
+              "subtitle": "Odkrywaj nowe układy, sezonowe naklejki i materiały premium aktualizowane co tydzień."
+            }
+          ]
+        },
+        "pt-BR": {
+          "headline": "Bem-vindo à nossa maior atualização de sempre! Reconstruímos a aplicação de raiz para lhe oferecer a derradeira liberdade criativa e uma experiência ultrarrápida.",
+          "items": [
+            {
+              "id": "item2",
+              "icon": "scissors",
+              "title": "Recorte por IA com um toque",
+              "subtitle": "Isole temas, apague fundos e crie autocolantes personalizados instantaneamente com uma IA potente."
+            },
+            {
+              "id": "item1",
+              "icon": "wand.and.stars",
+              "title": "Apple Image Playground",
+              "subtitle": "Crie fundos e figurinhas incríveis para suas colagens com o Image Playground, direto no app (em dispositivos compatíveis)."
+            },
+            {
+              "id": "item3",
+              "icon": "pencil.and.outline",
+              "title": "Liberdade de design de esquema",
+              "subtitle": "Desenhe, corte e personalize totalmente os seus próprios esquemas de tela geométricos — chega de caixas rígidas!"
+            },
+            {
+              "id": "item6",
+              "icon": "square.and.arrow.down.on.square",
+              "title": "Guardar projetos",
+              "subtitle": "Nunca perca o seu progresso. Guarde os seus esquemas como projetos editáveis para os retocar a qualquer momento."
+            },
+            {
+              "id": "item5",
+              "icon": "square.grid.2x2",
+              "title": "Loja de conteúdos e modelos semanal",
+              "subtitle": "Descubra novos esquemas, autocolantes sazonais e recursos premium atualizados todas as semanas."
+            }
+          ]
+        },
+        "pt-PT": {
+          "headline": "Bem-vindo à nossa maior atualização de sempre! Reconstruímos a aplicação de raiz para lhe oferecer a derradeira liberdade criativa e uma experiência ultrarrápida.",
+          "items": [
+            {
+              "id": "item2",
+              "icon": "scissors",
+              "title": "Recorte por IA com um toque",
+              "subtitle": "Isole temas, apague fundos e crie autocolantes personalizados instantaneamente com uma IA potente."
+            },
+            {
+              "id": "item1",
+              "icon": "wand.and.stars",
+              "title": "Apple Image Playground",
+              "subtitle": "Crie fundos e autocolantes fantásticos para as suas colagens com o Image Playground, diretamente na app (em dispositivos compatíveis)."
+            },
+            {
+              "id": "item3",
+              "icon": "pencil.and.outline",
+              "title": "Liberdade de design de esquema",
+              "subtitle": "Desenhe, corte e personalize totalmente os seus próprios esquemas de tela geométricos — chega de caixas rígidas!"
+            },
+            {
+              "id": "item6",
+              "icon": "square.and.arrow.down.on.square",
+              "title": "Guardar projetos",
+              "subtitle": "Nunca perca o seu progresso. Guarde os seus esquemas como projetos editáveis para os retocar a qualquer momento."
+            },
+            {
+              "id": "item5",
+              "icon": "square.grid.2x2",
+              "title": "Loja de conteúdos e modelos semanal",
+              "subtitle": "Descubra novos esquemas, autocolantes sazonais e recursos premium atualizados todas as semanas."
+            }
+          ]
+        },
+        "ro": {
+          "headline": "Bine ați venit la cea mai mare actualizare a noastră de până acum! Am reconstruit complet aplicația pentru a vă oferi libertate creativă totală și o experiență ultrarapidă.",
+          "items": [
+            {
+              "id": "item2",
+              "icon": "scissors",
+              "title": "Decupare AI cu o singură atingere",
+              "subtitle": "Izolați instantaneu subiectele, ștergeți fundalurile și creați abțibilduri personalizate cu ajutorul unei tehnologii AI puternice."
+            },
+            {
+              "id": "item1",
+              "icon": "wand.and.stars",
+              "title": "Apple Image Playground",
+              "subtitle": "Creează fundaluri și stickere cool pentru colajele tale cu Image Playground, direct în aplicație (pe dispozitivele compatibile)."
+            },
+            {
+              "id": "item3",
+              "icon": "pencil.and.outline",
+              "title": "Libertate în designul aspectului",
+              "subtitle": "Desenați, tăiați și personalizați complet propriile machete geometrice pe pânză — gata cu cadrele rigide!"
+            },
+            {
+              "id": "item6",
+              "icon": "square.and.arrow.down.on.square",
+              "title": "Salvarea proiectelor",
+              "subtitle": "Nu vă mai pierdeți niciodată progresul. Salvați machetele ca proiecte editabile pentru a le retușa oricând doriți."
+            },
+            {
+              "id": "item5",
+              "icon": "square.grid.2x2",
+              "title": "Magazin săptămânal de conținut și șabloane",
+              "subtitle": "Descoperiți noi machete, abțibilduri sezoniere și resurse premium actualizate în fiecare săptămână."
+            }
+          ]
+        },
+        "ru": {
+          "headline": "Добро пожаловать в наше самое масштабное обновление! Мы полностью переработали приложение, чтобы подарить вам максимальную свободу творчества и молниеносную скорость работы.",
+          "items": [
+            {
+              "id": "item2",
+              "icon": "scissors",
+              "title": "ИИ-вырезание в одно касание",
+              "subtitle": "Мгновенно изолируйте объекты, удаляйте фоны и создавайте собственные стикеры с помощью мощного искусственного интеллекта."
+            },
+            {
+              "id": "item1",
+              "icon": "wand.and.stars",
+              "title": "Apple Image Playground",
+              "subtitle": "создавайте классные фоны и стикеры для своих коллажей с помощью Image Playground прямо в приложении (на поддерживаемых устройствах)."
+            },
+            {
+              "id": "item3",
+              "icon": "pencil.and.outline",
+              "title": "Свобода в дизайне макетов",
+              "subtitle": "Рисуйте, делите и полностью настраивайте собственные геометрические макеты холста — забудьте о жестких рамках!"
+            },
+            {
+              "id": "item6",
+              "icon": "square.and.arrow.down.on.square",
+              "title": "Сохранение проектов",
+              "subtitle": "Никогда не теряйте свой прогресс. Сохраняйте макеты как редактируемые проекты, чтобы доработать их в любой момент."
+            },
+            {
+              "id": "item5",
+              "icon": "square.grid.2x2",
+              "title": "Еженедельное обновление контента и шаблонов",
+              "subtitle": "Открывайте для себя новые макеты, сезонные стикеры и премиальные материалы, которые обновляются каждую неделю."
+            }
+          ]
+        },
+        "sv": {
+          "headline": "Välkommen till vår största uppdatering någonsin! Vi har byggt om appen från grunden för att ge dig ultimat kreativ frihet och en blixtsnabb upplevelse.",
+          "items": [
+            {
+              "id": "item2",
+              "icon": "scissors",
+              "title": "AI-utklipp med ett tryck",
+              "subtitle": "Isolera motiv omedelbart, ta bort bakgrunder och skapa egna klistermärken med kraftfull AI."
+            },
+            {
+              "id": "item1",
+              "icon": "wand.and.stars",
+              "title": "Apple Image Playground",
+              "subtitle": "Skapa coola bakgrunder och klistermärken till dina collage med Image Playground, direkt i appen (på enheter som stöds)."
+            },
+            {
+              "id": "item3",
+              "icon": "pencil.and.outline",
+              "title": "Frihet i layoutdesign",
+              "subtitle": "Rita, dela upp och anpassa dina egna geometriska canvas-layouter helt – inga fler stela lådor!"
+            },
+            {
+              "id": "item6",
+              "icon": "square.and.arrow.down.on.square",
+              "title": "Spara projekt",
+              "subtitle": "Förlora aldrig dina framsteg. Spara layouter som redigerbara projekt så att du kan finjustera dem när som helst."
+            },
+            {
+              "id": "item5",
+              "icon": "square.grid.2x2",
+              "title": "Veckovis butik för innehåll och mallar",
+              "subtitle": "Upptäck nya layouter, säsongsbetonade klistermärken och premium-material som uppdateras varje vecka."
+            }
+          ]
+        },
+        "th": {
+          "headline": "ยินดีต้อนรับสู่การอัปเดตครั้งยิ่งใหญ่ที่สุดของเรา! เราได้ปรับปรุงแอปใหม่ทั้งหมดเพื่อมอบอิสระในการสร้างสรรค์ขั้นสูงสุดและประสบการณ์การใช้งานที่รวดเร็วทันใจให้กับคุณ",
+          "items": [
+            {
+              "id": "item2",
+              "icon": "scissors",
+              "title": "ตัดภาพด้วย AI ในแตะเดียว",
+              "subtitle": "แยกวัตถุ ลบพื้นหลัง และสร้างสติกเกอร์ส่วนตัวได้ทันทีด้วยพลังของ AI ที่เหนือชั้น"
+            },
+            {
+              "id": "item1",
+              "icon": "wand.and.stars",
+              "title": "Apple Image Playground",
+              "subtitle": "สร้างพื้นหลังและสติกเกอร์สุดเท่สำหรับภาพคอลลาจของคุณด้วย Image Playground ได้ในแอปทันที (บนอุปกรณ์ที่รองรับ)"
+            },
+            {
+              "id": "item3",
+              "icon": "pencil.and.outline",
+              "title": "อิสระในการออกแบบเลย์เอาต์",
+              "subtitle": "วาด ตัด และปรับแต่งเลย์เอาต์บนผืนผ้าใบแบบเรขาคณิตได้ตามต้องการ ไม่ต้องติดอยู่กับกรอบที่แข็งทื่ออีกต่อไป!"
+            },
+            {
+              "id": "item6",
+              "icon": "square.and.arrow.down.on.square",
+              "title": "บันทึกโปรเจกต์",
+              "subtitle": "ไม่ต้องกลัวงานหายอีกต่อไป บันทึกเลย์เอาต์ของคุณเป็นโปรเจกต์ที่แก้ไขได้เพื่อกลับมาปรับแต่งเมื่อไหร่ก็ได้"
+            },
+            {
+              "id": "item5",
+              "icon": "square.grid.2x2",
+              "title": "ร้านค้าคอนเทนต์และเทมเพลตรายสัปดาห์",
+              "subtitle": "พบกับเลย์เอาต์ใหม่ สติกเกอร์ตามฤดูกาล และเนื้อหาระดับพรีเมียมที่อัปเดตใหม่ทุกสัปดาห์"
+            }
+          ]
+        },
+        "tr": {
+          "headline": "En büyük güncellememize hoş geldiniz! Size sınırsız yaratıcı özgürlük ve ışık hızında bir deneyim sunmak için uygulamayı tamamen yeniden tasarladık.",
+          "items": [
+            {
+              "id": "item2",
+              "icon": "scissors",
+              "title": "Tek dokunuşla Yapay Zeka (AI) ile kırpma",
+              "subtitle": "Güçlü yapay zeka sayesinde nesneleri anında izole edin, arka planları silin ve özel çıkartmalar oluşturun."
+            },
+            {
+              "id": "item1",
+              "icon": "wand.and.stars",
+              "title": "Apple Image Playground",
+              "subtitle": "Image Playground ile kolajların için havalı arka planlar ve çıkartmalar oluştur, doğrudan uygulamanın içinde (desteklenen cihazlarda)."
+            },
+            {
+              "id": "item3",
+              "icon": "pencil.and.outline",
+              "title": "Düzen tasarımı özgürlüğü",
+              "subtitle": "Çizin, bölün ve kendi geometrik tuval düzenlerinizi dilediğiniz gibi özelleştirin; artık sabit çerçevelere bağlı kalmak yok!"
+            },
+            {
+              "id": "item6",
+              "icon": "square.and.arrow.down.on.square",
+              "title": "Projeleri kaydetme",
+              "subtitle": "İlerlemenizi asla kaybetmeyin. Düzenlerinizi istediğiniz zaman tekrar düzenleyebileceğiniz projeler olarak saklayın."
+            },
+            {
+              "id": "item5",
+              "icon": "square.grid.2x2",
+              "title": "Haftalık içerik ve şablon mağazası",
+              "subtitle": "Her hafta güncellenen yeni düzenleri, mevsimsel çıkartmaları ve premium içerikleri keşfedin."
+            }
+          ]
+        },
+        "vi": {
+          "headline": "Chào mừng bạn đến với bản cập nhật lớn nhất từ trước đến nay của chúng tôi! Chúng tôi đã cải tiến hoàn toàn ứng dụng để mang đến cho bạn sự tự do sáng tạo tuyệt đối và trải nghiệm cực kỳ nhanh chóng.",
+          "items": [
+            {
+              "id": "item2",
+              "icon": "scissors",
+              "title": "Cắt ảnh AI chỉ với một chạm",
+              "subtitle": "Tách chủ thể, xóa nền và tạo nhãn dán (sticker) tùy chỉnh ngay lập tức nhờ công nghệ AI mạnh mẽ."
+            },
+            {
+              "id": "item1",
+              "icon": "wand.and.stars",
+              "title": "Apple Image Playground",
+              "subtitle": "Tạo hình nền và nhãn dán thật chất cho ảnh ghép của bạn bằng Image Playground, ngay trong ứng dụng (trên thiết bị được hỗ trợ)."
+            },
+            {
+              "id": "item3",
+              "icon": "pencil.and.outline",
+              "title": "Tự do thiết kế bố cục",
+              "subtitle": "Vẽ, cắt và tùy chỉnh hoàn toàn bố cục khung hình hình học của riêng bạn—không còn bị giới hạn bởi các ô vuông cứng nhắc!"
+            },
+            {
+              "id": "item6",
+              "icon": "square.and.arrow.down.on.square",
+              "title": "Lưu dự án",
+              "subtitle": "Không bao giờ lo mất tiến độ công việc. Lưu bố cục dưới dạng dự án có thể chỉnh sửa để tinh chỉnh bất cứ lúc nào."
+            },
+            {
+              "id": "item5",
+              "icon": "square.grid.2x2",
+              "title": "Cửa hàng nội dung & mẫu thiết kế hàng tuần",
+              "subtitle": "Khám phá các bố cục mới, nhãn dán theo mùa và tài nguyên cao cấp được cập nhật hàng tuần."
+            }
+          ]
+        },
+        "zh-Hans": {
+          "headline": "欢迎来到我们有史以来最大的更新！我们彻底重构了应用，为您带来极致的创意自由和飞一般的极速体验。",
+          "items": [
+            {
+              "id": "item2",
+              "icon": "scissors",
+              "title": "AI 一键智能抠图",
+              "subtitle": "利用强大的 AI 瞬间隔离主体、擦除背景并制作自定义贴纸。"
+            },
+            {
+              "id": "item1",
+              "icon": "wand.and.stars",
+              "title": "Apple Image Playground",
+              "subtitle": "直接在应用内使用 Image Playground，为您的拼图制作酷炫的背景和贴纸（仅限支持的设备）。"
+            },
+            {
+              "id": "item3",
+              "icon": "pencil.and.outline",
+              "title": "自由布局设计",
+              "subtitle": "绘制、切片并完全自定义您专属的几何画布布局——告别死板的方框！"
+            },
+            {
+              "id": "item6",
+              "icon": "square.and.arrow.down.on.square",
+              "title": "保存项目",
+              "subtitle": "永不丢失您的进度。将布局保存为可编辑的项目，随时进行微调。"
+            },
+            {
+              "id": "item5",
+              "icon": "square.grid.2x2",
+              "title": "每周内容与模板商店",
+              "subtitle": "探索每周更新的全新布局、节日贴纸和高级素材。"
+            }
+          ]
+        },
+        "zh-Hant": {
+          "headline": "歡迎來到我們有史以來最大的更新！我們徹底重構了應用程式，為您帶來極致的創意自由和飛一般的極速體驗。",
+          "items": [
+            {
+              "id": "item2",
+              "icon": "scissors",
+              "title": "AI 一鍵智能摳圖",
+              "subtitle": "利用強大的 AI 瞬間隔離主體、擦除背景並製作自訂貼紙。"
+            },
+            {
+              "id": "item1",
+              "icon": "wand.and.stars",
+              "title": "Apple Image Playground",
+              "subtitle": "直接在 App 內使用 Image Playground，為您的拼貼製作酷炫的背景和貼圖（僅限支援的裝置）。"
+            },
+            {
+              "id": "item3",
+              "icon": "pencil.and.outline",
+              "title": "自由版面設計",
+              "subtitle": "繪製、切片並完全自訂您專屬的幾何畫布版面——告別死板的方框！"
+            },
+            {
+              "id": "item6",
+              "icon": "square.and.arrow.down.on.square",
+              "title": "儲存專案",
+              "subtitle": "永不遺失您的進度。將版面儲存為可編輯的專案，隨時進行微調。"
+            },
+            {
+              "id": "item5",
+              "icon": "square.grid.2x2",
+              "title": "每週內容與範本商店",
+              "subtitle": "探索每週更新的全新版面、季節貼紙和進階素材。"
+            }
+          ]
+        }
+      }
+    }
+  }
+}
