@@ -2,6 +2,8 @@
 """Generate the in-app "What's New" catalog from App Store Connect release notes.
 
 Source:  metadata/version/<version>/<locale>.json  (field "whatsNew", from `asc metadata pull`)
+         When metadata/ is absent (content repo CI), WhatsNew/release_notes/<version>.json instead.
+         Reading metadata/ also refreshes release_notes/, so only public release notes reach the content repo.
 Config:  WhatsNew/config.json  (optional per-version item picks / icon overrides)
 Outputs: WhatsNew/whats_new.json                                  -> publish to the OTA content CDN
          PhotoCollageMaker/PhotoCollage/Resource/whats_new.json   -> bundled fallback in the app
@@ -24,6 +26,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
 METADATA_DIR = ROOT / "metadata" / "version"
+RELEASE_NOTES_DIR = ROOT / "WhatsNew" / "release_notes"
 CONFIG_PATH = ROOT / "WhatsNew" / "config.json"
 OUTPUTS = [
     ROOT / "WhatsNew" / "whats_new.json",
@@ -88,13 +91,35 @@ def icon_for(title):
     return DEFAULT_ICON
 
 
-def build_version(version, config):
+def load_release_notes(version):
+    """{locale: whatsNew text} from metadata/ (also mirrored to release_notes/) or release_notes/."""
     version_dir = METADATA_DIR / version
-    notes = {}
-    for path in sorted(version_dir.glob("*.json")):
-        text = json.loads(path.read_text(encoding="utf-8")).get("whatsNew") or ""
-        if text.strip():
-            notes[path.stem] = parse_notes(text)
+    if version_dir.is_dir():
+        texts = {}
+        for path in sorted(version_dir.glob("*.json")):
+            text = json.loads(path.read_text(encoding="utf-8")).get("whatsNew") or ""
+            if text.strip():
+                texts[path.stem] = text
+        RELEASE_NOTES_DIR.mkdir(parents=True, exist_ok=True)
+        (RELEASE_NOTES_DIR / f"{version}.json").write_text(
+            json.dumps(texts, ensure_ascii=False, indent=2) + "\n", encoding="utf-8"
+        )
+        return texts
+    path = RELEASE_NOTES_DIR / f"{version}.json"
+    return json.loads(path.read_text(encoding="utf-8")) if path.exists() else {}
+
+
+def available_versions():
+    names = set()
+    if METADATA_DIR.is_dir():
+        names |= {p.name for p in METADATA_DIR.iterdir() if p.is_dir()}
+    if RELEASE_NOTES_DIR.is_dir():
+        names |= {p.stem for p in RELEASE_NOTES_DIR.glob("*.json")}
+    return sorted(names, key=lambda v: [int(x) if x.isdigit() else 0 for x in v.split(".")])
+
+
+def build_version(version, config):
+    notes = {locale: parse_notes(text) for locale, text in load_release_notes(version).items()}
     if REFERENCE_LOCALE not in notes:
         print(f"  {version}: no {REFERENCE_LOCALE} release notes, skipped")
         return None
@@ -126,10 +151,7 @@ def build_version(version, config):
 
 def main():
     config_all = json.loads(CONFIG_PATH.read_text(encoding="utf-8")) if CONFIG_PATH.exists() else {}
-    versions = sys.argv[1:] or sorted(
-        (p.name for p in METADATA_DIR.iterdir() if p.is_dir()),
-        key=lambda v: [int(x) if x.isdigit() else 0 for x in v.split(".")],
-    )[-MAX_VERSIONS:]
+    versions = sys.argv[1:] or available_versions()[-MAX_VERSIONS:]
 
     catalog = {"schema": 1, "versions": {}}
     for version in versions:

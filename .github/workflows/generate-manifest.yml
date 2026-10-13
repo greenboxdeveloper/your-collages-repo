@@ -4,7 +4,7 @@ on:
   push:
     branches: [main]
     paths:
-      - ".github/workflows/generate-manifests.yml"
+      - ".github/workflows/generate-manifest.yml"
       - "collages/**/*.svg"
       - "svgs/**/*.svg"
       - "PhotoCollageMaker/PhotoCollage/Collage/CollageLayouts/**/*.svg"
@@ -21,6 +21,8 @@ on:
       - "Templates/**"
       - "scripts/**"
       - "HomeScreen/**"
+      - "WhatsNew/config.json"
+      - "WhatsNew/release_notes/**"
   workflow_dispatch:
 
 permissions:
@@ -116,6 +118,10 @@ jobs:
             --home-blueprint HomeScreen/home_screen_blueprint.json \
             --home-output-ota HomeScreen/home_config.json \
             --home-output-bundle PhotoCollageMaker/PhotoCollage/Resource/home_config.json
+
+      # In-app What's New: WhatsNew/release_notes/<ver>.json (+ WhatsNew/config.json picks) -> WhatsNew/whats_new.json.
+      - name: Generate What's New catalog
+        run: python scripts/generate_whats_new.py
 
       # Deploy AFTER generate so CDN includes new *_manifest.json (not the pre-push snapshot).
       # Disable Cloudflare dashboard "deploy on git push" so only this step publishes.
@@ -289,7 +295,9 @@ jobs:
             PolaroidFrame/polaroid_frame_manifest.json \
             Templates/templates_index.json \
             HomeScreen/home_config.json \
-            PhotoCollageMaker/PhotoCollage/Resource/home_config.json || true
+            PhotoCollageMaker/PhotoCollage/Resource/home_config.json \
+            WhatsNew/whats_new.json \
+            PhotoCollageMaker/PhotoCollage/Resource/whats_new.json || true
           if git diff --staged --quiet; then
             echo "No manifest changes to commit."
           else
