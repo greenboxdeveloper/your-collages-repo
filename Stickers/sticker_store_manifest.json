@@ -1,5 +1,5 @@
 {
-  "version": "4.9",
+  "version": "5.0",
   "categories": [
     {
       "id": "animals",
@@ -4438,7 +4438,7 @@
         {
           "id": "spooky_friends_pr__spooky_friends_01",
           "name": "Spooky Friends 01",
-          "isPremium": false,
+          "isPremium": true,
           "source": "ota",
           "fileName": "Spooky_Friends_01",
           "previewWebpUrl": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/Stickers/Spooky%20Friends_PR/Spooky_Friends_01_preview.webp"
