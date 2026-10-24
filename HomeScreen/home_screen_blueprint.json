@@ -9,7 +9,21 @@
     "items_per_row": 10
   },
   "sections": [
-      
+    {
+      "title": "Happy Halloween 🎃",
+      "subtitle": "Spooky collages for your costumes",
+      "display_size": "hero",
+      "store": "Templates",
+      "file": "Trick or Treat_F.json"
+    },
+    {
+      "title": "Halloween Templates",
+      "subtitle": "Boo! New for spooky season",
+      "display_size": "small",
+      "store": "Templates",
+      "pack": "Halloween",
+      "count": 12
+    },
     {
       "title": "Celebrate Summer",
       "subtitle": "",
