@@ -1,5 +1,5 @@
 {
-  "version": "4.7",
+  "version": "4.8",
   "categories": [
     {
       "id": "animals",
@@ -2126,6 +2126,614 @@
       "promoHeaderUrl": null
     },
     {
+      "id": "halloween_cute",
+      "name": "Halloween Cute",
+      "count": 14,
+      "remoteFolderName": "Halloween Cute",
+      "stickers": [
+        {
+          "id": "halloween_cute__halloween_cute_01",
+          "name": "Halloween Cute 01",
+          "isPremium": false,
+          "source": "ota",
+          "fileName": "Halloween_Cute_01",
+          "previewWebpUrl": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/Stickers/Halloween%20Cute/Halloween_Cute_01_preview.webp"
+        },
+        {
+          "id": "halloween_cute__halloween_cute_02",
+          "name": "Halloween Cute 02",
+          "isPremium": false,
+          "source": "ota",
+          "fileName": "Halloween_Cute_02",
+          "previewWebpUrl": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/Stickers/Halloween%20Cute/Halloween_Cute_02_preview.webp"
+        },
+        {
+          "id": "halloween_cute__halloween_cute_03",
+          "name": "Halloween Cute 03",
+          "isPremium": false,
+          "source": "ota",
+          "fileName": "Halloween_Cute_03",
+          "previewWebpUrl": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/Stickers/Halloween%20Cute/Halloween_Cute_03_preview.webp"
+        },
+        {
+          "id": "halloween_cute__halloween_cute_04",
+          "name": "Halloween Cute 04",
+          "isPremium": false,
+          "source": "ota",
+          "fileName": "Halloween_Cute_04",
+          "previewWebpUrl": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/Stickers/Halloween%20Cute/Halloween_Cute_04_preview.webp"
+        },
+        {
+          "id": "halloween_cute__halloween_cute_05",
+          "name": "Halloween Cute 05",
+          "isPremium": false,
+          "source": "ota",
+          "fileName": "Halloween_Cute_05",
+          "previewWebpUrl": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/Stickers/Halloween%20Cute/Halloween_Cute_05_preview.webp"
+        },
+        {
+          "id": "halloween_cute__halloween_cute_06",
+          "name": "Halloween Cute 06",
+          "isPremium": false,
+          "source": "ota",
+          "fileName": "Halloween_Cute_06",
+          "previewWebpUrl": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/Stickers/Halloween%20Cute/Halloween_Cute_06_preview.webp"
+        },
+        {
+          "id": "halloween_cute__halloween_cute_07",
+          "name": "Halloween Cute 07",
+          "isPremium": false,
+          "source": "ota",
+          "fileName": "Halloween_Cute_07",
+          "previewWebpUrl": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/Stickers/Halloween%20Cute/Halloween_Cute_07_preview.webp"
+        },
+        {
+          "id": "halloween_cute__halloween_cute_08",
+          "name": "Halloween Cute 08",
+          "isPremium": false,
+          "source": "ota",
+          "fileName": "Halloween_Cute_08",
+          "previewWebpUrl": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/Stickers/Halloween%20Cute/Halloween_Cute_08_preview.webp"
+        },
+        {
+          "id": "halloween_cute__halloween_cute_09",
+          "name": "Halloween Cute 09",
+          "isPremium": false,
+          "source": "ota",
+          "fileName": "Halloween_Cute_09",
+          "previewWebpUrl": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/Stickers/Halloween%20Cute/Halloween_Cute_09_preview.webp"
+        },
+        {
+          "id": "halloween_cute__halloween_cute_10",
+          "name": "Halloween Cute 10",
+          "isPremium": false,
+          "source": "ota",
+          "fileName": "Halloween_Cute_10",
+          "previewWebpUrl": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/Stickers/Halloween%20Cute/Halloween_Cute_10_preview.webp"
+        },
+        {
+          "id": "halloween_cute__halloween_cute_11",
+          "name": "Halloween Cute 11",
+          "isPremium": false,
+          "source": "ota",
+          "fileName": "Halloween_Cute_11",
+          "previewWebpUrl": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/Stickers/Halloween%20Cute/Halloween_Cute_11_preview.webp"
+        },
+        {
+          "id": "halloween_cute__halloween_cute_12",
+          "name": "Halloween Cute 12",
+          "isPremium": false,
+          "source": "ota",
+          "fileName": "Halloween_Cute_12",
+          "previewWebpUrl": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/Stickers/Halloween%20Cute/Halloween_Cute_12_preview.webp"
+        },
+        {
+          "id": "halloween_cute__halloween_cute_13",
+          "name": "Halloween Cute 13",
+          "isPremium": false,
+          "source": "ota",
+          "fileName": "Halloween_Cute_13",
+          "previewWebpUrl": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/Stickers/Halloween%20Cute/Halloween_Cute_13_preview.webp"
+        },
+        {
+          "id": "halloween_cute__halloween_cute_14",
+          "name": "Halloween Cute 14",
+          "isPremium": false,
+          "source": "ota",
+          "fileName": "Halloween_Cute_14",
+          "previewWebpUrl": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/Stickers/Halloween%20Cute/Halloween_Cute_14_preview.webp"
+        }
+      ],
+      "bannerImageUrl": null,
+      "promoHeaderUrl": null
+    },
+    {
+      "id": "halloween_decor_pr",
+      "name": "Halloween Decor",
+      "count": 16,
+      "remoteFolderName": "Halloween Decor_PR",
+      "stickers": [
+        {
+          "id": "halloween_decor_pr__halloween_decor_01",
+          "name": "Halloween Decor 01",
+          "isPremium": false,
+          "source": "ota",
+          "fileName": "Halloween_Decor_01",
+          "previewWebpUrl": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/Stickers/Halloween%20Decor_PR/Halloween_Decor_01_preview.webp"
+        },
+        {
+          "id": "halloween_decor_pr__halloween_decor_02",
+          "name": "Halloween Decor 02",
+          "isPremium": true,
+          "source": "ota",
+          "fileName": "Halloween_Decor_02",
+          "previewWebpUrl": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/Stickers/Halloween%20Decor_PR/Halloween_Decor_02_preview.webp"
+        },
+        {
+          "id": "halloween_decor_pr__halloween_decor_03",
+          "name": "Halloween Decor 03",
+          "isPremium": true,
+          "source": "ota",
+          "fileName": "Halloween_Decor_03",
+          "previewWebpUrl": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/Stickers/Halloween%20Decor_PR/Halloween_Decor_03_preview.webp"
+        },
+        {
+          "id": "halloween_decor_pr__halloween_decor_04",
+          "name": "Halloween Decor 04",
+          "isPremium": true,
+          "source": "ota",
+          "fileName": "Halloween_Decor_04",
+          "previewWebpUrl": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/Stickers/Halloween%20Decor_PR/Halloween_Decor_04_preview.webp"
+        },
+        {
+          "id": "halloween_decor_pr__halloween_decor_05",
+          "name": "Halloween Decor 05",
+          "isPremium": true,
+          "source": "ota",
+          "fileName": "Halloween_Decor_05",
+          "previewWebpUrl": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/Stickers/Halloween%20Decor_PR/Halloween_Decor_05_preview.webp"
+        },
+        {
+          "id": "halloween_decor_pr__halloween_decor_06",
+          "name": "Halloween Decor 06",
+          "isPremium": true,
+          "source": "ota",
+          "fileName": "Halloween_Decor_06",
+          "previewWebpUrl": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/Stickers/Halloween%20Decor_PR/Halloween_Decor_06_preview.webp"
+        },
+        {
+          "id": "halloween_decor_pr__halloween_decor_07",
+          "name": "Halloween Decor 07",
+          "isPremium": true,
+          "source": "ota",
+          "fileName": "Halloween_Decor_07",
+          "previewWebpUrl": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/Stickers/Halloween%20Decor_PR/Halloween_Decor_07_preview.webp"
+        },
+        {
+          "id": "halloween_decor_pr__halloween_decor_08",
+          "name": "Halloween Decor 08",
+          "isPremium": true,
+          "source": "ota",
+          "fileName": "Halloween_Decor_08",
+          "previewWebpUrl": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/Stickers/Halloween%20Decor_PR/Halloween_Decor_08_preview.webp"
+        },
+        {
+          "id": "halloween_decor_pr__halloween_decor_09",
+          "name": "Halloween Decor 09",
+          "isPremium": true,
+          "source": "ota",
+          "fileName": "Halloween_Decor_09",
+          "previewWebpUrl": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/Stickers/Halloween%20Decor_PR/Halloween_Decor_09_preview.webp"
+        },
+        {
+          "id": "halloween_decor_pr__halloween_decor_10",
+          "name": "Halloween Decor 10",
+          "isPremium": true,
+          "source": "ota",
+          "fileName": "Halloween_Decor_10",
+          "previewWebpUrl": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/Stickers/Halloween%20Decor_PR/Halloween_Decor_10_preview.webp"
+        },
+        {
+          "id": "halloween_decor_pr__halloween_decor_11",
+          "name": "Halloween Decor 11",
+          "isPremium": true,
+          "source": "ota",
+          "fileName": "Halloween_Decor_11",
+          "previewWebpUrl": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/Stickers/Halloween%20Decor_PR/Halloween_Decor_11_preview.webp"
+        },
+        {
+          "id": "halloween_decor_pr__halloween_decor_12",
+          "name": "Halloween Decor 12",
+          "isPremium": true,
+          "source": "ota",
+          "fileName": "Halloween_Decor_12",
+          "previewWebpUrl": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/Stickers/Halloween%20Decor_PR/Halloween_Decor_12_preview.webp"
+        },
+        {
+          "id": "halloween_decor_pr__halloween_decor_13",
+          "name": "Halloween Decor 13",
+          "isPremium": true,
+          "source": "ota",
+          "fileName": "Halloween_Decor_13",
+          "previewWebpUrl": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/Stickers/Halloween%20Decor_PR/Halloween_Decor_13_preview.webp"
+        },
+        {
+          "id": "halloween_decor_pr__halloween_decor_14",
+          "name": "Halloween Decor 14",
+          "isPremium": true,
+          "source": "ota",
+          "fileName": "Halloween_Decor_14",
+          "previewWebpUrl": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/Stickers/Halloween%20Decor_PR/Halloween_Decor_14_preview.webp"
+        },
+        {
+          "id": "halloween_decor_pr__halloween_decor_15",
+          "name": "Halloween Decor 15",
+          "isPremium": true,
+          "source": "ota",
+          "fileName": "Halloween_Decor_15",
+          "previewWebpUrl": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/Stickers/Halloween%20Decor_PR/Halloween_Decor_15_preview.webp"
+        },
+        {
+          "id": "halloween_decor_pr__halloween_decor_16",
+          "name": "Halloween Decor 16",
+          "isPremium": true,
+          "source": "ota",
+          "fileName": "Halloween_Decor_16",
+          "previewWebpUrl": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/Stickers/Halloween%20Decor_PR/Halloween_Decor_16_preview.webp"
+        }
+      ],
+      "bannerImageUrl": null,
+      "promoHeaderUrl": null
+    },
+    {
+      "id": "halloween_party_pr",
+      "name": "Halloween Party",
+      "count": 21,
+      "remoteFolderName": "Halloween Party_PR",
+      "stickers": [
+        {
+          "id": "halloween_party_pr__halloween_party_01",
+          "name": "Halloween Party 01",
+          "isPremium": false,
+          "source": "ota",
+          "fileName": "Halloween_Party_01",
+          "previewWebpUrl": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/Stickers/Halloween%20Party_PR/Halloween_Party_01_preview.webp"
+        },
+        {
+          "id": "halloween_party_pr__halloween_party_02",
+          "name": "Halloween Party 02",
+          "isPremium": true,
+          "source": "ota",
+          "fileName": "Halloween_Party_02",
+          "previewWebpUrl": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/Stickers/Halloween%20Party_PR/Halloween_Party_02_preview.webp"
+        },
+        {
+          "id": "halloween_party_pr__halloween_party_03",
+          "name": "Halloween Party 03",
+          "isPremium": true,
+          "source": "ota",
+          "fileName": "Halloween_Party_03",
+          "previewWebpUrl": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/Stickers/Halloween%20Party_PR/Halloween_Party_03_preview.webp"
+        },
+        {
+          "id": "halloween_party_pr__halloween_party_04",
+          "name": "Halloween Party 04",
+          "isPremium": true,
+          "source": "ota",
+          "fileName": "Halloween_Party_04",
+          "previewWebpUrl": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/Stickers/Halloween%20Party_PR/Halloween_Party_04_preview.webp"
+        },
+        {
+          "id": "halloween_party_pr__halloween_party_05",
+          "name": "Halloween Party 05",
+          "isPremium": true,
+          "source": "ota",
+          "fileName": "Halloween_Party_05",
+          "previewWebpUrl": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/Stickers/Halloween%20Party_PR/Halloween_Party_05_preview.webp"
+        },
+        {
+          "id": "halloween_party_pr__halloween_party_06",
+          "name": "Halloween Party 06",
+          "isPremium": true,
+          "source": "ota",
+          "fileName": "Halloween_Party_06",
+          "previewWebpUrl": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/Stickers/Halloween%20Party_PR/Halloween_Party_06_preview.webp"
+        },
+        {
+          "id": "halloween_party_pr__halloween_party_07",
+          "name": "Halloween Party 07",
+          "isPremium": true,
+          "source": "ota",
+          "fileName": "Halloween_Party_07",
+          "previewWebpUrl": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/Stickers/Halloween%20Party_PR/Halloween_Party_07_preview.webp"
+        },
+        {
+          "id": "halloween_party_pr__halloween_party_08",
+          "name": "Halloween Party 08",
+          "isPremium": true,
+          "source": "ota",
+          "fileName": "Halloween_Party_08",
+          "previewWebpUrl": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/Stickers/Halloween%20Party_PR/Halloween_Party_08_preview.webp"
+        },
+        {
+          "id": "halloween_party_pr__halloween_party_09",
+          "name": "Halloween Party 09",
+          "isPremium": true,
+          "source": "ota",
+          "fileName": "Halloween_Party_09",
+          "previewWebpUrl": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/Stickers/Halloween%20Party_PR/Halloween_Party_09_preview.webp"
+        },
+        {
+          "id": "halloween_party_pr__halloween_party_10",
+          "name": "Halloween Party 10",
+          "isPremium": true,
+          "source": "ota",
+          "fileName": "Halloween_Party_10",
+          "previewWebpUrl": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/Stickers/Halloween%20Party_PR/Halloween_Party_10_preview.webp"
+        },
+        {
+          "id": "halloween_party_pr__halloween_party_11",
+          "name": "Halloween Party 11",
+          "isPremium": true,
+          "source": "ota",
+          "fileName": "Halloween_Party_11",
+          "previewWebpUrl": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/Stickers/Halloween%20Party_PR/Halloween_Party_11_preview.webp"
+        },
+        {
+          "id": "halloween_party_pr__halloween_party_12",
+          "name": "Halloween Party 12",
+          "isPremium": true,
+          "source": "ota",
+          "fileName": "Halloween_Party_12",
+          "previewWebpUrl": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/Stickers/Halloween%20Party_PR/Halloween_Party_12_preview.webp"
+        },
+        {
+          "id": "halloween_party_pr__halloween_party_13",
+          "name": "Halloween Party 13",
+          "isPremium": true,
+          "source": "ota",
+          "fileName": "Halloween_Party_13",
+          "previewWebpUrl": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/Stickers/Halloween%20Party_PR/Halloween_Party_13_preview.webp"
+        },
+        {
+          "id": "halloween_party_pr__halloween_party_14",
+          "name": "Halloween Party 14",
+          "isPremium": true,
+          "source": "ota",
+          "fileName": "Halloween_Party_14",
+          "previewWebpUrl": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/Stickers/Halloween%20Party_PR/Halloween_Party_14_preview.webp"
+        },
+        {
+          "id": "halloween_party_pr__halloween_party_15",
+          "name": "Halloween Party 15",
+          "isPremium": true,
+          "source": "ota",
+          "fileName": "Halloween_Party_15",
+          "previewWebpUrl": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/Stickers/Halloween%20Party_PR/Halloween_Party_15_preview.webp"
+        },
+        {
+          "id": "halloween_party_pr__halloween_party_16",
+          "name": "Halloween Party 16",
+          "isPremium": true,
+          "source": "ota",
+          "fileName": "Halloween_Party_16",
+          "previewWebpUrl": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/Stickers/Halloween%20Party_PR/Halloween_Party_16_preview.webp"
+        },
+        {
+          "id": "halloween_party_pr__halloween_party_17",
+          "name": "Halloween Party 17",
+          "isPremium": true,
+          "source": "ota",
+          "fileName": "Halloween_Party_17",
+          "previewWebpUrl": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/Stickers/Halloween%20Party_PR/Halloween_Party_17_preview.webp"
+        },
+        {
+          "id": "halloween_party_pr__halloween_party_18",
+          "name": "Halloween Party 18",
+          "isPremium": true,
+          "source": "ota",
+          "fileName": "Halloween_Party_18",
+          "previewWebpUrl": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/Stickers/Halloween%20Party_PR/Halloween_Party_18_preview.webp"
+        },
+        {
+          "id": "halloween_party_pr__halloween_party_19",
+          "name": "Halloween Party 19",
+          "isPremium": true,
+          "source": "ota",
+          "fileName": "Halloween_Party_19",
+          "previewWebpUrl": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/Stickers/Halloween%20Party_PR/Halloween_Party_19_preview.webp"
+        },
+        {
+          "id": "halloween_party_pr__halloween_party_20",
+          "name": "Halloween Party 20",
+          "isPremium": true,
+          "source": "ota",
+          "fileName": "Halloween_Party_20",
+          "previewWebpUrl": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/Stickers/Halloween%20Party_PR/Halloween_Party_20_preview.webp"
+        },
+        {
+          "id": "halloween_party_pr__halloween_party_21",
+          "name": "Halloween Party 21",
+          "isPremium": true,
+          "source": "ota",
+          "fileName": "Halloween_Party_21",
+          "previewWebpUrl": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/Stickers/Halloween%20Party_PR/Halloween_Party_21_preview.webp"
+        }
+      ],
+      "bannerImageUrl": null,
+      "promoHeaderUrl": null
+    },
+    {
+      "id": "halloween_props_pr",
+      "name": "Halloween Props",
+      "count": 20,
+      "remoteFolderName": "Halloween Props_PR",
+      "stickers": [
+        {
+          "id": "halloween_props_pr__halloween_props_01",
+          "name": "Halloween Props 01",
+          "isPremium": false,
+          "source": "ota",
+          "fileName": "Halloween_Props_01",
+          "previewWebpUrl": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/Stickers/Halloween%20Props_PR/Halloween_Props_01_preview.webp"
+        },
+        {
+          "id": "halloween_props_pr__halloween_props_02",
+          "name": "Halloween Props 02",
+          "isPremium": true,
+          "source": "ota",
+          "fileName": "Halloween_Props_02",
+          "previewWebpUrl": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/Stickers/Halloween%20Props_PR/Halloween_Props_02_preview.webp"
+        },
+        {
+          "id": "halloween_props_pr__halloween_props_03",
+          "name": "Halloween Props 03",
+          "isPremium": true,
+          "source": "ota",
+          "fileName": "Halloween_Props_03",
+          "previewWebpUrl": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/Stickers/Halloween%20Props_PR/Halloween_Props_03_preview.webp"
+        },
+        {
+          "id": "halloween_props_pr__halloween_props_04",
+          "name": "Halloween Props 04",
+          "isPremium": true,
+          "source": "ota",
+          "fileName": "Halloween_Props_04",
+          "previewWebpUrl": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/Stickers/Halloween%20Props_PR/Halloween_Props_04_preview.webp"
+        },
+        {
+          "id": "halloween_props_pr__halloween_props_05",
+          "name": "Halloween Props 05",
+          "isPremium": true,
+          "source": "ota",
+          "fileName": "Halloween_Props_05",
+          "previewWebpUrl": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/Stickers/Halloween%20Props_PR/Halloween_Props_05_preview.webp"
+        },
+        {
+          "id": "halloween_props_pr__halloween_props_06",
+          "name": "Halloween Props 06",
+          "isPremium": true,
+          "source": "ota",
+          "fileName": "Halloween_Props_06",
+          "previewWebpUrl": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/Stickers/Halloween%20Props_PR/Halloween_Props_06_preview.webp"
+        },
+        {
+          "id": "halloween_props_pr__halloween_props_07",
+          "name": "Halloween Props 07",
+          "isPremium": true,
+          "source": "ota",
+          "fileName": "Halloween_Props_07",
+          "previewWebpUrl": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/Stickers/Halloween%20Props_PR/Halloween_Props_07_preview.webp"
+        },
+        {
+          "id": "halloween_props_pr__halloween_props_08",
+          "name": "Halloween Props 08",
+          "isPremium": true,
+          "source": "ota",
+          "fileName": "Halloween_Props_08",
+          "previewWebpUrl": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/Stickers/Halloween%20Props_PR/Halloween_Props_08_preview.webp"
+        },
+        {
+          "id": "halloween_props_pr__halloween_props_09",
+          "name": "Halloween Props 09",
+          "isPremium": true,
+          "source": "ota",
+          "fileName": "Halloween_Props_09",
+          "previewWebpUrl": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/Stickers/Halloween%20Props_PR/Halloween_Props_09_preview.webp"
+        },
+        {
+          "id": "halloween_props_pr__halloween_props_10",
+          "name": "Halloween Props 10",
+          "isPremium": true,
+          "source": "ota",
+          "fileName": "Halloween_Props_10",
+          "previewWebpUrl": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/Stickers/Halloween%20Props_PR/Halloween_Props_10_preview.webp"
+        },
+        {
+          "id": "halloween_props_pr__halloween_props_11",
+          "name": "Halloween Props 11",
+          "isPremium": true,
+          "source": "ota",
+          "fileName": "Halloween_Props_11",
+          "previewWebpUrl": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/Stickers/Halloween%20Props_PR/Halloween_Props_11_preview.webp"
+        },
+        {
+          "id": "halloween_props_pr__halloween_props_12",
+          "name": "Halloween Props 12",
+          "isPremium": true,
+          "source": "ota",
+          "fileName": "Halloween_Props_12",
+          "previewWebpUrl": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/Stickers/Halloween%20Props_PR/Halloween_Props_12_preview.webp"
+        },
+        {
+          "id": "halloween_props_pr__halloween_props_13",
+          "name": "Halloween Props 13",
+          "isPremium": true,
+          "source": "ota",
+          "fileName": "Halloween_Props_13",
+          "previewWebpUrl": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/Stickers/Halloween%20Props_PR/Halloween_Props_13_preview.webp"
+        },
+        {
+          "id": "halloween_props_pr__halloween_props_14",
+          "name": "Halloween Props 14",
+          "isPremium": true,
+          "source": "ota",
+          "fileName": "Halloween_Props_14",
+          "previewWebpUrl": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/Stickers/Halloween%20Props_PR/Halloween_Props_14_preview.webp"
+        },
+        {
+          "id": "halloween_props_pr__halloween_props_15",
+          "name": "Halloween Props 15",
+          "isPremium": true,
+          "source": "ota",
+          "fileName": "Halloween_Props_15",
+          "previewWebpUrl": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/Stickers/Halloween%20Props_PR/Halloween_Props_15_preview.webp"
+        },
+        {
+          "id": "halloween_props_pr__halloween_props_16",
+          "name": "Halloween Props 16",
+          "isPremium": true,
+          "source": "ota",
+          "fileName": "Halloween_Props_16",
+          "previewWebpUrl": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/Stickers/Halloween%20Props_PR/Halloween_Props_16_preview.webp"
+        },
+        {
+          "id": "halloween_props_pr__halloween_props_17",
+          "name": "Halloween Props 17",
+          "isPremium": true,
+          "source": "ota",
+          "fileName": "Halloween_Props_17",
+          "previewWebpUrl": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/Stickers/Halloween%20Props_PR/Halloween_Props_17_preview.webp"
+        },
+        {
+          "id": "halloween_props_pr__halloween_props_18",
+          "name": "Halloween Props 18",
+          "isPremium": true,
+          "source": "ota",
+          "fileName": "Halloween_Props_18",
+          "previewWebpUrl": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/Stickers/Halloween%20Props_PR/Halloween_Props_18_preview.webp"
+        },
+        {
+          "id": "halloween_props_pr__halloween_props_19",
+          "name": "Halloween Props 19",
+          "isPremium": true,
+          "source": "ota",
+          "fileName": "Halloween_Props_19",
+          "previewWebpUrl": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/Stickers/Halloween%20Props_PR/Halloween_Props_19_preview.webp"
+        },
+        {
+          "id": "halloween_props_pr__halloween_props_20",
+          "name": "Halloween Props 20",
+          "isPremium": true,
+          "source": "ota",
+          "fileName": "Halloween_Props_20",
+          "previewWebpUrl": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/Stickers/Halloween%20Props_PR/Halloween_Props_20_preview.webp"
+        }
+      ],
+      "bannerImageUrl": null,
+      "promoHeaderUrl": null
+    },
+    {
       "id": "hand_drawn_arrows",
       "name": "Hand Drawn Arrows",
       "count": 20,
@@ -3816,6 +4424,112 @@
           "source": "ota",
           "fileName": "Emoji_Cool_22",
           "previewWebpUrl": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/Stickers/Sparkle%20Moods_PR/Emoji_Cool_22_preview.webp"
+        }
+      ],
+      "bannerImageUrl": null,
+      "promoHeaderUrl": null
+    },
+    {
+      "id": "spooky_friends_pr",
+      "name": "Spooky Friends",
+      "count": 12,
+      "remoteFolderName": "Spooky Friends_PR",
+      "stickers": [
+        {
+          "id": "spooky_friends_pr__spooky_friends_01",
+          "name": "Spooky Friends 01",
+          "isPremium": false,
+          "source": "ota",
+          "fileName": "Spooky_Friends_01",
+          "previewWebpUrl": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/Stickers/Spooky%20Friends_PR/Spooky_Friends_01_preview.webp"
+        },
+        {
+          "id": "spooky_friends_pr__spooky_friends_02",
+          "name": "Spooky Friends 02",
+          "isPremium": true,
+          "source": "ota",
+          "fileName": "Spooky_Friends_02",
+          "previewWebpUrl": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/Stickers/Spooky%20Friends_PR/Spooky_Friends_02_preview.webp"
+        },
+        {
+          "id": "spooky_friends_pr__spooky_friends_03",
+          "name": "Spooky Friends 03",
+          "isPremium": true,
+          "source": "ota",
+          "fileName": "Spooky_Friends_03",
+          "previewWebpUrl": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/Stickers/Spooky%20Friends_PR/Spooky_Friends_03_preview.webp"
+        },
+        {
+          "id": "spooky_friends_pr__spooky_friends_04",
+          "name": "Spooky Friends 04",
+          "isPremium": true,
+          "source": "ota",
+          "fileName": "Spooky_Friends_04",
+          "previewWebpUrl": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/Stickers/Spooky%20Friends_PR/Spooky_Friends_04_preview.webp"
+        },
+        {
+          "id": "spooky_friends_pr__spooky_friends_05",
+          "name": "Spooky Friends 05",
+          "isPremium": true,
+          "source": "ota",
+          "fileName": "Spooky_Friends_05",
+          "previewWebpUrl": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/Stickers/Spooky%20Friends_PR/Spooky_Friends_05_preview.webp"
+        },
+        {
+          "id": "spooky_friends_pr__spooky_friends_06",
+          "name": "Spooky Friends 06",
+          "isPremium": true,
+          "source": "ota",
+          "fileName": "Spooky_Friends_06",
+          "previewWebpUrl": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/Stickers/Spooky%20Friends_PR/Spooky_Friends_06_preview.webp"
+        },
+        {
+          "id": "spooky_friends_pr__spooky_friends_07",
+          "name": "Spooky Friends 07",
+          "isPremium": true,
+          "source": "ota",
+          "fileName": "Spooky_Friends_07",
+          "previewWebpUrl": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/Stickers/Spooky%20Friends_PR/Spooky_Friends_07_preview.webp"
+        },
+        {
+          "id": "spooky_friends_pr__spooky_friends_08",
+          "name": "Spooky Friends 08",
+          "isPremium": true,
+          "source": "ota",
+          "fileName": "Spooky_Friends_08",
+          "previewWebpUrl": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/Stickers/Spooky%20Friends_PR/Spooky_Friends_08_preview.webp"
+        },
+        {
+          "id": "spooky_friends_pr__spooky_friends_09",
+          "name": "Spooky Friends 09",
+          "isPremium": true,
+          "source": "ota",
+          "fileName": "Spooky_Friends_09",
+          "previewWebpUrl": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/Stickers/Spooky%20Friends_PR/Spooky_Friends_09_preview.webp"
+        },
+        {
+          "id": "spooky_friends_pr__spooky_friends_10",
+          "name": "Spooky Friends 10",
+          "isPremium": true,
+          "source": "ota",
+          "fileName": "Spooky_Friends_10",
+          "previewWebpUrl": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/Stickers/Spooky%20Friends_PR/Spooky_Friends_10_preview.webp"
+        },
+        {
+          "id": "spooky_friends_pr__spooky_friends_11",
+          "name": "Spooky Friends 11",
+          "isPremium": true,
+          "source": "ota",
+          "fileName": "Spooky_Friends_11",
+          "previewWebpUrl": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/Stickers/Spooky%20Friends_PR/Spooky_Friends_11_preview.webp"
+        },
+        {
+          "id": "spooky_friends_pr__spooky_friends_12",
+          "name": "Spooky Friends 12",
+          "isPremium": true,
+          "source": "ota",
+          "fileName": "Spooky_Friends_12",
+          "previewWebpUrl": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/Stickers/Spooky%20Friends_PR/Spooky_Friends_12_preview.webp"
         }
       ],
       "bannerImageUrl": null,
