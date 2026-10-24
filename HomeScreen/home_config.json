@@ -1,5 +1,5 @@
 {
-  "version": "19.9",
+  "version": "20.0",
   "sections": [
     {
       "id": "slideshow",
@@ -38,6 +38,25 @@
       "display_size": "small",
       "category": "made_for_you",
       "count": 10
+    },
+    {
+      "id": "templates_trick_or_treat_f_json_happy_halloween",
+      "title": "Happy Halloween 🎃",
+      "subtitle": "Spooky collages for your costumes",
+      "display_size": "hero",
+      "category": "templates",
+      "sub_category": "Halloween",
+      "count": 1,
+      "item": "Trick or Treat_F.json"
+    },
+    {
+      "id": "templates_halloween_halloween_templates",
+      "title": "Halloween Templates",
+      "subtitle": "Boo! New for spooky season",
+      "display_size": "small",
+      "category": "templates",
+      "sub_category": "Halloween",
+      "count": 12
     },
     {
       "id": "templates_summer_1_6_json_celebrate_summer",
