@@ -1,5 +1,5 @@
 {
-  "version": "4.8",
+  "version": "4.9",
   "categories": [
     {
       "id": "animals",
@@ -2256,7 +2256,7 @@
         {
           "id": "halloween_decor_pr__halloween_decor_01",
           "name": "Halloween Decor 01",
-          "isPremium": false,
+          "isPremium": true,
           "source": "ota",
           "fileName": "Halloween_Decor_01",
           "previewWebpUrl": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/Stickers/Halloween%20Decor_PR/Halloween_Decor_01_preview.webp"
@@ -2394,7 +2394,7 @@
         {
           "id": "halloween_party_pr__halloween_party_01",
           "name": "Halloween Party 01",
-          "isPremium": false,
+          "isPremium": true,
           "source": "ota",
           "fileName": "Halloween_Party_01",
           "previewWebpUrl": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/Stickers/Halloween%20Party_PR/Halloween_Party_01_preview.webp"
@@ -2572,7 +2572,7 @@
         {
           "id": "halloween_props_pr__halloween_props_01",
           "name": "Halloween Props 01",
-          "isPremium": false,
+          "isPremium": true,
           "source": "ota",
           "fileName": "Halloween_Props_01",
           "previewWebpUrl": "https://raw.githubusercontent.com/greenboxdeveloper/your-collages-repo/main/Stickers/Halloween%20Props_PR/Halloween_Props_01_preview.webp"
