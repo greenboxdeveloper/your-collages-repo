@@ -1,5 +1,5 @@
 {
-  "version": "3.0",
+  "version": "3.1",
   "categories": [
     {
       "id": "bold_hearts",
@@ -332,6 +332,121 @@
           "source": "ota",
           "colorHex": null,
           "fileName": "Spring09_PR.jpg"
+        }
+      ]
+    },
+    {
+      "id": "halloween_patterns_pr",
+      "name": "Halloween Patterns",
+      "remoteFolderName": "Halloween Patterns_PR",
+      "backgrounds": [
+        {
+          "id": "halloween_patterns_pr__bat_flight_jpg",
+          "name": "Bat Flight",
+          "isPremium": true,
+          "kind": "image",
+          "source": "ota",
+          "colorHex": null,
+          "fileName": "Bat Flight.jpg"
+        },
+        {
+          "id": "halloween_patterns_pr__buffalo_check_jpg",
+          "name": "Buffalo Check",
+          "isPremium": true,
+          "kind": "image",
+          "source": "ota",
+          "colorHex": null,
+          "fileName": "Buffalo Check.jpg"
+        },
+        {
+          "id": "halloween_patterns_pr__candy_corn_night_jpg",
+          "name": "Candy Corn Night",
+          "isPremium": true,
+          "kind": "image",
+          "source": "ota",
+          "colorHex": null,
+          "fileName": "Candy Corn Night.jpg"
+        },
+        {
+          "id": "halloween_patterns_pr__candy_stripes_jpg",
+          "name": "Candy Stripes",
+          "isPremium": true,
+          "kind": "image",
+          "source": "ota",
+          "colorHex": null,
+          "fileName": "Candy Stripes.jpg"
+        },
+        {
+          "id": "halloween_patterns_pr__ghost_parade_jpg",
+          "name": "Ghost Parade",
+          "isPremium": true,
+          "kind": "image",
+          "source": "ota",
+          "colorHex": null,
+          "fileName": "Ghost Parade.jpg"
+        },
+        {
+          "id": "halloween_patterns_pr__orange_dots_jpg",
+          "name": "Orange Dots",
+          "isPremium": false,
+          "kind": "image",
+          "source": "ota",
+          "colorHex": null,
+          "fileName": "Orange Dots_F.jpg"
+        },
+        {
+          "id": "halloween_patterns_pr__potion_stripes_jpg",
+          "name": "Potion Stripes",
+          "isPremium": true,
+          "kind": "image",
+          "source": "ota",
+          "colorHex": null,
+          "fileName": "Potion Stripes.jpg"
+        },
+        {
+          "id": "halloween_patterns_pr__pumpkin_party_jpg",
+          "name": "Pumpkin Party",
+          "isPremium": false,
+          "kind": "image",
+          "source": "ota",
+          "colorHex": null,
+          "fileName": "Pumpkin Party_F.jpg"
+        },
+        {
+          "id": "halloween_patterns_pr__purple_check_jpg",
+          "name": "Purple Check",
+          "isPremium": true,
+          "kind": "image",
+          "source": "ota",
+          "colorHex": null,
+          "fileName": "Purple Check.jpg"
+        },
+        {
+          "id": "halloween_patterns_pr__purple_dots_jpg",
+          "name": "Purple Dots",
+          "isPremium": true,
+          "kind": "image",
+          "source": "ota",
+          "colorHex": null,
+          "fileName": "Purple Dots.jpg"
+        },
+        {
+          "id": "halloween_patterns_pr__slime_dots_jpg",
+          "name": "Slime Dots",
+          "isPremium": true,
+          "kind": "image",
+          "source": "ota",
+          "colorHex": null,
+          "fileName": "Slime Dots.jpg"
+        },
+        {
+          "id": "halloween_patterns_pr__witchy_cats_jpg",
+          "name": "Witchy Cats",
+          "isPremium": true,
+          "kind": "image",
+          "source": "ota",
+          "colorHex": null,
+          "fileName": "Witchy Cats.jpg"
         }
       ]
     },
@@ -1045,6 +1160,85 @@
           "source": "ota",
           "colorHex": null,
           "fileName": "Dot3.9_PR.jpg"
+        }
+      ]
+    },
+    {
+      "id": "spooky_nights_pr",
+      "name": "Spooky Nights",
+      "remoteFolderName": "Spooky Nights_PR",
+      "backgrounds": [
+        {
+          "id": "spooky_nights_pr__bat_moon_jpg",
+          "name": "Bat Moon",
+          "isPremium": true,
+          "kind": "image",
+          "source": "ota",
+          "colorHex": null,
+          "fileName": "Bat Moon.jpg"
+        },
+        {
+          "id": "spooky_nights_pr__bat_sky_jpg",
+          "name": "Bat Sky",
+          "isPremium": true,
+          "kind": "image",
+          "source": "ota",
+          "colorHex": null,
+          "fileName": "Bat Sky.jpg"
+        },
+        {
+          "id": "spooky_nights_pr__haunted_sunset_jpg",
+          "name": "Haunted Sunset",
+          "isPremium": true,
+          "kind": "image",
+          "source": "ota",
+          "colorHex": null,
+          "fileName": "Haunted Sunset.jpg"
+        },
+        {
+          "id": "spooky_nights_pr__moonlit_hills_jpg",
+          "name": "Moonlit Hills",
+          "isPremium": false,
+          "kind": "image",
+          "source": "ota",
+          "colorHex": null,
+          "fileName": "Moonlit Hills_F.jpg"
+        },
+        {
+          "id": "spooky_nights_pr__orange_fade_jpg",
+          "name": "Orange Fade",
+          "isPremium": true,
+          "kind": "image",
+          "source": "ota",
+          "colorHex": null,
+          "fileName": "Orange Fade.jpg"
+        },
+        {
+          "id": "spooky_nights_pr__pumpkin_glow_jpg",
+          "name": "Pumpkin Glow",
+          "isPremium": true,
+          "kind": "image",
+          "source": "ota",
+          "colorHex": null,
+          "fileName": "Pumpkin Glow.jpg"
+        },
+        {
+          "id": "spooky_nights_pr__spiderweb_paper_jpg",
+          "name": "Spiderweb Paper",
+          "isPremium": true,
+          "kind": "image",
+          "source": "ota",
+          "colorHex": null,
+          "fileName": "Spiderweb Paper.jpg"
+        },
+        {
+          "id": "spooky_nights_pr__spooky_party_jpg",
+          "name": "Spooky Party",
+          "isPremium": true,
+          "kind": "image",
+          "source": "ota",
+          "colorHex": null,
+          "fileName": "Spooky Party.jpg"
         }
       ]
     },
