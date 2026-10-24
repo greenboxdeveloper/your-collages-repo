@@ -1,5 +1,5 @@
 {
-  "version": "5.6",
+  "version": "5.7",
   "templates": [
     {
       "id": "4th_july__4th_1",
@@ -339,6 +339,126 @@
       "recipe": "Fifa5.json",
       "preview": "Fifa5.jpg",
       "is_premium": true,
+      "neutral_empty_slots": true
+    },
+    {
+      "id": "halloween__boo_crew",
+      "title": "Boo Crew",
+      "category": "Halloween",
+      "category_folder": "Halloween",
+      "recipe": "Boo Crew.json",
+      "preview": "Boo Crew.jpg",
+      "is_premium": true,
+      "neutral_empty_slots": true
+    },
+    {
+      "id": "halloween__candy_haul",
+      "title": "Candy Haul",
+      "category": "Halloween",
+      "category_folder": "Halloween",
+      "recipe": "Candy Haul_F.json",
+      "preview": "Candy Haul_F.jpg",
+      "is_premium": false,
+      "neutral_empty_slots": true
+    },
+    {
+      "id": "halloween__costume_reveal",
+      "title": "Costume Reveal",
+      "category": "Halloween",
+      "category_folder": "Halloween",
+      "recipe": "Costume Reveal.json",
+      "preview": "Costume Reveal.jpg",
+      "is_premium": true,
+      "neutral_empty_slots": true
+    },
+    {
+      "id": "halloween__ghost_squad",
+      "title": "Ghost Squad",
+      "category": "Halloween",
+      "category_folder": "Halloween",
+      "recipe": "Ghost Squad.json",
+      "preview": "Ghost Squad.jpg",
+      "is_premium": true,
+      "neutral_empty_slots": true
+    },
+    {
+      "id": "halloween__happy_halloween",
+      "title": "Happy Halloween",
+      "category": "Halloween",
+      "category_folder": "Halloween",
+      "recipe": "Happy Halloween.json",
+      "preview": "Happy Halloween.jpg",
+      "is_premium": true,
+      "neutral_empty_slots": true
+    },
+    {
+      "id": "halloween__haunted_night",
+      "title": "Haunted Night",
+      "category": "Halloween",
+      "category_folder": "Halloween",
+      "recipe": "Haunted Night.json",
+      "preview": "Haunted Night.jpg",
+      "is_premium": true,
+      "neutral_empty_slots": true
+    },
+    {
+      "id": "halloween__hocus_pocus",
+      "title": "Hocus Pocus",
+      "category": "Halloween",
+      "category_folder": "Halloween",
+      "recipe": "Hocus Pocus.json",
+      "preview": "Hocus Pocus.jpg",
+      "is_premium": true,
+      "neutral_empty_slots": true
+    },
+    {
+      "id": "halloween__pet_costume",
+      "title": "Pet Costume",
+      "category": "Halloween",
+      "category_folder": "Halloween",
+      "recipe": "Pet Costume.json",
+      "preview": "Pet Costume.jpg",
+      "is_premium": true,
+      "neutral_empty_slots": true
+    },
+    {
+      "id": "halloween__pumpkin_patch",
+      "title": "Pumpkin Patch",
+      "category": "Halloween",
+      "category_folder": "Halloween",
+      "recipe": "Pumpkin Patch.json",
+      "preview": "Pumpkin Patch.jpg",
+      "is_premium": true,
+      "neutral_empty_slots": true
+    },
+    {
+      "id": "halloween__spooky_glam",
+      "title": "Spooky Glam",
+      "category": "Halloween",
+      "category_folder": "Halloween",
+      "recipe": "Spooky Glam.json",
+      "preview": "Spooky Glam.jpg",
+      "is_premium": true,
+      "neutral_empty_slots": true
+    },
+    {
+      "id": "halloween__spooky_season",
+      "title": "Spooky Season",
+      "category": "Halloween",
+      "category_folder": "Halloween",
+      "recipe": "Spooky Season.json",
+      "preview": "Spooky Season.jpg",
+      "is_premium": true,
+      "neutral_empty_slots": true
+    },
+    {
+      "id": "halloween__trick_or_treat",
+      "title": "Trick Or Treat",
+      "category": "Halloween",
+      "category_folder": "Halloween",
+      "recipe": "Trick or Treat_F.json",
+      "preview": "Trick or Treat_F.jpg",
+      "is_premium": false,
       "neutral_empty_slots": true
     },
     {
