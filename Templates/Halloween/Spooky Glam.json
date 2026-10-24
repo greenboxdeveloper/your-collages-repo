@@ -1,0 +1,178 @@
+{
+  "chrome": {
+    "background_color_rgba": [
+      0,
+      0,
+      0,
+      1
+    ],
+    "background_hazy_blur_radius": 48,
+    "background_image_name": "spooky_nights_pr__pumpkin_glow_jpg",
+    "border_color_rgba": [
+      1,
+      1,
+      1,
+      1
+    ],
+    "border_corner_radius": 0,
+    "border_width": 0,
+    "canvas_aspect": 0.5625,
+    "canvas_ratio_preset": "9:16",
+    "editor_canvas_min_side": 400,
+    "has_background_image": true
+  },
+  "dependencies": [
+    {
+      "asset_ref": "Pumpkin Glow.jpg",
+      "id": "spooky_nights_pr__pumpkin_glow_jpg",
+      "type": "background",
+      "url": "https://photocollagemaker.john4shine.workers.dev/Backgrounds/Spooky%20Nights_PR/Pumpkin%20Glow.jpg"
+    },
+    {
+      "asset_ref": "Polaroid 1.png",
+      "id": "polaroidframe__polaroid_1",
+      "type": "sticker",
+      "url": "https://photocollagemaker.john4shine.workers.dev/PolaroidFrame/Polaroid%201.png"
+    },
+    {
+      "id": "Futura-CondensedExtraBold",
+      "type": "font"
+    },
+    {
+      "asset_ref": "Halloween_Decor_10.png",
+      "id": "halloween_decor_pr__halloween_decor_10",
+      "type": "sticker",
+      "url": "https://photocollagemaker.john4shine.workers.dev/Stickers/Halloween%20Decor_PR/Halloween_Decor_10.png"
+    },
+    {
+      "asset_ref": "Halloween_Decor_13.png",
+      "id": "halloween_decor_pr__halloween_decor_13",
+      "type": "sticker",
+      "url": "https://photocollagemaker.john4shine.workers.dev/Stickers/Halloween%20Decor_PR/Halloween_Decor_13.png"
+    },
+    {
+      "asset_ref": "Halloween_Cute_11.png",
+      "id": "halloween_cute__halloween_cute_11",
+      "type": "sticker",
+      "url": "https://photocollagemaker.john4shine.workers.dev/Stickers/Halloween%20Cute/Halloween_Cute_11.png"
+    }
+  ],
+  "editor": {
+    "divider_positions": {},
+    "shared_vertex_positions": {}
+  },
+  "layout": {
+    "category": "TemplateBuilder",
+    "dividers": [],
+    "id": "template-builder-EC715BB5",
+    "isPremium": false,
+    "name": "Template builder",
+    "shared_vertices": [],
+    "slots": [],
+    "type": "grid"
+  },
+  "stickers": [
+    {
+      "hole_n_rect": [
+        0.072,
+        0.05418,
+        0.848,
+        0.729102
+      ],
+      "id": "EED0C52A-9848-4D81-A440-BEB62E31B21B",
+      "image_name": "polaroidframe__polaroid_1",
+      "is_transform_locked": true,
+      "linked_canvas_photo_id": "D2D49B4B-CEA2-4594-A49E-B45B46D7CF72",
+      "n_position_x": 0.5,
+      "n_position_y": 0.46,
+      "offset_height": 0,
+      "offset_width": 0,
+      "placement_kind": "sticker",
+      "rotation_radians": -0.03490658503988659,
+      "scale": 3.047619047619048,
+      "z_index": 110
+    },
+    {
+      "id": "D2D49B4B-CEA2-4594-A49E-B45B46D7CF72",
+      "inner_offset_height": 0,
+      "inner_offset_width": 0,
+      "inner_scale": 1,
+      "n_position_x": 0.5,
+      "n_position_y": 0.46,
+      "offset_height": 0,
+      "offset_width": 0,
+      "parent_frame_sticker_id": "EED0C52A-9848-4D81-A440-BEB62E31B21B",
+      "placement_kind": "canvas_photo",
+      "rotation_radians": -0.03490658503988659,
+      "scale": 3.047619047619048,
+      "z_index": 110
+    },
+    {
+      "id": "0D147AE2-F883-4223-BCE9-B13D081D2D45",
+      "image_name": "halloween_decor_pr__halloween_decor_10",
+      "n_position_x": 0.83,
+      "n_position_y": 0.13,
+      "offset_height": 0,
+      "offset_width": 0,
+      "placement_kind": "sticker",
+      "rotation_radians": 0.20943951023931953,
+      "scale": 1.2,
+      "z_index": 130
+    },
+    {
+      "id": "44DC13C1-0AFF-47EC-8987-04C2272FCFF4",
+      "image_name": "halloween_decor_pr__halloween_decor_13",
+      "n_position_x": 0.18,
+      "n_position_y": 0.86,
+      "offset_height": 0,
+      "offset_width": 0,
+      "placement_kind": "sticker",
+      "rotation_radians": -0.10471975511965977,
+      "scale": 1.12,
+      "z_index": 140
+    },
+    {
+      "id": "E9A7BAFE-7043-4CE7-8837-28E4700A47F7",
+      "image_name": "halloween_cute__halloween_cute_11",
+      "n_position_x": 0.82,
+      "n_position_y": 0.87,
+      "offset_height": 0,
+      "offset_width": 0,
+      "placement_kind": "sticker",
+      "rotation_radians": 0.17453292519943295,
+      "scale": 0.96,
+      "z_index": 150
+    }
+  ],
+  "text_items": [
+    {
+      "alignment": "center",
+      "backgroundColorHex": "#00000000",
+      "backgroundOpacity": 1,
+      "cornerRadius": 8,
+      "fontName": "Futura-CondensedExtraBold",
+      "fontSize": 30,
+      "id": "6E350477-D54E-4DF4-AAF3-0FD00BBADD36",
+      "layoutCanvasMinSide": 398,
+      "letterSpacing": 0,
+      "lineSpacing": 0,
+      "nPosition": [
+        0.508,
+        0.695
+      ],
+      "outlineColorHex": "#00000000",
+      "outlineOpacity": 1,
+      "outlineWidth": 0.0,
+      "rotation": -0.03490658503988659,
+      "scale": 1.1333333333333333,
+      "shadowColorHex": "#00000000",
+      "shadowRadius": 0,
+      "text": "SPOOKY GLAM",
+      "textCase": "none",
+      "textColorHex": "#FF7518",
+      "textOpacity": 1,
+      "zIndex": 120
+    }
+  ],
+  "version": "1"
+}

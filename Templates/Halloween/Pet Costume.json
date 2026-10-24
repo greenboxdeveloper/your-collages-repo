@@ -1,0 +1,160 @@
+{
+  "chrome": {
+    "background_color_rgba": [
+      0,
+      0,
+      0,
+      1
+    ],
+    "background_hazy_blur_radius": 48,
+    "background_image_name": "halloween_patterns_pr__ghost_parade_jpg",
+    "border_color_rgba": [
+      1,
+      1,
+      1,
+      1
+    ],
+    "border_corner_radius": 0,
+    "border_width": 0,
+    "canvas_aspect": 0.8,
+    "canvas_ratio_preset": "4:5",
+    "editor_canvas_min_side": 400,
+    "has_background_image": true
+  },
+  "dependencies": [
+    {
+      "asset_ref": "Ghost Parade.jpg",
+      "id": "halloween_patterns_pr__ghost_parade_jpg",
+      "type": "background",
+      "url": "https://photocollagemaker.john4shine.workers.dev/Backgrounds/Halloween%20Patterns_PR/Ghost%20Parade.jpg"
+    },
+    {
+      "asset_ref": "Polaroid4.1_W.png",
+      "id": "polaroidframe__polaroid4_1_w",
+      "type": "sticker",
+      "url": "https://photocollagemaker.john4shine.workers.dev/PolaroidFrame/Polaroid4.1_W.png"
+    },
+    {
+      "asset_ref": "Halloween_Props_02.png",
+      "id": "halloween_props_pr__halloween_props_02",
+      "type": "sticker",
+      "url": "https://photocollagemaker.john4shine.workers.dev/Stickers/Halloween%20Props_PR/Halloween_Props_02.png"
+    },
+    {
+      "id": "MarkerFelt-Wide",
+      "type": "font"
+    },
+    {
+      "asset_ref": "Halloween_Party_16.png",
+      "id": "halloween_party_pr__halloween_party_16",
+      "type": "sticker",
+      "url": "https://photocollagemaker.john4shine.workers.dev/Stickers/Halloween%20Party_PR/Halloween_Party_16.png"
+    }
+  ],
+  "editor": {
+    "divider_positions": {},
+    "shared_vertex_positions": {}
+  },
+  "layout": {
+    "category": "TemplateBuilder",
+    "dividers": [],
+    "id": "template-builder-1F01E0BD",
+    "isPremium": false,
+    "name": "Template builder",
+    "shared_vertices": [],
+    "slots": [],
+    "type": "grid"
+  },
+  "stickers": [
+    {
+      "hole_n_rect": [
+        0.066946,
+        0.046875,
+        0.866109,
+        0.706055
+      ],
+      "id": "F122A4CA-63F5-400A-8B9B-FFBFF2691298",
+      "image_name": "polaroidframe__polaroid4_1_w",
+      "is_transform_locked": true,
+      "linked_canvas_photo_id": "B7E81503-9F73-4B5C-B986-30ACC174F788",
+      "n_position_x": 0.5,
+      "n_position_y": 0.49,
+      "offset_height": 0,
+      "offset_width": 0,
+      "placement_kind": "sticker",
+      "rotation_radians": 0.03490658503988659,
+      "scale": 2.571428571428571,
+      "z_index": 110
+    },
+    {
+      "id": "B7E81503-9F73-4B5C-B986-30ACC174F788",
+      "inner_offset_height": 0,
+      "inner_offset_width": 0,
+      "inner_scale": 1,
+      "n_position_x": 0.5,
+      "n_position_y": 0.49,
+      "offset_height": 0,
+      "offset_width": 0,
+      "parent_frame_sticker_id": "F122A4CA-63F5-400A-8B9B-FFBFF2691298",
+      "placement_kind": "canvas_photo",
+      "rotation_radians": 0.03490658503988659,
+      "scale": 2.571428571428571,
+      "z_index": 110
+    },
+    {
+      "id": "C5C1B81A-DDC9-4790-B592-E4ADFF2A08DE",
+      "image_name": "halloween_props_pr__halloween_props_02",
+      "n_position_x": 0.75,
+      "n_position_y": 0.15,
+      "offset_height": 0,
+      "offset_width": 0,
+      "placement_kind": "sticker",
+      "rotation_radians": 0.3141592653589793,
+      "scale": 1.28,
+      "z_index": 120
+    },
+    {
+      "id": "39374597-6744-421E-91AD-02AFF10DB79F",
+      "image_name": "halloween_party_pr__halloween_party_16",
+      "n_position_x": 0.15,
+      "n_position_y": 0.86,
+      "offset_height": 0,
+      "offset_width": 0,
+      "placement_kind": "sticker",
+      "rotation_radians": -0.13962634015954636,
+      "scale": 1.04,
+      "z_index": 140
+    }
+  ],
+  "text_items": [
+    {
+      "alignment": "center",
+      "backgroundColorHex": "#00000000",
+      "backgroundOpacity": 1,
+      "cornerRadius": 8,
+      "fontName": "MarkerFelt-Wide",
+      "fontSize": 30,
+      "id": "1213F52F-EAF9-4AA9-BC00-D97E3CB565D0",
+      "layoutCanvasMinSide": 398,
+      "letterSpacing": 0,
+      "lineSpacing": 0,
+      "nPosition": [
+        0.5,
+        0.775
+      ],
+      "outlineColorHex": "#00000000",
+      "outlineOpacity": 1,
+      "outlineWidth": 0.0,
+      "rotation": 0.0,
+      "scale": 0.6,
+      "shadowColorHex": "#00000000",
+      "shadowRadius": 0,
+      "text": "purr-fect costume",
+      "textCase": "none",
+      "textColorHex": "#6B2D8F",
+      "textOpacity": 1,
+      "zIndex": 130
+    }
+  ],
+  "version": "1"
+}

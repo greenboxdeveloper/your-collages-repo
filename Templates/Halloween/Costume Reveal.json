@@ -1,0 +1,223 @@
+{
+  "chrome": {
+    "background_color_rgba": [
+      0,
+      0,
+      0,
+      1
+    ],
+    "background_hazy_blur_radius": 48,
+    "background_image_name": "spooky_nights_pr__spooky_party_jpg",
+    "border_color_rgba": [
+      1,
+      1,
+      1,
+      1
+    ],
+    "border_corner_radius": 0,
+    "border_width": 0,
+    "canvas_aspect": 0.5625,
+    "canvas_ratio_preset": "9:16",
+    "editor_canvas_min_side": 400,
+    "has_background_image": true
+  },
+  "dependencies": [
+    {
+      "asset_ref": "Spooky Party.jpg",
+      "id": "spooky_nights_pr__spooky_party_jpg",
+      "type": "background",
+      "url": "https://photocollagemaker.john4shine.workers.dev/Backgrounds/Spooky%20Nights_PR/Spooky%20Party.jpg"
+    },
+    {
+      "asset_ref": "Polaroid4.1_W.png",
+      "id": "polaroidframe__polaroid4_1_w",
+      "type": "sticker",
+      "url": "https://photocollagemaker.john4shine.workers.dev/PolaroidFrame/Polaroid4.1_W.png"
+    },
+    {
+      "id": "MarkerFelt-Wide",
+      "type": "font"
+    },
+    {
+      "asset_ref": "Halloween_Party_01.png",
+      "id": "halloween_party_pr__halloween_party_01",
+      "type": "sticker",
+      "url": "https://photocollagemaker.john4shine.workers.dev/Stickers/Halloween%20Party_PR/Halloween_Party_01.png"
+    },
+    {
+      "asset_ref": "Halloween_Props_10.png",
+      "id": "halloween_props_pr__halloween_props_10",
+      "type": "sticker",
+      "url": "https://photocollagemaker.john4shine.workers.dev/Stickers/Halloween%20Props_PR/Halloween_Props_10.png"
+    }
+  ],
+  "editor": {
+    "divider_positions": {},
+    "shared_vertex_positions": {}
+  },
+  "layout": {
+    "category": "TemplateBuilder",
+    "dividers": [],
+    "id": "template-builder-274689A5",
+    "isPremium": false,
+    "name": "Template builder",
+    "shared_vertices": [],
+    "slots": [],
+    "type": "grid"
+  },
+  "stickers": [
+    {
+      "hole_n_rect": [
+        0.066946,
+        0.046875,
+        0.866109,
+        0.706055
+      ],
+      "id": "AC336B60-A00C-4D37-B442-87354CE454F3",
+      "image_name": "polaroidframe__polaroid4_1_w",
+      "is_transform_locked": true,
+      "linked_canvas_photo_id": "9E720BF4-50BE-48C1-956C-785C87753467",
+      "n_position_x": 0.5,
+      "n_position_y": 0.31,
+      "offset_height": 0,
+      "offset_width": 0,
+      "placement_kind": "sticker",
+      "rotation_radians": -0.05235987755982988,
+      "scale": 1.6761904761904762,
+      "z_index": 110
+    },
+    {
+      "id": "9E720BF4-50BE-48C1-956C-785C87753467",
+      "inner_offset_height": 0,
+      "inner_offset_width": 0,
+      "inner_scale": 1,
+      "n_position_x": 0.5,
+      "n_position_y": 0.31,
+      "offset_height": 0,
+      "offset_width": 0,
+      "parent_frame_sticker_id": "AC336B60-A00C-4D37-B442-87354CE454F3",
+      "placement_kind": "canvas_photo",
+      "rotation_radians": -0.05235987755982988,
+      "scale": 1.6761904761904762,
+      "z_index": 110
+    },
+    {
+      "hole_n_rect": [
+        0.066946,
+        0.046875,
+        0.866109,
+        0.706055
+      ],
+      "id": "54D059EF-8D26-4A98-8C0E-C841D1EC10BA",
+      "image_name": "polaroidframe__polaroid4_1_w",
+      "is_transform_locked": true,
+      "linked_canvas_photo_id": "1317000B-8FA3-408D-9C31-AFD91AEFE079",
+      "n_position_x": 0.5,
+      "n_position_y": 0.63,
+      "offset_height": 0,
+      "offset_width": 0,
+      "placement_kind": "sticker",
+      "rotation_radians": 0.05235987755982988,
+      "scale": 1.6761904761904762,
+      "z_index": 120
+    },
+    {
+      "id": "1317000B-8FA3-408D-9C31-AFD91AEFE079",
+      "inner_offset_height": 0,
+      "inner_offset_width": 0,
+      "inner_scale": 1,
+      "n_position_x": 0.5,
+      "n_position_y": 0.63,
+      "offset_height": 0,
+      "offset_width": 0,
+      "parent_frame_sticker_id": "54D059EF-8D26-4A98-8C0E-C841D1EC10BA",
+      "placement_kind": "canvas_photo",
+      "rotation_radians": 0.05235987755982988,
+      "scale": 1.6761904761904762,
+      "z_index": 120
+    },
+    {
+      "id": "46DD9281-B61E-4BB5-BDA6-06BAA9A28863",
+      "image_name": "halloween_party_pr__halloween_party_01",
+      "n_position_x": 0.84,
+      "n_position_y": 0.5,
+      "offset_height": 0,
+      "offset_width": 0,
+      "placement_kind": "sticker",
+      "rotation_radians": 0.20943951023931953,
+      "scale": 1.2,
+      "z_index": 150
+    },
+    {
+      "id": "38149205-F60B-452E-8949-A97D2E68E684",
+      "image_name": "halloween_props_pr__halloween_props_10",
+      "n_position_x": 0.18,
+      "n_position_y": 0.18,
+      "offset_height": 0,
+      "offset_width": 0,
+      "placement_kind": "sticker",
+      "rotation_radians": -0.3141592653589793,
+      "scale": 1.04,
+      "z_index": 160
+    }
+  ],
+  "text_items": [
+    {
+      "alignment": "center",
+      "backgroundColorHex": "#00000000",
+      "backgroundOpacity": 1,
+      "cornerRadius": 8,
+      "fontName": "MarkerFelt-Wide",
+      "fontSize": 30,
+      "id": "1FC4245D-6832-45EA-AD30-8A086560B5FD",
+      "layoutCanvasMinSide": 398,
+      "letterSpacing": 0,
+      "lineSpacing": 0,
+      "nPosition": [
+        0.512,
+        0.434
+      ],
+      "outlineColorHex": "#00000000",
+      "outlineOpacity": 1,
+      "outlineWidth": 0.0,
+      "rotation": -0.05235987755982988,
+      "scale": 0.6666666666666666,
+      "shadowColorHex": "#00000000",
+      "shadowRadius": 0,
+      "text": "before",
+      "textCase": "none",
+      "textColorHex": "#2D1246",
+      "textOpacity": 1,
+      "zIndex": 130
+    },
+    {
+      "alignment": "center",
+      "backgroundColorHex": "#00000000",
+      "backgroundOpacity": 1,
+      "cornerRadius": 8,
+      "fontName": "MarkerFelt-Wide",
+      "fontSize": 30,
+      "id": "3023C04B-BB50-42B3-8C4D-01A768660D6B",
+      "layoutCanvasMinSide": 398,
+      "letterSpacing": 0,
+      "lineSpacing": 0,
+      "nPosition": [
+        0.488,
+        0.754
+      ],
+      "outlineColorHex": "#00000000",
+      "outlineOpacity": 1,
+      "outlineWidth": 0.0,
+      "rotation": 0.05235987755982988,
+      "scale": 0.6666666666666666,
+      "shadowColorHex": "#00000000",
+      "shadowRadius": 0,
+      "text": "after",
+      "textCase": "none",
+      "textColorHex": "#2D1246",
+      "textOpacity": 1,
+      "zIndex": 140
+    }
+  ],
+  "version": "1"
+}

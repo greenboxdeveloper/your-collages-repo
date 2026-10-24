@@ -1,0 +1,127 @@
+{
+  "chrome": {
+    "background_color_rgba": [
+      0,
+      0,
+      0,
+      1
+    ],
+    "background_hazy_blur_radius": 48,
+    "background_image_name": "spooky_nights_pr__bat_moon_jpg",
+    "border_color_rgba": [
+      1,
+      1,
+      1,
+      1
+    ],
+    "border_corner_radius": 0,
+    "border_width": 0,
+    "canvas_aspect": 0.5625,
+    "canvas_ratio_preset": "9:16",
+    "editor_canvas_min_side": 400,
+    "has_background_image": true
+  },
+  "dependencies": [
+    {
+      "asset_ref": "Bat Moon.jpg",
+      "id": "spooky_nights_pr__bat_moon_jpg",
+      "type": "background",
+      "url": "https://photocollagemaker.john4shine.workers.dev/Backgrounds/Spooky%20Nights_PR/Bat%20Moon.jpg"
+    },
+    {
+      "asset_ref": "Polaroid4.1_B.png",
+      "id": "polaroidframe__polaroid4_1_b",
+      "type": "sticker",
+      "url": "https://photocollagemaker.john4shine.workers.dev/PolaroidFrame/Polaroid4.1_B.png"
+    },
+    {
+      "asset_ref": "Halloween_Party_03.png",
+      "id": "halloween_party_pr__halloween_party_03",
+      "type": "sticker",
+      "url": "https://photocollagemaker.john4shine.workers.dev/Stickers/Halloween%20Party_PR/Halloween_Party_03.png"
+    },
+    {
+      "asset_ref": "Halloween_Decor_14.png",
+      "id": "halloween_decor_pr__halloween_decor_14",
+      "type": "sticker",
+      "url": "https://photocollagemaker.john4shine.workers.dev/Stickers/Halloween%20Decor_PR/Halloween_Decor_14.png"
+    }
+  ],
+  "editor": {
+    "divider_positions": {},
+    "shared_vertex_positions": {}
+  },
+  "layout": {
+    "category": "TemplateBuilder",
+    "dividers": [],
+    "id": "template-builder-C1974283",
+    "isPremium": false,
+    "name": "Template builder",
+    "shared_vertices": [],
+    "slots": [],
+    "type": "grid"
+  },
+  "stickers": [
+    {
+      "hole_n_rect": [
+        0.066946,
+        0.046875,
+        0.866109,
+        0.706055
+      ],
+      "id": "2CECE367-7FC4-43ED-A7D9-D495B891BFCA",
+      "image_name": "polaroidframe__polaroid4_1_b",
+      "is_transform_locked": true,
+      "linked_canvas_photo_id": "B2F48B7B-04DB-4067-ADB6-31EA4FE9E988",
+      "n_position_x": 0.5,
+      "n_position_y": 0.6,
+      "offset_height": 0,
+      "offset_width": 0,
+      "placement_kind": "sticker",
+      "rotation_radians": 0.0,
+      "scale": 2.5396825396825395,
+      "z_index": 110
+    },
+    {
+      "id": "B2F48B7B-04DB-4067-ADB6-31EA4FE9E988",
+      "inner_offset_height": 0,
+      "inner_offset_width": 0,
+      "inner_scale": 1,
+      "n_position_x": 0.5,
+      "n_position_y": 0.6,
+      "offset_height": 0,
+      "offset_width": 0,
+      "parent_frame_sticker_id": "2CECE367-7FC4-43ED-A7D9-D495B891BFCA",
+      "placement_kind": "canvas_photo",
+      "rotation_radians": 0.0,
+      "scale": 2.5396825396825395,
+      "z_index": 110
+    },
+    {
+      "id": "901DD25A-EC7B-43D0-98DC-65C7D61A8258",
+      "image_name": "halloween_party_pr__halloween_party_03",
+      "n_position_x": 0.5,
+      "n_position_y": 0.88,
+      "offset_height": 0,
+      "offset_width": 0,
+      "placement_kind": "sticker",
+      "rotation_radians": -0.05235987755982988,
+      "scale": 2.64,
+      "z_index": 120
+    },
+    {
+      "id": "881C4B29-EC91-4564-880A-E4FA5D6C019E",
+      "image_name": "halloween_decor_pr__halloween_decor_14",
+      "n_position_x": 0.84,
+      "n_position_y": 0.36,
+      "offset_height": 0,
+      "offset_width": 0,
+      "placement_kind": "sticker",
+      "rotation_radians": 0.0,
+      "scale": 0.88,
+      "z_index": 130
+    }
+  ],
+  "text_items": [],
+  "version": "1"
+}

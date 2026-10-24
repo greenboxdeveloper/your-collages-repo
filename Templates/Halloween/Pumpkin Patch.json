@@ -1,0 +1,180 @@
+{
+  "chrome": {
+    "background_color_rgba": [
+      0,
+      0,
+      0,
+      1
+    ],
+    "background_hazy_blur_radius": 48,
+    "background_image_name": "halloween_patterns_pr__buffalo_check_jpg",
+    "border_color_rgba": [
+      1,
+      1,
+      1,
+      1
+    ],
+    "border_corner_radius": 0,
+    "border_width": 0,
+    "canvas_aspect": 0.8,
+    "canvas_ratio_preset": "4:5",
+    "editor_canvas_min_side": 400,
+    "has_background_image": true
+  },
+  "dependencies": [
+    {
+      "asset_ref": "Buffalo Check.jpg",
+      "id": "halloween_patterns_pr__buffalo_check_jpg",
+      "type": "background",
+      "url": "https://photocollagemaker.john4shine.workers.dev/Backgrounds/Halloween%20Patterns_PR/Buffalo%20Check.jpg"
+    },
+    {
+      "asset_ref": "Halloween_Decor_04.png",
+      "id": "halloween_decor_pr__halloween_decor_04",
+      "type": "sticker",
+      "url": "https://photocollagemaker.john4shine.workers.dev/Stickers/Halloween%20Decor_PR/Halloween_Decor_04.png"
+    },
+    {
+      "asset_ref": "Polaroid 1.png",
+      "id": "polaroidframe__polaroid_1",
+      "type": "sticker",
+      "url": "https://photocollagemaker.john4shine.workers.dev/PolaroidFrame/Polaroid%201.png"
+    },
+    {
+      "asset_ref": "Halloween_Decor_05.png",
+      "id": "halloween_decor_pr__halloween_decor_05",
+      "type": "sticker",
+      "url": "https://photocollagemaker.john4shine.workers.dev/Stickers/Halloween%20Decor_PR/Halloween_Decor_05.png"
+    },
+    {
+      "asset_ref": "Halloween_Party_13.png",
+      "id": "halloween_party_pr__halloween_party_13",
+      "type": "sticker",
+      "url": "https://photocollagemaker.john4shine.workers.dev/Stickers/Halloween%20Party_PR/Halloween_Party_13.png"
+    }
+  ],
+  "editor": {
+    "divider_positions": {},
+    "shared_vertex_positions": {}
+  },
+  "layout": {
+    "category": "TemplateBuilder",
+    "dividers": [],
+    "id": "template-builder-4F9B8082",
+    "isPremium": false,
+    "name": "Template builder",
+    "shared_vertices": [],
+    "slots": [],
+    "type": "grid"
+  },
+  "stickers": [
+    {
+      "id": "C7FAE7B3-F28A-41BC-8D8B-4513C939C891",
+      "image_name": "halloween_decor_pr__halloween_decor_04",
+      "n_position_x": 0.5,
+      "n_position_y": 0.11,
+      "offset_height": 0,
+      "offset_width": 0,
+      "placement_kind": "sticker",
+      "rotation_radians": 0.0,
+      "scale": 3.44,
+      "z_index": 110
+    },
+    {
+      "hole_n_rect": [
+        0.072,
+        0.05418,
+        0.848,
+        0.729102
+      ],
+      "id": "576D2543-9DDE-4381-8573-0F9DF21BD7D4",
+      "image_name": "polaroidframe__polaroid_1",
+      "is_transform_locked": true,
+      "linked_canvas_photo_id": "41C39317-0973-4F85-93E2-E48C1694BE1C",
+      "n_position_x": 0.28,
+      "n_position_y": 0.52,
+      "offset_height": 0,
+      "offset_width": 0,
+      "placement_kind": "sticker",
+      "rotation_radians": -0.08726646259971647,
+      "scale": 1.7857142857142858,
+      "z_index": 120
+    },
+    {
+      "id": "41C39317-0973-4F85-93E2-E48C1694BE1C",
+      "inner_offset_height": 0,
+      "inner_offset_width": 0,
+      "inner_scale": 1,
+      "n_position_x": 0.28,
+      "n_position_y": 0.52,
+      "offset_height": 0,
+      "offset_width": 0,
+      "parent_frame_sticker_id": "576D2543-9DDE-4381-8573-0F9DF21BD7D4",
+      "placement_kind": "canvas_photo",
+      "rotation_radians": -0.08726646259971647,
+      "scale": 1.7857142857142858,
+      "z_index": 120
+    },
+    {
+      "hole_n_rect": [
+        0.072,
+        0.05418,
+        0.848,
+        0.729102
+      ],
+      "id": "14948C96-41C5-412E-B7A3-9BB1951265C3",
+      "image_name": "polaroidframe__polaroid_1",
+      "is_transform_locked": true,
+      "linked_canvas_photo_id": "5AC504CA-4771-4174-ADDB-CB9B67003339",
+      "n_position_x": 0.72,
+      "n_position_y": 0.53,
+      "offset_height": 0,
+      "offset_width": 0,
+      "placement_kind": "sticker",
+      "rotation_radians": 0.08726646259971647,
+      "scale": 1.7857142857142858,
+      "z_index": 130
+    },
+    {
+      "id": "5AC504CA-4771-4174-ADDB-CB9B67003339",
+      "inner_offset_height": 0,
+      "inner_offset_width": 0,
+      "inner_scale": 1,
+      "n_position_x": 0.72,
+      "n_position_y": 0.53,
+      "offset_height": 0,
+      "offset_width": 0,
+      "parent_frame_sticker_id": "14948C96-41C5-412E-B7A3-9BB1951265C3",
+      "placement_kind": "canvas_photo",
+      "rotation_radians": 0.08726646259971647,
+      "scale": 1.7857142857142858,
+      "z_index": 130
+    },
+    {
+      "id": "A3D2B4FF-D9B9-4273-80CC-C6503158A1A1",
+      "image_name": "halloween_decor_pr__halloween_decor_05",
+      "n_position_x": 0.5,
+      "n_position_y": 0.91,
+      "offset_height": 0,
+      "offset_width": 0,
+      "placement_kind": "sticker",
+      "rotation_radians": 0.0,
+      "scale": 3.44,
+      "z_index": 140
+    },
+    {
+      "id": "8746F7F8-87DE-4736-961B-A4B21E406AEE",
+      "image_name": "halloween_party_pr__halloween_party_13",
+      "n_position_x": 0.88,
+      "n_position_y": 0.8,
+      "offset_height": 0,
+      "offset_width": 0,
+      "placement_kind": "sticker",
+      "rotation_radians": 0.20943951023931953,
+      "scale": 0.8,
+      "z_index": 150
+    }
+  ],
+  "text_items": [],
+  "version": "1"
+}
